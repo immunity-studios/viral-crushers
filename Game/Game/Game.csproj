@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -10,6 +10,15 @@
     <DebugType>portable</DebugType>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="AudioFiles\SFX\Menu\ButtonClickTest.wav" />
+    <None Remove="ButtonClickTest.wav" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="AudioFiles\SFX\Menu\ButtonClickTest.wav" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
