@@ -1,23 +1,7 @@
-﻿using System.IO;
-using System.Reflection;
-using Plugin.SimpleAudioPlayer;
+﻿using Plugin.SimpleAudioPlayer;
 
-namespace Game
+namespace Game.AudioEngine
 {
-    /// <summary>
-    /// Collection of game sounds that are loaded at compilation time.
-    /// TODO trigger menu click sounds via an inherited menu class
-    /// with preset button handlers (get rid of globals)
-    /// </summary>
-    class AudioConstants
-    {   
-        /// <summary>
-        /// Default menu click sound
-        /// </summary>
-        public static AudioClip MENU_CLICK_SOUND = new AudioClip("Game.AudioFiles.SFX.Menu.ButtonClickTest.wav");
-    }
-
-
     /// <summary>
     /// Class which manages loading, setup, 
     /// playback, and sound settings for an audio file player
