@@ -25,6 +25,8 @@ namespace Game.Views
 		/// <param name="e"></param>
         public async void GameButton_Clicked(object sender, EventArgs e)
         {
+			// play test sound
+			AudioConstants.MENU_CLICK_SOUND.Play();
 			await Navigation.PushAsync(new GamePage());
 		}
     }
