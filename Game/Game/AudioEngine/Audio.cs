@@ -6,7 +6,7 @@ namespace Game.AudioEngine
     /// Class which manages loading, setup, 
     /// playback, and sound settings for an audio file player
     /// </summary>
-    public class AudioClip //: AudioBus // TODO implement AudioBus
+    public class AudioClip
     {
         /// <summary>
         /// Constructs an Audio Clip for a specified sound file with provided settings
@@ -52,6 +52,16 @@ namespace Game.AudioEngine
             player.Stop();
         }
 
+        public void SetVolume(double vol)
+        {
+            player.Volume = vol;
+        }
+
+        public bool IsLoop()
+        {
+            return player.Loop;
+        }
+
         /// <summary>
         /// The audio file player
         /// </summary>
@@ -62,7 +72,5 @@ namespace Game.AudioEngine
         /// </summary>
         private string filepath;
 
-       
-        
     }
 }

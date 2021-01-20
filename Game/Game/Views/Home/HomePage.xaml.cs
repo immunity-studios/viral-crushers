@@ -16,7 +16,10 @@ namespace Game.Views
 		public HomePage()
 		{
 			InitializeComponent();
-			AudioEngine.AudioResources.MENU_MUSIC_LOOP.Play(); // Start menu music loop
+			// Start menu music loop
+			AudioEngine.AudioResources.MENU_MUSIC1_LOOP_LAYER1.Play();
+			AudioEngine.AudioResources.MENU_MUSIC1_LOOP_LAYER2.Play();
+			AudioEngine.AudioResources.MENU_MUSIC1_LOOP_LAYER3.Play();
 		}
 
 		/// <summary>
@@ -24,7 +27,7 @@ namespace Game.Views
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-        public async void GameButton_Clicked(object sender, EventArgs e)
+		public async void GameButton_Clicked(object sender, EventArgs e)
         {
 			AudioEngine.AudioResources.MENU_CLICK_SOUND.Play(); // Play test sound
 			await Navigation.PushAsync(new GamePage());
