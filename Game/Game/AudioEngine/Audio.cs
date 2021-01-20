@@ -3,8 +3,8 @@
 namespace Game.AudioEngine
 {
     /// <summary>
-    /// Class which manages loading, setup, 
-    /// playback, and sound settings for an audio file player
+    /// Class which manages loading and settings, and
+    /// gives playback facilities for an audio file player.
     /// </summary>
     public class AudioClip
     {
@@ -24,14 +24,16 @@ namespace Game.AudioEngine
         /// (Default = 1.0) Floating point volume for the audio clip (range: 0.0 - 1.0)
         /// </param>
         /// TODO decide if AudioClip object should be valid if problem happens when loading file
+        /// TODO document types of audio files supported (.WAV, .MP3, etc)
         public AudioClip(string filepath, bool loop = false, double startingVolume = 1.0)
         {
             // Set class fields
             this.filepath = filepath;
             // Setup sound player
             player = CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
-            player.Loop = loop;
-            player.Volume = startingVolume;
+            // Settings
+            SetLoop(loop);
+            SetVolume(startingVolume);
             // Load the audio file as a stream, then load it into the audio player.
             player.Load(Helpers.ResourceFileHelpers.GetStreamFromFile(filepath));
         }
@@ -52,14 +54,50 @@ namespace Game.AudioEngine
             player.Stop();
         }
 
+        /// <summary>
+        /// Sets the volume of the audio clip
+        /// </summary>
+        /// <param name="vol">
+        /// (Default = 1.0) Floating point volume for the audio clip (range: 0.0 - 1.0)
+        /// </param>
         public void SetVolume(double vol)
         {
             player.Volume = vol;
         }
 
+        /// <summary>
+        /// Returns the current volume of the audio clip
+        /// </summary>
+        /// <returns>
+        /// Floating point volume of the audio clip (range: 0.0 - 1.0)
+        /// </returns>
+        public double GetVolume()
+        {
+            return player.Volume;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>
+        /// True if the audio clip repeats during playback, false if not
+        /// </returns>
         public bool IsLoop()
         {
             return player.Loop;
+        }
+
+        /// <summary>
+        /// Sets if the audio file should repeat during playback ("loop").
+        /// Private access because this setting can only be set during loading.
+        /// </summary>
+        /// <param name="loop">
+        /// True if audio file should continue playback, 
+        /// False if audio file should play once.
+        /// </param>
+        private void SetLoop(bool loop)
+        {
+            player.Loop = loop;
         }
 
         /// <summary>
