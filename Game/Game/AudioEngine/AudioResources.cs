@@ -25,7 +25,8 @@ namespace Game.AudioEngine
             loop: true
         );
 
-        public static AudioClip MENU_MUSIC1_LOOP_LAYER1 = new AudioClip(
+    
+        private static AudioClip MENU_MUSIC1_LOOP_LAYER1 = new AudioClip(
             filepath: "Game.AudioFiles.Music.Menu.TestMX1_Loop_Layer1.wav",
             startingVolume: .8,
             loop: true
@@ -42,5 +43,12 @@ namespace Game.AudioEngine
             startingVolume: .8,
             loop: true
         );
+
+        public static MusicContainer MENU_MUSIC1 = new MusicContainer(new List<AudioClip>(){
+            MENU_MUSIC1_LOOP_LAYER1,
+            MENU_MUSIC1_LOOP_LAYER2,
+            MENU_MUSIC1_LOOP_LAYER3
+        });
+
     }
 }
