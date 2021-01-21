@@ -12,11 +12,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="AudioFiles\Music\Menu\TestMX1_Loop_Layer1.wav" />
+    <None Remove="AudioFiles\Music\Menu\TestMX1_Loop_Layer2.wav" />
+    <None Remove="AudioFiles\Music\Menu\TestMX1_Loop_Layer3.wav" />
+    <None Remove="AudioFiles\Music\Menu\TestMX1_Stinger_Bells.wav" />
+    <None Remove="AudioFiles\Music\Menu\TestMX2_Loop_Full.wav" />
+    <None Remove="AudioFiles\Music\Menu\TestSFX_Stinger_CrowdApplause.wav" />
     <None Remove="AudioFiles\SFX\Menu\ButtonClickTest.wav" />
     <None Remove="ButtonClickTest.wav" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="AudioFiles\Music\Menu\TestMX1_Loop_Layer1.wav" />
+    <EmbeddedResource Include="AudioFiles\Music\Menu\TestMX1_Loop_Layer2.wav" />
+    <EmbeddedResource Include="AudioFiles\Music\Menu\TestMX1_Loop_Layer3.wav" />
+    <EmbeddedResource Include="AudioFiles\Music\Menu\TestMX2_Loop_Full.wav" />
+    <EmbeddedResource Include="AudioFiles\Music\Menu\TestMX1_Stinger_Bells.wav" />
     <EmbeddedResource Include="AudioFiles\SFX\Menu\ButtonClickTest.wav" />
   </ItemGroup>
 
