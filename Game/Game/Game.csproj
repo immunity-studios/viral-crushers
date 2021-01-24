@@ -12,6 +12,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="AudioFiles\Music\Menu\VC-OST_Song1_Full_Loop.mp3" />
     <None Remove="AudioFiles\Music\Menu\TestMX1_Loop_Layer1.wav" />
     <None Remove="AudioFiles\Music\Menu\TestMX1_Loop_Layer2.wav" />
     <None Remove="AudioFiles\Music\Menu\TestMX1_Loop_Layer3.wav" />
@@ -28,6 +29,7 @@
     <EmbeddedResource Include="AudioFiles\Music\Menu\TestMX1_Loop_Layer3.wav" />
     <EmbeddedResource Include="AudioFiles\Music\Menu\TestMX2_Loop_Full.wav" />
     <EmbeddedResource Include="AudioFiles\Music\Menu\TestMX1_Stinger_Bells.wav" />
+    <EmbeddedResource Include="AudioFiles\Music\Menu\VC-OST_Song1_Full_Loop.mp3" />
     <EmbeddedResource Include="AudioFiles\SFX\Menu\ButtonClickTest.wav" />
   </ItemGroup>
 
