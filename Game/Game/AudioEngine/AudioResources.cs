@@ -19,37 +19,6 @@ namespace Game.AudioEngine
             startingVolume: .5
         );
 
-        public static AudioClip MENU_MUSIC2_LOOP = new AudioClip(
-            filepath: "Game.AudioFiles.Music.Menu.TestMX2_Loop_Full.wav",
-            startingVolume: .8,
-            loop: true
-        );
-
-    
-        private static AudioClip MENU_MUSIC1_LOOP_LAYER1 = new AudioClip(
-            filepath: "Game.AudioFiles.Music.Menu.TestMX1_Loop_Layer1.wav",
-            startingVolume: .8,
-            loop: true
-        );
-
-        public static AudioClip MENU_MUSIC1_LOOP_LAYER2 = new AudioClip(
-            filepath: "Game.AudioFiles.Music.Menu.TestMX1_Loop_Layer2.wav",
-            startingVolume: .8,
-            loop: true
-        );
-
-        public static AudioClip MENU_MUSIC1_LOOP_LAYER3 = new AudioClip(
-            filepath: "Game.AudioFiles.Music.Menu.TestMX1_Loop_Layer3.wav",
-            startingVolume: .8,
-            loop: true
-        );
-
-        public static MusicContainer MENU_MUSIC1 = new MusicContainer(new List<AudioClip>(){
-            MENU_MUSIC1_LOOP_LAYER1,
-            MENU_MUSIC1_LOOP_LAYER2,
-            MENU_MUSIC1_LOOP_LAYER3
-        });
-
         public static AudioClip MX_MENU_SONG1_FULL_LOOP = new AudioClip(
            filepath: "Game.AudioFiles.Music.Menu.VC-OST_Song1_Full_Loop.mp3",
            startingVolume: .8,
