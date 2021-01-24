@@ -50,5 +50,10 @@ namespace Game.AudioEngine
             MENU_MUSIC1_LOOP_LAYER3
         });
 
+        public static AudioClip MX_MENU_SONG1_FULL_LOOP = new AudioClip(
+           filepath: "Game.AudioFiles.Music.Menu.VC-OST_Song1_Full_Loop.mp3",
+           startingVolume: .8,
+           loop: true
+       );
     }
 }
