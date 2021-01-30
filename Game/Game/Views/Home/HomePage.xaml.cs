@@ -16,7 +16,7 @@ namespace Game.Views
 		public HomePage()
 		{
 			InitializeComponent();
-			AudioEngine.AudioResources.MX_MENU_SONG1_FULL_LOOP.Play(); // Start menu music loop
+			//AudioEngine.AudioResources.MX_MENU_SONG1_FULL_LOOP.Play(); // Start menu music loop
 		}
 
 		/// <summary>
