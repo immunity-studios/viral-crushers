@@ -30,7 +30,7 @@ namespace Game.Views
 
             BindingContext = this.ViewModel = data;
 
-            this.ViewModel.Title = "Update " + data.Title;
+            this.ViewModel.Title = "Character Update " + data.Title;
 
             //Need to make the SelectedItem a string, so it can select the correct item.
             LocationPicker.SelectedItem = data.Data.Location.ToString();
@@ -50,7 +50,7 @@ namespace Game.Views
                 ViewModel.Data.ImageURI = Services.ItemService.DefaultImageURI;
             }
 
-            MessagingCenter.Send(this, "Character Update", ViewModel.Data);
+            MessagingCenter.Send(this, "Update", ViewModel.Data);
             await Navigation.PopModalAsync();
         }
 
