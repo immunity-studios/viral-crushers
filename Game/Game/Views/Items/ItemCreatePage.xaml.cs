@@ -33,7 +33,7 @@ namespace Game.Views
 
             BindingContext = this.ViewModel;
 
-            this.ViewModel.Title = "Create";
+            this.ViewModel.Title = "Character Create";
 
             //Need to make the SelectedItem a string, so it can select the correct item.
             LocationPicker.SelectedItem = ViewModel.Data.Location.ToString();
