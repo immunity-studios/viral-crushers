@@ -42,14 +42,14 @@ namespace Game.Views
         /// <param name="args"></param>
         public async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
-            ItemModel data = args.SelectedItem as ItemModel;
+            CharacterModel data = args.SelectedItem as CharacterModel;
             if (data == null)
             {
                 return;
             }
 
             // Open the Read Page
-            await Navigation.PushAsync(new CharacterReadPage(new GenericViewModel<ItemModel>(data)));
+            await Navigation.PushAsync(new CharacterReadPage(new GenericViewModel<CharacterModel>(data)));
 
             // Manually deselect item.
             ItemsListView.SelectedItem = null;
