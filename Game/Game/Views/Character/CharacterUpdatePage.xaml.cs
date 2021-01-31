@@ -50,7 +50,7 @@ namespace Game.Views
                 ViewModel.Data.ImageURI = Services.ItemService.DefaultImageURI;
             }
 
-            MessagingCenter.Send(this, "Update", ViewModel.Data);
+            MessagingCenter.Send(this, "Character Update", ViewModel.Data);
             await Navigation.PopModalAsync();
         }
 
