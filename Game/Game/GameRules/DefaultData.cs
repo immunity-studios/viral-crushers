@@ -227,20 +227,7 @@ namespace Game.GameRules
                     LeftFinger = LeftFingerString,
                 },
 
-                new CharacterModel {
-                    Name = "C7",
-                    Description = "C6",
-                    Level = 1,
-                    MaxHealth = 5,
-                    ImageURI = "icon_monster5.png",
-                    Head = HeadString,
-                    Necklass = NecklassString,
-                    PrimaryHand = PrimaryHandString,
-                    OffHand = OffHandString,
-                    Feet = FeetString,
-                    RightFinger = RightFingerString,
-                    LeftFinger = LeftFingerString,
-                },
+                
             };
 
         return datalist;
