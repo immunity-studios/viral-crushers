@@ -64,7 +64,7 @@ namespace Game.ViewModels
             });
 
             // Register the Update Message
-            MessagingCenter.Subscribe<ItemUpdatePage, CharacterModel>(this, "Update", async (obj, data) =>
+            MessagingCenter.Subscribe<CharacterUpdatePage, CharacterModel>(this, "Update", async (obj, data) =>
             {
                 // Have the item update itself
                 data.Update(data);
