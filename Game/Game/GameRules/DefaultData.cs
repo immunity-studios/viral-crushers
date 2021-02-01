@@ -138,8 +138,8 @@ namespace Game.GameRules
         var datalist = new List<CharacterModel>()
             {
                 new CharacterModel {
-                    Name = "C1",
-                    Description = "C1",
+                    Name = "Doctor",
+                    Description = "Creates vaccine",
                     Level = 1,
                     MaxHealth = 5,
                     ImageURI = "icon_monster5.png",
@@ -153,8 +153,8 @@ namespace Game.GameRules
                 },
 
                 new CharacterModel {
-                    Name = "C2",
-                    Description = "C2",
+                    Name = "Teacher",
+                    Description = "Increases speed (+10%) for all characters",
                     Level = 1,
                     MaxHealth = 5,
                     ImageURI = "icon_monster5.png",
@@ -168,8 +168,8 @@ namespace Game.GameRules
                 },
 
                 new CharacterModel {
-                    Name = "C3",
-                    Description = "C3",
+                    Name = "Athlete",
+                    Description = "Increases defense (+10%) for all characters & Go first in the next level",
                     Level = 1,
                     MaxHealth = 5,
                     ImageURI = "icon_monster5.png",
@@ -183,8 +183,8 @@ namespace Game.GameRules
                 },
 
                 new CharacterModel {
-                    Name = "C4",
-                    Description = "C4",
+                    Name = "Police Officer",
+                    Description = "Increases attack (+10%) for all characters",
                     Level = 1,
                     MaxHealth = 5,
                     ImageURI = "icon_monster5.png",
@@ -198,8 +198,8 @@ namespace Game.GameRules
                 },
 
                 new CharacterModel {
-                    Name = "C5",
-                    Description = "C5",
+                    Name = "College Student",
+                    Description = "Decreases defense (-10%) of all monsters",
                     Level = 1,
                     MaxHealth = 5,
                     ImageURI = "icon_monster5.png",
@@ -213,8 +213,8 @@ namespace Game.GameRules
                 },
 
                 new CharacterModel {
-                    Name = "C6",
-                    Description = "C6",
+                    Name = "Firefighter",
+                    Description = "Makes Panacea",
                     Level = 1,
                     MaxHealth = 5,
                     ImageURI = "icon_monster5.png",
