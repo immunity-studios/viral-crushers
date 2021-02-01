@@ -49,6 +49,7 @@
 
                                 <Label Grid.Column="1" Grid.Row="0"
                                        Text="{Binding Name}" 
+                                       FontAttributes="Bold"
                                        Style="{StaticResource ListStyle}"/>
 
                                 <StackLayout Grid.Column="1" Grid.Row="1"
