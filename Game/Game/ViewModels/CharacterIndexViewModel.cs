@@ -58,7 +58,7 @@ namespace Game.ViewModels
             #region Messages
 
             // Register the Create Message
-            MessagingCenter.Subscribe<ItemCreatePage, CharacterModel>(this, "Create", async (obj, data) =>
+            MessagingCenter.Subscribe<CharacterCreatePage, CharacterModel>(this, "Create", async (obj, data) =>
             {
                 await CreateAsync(data as CharacterModel);
             });
