@@ -59,15 +59,6 @@
                         Text="{Binding Data.Description}" 
                         Style="{StaticResource EntryStyle}"/>
 
-                    <Label Grid.Row="3" Grid.Column="0"
-                        Text="Attribute" 
-                        Style="{StaticResource LabelStyle}"/>
-
-                    <Picker Grid.Row="3" Grid.Column="1"
-                        ItemsSource="{x:Static local_enum:AttributeEnumHelper.GetListCharacter}" 
-                        SelectedItem="{Binding Data.Attribute, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                        x:Name="AttributePicker"/>
-
                     <Label Grid.Row="4" Grid.Column="0"
                         Text="Image" 
                         Style="{StaticResource LabelStyle}"/>
