@@ -135,6 +135,7 @@
     <Content Include="icon_add.png" />
     <Content Include="icon_athlete.png" />
     <Content Include="icon_cancel.png" />
+    <Content Include="icon_character.png" />
     <Content Include="icon_delete.png" />
     <Content Include="icon_doctor.png" />
     <Content Include="icon_edit.png" />

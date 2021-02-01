@@ -196,4 +196,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\icon_student.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_character.png" />
+  </ItemGroup>
 </Project>
