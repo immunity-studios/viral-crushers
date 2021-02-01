@@ -133,12 +133,16 @@
     <Content Include="Assets\Wide310x150Logo.scale-125.png" />
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
     <Content Include="icon_add.png" />
+    <Content Include="icon_athlete.png" />
     <Content Include="icon_cancel.png" />
     <Content Include="icon_delete.png" />
     <Content Include="icon_doctor.png" />
     <Content Include="icon_edit.png" />
+    <Content Include="icon_firefighter.png" />
     <Content Include="icon_new.png" />
+    <Content Include="icon_officer.png" />
     <Content Include="icon_save.png" />
+    <Content Include="icon_student.png" />
     <Content Include="icon_teacher.png" />
     <Content Include="item.png" />
     <Content Include="mapcell.png" />

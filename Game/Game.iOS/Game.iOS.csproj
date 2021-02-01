@@ -184,4 +184,16 @@
   <ItemGroup>
     <BundleResource Include="Resources\icon_teacher.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_athlete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_firefighter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_officer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_student.png" />
+  </ItemGroup>
 </Project>
