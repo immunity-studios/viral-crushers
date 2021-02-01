@@ -157,7 +157,7 @@ namespace Game.GameRules
                     Description = "Increases speed (+10%) for all characters",
                     Level = 1,
                     MaxHealth = 5,
-                    ImageURI = "icon_monster5.png",
+                    ImageURI = "icon_teacher.png",
                     Head = HeadString,
                     Necklass = NecklassString,
                     PrimaryHand = PrimaryHandString,
