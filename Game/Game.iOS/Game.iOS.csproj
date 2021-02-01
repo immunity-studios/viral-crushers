@@ -124,6 +124,7 @@
     <BundleResource Include="Resources\xamarin_logo%402x.png" />
     <BundleResource Include="Resources\xamarin_logo%403x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <BundleResource Include="Resources\icon_monster5.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -149,7 +150,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\Game\Game.csproj">
-      <Project>{0F0BC0CD-CC31-4BE0-8FE4-42C7A3EF8A83}</Project>
+      <Project>{07B3B89D-0E3E-4B7A-B244-CFB0B829340D}</Project>
       <Name>Game</Name>
     </ProjectReference>
   </ItemGroup>
