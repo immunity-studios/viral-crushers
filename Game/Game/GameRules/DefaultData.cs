@@ -142,7 +142,7 @@ namespace Game.GameRules
                     Description = "Creates vaccine",
                     Level = 1,
                     MaxHealth = 5,
-                    ImageURI = "icon_monster5.png",
+                    ImageURI = "icon_doctor.png",
                     Head = HeadString,
                     Necklass = NecklassString,
                     PrimaryHand = PrimaryHandString,
