@@ -135,6 +135,26 @@
                             ValueChanged="Defense_OnStepperValueChanged"/>
                     
                     </StackLayout>
+
+                    <Label 
+                        Text="Speed" 
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
+
+                        <Label 
+                            Text="{Binding Data.Speed}" 
+                            x:Name="SpeedValue"
+                            Style="{StaticResource ValueStyle}"
+                            Padding="0,0,10,0"
+                            HorizontalOptions="End"
+                            HorizontalTextAlignment="End"/>
+
+                        <Stepper 
+                            Value="{Binding Data.Speed, Mode=TwoWay}"
+                            ValueChanged="Speed_OnStepperValueChanged"/>
+
+                    </StackLayout>
                 </StackLayout>
             </StackLayout>
         </ScrollView>
