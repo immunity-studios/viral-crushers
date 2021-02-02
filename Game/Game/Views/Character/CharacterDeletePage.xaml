@@ -47,6 +47,14 @@
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
 
+            <StackLayout Style="{StaticResource HorizontalStack}">
+                <Label 
+                    Text="Attack : " 
+                    Style="{StaticResource LabelStyle}"/>
+                <Label 
+                    Text="{Binding Data.Attack}" 
+                    Style="{StaticResource ValueStyle}"/>
+            </StackLayout>
 
             <StackLayout 
             HorizontalOptions="Center" 
