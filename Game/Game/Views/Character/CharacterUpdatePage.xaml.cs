@@ -71,11 +71,11 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Catch the change to the stepper for Value
+        /// Catch the change to the stepper for Attack
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void Value_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        public void Attack_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
             ValueValue.Text = String.Format("{0}", e.NewValue);
         }
