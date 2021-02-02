@@ -40,6 +40,15 @@
 
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
+                    Text="Max Health : " 
+                    Style="{StaticResource LabelStyle}"/>
+                <Label 
+                    Text="{Binding Data.MaxHealth}" 
+                    Style="{StaticResource ValueStyle}"/>
+            </StackLayout>
+
+            <StackLayout Style="{StaticResource HorizontalStack}">
+                <Label 
                     Text="Range : " 
                     Style="{StaticResource LabelStyle}"/>
                 <Label 
