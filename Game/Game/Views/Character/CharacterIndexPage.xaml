@@ -13,36 +13,27 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-
-
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Label Grid.Row="0"  Text="Characters List Page" Style="{StaticResource HeaderStyle}"/>
-            <ListView
-                Grid.Row="1"
-                x:Name="ItemsListView"
-                ItemsSource="{Binding Dataset}"
-                    IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-                    RefreshCommand="{Binding LoadItemsCommand}"
-                    CachingStrategy="RecycleElement"
-                    ItemSelected="OnItemSelected"
-                    HasUnevenRows="true"
-                    Margin="5,0,5,0"
-                    RowHeight="80">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                                <Image  Source="{Binding ImageURI}"
-                                        HorizontalOptions="Center"
-                                        Style="{StaticResource ImageMediumStyle}"
-                                        VerticalOptions="CenterAndExpand"/>                          
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </Grid>
+        <ListView
+            Grid.Row="1"
+            x:Name="ItemsListView"
+            ItemsSource="{Binding Dataset}"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                RefreshCommand="{Binding LoadItemsCommand}"
+                CachingStrategy="RecycleElement"
+                ItemSelected="OnItemSelected"
+                HasUnevenRows="true"
+                Margin="5,0,5,0"
+                RowHeight="80">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                            <Image  Source="{Binding ImageURI}"
+                                    HorizontalOptions="Center"
+                                    Style="{StaticResource ImageMediumStyle}"
+                                    VerticalOptions="CenterAndExpand"/>                          
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </ContentPage.Content>
 </ContentPage>
