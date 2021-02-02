@@ -45,7 +45,7 @@
 
 
                 <Button 
-                Text="Yes" 
+                Text="Delete" 
                 Clicked="Delete_Clicked" 
                 HorizontalOptions="Center"
                 FontSize="Medium"
