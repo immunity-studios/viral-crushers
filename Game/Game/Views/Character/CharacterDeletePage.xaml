@@ -38,6 +38,15 @@
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
 
+            <StackLayout Style="{StaticResource HorizontalStack}">
+                <Label 
+                    Text="Range : " 
+                    Style="{StaticResource LabelStyle}"/>
+                <Label 
+                    Text="{Binding Data.Range}" 
+                    Style="{StaticResource ValueStyle}"/>
+            </StackLayout>
+
 
             <StackLayout 
             HorizontalOptions="Center" 
