@@ -15,6 +15,10 @@ namespace Game.Views
         public RootMenuTabbedPage()
         {
             InitializeComponent();
+            this.Children.Add(new GamePage());
+            this.Children.Add(new CharacterIndexPage());
+            this.Children.Add(new ItemIndexPage());
+            this.Children.Add(new ItemIndexPage());
         }
     }
 }
