@@ -78,6 +78,26 @@
                 <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="FillAndExpand">
 
                     <Label 
+                        Text="Max Health" 
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
+
+                        <Label 
+                            Text="{Binding Data.MaxHealth}" 
+                            x:Name="MaxHealthValue"
+                            Style="{StaticResource ValueStyle}"
+                            Padding="0,0,10,0"
+                            HorizontalOptions="End"
+                            HorizontalTextAlignment="End"/>
+
+                        <Stepper 
+                            Value="{Binding Data.MaxHealth, Mode=TwoWay}"
+                            ValueChanged="MaxHealth_OnStepperValueChanged"/>
+
+                    </StackLayout>
+
+                    <Label 
                         Text="Range" 
                         Style="{StaticResource LabelStyle}"/>
 
