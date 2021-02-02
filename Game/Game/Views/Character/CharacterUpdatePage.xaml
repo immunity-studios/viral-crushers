@@ -118,13 +118,13 @@
                     </StackLayout>
 
                     <Label 
-                        Text="Damage" 
+                        Text="Defense" 
                         Style="{StaticResource LabelStyle}"/>
 
                     <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
 
                         <Label 
-                            Text="{Binding Data.Damage}" 
+                            Text="{Binding Data.Defense}" 
                             x:Name="DamageValue"
                             Style="{StaticResource ValueStyle}"
                             Padding="0,0,10,0"
@@ -132,8 +132,8 @@
                             HorizontalTextAlignment="End"/>
 
                         <Stepper 
-                            Value="{Binding Data.Damage, Mode=TwoWay}"
-                            ValueChanged="Damage_OnStepperValueChanged"/>
+                            Value="{Binding Data.Defense, Mode=TwoWay}"
+                            ValueChanged="Defense_OnStepperValueChanged"/>
 
                     </StackLayout>
                 </StackLayout>
