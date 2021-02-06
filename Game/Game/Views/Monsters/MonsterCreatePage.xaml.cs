@@ -17,7 +17,7 @@ namespace Game.Views
     public partial class MonsterCreatePage : ContentPage
     {
         // The item to create
-        public GenericViewModel<ItemModel> ViewModel = new GenericViewModel<ItemModel>();
+        public GenericViewModel<MonsterModel> ViewModel = new GenericViewModel<MonsterModel>();
 
         // Empty Constructor for UTs
         public MonsterCreatePage(bool UnitTest){}
@@ -29,15 +29,11 @@ namespace Game.Views
         {
             InitializeComponent();
 
-            this.ViewModel.Data = new ItemModel();
+            this.ViewModel.Data = new MonsterModel();
 
             BindingContext = this.ViewModel;
 
             this.ViewModel.Title = "Monster Create";
-
-            //Need to make the SelectedItem a string, so it can select the correct item.
-            LocationPicker.SelectedItem = ViewModel.Data.Location.ToString();
-            AttributePicker.SelectedItem = ViewModel.Data.Attribute.ToString();
         }
 
         /// <summary>
