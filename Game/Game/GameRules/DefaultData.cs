@@ -243,38 +243,38 @@ namespace Game.GameRules
         var datalist = new List<MonsterModel>()
             {
                 new MonsterModel {
-                    Name = "M1",
-                    Description = "M1",
+                    Name = "Ebola",
+                    Description = "Ebola is a deadly virus that causes fever, nody aches, and diarrhea.",
                     ImageURI = "item.png",
                 },
 
                 new MonsterModel {
-                    Name = "M2",
-                    Description = "M2",
+                    Name = "Malaria",
+                    Description = "Malaria is a serious and sometimes fatal disease caused by a parasite that commonly infects a certain tttype of mosquito which feeds on humans.",
                     ImageURI = "item.png",
                 },
 
                 new MonsterModel {
-                    Name = "M3",
-                    Description = "M3",
+                    Name = "COVID-19",
+                    Description = "Coronavirus disease is an infectious disease caused by a newly discovered coronavirus.",
                     ImageURI = "item.png",
                 },
 
                 new MonsterModel {
-                    Name = "M4",
-                    Description = "M4",
+                    Name = "Measles",
+                    Description = "Measles is a childhood infection caused by a virus.",
                     ImageURI = "item.png",
                 },
 
                 new MonsterModel {
-                    Name = "M5",
-                    Description = "M5",
+                    Name = "Flu",
+                    Description = "Influenza is a viral infection that attacks your respiratory system - your nose, throat and lungs.",
                     ImageURI = "item.png",
                 },
 
                 new MonsterModel {
-                    Name = "M6",
-                    Description = "M6",
+                    Name = "Cold",
+                    Description = "The common cold is a viral infection of your nose and throat.",
                     ImageURI = "item.png",
                 },
             };
