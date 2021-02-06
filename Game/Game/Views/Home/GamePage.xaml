@@ -7,48 +7,44 @@
 
     <ContentPage.Content>
 
-        <ScrollView Orientation="Vertical" HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never" Padding="10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
 
-            <FlexLayout x:Name="flexLayout"
-                        Wrap="Wrap"
-                        JustifyContent="SpaceAround"
-                        AlignContent="SpaceAround">
+            <Image
+                Source="hospital_icon.png"
+                Style="{StaticResource ImageLargeStyle}"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                />
 
-                <StackLayout Style="{StaticResource CardImageTextBox}">
+            <StackLayout Grid.Row="1" Style="{StaticResource CardImageTextBox}">
 
-                    <Image
-                        Source="hospital_icon.png"
-                        Style="{StaticResource ImageLargeStyle}"
-                        VerticalOptions="Center"
-                        WidthRequest="150"
-                        HeightRequest="150"/>
-
-                </StackLayout>
-
-                <StackLayout Style="{StaticResource CardImageTextBox}">
-
-                    <ImageButton
+                <ImageButton
                         Source="item.png"
-                        Style="{StaticResource ImageLargeStyle}"
+                        Style="{StaticResource ImageMediumStyle}"
                         Clicked="DungeonButton_Clicked"/>
 
-                    <Label 
-                        Text="Dungeon"
+                <Label 
+                        Text="Dungeon/Battle"
                         Style="{StaticResource CenterMessageStyle}"/>
-                </StackLayout>
+            </StackLayout>
 
-                <StackLayout Style="{StaticResource CardImageTextBox}">
+            <StackLayout Grid.Row="2" Style="{StaticResource CardImageTextBox}">
 
-                    <ImageButton
+                <ImageButton
                         Source="item.png"
-                        Style="{StaticResource ImageLargeStyle}"
+                        Style="{StaticResource ImageSmallStyle}"
                         Clicked="AutobattleButton_Clicked"/>
 
-                    <Label 
+                <Label 
                         Text="Auto Battle"
                         Style="{StaticResource CenterMessageStyle}"/>
-                </StackLayout>
-            </FlexLayout>
-        </ScrollView>
+            </StackLayout>
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
