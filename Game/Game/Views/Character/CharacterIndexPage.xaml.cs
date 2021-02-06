@@ -6,6 +6,7 @@ using Xamarin.Forms.Xaml;
 
 using Game.Models;
 using Game.ViewModels;
+using System.Linq;
 
 namespace Game.Views
 {
@@ -25,7 +26,7 @@ namespace Game.Views
 
         /// <summary>
         /// Constructor for Index Page
-        /// 
+
         /// Get the ItemIndexView Model
         /// </summary>
         public CharacterIndexPage()
@@ -34,6 +35,28 @@ namespace Game.Views
 
             BindingContext = ViewModel;
         }
+
+        #region CollectionViewHandlers
+        /// <summary>
+        /// Select the item from the list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs args)
+        {
+            CharacterModel data = CharactersCollectionView.SelectedItem as CharacterModel;
+            if (data == null)
+            {
+                return;
+            }
+
+            // Open the Read Page
+            await Navigation.PushAsync(new CharacterReadPage(new GenericViewModel<CharacterModel>(data)));
+
+            // Manually deselect item.
+            CharactersCollectionView.SelectedItem = null;
+        }
+        #endregion
 
         #region ListViewHandlers
         /// <summary>
