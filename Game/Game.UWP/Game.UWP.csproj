@@ -208,6 +208,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="icon_monster5.png" />
+    <None Include="hospital_icon.png" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
