@@ -56,6 +56,10 @@ namespace Game.Views
                     case (int)MenuItemEnum.Game:
                         MenuPages.Add(id, new NavigationPage(new GamePage()));
                         break;
+
+                    case (int)MenuItemEnum.Home:
+                        MenuPages.Add(id, new NavigationPage(new HomePage()));
+                        break;
                 }
             }
 
