@@ -246,36 +246,48 @@ namespace Game.GameRules
                     Name = "Ebola",
                     Description = "Ebola is a deadly virus that causes fever, nody aches, and diarrhea.",
                     ImageURI = "item.png",
+                    Level = 1,
+                    MaxHealth = 5,
                 },
 
                 new MonsterModel {
                     Name = "Malaria",
                     Description = "Malaria is a serious and sometimes fatal disease caused by a parasite that commonly infects a certain tttype of mosquito which feeds on humans.",
                     ImageURI = "item.png",
+                    Level = 1,
+                    MaxHealth = 5,
                 },
 
                 new MonsterModel {
                     Name = "COVID-19",
                     Description = "Coronavirus disease is an infectious disease caused by a newly discovered coronavirus.",
                     ImageURI = "item.png",
+                    Level = 1,
+                    MaxHealth = 5,
                 },
 
                 new MonsterModel {
                     Name = "Measles",
                     Description = "Measles is a childhood infection caused by a virus.",
                     ImageURI = "item.png",
+                    Level = 1,
+                    MaxHealth = 5,
                 },
 
                 new MonsterModel {
                     Name = "Flu",
                     Description = "Influenza is a viral infection that attacks your respiratory system - your nose, throat and lungs.",
                     ImageURI = "item.png",
+                    Level = 1,
+                    MaxHealth = 5,
                 },
 
                 new MonsterModel {
                     Name = "Cold",
                     Description = "The common cold is a viral infection of your nose and throat.",
                     ImageURI = "item.png",
+                    Level = 1,
+                    MaxHealth = 5,
                 },
             };
 
