@@ -15,6 +15,9 @@
         Game = 5,
 
         // About
-        About = 6
+        About = 6,
+
+        // Home Page
+        Home = 8
     }
 }
