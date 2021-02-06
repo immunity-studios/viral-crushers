@@ -277,12 +277,6 @@ namespace Game.GameRules
                     Description = "M6",
                     ImageURI = "item.png",
                 },
-
-                new MonsterModel {
-                    Name = "M7",
-                    Description = "M7",
-                    ImageURI = "item.png",
-                },
             };
 
         return datalist;
