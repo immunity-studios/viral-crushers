@@ -19,8 +19,6 @@ namespace Game.Views
             this.Children.Add(new CharacterIndexPage());
             this.Children.Add(new MonsterIndexPage());
             this.Children.Add(new ItemIndexPage());
-            
-            this.Children.Add(new AboutPage());
             this.Children.Add(new ScoreIndexPage());
         }
     }
