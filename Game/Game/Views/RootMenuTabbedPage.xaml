@@ -2,7 +2,9 @@
 <TabbedPage
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
-    android:TabbedPage.ToolbarPlacement="Bottom"    
+    android:TabbedPage.ToolbarPlacement="Bottom"
+    xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core"
+    windows:Page.ToolbarPlacement="Bottom"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="Game.Views.RootMenuTabbedPage">
     <!--Pages can be added as references or inline-->
