@@ -134,6 +134,14 @@
                     </StackLayout>
                 </StackLayout>
             </StackLayout>
+
+            <!--Audio Settings-->
+            <Label
+                    Text="Volume"
+                    Style="{DynamicResource LabelStyle}"
+                    />
+            <Slider 
+                Minimum="0" Maximum="1"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>
