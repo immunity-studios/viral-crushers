@@ -17,70 +17,178 @@
         <StackLayout Style="{StaticResource OuterBoxStack}"
             Spacing="10">
 
-            <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                   Text="Name : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Name}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                <StackLayout Grid.Column="1"
+                             HorizontalOptions="Fill">
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Description : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Description}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    <Label 
+                        Text="{Binding Data.Name}" 
+                        TextTransform="Uppercase"
+                        FontSize="Medium"
+                        FontAttributes="Bold"
+                        Style="{DynamicResource BodyStyle}"/>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Max Health : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.MaxHealth}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    <!--<Frame 
+                           CornerRadius="5"
+                           Padding="8">
+                        <StackLayout>
+                            <Label Text="Name"
+                                   FontSize="Small"/>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Range : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Range}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                            <BoxView 
+                                     HeightRequest="2"
+                                     HorizontalOptions="Fill" />
+                            <Label 
+                                    Text="{Binding Data.Name}" 
+                                    FontAttributes="Bold"
+                                    FontSize="Medium"
+                                    Style="{StaticResource ValueStyle}"/>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Attack : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Attack}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                            <Label Text="Description"
+                                   FontSize="Small"/>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Defense : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Defense}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                            <BoxView 
+                                     HeightRequest="2"
+                                     HorizontalOptions="Fill" />
+                            <Label 
+                                    Text="{Binding Data.Description}" 
+                                    FontAttributes="Bold"
+                                    FontSize="Medium"
+                                    Style="{StaticResource ValueStyle}"/>
+                            
+                        </StackLayout>
+                    </Frame>-->
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Speed : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Speed}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    <Label 
+                        Text="{Binding Data.Description}" 
+                        LineBreakMode="WordWrap"
+                        FontAttributes="Italic" 
+                        Style="{StaticResource ValueStyle}"/>
+
+                </StackLayout>
+                
+            </Grid>
+
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackLayout>
+                    <StackLayout Style="{StaticResource HorizontalStack}">
+                        <Label 
+                            Text="Max Health : " 
+                            Style="{StaticResource LabelStyle}"/>
+                        <Label 
+                            Text="{Binding Data.MaxHealth}" 
+                            Style="{StaticResource ValueStyle}"/>
+                    </StackLayout>
+
+                    <BoxView 
+                            Color="#A32F2F"
+                            WidthRequest="{Binding Data.MaxHealth}"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Start"/>
+                </StackLayout>
+
+                <StackLayout Grid.Column="1">
+                    <StackLayout                    
+                        Style="{StaticResource HorizontalStack}">
+                    
+                        <Label 
+                            Text="Range : " 
+                            Style="{StaticResource LabelStyle}"/>
+                        <Label 
+                            Text="{Binding Data.Range}" 
+                            Style="{StaticResource ValueStyle}"/>
+                    </StackLayout>
+
+                    <BoxView 
+                        Color="Blue"
+                        WidthRequest="{Binding Data.Range}"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Start"/>
+                </StackLayout>
+
+                <StackLayout 
+                    Grid.Row="1">
+                    <StackLayout 
+                        Style="{StaticResource HorizontalStack}">
+                    
+                        <Label 
+                            Text="Attack : " 
+                            Style="{StaticResource LabelStyle}"/>
+                        <Label 
+                            Text="{Binding Data.Attack}" 
+                            Style="{StaticResource ValueStyle}"/>
+                    </StackLayout>
+
+                    <BoxView 
+                        Color="Yellow"
+                        WidthRequest="{Binding Data.Attack}"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Start"/>
+                </StackLayout>
+
+                <StackLayout 
+                    Grid.Row="1"
+                    Grid.Column="1">
+                    <StackLayout
+                        Style="{StaticResource HorizontalStack}"
+                        HorizontalOptions="Start">
+                    
+                        <Label 
+                            Text="Defense : " 
+                            Style="{StaticResource LabelStyle}"/>
+                        <Label 
+                            Text="{Binding Data.Defense}" 
+                            Style="{StaticResource ValueStyle}"/>
+                    </StackLayout>
+
+                    <BoxView 
+                        Color="Green"
+                        WidthRequest="{Binding Data.Defense}"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Start"/>
+                </StackLayout>
+
+                <StackLayout 
+                    Grid.Row="2">
+                    <StackLayout 
+                        Style="{StaticResource HorizontalStack}">
+                    
+                        <Label 
+                            Text="Speed : "                        
+                            Style="{StaticResource LabelStyle}"/>
+                        <Label 
+                            Text="{Binding Data.Speed}" 
+                            Style="{StaticResource ValueStyle}"/>
+                    </StackLayout>
+
+                    <BoxView 
+                        Color="Purple"
+                        WidthRequest="{Binding Data.Speed}"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Start"/>
+                </StackLayout>
+            </Grid>
 
         </StackLayout>
     </ScrollView>
