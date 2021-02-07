@@ -140,6 +140,7 @@
     <Content Include="icon_doctor.png" />
     <Content Include="icon_edit.png" />
     <Content Include="icon_firefighter.png" />
+    <Content Include="icon_hospital.png" />
     <Content Include="icon_new.png" />
     <Content Include="icon_officer.png" />
     <Content Include="icon_save.png" />
