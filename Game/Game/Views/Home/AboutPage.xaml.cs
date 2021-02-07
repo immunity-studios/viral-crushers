@@ -222,5 +222,20 @@ namespace Game.Views
 
             return result;
         }
+
+        /// <summary>
+        /// Volume slider which controls the global audio engine volume
+        /// TODO implement a global volume control method for the Audio Engine,
+        /// to be controlled with this slider
+        /// TODO create a number label which shows the current value of slider
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        void OnVolumeSliderValueChanged(object sender, ValueChangedEventArgs args)
+        {
+            // get slider value
+            double value = args.NewValue;
+            // TODO Set volume of global audio engine with value of slider
+        }
     }
 }

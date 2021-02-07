@@ -141,7 +141,9 @@
                     Style="{DynamicResource LabelStyle}"
                     />
             <Slider 
-                Minimum="0" Maximum="1"/>
+                Minimum="0" Maximum="1"
+                ValueChanged="OnVolumeSliderValueChanged"
+                />
         </StackLayout>
     </ScrollView>
 </ContentPage>
