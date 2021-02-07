@@ -206,4 +206,22 @@
   <ItemGroup>
     <BundleResource Include="Resources\icon_purple_monster.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_magenta_monster.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_neon_green_monster.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_orange_monster.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_red_monster.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_blue_monster.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_green_monster.png" />
+  </ItemGroup>
 </Project>
