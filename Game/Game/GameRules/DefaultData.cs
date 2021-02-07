@@ -252,7 +252,7 @@ namespace Game.GameRules
 
                 new MonsterModel {
                     Name = "Malaria",
-                    Description = "Malaria is a serious and sometimes fatal disease caused by a parasite that commonly infects a certain tttype of mosquito which feeds on humans.",
+                    Description = "Malaria is a serious and sometimes fatal disease caused by a parasite that commonly infects a certain type of mosquito which feeds on humans.",
                     ImageURI = "icon_blue_monster.png",
                     Level = 1,
                     MaxHealth = 5,

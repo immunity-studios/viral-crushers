@@ -23,26 +23,27 @@
                 <DataTemplate>
                     <Grid Padding="10">
                         <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition  />
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="3*" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
 
-                        <Image Grid.RowSpan="2"
+                        <Image Grid.RowSpan="2" Grid.Row="0"
                        Source="{Binding ImageURI}"
-                       Style="{StaticResource ImageSmallStyle}"
-                       Aspect="AspectFill"/>
+                       Style="{StaticResource ImageMediumStyle}"
+                       Aspect="AspectFill"
+                               VerticalOptions="Center"/>
 
-
-                        <Label Grid.Column="1"
+                        <Label Grid.Column="1" Grid.Row="0"
                        Text="{Binding Name}"
                        FontAttributes="Bold"
                        LineBreakMode="TailTruncation"
+                               VerticalOptions="End"
                        Style="{StaticResource ListStyle}"
-                       FontSize="Micro"/>
+                       FontSize="Small"/>
 
 
                         <Label Grid.Row="1"
@@ -50,7 +51,7 @@
                        Text="{Binding Description}"
                        LineBreakMode="TailTruncation"
                        FontAttributes="Italic"
-                       VerticalOptions="End"
+                       VerticalOptions="Start"
                        Style="{StaticResource ListStyle}"
                        FontSize="Micro"/>
 
