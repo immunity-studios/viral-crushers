@@ -13,7 +13,51 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout Style="{StaticResource OuterBoxStack}">
+
+        <CollectionView ItemsSource="{Binding Dataset}"                        
+                        ItemsLayout="VerticalGrid, 2"
+                        x:Name="MonstersCollectionView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition  />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.RowSpan="2"
+                       Source="{Binding ImageURI}"
+                       Style="{StaticResource ImageSmallStyle}"
+                       Aspect="AspectFill"/>
+
+
+                        <Label Grid.Column="1"
+                       Text="{Binding Name}"
+                       FontAttributes="Bold"
+                       LineBreakMode="TailTruncation"
+                       Style="{StaticResource ListStyle}"
+                       FontSize="Micro"/>
+
+
+                        <Label Grid.Row="1"
+                       Grid.Column="1"
+                       Text="{Binding Description}"
+                       LineBreakMode="TailTruncation"
+                       FontAttributes="Italic"
+                       VerticalOptions="End"
+                       Style="{StaticResource ListStyle}"
+                       FontSize="Micro"/>
+
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!--<StackLayout Style="{StaticResource OuterBoxStack}">
 
             <ListView x:Name="ItemsListView" 
                     ItemsSource="{Binding Dataset}"
@@ -71,6 +115,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-        </StackLayout>
+        </StackLayout>-->
     </ContentPage.Content>
 </ContentPage>

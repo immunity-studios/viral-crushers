@@ -35,6 +35,7 @@ namespace Game.Views
             BindingContext = ViewModel;
         }
 
+        #region ListViewHandlers
         /// <summary>
         /// The row selected from the list
         /// </summary>
@@ -52,7 +53,7 @@ namespace Game.Views
             await Navigation.PushAsync(new MonsterReadPage(new GenericViewModel<MonsterModel>(data)));
 
             // Manually deselect item.
-            ItemsListView.SelectedItem = null;
+            //ItemsListView.SelectedItem = null;
         }
 
         /// <summary>
@@ -64,6 +65,7 @@ namespace Game.Views
         {
             await Navigation.PushModalAsync(new NavigationPage(new MonsterCreatePage()));
         }
+        #endregion
 
         /// <summary>
         /// Refresh the list on page appearing
