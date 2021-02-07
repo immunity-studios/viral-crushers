@@ -35,6 +35,29 @@ namespace Game.Views
             BindingContext = ViewModel;
         }
 
+        #region CollectionViewHandlers
+        /// <summary>
+        /// Select the item from the list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs args)
+        {
+            MonsterModel data = MonstersCollectionView.SelectedItem as MonsterModel;
+            if (data == null)
+            {
+                return;
+            }
+
+            // Open the Read Page
+            await Navigation.PushAsync(new MonsterReadPage(new GenericViewModel<MonsterModel>(data)));
+
+            // Manually deselect item.
+            MonstersCollectionView.SelectedItem = null;
+        }
+        #endregion
+
+
         #region ListViewHandlers
         /// <summary>
         /// The row selected from the list

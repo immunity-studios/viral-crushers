@@ -16,6 +16,8 @@
 
         <CollectionView ItemsSource="{Binding Dataset}"                        
                         ItemsLayout="VerticalGrid, 2"
+                        SelectionMode="Single"
+                        SelectionChanged="CollectionView_SelectionChanged"
                         x:Name="MonstersCollectionView">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
