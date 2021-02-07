@@ -15,7 +15,7 @@
             </Grid.RowDefinitions>
 
             <Image
-                Source="hospital_icon.png"
+                Source="icon_hospital.png"
                 Style="{StaticResource ImageLargeStyle}"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
