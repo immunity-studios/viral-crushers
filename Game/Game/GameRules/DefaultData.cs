@@ -244,8 +244,8 @@ namespace Game.GameRules
             {
                 new MonsterModel {
                     Name = "Ebola",
-                    Description = "Ebola is a deadly virus that causes fever, nody aches, and diarrhea.",
-                    ImageURI = "item.png",
+                    Description = "Ebola is a deadly virus that causes fever, body aches, and diarrhea.",
+                    ImageURI = "icon_purple_monster.png",
                     Level = 1,
                     MaxHealth = 5,
                 },
