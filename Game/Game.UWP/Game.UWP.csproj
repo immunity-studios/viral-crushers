@@ -143,6 +143,7 @@
     <Content Include="icon_hospital.png" />
     <Content Include="icon_new.png" />
     <Content Include="icon_officer.png" />
+    <Content Include="icon_purple_monster.png" />
     <Content Include="icon_save.png" />
     <Content Include="icon_student.png" />
     <Content Include="icon_teacher.png" />

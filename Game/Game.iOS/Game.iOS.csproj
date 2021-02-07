@@ -203,4 +203,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\icon_hospital.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_purple_monster.png" />
+  </ItemGroup>
 </Project>
