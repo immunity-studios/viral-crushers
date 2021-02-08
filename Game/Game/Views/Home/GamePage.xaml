@@ -7,9 +7,10 @@
 
     <ContentPage.Content>
 
-        <Grid>
+        <Grid x:Name="PageGrid">
             <Grid.RowDefinitions>
                 <RowDefinition Height="2*" />
+                <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
@@ -44,6 +45,46 @@
                         Text="Auto Battle"
                         Style="{StaticResource CenterMessageStyle}"/>
             </StackLayout>
+
+
+            <Grid x:Name="MenuGrid" Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <ImageButton
+                    x:Name="GamePageImageButton"
+                    Source="icon_red_dice.png"
+                    Style="{StaticResource ImageSmallStyle}"/>
+
+                <ImageButton Grid.Column="1"
+                    x:Name="CharactersImageButton"
+                    Source="icon_menu_characters_girl.png"
+                    Style="{StaticResource ImageSmallStyle}"/>
+
+                <ImageButton Grid.Column="2"
+                    x:Name="MonstersImageButton"
+                    Source="icon_menu_monsters.png"
+                    Style="{StaticResource ImageSmallStyle}"/>
+
+                <ImageButton Grid.Column="3"
+                    x:Name="ItemsImageButton"
+                    Source="icon_menu_items.png"
+                    Style="{StaticResource ImageSmallStyle}"/>
+
+                <ImageButton Grid.Column="4"
+                    x:Name="ScoresImageButton"
+                    Source="icon_black_dice.png"
+                    Style="{StaticResource ImageSmallStyle}"/>
+            </Grid>
+
 
         </Grid>
     </ContentPage.Content>
