@@ -27,8 +27,7 @@ namespace Game.Views
 		public async void GameButton_Clicked(object sender, EventArgs e)
         {
 			//AudioEngine.AudioResources.MENU_CLICK_SOUND.Play(); // Play test click sound
-			//await Navigation.PushAsync(new GamePage());
-			await Navigation.PushAsync(new RootMenuTabbedPage());
+			await Navigation.PushAsync(new GamePage()); // Navigate to Game Page from Home Page			
 		}
 	}
 }
