@@ -29,16 +29,6 @@ namespace Game.Views
 		}
 
 		/// <summary>
-		/// Jump to the Village
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		public async void VillageButton_Clicked(object sender, EventArgs e)
-		{
-			await Navigation.PushAsync(new VillagePage());
-		}
-
-		/// <summary>
 		/// Jump to the Dungeon
 		/// </summary>
 		/// <param name="sender"></param>
@@ -47,5 +37,17 @@ namespace Game.Views
 		{
 			await Navigation.PushAsync(new AutoBattlePage());
 		}
+
+		#region Toolbar Click Handlers
+		/// <summary>
+		/// Jump to the characters index page
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		public async void CharacterButton_Clicked(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new CharacterIndexPage());
+		}
+		#endregion
 	}
 }

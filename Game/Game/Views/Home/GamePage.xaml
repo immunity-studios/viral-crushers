@@ -62,12 +62,13 @@
                 <ImageButton
                     x:Name="GamePageImageButton"
                     Source="icon_red_dice.png"
-                    Style="{StaticResource ImageSmallStyle}"/>
+                    Style="{StaticResource ImageSmallStyle}" />
 
                 <ImageButton Grid.Column="1"
                     x:Name="CharactersImageButton"
                     Source="icon_menu_characters_girl.png"
-                    Style="{StaticResource ImageSmallStyle}"/>
+                    Style="{StaticResource ImageSmallStyle}"
+                    Clicked="CharacterButton_Clicked"/>
 
                 <ImageButton Grid.Column="2"
                     x:Name="MonstersImageButton"
