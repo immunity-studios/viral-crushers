@@ -73,7 +73,8 @@
                 <ImageButton Grid.Column="2"
                     x:Name="MonstersImageButton"
                     Source="icon_menu_monsters.png"
-                    Style="{StaticResource ImageSmallStyle}"/>
+                    Style="{StaticResource ImageSmallStyle}"
+                    Clicked="MonsterButton_Clicked"/>
 
                 <ImageButton Grid.Column="3"
                     x:Name="ItemsImageButton"
