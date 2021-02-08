@@ -62,7 +62,8 @@
                 <ImageButton
                     x:Name="GamePageImageButton"
                     Source="icon_red_dice.png"
-                    Style="{StaticResource ImageSmallStyle}" />
+                    Style="{StaticResource ImageSmallStyle}"
+                    Clicked="DungeonButton_Clicked" />
 
                 <ImageButton Grid.Column="1"
                     x:Name="CharactersImageButton"

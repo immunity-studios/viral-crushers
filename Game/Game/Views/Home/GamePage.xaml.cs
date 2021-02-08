@@ -19,17 +19,7 @@ namespace Game.Views
 		}
 
 		/// <summary>
-		/// Jump to the Dungeon
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-        public async void DungeonButton_Clicked(object sender, EventArgs e)
-        {
-			await Navigation.PushAsync(new PickCharactersPage());
-		}
-
-		/// <summary>
-		/// Jump to the Dungeon
+		/// Jump to the auto battle
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
@@ -39,6 +29,17 @@ namespace Game.Views
 		}
 
 		#region Toolbar Click Handlers
+
+		/// <summary>
+		/// Jump to the Dungeon/Hospital
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		public async void DungeonButton_Clicked(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new PickCharactersPage());
+		}
+
 		/// <summary>
 		/// Jump to the characters index page
 		/// </summary>
