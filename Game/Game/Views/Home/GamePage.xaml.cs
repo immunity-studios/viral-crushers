@@ -58,6 +58,16 @@ namespace Game.Views
 		{
 			await Navigation.PushAsync(new MonsterIndexPage());
 		}
+
+		/// <summary>
+		/// Jump to the items index page
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		public async void ItemButton_Clicked(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new ItemIndexPage());
+		}
 		#endregion
 	}
 }

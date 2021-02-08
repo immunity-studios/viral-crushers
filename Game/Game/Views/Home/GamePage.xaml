@@ -79,7 +79,8 @@
                 <ImageButton Grid.Column="3"
                     x:Name="ItemsImageButton"
                     Source="icon_menu_items.png"
-                    Style="{StaticResource ImageSmallStyle}"/>
+                    Style="{StaticResource ImageSmallStyle}"
+                    Clicked="ItemButton_Clicked" />
 
                 <ImageButton Grid.Column="4"
                     x:Name="ScoresImageButton"
