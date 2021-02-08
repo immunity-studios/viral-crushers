@@ -85,7 +85,9 @@
                 <ImageButton Grid.Column="4"
                     x:Name="ScoresImageButton"
                     Source="icon_black_dice.png"
-                    Style="{StaticResource ImageSmallStyle}"/>
+                    Style="{StaticResource ImageSmallStyle}"
+                    Clicked="ScoreButton_Clicked" />
+
             </Grid>
 
 

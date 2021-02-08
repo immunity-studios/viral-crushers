@@ -68,6 +68,16 @@ namespace Game.Views
 		{
 			await Navigation.PushAsync(new ItemIndexPage());
 		}
+
+		/// <summary>
+		/// Jump to the scores index page
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		public async void ScoreButton_Clicked(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new ScoreIndexPage());
+		}
 		#endregion
 	}
 }
