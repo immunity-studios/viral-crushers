@@ -147,8 +147,12 @@ namespace Game.ViewModels
         /// <returns></returns>
         public override List<MonsterModel> SortDataset(List<MonsterModel> dataset)
         {
+            // Sort by description length, because items in UWP CollectionView use
+            // the size of the first item for all items, so the longest should be
+            // first to avoid cropping.
             return dataset
-                    .OrderBy(a => a.Name)
+                    .OrderByDescending(a => a.Description.Length)
+                    .ThenBy(a => a.Name)
                     .ThenBy(a => a.Description)
                     .ToList();
         }
