@@ -18,8 +18,8 @@ namespace Game.Models
         {
             PlayerType = PlayerTypeEnum.Monster;
             Guid = Id;
-            Name = "Troll";
-            Description = "Angry Troll";
+            Name = "E. coli ";
+            Description = "A Gram-negative, facultative anaerobic, rod-shaped, coliform bacterium commonly found in the lower intestine";
             Attack = 1;
             Difficulty = DifficultyEnum.Average;
             UniqueItem = null;
