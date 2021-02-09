@@ -57,11 +57,11 @@
                         Text="{Binding Data.Description}" 
                         Style="{StaticResource EntryStyle}"/>
 
-                    <Label Grid.Row="4" Grid.Column="0"
+                    <Label Grid.Row="2" Grid.Column="0"
                         Text="Image" 
                         Style="{StaticResource LabelStyle}"/>
 
-                    <StackLayout Grid.Row="4" Grid.Column="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="FillAndExpand">
+                    <StackLayout Grid.Row="2" Grid.Column="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="FillAndExpand">
 
                         <Image 
                             Source="{Binding Data.ImageURI}"
