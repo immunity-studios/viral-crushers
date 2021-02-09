@@ -109,6 +109,13 @@
     <Content Include="Assets\BadgeLogo.scale-150.png" />
     <Content Include="Assets\BadgeLogo.scale-200.png" />
     <Content Include="Assets\BadgeLogo.scale-400.png" />
+    <Content Include="Assets\icon_arena.jpg" />
+    <Content Include="Assets\icon_black_dice.png" />
+    <Content Include="Assets\icon_menu_characters_boy.png" />
+    <Content Include="Assets\icon_menu_characters_girl.png" />
+    <Content Include="Assets\icon_menu_items.png" />
+    <Content Include="Assets\icon_menu_monsters.png" />
+    <Content Include="Assets\icon_red_dice.png" />
     <Content Include="Assets\LargeTile.scale-125.png" />
     <Content Include="Assets\LargeTile.scale-150.png" />
     <Content Include="Assets\SmallTile.scale-125.png" />
@@ -215,15 +222,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="icon_black_dice.png" />
+    <Content Include="icon_menu_characters_boy.png" />
+    <Content Include="icon_arena.jpg" />
+    <Content Include="icon_menu_monsters.png" />
+    <Content Include="icon_menu_characters_girl.png" />
+    <Content Include="icon_menu_items.png" />
     <None Include="icon_monster5.png" />
     <None Include="hospital_icon.png" />
-    <None Include="icon_menu_monsters.png" />
-    <None Include="icon_menu_characters_boy.png" />
-    <None Include="icon_menu_characters_girl.png" />
-    <None Include="icon_red_dice.png" />
-    <None Include="icon_black_dice.png" />
-    <None Include="icon_menu_items.png" />
-    <None Include="icon_arena.jpg" />
+    <Content Include="icon_red_dice.png" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
