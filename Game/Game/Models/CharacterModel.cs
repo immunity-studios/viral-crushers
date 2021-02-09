@@ -18,8 +18,8 @@ namespace Game.Models
         {
             PlayerType = PlayerTypeEnum.Character;
             Guid = Id;
-            Name = "Elf";
-            Description = "Happy Elf";
+            Name = "Lisa the Vegetarian";
+            Description = "Intelligent, kind and passionate about the planet all living things";
             Level = 1;
             ImageURI = "icon_character.png";
             ExperienceTotal = 0;
