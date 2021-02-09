@@ -31,7 +31,6 @@
                 <StackLayout Grid.Column="1"
                              HorizontalOptions="Fill">
 
-
                     <Label 
                         Text="{Binding Data.Name}" 
                         TextTransform="Uppercase"
@@ -40,10 +39,9 @@
                         Style="{DynamicResource BodyStyle}"/>
 
                     <Label 
-                        Text="Description : " 
-                        Style="{StaticResource LabelStyle}"/>
-                    <Label 
                         Text="{Binding Data.Description}" 
+                        LineBreakMode="WordWrap"
+                        FontAttributes="Italic" 
                         Style="{StaticResource ValueStyle}"/>
                 </StackLayout>
             </Grid>
