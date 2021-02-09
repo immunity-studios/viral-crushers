@@ -12,11 +12,141 @@
         <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete.png"/>
     </ContentPage.ToolbarItems>
 
-    <ScrollView>
-        <StackLayout Style="{StaticResource OuterBoxStack}"
-                Spacing="10">
+    <ScrollView VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand">
+        <StackLayout 
+                VerticalOptions="Center" HorizontalOptions="Center">
 
-            <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Row="0"
+                            Grid.Column="0"
+                            Grid.RowSpan="4"
+                            Source="{Binding Data.ImageURI}"
+                            WidthRequest="60"
+                            HeightRequest="60"
+                            HorizontalOptions="Center"
+                            Aspect="AspectFit" 
+                            Style="{StaticResource ImageLargeStyle}"/>
+
+                    <Label Grid.Row="4" 
+                            Grid.Column="0"
+                            Text="{Binding Data.Name}"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center"
+                            FontSize="Micro"
+                            TextColor="Blue"/>
+
+                    <!--<Label Grid.Row="5"
+                            Grid.Column="0"
+                            Text="{Binding Data.Description}"
+                            FontAttributes="Italic"
+                            HorizontalOptions="Center"
+                            TextColor="#606060"
+                            FontSize="Micro"
+                            VerticalOptions="Start"/>-->
+
+                    <Label Grid.Row="0"
+                            Grid.Column="1"
+                            Text="HP"/>
+
+                    <BoxView Grid.Row="0"
+                                Grid.Column="2"
+                                Color="#A5FF82"
+                                WidthRequest="{Binding Data.MaxHealth}"
+                                HorizontalOptions="Start"
+                                VerticalOptions="Start"/>
+
+                    <Label Grid.Row="0"
+                            Grid.Column="3"
+                            Text="{Binding Data.MaxHealth}"/>
+
+                    <Label Grid.Row="1"
+                            Grid.Column="1"
+                            Text="Attack"/>
+
+                    <BoxView Grid.Row="1"
+                                Grid.Column="2"
+                                Color="#A32F2F"
+                                WidthRequest="{Binding Data.Attack}"
+                                HorizontalOptions="Start"
+                                VerticalOptions="Start"/>
+
+                    <Label Grid.Row="1"
+                            Grid.Column="3"
+                            Text="{Binding Data.Attack}"/>
+
+                    <Label Grid.Row="2"
+                            Grid.Column="1"
+                            Text="Defense"/>
+
+                    <BoxView Grid.Row="2"
+                                Grid.Column="2"
+                                Color="#47B7C1"
+                                WidthRequest="{Binding Data.Defense}"
+                                HorizontalOptions="Start"
+                                VerticalOptions="Start"/>
+
+                    <Label Grid.Row="2"
+                            Grid.Column="3"
+                            Text="{Binding Data.Defense}"/>
+
+                    <Label Grid.Row="3"
+                            Grid.Column="1"
+                            Text="Range"/>
+
+                    <BoxView Grid.Row="3"
+                                Grid.Column="2"
+                                Color="#EACA15"
+                                WidthRequest="{Binding Data.Range}"
+                                HorizontalOptions="Start"
+                                VerticalOptions="Start"/>
+
+                    <Label Grid.Row="3"
+                            Grid.Column="3"
+                            Text="{Binding Data.Range}"/>
+
+                    <Label Grid.Row="4"
+                            Grid.Column="1"
+                            Text="Speed"/>
+
+                    <BoxView Grid.Row="4"
+                                Grid.Column="2"
+                                Color="#D693B4"
+                                WidthRequest="{Binding Data.Speed}"
+                                HorizontalOptions="Start"
+                                VerticalOptions="Start"/>
+
+                    <Label Grid.Row="4"
+                            Grid.Column="3"
+                            Text="{Binding Data.Speed}"/>
+
+                </Grid>
+            </Grid>
+
+            <!--<Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
 
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
@@ -79,7 +209,7 @@
                 <Label 
                     Text="{Binding Data.Speed}" 
                     Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+            </StackLayout>-->
 
 
             <StackLayout 
