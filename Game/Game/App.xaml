@@ -33,7 +33,7 @@
             <Color x:Key="PrimaryBackgroundColor">red</Color>
             <Color x:Key="SecondaryBackgroundColor">gray</Color>
             <Color x:Key="TriciaryBackgroundColor">lightgray</Color>
-            <Color x:Key="LightBackgroundColor">orange</Color>
+            <Color x:Key="LightBackgroundColor">#f4f1de</Color>
 
             <Color x:Key="PrimaryTextColor">black</Color>
             <Color x:Key="SecondaryTextColor">black</Color>
