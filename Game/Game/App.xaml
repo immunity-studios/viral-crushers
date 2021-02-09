@@ -104,6 +104,17 @@
                 <Setter Property="VerticalOptions" Value="Center"/>
             </Style>
 
+
+            <Style TargetType="Label"
+                x:Key="IndexPageCollectionViewBoldStyle"
+                BasedOn="{StaticResource LabelBaseStyle}">
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="VerticalOptions" Value="End" />
+                <Setter Property="LineBreakMode" Value="WordWrap" />
+            </Style>
+
+
             <Style TargetType="Label"
                 x:Key="ListStyle"
                 BasedOn="{StaticResource LabelBaseStyle}">
