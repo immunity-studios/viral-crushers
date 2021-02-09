@@ -247,7 +247,11 @@ namespace Game.GameRules
                     Description = "A viral hemorrhagic fever caused by ebolaviruses. Symptoms are fever, sore throat, muscular pain, and headaches.",
                     ImageURI = "icon_purple_monster.png",
                     Level = 1,
-                    MaxHealth = 5,
+                    MaxHealth = 9,
+                    Attack = 4,
+                    Range = 8,
+                    Defense = 3,
+                    Speed = 6
                 },
 
                 new MonsterModel {
@@ -255,7 +259,11 @@ namespace Game.GameRules
                     Description = "A mosquito-borned infectious disease whose symptoms include fever, tiredness, vomitting, and headaches.",
                     ImageURI = "icon_blue_monster.png",
                     Level = 1,
-                    MaxHealth = 5,
+                    MaxHealth = 6,
+                    Attack = 4,
+                    Range = 3,
+                    Defense = 7,
+                    Speed = 5
                 },
 
                 new MonsterModel {
@@ -263,7 +271,11 @@ namespace Game.GameRules
                     Description = "A contagious disease caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2).",
                     ImageURI = "icon_green_monster.png",
                     Level = 1,
-                    MaxHealth = 5,
+                    MaxHealth = 10,
+                    Attack = 9,
+                    Range = 8,
+                    Defense = 9,
+                    Speed = 10
                 },
 
                 new MonsterModel {
@@ -271,7 +283,11 @@ namespace Game.GameRules
                     Description = "A highly contagious infectious disease caused by measles virus. Symptoms are fever, cough, runny nose, and imflamed eyes.",
                     ImageURI = "icon_magenta_monster.png",
                     Level = 1,
-                    MaxHealth = 5,
+                    MaxHealth = 4,
+                    Attack = 4,
+                    Range = 6,
+                    Defense = 3,
+                    Speed = 5
                 },
 
                 new MonsterModel {
@@ -279,7 +295,11 @@ namespace Game.GameRules
                     Description = "An infectious disease caused by influenza virus. Symptoms include fever, runny nose, sore throat, headache, and fatigue.",
                     ImageURI = "icon_neon_green_monster.png",
                     Level = 1,
-                    MaxHealth = 5,
+                    MaxHealth = 6,
+                    Attack = 3,
+                    Range = 5,
+                    Defense = 2,
+                    Speed = 3
                 },
 
                 new MonsterModel {
@@ -287,7 +307,11 @@ namespace Game.GameRules
                     Description = "A viral infectious disease that primarily affects the respiratory mucosa of the nose, throat, sinuses, and larynx.",
                     ImageURI = "icon_orange_monster.png",
                     Level = 1,
-                    MaxHealth = 5,
+                    MaxHealth = 4,
+                    Attack = 2,
+                    Range = 3,
+                    Defense = 2,
+                    Speed = 3
                 },
             };
 
