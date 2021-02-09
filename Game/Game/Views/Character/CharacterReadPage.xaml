@@ -33,13 +33,11 @@
 
 
                     <Label 
-                        Text="Name : " 
-                        Style="{StaticResource LabelStyle}"/>
-                    <Label 
                         Text="{Binding Data.Name}" 
-                        Style="{StaticResource ValueStyle}"/>
-
-
+                        TextTransform="Uppercase"
+                        FontSize="Medium"
+                        FontAttributes="Bold"
+                        Style="{DynamicResource BodyStyle}"/>
 
                     <Label 
                         Text="Description : " 
