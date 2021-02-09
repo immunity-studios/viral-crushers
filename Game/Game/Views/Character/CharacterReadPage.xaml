@@ -46,50 +46,71 @@
                 </StackLayout>
             </Grid>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                <StackLayout Style="{StaticResource HorizontalStack}">
+                    <Label 
                     Text="Max Health : " 
                     Style="{StaticResource LabelStyle}"/>
-                <Label 
+                    <Label 
                     Text="{Binding Data.MaxHealth}" 
                     Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                </StackLayout>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
+                <StackLayout 
+                    Grid.Column="1"
+                    Style="{StaticResource HorizontalStack}">
+                    <Label 
                     Text="Range : " 
                     Style="{StaticResource LabelStyle}"/>
-                <Label 
+                    <Label 
                     Text="{Binding Data.Range}" 
                     Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                </StackLayout>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
+                <StackLayout
+                    Grid.Row="1"
+                    Style="{StaticResource HorizontalStack}">
+                    <Label 
                     Text="Attack : " 
                     Style="{StaticResource LabelStyle}"/>
-                <Label 
+                    <Label 
                     Text="{Binding Data.Attack}" 
                     Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                </StackLayout>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
+                <StackLayout 
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Style="{StaticResource HorizontalStack}">
+                    <Label 
                     Text="Defense : " 
                     Style="{StaticResource LabelStyle}"/>
-                <Label 
+                    <Label 
                     Text="{Binding Data.Defense}" 
                     Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                </StackLayout>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
+                <StackLayout 
+                    Grid.Row="2"
+                    Style="{StaticResource HorizontalStack}">
+                    <Label 
                     Text="Speed : " 
                     Style="{StaticResource LabelStyle}"/>
-                <Label 
+                    <Label 
                     Text="{Binding Data.Speed}" 
                     Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                </StackLayout>
+            </Grid>
 
         </StackLayout>
     </ScrollView>
