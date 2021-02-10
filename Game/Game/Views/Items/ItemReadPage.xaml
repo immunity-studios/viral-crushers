@@ -96,7 +96,8 @@
 
                 <StackLayout
                     Grid.Row="0"
-                    Grid.Column="0">
+                    Grid.Column="0"
+                    Padding="5">
 
                         <Label
                             Text="Attribute: "
@@ -104,13 +105,15 @@
 
                         <ProgressBar
                             Progress="{Binding Data.Attribute, Converter={StaticResource StatToPercentageConverter}}"
+                            HeightRequest="30"
                             Style="{StaticResource StatsProgressBar}" />      
 
                 </StackLayout>
 
                 <StackLayout
                     Grid.Row="0"
-                    Grid.Column="1">
+                    Grid.Column="1"
+                    Padding="5">
 
                         <Label
                             Text="Value: "
@@ -118,6 +121,7 @@
 
                         <ProgressBar
                             Progress="{Binding Data.Value, Converter={StaticResource StatToPercentageConverter}}"
+                            HeightRequest="30"
                             Style="{StaticResource StatsProgressBar}"  />
 
                 </StackLayout>
@@ -125,6 +129,7 @@
                 <StackLayout
                     Grid.Row="1"
                     Grid.Column="0"
+                    Padding="5"
                     Style="{StaticResource HorizontalStack}">
 
                         <Label
@@ -140,6 +145,7 @@
                 <StackLayout
                     Grid.Row="1"
                     Grid.Column="1"
+                    Padding="5"
                     Style="{StaticResource HorizontalStack}">
 
                         <Label
@@ -148,6 +154,7 @@
 
                         <ProgressBar
                             Progress="{Binding Data.Range, Converter={StaticResource StatToPercentageConverter}}"
+                            HeightRequest="30"
                             Style="{StaticResource StatsProgressBar}"  />
 
                 </StackLayout>
@@ -155,6 +162,7 @@
                 <StackLayout
                     Grid.Row="2"
                     Grid.Column="0"
+                    Padding="5"
                     Style="{StaticResource HorizontalStack}">
 
                         <Label
@@ -163,6 +171,7 @@
 
                         <ProgressBar
                             Progress="{Binding Data.Damage, Converter={StaticResource StatToPercentageConverter}}"
+                            HeightRequest="30"
                             Style="{StaticResource StatsProgressBar}"  />
 
                 </StackLayout>
