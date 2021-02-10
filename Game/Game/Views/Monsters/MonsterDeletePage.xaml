@@ -27,18 +27,18 @@
                         <RowDefinition Height="30"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="90"/>
                         <ColumnDefinition Width="60"/>
-                        <ColumnDefinition Width="150"/>
-                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="110"/>
+                        <ColumnDefinition Width="10"/>
                     </Grid.ColumnDefinitions>
 
                     <Image Grid.Row="0"
                             Grid.Column="0"
                             Grid.RowSpan="5"
                             Source="{Binding Data.ImageURI}"
-                            WidthRequest="110"
-                            HeightRequest="110"
+                            WidthRequest="100"
+                            HeightRequest="100"
                             HorizontalOptions="Center"
                             Aspect="AspectFit" 
                             Style="{StaticResource ImageLargeStyle}"/>
