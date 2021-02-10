@@ -36,7 +36,8 @@ namespace Game.Views
             BindingContext = ViewModel;
         }
 
-        #region CollectionViewHandlers
+        #region CollectionView Handlers
+
         /// <summary>
         /// Select the item from the list
         /// </summary>
@@ -56,28 +57,8 @@ namespace Game.Views
             // Manually deselect item.
             CharactersCollectionView.SelectedItem = null;
         }
+
         #endregion
-
-        #region ListViewHandlers
-        /// <summary>
-        /// The row selected from the list
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
-        public async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
-        {
-            CharacterModel data = args.SelectedItem as CharacterModel;
-            if (data == null)
-            {
-                return;
-            }
-
-            // Open the Read Page
-            await Navigation.PushAsync(new CharacterReadPage(new GenericViewModel<CharacterModel>(data)));
-
-            // Manually deselect item.
-            //ItemsListView.SelectedItem = null;
-        }
 
         /// <summary>
         /// Call to Add a new record
@@ -88,7 +69,6 @@ namespace Game.Views
         {
             await Navigation.PushModalAsync(new NavigationPage(new CharacterCreatePage()));
         }
-        #endregion
 
         /// <summary>
         /// Refresh the list on page appearing

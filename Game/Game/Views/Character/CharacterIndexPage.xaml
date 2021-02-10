@@ -18,8 +18,10 @@
                         SelectionChanged="CollectionView_SelectionChanged"
                         ItemsLayout="VerticalGrid, 2"
                         x:Name="CharactersCollectionView">
+
             <CollectionView.ItemTemplate>
                 <DataTemplate>
+
                     <Grid Padding="10">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
@@ -30,34 +32,33 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
 
-                        <Image Grid.RowSpan="2" Grid.Row="0"
-                       Source="{Binding ImageURI}"
-                       Style="{StaticResource ImageMediumStyle}"
-                       Aspect="AspectFill"
-                               VerticalOptions="Center"/>
+                        <Image
+                            Grid.RowSpan="2"
+                            Grid.Row="0"
+                            Source="{Binding ImageURI}"
+                            Style="{StaticResource ImageMediumStyle}"
+                            Aspect="AspectFill"
+                            VerticalOptions="Center"/>
 
 
-                        <Label Grid.Column="1" Grid.Row="0"
-                       Text="{Binding Name}"
-                       FontAttributes="Bold"
-                       LineBreakMode="WordWrap"
-                       Style="{StaticResource ListStyle}"
-                       FontSize="Small"
-                               VerticalOptions="End"/>
+                        <Label
+                            Grid.Column="1"
+                            Grid.Row="0"
+                            Text="{Binding Name}"
+                            Style="{StaticResource IndexPageCollectionViewBoldStyle}" />
 
 
-                        <Label Grid.Row="1"
-                       Grid.Column="1"
-                       Text="{Binding Description}"
-                       LineBreakMode="WordWrap"
-                       FontAttributes="Italic"
-                       VerticalOptions="Start"
-                       Style="{StaticResource ListStyle}"
-                       FontSize="Micro"/>
+                        <Label
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Text="{Binding Description}"
+                            Style="{StaticResource IndexPageCollectionViewItalicStyle}" />
 
                     </Grid>
+
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+
     </ContentPage.Content>
 </ContentPage>
