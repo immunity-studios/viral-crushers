@@ -12,41 +12,41 @@
         <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete.png"/>
     </ContentPage.ToolbarItems>
 
-    <ScrollView VerticalOptions="CenterAndExpand"
+    <ScrollView
             HorizontalOptions="CenterAndExpand">
         <StackLayout 
-                VerticalOptions="Center" HorizontalOptions="Center">
+                Padding="20" HorizontalOptions="Center">
 
-            <Grid>
+            <!--<Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="400"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
+                </Grid.RowDefinitions>-->
+            <Frame HasShadow="True" Padding="5">
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="30"/>
                     </Grid.ColumnDefinitions>
 
                     <Image Grid.Row="0"
                             Grid.Column="0"
-                            Grid.RowSpan="4"
+                            Grid.RowSpan="5"
                             Source="{Binding Data.ImageURI}"
-                            WidthRequest="60"
-                            HeightRequest="60"
+                            WidthRequest="110"
+                            HeightRequest="110"
                             HorizontalOptions="Center"
                             Aspect="AspectFit" 
                             Style="{StaticResource ImageLargeStyle}"/>
@@ -76,6 +76,7 @@
                                 Grid.Column="2"
                                 Color="#A5FF82"
                                 WidthRequest="{Binding Data.MaxHealth}"
+                                HeightRequest="20"
                                 HorizontalOptions="Start"
                                 VerticalOptions="Start"/>
 
@@ -91,6 +92,7 @@
                                 Grid.Column="2"
                                 Color="#A32F2F"
                                 WidthRequest="{Binding Data.Attack}"
+                                HeightRequest="20"
                                 HorizontalOptions="Start"
                                 VerticalOptions="Start"/>
 
@@ -106,6 +108,7 @@
                                 Grid.Column="2"
                                 Color="#47B7C1"
                                 WidthRequest="{Binding Data.Defense}"
+                                HeightRequest="20"
                                 HorizontalOptions="Start"
                                 VerticalOptions="Start"/>
 
@@ -121,6 +124,7 @@
                                 Grid.Column="2"
                                 Color="#EACA15"
                                 WidthRequest="{Binding Data.Range}"
+                                HeightRequest="20"
                                 HorizontalOptions="Start"
                                 VerticalOptions="Start"/>
 
@@ -136,6 +140,7 @@
                                 Grid.Column="2"
                                 Color="#D693B4"
                                 WidthRequest="{Binding Data.Speed}"
+                                HeightRequest="20"
                                 HorizontalOptions="Start"
                                 VerticalOptions="Start"/>
 
@@ -144,7 +149,7 @@
                             Text="{Binding Data.Speed}"/>
 
                 </Grid>
-            </Grid>
+            </Frame>
 
             <!--<Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
 
