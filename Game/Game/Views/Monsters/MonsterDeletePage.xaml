@@ -17,14 +17,6 @@
         <StackLayout 
                 Padding="20" HorizontalOptions="Center">
 
-            <!--<Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="400"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>-->
             <Frame HasShadow="True" Padding="5">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -58,15 +50,6 @@
                             HorizontalOptions="Center"
                             FontSize="Micro"
                             TextColor="Blue"/>
-
-                    <!--<Label Grid.Row="5"
-                            Grid.Column="0"
-                            Text="{Binding Data.Description}"
-                            FontAttributes="Italic"
-                            HorizontalOptions="Center"
-                            TextColor="#606060"
-                            FontSize="Micro"
-                            VerticalOptions="Start"/>-->
 
                     <Label Grid.Row="0"
                             Grid.Column="1"
@@ -150,72 +133,6 @@
 
                 </Grid>
             </Frame>
-
-            <!--<Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
-
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                   Text="Name : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Name}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Description : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Description}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Max Health : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.MaxHealth}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Range : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Range}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Attack : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Attack}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Defense : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Defense}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Speed : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Speed}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>-->
-
 
             <StackLayout 
             HorizontalOptions="Center" 
