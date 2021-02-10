@@ -7,12 +7,6 @@
              x:Class="Game.Views.ItemReadPage"
              Title="{Binding Title}">
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Update" Clicked="Update_Clicked" IconImageSource="icon_edit.png"/>
-        <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete.png"/>
-    </ContentPage.ToolbarItems>
-
-
     <ScrollView>
 
         <Grid>
@@ -181,8 +175,11 @@
                     <ColumnDefinition />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <Button Text="Edit" HorizontalOptions="Fill" Margin="10" />
-                <Button Grid.Column="1" Text="Delete" HorizontalOptions="Fill" Margin="10"/>
+
+                <Button Text="Edit" Clicked="Update_Clicked" HorizontalOptions="Fill" Margin="10" />
+
+                <Button Grid.Column="1" Clicked="Delete_Clicked" Text="Delete" HorizontalOptions="Fill" Margin="10"/>
+
             </Grid>
         </Grid>
     </ScrollView>
