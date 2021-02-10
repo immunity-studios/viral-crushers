@@ -83,44 +83,42 @@
             </Grid>
 
 
-            <Grid Grid.Row="1">
+            <Grid Grid.Row="1" Padding="20">
                 <Grid.RowDefinitions>
                     <RowDefinition />
                     <RowDefinition />
                     <RowDefinition />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
+                    <ColumnDefinition/>
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
 
                 <StackLayout
                     Grid.Row="0"
-                    Grid.Column="0"
-                    Style="{StaticResource HorizontalStack}">
+                    Grid.Column="0">
 
                         <Label
                             Text="Attribute: "
-                            Style="{StaticResource LabelStyle}"/>
+                            Style="{StaticResource StatsBoldStyle}"/>
 
-                        <Label
-                            Text="{Binding Data.Attribute}"
-                            Style="{StaticResource ValueStyle}"/>
+                        <ProgressBar
+                            Progress="{Binding Data.Attribute, Converter={StaticResource StatToPercentageConverter}}"
+                            Style="{StaticResource StatsProgressBar}" />      
 
                 </StackLayout>
 
                 <StackLayout
                     Grid.Row="0"
-                    Grid.Column="1"
-                    Style="{StaticResource HorizontalStack}">
+                    Grid.Column="1">
 
                         <Label
                             Text="Value: "
-                            Style="{StaticResource LabelStyle}"/>
+                            Style="{StaticResource StatsBoldStyle}"/>
 
-                        <Label
-                            Text="{Binding Data.Value}"
-                            Style="{StaticResource ValueStyle}"/>
+                        <ProgressBar
+                            Progress="{Binding Data.Value, Converter={StaticResource StatToPercentageConverter}}"
+                            Style="{StaticResource StatsProgressBar}"  />
 
                 </StackLayout>
 
@@ -131,7 +129,7 @@
 
                         <Label
                             Text="Consumable: "
-                            Style="{StaticResource LabelStyle}"/>
+                            Style="{StaticResource StatsBoldStyle}"/>
 
                         <Label
                             Text="{Binding Data.Consumable}"
@@ -146,11 +144,11 @@
 
                         <Label
                             Text="Range: "
-                            Style="{StaticResource LabelStyle}"/>
+                            Style="{StaticResource StatsBoldStyle}"/>
 
-                        <Label
-                            Text="{Binding Data.Range}"
-                            Style="{StaticResource ValueStyle}"/>
+                        <ProgressBar
+                            Progress="{Binding Data.Range, Converter={StaticResource StatToPercentageConverter}}"
+                            Style="{StaticResource StatsProgressBar}"  />
 
                 </StackLayout>
 
@@ -161,11 +159,11 @@
 
                         <Label
                             Text="Damage: "
-                            Style="{StaticResource LabelStyle}"/>
+                            Style="{StaticResource StatsBoldStyle}"/>
 
-                        <Label
-                            Text="{Binding Data.Damage}"
-                            Style="{StaticResource ValueStyle}"/>
+                        <ProgressBar
+                            Progress="{Binding Data.Damage, Converter={StaticResource StatToPercentageConverter}}"
+                            Style="{StaticResource StatsProgressBar}"  />
 
                 </StackLayout>
             </Grid>
