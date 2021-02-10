@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:helpers="clr-namespace:Game.Helpers"
              mc:Ignorable="d"
              x:Class="Game.App">
 
@@ -30,7 +31,7 @@
             <Color x:Key="ViewBackgroundColor">#9db4c0</Color>
             <Color x:Key="NavigationBarColor">orange</Color>
 
-            <Color x:Key="PrimaryBackgroundColor">MediumAquamarine</Color>
+            <Color x:Key="PrimaryBackgroundColor">red</Color>
             <Color x:Key="SecondaryBackgroundColor">gray</Color>
             <Color x:Key="TriciaryBackgroundColor">lightgray</Color>
             <Color x:Key="LightBackgroundColor">#f4f1de</Color>
@@ -60,7 +61,10 @@
             <Color x:Key="BattleMapLevelColor">skyblue</Color>
 
             <!-- <Thickness x:Key="PageMargin">0</Thickness> -->
-            
+
+            <helpers:StatToPercentageConverter x:Key="StatToPercentageConverter" />
+
+
             <!-- Pages -->
             <Style TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="{StaticResource ViewBackgroundColor}" />
