@@ -108,6 +108,14 @@
                 <Setter Property="VerticalOptions" Value="Center"/>
             </Style>
 
+             <Style TargetType="Label"
+                x:Key="StatsBoldStyle"
+                BasedOn="{StaticResource LabelBaseStyle}">
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="LineBreakMode" Value="WordWrap" />
+            </Style>
+
 
             <Style TargetType="Label"
                 x:Key="IndexPageCollectionViewBoldStyle"
@@ -524,6 +532,13 @@
                 <Setter Property="FontSize" Value="Small" />
                 <Setter Property="FontAttributes" Value="None" />
                 <Setter Property="BackgroundColor" Value="{StaticResource LightBackgroundColor}" />
+            </Style>
+
+            <!-- Progress Bar -->
+            <Style TargetType="ProgressBar"
+                   x:Key="StatsProgressBar">
+                <Setter Property="ProgressColor" Value="Orchid" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
             </Style>
 
         </ResourceDictionary>
