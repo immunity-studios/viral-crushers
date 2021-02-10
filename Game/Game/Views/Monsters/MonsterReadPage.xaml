@@ -38,37 +38,6 @@
                         FontAttributes="Bold"
                         Style="{DynamicResource BodyStyle}"/>
 
-                    <!--<Frame 
-                           CornerRadius="5"
-                           Padding="8">
-                        <StackLayout>
-                            <Label Text="Name"
-                                   FontSize="Small"/>
-
-                            <BoxView 
-                                     HeightRequest="2"
-                                     HorizontalOptions="Fill" />
-                            <Label 
-                                    Text="{Binding Data.Name}" 
-                                    FontAttributes="Bold"
-                                    FontSize="Medium"
-                                    Style="{StaticResource ValueStyle}"/>
-
-                            <Label Text="Description"
-                                   FontSize="Small"/>
-
-                            <BoxView 
-                                     HeightRequest="2"
-                                     HorizontalOptions="Fill" />
-                            <Label 
-                                    Text="{Binding Data.Description}" 
-                                    FontAttributes="Bold"
-                                    FontSize="Medium"
-                                    Style="{StaticResource ValueStyle}"/>
-                            
-                        </StackLayout>
-                    </Frame>-->
-
                     <Label 
                         Text="{Binding Data.Description}" 
                         LineBreakMode="WordWrap"
