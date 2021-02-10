@@ -81,40 +81,6 @@ namespace UnitTests.Views
         }
 
         [Test]
-        public void ItemIndexPage_OnItemSelected_Clicked_Default_Should_Pass()
-        {
-            // Arrange
-
-            var selectedItem = new ItemModel();
-
-            var selectedItemChangedEventArgs = new SelectedItemChangedEventArgs(selectedItem, 0);
-
-            // Act
-            page.OnItemSelected(null, selectedItemChangedEventArgs);
-
-            // Reset
-
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
-
-        [Test]
-        public void ItemIndexPage_OnItemSelected_Clicked_Invalid_Null_Should_Fail()
-        {
-            // Arrange
-
-            var selectedItemChangedEventArgs = new SelectedItemChangedEventArgs(null, 0);
-
-            // Act
-            page.OnItemSelected(null, selectedItemChangedEventArgs);
-
-            // Reset
-
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
-
-        [Test]
         public void ItemIndexPage_OnAppearing_Valid_Should_Pass()
         {
             // Arrange
