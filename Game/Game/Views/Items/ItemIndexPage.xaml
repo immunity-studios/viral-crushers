@@ -16,6 +16,7 @@
 
         <CollectionView ItemsSource="{Binding Dataset}"
                         SelectionMode="Single"
+                        SelectionChanged="CollectionView_SelectionChanged"
                         ItemsLayout="VerticalGrid, 2"
                         x:Name="ItemsCollectionView">
 

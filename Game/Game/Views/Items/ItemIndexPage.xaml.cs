@@ -35,14 +35,16 @@ namespace Game.Views
             BindingContext = ViewModel;
         }
 
+        #region CollectionView Handlers
+
         /// <summary>
-        /// The row selected from the list
+        /// Select the item from the list
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        public async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        public async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs args)
         {
-            ItemModel data = args.SelectedItem as ItemModel;
+            ItemModel data = ItemsCollectionView.SelectedItem as ItemModel;
             if (data == null)
             {
                 return;
@@ -52,8 +54,10 @@ namespace Game.Views
             await Navigation.PushAsync(new ItemReadPage(new GenericViewModel<ItemModel>(data)));
 
             // Manually deselect item.
-            //ItemsListView.SelectedItem = null;
+            ItemsCollectionView.SelectedItem = null;
         }
+
+        #endregion
 
         /// <summary>
         /// Call to Add a new record
