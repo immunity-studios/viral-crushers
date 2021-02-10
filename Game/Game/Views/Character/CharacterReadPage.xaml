@@ -71,7 +71,8 @@
                             Color="#A32F2F"
                             WidthRequest="{Binding Data.MaxHealth}"
                             HorizontalOptions="Start"
-                            VerticalOptions="Start"/>
+                            VerticalOptions="Start"
+                            ScaleX="50"/>
                 </StackLayout>
 
                 <StackLayout Grid.Column="1">
@@ -90,7 +91,8 @@
                         Color="Blue"
                         WidthRequest="{Binding Data.Range}"
                         HorizontalOptions="Start"
-                        VerticalOptions="Start"/>
+                        VerticalOptions="Start"
+                        ScaleX="50"/>
                 </StackLayout>
 
                 <StackLayout 
@@ -110,7 +112,8 @@
                         Color="Yellow"
                         WidthRequest="{Binding Data.Attack}"
                         HorizontalOptions="Start"
-                        VerticalOptions="Start"/>
+                        VerticalOptions="Start"
+                        ScaleX="50"/>
                 </StackLayout>
 
                 <StackLayout 
@@ -132,7 +135,8 @@
                         Color="Green"
                         WidthRequest="{Binding Data.Defense}"
                         HorizontalOptions="Start"
-                        VerticalOptions="Start"/>
+                        VerticalOptions="Start"
+                        ScaleX="50"/>
                 </StackLayout>
 
                 <StackLayout 
@@ -152,7 +156,8 @@
                         Color="Purple"
                         WidthRequest="{Binding Data.Speed}"
                         HorizontalOptions="Start"
-                        VerticalOptions="Start"/>
+                        VerticalOptions="Start"
+                        ScaleX="50"/>
                 </StackLayout>
             </Grid>
 
