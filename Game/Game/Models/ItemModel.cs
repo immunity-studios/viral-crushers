@@ -39,6 +39,9 @@ namespace Game.Models
         // Tracks if the item is a consumable or not
         public bool IsConsumable { get; set; } = false;
 
+        // The type of the item in the game
+        public ItemTypeEnum ItemType { get; set; } = ItemTypeEnum.Unknown;
+
         //// The Category of the itme
         //public int Category { get; set; } = 0;
 
