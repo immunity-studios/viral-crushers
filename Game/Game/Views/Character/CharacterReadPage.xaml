@@ -14,19 +14,28 @@
 
 
     <ScrollView>
-        <StackLayout Style="{StaticResource OuterBoxStack}"
-            Spacing="10">
 
-            <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid HorizontalOptions="Fill" Margin="20">
                 <Grid.RowDefinitions>
-                    <RowDefinition />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
                 </Grid.ColumnDefinitions>
 
-                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                <Image
+                    Grid.RowSpan="3"
+                    Grid.Row="0"
+                    Source="{Binding Data.ImageURI}"
+                    Style="{StaticResource ImageLargeStyle}" />
 
                 <StackLayout Grid.Column="1"
                              HorizontalOptions="Fill">
@@ -43,124 +52,137 @@
                         LineBreakMode="WordWrap"
                         FontAttributes="Italic" 
                         Style="{StaticResource ValueStyle}"/>
+
                 </StackLayout>
+
             </Grid>
 
-            <Grid>
+
+            <Grid Grid.Row="1" Padding="20">
                 <Grid.RowDefinitions>
                     <RowDefinition />
                     <RowDefinition />
                     <RowDefinition />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition/>
+                    <ColumnDefinition />
                 </Grid.ColumnDefinitions>
 
-                <StackLayout>
+                <StackLayout
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Padding="5">
+
                     <StackLayout Style="{StaticResource HorizontalStack}">
                         <Label 
-                            Text="Max Health : " 
-                            Style="{StaticResource LabelStyle}"/>
+                        Text="Max Health: " 
+                        Style="{StaticResource StatsBoldStyle}"/>
+
                         <Label 
-                            Text="{Binding Data.MaxHealth}" 
-                            Style="{StaticResource ValueStyle}"/>
+                        Text=" {Binding Data.MaxHealth}" 
+                        Style="{StaticResource StatsBoldStyle}"/>
                     </StackLayout>
 
-                    <BoxView 
-                            Color="#A32F2F"
-                            WidthRequest="{Binding Data.MaxHealth}"
-                            HorizontalOptions="Start"
-                            VerticalOptions="Start"
-                            ScaleX="50"/>
+                    <ProgressBar
+                        Progress="{Binding Data.MaxHealth, Converter={StaticResource StatToPercentageConverter}}"
+                        HeightRequest="30"
+                        Style="{StaticResource StatsProgressBar}" />
+
                 </StackLayout>
 
-                <StackLayout Grid.Column="1">
-                    <StackLayout                    
-                        Style="{StaticResource HorizontalStack}">
+                <StackLayout
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Padding="5">
+
+                    <StackLayout Style="{StaticResource HorizontalStack}">
+                        <Label 
+                        Text="Range: " 
+                        Style="{StaticResource StatsBoldStyle}"/>
 
                         <Label 
-                            Text="Range : " 
-                            Style="{StaticResource LabelStyle}"/>
-                        <Label 
-                            Text="{Binding Data.Range}" 
-                            Style="{StaticResource ValueStyle}"/>
+                        Text=" {Binding Data.Range}" 
+                        Style="{StaticResource StatsBoldStyle}"/>
                     </StackLayout>
 
-                    <BoxView 
-                        Color="Blue"
-                        WidthRequest="{Binding Data.Range}"
-                        HorizontalOptions="Start"
-                        VerticalOptions="Start"
-                        ScaleX="50"/>
+                    <ProgressBar
+                        Progress="{Binding Data.Range, Converter={StaticResource StatToPercentageConverter}}"
+                        HeightRequest="30"
+                        Style="{StaticResource StatsProgressBar}" />
+
                 </StackLayout>
 
-                <StackLayout 
-                    Grid.Row="1">
-                    <StackLayout 
-                        Style="{StaticResource HorizontalStack}">
-
-                        <Label 
-                            Text="Attack : " 
-                            Style="{StaticResource LabelStyle}"/>
-                        <Label 
-                            Text="{Binding Data.Attack}" 
-                            Style="{StaticResource ValueStyle}"/>
-                    </StackLayout>
-
-                    <BoxView 
-                        Color="Yellow"
-                        WidthRequest="{Binding Data.Attack}"
-                        HorizontalOptions="Start"
-                        VerticalOptions="Start"
-                        ScaleX="50"/>
-                </StackLayout>
-
-                <StackLayout 
+                <StackLayout
                     Grid.Row="1"
-                    Grid.Column="1">
-                    <StackLayout
-                        Style="{StaticResource HorizontalStack}"
-                        HorizontalOptions="Start">
+                    Grid.Column="0"
+                    Padding="5">
+
+                    <StackLayout Style="{StaticResource HorizontalStack}">
+                        <Label 
+                        Text="Attack: " 
+                        Style="{StaticResource StatsBoldStyle}"/>
 
                         <Label 
-                            Text="Defense : " 
-                            Style="{StaticResource LabelStyle}"/>
-                        <Label 
-                            Text="{Binding Data.Defense}" 
-                            Style="{StaticResource ValueStyle}"/>
+                        Text=" {Binding Data.Attack}" 
+                        Style="{StaticResource StatsBoldStyle}"/>
                     </StackLayout>
 
-                    <BoxView 
-                        Color="Green"
-                        WidthRequest="{Binding Data.Defense}"
-                        HorizontalOptions="Start"
-                        VerticalOptions="Start"
-                        ScaleX="50"/>
+                    <ProgressBar
+                        Progress="{Binding Data.Attack, Converter={StaticResource StatToPercentageConverter}}"
+                        HeightRequest="30"
+                        Style="{StaticResource StatsProgressBar}" />
+
                 </StackLayout>
 
-                <StackLayout 
-                    Grid.Row="2">
+                <StackLayout
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Padding="5">
+
+                    <StackLayout
+                        Style="{StaticResource HorizontalStack}">
+
+                        <Label 
+                        Text="Defense: " 
+                        Style="{StaticResource StatsBoldStyle}"/>
+
+                        <Label 
+                        Text=" {Binding Data.Defense}" 
+                        Style="{StaticResource StatsBoldStyle}"/>
+                    </StackLayout>
+
+                    <ProgressBar
+                        Progress="{Binding Data.Defense, Converter={StaticResource StatToPercentageConverter}}"
+                        HeightRequest="30"
+                        Style="{StaticResource StatsProgressBar}" />
+
+                </StackLayout>
+
+                <StackLayout
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Padding="5">
+
                     <StackLayout 
                         Style="{StaticResource HorizontalStack}">
 
                         <Label 
-                            Text="Speed : "                        
-                            Style="{StaticResource LabelStyle}"/>
+                        Text="Speed: "                        
+                        Style="{StaticResource StatsBoldStyle}"/>
                         <Label 
-                            Text="{Binding Data.Speed}" 
-                            Style="{StaticResource ValueStyle}"/>
+                        Text=" {Binding Data.Speed}" 
+                        Style="{StaticResource StatsBoldStyle}"/>
                     </StackLayout>
 
-                    <BoxView 
-                        Color="Purple"
-                        WidthRequest="{Binding Data.Speed}"
-                        HorizontalOptions="Start"
-                        VerticalOptions="Start"
-                        ScaleX="50"/>
+                    <ProgressBar
+                        Progress="{Binding Data.Speed, Converter={StaticResource StatToPercentageConverter}}"
+                        HeightRequest="30"
+                        Style="{StaticResource StatsProgressBar}" />
+
                 </StackLayout>
             </Grid>
+        </Grid>
 
-        </StackLayout>
     </ScrollView>
 </ContentPage>
