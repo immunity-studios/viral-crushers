@@ -144,8 +144,7 @@
                         <CheckBox
                             IsChecked="{Binding Data.IsConsumable}"
                             IsEnabled="False"
-                            Color="Orchid"
-                            Style="{StaticResource ValueStyle}"/>
+                            Color="Orchid" />
 
                 </StackLayout>
 
