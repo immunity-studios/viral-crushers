@@ -27,7 +27,7 @@ namespace Game.GameRules
                     ItemType = ItemTypeEnum.HandSoap,
                 },
                 new ItemModel {
-                    Name = "Box of Tissues",
+                    Name = "Tissue Box",
                     Description = "",
                     ImageURI = "icon_tissue_box.png",
                     IsConsumable = true,
