@@ -25,6 +25,7 @@
                     <Grid Padding="10">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
@@ -33,7 +34,7 @@
                         </Grid.ColumnDefinitions>
 
                         <Image
-                            Grid.RowSpan="2"
+                            Grid.RowSpan="3"
                             Grid.Row="0"
                             Source="{Binding ImageURI}"
                             Style="{StaticResource ImageMediumStyle}"
@@ -47,12 +48,21 @@
                             Text="{Binding Name}"
                             Style="{StaticResource IndexPageCollectionViewBoldStyle}" />
 
+                        <Label
+                            Grid.Column="1"
+                            Grid.Row="1"
+                            Text="{Binding Job}"
+                            FontAttributes="Italic"
+                            FontSize="Small"
+                            VerticalOptions="End"
+                            LineBreakMode="WordWrap"/>
+
 
                         <Label
-                            Grid.Row="1"
+                            Grid.Row="2"
                             Grid.Column="1"
                             Text="{Binding Description}"
-                            Style="{StaticResource IndexPageCollectionViewItalicStyle}" />
+                            VerticalOptions="Start" />
 
                     </Grid>
 
