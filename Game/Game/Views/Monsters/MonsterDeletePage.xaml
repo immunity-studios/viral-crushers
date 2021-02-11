@@ -49,7 +49,7 @@
                             FontAttributes="Bold"
                             HorizontalOptions="Center"
                             FontSize="Micro"
-                            TextColor="DarkBlue"/>
+                            TextColor="Blue"/>
 
                     <Label Grid.Row="0"
                            Grid.Column="1"
