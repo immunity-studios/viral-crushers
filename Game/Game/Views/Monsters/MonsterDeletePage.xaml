@@ -52,57 +52,43 @@
 
                     <Label Grid.Row="0"
                            Grid.Column="1"
-                           Text="HP"/>
+                           Text="Attack"/>
 
                     <ProgressBar
                         Grid.Row="0"
                         Grid.Column="2"
-                        Progress="{Binding Data.MaxHealth, Converter={StaticResource StatToPercentageConverter}}" 
+                        Progress="{Binding Data.Attack, Converter={StaticResource StatToPercentageConverter}}" 
                         Style="{StaticResource StatsProgressBar}"/>
 
                     <Label Grid.Row="0"
                            Grid.Column="3"
-                           Text="{Binding Data.MaxHealth}"/>
-
-                    <Label Grid.Row="1"
-                           Grid.Column="1"
-                           Text="Attack"/>
-
-                    <ProgressBar
-                        Grid.Row="1"
-                        Grid.Column="2"
-                        Progress="{Binding Data.Attack, Converter={StaticResource StatToPercentageConverter}}"
-                        Style="{StaticResource StatsProgressBar}"/>
-
-                    <Label Grid.Row="1"
-                           Grid.Column="3"
                            Text="{Binding Data.Attack}"/>
 
-                    <Label Grid.Row="2"
+                    <Label Grid.Row="1"
                            Grid.Column="1"
                            Text="Defense"/>
 
                     <ProgressBar
-                        Grid.Row="2"
+                        Grid.Row="1"
                         Grid.Column="2"
                         Progress="{Binding Data.Defense, Converter={StaticResource StatToPercentageConverter}}"
-                        Style="{StaticResource StatsProgressBar}" />
+                        Style="{StaticResource StatsProgressBar}"/>
 
-                    <Label Grid.Row="2"
+                    <Label Grid.Row="1"
                            Grid.Column="3"
                            Text="{Binding Data.Defense}"/>
 
-                    <Label Grid.Row="3"
+                    <Label Grid.Row="2"
                            Grid.Column="1"
                            Text="Speed"/>
 
                     <ProgressBar
-                        Grid.Row="3"
+                        Grid.Row="2"
                         Grid.Column="2"
                         Progress="{Binding Data.Speed, Converter={StaticResource StatToPercentageConverter}}"
                         Style="{StaticResource StatsProgressBar}" />
 
-                    <Label Grid.Row="3"
+                    <Label Grid.Row="2"
                            Grid.Column="3"
                            Text="{Binding Data.Speed}"/>
 
