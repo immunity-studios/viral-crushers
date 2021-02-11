@@ -75,6 +75,7 @@
 
                         <Label
                             Text="{Binding Data.Description}"
+                            LineBreakMode="WordWrap"
                             Style="{StaticResource ValueStyle}"/>
 
                 </StackLayout>
