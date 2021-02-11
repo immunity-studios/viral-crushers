@@ -1,4 +1,8 @@
-﻿namespace Game.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Game.Models
 {
     public enum ItemTypeEnum
     {
@@ -18,5 +22,27 @@
         HazmatSuit = 6,
         Panacea = 5,
         InvisibleCloak = 3
+    }
+
+
+    /// <summary>
+    /// Helper for Item Types
+    /// </summary>
+    public static class ItemTypeEnumHelper
+    {
+        /// <summary>
+        /// Gets the list of Types that an Item can have.
+        /// </summary>
+        public static List<string> GetListItem
+        {
+            get
+            {
+                var myList = Enum.GetNames(typeof(ItemTypeEnum));
+                var myReturn = myList.Where(item => item != ItemTypeEnum.Unknown.ToString())
+                                     .OrderBy(a => a)
+                                     .ToList();
+                return myReturn;
+            }
+        }
     }
 }
