@@ -95,29 +95,15 @@
 
                     <Label Grid.Row="3"
                            Grid.Column="1"
-                           Text="Range"/>
+                           Text="Speed"/>
 
                     <ProgressBar
                         Grid.Row="3"
                         Grid.Column="2"
-                        Progress="{Binding Data.Range, Converter={StaticResource StatToPercentageConverter}}"
-                        Style="{StaticResource StatsProgressBar}" />
-
-                    <Label Grid.Row="3"
-                           Grid.Column="3"
-                           Text="{Binding Data.Range}"/>
-
-                    <Label Grid.Row="4"
-                           Grid.Column="1"
-                           Text="Speed"/>
-
-                    <ProgressBar
-                        Grid.Row="4"
-                        Grid.Column="2"
                         Progress="{Binding Data.Speed, Converter={StaticResource StatToPercentageConverter}}"
                         Style="{StaticResource StatsProgressBar}" />
 
-                    <Label Grid.Row="4"
+                    <Label Grid.Row="3"
                            Grid.Column="3"
                            Text="{Binding Data.Speed}"/>
 
