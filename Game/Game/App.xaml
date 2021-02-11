@@ -31,7 +31,7 @@
             <Color x:Key="ViewBackgroundColor">#9db4c0</Color>
             <Color x:Key="NavigationBarColor">orange</Color>
 
-            <Color x:Key="PrimaryBackgroundColor">red</Color>
+            <Color x:Key="PrimaryBackgroundColor">#9db4c0</Color>
             <Color x:Key="SecondaryBackgroundColor">gray</Color>
             <Color x:Key="TriciaryBackgroundColor">lightgray</Color>
             <Color x:Key="LightBackgroundColor">#f4f1de</Color>
