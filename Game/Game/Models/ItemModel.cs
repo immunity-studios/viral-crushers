@@ -50,7 +50,8 @@ namespace Game.Models
         /// </summary>
         public ItemModel()
         {
-            ImageURI = ItemService.DefaultImageURI;
+            //ImageURI = ItemService.DefaultImageURI;
+            ImageURI = "icon_gift.png";
         }
 
         /// <summary>
