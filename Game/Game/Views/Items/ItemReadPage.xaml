@@ -40,11 +40,11 @@
 
                         <Label
                             Text="Name: "
-                            Style="{StaticResource LabelStyle}"/>
+                            Style="{StaticResource StatsBoldStyle}"/>
 
                         <Label
                             Text="{Binding Data.Name}"
-                            Style="{StaticResource ValueStyle}"/>
+                            Style="{StaticResource StatsBoldStyle}"/>
 
                 </StackLayout>
 
@@ -56,23 +56,22 @@
 
                         <Label
                             Text="Location: "
-                            Style="{StaticResource LabelStyle}"/>
+                            Style="{StaticResource StatsBoldStyle}"/>
 
                         <Label
                             Text="{Binding Data.Location}"
-                            Style="{StaticResource ValueStyle}"/>
+                            Style="{StaticResource StatsBoldStyle}"/>
 
                 </StackLayout>
 
 
                 <StackLayout
                     Grid.Row="2"
-                    Grid.Column="1"
-                    Style="{StaticResource HorizontalStack}">
+                    Grid.Column="1">
 
                         <Label
                             Text="Description: "
-                            Style="{StaticResource LabelStyle}"/>
+                            Style="{StaticResource StatsBoldStyle}"/>
 
                         <Label
                             Text="{Binding Data.Description}"
