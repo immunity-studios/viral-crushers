@@ -83,15 +83,14 @@ namespace Game.Models
             Value = newData.Value;
             Attribute = newData.Attribute;
             Location = newData.Location;
-            Name = newData.Name;
             Description = newData.Description;
             ImageURI = newData.ImageURI;
             Range = newData.Range;
             Damage = newData.Damage;
 
             //Guid = newData.Guid;
-            //Count = newData.Count;
-            //IsConsumable = newData.IsConsumable;
+            Count = newData.Count;
+            IsConsumable = newData.IsConsumable;
             //Category = newData.Category;
 
             return true;
