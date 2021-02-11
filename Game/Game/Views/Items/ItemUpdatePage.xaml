@@ -51,26 +51,35 @@
                         Style="{StaticResource EntryStyle}"/>
 
                     <Label Grid.Row="1" Grid.Column="0"
+                           Text="Type"
+                           Style="{StaticResource LabelStyle}"/>
+
+                    <Picker Grid.Row="1" Grid.Column="1"
+                        ItemsSource="{x:Static local:ItemTypeEnumHelper.GetListItem}" 
+                        SelectedItem="{Binding Data.ItemType, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                        x:Name="ItemTypePicker"/>
+
+                    <Label Grid.Row="2" Grid.Column="0"
                         Text="Description" 
                         Style="{StaticResource LabelStyle}"/>
 
-                    <Editor Grid.Row="1" Grid.Column="1"
+                    <Editor Grid.Row="2" Grid.Column="1"
                         Text="{Binding Data.Description}"/>
 
-                    <Label Grid.Row="2" Grid.Column="0"
+                    <Label Grid.Row="3" Grid.Column="0"
                         Text="Location" 
                         Style="{StaticResource LabelStyle}"/>
 
-                    <Picker Grid.Row="2" Grid.Column="1"
+                    <Picker Grid.Row="3" Grid.Column="1"
                         ItemsSource="{x:Static local:ItemLocationEnumHelper.GetListCharacter}" 
                         SelectedItem="{Binding Data.Location, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
                         x:Name="LocationPicker"/>
 
-                    <Label Grid.Row="3" Grid.Column="0"
+                    <Label Grid.Row="4" Grid.Column="0"
                         Text="Attribute" 
                         Style="{StaticResource LabelStyle}"/>
 
-                    <Picker Grid.Row="3" Grid.Column="1"
+                    <Picker Grid.Row="4" Grid.Column="1"
                         ItemsSource="{x:Static local:AttributeEnumHelper.GetListCharacter}" 
                         SelectedItem="{Binding Data.Attribute, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
                         x:Name="AttributePicker"/>
