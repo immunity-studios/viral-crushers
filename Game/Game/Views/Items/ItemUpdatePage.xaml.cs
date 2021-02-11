@@ -44,6 +44,14 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Save_Clicked(object sender, EventArgs e)
         {
+            // check if the user has entered a valid name before saving
+            if (string.IsNullOrEmpty(ViewModel.Data.Name))
+            {
+                // create popup to tell user they need to add a valid name
+                await DisplayAlert("Error", "You must enter a valid name.", "OK");
+                return;
+            }
+
             // If the image in the data box is empty, use the default one..
             if (string.IsNullOrEmpty(ViewModel.Data.ImageURI))
             {
