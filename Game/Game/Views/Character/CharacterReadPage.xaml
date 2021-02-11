@@ -182,6 +182,18 @@
 
                 </StackLayout>
             </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Button Text="Edit" Clicked="Update_Clicked" HorizontalOptions="Fill" Margin="10" />
+
+                <Button Grid.Column="1" Clicked="Delete_Clicked" Text="Delete" HorizontalOptions="Fill" Margin="10"/>
+
+            </Grid>
         </Grid>
 
     </ScrollView>
