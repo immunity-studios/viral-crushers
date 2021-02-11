@@ -16,8 +16,8 @@ namespace Game.GameRules
             var datalist = new List<ItemModel>()
             {
                 new ItemModel {
-                    Name = "I1",
-                    Description = "I1",
+                    Name = "Hand Soap",
+                    Description = "",
                     ImageURI = "item.png",
                     Range = 2,
                     Damage = 10,
@@ -26,8 +26,8 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.CurrentHealth
                 },
                 new ItemModel {
-                    Name = "I2",
-                    Description = "I2",
+                    Name = "Box o Tissues",
+                    Description = "",
                     ImageURI = "item.png",
                     Range = 10,
                     Damage = 1,
@@ -36,8 +36,8 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Attack
                 },
                 new ItemModel {
-                    Name = "I3",
-                    Description = "I3",
+                    Name = "Mask",
+                    Description = "",
                     ImageURI = "item.png",
                     Range = 10,
                     Damage = 10,
@@ -46,8 +46,8 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Speed
                 },
                 new ItemModel {
-                    Name = "I4",
-                    Description = "I4",
+                    Name = "Sanitizer",
+                    Description = "",
                     ImageURI = "item.png",
                     Range = 10,
                     Damage = 5,
@@ -56,8 +56,8 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.MaxHealth
                 },
                 new ItemModel {
-                    Name = "I5",
-                    Description = "I5",
+                    Name = "Face Shield",
+                    Description = "",
                     ImageURI = "item.png",
                     Range = 4,
                     Damage = 10,
@@ -66,8 +66,8 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Defense
                 },
                 new ItemModel {
-                    Name = "I6",
-                    Description = "I6",
+                    Name = "Soup",
+                    Description = "",
                     ImageURI = "item.png",
                     Range = 3,
                     Damage = 9,
@@ -75,24 +75,97 @@ namespace Game.GameRules
                     Location = ItemLocationEnum.Feet,
                     Attribute = AttributeEnum.Attack
                 },
-            };
-
-            for (int i = 0; i < 20; i++)
-            {
-                var item = new ItemModel
-                {
+                new ItemModel {
+                    Name = "Bug Spray",
+                    Description = "",
                     ImageURI = "item.png",
-                    Range = 8,
+                    Range = 3,
                     Damage = 9,
-                    Value = 2,
-                    Location = ItemLocationEnum.PrimaryHand,
+                    Value = 6,
+                    Location = ItemLocationEnum.Feet,
                     Attribute = AttributeEnum.Attack
-                };
-                item.Name = "I" + (datalist.Count+1).ToString();
-                item.Description = item.Name;
-
-                datalist.Add(item);
-            }
+                },
+                new ItemModel {
+                    Name = "Mosquito Net",
+                    Description = "",
+                    ImageURI = "item.png",
+                    Range = 3,
+                    Damage = 9,
+                    Value = 6,
+                    Location = ItemLocationEnum.Feet,
+                    Attribute = AttributeEnum.Attack
+                },
+                new ItemModel {
+                    Name = "Goggles",
+                    Description = "",
+                    ImageURI = "item.png",
+                    Range = 3,
+                    Damage = 9,
+                    Value = 6,
+                    Location = ItemLocationEnum.Feet,
+                    Attribute = AttributeEnum.Attack
+                },
+                new ItemModel {
+                    Name = "Gloves",
+                    Description = "",
+                    ImageURI = "item.png",
+                    Range = 3,
+                    Damage = 9,
+                    Value = 6,
+                    Location = ItemLocationEnum.Feet,
+                    Attribute = AttributeEnum.Attack
+                },
+                new ItemModel {
+                    Name = "Vaccine",
+                    Description = "",
+                    ImageURI = "item.png",
+                    Range = 3,
+                    Damage = 9,
+                    Value = 6,
+                    Location = ItemLocationEnum.Feet,
+                    Attribute = AttributeEnum.Attack
+                },
+                new ItemModel {
+                    Name = "Medicine",
+                    Description = "",
+                    ImageURI = "item.png",
+                    Range = 3,
+                    Damage = 9,
+                    Value = 6,
+                    Location = ItemLocationEnum.Feet,
+                    Attribute = AttributeEnum.Attack
+                },
+                new ItemModel {
+                    Name = "Hazmat Suit",
+                    Description = "",
+                    ImageURI = "item.png",
+                    Range = 3,
+                    Damage = 9,
+                    Value = 6,
+                    Location = ItemLocationEnum.Feet,
+                    Attribute = AttributeEnum.Attack
+                },
+                new ItemModel {
+                    Name = "Panacea",
+                    Description = "",
+                    ImageURI = "item.png",
+                    Range = 3,
+                    Damage = 9,
+                    Value = 6,
+                    Location = ItemLocationEnum.Feet,
+                    Attribute = AttributeEnum.Attack
+                },
+                new ItemModel {
+                    Name = "Invisible Cloak",
+                    Description = "",
+                    ImageURI = "item.png",
+                    Range = 3,
+                    Damage = 9,
+                    Value = 6,
+                    Location = ItemLocationEnum.Feet,
+                    Attribute = AttributeEnum.Attack
+                }
+            };
 
             return datalist;
         }
