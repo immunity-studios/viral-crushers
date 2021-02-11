@@ -40,7 +40,22 @@ namespace Game.Models
         public bool IsConsumable { get; set; } = false;
 
         // The type of the item in the game
-        public ItemTypeEnum ItemType { get; set; } = ItemTypeEnum.Unknown;
+        private ItemTypeEnum itemType = ItemTypeEnum.Unknown;
+        public ItemTypeEnum ItemType
+        {
+            get => itemType;
+            set
+            {
+                if (itemType == value)
+                {
+                    return;
+                }
+
+                itemType = value;
+                IsConsumable = value.IsConsumableItemType();
+                Count = value.CountOfConsumable();
+            }
+        }
 
         //// The Category of the itme
         //public int Category { get; set; } = 0;
@@ -92,6 +107,7 @@ namespace Game.Models
             Count = newData.Count;
             IsConsumable = newData.IsConsumable;
             //Category = newData.Category;
+            ItemType = newData.ItemType;
 
             return true;
         }
