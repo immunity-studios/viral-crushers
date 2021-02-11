@@ -135,24 +135,39 @@
     <Content Include="icon_add.png" />
     <Content Include="icon_athlete.png" />
     <Content Include="icon_blue_monster.png" />
+    <Content Include="icon_bug_spray.png" />
     <Content Include="icon_cancel.png" />
     <Content Include="icon_character.png" />
     <Content Include="icon_delete.png" />
     <Content Include="icon_doctor.png" />
     <Content Include="icon_edit.png" />
+    <Content Include="icon_face_shield.png" />
     <Content Include="icon_firefighter.png" />
+    <Content Include="icon_gift.png" />
+    <Content Include="icon_gloves.png" />
+    <Content Include="icon_goggles.png" />
     <Content Include="icon_green_monster.png" />
+    <Content Include="icon_hand_soap.png" />
+    <Content Include="icon_hazmat_suit.png" />
     <Content Include="icon_hospital.png" />
+    <Content Include="icon_invisible_cloak.png" />
     <Content Include="icon_magenta_monster.png" />
+    <Content Include="icon_mask.png" />
+    <Content Include="icon_medicine.png" />
+    <Content Include="icon_mosquito_net.png" />
     <Content Include="icon_neon_green_monster.png" />
     <Content Include="icon_new.png" />
     <Content Include="icon_officer.png" />
     <Content Include="icon_orange_monster.png" />
+    <Content Include="icon_panacea.png" />
     <Content Include="icon_purple_monster.png" />
     <Content Include="icon_red_monster.png" />
+    <Content Include="icon_sanitizer.png" />
     <Content Include="icon_save.png" />
+    <Content Include="icon_soup.png" />
     <Content Include="icon_student.png" />
     <Content Include="icon_teacher.png" />
+    <Content Include="icon_tissue_box.png" />
     <Content Include="item.png" />
     <Content Include="mapcell.png" />
     <Content Include="Properties\Default.rd.xml" />
@@ -183,6 +198,7 @@
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="vaccine.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
