@@ -7,12 +7,6 @@
              x:Class="Game.Views.MonsterReadPage"
              Title="{Binding Title}">
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Update" Clicked="Update_Clicked" IconImageSource="icon_edit.png"/>
-        <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete.png"/>
-    </ContentPage.ToolbarItems>
-
-
     <ScrollView>
         <Grid>
             <Grid.RowDefinitions>
@@ -77,7 +71,7 @@
                         <Label 
                         Text="Max Health: " 
                         Style="{StaticResource StatsBoldStyle}"/>
-                        
+
                         <Label 
                         Text="{Binding Data.MaxHealth}" 
                         Style="{StaticResource StatsBoldStyle}"/>
@@ -99,7 +93,7 @@
                         <Label 
                         Text="Range : " 
                         Style="{StaticResource StatsBoldStyle}"/>
-                        
+
                         <Label 
                         Text="{Binding Data.Range}" 
                         Style="{StaticResource StatsBoldStyle}"/>
@@ -121,7 +115,7 @@
                         <Label 
                         Text="Attack : " 
                         Style="{StaticResource StatsBoldStyle}"/>
-                        
+
                         <Label 
                         Text="{Binding Data.Attack}" 
                         Style="{StaticResource StatsBoldStyle}"/>
@@ -145,7 +139,7 @@
                         <Label 
                         Text="Defense : " 
                         Style="{StaticResource StatsBoldStyle}"/>
-                        
+
                         <Label 
                         Text="{Binding Data.Defense}" 
                         Style="{StaticResource StatsBoldStyle}"/>
@@ -194,143 +188,6 @@
 
             </Grid>
         </Grid>
-        
-        <!--<Grid HorizontalOptions="Fill">
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                
-                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
-
-                <StackLayout Grid.Column="1"
-                             HorizontalOptions="Fill">
-
-                    <Label 
-                        Text="{Binding Data.Name}" 
-                        TextTransform="Uppercase"
-                        FontSize="Medium"
-                        FontAttributes="Bold"
-                        Style="{DynamicResource BodyStyle}"/>
-
-                    <Label 
-                        Text="{Binding Data.Description}" 
-                        LineBreakMode="WordWrap"
-                        FontAttributes="Italic" 
-                        Style="{StaticResource ValueStyle}"/>
-
-                </StackLayout>
-                
-        </Grid>
-
-
-        <Grid Padding="20">
-            <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-
-            <StackLayout Padding="5">
-                <StackLayout Style="{StaticResource HorizontalStack}">
-                    <Label 
-                        Text="Max Health : " 
-                        Style="{StaticResource LabelStyle}"/>
-                    <Label 
-                        Text="{Binding Data.MaxHealth}" 
-                        Style="{StaticResource ValueStyle}"/>
-                </StackLayout>
-
-                <ProgressBar
-                        Progress="{Binding Data.MaxHealth, Converter={StaticResource StatToPercentageConverter}}"
-                        HeightRequest="30"
-                        Style="{StaticResource StatsProgressBar}" />
-            </StackLayout>
-
-            <StackLayout Grid.Column="1" Padding="5">
-                <StackLayout                    
-                    Style="{StaticResource HorizontalStack}">
-                    
-                    <Label 
-                        Text="Range : " 
-                        Style="{StaticResource LabelStyle}"/>
-                    <Label 
-                        Text="{Binding Data.Range}" 
-                        Style="{StaticResource ValueStyle}"/>
-                </StackLayout>
-
-                <ProgressBar
-                        Progress="{Binding Data.Range, Converter={StaticResource StatToPercentageConverter}}"
-                        HeightRequest="30"
-                        Style="{StaticResource StatsProgressBar}" />
-            </StackLayout>
-
-            <StackLayout Padding="5"
-                Grid.Row="1">
-                <StackLayout 
-                    Style="{StaticResource HorizontalStack}">
-                    
-                    <Label 
-                        Text="Attack : " 
-                        Style="{StaticResource LabelStyle}"/>
-                    <Label 
-                        Text="{Binding Data.Attack}" 
-                        Style="{StaticResource ValueStyle}"/>
-                </StackLayout>
-
-                <ProgressBar
-                        Progress="{Binding Data.Attack, Converter={StaticResource StatToPercentageConverter}}"
-                        HeightRequest="30"
-                        Style="{StaticResource StatsProgressBar}" />
-            </StackLayout>
-
-            <StackLayout Padding="5"
-                Grid.Row="1"
-                Grid.Column="1">
-                <StackLayout
-                    Style="{StaticResource HorizontalStack}"
-                    HorizontalOptions="Start">
-                    
-                    <Label 
-                        Text="Defense : " 
-                        Style="{StaticResource LabelStyle}"/>
-                    <Label 
-                        Text="{Binding Data.Defense}" 
-                        Style="{StaticResource ValueStyle}"/>
-                </StackLayout>
-
-                <ProgressBar
-                        Progress="{Binding Data.Defense, Converter={StaticResource StatToPercentageConverter}}"
-                        HeightRequest="30"
-                        Style="{StaticResource StatsProgressBar}" />
-            </StackLayout>
-
-            <StackLayout Padding="5"
-                Grid.Row="2">
-                <StackLayout 
-                    Style="{StaticResource HorizontalStack}">
-                    
-                    <Label 
-                        Text="Speed : "                        
-                        Style="{StaticResource LabelStyle}"/>
-                    <Label 
-                        Text="{Binding Data.Speed}" 
-                        Style="{StaticResource ValueStyle}"/>
-                </StackLayout>
-
-                <ProgressBar
-                        Progress="{Binding Data.Speed, Converter={StaticResource StatToPercentageConverter}}"
-                        HeightRequest="30"
-                        Style="{StaticResource StatsProgressBar}" />
-            </StackLayout>
-        </Grid>-->
 
     </ScrollView>
 </ContentPage>
