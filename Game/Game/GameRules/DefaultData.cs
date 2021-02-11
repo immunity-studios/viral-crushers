@@ -240,7 +240,8 @@ namespace Game.GameRules
         var datalist = new List<CharacterModel>()
             {
                 new CharacterModel {
-                    Name = "Doctor",
+                    Name = "Mark",
+                    Job = CharacterJobEnum.Doctor,
                     Description = "Creates vaccine",
                     Level = 1,
                     MaxHealth = 5,
@@ -255,7 +256,8 @@ namespace Game.GameRules
                 },
 
                 new CharacterModel {
-                    Name = "Teacher",
+                    Name = "Emily",
+                    Job = CharacterJobEnum.Teacher,
                     Description = "Increases speed (+10%) for all characters",
                     Level = 1,
                     MaxHealth = 5,
@@ -270,7 +272,8 @@ namespace Game.GameRules
                 },
 
                 new CharacterModel {
-                    Name = "Athlete",
+                    Name = "Ashley",
+                    Job = CharacterJobEnum.Athlete,
                     Description = "Increases defense (+10%) for all characters & Go first in the next level",
                     Level = 1,
                     MaxHealth = 5,
@@ -285,7 +288,8 @@ namespace Game.GameRules
                 },
 
                 new CharacterModel {
-                    Name = "Police Officer",
+                    Name = "Jeff",
+                    Job = CharacterJobEnum.PoliceOfficer,
                     Description = "Increases attack (+10%) for all characters",
                     Level = 1,
                     MaxHealth = 5,
@@ -300,7 +304,8 @@ namespace Game.GameRules
                 },
 
                 new CharacterModel {
-                    Name = "College Student",
+                    Name = "Penny",
+                    Job = CharacterJobEnum.CollegeStudent,
                     Description = "Decreases defense (-10%) of all monsters",
                     Level = 1,
                     MaxHealth = 5,
@@ -315,7 +320,8 @@ namespace Game.GameRules
                 },
 
                 new CharacterModel {
-                    Name = "Firefighter",
+                    Name = "Wendy",
+                    Job = CharacterJobEnum.Firefighter,
                     Description = "Makes Panacea",
                     Level = 1,
                     MaxHealth = 5,
