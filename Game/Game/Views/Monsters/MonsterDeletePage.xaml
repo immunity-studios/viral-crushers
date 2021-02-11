@@ -18,19 +18,19 @@
                 Padding="20" HorizontalOptions="Center">
 
             <Frame HasShadow="True" Padding="5">
-                <Grid>
+                <Grid RowSpacing="5" ColumnSpacing="5">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="90"/>
                         <ColumnDefinition Width="60"/>
-                        <ColumnDefinition Width="110"/>
-                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="20"/>
                     </Grid.ColumnDefinitions>
 
                     <Image Grid.Row="0"
@@ -49,87 +49,77 @@
                             FontAttributes="Bold"
                             HorizontalOptions="Center"
                             FontSize="Micro"
-                            TextColor="Blue"/>
+                            TextColor="DarkBlue"/>
 
                     <Label Grid.Row="0"
-                            Grid.Column="1"
-                            Text="HP"/>
+                           Grid.Column="1"
+                           Text="HP"/>
 
-                    <BoxView Grid.Row="0"
-                                Grid.Column="2"
-                                Color="#A5FF82"
-                                WidthRequest="{Binding Data.MaxHealth}"
-                                HeightRequest="20"
-                                HorizontalOptions="Start"
-                                VerticalOptions="Start"/>
+                    <ProgressBar
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        Progress="{Binding Data.MaxHealth, Converter={StaticResource StatToPercentageConverter}}" 
+                        Style="{StaticResource StatsProgressBar}"/>
 
                     <Label Grid.Row="0"
-                            Grid.Column="3"
-                            Text="{Binding Data.MaxHealth}"/>
+                           Grid.Column="3"
+                           Text="{Binding Data.MaxHealth}"/>
 
                     <Label Grid.Row="1"
-                            Grid.Column="1"
-                            Text="Attack"/>
+                           Grid.Column="1"
+                           Text="Attack"/>
 
-                    <BoxView Grid.Row="1"
-                                Grid.Column="2"
-                                Color="#A32F2F"
-                                WidthRequest="{Binding Data.Attack}"
-                                HeightRequest="20"
-                                HorizontalOptions="Start"
-                                VerticalOptions="Start"/>
+                    <ProgressBar
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        Progress="{Binding Data.Attack, Converter={StaticResource StatToPercentageConverter}}"
+                        Style="{StaticResource StatsProgressBar}"/>
 
                     <Label Grid.Row="1"
-                            Grid.Column="3"
-                            Text="{Binding Data.Attack}"/>
+                           Grid.Column="3"
+                           Text="{Binding Data.Attack}"/>
 
                     <Label Grid.Row="2"
-                            Grid.Column="1"
-                            Text="Defense"/>
+                           Grid.Column="1"
+                           Text="Defense"/>
 
-                    <BoxView Grid.Row="2"
-                                Grid.Column="2"
-                                Color="#47B7C1"
-                                WidthRequest="{Binding Data.Defense}"
-                                HeightRequest="20"
-                                HorizontalOptions="Start"
-                                VerticalOptions="Start"/>
+                    <ProgressBar
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        Progress="{Binding Data.Defense, Converter={StaticResource StatToPercentageConverter}}"
+                        Style="{StaticResource StatsProgressBar}" />
 
                     <Label Grid.Row="2"
-                            Grid.Column="3"
-                            Text="{Binding Data.Defense}"/>
+                           Grid.Column="3"
+                           Text="{Binding Data.Defense}"/>
 
                     <Label Grid.Row="3"
-                            Grid.Column="1"
-                            Text="Range"/>
+                           Grid.Column="1"
+                           Text="Range"/>
 
-                    <BoxView Grid.Row="3"
-                                Grid.Column="2"
-                                Color="#EACA15"
-                                WidthRequest="{Binding Data.Range}"
-                                HeightRequest="20"
-                                HorizontalOptions="Start"
-                                VerticalOptions="Start"/>
+                    <ProgressBar
+                        Grid.Row="3"
+                        Grid.Column="2"
+                        Progress="{Binding Data.Range, Converter={StaticResource StatToPercentageConverter}}"
+                        Style="{StaticResource StatsProgressBar}" />
 
                     <Label Grid.Row="3"
-                            Grid.Column="3"
-                            Text="{Binding Data.Range}"/>
+                           Grid.Column="3"
+                           Text="{Binding Data.Range}"/>
 
                     <Label Grid.Row="4"
-                            Grid.Column="1"
-                            Text="Speed"/>
+                           Grid.Column="1"
+                           Text="Speed"/>
 
-                    <BoxView Grid.Row="4"
-                                Grid.Column="2"
-                                Color="#D693B4"
-                                WidthRequest="{Binding Data.Speed}"
-                                HeightRequest="20"
-                                HorizontalOptions="Start"
-                                VerticalOptions="Start"/>
+                    <ProgressBar
+                        Grid.Row="4"
+                        Grid.Column="2"
+                        Progress="{Binding Data.Speed, Converter={StaticResource StatToPercentageConverter}}"
+                        Style="{StaticResource StatsProgressBar}" />
 
                     <Label Grid.Row="4"
-                            Grid.Column="3"
-                            Text="{Binding Data.Speed}"/>
+                           Grid.Column="3"
+                           Text="{Binding Data.Speed}"/>
 
                 </Grid>
             </Frame>
