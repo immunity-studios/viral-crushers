@@ -16,26 +16,48 @@
         <StackLayout Style="{StaticResource OuterBoxStack}"
                 Spacing="10">
 
-            <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+            <Frame HasShadow="True" Padding="5">
+                <Grid RowSpacing="5" ColumnSpacing="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                   Text="Name : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Name}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    <Image Grid.RowSpan="3"
+                           Source="{Binding Data.ImageURI}"/>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Description : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Description}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    <Label Grid.Column="1"
+                            Text="{Binding Data.Name}" 
+                            TextTransform="Uppercase"
+                            FontSize="Medium"
+                            Style="{DynamicResource BodyStyle}"/>
 
+                    <StackLayout Grid.Column="1"
+                                 Grid.Row="1"
+                                Style="{StaticResource HorizontalStack}">
+
+                        <Label Text="{Binding Data.Attribute}" />
+                        <Label Text=": +" />
+                        <Label Text="{Binding Data.Value}" />
+
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="1"
+                                 Grid.Row="2"
+                                Style="{StaticResource HorizontalStack}">
+
+                        <Label Text="Location: " />
+                        <Label Text="{Binding Data.Location}" />
+
+                    </StackLayout>
+
+                </Grid>
+            </Frame>
 
             <StackLayout 
             HorizontalOptions="Center" 
