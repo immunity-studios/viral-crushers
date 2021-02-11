@@ -141,8 +141,10 @@
                             Text="Consumable: "
                             Style="{StaticResource StatsBoldStyle}"/>
 
-                        <Label
-                            Text="{Binding Data.Consumable}"
+                        <CheckBox
+                            IsChecked="{Binding Data.IsConsumable}"
+                            IsEnabled="False"
+                            Color="Orchid"
                             Style="{StaticResource ValueStyle}"/>
 
                 </StackLayout>
