@@ -41,6 +41,14 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Save_Clicked(object sender, EventArgs e)
         {
+            // check if the user has entered a valid name before saving
+            if (string.IsNullOrEmpty(ViewModel.Data.Name))
+            {
+                // create popup to tell user they need to add a valid name
+                await DisplayAlert("Error", "You must enter a valid name.", "OK");
+                return;
+            }
+
             MessagingCenter.Send(this, "Update", ViewModel.Data);
             await Navigation.PopModalAsync();
         }
