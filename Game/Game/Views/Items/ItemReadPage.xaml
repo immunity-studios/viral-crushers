@@ -20,6 +20,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
@@ -48,9 +49,24 @@
 
                 </StackLayout>
 
+                
+                <StackLayout
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Style="{StaticResource HorizontalStack}">
+
+                        <Label
+                            Text="Type: "
+                            Style="{StaticResource StatsBoldStyle}"/>
+
+                        <Label
+                            Text="{Binding Data.ItemType}"
+                            Style="{StaticResource StatsBoldStyle}"/>
+
+                </StackLayout>
 
                  <StackLayout
-                    Grid.Row="1"
+                    Grid.Row="2"
                      Grid.Column="1"
                     Style="{StaticResource HorizontalStack}">
 
@@ -66,7 +82,7 @@
 
 
                 <StackLayout
-                    Grid.Row="2"
+                    Grid.Row="3"
                     Grid.Column="1">
 
                         <Label
