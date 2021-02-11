@@ -92,16 +92,16 @@
 
                     <StackLayout Style="{StaticResource HorizontalStack}">
                         <Label 
-                        Text="Range: " 
+                        Text="Speed: " 
                         Style="{StaticResource StatsBoldStyle}"/>
 
                         <Label 
-                        Text=" {Binding Data.Range}" 
+                        Text=" {Binding Data.Speed}" 
                         Style="{StaticResource StatsBoldStyle}"/>
                     </StackLayout>
 
                     <ProgressBar
-                        Progress="{Binding Data.Range, Converter={StaticResource StatToPercentageConverter}}"
+                        Progress="{Binding Data.Speed, Converter={StaticResource StatToPercentageConverter}}"
                         HeightRequest="30"
                         Style="{StaticResource StatsProgressBar}" />
 
@@ -148,29 +148,6 @@
 
                     <ProgressBar
                         Progress="{Binding Data.Defense, Converter={StaticResource StatToPercentageConverter}}"
-                        HeightRequest="30"
-                        Style="{StaticResource StatsProgressBar}" />
-
-                </StackLayout>
-
-                <StackLayout
-                    Grid.Row="2"
-                    Grid.Column="0"
-                    Padding="5">
-
-                    <StackLayout 
-                        Style="{StaticResource HorizontalStack}">
-
-                        <Label 
-                        Text="Speed: "                        
-                        Style="{StaticResource StatsBoldStyle}"/>
-                        <Label 
-                        Text=" {Binding Data.Speed}" 
-                        Style="{StaticResource StatsBoldStyle}"/>
-                    </StackLayout>
-
-                    <ProgressBar
-                        Progress="{Binding Data.Speed, Converter={StaticResource StatToPercentageConverter}}"
                         HeightRequest="30"
                         Style="{StaticResource StatsProgressBar}" />
 
