@@ -42,6 +42,13 @@
                         Style="{DynamicResource BodyStyle}"/>
 
                     <Label 
+                        Text="{Binding Data.Job}" 
+                        TextTransform="Default"
+                        FontSize="Small"
+                        FontAttributes="None"
+                        Style="{DynamicResource BodyStyle}"/>
+
+                    <Label 
                         Text="{Binding Data.Description}" 
                         LineBreakMode="WordWrap"
                         FontAttributes="Italic" 
