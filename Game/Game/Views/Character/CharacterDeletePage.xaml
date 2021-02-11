@@ -24,7 +24,6 @@
                         <RowDefinition Height="20"/>
                         <RowDefinition Height="20"/>
                         <RowDefinition Height="20"/>
-                        <RowDefinition Height="20"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="90"/>
@@ -35,15 +34,15 @@
 
                     <Image Grid.Row="0"
                             Grid.Column="0"
-                            Grid.RowSpan="5"
+                            Grid.RowSpan="3"
                             Source="{Binding Data.ImageURI}"
-                            WidthRequest="100"
-                            HeightRequest="100"
+                            WidthRequest="90"
+                            HeightRequest="90"
                             HorizontalOptions="Center"
                             Aspect="AspectFit" 
                             Style="{StaticResource ImageLargeStyle}"/>
 
-                    <Label Grid.Row="4" 
+                    <Label Grid.Row="3" 
                             Grid.Column="0"
                             Text="{Binding Data.Name}"
                             FontAttributes="Bold"
