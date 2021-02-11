@@ -1,4 +1,8 @@
-﻿namespace Game.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Game.Models
 {
     /// <summary>
     /// The Types of Jobs a character can have
@@ -84,4 +88,28 @@
             return Message;
         }
     }
+
+    /// <summary>
+    /// Helper for Character Jobs
+    /// </summary>
+    public static class CharacterJobEnumHelper
+    {
+        /// <summary>
+        /// Gets the list of Character Jobs that a Character can have.
+        /// </summary>
+        public static List<string> GetListItem
+        {
+            get
+            {
+                var myList = Enum.GetNames(typeof(CharacterJobEnum)).ToList();
+
+                var myReturn = myList.OrderBy(a => a).ToList();
+
+                return myReturn;
+            }
+        }
+
+        
+    }
+
 }

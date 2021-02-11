@@ -58,10 +58,19 @@
                         Style="{StaticResource EntryStyle}"/>
 
                     <Label Grid.Row="2" Grid.Column="0"
+                        Text="Type" 
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <Picker Grid.Row="2" Grid.Column="1"
+                        ItemsSource="{x:Static local_enum:CharacterJobEnumHelper.GetListItem}" 
+                        SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                        x:Name="CharacterTypePicker"/>
+
+                    <Label Grid.Row="3" Grid.Column="0"
                         Text="Image" 
                         Style="{StaticResource LabelStyle}"/>
 
-                    <StackLayout Grid.Row="2" Grid.Column="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="FillAndExpand">
+                    <StackLayout Grid.Row="3" Grid.Column="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="FillAndExpand">
 
                         <Image 
                             Source="{Binding Data.ImageURI}"
