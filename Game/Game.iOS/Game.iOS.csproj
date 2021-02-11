@@ -279,4 +279,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\icon_bug_spray.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_vaccine.png" />
+  </ItemGroup>
 </Project>

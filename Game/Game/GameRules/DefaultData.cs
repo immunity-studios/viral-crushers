@@ -18,7 +18,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Hand Soap",
                     Description = "",
-                    ImageURI = "item.png",
+                    ImageURI = "icon_hand_soap.png",
                     Range = 2,
                     Damage = 10,
                     Value = 7,
@@ -26,9 +26,9 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.CurrentHealth
                 },
                 new ItemModel {
-                    Name = "Box o Tissues",
+                    Name = "Box of Tissues",
                     Description = "",
-                    ImageURI = "item.png",
+                    ImageURI = "icon_tissue_box.png",
                     Range = 10,
                     Damage = 1,
                     Value = 9,
@@ -38,7 +38,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Mask",
                     Description = "",
-                    ImageURI = "item.png",
+                    ImageURI = "icon_mask.png",
                     Range = 10,
                     Damage = 10,
                     Value = 2,
@@ -48,7 +48,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Sanitizer",
                     Description = "",
-                    ImageURI = "item.png",
+                    ImageURI = "icon_sanitizer.png",
                     Range = 10,
                     Damage = 5,
                     Value = 9,
@@ -58,7 +58,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Face Shield",
                     Description = "",
-                    ImageURI = "item.png",
+                    ImageURI = "icon_face_shield.png",
                     Range = 4,
                     Damage = 10,
                     Value = 1,
@@ -68,7 +68,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Soup",
                     Description = "",
-                    ImageURI = "item.png",
+                    ImageURI = "icon_soup.png",
                     Range = 3,
                     Damage = 9,
                     Value = 6,
@@ -78,7 +78,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Bug Spray",
                     Description = "",
-                    ImageURI = "item.png",
+                    ImageURI = "icon_bug_spray.png",
                     Range = 3,
                     Damage = 9,
                     Value = 6,
@@ -88,7 +88,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Mosquito Net",
                     Description = "",
-                    ImageURI = "item.png",
+                    ImageURI = "icon_mosquito_net.png",
                     Range = 3,
                     Damage = 9,
                     Value = 6,
@@ -98,7 +98,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Goggles",
                     Description = "",
-                    ImageURI = "item.png",
+                    ImageURI = "icon_goggles.png",
                     Range = 3,
                     Damage = 9,
                     Value = 6,
@@ -108,7 +108,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Gloves",
                     Description = "",
-                    ImageURI = "item.png",
+                    ImageURI = "icon_gloves.png",
                     Range = 3,
                     Damage = 9,
                     Value = 6,
@@ -118,7 +118,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Vaccine",
                     Description = "",
-                    ImageURI = "item.png",
+                    ImageURI = "icon_vaccine.png",
                     Range = 3,
                     Damage = 9,
                     Value = 6,
@@ -128,7 +128,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Medicine",
                     Description = "",
-                    ImageURI = "item.png",
+                    ImageURI = "icon_medicine.png",
                     Range = 3,
                     Damage = 9,
                     Value = 6,
@@ -138,7 +138,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Hazmat Suit",
                     Description = "",
-                    ImageURI = "item.png",
+                    ImageURI = "icon_hazmat_suit.png",
                     Range = 3,
                     Damage = 9,
                     Value = 6,
@@ -148,7 +148,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Panacea",
                     Description = "",
-                    ImageURI = "item.png",
+                    ImageURI = "icon_panacea.png",
                     Range = 3,
                     Damage = 9,
                     Value = 6,
@@ -158,7 +158,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Invisible Cloak",
                     Description = "",
-                    ImageURI = "item.png",
+                    ImageURI = "icon_invisible_cloak.png",
                     Range = 3,
                     Damage = 9,
                     Value = 6,
