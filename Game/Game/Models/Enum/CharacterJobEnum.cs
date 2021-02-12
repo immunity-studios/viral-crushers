@@ -13,12 +13,6 @@ namespace Game.Models
         // Not specified
         Unknown = 0,    
 
-        //// Fighters hit hard and have fight abilities
-        //Fighter = 10,
-
-        //// Clerics defend well and have buff abilities
-        //Cleric = 12,
-
         // Doctor can create vaccine
         Doctor = 18,
 
@@ -103,7 +97,8 @@ namespace Game.Models
             {
                 var myList = Enum.GetNames(typeof(CharacterJobEnum)).ToList();
 
-                var myReturn = myList.OrderBy(a => a).ToList();
+                var myReturn = myList.Where(job => job !=         CharacterJobEnum.Unknown.ToString())
+                    .OrderBy(a => a).ToList();
 
                 return myReturn;
             }
