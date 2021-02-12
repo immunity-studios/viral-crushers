@@ -33,7 +33,51 @@ namespace Game.Views
 
             BindingContext = this.ViewModel = data;
 
-            SpecialAbilityLabel.Text = data.Data.SpecialAbility.ToMessage();
+            String SpecialAbility = "";
+
+            switch (data.Data.Job)
+            {
+                case CharacterJobEnum.Doctor:
+                    SpecialAbility = 
+                    SpecialAbilityEnumHelper.GetListDoctor[0];
+                    break;
+
+                case CharacterJobEnum.Teacher:
+                    SpecialAbility =
+                    SpecialAbilityEnumHelper.GetListTeacher[0];
+                    break;
+
+                case CharacterJobEnum.Athlete:
+                    SpecialAbility =
+                    SpecialAbilityEnumHelper.GetListAthlete[0];
+                    break;
+
+                case CharacterJobEnum.PoliceOfficer:
+                    SpecialAbility =
+                    SpecialAbilityEnumHelper.GetListPoliceOfficer[0];
+                    break;
+
+                case CharacterJobEnum.CollegeStudent:
+                    SpecialAbility =
+                    SpecialAbilityEnumHelper.GetListCollegeStudent[0];
+                    break;
+
+                case CharacterJobEnum.Firefighter:
+                    SpecialAbility =
+                    SpecialAbilityEnumHelper.GetListFireFighter[0];
+                    break;
+
+                case CharacterJobEnum.Unknown:
+                default:
+                    break;
+            }
+
+            if (SpecialAbility.Length != 0)
+            {
+                SpecialAbilityLabel.Text = SpcialAbilityEnumExtensions.ToMessage(SpecialAbilityEnumHelper.ConvertStringToEnum(SpecialAbility));
+            }
+            
+
         }
 
         /// <summary>
