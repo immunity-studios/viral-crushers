@@ -59,12 +59,14 @@
                             LineBreakMode="WordWrap"/>
 
 
-                        <Label
-                            Grid.Row="2"
-                            Grid.Column="1"
-                            Text="{Binding SpecialAbility}"
-                            VerticalOptions="Start"
-                            x:Name="SpecialAbilityLabel"/>
+                        <Label Grid.Row="2"
+                       Grid.Column="1"
+                       Text="{Binding Description}"
+                       LineBreakMode="WordWrap"
+                       FontAttributes="Italic"
+                       VerticalOptions="Start"
+                       Style="{StaticResource ListStyle}"
+                       FontSize="Small"/>
 
                     </Grid>
 
