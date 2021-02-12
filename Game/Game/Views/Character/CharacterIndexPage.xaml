@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local_enum="clr-namespace:Game.Models"
              mc:Ignorable="d"
              x:Name="BrowseItemsPage"
              x:Class="Game.Views.CharacterIndexPage"
@@ -62,7 +63,8 @@
                             Grid.Row="2"
                             Grid.Column="1"
                             Text="{Binding SpecialAbility}"
-                            VerticalOptions="Start" />
+                            VerticalOptions="Start"
+                            x:Name="SpecialAbilityLabel"/>
 
                     </Grid>
 

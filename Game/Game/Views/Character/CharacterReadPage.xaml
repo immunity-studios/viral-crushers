@@ -45,7 +45,7 @@
                         Text="{Binding Data.Job}" 
                         TextTransform="Default"
                         FontSize="Small"
-                        FontAttributes="None"
+                        FontAttributes="Italic"
                         Style="{DynamicResource BodyStyle}"/>
 
                     <Label 
@@ -53,6 +53,13 @@
                         LineBreakMode="WordWrap"
                         FontAttributes="Italic" 
                         Style="{StaticResource ValueStyle}"/>
+
+                    <Label 
+                        Text="{Binding Data.SpecialAbility}" 
+                        LineBreakMode="WordWrap"
+                        FontAttributes="Italic" 
+                        Style="{StaticResource ValueStyle}"
+                        x:Name="SpecialAbilityLabel"/>
 
                 </StackLayout>
 

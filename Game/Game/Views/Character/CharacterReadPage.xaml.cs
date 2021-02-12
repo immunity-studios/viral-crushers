@@ -32,6 +32,8 @@ namespace Game.Views
             InitializeComponent();
 
             BindingContext = this.ViewModel = data;
+
+            SpecialAbilityLabel.Text = data.Data.SpecialAbility.ToMessage();
         }
 
         /// <summary>
