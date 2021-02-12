@@ -16,7 +16,7 @@ namespace Game.Views
 		public HomePage()
 		{
 			InitializeComponent();
-			//AudioEngine.AudioResources.MX_MENU_SONG1_FULL_LOOP.Play(); // Start menu music loop
+			// TODO Start menu music here
 		}
 
 		/// <summary>
@@ -26,8 +26,10 @@ namespace Game.Views
 		/// <param name="e"></param>
 		public async void GameButton_Clicked(object sender, EventArgs e)
         {
-			//AudioEngine.AudioResources.MENU_CLICK_SOUND.Play(); // Play test click sound
-			await Navigation.PushAsync(new GamePage()); // Navigate to Game Page from Home Page			
+			// Update audio engine that start button has been pressed
+			AudioEngine.AudioEngine.Instance.ProcessAudioEvent(AudioEngine.AudioEngineEventEnum.Button_GameStart);
+			// Navigate to Game Page from Home Page	
+			await Navigation.PushAsync(new GamePage()); 		
 		}
 	}
 }
