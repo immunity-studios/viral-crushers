@@ -27,7 +27,7 @@ namespace Game.Views
 		public async void GameButton_Clicked(object sender, EventArgs e)
         {
 			// Update audio engine that start button has been pressed
-			AudioEngine.AudioEngine.Instance.ProcessAudioEvent(AudioEngine.AudioEngineEventEnum.Button_GameStart);
+			AudioSystem.AudioEngine.Instance.ProcessAudioEvent(AudioSystem.AudioEngineEventEnum.Button_GameStart);
 			// Navigate to Game Page from Home Page	
 			await Navigation.PushAsync(new GamePage()); 		
 		}

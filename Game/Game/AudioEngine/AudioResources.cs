@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Game.AudioEngine
+namespace Game.AudioSystem
 {
     /// <summary>
     /// Collection of game sounds that are loaded at compilation time.

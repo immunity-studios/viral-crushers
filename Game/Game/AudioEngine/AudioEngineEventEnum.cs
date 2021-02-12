@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Game.AudioEngine
+namespace Game.AudioSystem
 {
     /// <summary>
     /// Enum which contains all the supported events in the audio engine.

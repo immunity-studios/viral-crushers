@@ -1,6 +1,6 @@
 ﻿using Plugin.SimpleAudioPlayer;
 
-namespace Game.AudioEngine
+namespace Game.AudioSystem
 {
     /// <summary>
     /// Class which manages loading and settings, and
