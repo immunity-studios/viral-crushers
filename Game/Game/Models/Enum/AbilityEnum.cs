@@ -16,12 +16,9 @@ namespace Game.Models
         // Not specified
         None = 1,
 
-        // General Abilities 10 Range
         // Heal Self
         Bandage = 10,
 
-
-        // Fighter Abilities > 20 Range
         // Buff Speed
         Nimble = 21,
 
@@ -31,8 +28,6 @@ namespace Game.Models
         // Buff Attack
         Focus = 23,
 
-
-        // Cleric Abilities > 50 Range
         // Buff Speed
         Quick = 51,
 
@@ -123,46 +118,9 @@ namespace Game.Models
             }
         }
 
-        ///// <summary>
-        ///// Returns a list of strings of the enum for Fighter
-        ///// </summary>
-        //public static List<string> GetListFighter
-        //{
-        //    get
-        //    {
-        //        List<string> AbilityList = new List<string>{
-        //        AbilityEnum.Nimble.ToString(),
-        //        AbilityEnum.Toughness.ToString(),
-        //        AbilityEnum.Focus.ToString()
-        //        };
-
-        //        AbilityList.AddRange(GetListOthers);
-        //        return AbilityList;
-        //    }
-        //}
-
-        ///// <summary>
-        ///// Returns a list of strings of the enum for Cleric
-        ///// </summary>
-        //public static List<string> GetListCleric
-        //{
-        //    get
-        //    {
-
-        //        List<string> AbilityList = new List<string>{
-        //        AbilityEnum.Quick.ToString(),
-        //        AbilityEnum.Barrier.ToString(),
-        //        AbilityEnum.Curse.ToString(),
-        //        AbilityEnum.Heal.ToString()
-        //        };
-
-        //        AbilityList.AddRange(GetListOthers);
-        //        return AbilityList;
-        //    }
-        //}
 
         /// <summary>
-        /// Returns a list of strings of the enum for Cleric
+        /// Returns a list of strings of the enum for Doctor
         /// </summary>
         public static List<string> GetListDoctor
         {
@@ -181,21 +139,122 @@ namespace Game.Models
             }
         }
 
+
+        /// <summary>
+        /// Returns a list of strings of the enum for Teacher
+        /// </summary>
+        public static List<string> GetListTeacher
+        {
+            get
+            {
+                List<string> AbilityList = new List<string>{
+                AbilityEnum.Quick.ToString(),
+                AbilityEnum.Barrier.ToString(),
+                AbilityEnum.Curse.ToString(),
+                AbilityEnum.Heal.ToString()
+                };
+
+                 AbilityList.AddRange(GetListOthers);
+                return AbilityList;
+            }
+        }
+
+
+        /// <summary>
+        /// Returns a list of strings of the enum for Athlete
+        /// </summary>
+        public static List<string> GetListAthlete
+        {
+            get
+            {
+                List<string> AbilityList = new List<string>{
+                AbilityEnum.Quick.ToString(),
+                AbilityEnum.Barrier.ToString(),
+                AbilityEnum.Curse.ToString(),
+                AbilityEnum.Heal.ToString()
+                };
+
+                AbilityList.AddRange(GetListOthers);
+                return AbilityList;
+            }
+        }
+
+
+        /// <summary>
+        /// Returns a list of strings of the enum for Police Officer
+        /// </summary>
+        public static List<string> GetListPoliceOfficer
+        {
+            get
+            {
+                List<string> AbilityList = new List<string>{
+                AbilityEnum.Quick.ToString(),
+                AbilityEnum.Barrier.ToString(),
+                AbilityEnum.Curse.ToString(),
+                AbilityEnum.Heal.ToString()
+                };
+
+                AbilityList.AddRange(GetListOthers);
+                return AbilityList;
+            }
+        }
+
+
+        /// <summary>
+        /// Returns a list of strings of the enum for College Student
+        /// </summary>
+        public static List<string> GetListCollegeStudent
+        {
+            get
+            {
+                List<string> AbilityList = new List<string>{
+                AbilityEnum.Quick.ToString(),
+                AbilityEnum.Barrier.ToString(),
+                AbilityEnum.Curse.ToString(),
+                AbilityEnum.Heal.ToString()
+                };
+
+                AbilityList.AddRange(GetListOthers);
+                return AbilityList;
+            }
+        }
+
+
+        /// <summary>
+        /// Returns a list of strings of the enum for Firefighter
+        /// </summary>
+        public static List<string> GetListFireFighter
+        {
+            get
+            {
+                List<string> AbilityList = new List<string>{
+                AbilityEnum.Quick.ToString(),
+                AbilityEnum.Barrier.ToString(),
+                AbilityEnum.Curse.ToString(),
+                AbilityEnum.Heal.ToString()
+                };
+
+                AbilityList.AddRange(GetListOthers);
+                return AbilityList;
+            }
+        }
+
+
         /// <summary>
         /// Returns a list of strings of the enum of not Cleric or Fighter
         /// </summary>
         public static List<string> GetListOthers
-        {
-            get
-            {
+                {
+                    get
+                    {
 
-                List<string> AbilityList = new List<string>{
-                AbilityEnum.Bandage.ToString(),
-                };
+                        List<string> AbilityList = new List<string>{
+                        AbilityEnum.Bandage.ToString(),
+                        };
 
-                return AbilityList;
-            }
-        }
+                        return AbilityList;
+                    }
+                }
 
         /// <summary>
         /// Given the String for an enum, return its value.  That allows for the enums to be numbered 2,4,6 rather than 1,2,3
