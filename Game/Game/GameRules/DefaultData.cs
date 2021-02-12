@@ -237,12 +237,13 @@ namespace Game.GameRules
         var RightFingerString = ItemIndexViewModel.Instance.GetDefaultItemId(ItemLocationEnum.Finger);
         var LeftFingerString = ItemIndexViewModel.Instance.GetDefaultItemId(ItemLocationEnum.Finger);
 
-        var datalist = new List<CharacterModel>()
+            var datalist = new List<CharacterModel>()
             {
                 new CharacterModel {
                     Name = "Mark",
                     Job = CharacterJobEnum.Doctor,
                     Description = "Creates vaccine",
+                    SpecialAbility = SpecialAbilityEnum.MakeVaccine,
                     Level = 1,
                     MaxHealth = 5,
                     ImageURI = "icon_doctor.png",
@@ -259,6 +260,7 @@ namespace Game.GameRules
                     Name = "Emily",
                     Job = CharacterJobEnum.Teacher,
                     Description = "Increases speed (+10%) for all characters",
+                    SpecialAbility = SpecialAbilityEnum.IncreaseSpeed,
                     Level = 1,
                     MaxHealth = 5,
                     ImageURI = "icon_teacher.png",
@@ -275,6 +277,7 @@ namespace Game.GameRules
                     Name = "Ashley",
                     Job = CharacterJobEnum.Athlete,
                     Description = "Increases defense (+10%) for all characters & Go first in the next level",
+                    SpecialAbility = SpecialAbilityEnum.IncreaseDefense,
                     Level = 1,
                     MaxHealth = 5,
                     ImageURI = "icon_athlete.png",
@@ -291,6 +294,7 @@ namespace Game.GameRules
                     Name = "Jeff",
                     Job = CharacterJobEnum.PoliceOfficer,
                     Description = "Increases attack (+10%) for all characters",
+                    SpecialAbility = SpecialAbilityEnum.IncreaseAttack,
                     Level = 1,
                     MaxHealth = 5,
                     ImageURI = "icon_officer.png",
@@ -307,6 +311,7 @@ namespace Game.GameRules
                     Name = "Penny",
                     Job = CharacterJobEnum.CollegeStudent,
                     Description = "Decreases defense (-10%) of all monsters",
+                    SpecialAbility = SpecialAbilityEnum.WeakenDefense,
                     Level = 1,
                     MaxHealth = 5,
                     ImageURI = "icon_student.png",
@@ -323,6 +328,7 @@ namespace Game.GameRules
                     Name = "Wendy",
                     Job = CharacterJobEnum.Firefighter,
                     Description = "Makes Panacea",
+                    SpecialAbility = SpecialAbilityEnum.MakePanacea,
                     Level = 1,
                     MaxHealth = 5,
                     ImageURI = "icon_firefighter.png",

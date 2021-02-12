@@ -61,7 +61,7 @@
                         <Label
                             Grid.Row="2"
                             Grid.Column="1"
-                            Text="{Binding Description}"
+                            Text="{Binding SpecialAbility}"
                             VerticalOptions="Start" />
 
                     </Grid>
