@@ -126,7 +126,6 @@ namespace Game.Models
         {
             get
             {
-
                 List<string> AbilityList = new List<string>{
                 AbilityEnum.Quick.ToString(),
                 AbilityEnum.Barrier.ToString(),
