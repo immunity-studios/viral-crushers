@@ -9,6 +9,9 @@ namespace Game.Models
     /// </summary>
     public class CharacterModel : BasePlayerModel<CharacterModel>
     {
+
+        public SpecialAbilityEnum SpecialAbility { get; set; } = SpecialAbilityEnum.Unknown;
+
         /// <summary>
         /// Default character
         /// 
@@ -18,15 +21,16 @@ namespace Game.Models
         {
             PlayerType = PlayerTypeEnum.Character;
             Guid = Id;
-            Name = "Lisa the Vegetarian";
-            Description = "Intelligent, kind and passionate about the planet all living things";
+            Name = "";
+            Description = "";
             Level = 1;
             ImageURI = "icon_character.png";
             ExperienceTotal = 0;
             ExperienceRemaining = LevelTableHelper.LevelDetailsList[Level + 1].Experience - 1;
 
             // Default to unknown, which is no special job
-            Job = CharacterJobEnum.Unknown; 
+            Job = CharacterJobEnum.Unknown;
+            SpecialAbility = SpecialAbilityEnum.Unknown;
         }
 
         /// <summary>
@@ -80,6 +84,9 @@ namespace Game.Models
             // Update the Job
             Job = newData.Job;
 
+            // Update the Special Ability
+            SpecialAbility = newData.SpecialAbility;
+
             return true;
         }
 
@@ -93,6 +100,7 @@ namespace Game.Models
             myReturn += Name;
             myReturn += " , " + Description;
             myReturn += " , a " + Job.ToMessage();
+            myReturn += " , can " + SpecialAbility.ToMessage();
             myReturn += " , Level : " + Level.ToString();
             myReturn += " , Total Experience : " + ExperienceTotal;
             myReturn += " , Attack :" + GetAttackTotal;
