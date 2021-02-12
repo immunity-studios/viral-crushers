@@ -354,10 +354,11 @@ namespace Game.GameRules
     /// <returns></returns>
     public static List<MonsterModel> LoadData(MonsterModel temp)
     {
-        var datalist = new List<MonsterModel>()
+            var datalist = new List<MonsterModel>()
             {
                 new MonsterModel {
-                    Name = "Ebola",
+                    Name = "Bubbletooth",
+                    Type = MonsterTypeEnum.Ebola,
                     Description = "A viral hemorrhagic fever caused by ebolaviruses. Symptoms are fever, sore throat, muscular pain, and headaches.",
                     ImageURI = "icon_purple_monster.png",
                     Level = 1,
@@ -369,7 +370,8 @@ namespace Game.GameRules
                 },
 
                 new MonsterModel {
-                    Name = "Malaria",
+                    Name = "Frogjaw",
+                    Type = MonsterTypeEnum.Malaria,
                     Description = "A mosquito-borned infectious disease whose symptoms include fever, tiredness, vomitting, and headaches.",
                     ImageURI = "icon_blue_monster.png",
                     Level = 1,
@@ -381,7 +383,8 @@ namespace Game.GameRules
                 },
 
                 new MonsterModel {
-                    Name = "COVID-19",
+                    Name = "Batcape",
+                    Type = MonsterTypeEnum.Covid,
                     Description = "A contagious disease caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2).",
                     ImageURI = "icon_green_monster.png",
                     Level = 1,
@@ -393,7 +396,8 @@ namespace Game.GameRules
                 },
 
                 new MonsterModel {
-                    Name = "Measles",
+                    Name = "Nightbite",
+                    Type = MonsterTypeEnum.Measles,
                     Description = "A highly contagious infectious disease caused by measles virus. Symptoms are fever, cough, runny nose, and imflamed eyes.",
                     ImageURI = "icon_magenta_monster.png",
                     Level = 1,
@@ -405,7 +409,8 @@ namespace Game.GameRules
                 },
 
                 new MonsterModel {
-                    Name = "Flu",
+                    Name = "Startlescream",
+                    Type = MonsterTypeEnum.Flu,
                     Description = "An infectious disease caused by influenza virus. Symptoms include fever, runny nose, sore throat, headache, and fatigue.",
                     ImageURI = "icon_neon_green_monster.png",
                     Level = 1,
@@ -417,7 +422,8 @@ namespace Game.GameRules
                 },
 
                 new MonsterModel {
-                    Name = "Cold",
+                    Name = "Bristlehex",
+                    Type = MonsterTypeEnum.Cold,
                     Description = "A viral infectious disease that primarily affects the respiratory mucosa of the nose, throat, sinuses, and larynx.",
                     ImageURI = "icon_orange_monster.png",
                     Level = 1,
