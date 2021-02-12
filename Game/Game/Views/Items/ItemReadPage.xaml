@@ -16,87 +16,74 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-            <Grid HorizontalOptions="Fill" Margin="20">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
+                <Grid HorizontalOptions="Fill" Margin="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
 
-                <Image
-                    Grid.RowSpan="3"
-                    Grid.Row="0"
-                    Source="{Binding Data.ImageURI}"
-                    Style="{StaticResource ImageLargeStyle}" />
+                    <Image
+                        Source="{Binding Data.ImageURI}"
+                        Style="{StaticResource ImageLargeStyle}" />
 
-                <StackLayout
-                    Grid.Row="0"
-                    Grid.Column="1"
-                    Style="{StaticResource HorizontalStack}">
+                    <StackLayout Grid.Column="1"
+                                 Style="{StaticResource VerticalStack}"
+                                 HorizontalOptions="Fill">
+                        <StackLayout
+                            Style="{StaticResource HorizontalStack}">
 
-                        <Label
-                            Text="Name: "
-                            Style="{StaticResource StatsBoldStyle}"/>
+                                <Label
+                                    Text="Name: "
+                                    Style="{StaticResource StatsBoldStyle}"/>
 
-                        <Label
-                            Text="{Binding Data.Name}"
-                            Style="{StaticResource StatsBoldStyle}"/>
+                                <Label
+                                    Text="{Binding Data.Name}"
+                                    Style="{StaticResource StatsBoldStyle}"/>
 
-                </StackLayout>
+                        </StackLayout>
 
                 
-                <StackLayout
-                    Grid.Row="1"
-                    Grid.Column="1"
-                    Style="{StaticResource HorizontalStack}">
+                        <StackLayout
+                            Style="{StaticResource HorizontalStack}">
 
-                        <Label
-                            Text="Type: "
-                            Style="{StaticResource StatsBoldStyle}"/>
+                                <Label
+                                    Text="Type: "
+                                    Style="{StaticResource StatsBoldStyle}"/>
 
-                        <Label
-                            Text="{Binding Data.ItemType}"
-                            Style="{StaticResource StatsBoldStyle}"/>
+                                <Label
+                                    Text="{Binding Data.ItemType}"
+                                    Style="{StaticResource StatsBoldStyle}"/>
 
-                </StackLayout>
+                        </StackLayout>
 
-                 <StackLayout
-                    Grid.Row="2"
-                     Grid.Column="1"
-                    Style="{StaticResource HorizontalStack}">
+                         <StackLayout
+                            Style="{StaticResource HorizontalStack}">
 
-                        <Label
-                            Text="Location: "
-                            Style="{StaticResource StatsBoldStyle}"/>
+                                <Label
+                                    Text="Location: "
+                                    Style="{StaticResource StatsBoldStyle}"/>
 
-                        <Label
-                            Text="{Binding Data.Location}"
-                            Style="{StaticResource StatsBoldStyle}"/>
+                                <Label
+                                    Text="{Binding Data.Location}"
+                                    Style="{StaticResource StatsBoldStyle}"/>
 
-                </StackLayout>
+                        </StackLayout>
 
 
-                <StackLayout
-                    Grid.Row="3"
-                    Grid.Column="1">
+                        <StackLayout>
 
-                        <Label
-                            Text="Description: "
-                            Style="{StaticResource StatsBoldStyle}"/>
+                                <Label
+                                    Text="Description: "
+                                    Style="{StaticResource StatsBoldStyle}"/>
 
-                        <Label
-                            Text="{Binding Data.Description}"
-                            LineBreakMode="WordWrap"
-                            Style="{StaticResource ValueStyle}"/>
+                                <Label
+                                    Text="{Binding Data.Description}"
+                                    LineBreakMode="WordWrap"
+                                    Style="{StaticResource ValueStyle}"/>
 
-                </StackLayout>
-
-            </Grid>
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
 
 
             <Grid Grid.Row="1" Padding="20">
