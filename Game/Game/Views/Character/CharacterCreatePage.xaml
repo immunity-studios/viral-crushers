@@ -63,7 +63,7 @@
 
                     <Picker Grid.Row="2" Grid.Column="1"
                         ItemsSource="{x:Static local_enum:CharacterJobEnumHelper.GetListItem}" 
-                        SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                        SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}"
                         x:Name="CharacterTypePicker"/>
 
                     <Label Grid.Row="3" Grid.Column="0"
@@ -84,6 +84,22 @@
                 </Grid>
 
                     <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="FillAndExpand">
+                        
+                        <Label Text="Level"
+                               Style="{StaticResource LabelStyle}" />
+
+                        <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0">
+                            <Label 
+                                Text="{Binding Data.Level, Mode=OneWay}"
+                                x:Name="LevelValue"
+                                Style="{StaticResource ValueStyle}"
+                                Padding="0,0,10,0"
+                                HorizontalOptions="End"
+                                HorizontalTextAlignment="End"/>
+                            <Stepper Minimum="1" Maximum="10"
+                                     Value="{Binding Data.Level, Mode=TwoWay}"
+                                     ValueChanged="Level_OnStepperValueChanged"/>
+                        </StackLayout>
 
                         <Label 
                                 Text="Max Health" 
