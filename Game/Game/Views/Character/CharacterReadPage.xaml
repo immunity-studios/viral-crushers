@@ -59,7 +59,8 @@
                         LineBreakMode="WordWrap"
                         FontAttributes="Italic" 
                         Style="{StaticResource ValueStyle}"
-                        x:Name="SpecialAbilityLabel"/>
+                        x:Name="SpecialAbilityLabel"
+                        FontSize="Small"/>
 
                 </StackLayout>
 

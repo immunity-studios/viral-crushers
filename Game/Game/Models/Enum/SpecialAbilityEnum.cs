@@ -53,27 +53,27 @@ namespace Game.Models
             switch (value)
             {
                 case SpecialAbilityEnum.MakeVaccine:
-                    Message = "Make Vaccine";
+                    Message = "Makes vaccine";
                     break;
 
                 case SpecialAbilityEnum.IncreaseSpeed:
-                    Message = "Increase Speed";
+                    Message = "Increases speed (+10%) for all characters";
                     break;
 
                 case SpecialAbilityEnum.IncreaseDefense:
-                    Message = "Increase Defense";
+                    Message = "Increases defense (+10%) for all characters & Go first in the next level";
                     break;
 
                 case SpecialAbilityEnum.IncreaseAttack:
-                    Message = "Increase Attack";
+                    Message = "Increases attack (+10%) for all characters";
                     break;
 
                 case SpecialAbilityEnum.WeakenDefense:
-                    Message = "Weaken Defense";
+                    Message = "Weakens defense (-10%) of all monsters";
                     break;
 
                 case SpecialAbilityEnum.MakePanacea:
-                    Message = "Make Panacea";
+                    Message = "Makes Panacea";
                     break;
 
                 case SpecialAbilityEnum.None:

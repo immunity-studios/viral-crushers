@@ -242,7 +242,7 @@ namespace Game.GameRules
                 new CharacterModel {
                     Name = "Mark",
                     Job = CharacterJobEnum.Doctor,
-                    Description = "Creates vaccine",
+                    Description = "",
                     SpecialAbility = SpecialAbilityEnum.MakeVaccine,
                     Level = 1,
                     MaxHealth = 5,
@@ -259,7 +259,7 @@ namespace Game.GameRules
                 new CharacterModel {
                     Name = "Emily",
                     Job = CharacterJobEnum.Teacher,
-                    Description = "Increases speed (+10%) for all characters",
+                    Description = "",
                     SpecialAbility = SpecialAbilityEnum.IncreaseSpeed,
                     Level = 1,
                     MaxHealth = 5,
@@ -276,7 +276,7 @@ namespace Game.GameRules
                 new CharacterModel {
                     Name = "Ashley",
                     Job = CharacterJobEnum.Athlete,
-                    Description = "Increases defense (+10%) for all characters & Go first in the next level",
+                    Description = "",
                     SpecialAbility = SpecialAbilityEnum.IncreaseDefense,
                     Level = 1,
                     MaxHealth = 5,
@@ -293,7 +293,7 @@ namespace Game.GameRules
                 new CharacterModel {
                     Name = "Jeff",
                     Job = CharacterJobEnum.PoliceOfficer,
-                    Description = "Increases attack (+10%) for all characters",
+                    Description = "",
                     SpecialAbility = SpecialAbilityEnum.IncreaseAttack,
                     Level = 1,
                     MaxHealth = 5,
@@ -310,7 +310,7 @@ namespace Game.GameRules
                 new CharacterModel {
                     Name = "Penny",
                     Job = CharacterJobEnum.CollegeStudent,
-                    Description = "Decreases defense (-10%) of all monsters",
+                    Description = "",
                     SpecialAbility = SpecialAbilityEnum.WeakenDefense,
                     Level = 1,
                     MaxHealth = 5,
@@ -327,7 +327,7 @@ namespace Game.GameRules
                 new CharacterModel {
                     Name = "Wendy",
                     Job = CharacterJobEnum.Firefighter,
-                    Description = "Makes Panacea",
+                    Description = "",
                     SpecialAbility = SpecialAbilityEnum.MakePanacea,
                     Level = 1,
                     MaxHealth = 5,
