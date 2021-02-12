@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:local_helpers="clr-namespace:Game.Helpers"
+             xmlns:local_enum="clr-namespace:Game.Models"
              xmlns:local="using:Game.Models"
              x:Class="Game.Views.MonsterUpdatePage"
              Title="{Binding Title}">
@@ -49,16 +50,23 @@
                         Style="{StaticResource EntryStyle}"/>
 
                     <Label Grid.Row="1" Grid.Column="0"
+                        Text="Type" 
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <Picker Grid.Row="1" Grid.Column="1"
+                        ItemsSource="{x:Static local_enum:MonsterTypeEnumHelper.GetListItem}" 
+                        SelectedItem="{Binding Data.Type, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                        x:Name="MonsterTypePicker"/>
+
+                    <Label Grid.Row="2" Grid.Column="0"
                         Text="Description" 
                         Style="{StaticResource LabelStyle}"/>
 
-                    <Entry Grid.Row="1" Grid.Column="1"
+                    <Entry Grid.Row="2" Grid.Column="1"
                         Text="{Binding Data.Description}" 
                         Style="{StaticResource EntryStyle}"/>
 
-                    <Label Grid.Row="2" Grid.Column="0"
-                        Text="Image" 
-                        Style="{StaticResource LabelStyle}"/>
+                    
 
                 </Grid>
 
