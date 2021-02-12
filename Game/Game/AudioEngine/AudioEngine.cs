@@ -9,7 +9,7 @@ namespace Game.AudioEngine
     {
         #region Singleton
 
-        // Make this a singleton so it only exist one time because holds all the data records in memory
+        // Make the AudioEngine a singleton so it only exists one time.
         private static volatile AudioEngine instance;
         private static readonly object syncRoot = new Object();
 
@@ -33,6 +33,23 @@ namespace Game.AudioEngine
         }
 
         #endregion Singleton
-              
+
+        public AudioEngine()
+        {
+
+        }
+
+        public bool ProcessAudioEvent(AudioEngineEventEnum audioEvent)
+        {
+            switch (audioEvent)
+            {
+                case AudioEngineEventEnum.Button_GameStart:
+                    AudioResources.MENU_CLICK_SOUND.Play();
+                    break;
+
+                default: break;
+            }
+            return true;
+        }
     }
 }
