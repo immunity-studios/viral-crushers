@@ -25,13 +25,14 @@ namespace Game.AudioSystem
            loop: true
         );
 
-        //public static List<AudioClip> AudioClips = new List<AudioClip>() { new AudioClip() };
+        /// <summary>
+        /// All AudioClips should be added to this list for use in loading
+        /// and setting up volume busses
+        /// </summary>
+        public static List<AudioClip> AudioClips = new List<AudioClip>() { 
+            MENU_CLICK_SOUND, 
+            MX_MENU_SONG1_FULL_LOOP
+        };
+      
     }
 }
-    //    public List<AudioClip> AudioClips = List<AudioClip>(){
-    //        MENU_CLICK_SOUND,
-
-
-    //        };
-    //}
-
