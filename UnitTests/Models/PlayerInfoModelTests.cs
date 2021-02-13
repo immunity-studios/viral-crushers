@@ -56,7 +56,7 @@ namespace UnitTests.Models
         public void PlayerInfoModel_Constructor_Character_Fighter_Default_Should_Pass()
         {
             // Arrange
-            var data = new CharacterModel { Job = CharacterJobEnum.Fighter};
+            var data = new CharacterModel { Job = CharacterJobEnum.Firefighter};
 
             // Act
             var result = new PlayerInfoModel(data);
@@ -68,10 +68,10 @@ namespace UnitTests.Models
         }
 
         [Test]
-        public void PlayerInfoModel_Constructor_Character_Cleric_Default_Should_Pass()
+        public void PlayerInfoModel_Constructor_Character_Teacher_Default_Should_Pass()
         {
             // Arrange
-            var data = new CharacterModel { Job = CharacterJobEnum.Cleric};
+            var data = new CharacterModel { Job = CharacterJobEnum.Teacher};
 
             // Act
             var result = new PlayerInfoModel(data);
@@ -101,7 +101,7 @@ namespace UnitTests.Models
         public void PlayerInfoModel_IsAbilityAvailable_Available_Should_Pass()
         {
             // Arrange
-            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric });
+            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Teacher });
 
             // Act
             var result = data.IsAbilityAvailable(AbilityEnum.Heal);
@@ -116,7 +116,7 @@ namespace UnitTests.Models
         public void PlayerInfoModel_IsAbilityAvailable_Available_Zero_Should_Fail()
         {
             // Arrange
-            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric });
+            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Teacher });
             data.AbilityTracker[AbilityEnum.Heal] = 0;
 
             // Act
@@ -129,10 +129,10 @@ namespace UnitTests.Models
         }
 
         [Test]
-        public void PlayerInfoModel_SelectHealingAbility_Cleric_Heal_Avaiable_Should_Pass()
+        public void PlayerInfoModel_SelectHealingAbility_Teacher_Heal_Avaiable_Should_Pass()
         {
             // Arrange
-            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric });
+            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Teacher });
             data.AbilityTracker[AbilityEnum.Heal] = 1;
 
             data.CurrentHealth = 1;
@@ -148,10 +148,10 @@ namespace UnitTests.Models
         }
 
         [Test]
-        public void PlayerInfoModel_SelectHealingAbility_Cleric_Heal_Not_Needed_Should_Pass()
+        public void PlayerInfoModel_SelectHealingAbility_Teacher_Heal_Not_Needed_Should_Pass()
         {
             // Arrange
-            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric });
+            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Teacher });
             data.AbilityTracker[AbilityEnum.Heal] = 1;
 
             data.CurrentHealth = 100;
@@ -167,10 +167,10 @@ namespace UnitTests.Models
         }
 
         [Test]
-        public void PlayerInfoModel_SelectHealingAbility_Cleric_Heal_Not_Available_Should_Return_Unknown()
+        public void PlayerInfoModel_SelectHealingAbility_Teacher_Heal_Not_Available_Should_Return_Unknown()
         {
             // Arrange
-            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric });
+            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Teacher });
             data.AbilityTracker[AbilityEnum.Heal] = 0;
             data.AbilityTracker[AbilityEnum.Bandage] = 0;
 
@@ -190,7 +190,7 @@ namespace UnitTests.Models
         public void PlayerInfoModel_SelectHealingAbility_Fighter_Bandage_Avaiable_Should_Pass()
         {
             // Arrange
-            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Fighter });
+            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Firefighter });
             data.AbilityTracker[AbilityEnum.Bandage] = 1;
 
             data.CurrentHealth = 1;
@@ -209,7 +209,7 @@ namespace UnitTests.Models
         public void PlayerInfoModel_SelectAbilityToUse_Fighter_Avaiable_Should_Pass()
         {
             // Arrange
-            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Fighter });
+            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Firefighter });
             data.AbilityTracker[AbilityEnum.Nimble] = 1;
 
             // Act
@@ -222,10 +222,10 @@ namespace UnitTests.Models
         }
 
         [Test]
-        public void PlayerInfoModel_SelectAbilityToUse_Cleric_Avaiable_Should_Pass()
+        public void PlayerInfoModel_SelectAbilityToUse_Teacher_Avaiable_Should_Pass()
         {
             // Arrange
-            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric });
+            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Teacher });
             data.AbilityTracker[AbilityEnum.Quick] = 1;
 
             // Act
@@ -252,10 +252,10 @@ namespace UnitTests.Models
         }
 
         [Test]
-        public void PlayerInfoModel_SelectAbilityToUse_Cleric_Heal_Should_Skip()
+        public void PlayerInfoModel_SelectAbilityToUse_Teacher_Heal_Should_Skip()
         {
             // Arrange
-            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric });
+            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Teacher });
             data.AbilityTracker[AbilityEnum.Quick] = 0;
             data.AbilityTracker[AbilityEnum.Barrier] = 0;
             data.AbilityTracker[AbilityEnum.Curse] = 0;

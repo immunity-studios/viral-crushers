@@ -27,7 +27,7 @@ namespace UnitTests.Models
             // Arrange
 
             // Act
-            var result = CharacterJobEnum.Fighter.ToMessage();
+            var result = CharacterJobEnum.Firefighter.ToMessage();
 
             // Reset
 
@@ -41,7 +41,7 @@ namespace UnitTests.Models
             // Arrange
 
             // Act
-            var result = CharacterJobEnum.Cleric.ToMessage();
+            var result = CharacterJobEnum.Teacher.ToMessage();
 
             // Reset
 

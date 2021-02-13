@@ -1456,7 +1456,7 @@ namespace UnitTests.Engine.EngineBase
         {
             // Arrange
 
-            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric});
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Teacher});
 
             // Get the longest range weapon in stock.
             var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
@@ -1488,7 +1488,7 @@ namespace UnitTests.Engine.EngineBase
         {
             // Arrange
 
-            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric });
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Teacher });
 
             Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
 
@@ -1514,7 +1514,7 @@ namespace UnitTests.Engine.EngineBase
             var MonsterPlayer = new PlayerInfoModel(new MonsterModel());
             Engine.EngineSettings.PlayerList.Add(MonsterPlayer);
 
-            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric });
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Teacher });
             Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
 
             Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
@@ -1561,7 +1561,7 @@ namespace UnitTests.Engine.EngineBase
         public void TurnEngine_MoveAsTurn_Invalid_Monster_InValid_Defender_Not_On_Map_Should_Fail()
         {
             // Arrange
-            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric });
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Teacher });
             Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
 
             // Not on map.... 
@@ -1594,7 +1594,7 @@ namespace UnitTests.Engine.EngineBase
 
             // Add player after map is made, so player is not on the map
 
-            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric });
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Teacher });
             Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
 
             Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;

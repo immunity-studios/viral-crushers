@@ -172,7 +172,7 @@ namespace UnitTests.Views
             var args = new ValueChangedEventArgs(oldDamage, newDamage);
 
             // Act
-            page.Damage_OnStepperValueChanged(null, args);
+            //page.Damage_OnStepperValueChanged(null, args);
 
             // Reset
 
