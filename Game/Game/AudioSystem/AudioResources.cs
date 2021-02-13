@@ -23,6 +23,15 @@ namespace Game.AudioSystem
            filepath: "Game.AudioFiles.Music.Menu.VC-OST_Song1_Full_Loop.mp3",
            startingVolume: .8,
            loop: true
-       );
+        );
+
+        //public static List<AudioClip> AudioClips = new List<AudioClip>() { new AudioClip() };
     }
 }
+    //    public List<AudioClip> AudioClips = List<AudioClip>(){
+    //        MENU_CLICK_SOUND,
+
+
+    //        };
+    //}
+

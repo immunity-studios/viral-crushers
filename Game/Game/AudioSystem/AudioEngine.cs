@@ -39,11 +39,11 @@ namespace Game.AudioSystem
 
         }
 
-        public bool ProcessAudioEvent(AudioEngineEventEnum audioEvent)
+        public bool ProcessAudioEvent(AudioEventEnum audioEvent)
         {
             switch (audioEvent)
             {
-                case AudioEngineEventEnum.Button_GameStart:
+                case AudioEventEnum.Button_GameStart:
                     AudioResources.MENU_CLICK_SOUND.Play();
                     break;
 

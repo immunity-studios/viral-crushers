@@ -9,7 +9,7 @@ namespace Game.AudioSystem
     /// When the specific event occurs in code, pass the appropriate enum
     /// into the AudioEngine.Instance.ProcessAudioEvent method
     /// </summary>
-    public enum AudioEngineEventEnum
+    public enum AudioEventEnum
     {
         Unknown = 0,
 
