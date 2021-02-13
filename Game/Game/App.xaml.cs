@@ -22,7 +22,7 @@ namespace Game
             Helpers.DataSetsHelper.WarmUp();
 
             // Call the Main Page to open
-            MainPage = new NavigationPage(new GamePage());
+            MainPage = new NavigationPage(new HomePage());
         }
 
         /// <summary>
