@@ -6,8 +6,8 @@
              xmlns:views="clr-namespace:Game.Views"
              mc:Ignorable="d"
              x:Name="BrowseItemsPage"
-             x:Class="Game.Views.CharacterIndexPage"
-             Title="{Binding Title}">
+             x:Class="Game.Views.CharacterIndexPage">
+
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Clicked="AddItem_Clicked" IconImageSource="icon_add.png"/>
@@ -17,56 +17,53 @@
         
        <Grid>
            <Grid.RowDefinitions>
+               <RowDefinition Height="Auto"/>
                <RowDefinition Height="*"/>
                <RowDefinition Height="Auto"/>
            </Grid.RowDefinitions>
-            <CollectionView ItemsSource="{Binding Dataset}"
-                            SelectionMode="Single"
-                            SelectionChanged="CollectionView_SelectionChanged"
-                            ItemsLayout="VerticalGrid, 2"
-                            x:Name="CharactersCollectionView">
+
+           <Label
+               Text="Characters"
+               Margin="0,100,0,0"
+               Style="{StaticResource IndexPageCategoryTitleLabelStyle}" />
+
+            <CollectionView
+                Grid.Row="1"
+                ItemsSource="{Binding Dataset}"
+                SelectionMode="Single"
+                SelectionChanged="CollectionView_SelectionChanged"
+                x:Name="CharactersCollectionView">
+
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout
+                        Orientation="Vertical"
+                         Span="3"
+                         VerticalItemSpacing="20" />
+                </CollectionView.ItemsLayout>
 
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
 
-                        <Grid Padding="10">
+                        <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*"/>                               
+                                <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition />
-                                <ColumnDefinition />
+                                <ColumnDefinition />                                
                             </Grid.ColumnDefinitions>
 
                             <Image
-                                Grid.Row="0"
-                                Grid.RowSpan="3"
+                                Grid.Row="0"                                
                                 Source="{Binding ImageURI}"
-                                Style="{StaticResource ImageMediumStyle}"
-                                Aspect="AspectFill"
-                                VerticalOptions="Center"/>
+                                Style="{StaticResource ImageLargeStyle}"/>
 
 
                             <Label
-                                Grid.Row="0"
-                                Grid.Column="1"
-                                Text="{Binding Name}"
-                                Style="{StaticResource IndexPageCollectionViewBoldStyle}" />
-
-                            <Label
+                                Padding="15,0"
                                 Grid.Row="1"
-                                Grid.Column="1"                               
-                                Text="{Binding Job}"
-                                Style="{StaticResource IndexPageCollectionViewItalicStyle}"/>
-
-
-                            <Label
-                                Grid.Row="2"
-                                Grid.Column="1"
-                                Text="{Binding Description}"
-                                Style="{StaticResource IndexPageCollectionViewItalicStyle}"/>
+                                Text="{Binding Name}"
+                                Style="{StaticResource IndexPageNameLabelStyle}" />
 
                         </Grid>
 
@@ -74,7 +71,7 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
-           <views:ToolbarMenuControl Grid.Row="1"/>
+           <views:ToolbarMenuControl Grid.Row="2"/>
 
        </Grid>
 
