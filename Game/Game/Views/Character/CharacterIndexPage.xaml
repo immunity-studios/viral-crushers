@@ -41,8 +41,8 @@
                             </Grid.ColumnDefinitions>
 
                             <Image
-                                Grid.RowSpan="3"
                                 Grid.Row="0"
+                                Grid.RowSpan="3"
                                 Source="{Binding ImageURI}"
                                 Style="{StaticResource ImageMediumStyle}"
                                 Aspect="AspectFill"
@@ -50,29 +50,23 @@
 
 
                             <Label
-                                Grid.Column="1"
                                 Grid.Row="0"
+                                Grid.Column="1"
                                 Text="{Binding Name}"
                                 Style="{StaticResource IndexPageCollectionViewBoldStyle}" />
 
                             <Label
-                                Grid.Column="1"
                                 Grid.Row="1"
+                                Grid.Column="1"                               
                                 Text="{Binding Job}"
-                                FontAttributes="Italic"
-                                FontSize="Small"
-                                VerticalOptions="End"
-                                LineBreakMode="WordWrap"/>
+                                Style="{StaticResource IndexPageCollectionViewItalicStyle}"/>
 
 
-                            <Label Grid.Row="2"
-                           Grid.Column="1"
-                           Text="{Binding Description}"
-                           LineBreakMode="WordWrap"
-                           FontAttributes="Italic"
-                           VerticalOptions="Start"
-                           Style="{StaticResource ListStyle}"
-                           FontSize="Small"/>
+                            <Label
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Text="{Binding Description}"
+                                Style="{StaticResource IndexPageCollectionViewItalicStyle}"/>
 
                         </Grid>
 
