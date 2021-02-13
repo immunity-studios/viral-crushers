@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Xamarin.Forms;
 
-namespace Game.Views.Home
+namespace Game.Views
 {
     public partial class ToolbarMenuControl : ContentView
     {
