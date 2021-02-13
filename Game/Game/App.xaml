@@ -23,9 +23,15 @@
                 Dark
                 -->
 
-            <!--<Color x:Key="PageBackgroundColor">Pink</Color>
-            <Color x:Key="ViewBackgroundColor">green</Color>
-            <Color x:Key="NavigationBarColor">orange</Color>-->
+            <Color x:Key="ViralCrusherBlueColor">#273995</Color>
+            <Color x:Key="ViralCrusherPurpleColor">#3B0456</Color>
+            <Color x:Key="ViralCrusherYellowColor">#F4B84D</Color>
+            <Color x:Key="ViralCrusherRedColor">#DC1C50</Color>
+            <Color x:Key="ViralCrusherNavyColor">#252875</Color>
+            <Color x:Key="ViralCrusherGreenColor">#ABCD36</Color>
+            <Color x:Key="ViralCrusherWhiteColor">#FEFFFD</Color>
+
+
 
             <Color x:Key="PageBackgroundColor">#dbe9ee</Color>
             <Color x:Key="ViewBackgroundColor">#9db4c0</Color>
@@ -67,12 +73,12 @@
 
             <!-- Pages -->
             <Style TargetType="NavigationPage">
-                <Setter Property="BarBackgroundColor" Value="{StaticResource ViewBackgroundColor}" />
-                <Setter Property="BarTextColor" Value="{StaticResource SecondaryTextColor}" />
+                <Setter Property="BarBackgroundColor" Value="{StaticResource ViralCrusherBlueColor}" />
+                <Setter Property="BarTextColor" Value="{StaticResource ViralCrusherGreenColor}" />
             </Style>
 
             <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
-                <Setter Property="BackgroundColor" Value="{DynamicResource PageBackgroundColor}" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource ViralCrusherBlueColor}" />
                 <Setter Property="Padding" Value="10,10,10,10" />
             </Style>
 
@@ -97,7 +103,7 @@
             <Style TargetType="Label"
                 x:Key="LabelBaseStyle"
                 BaseResourceKey="LayoutFontSize">
-                <Setter Property="TextColor" Value="{StaticResource PrimaryTextColor}" />
+                <Setter Property="TextColor" Value="{StaticResource ViralCrusherWhiteColor}" />
                 <Setter Property="FontAttributes" Value="None" />
                 <Setter Property="FontSize" Value="Small" />
                 <Setter Property="LineBreakMode" Value="NoWrap" />
@@ -122,7 +128,7 @@
                 BasedOn="{StaticResource LabelBaseStyle}">
                 <Setter Property="FontSize" Value="Small" />
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="VerticalOptions" Value="End" />
+                <Setter Property="VerticalOptions" Value="Start" />
                 <Setter Property="LineBreakMode" Value="WordWrap" />
             </Style>
 
@@ -132,7 +138,7 @@
                 BasedOn="{StaticResource LabelBaseStyle}">
                 <Setter Property="FontSize" Value="Small" />
                 <Setter Property="FontAttributes" Value="Italic" />
-                <Setter Property="VerticalOptions" Value="End" />
+                <Setter Property="VerticalOptions" Value="Start" />
                 <Setter Property="LineBreakMode" Value="WordWrap" />
             </Style>
 
@@ -159,7 +165,7 @@
             <Style TargetType="Label"
                 x:Key="ValueStyle"
                 BasedOn="{StaticResource LabelStyle}">
-                <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
+                <Setter Property="TextColor" Value="{StaticResource ViralCrusherRedColor}" />
             </Style>
 
             <Style TargetType="Label"
@@ -180,7 +186,7 @@
             <Style TargetType="Label"
                 x:Key="MessageStyle"
                 BasedOn="{StaticResource HeaderStyle}">
-                <Setter Property="TextColor" Value="{StaticResource TriciaryTextColor}" />
+                <Setter Property="TextColor" Value="{StaticResource ViralCrusherRedColor}" />
             </Style>
 
             <Style TargetType="Label"
@@ -201,23 +207,6 @@
                 BasedOn="{StaticResource CenterMessageStyle}">
                 <Setter Property="FontSize" Value="Large" />
             </Style>
-            
-            <!--<Style TargetType="Label"
-                x:Key="GridLabelStyle"
-                BasedOn="{StaticResource LabelStyle}">
-                <Setter Property="BackgroundColor" Value="{StaticResource PrimaryBackgroundColor}" />
-                <Setter Property="HorizontalOptions" Value="Fill" />
-                <Setter Property="Padding" Value="3" />
-            </Style>-->
-
-            <!--<Style TargetType="Label"
-                x:Key="GridValueStyle"
-                BasedOn="{StaticResource ValueStyle}">
-                <Setter Property="BackgroundColor" Value="{StaticResource PrimaryBackgroundColor}" />
-                <Setter Property="HorizontalOptions" Value="Fill" />
-                <Setter Property="HorizontalTextAlignment" Value="Center" />
-                <Setter Property="Padding" Value="3" />
-            </Style>-->
 
             <Style TargetType="Label"
                 x:Key="PopupItemTextStyle"
@@ -225,7 +214,9 @@
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
                 <Setter Property="HorizontalOptions" Value="Center" />
             </Style>
-            
+
+
+
             <!-- Image -->
             <Style TargetType="Image"
                 x:Key="ImageLargeStyle">
@@ -314,12 +305,12 @@
 
             <!-- Button -->
             <Style TargetType="Button">
-                <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}" />
-                <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
-                <Setter Property="BorderColor" Value="{StaticResource TriciaryBackgroundColor}"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource ViralCrusherYellowColor}" />
+                <Setter Property="TextColor" Value="{StaticResource ViralCrusherRedColor}" />
+                <Setter Property="BorderColor" Value="{StaticResource ViralCrusherYellowColor}"/>
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center"/>
-                <Setter Property="FontSize" Value="Micro"/>
+                <Setter Property="FontSize" Value="Medium"/>
                 <Setter Property="Padding" Value="1"/>
                 <Setter Property="Margin" Value="0,5,0,5"/>
                 <Setter Property="HeightRequest" Value="30"/>
