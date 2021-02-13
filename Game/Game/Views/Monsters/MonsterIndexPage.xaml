@@ -6,9 +6,9 @@
              xmlns:views="clr-namespace:Game.Views"
              mc:Ignorable="d"
              x:Name="BrowseItemsPage"
-             x:Class="Game.Views.MonsterIndexPage"
+             x:Class="Game.Views.MonsterIndexPage">
 
-    <ContentPage.ToolbarItems>
+<ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Clicked="AddItem_Clicked" IconImageSource="icon_add.png"/>
     </ContentPage.ToolbarItems>
 
