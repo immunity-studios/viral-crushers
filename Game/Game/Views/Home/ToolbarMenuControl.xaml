@@ -18,27 +18,32 @@
                 <ImageButton
                     x:Name="GamePageImageButton"
                     Source="icon_red_dice.png"
-                    Style="{StaticResource ImageSmallStyle}"/>
+                    Style="{StaticResource ImageSmallStyle}"
+                    Clicked="DungeonButton_Clicked" />
 
                 <ImageButton Grid.Column="1"
                     x:Name="CharactersImageButton"
                     Source="icon_menu_characters_girl.png"
-                    Style="{StaticResource ImageSmallStyle}"/>
+                    Style="{StaticResource ImageSmallStyle}"
+                    Clicked="CharacterButton_Clicked"/>
 
                 <ImageButton Grid.Column="2"
                     x:Name="MonstersImageButton"
                     Source="icon_menu_monsters.png"
-                    Style="{StaticResource ImageSmallStyle}"/>
+                    Style="{StaticResource ImageSmallStyle}"
+                    Clicked="MonsterButton_Clicked"/>
 
                 <ImageButton Grid.Column="3"
                     x:Name="ItemsImageButton"
                     Source="icon_menu_items.png"
-                    Style="{StaticResource ImageSmallStyle}"/>
+                    Style="{StaticResource ImageSmallStyle}"
+                    Clicked="ItemButton_Clicked" />
 
                 <ImageButton Grid.Column="4"
                     x:Name="ScoresImageButton"
                     Source="icon_black_dice.png"
-                    Style="{StaticResource ImageSmallStyle}"/>
+                    Style="{StaticResource ImageSmallStyle}"
+                    Clicked="ScoreButton_Clicked" />
             
         </Grid>
 
