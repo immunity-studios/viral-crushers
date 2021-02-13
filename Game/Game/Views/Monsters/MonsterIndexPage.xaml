@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:Game.Views"
              mc:Ignorable="d"
              x:Name="BrowseItemsPage"
              x:Class="Game.Views.MonsterIndexPage"
@@ -14,61 +15,78 @@
 
     <ContentPage.Content>
 
-        <CollectionView ItemsSource="{Binding Dataset}"                        
-                        ItemsLayout="VerticalGrid, 2"
-                        SelectionMode="Single"
-                        SelectionChanged="CollectionView_SelectionChanged"
-                        x:Name="MonstersCollectionView">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Grid Padding="10">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
+       <Grid>
+           <Grid.RowDefinitions>
+               <RowDefinition Height="*"/>
+               <RowDefinition Height="Auto"/>
+           </Grid.RowDefinitions>
 
-                        <Image Grid.RowSpan="3" Grid.Row="0"
-                       Source="{Binding ImageURI}"
-                       Style="{StaticResource ImageMediumStyle}"
-                       Aspect="AspectFill"
-                       VerticalOptions="Center"/>
+           <CollectionView
+               ItemsSource="{Binding Dataset}"                        
+               ItemsLayout="VerticalGrid, 2"
+               SelectionMode="Single"
+               SelectionChanged="CollectionView_SelectionChanged"
+               x:Name="MonstersCollectionView">
 
-                        <Label Grid.Column="1" Grid.Row="0"
-                       Text="{Binding Name}"
-                       FontAttributes="Bold"
-                       LineBreakMode="WordWrap"
-                       VerticalOptions="End"
-                       Style="{StaticResource ListStyle}"
-                       FontSize="Small"/>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <Image
+                                Grid.RowSpan="3"
+                                Grid.Row="0"
+                                Source="{Binding ImageURI}"
+                                Style="{StaticResource ImageMediumStyle}"
+                                Aspect="AspectFill"
+                                VerticalOptions="Center"/>
+
+                            <Label
+                                Grid.Column="1"
+                                Grid.Row="0"
+                                Text="{Binding Name}"
+                                FontAttributes="Bold"
+                                LineBreakMode="WordWrap"
+                                VerticalOptions="End"
+                                Style="{StaticResource ListStyle}"/>
 
 
-                        <Label
-                            Grid.Column="1"
-                            Grid.Row="1"
-                            Text="{Binding Type}"
-                            FontAttributes="Italic"
-                            FontSize="Small"
-                            VerticalOptions="Start"
-                            LineBreakMode="WordWrap"/>
+                            <Label
+                                Grid.Column="1"
+                                Grid.Row="1"
+                                Text="{Binding Type}"
+                                FontAttributes="Italic"
+                                VerticalOptions="Start"
+                                LineBreakMode="WordWrap"/>
 
 
-                        <Label Grid.Row="2"
-                       Grid.Column="1"
-                       Text="{Binding Description}"
-                       LineBreakMode="WordWrap"
-                       FontAttributes="Italic"
-                       VerticalOptions="Start"
-                       Style="{StaticResource ListStyle}"
-                       FontSize="Micro"/>
+                            <Label
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Text="{Binding Description}"
+                                LineBreakMode="WordWrap"
+                                FontAttributes="Italic"
+                                VerticalOptions="Start"
+                                Style="{StaticResource ListStyle}"/>
 
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+                        </Grid>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+           <views:ToolbarMenuControl Grid.Row="1"/>
+
+       </Grid>
+
     </ContentPage.Content>
 </ContentPage>
