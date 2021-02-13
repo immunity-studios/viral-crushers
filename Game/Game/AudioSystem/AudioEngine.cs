@@ -70,7 +70,7 @@ namespace Game.AudioSystem
                     // loop through each audio clip and scale its volume based on provided value
                     foreach(var audioClip in AudioResources.AudioClips)
                     {
-                        audioClip.SetVolume(volume * audioClip.GetVolume());
+                        audioClip.SetVolume(volume);
                     }
                     break;
             }
