@@ -235,7 +235,8 @@ namespace Game.Views
         {
             // get slider value
             double value = args.NewValue;
-            // TODO Set volume of global audio engine with value of slider
+            // Set volume of global audio engine with value of slider
+            AudioSystem.AudioEngine.Instance.SetBusVolume(AudioSystem.AudioBusEnum.Master, value);
         }
     }
 }
