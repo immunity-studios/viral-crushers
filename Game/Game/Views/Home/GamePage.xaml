@@ -4,6 +4,9 @@
              x:Class="Game.Views.GamePage"
              Title="Game"
              >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="About" Clicked="AboutButton_Clicked" IconImageSource="tab_about.png"/>
+    </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
 
