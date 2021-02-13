@@ -15,68 +15,55 @@
 
     <ContentPage.Content>
 
-       <Grid>
-           <Grid.RowDefinitions>
-               <RowDefinition Height="*"/>
-               <RowDefinition Height="Auto"/>
-           </Grid.RowDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-           <CollectionView
-               ItemsSource="{Binding Dataset}"                        
-               ItemsLayout="VerticalGrid, 2"
-               SelectionMode="Single"
-               SelectionChanged="CollectionView_SelectionChanged"
-               x:Name="MonstersCollectionView">
+            <Label
+               Text="Monsters"
+               Margin="0,100,0,0"
+               Style="{StaticResource IndexPageCategoryTitleLabelStyle}" />
+
+            <CollectionView
+                Grid.Row="1"
+                ItemsSource="{Binding Dataset}"
+                SelectionMode="Single"
+                SelectionChanged="CollectionView_SelectionChanged"
+                x:Name="MonstersCollectionView">
+
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout
+                        Orientation="Vertical"
+                         Span="3"
+                         VerticalItemSpacing="20" />
+                </CollectionView.ItemsLayout>
 
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
 
-                        <Grid Padding="10">
+                        <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition />
-                                <ColumnDefinition />
                             </Grid.ColumnDefinitions>
 
                             <Image
-                                Grid.RowSpan="3"
-                                Grid.Row="0"
+                                Grid.Row="0"                                
                                 Source="{Binding ImageURI}"
-                                Style="{StaticResource ImageMediumStyle}"
-                                Aspect="AspectFill"
-                                VerticalOptions="Center"/>
-
-                            <Label
-                                Grid.Column="1"
-                                Grid.Row="0"
-                                Text="{Binding Name}"
-                                FontAttributes="Bold"
-                                LineBreakMode="WordWrap"
-                                VerticalOptions="End"
-                                Style="{StaticResource ListStyle}"/>
+                                Style="{StaticResource ImageLargeStyle}"/>
 
 
                             <Label
-                                Grid.Column="1"
+                                Padding="15,0"
                                 Grid.Row="1"
-                                Text="{Binding Type}"
-                                FontAttributes="Italic"
-                                VerticalOptions="Start"
-                                LineBreakMode="WordWrap"/>
-
-
-                            <Label
-                                Grid.Row="2"
-                                Grid.Column="1"
-                                Text="{Binding Description}"
-                                LineBreakMode="WordWrap"
-                                FontAttributes="Italic"
-                                VerticalOptions="Start"
-                                Style="{StaticResource ListStyle}"/>
+                                Text="{Binding Name}"
+                                Style="{StaticResource IndexPageNameLabelStyle}" />
 
                         </Grid>
 
@@ -84,9 +71,9 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
-           <views:ToolbarMenuControl Grid.Row="1"/>
+            <views:ToolbarMenuControl Grid.Row="2"/>
 
-       </Grid>
+        </Grid>
 
     </ContentPage.Content>
 </ContentPage>
