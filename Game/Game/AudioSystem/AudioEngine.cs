@@ -51,5 +51,30 @@ namespace Game.AudioSystem
             }
             return true;
         }
+
+        /// <summary>
+        /// Method that can be called to set a specified bus' volume
+        /// </summary>
+        /// <param name="bus"> 
+        /// The volume bus to set
+        /// </param>
+        /// <param name="volume"> 
+        /// The value to set volume to. Must be between 0 and 1 (inclusive)
+        /// </param>
+        /// <returns></returns>
+        public bool SetBusVolume(AudioBusEnum bus, double volume)
+        {
+            switch (bus)
+            {
+                case AudioBusEnum.Master:
+                    // loop through each audio clip and scale its volume based on provided value
+                    foreach(var audioClip in AudioResources.AudioClips)
+                    {
+                        audioClip.SetVolume(volume * audioClip.GetVolume());
+                    }
+                    break;
+            }
+            return true;
+        }
     }
 }
