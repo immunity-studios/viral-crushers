@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:Game.Views"
              x:Class="Game.Views.GamePage"
              Title="Game"
              >
@@ -15,7 +16,7 @@
                 <RowDefinition Height="2*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
             <Image
@@ -50,51 +51,7 @@
             </StackLayout>
 
 
-            <Grid x:Name="MenuGrid" Grid.Row="3">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-
-                <ImageButton
-                    x:Name="GamePageImageButton"
-                    Source="icon_red_dice.png"
-                    Style="{StaticResource ImageSmallStyle}"
-                    Clicked="DungeonButton_Clicked" />
-
-                <ImageButton Grid.Column="1"
-                    x:Name="CharactersImageButton"
-                    Source="icon_menu_characters_girl.png"
-                    Style="{StaticResource ImageSmallStyle}"
-                    Clicked="CharacterButton_Clicked"/>
-
-                <ImageButton Grid.Column="2"
-                    x:Name="MonstersImageButton"
-                    Source="icon_menu_monsters.png"
-                    Style="{StaticResource ImageSmallStyle}"
-                    Clicked="MonsterButton_Clicked"/>
-
-                <ImageButton Grid.Column="3"
-                    x:Name="ItemsImageButton"
-                    Source="icon_menu_items.png"
-                    Style="{StaticResource ImageSmallStyle}"
-                    Clicked="ItemButton_Clicked" />
-
-                <ImageButton Grid.Column="4"
-                    x:Name="ScoresImageButton"
-                    Source="icon_black_dice.png"
-                    Style="{StaticResource ImageSmallStyle}"
-                    Clicked="ScoreButton_Clicked" />
-
-            </Grid>
-
-
+            <views:ToolbarMenuControl Grid.Row="3" />
         </Grid>
     </ContentPage.Content>
 </ContentPage>
