@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:local_enum="clr-namespace:Game.Models"
+             xmlns:views="clr-namespace:Game.Views"
              mc:Ignorable="d"
              x:Name="BrowseItemsPage"
              x:Class="Game.Views.CharacterIndexPage"
@@ -14,65 +14,75 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <CollectionView ItemsSource="{Binding Dataset}"
-                        SelectionMode="Single"
-                        SelectionChanged="CollectionView_SelectionChanged"
-                        ItemsLayout="VerticalGrid, 2"
-                        x:Name="CharactersCollectionView">
+        
+       <Grid>
+           <Grid.RowDefinitions>
+               <RowDefinition Height="*"/>
+               <RowDefinition Height="Auto"/>
+           </Grid.RowDefinitions>
+            <CollectionView ItemsSource="{Binding Dataset}"
+                            SelectionMode="Single"
+                            SelectionChanged="CollectionView_SelectionChanged"
+                            ItemsLayout="VerticalGrid, 2"
+                            x:Name="CharactersCollectionView">
 
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
 
-                    <Grid Padding="10">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
 
-                        <Image
-                            Grid.RowSpan="3"
-                            Grid.Row="0"
-                            Source="{Binding ImageURI}"
-                            Style="{StaticResource ImageMediumStyle}"
-                            Aspect="AspectFill"
-                            VerticalOptions="Center"/>
-
-
-                        <Label
-                            Grid.Column="1"
-                            Grid.Row="0"
-                            Text="{Binding Name}"
-                            Style="{StaticResource IndexPageCollectionViewBoldStyle}" />
-
-                        <Label
-                            Grid.Column="1"
-                            Grid.Row="1"
-                            Text="{Binding Job}"
-                            FontAttributes="Italic"
-                            FontSize="Small"
-                            VerticalOptions="End"
-                            LineBreakMode="WordWrap"/>
+                            <Image
+                                Grid.RowSpan="3"
+                                Grid.Row="0"
+                                Source="{Binding ImageURI}"
+                                Style="{StaticResource ImageMediumStyle}"
+                                Aspect="AspectFill"
+                                VerticalOptions="Center"/>
 
 
-                        <Label Grid.Row="2"
-                       Grid.Column="1"
-                       Text="{Binding Description}"
-                       LineBreakMode="WordWrap"
-                       FontAttributes="Italic"
-                       VerticalOptions="Start"
-                       Style="{StaticResource ListStyle}"
-                       FontSize="Small"/>
+                            <Label
+                                Grid.Column="1"
+                                Grid.Row="0"
+                                Text="{Binding Name}"
+                                Style="{StaticResource IndexPageCollectionViewBoldStyle}" />
 
-                    </Grid>
+                            <Label
+                                Grid.Column="1"
+                                Grid.Row="1"
+                                Text="{Binding Job}"
+                                FontAttributes="Italic"
+                                FontSize="Small"
+                                VerticalOptions="End"
+                                LineBreakMode="WordWrap"/>
 
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+
+                            <Label Grid.Row="2"
+                           Grid.Column="1"
+                           Text="{Binding Description}"
+                           LineBreakMode="WordWrap"
+                           FontAttributes="Italic"
+                           VerticalOptions="Start"
+                           Style="{StaticResource ListStyle}"
+                           FontSize="Small"/>
+
+                        </Grid>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+           <views:ToolbarMenuControl Grid.Row="1"/>
+
+       </Grid>
 
     </ContentPage.Content>
 </ContentPage>
