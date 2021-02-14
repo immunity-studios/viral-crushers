@@ -17,7 +17,7 @@
         <StackLayout 
                 Padding="20" HorizontalOptions="Center">
 
-            <Frame CornerRadius="20" HasShadow="True" Padding="5">
+            <Frame Padding="5">
                 <Grid RowSpacing="5" ColumnSpacing="5">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="20"/>
@@ -48,11 +48,12 @@
                             FontAttributes="Bold"
                             HorizontalOptions="Center"
                             FontSize="Micro"
-                            TextColor="Blue"/>
+                            TextColor="White"/>
 
                     <Label Grid.Row="0"
                            Grid.Column="1"
-                           Text="Attack"/>
+                           Text="Attack"
+                           TextColor="White"/>
 
                     <ProgressBar
                         Grid.Row="0"
@@ -62,11 +63,13 @@
 
                     <Label Grid.Row="0"
                            Grid.Column="3"
-                           Text="{Binding Data.Attack}"/>
+                           Text="{Binding Data.Attack}"
+                           TextColor="White"/>
 
                     <Label Grid.Row="1"
                            Grid.Column="1"
-                           Text="Defense"/>
+                           Text="Defense"
+                           TextColor="White"/>
 
                     <ProgressBar
                         Grid.Row="1"
@@ -76,11 +79,13 @@
 
                     <Label Grid.Row="1"
                            Grid.Column="3"
-                           Text="{Binding Data.Defense}"/>
+                           Text="{Binding Data.Defense}"
+                           TextColor="White"/>
 
                     <Label Grid.Row="2"
                            Grid.Column="1"
-                           Text="Speed"/>
+                           Text="Speed"
+                           TextColor="White"/>
 
                     <ProgressBar
                         Grid.Row="2"
@@ -90,7 +95,8 @@
 
                     <Label Grid.Row="2"
                            Grid.Column="3"
-                           Text="{Binding Data.Speed}"/>
+                           Text="{Binding Data.Speed}"
+                           TextColor="White"/>
 
                 </Grid>
             </Frame>

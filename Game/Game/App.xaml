@@ -73,8 +73,8 @@
 
             <!-- Pages -->
             <Style TargetType="NavigationPage">
-                <Setter Property="BarBackgroundColor" Value="{StaticResource ViralCrusherBlueColor}" />
-                <Setter Property="BarTextColor" Value="{StaticResource ViralCrusherGreenColor}" />
+                <Setter Property="BarBackgroundColor" Value="{StaticResource ViralCrusherPurpleColor}" />
+                <Setter Property="BarTextColor" Value="{StaticResource ViralCrusherWhiteColor}" />
             </Style>
 
             <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
@@ -468,7 +468,8 @@
                 <Setter Property="Padding" Value="0" />
                 <Setter Property="VerticalOptions" Value="Start" />
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
-                <Setter Property="HasShadow" Value="false" />
+                <Setter Property="HasShadow" Value="True" />
+                <Setter Property="CornerRadius" Value="20" />
                 <Setter Property="BorderColor" Value="{StaticResource ViralCrusherBlueColor}" />
                 <Setter Property="BackgroundColor" Value="{StaticResource ViralCrusherBlueColor}" />
             </Style>
@@ -555,7 +556,8 @@
             <!-- Progress Bar -->
             <Style TargetType="ProgressBar"
                    x:Key="StatsProgressBar">
-                <Setter Property="ProgressColor" Value="Orchid" />
+                <Setter Property="ProgressColor" Value="White" />
+                <Setter Property="HeightRequest" Value="20" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
             </Style>
 
