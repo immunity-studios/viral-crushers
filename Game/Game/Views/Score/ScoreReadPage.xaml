@@ -14,7 +14,44 @@
 
 
     <ScrollView>
-        <StackLayout Style="{StaticResource OuterBoxStack}"
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid HorizontalOptions="Fill" Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <StackLayout Grid.Column="1"
+                                 Style="{StaticResource VerticalStack}"
+                                 HorizontalOptions="Fill">
+                    <StackLayout
+                            Style="{StaticResource HorizontalStack}">
+
+                        <Label
+                                    Text="Name: "
+                                    Style="{StaticResource StatsBoldStyle}"/>
+
+                        <Label
+                                    Text="{Binding Data.Name}"
+                                    Style="{StaticResource StatsBoldStyle}"/>
+
+                    </StackLayout>
+
+                </StackLayout>
+            </Grid>
+        </Grid>
+
+
+
+
+        <!--StackLayout Style="{StaticResource OuterBoxStack}"
             Spacing="10">
     
             <StackLayout Style="{StaticResource HorizontalStack}">
@@ -115,6 +152,6 @@
                 Text="{Binding Data.ItemsDroppedList}"
                 Style="{StaticResource ValueStyle}"/>
 
-        </StackLayout>
+        </-->
     </ScrollView>
 </ContentPage>
