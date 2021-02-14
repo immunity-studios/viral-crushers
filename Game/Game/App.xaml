@@ -25,6 +25,7 @@
                 -->
 
             <Color x:Key="ViralCrusherBlueColor">#273995</Color>
+            <Color x:Key="ViralCrusherDarkPurpleColor">#250037</Color>
             <Color x:Key="ViralCrusherPurpleColor">#3B0456</Color>
             <Color x:Key="ViralCrusherYellowColor">#F4B84D</Color>
             <Color x:Key="ViralCrusherRedColor">#DC1C50</Color>
@@ -74,12 +75,12 @@
 
             <!-- Pages -->
             <Style TargetType="NavigationPage">
-                <Setter Property="BarBackgroundColor" Value="{StaticResource ViralCrusherPurpleColor}" />
+                <Setter Property="BarBackgroundColor" Value="{StaticResource ViralCrusherDarkPurpleColor}" />
                 <Setter Property="BarTextColor" Value="{StaticResource ViralCrusherWhiteColor}" />
             </Style>
 
             <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
-                <Setter Property="BackgroundColor" Value="{DynamicResource ViralCrusherPurpleColor}" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource ViralCrusherDarkPurpleColor}" />
                 <Setter Property="Padding" Value="10,10,10,10" />
             </Style>
 
