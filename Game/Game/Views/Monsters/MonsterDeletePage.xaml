@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:views="clr-namespace:Game.Views"
              x:Class="Game.Views.MonsterDeletePage"
              Title="{Binding Title}">
     
@@ -14,109 +15,129 @@
 
     <ScrollView
             HorizontalOptions="CenterAndExpand">
-        <StackLayout 
-                Padding="20" HorizontalOptions="Center">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
 
-            <Frame Padding="5">
-                <Grid RowSpacing="5" ColumnSpacing="5">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="20"/>
-                        <RowDefinition Height="20"/>
-                        <RowDefinition Height="20"/>
-                        <RowDefinition Height="20"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="90"/>
-                        <ColumnDefinition Width="60"/>
-                        <ColumnDefinition Width="100"/>
-                        <ColumnDefinition Width="20"/>
-                    </Grid.ColumnDefinitions>
+            <views:CurvedLabelControl
+                   Text="Delete"
+                   Style="{StaticResource RedCurvedLabel}"
+                   FrameHorizontalOptions="Center"
+                   FramePadding="30,0,30,20"
+                   Margin="0,10,0,-20" />
 
-                    <Image Grid.Row="0"
-                            Grid.Column="0"
-                            Grid.RowSpan="3"
-                            Source="{Binding Data.ImageURI}"
-                            WidthRequest="90"
-                            HeightRequest="90"
+            <Frame Margin="5,0,5,10" Grid.Row="1">
+                <StackLayout Padding="10"
+                    HorizontalOptions="Center">
+
+                    <Frame>
+                        <Grid RowSpacing="5" ColumnSpacing="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="170"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="70"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Frame Grid.RowSpan="3" VerticalOptions="CenterAndExpand" Style="{StaticResource BorderFrame}">
+                                <Frame Style="{StaticResource CharacterFrame}">
+                                    <Image
+                                    Source="{Binding Data.ImageURI}"
+                                    Style="{StaticResource ImageLargeStyle}" />
+                                </Frame>
+                            </Frame>
+
+                            <Label Grid.Row="3" 
+                                Text="{Binding Data.Name}"
+                                FontAttributes="Bold"
+                                HorizontalOptions="Center"
+                                FontSize="Large"
+                                TextColor="White"/>
+
+                            <Label Grid.Column="1"
+                               Text="Attack"
+                               FontSize="Medium"
+                               TextColor="White"/>
+
+                            <ProgressBar
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                Progress="{Binding Data.Attack, Converter={StaticResource StatToPercentageConverter}}" 
+                                Style="{StaticResource StatsProgressBar}"/>
+
+                            <Label Grid.Column="3"
+                               FontSize="Medium"
+                               HorizontalOptions="CenterAndExpand"
+                               Text="{Binding Data.Attack}"
+                               TextColor="White"/>
+
+                            <Label Grid.Row="1"
+                               Grid.Column="1"
+                               Text="Defense"
+                               FontSize="Medium"
+                               TextColor="White"/>
+
+                            <ProgressBar
+                                Grid.Row="1"
+                                Grid.Column="2"
+                                Progress="{Binding Data.Defense, Converter={StaticResource StatToPercentageConverter}}"
+                                Style="{StaticResource StatsProgressBar}"/>
+
+                            <Label Grid.Row="1"
+                               Grid.Column="3"
+                               FontSize="Medium"
+                               HorizontalOptions="CenterAndExpand"
+                               Text="{Binding Data.Defense}"
+                               TextColor="White"/>
+
+                            <Label Grid.Row="2"
+                               Grid.Column="1"
+                               FontSize="Medium"
+                               Text="Speed"
+                               TextColor="White"/>
+
+                            <ProgressBar
+                                Grid.Row="2"
+                                Grid.Column="2"
+                                Progress="{Binding Data.Speed, Converter={StaticResource StatToPercentageConverter}}"
+                                Style="{StaticResource StatsProgressBar}" />
+
+                            <Label Grid.Row="2"
+                               Grid.Column="3"
+                               FontSize="Medium"
+                               HorizontalOptions="CenterAndExpand"
+                               Text="{Binding Data.Speed}"
+                               TextColor="White"/>
+
+                        </Grid>
+                    </Frame>
+
+                    <StackLayout 
+                        HorizontalOptions="Center" 
+                        Padding="20">
+
+                        <Label Text="Really delete this?" Style="{StaticResource MessageStyle}"/>
+
+                        <Button 
+                            Text="Yes" 
+                            Clicked="Delete_Clicked" 
                             HorizontalOptions="Center"
-                            Aspect="AspectFit" 
-                            Style="{StaticResource ImageLargeStyle}"/>
+                            FontSize="Medium"
+                            BorderWidth="1" 
+                            BorderColor="black">
+                        </Button>
+                    </StackLayout>
 
-                    <Label Grid.Row="3" 
-                            Grid.Column="0"
-                            Text="{Binding Data.Name}"
-                            FontAttributes="Bold"
-                            HorizontalOptions="Center"
-                            FontSize="Micro"
-                            TextColor="White"/>
-
-                    <Label Grid.Row="0"
-                           Grid.Column="1"
-                           Text="Attack"
-                           TextColor="White"/>
-
-                    <ProgressBar
-                        Grid.Row="0"
-                        Grid.Column="2"
-                        Progress="{Binding Data.Attack, Converter={StaticResource StatToPercentageConverter}}" 
-                        Style="{StaticResource StatsProgressBar}"/>
-
-                    <Label Grid.Row="0"
-                           Grid.Column="3"
-                           Text="{Binding Data.Attack}"
-                           TextColor="White"/>
-
-                    <Label Grid.Row="1"
-                           Grid.Column="1"
-                           Text="Defense"
-                           TextColor="White"/>
-
-                    <ProgressBar
-                        Grid.Row="1"
-                        Grid.Column="2"
-                        Progress="{Binding Data.Defense, Converter={StaticResource StatToPercentageConverter}}"
-                        Style="{StaticResource StatsProgressBar}"/>
-
-                    <Label Grid.Row="1"
-                           Grid.Column="3"
-                           Text="{Binding Data.Defense}"
-                           TextColor="White"/>
-
-                    <Label Grid.Row="2"
-                           Grid.Column="1"
-                           Text="Speed"
-                           TextColor="White"/>
-
-                    <ProgressBar
-                        Grid.Row="2"
-                        Grid.Column="2"
-                        Progress="{Binding Data.Speed, Converter={StaticResource StatToPercentageConverter}}"
-                        Style="{StaticResource StatsProgressBar}" />
-
-                    <Label Grid.Row="2"
-                           Grid.Column="3"
-                           Text="{Binding Data.Speed}"
-                           TextColor="White"/>
-
-                </Grid>
+                </StackLayout>
             </Frame>
-
-            <StackLayout 
-            HorizontalOptions="Center" 
-            Padding="20">
-
-                <Label Text="Really delete this?" Style="{StaticResource MessageStyle}"/>
-
-                <Button 
-                Text="Yes" 
-                Clicked="Delete_Clicked" 
-                HorizontalOptions="Center"
-                FontSize="Medium"
-                BorderWidth="1" 
-                BorderColor="black">
-                </Button>
-            </StackLayout>
-            
-        </StackLayout>
+        </Grid>
     </ScrollView>
 </ContentPage>
