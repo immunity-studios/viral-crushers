@@ -17,26 +17,25 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
 
-           <views:CurvedLabelControl
+                <views:CurvedLabelControl
                Text="Create"
                Style="{StaticResource RedCurvedLabel}"
                FrameHorizontalOptions="Center"
                FramePadding="30,0,30,20"
                Margin="0,10,0,-20" />
-                <Frame
-                    Grid.Row="1"
-                    BackgroundColor="{StaticResource ViralCrusherBlueColor}"
-                    BorderColor="Transparent"
-                    HasShadow="False">
+
+                <Frame Grid.Row="1"
+                       BackgroundColor="{StaticResource ViralCrusherBlueColor}"
+                       BorderColor="Transparent"
+                       HasShadow="True">
 
                     <StackLayout
                         Style="{StaticResource OuterBoxStack}"
                         Padding="20"
                         Spacing="10">
-
-                        <Grid
-                            RowSpacing="10"
-                            ColumnSpacing="10">
+                         <Grid
+                        RowSpacing="10"
+                        ColumnSpacing="10">
 
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
@@ -61,24 +60,24 @@
                             </Frame>
                             <StackLayout Orientation="Vertical" Grid.Column="1"  HorizontalOptions="Fill">
                                 <Label Text="Name" 
-                                       Style="{StaticResource LabelStyle}"/>
+                                        Style="{StaticResource LabelStyle}"/>
                     
                                 <Entry Text="{Binding Data.Name}"
-                                       HorizontalOptions="Fill"
-                                       Style="{StaticResource EntryStyle}"/>
+                                        HorizontalOptions="Fill"
+                                        Style="{StaticResource EntryStyle}"/>
                             </StackLayout>
 
                             <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="Fill" Grid.Column="1" Grid.Row="1">
                                 <Label Text="Description" 
-                                       Style="{StaticResource LabelStyle}"/>
+                                        Style="{StaticResource LabelStyle}"/>
                     
                                 <Entry Text="{Binding Data.Description}"
-                                       Style="{StaticResource EntryStyle}" />
+                                        Style="{StaticResource EntryStyle}" />
                             </StackLayout>
                         </Grid>
 
 
-                        <Grid>
+                        <Grid x:Name="SlidersRegionGrid" >
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
                                 <RowDefinition Height="*" />
@@ -95,9 +94,9 @@
                                 <!--  Level -->
                                 <Image Style="{StaticResource CreatePageDisplaySliderTitleImageStyle}" />
                                 <Label Grid.Row="0"
-                                       Grid.Column="0"
-                                       Text="Level"
-                                       TextColor="{StaticResource ViralCrusherRedColor}" />
+                                        Grid.Column="0"
+                                        Text="Level"
+                                        TextColor="{StaticResource ViralCrusherRedColor}" />
                                 
                                 
 
@@ -108,17 +107,17 @@
                                         Value="{Binding Data.Level, Mode=TwoWay}" />
 
                                 <Label Grid.Column="2"
-                                       Text="{Binding Path=Value, Source={x:Reference LevelSlider}, StringFormat='{0:F0}'}"
-                                       Style="{StaticResource CreatePageDisplaySliderValueLabelStyle}" />
+                                        Text="{Binding Path=Value, Source={x:Reference LevelSlider}, StringFormat='{0:F0}'}"
+                                        Style="{StaticResource CreatePageDisplaySliderValueLabelStyle}" />
 
 
                                 <!--  Attack -->
                                 <Image Grid.Row="1"
-                                       Style="{StaticResource CreatePageDisplaySliderTitleImageStyle}" />
+                                        Style="{StaticResource CreatePageDisplaySliderTitleImageStyle}" />
                                 <Label Grid.Row="1"
-                                           Grid.Column="0"
-                                           Text="Attack"
-                                           TextColor="{StaticResource ViralCrusherRedColor}" />
+                                            Grid.Column="0"
+                                            Text="Attack"
+                                            TextColor="{StaticResource ViralCrusherRedColor}" />
                                
 
                                 <Slider Grid.Row="1"
@@ -129,18 +128,18 @@
                                         Value="{Binding Data.Attack, Mode=TwoWay}" />
 
                                 <Label Grid.Row="1"
-                                       Grid.Column="2"
-                                       Text="{Binding Path=Value, Source={x:Reference AttackSlider}, StringFormat='{0:F0}'}"
-                                       Style="{StaticResource CreatePageDisplaySliderValueLabelStyle}" />
+                                        Grid.Column="2"
+                                        Text="{Binding Path=Value, Source={x:Reference AttackSlider}, StringFormat='{0:F0}'}"
+                                        Style="{StaticResource CreatePageDisplaySliderValueLabelStyle}" />
 
 
                                 <!--  Speed -->
                                 <Image Grid.Row="2"
-                                       Style="{StaticResource CreatePageDisplaySliderTitleImageStyle}" />
+                                        Style="{StaticResource CreatePageDisplaySliderTitleImageStyle}" />
                                 <Label Grid.Row="2"
-                                           Grid.Column="0"
-                                           Text="Speed"
-                                           TextColor="{StaticResource ViralCrusherRedColor}" />
+                                            Grid.Column="0"
+                                            Text="Speed"
+                                            TextColor="{StaticResource ViralCrusherRedColor}" />
 
                                 <Slider Grid.Row="2"
                                         Grid.Column="1"
@@ -150,17 +149,17 @@
                                         Value="{Binding Data.Speed, Mode=TwoWay}" />
 
                                 <Label Grid.Row="2"
-                                       Grid.Column="2"
-                                       Text="{Binding Path=Value, Source={x:Reference SpeedSlider}, StringFormat='{0:F0}'}"
-                                       Style="{StaticResource CreatePageDisplaySliderValueLabelStyle}" />
+                                        Grid.Column="2"
+                                        Text="{Binding Path=Value, Source={x:Reference SpeedSlider}, StringFormat='{0:F0}'}"
+                                        Style="{StaticResource CreatePageDisplaySliderValueLabelStyle}" />
 
                                 <!--  Defence -->
                                 <Image Grid.Row="3"
-                                       Style="{StaticResource CreatePageDisplaySliderTitleImageStyle}" />
+                                        Style="{StaticResource CreatePageDisplaySliderTitleImageStyle}" />
                                 <Label Grid.Row="3"
-                                           Grid.Column="0"
-                                           Text="Defense"
-                                           TextColor="{StaticResource ViralCrusherRedColor}" />
+                                            Grid.Column="0"
+                                            Text="Defense"
+                                            TextColor="{StaticResource ViralCrusherRedColor}" />
 
                                 <Slider Grid.Row="3"
                                         Grid.Column="1"
@@ -170,34 +169,35 @@
                                         Value="{Binding Data.Defense, Mode=TwoWay}" />
 
                                 <Label Grid.Row="3"
-                                       Grid.Column="2"
-                                       Text="{Binding Path=Value, Source={x:Reference DefenseSlider}, StringFormat='{0:F0}'}"
-                                       Style="{StaticResource CreatePageDisplaySliderValueLabelStyle}" />
+                                        Grid.Column="2"
+                                        Text="{Binding Path=Value, Source={x:Reference DefenseSlider}, StringFormat='{0:F0}'}"
+                                        Style="{StaticResource CreatePageDisplaySliderValueLabelStyle}" />
+
+                                <!--  Max Health -->
+                                <Image Grid.Row="4"
+                                        Style="{StaticResource CreatePageDisplaySliderTitleImageStyle}" />
+                                <Label Grid.Row="4"
+                                            Grid.Column="0"
+                                            Text="Max Health"
+                                            TextColor="{StaticResource ViralCrusherRedColor}" />
+
+                                <Slider Grid.Row="4"
+                                        Grid.Column="1"
+                                        x:Name="MaxHealthSlider"                                       
+                                        Maximum="20"
+                                        Minimum="0"
+                                        Value="{Binding Data.MaxHealth, Mode=TwoWay}" />
+
+                                <Label Grid.Row="4"
+                                        Grid.Column="2"
+                                        Text="{Binding Path=Value, Source={x:Reference MaxHealthSlider}, StringFormat='{0:F0}'}"
+                                        Style="{StaticResource CreatePageDisplaySliderValueLabelStyle}" />
+
+
 
                         </Grid>
 
-
-
-                        <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="FillAndExpand">
-                            <Label 
-                                    Text="Max Health" 
-                                    Style="{StaticResource LabelStyle}"/>
-                            <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
-
-                                <Label Text="{Binding Data.Range}"
-                                        x:Name="MaxHealthValue"
-                                        Style="{StaticResource ValueStyle}"
-                                        Padding="0,0,10,0"
-                                        HorizontalOptions="End"
-                                        HorizontalTextAlignment="End"/> 
-                                <Stepper Value="{Binding Data.MaxHealth, Mode=TwoWay}"
-                                            ValueChanged="MaxHealth_OnStepperValueChanged"/>
-                            </StackLayout>
-                        </StackLayout>
-
-
-
-                        <Grid>
+                        <Grid x:Name="BottomButtonsRegionGrid">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition />
                                 <ColumnDefinition />
@@ -205,6 +205,9 @@
                             <ImageButton Source="save_button_140.png" Clicked="Save_Clicked" />
                             <ImageButton Grid.Column="1" Source="cancel_button_140.png" Clicked="Cancel_Clicked" />
                         </Grid>
+                    
+
+                   
                     </StackLayout>
                 </Frame>
             </Grid>

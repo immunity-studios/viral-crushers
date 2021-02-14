@@ -70,15 +70,5 @@ namespace Game.Views
         {
             await Navigation.PopModalAsync();
         }
-
-        /// <summary>
-        /// Catch the change to the Stepper for Max Health
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void MaxHealth_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
-        {
-            MaxHealthValue.Text = String.Format("{0}", e.NewValue);
-        }
     }
 }
