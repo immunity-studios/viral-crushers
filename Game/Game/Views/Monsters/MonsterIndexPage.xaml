@@ -8,7 +8,7 @@
              x:Name="BrowseItemsPage"
              x:Class="Game.Views.MonsterIndexPage">
 
-<ContentPage.ToolbarItems>
+    <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Clicked="AddItem_Clicked" IconImageSource="icon_add.png"/>
     </ContentPage.ToolbarItems>
 
@@ -21,10 +21,11 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <Label
+            <views:CurvedLabelControl
                Text="Monsters"
-               Margin="0,100,0,0"
-               Style="{StaticResource IndexPageCategoryTitleLabelStyle}" />
+               Style="{StaticResource RedCurvedLabel}"
+               FrameHorizontalOptions="Center"
+               Margin="0,100,0,0" />
 
             <CollectionView
                 Grid.Row="1"
@@ -57,12 +58,10 @@
                                 Source="{Binding ImageURI}"
                                 Style="{StaticResource ImageLargeStyle}"/>
 
-
-                            <Label
-                                Padding="15,0"
+                            <views:CurvedLabelControl
                                 Grid.Row="1"
                                 Text="{Binding Name}"
-                                Style="{StaticResource IndexPageNameLabelStyle}" />
+                                Style="{StaticResource YellowCurvedLabel}" />
 
                         </Grid>
 
