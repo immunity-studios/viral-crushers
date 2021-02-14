@@ -556,7 +556,7 @@
             <!-- Progress Bar -->
             <Style TargetType="ProgressBar"
                    x:Key="StatsProgressBar">
-                <Setter Property="ProgressColor" Value="White" />
+                <Setter Property="ProgressColor" Value="{StaticResource ViralCrusherYellowColor}" />
                 <Setter Property="HeightRequest" Value="20" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
             </Style>
