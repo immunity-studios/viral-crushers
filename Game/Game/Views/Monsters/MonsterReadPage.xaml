@@ -78,74 +78,77 @@
                             <RowDefinition Height="100" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition />
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="200"/>
                         </Grid.ColumnDefinitions>
 
-                        <StackLayout
-                            Grid.Row="0"
-                            Grid.Column="0"
-                            Padding="5">
+                        <Frame Style="{StaticResource AttributeFrame}">
+                            <StackLayout>
 
-                            <StackLayout Style="{StaticResource HorizontalStack}">
-                                <Label 
+                                <StackLayout Style="{StaticResource HorizontalStack}">
+                                    <Label 
                                     Text="Attack: " 
                                     Style="{StaticResource StatsBoldStyle}"/>
 
-                                <Label 
+                                    <Label 
                                     Text="{Binding Data.Attack}" 
                                     Style="{StaticResource StatsBoldStyle}"/>
-                            </StackLayout>
+                                </StackLayout>
 
-                            <ProgressBar
+                                <ProgressBar
                                 Progress="{Binding Data.Attack, Converter={StaticResource StatToPercentageConverter}}"
                                 HeightRequest="30"
                                 Style="{StaticResource StatsProgressBar}" />
 
-                        </StackLayout>
+                            </StackLayout>
+                        </Frame>
 
-                        <StackLayout
-                            Grid.Row="0"
-                            Grid.Column="1"
-                            Padding="5">
+                        <Frame Style="{StaticResource AttributeFrame}"
+                               Grid.Row="0"
+                               Grid.Column="1">
+                            
+                            <StackLayout>
 
-                            <StackLayout Style="{StaticResource HorizontalStack}">
-                                <Label 
+                                <StackLayout Style="{StaticResource HorizontalStack}">
+                                    <Label 
                                     Text="Defense: " 
                                     Style="{StaticResource StatsBoldStyle}"/>
 
-                                <Label 
+                                    <Label 
                                     Text="{Binding Data.Defense}" 
                                     Style="{StaticResource StatsBoldStyle}"/>
-                            </StackLayout>
+                                </StackLayout>
 
-                            <ProgressBar
+                                <ProgressBar
                                 Progress="{Binding Data.Defense, Converter={StaticResource StatToPercentageConverter}}"
                                 HeightRequest="30"
                                 Style="{StaticResource StatsProgressBar}" />
 
-                        </StackLayout>
+                            </StackLayout>
+                        </Frame>
 
-                        <StackLayout
-                            Grid.Row="1"
-                            Padding="5">
+                        <Frame Style="{StaticResource AttributeFrame}"
+                               Grid.Row="1">
 
-                            <StackLayout Style="{StaticResource HorizontalStack}">
-                                <Label 
+                            <StackLayout>
+
+                                <StackLayout Style="{StaticResource HorizontalStack}">
+                                    <Label 
                                     Text="Speed: " 
                                     Style="{StaticResource StatsBoldStyle}"/>
 
-                                <Label 
+                                    <Label 
                                     Text="{Binding Data.Speed}" 
                                     Style="{StaticResource StatsBoldStyle}"/>
-                            </StackLayout>
+                                </StackLayout>
 
-                            <ProgressBar
+                                <ProgressBar
                                 Progress="{Binding Data.Speed, Converter={StaticResource StatToPercentageConverter}}"
                                 HeightRequest="30"
                                 Style="{StaticResource StatsProgressBar}" />
 
-                        </StackLayout>
+                            </StackLayout>
+                        </Frame>
 
                         <ImageButton Grid.Row="2" Source="edit_button_140.png" Clicked="Update_Clicked" />
                         
