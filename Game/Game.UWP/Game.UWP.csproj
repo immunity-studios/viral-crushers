@@ -204,6 +204,11 @@
     <Content Include="menu_items_icon_100.png" />
     <Content Include="menu_monster_icon_100.png" />
     <Content Include="menu_score_icon_100.png" />
+    <Content Include="battle_button_140.png" />
+    <Content Include="cancel_button_140.png" />
+    <Content Include="delete_button_140.png" />
+    <Content Include="edit_button_140.png" />
+    <Content Include="save_button_140.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
