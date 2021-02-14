@@ -27,7 +27,7 @@
                FrameHorizontalOptions="Center"
                Margin="0,100,0,0" />
 
-            <Frame Grid.Row="1">
+            <Frame Margin="5,0,5,10" Grid.Row="1">
                 <CollectionView                 
                     ItemsSource="{Binding Dataset}"
                     SelectionMode="Single"
