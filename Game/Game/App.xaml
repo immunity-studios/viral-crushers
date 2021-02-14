@@ -578,6 +578,14 @@
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
             </Style>
 
+            <!-- Slider -->
+            <Style TargetType="Slider">
+                <Setter Property="ThumbColor" Value="{StaticResource ViralCrusherYellowColor}" />
+                <Setter Property="MinimumTrackColor" Value="{StaticResource ViralCrusherRedColor}" />
+                <Setter Property="MaximumTrackColor" Value="{StaticResource ViralCrusherWhiteColor}" />
+                <Setter Property="Margin" Value="30,0" />
+            </Style>
+
 
             <!-- Custom User Controls-->
             <Style TargetType="views:CurvedLabelControl"

@@ -23,13 +23,21 @@
                FrameHorizontalOptions="Center"
                FramePadding="30,0,30,20"
                Margin="0,10,0,-20" />
-                <Frame Grid.Row="1"  BackgroundColor="{StaticResource ViralCrusherBlueColor}" BorderColor="Transparent" HasShadow="False">
+                <Frame
+                    Grid.Row="1"
+                    BackgroundColor="{StaticResource ViralCrusherBlueColor}"
+                    BorderColor="Transparent"
+                    HasShadow="False">
 
-                    <StackLayout Style="{StaticResource OuterBoxStack}"
-                         Padding="20"
-                         Spacing="10">
+                    <StackLayout
+                        Style="{StaticResource OuterBoxStack}"
+                        Padding="20"
+                        Spacing="10">
 
-                        <Grid RowSpacing="10" ColumnSpacing="10">
+                        <Grid
+                            RowSpacing="10"
+                            ColumnSpacing="10">
+
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
@@ -40,8 +48,14 @@
                                 <ColumnDefinition Width="2*" />
                             </Grid.ColumnDefinitions>
 
-                            <Frame Grid.RowSpan="2" Style="{StaticResource BorderFrame}">
-                                <Frame Padding="10" Style="{StaticResource CharacterFrame}">
+                            <Frame
+                                Grid.RowSpan="2"
+                                Style="{StaticResource BorderFrame}">
+
+                                <Frame
+                                    Padding="10"
+                                    Style="{StaticResource CharacterFrame}">
+
                                     <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
                                 </Frame>
                             </Frame>
@@ -61,6 +75,37 @@
                                 <Entry Text="{Binding Data.Description}"
                                        Style="{StaticResource EntryStyle}" />
                             </StackLayout>
+                        </Grid>
+
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <Image WidthRequest="70" HeightRequest="70" BackgroundColor="{StaticResource ViralCrusherWhiteColor}" />
+
+                            <Slider x:Name="LevelSlider"
+                                    Grid.Column="1"
+                                    Maximum="20"
+                                    Minimum="1"
+                                    Value="{Binding Data.Level, Mode=TwoWay}" />
+
+                            <Label Grid.Column="2" Text="{Binding Path=Value, Source={x:Reference LevelSlider}, StringFormat='{0:F0}'}"
+                                   WidthRequest="70"
+                                   HeightRequest="70"
+                                   BackgroundColor="{StaticResource ViralCrusherWhiteColor}"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center"/>
                         </Grid>
 
                         <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="FillAndExpand">
