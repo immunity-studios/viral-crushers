@@ -27,47 +27,48 @@
                FrameHorizontalOptions="Center"
                Margin="0,100,0,0" />
 
-            <CollectionView
-                Grid.Row="1"
-                ItemsSource="{Binding Dataset}"
-                SelectionMode="Single"
-                SelectionChanged="CollectionView_SelectionChanged"
-                x:Name="MonstersCollectionView">
+            <Frame Grid.Row="1">
+                <CollectionView                 
+                    ItemsSource="{Binding Dataset}"
+                    SelectionMode="Single"
+                    SelectionChanged="CollectionView_SelectionChanged"
+                    x:Name="MonstersCollectionView">
 
-                <CollectionView.ItemsLayout>
-                    <GridItemsLayout
-                        Orientation="Vertical"
-                         Span="3"
-                         VerticalItemSpacing="20" />
-                </CollectionView.ItemsLayout>
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout
+                            Orientation="Vertical"
+                             Span="3"
+                             VerticalItemSpacing="20" />
+                    </CollectionView.ItemsLayout>
 
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
 
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition />
-                            </Grid.ColumnDefinitions>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
 
-                            <Image
-                                Grid.Row="0"                                
-                                Source="{Binding ImageURI}"
-                                Style="{StaticResource ImageLargeStyle}"/>
+                                <Image
+                                    Grid.Row="0"                                
+                                    Source="{Binding ImageURI}"
+                                    Style="{StaticResource ImageLargeStyle}"/>
 
-                            <views:CurvedLabelControl
-                                Grid.Row="1"
-                                Text="{Binding Name}"
-                                Style="{StaticResource YellowCurvedLabel}" />
+                                <views:CurvedLabelControl
+                                    Grid.Row="1"
+                                    Text="{Binding Name}"
+                                    Style="{StaticResource YellowCurvedLabel}" />
 
-                        </Grid>
+                            </Grid>
 
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Frame>
 
             <views:ToolbarMenuControl Grid.Row="2"/>
 
