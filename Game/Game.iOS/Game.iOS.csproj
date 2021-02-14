@@ -137,6 +137,11 @@
     <BundleResource Include="Resources\menu_monster_icon_100.png" />
     <BundleResource Include="Resources\menu_items_icon_100.png" />
     <BundleResource Include="Resources\menu_battle_icon_100.png" />
+    <BundleResource Include="Resources\save_button_140.png" />
+    <BundleResource Include="Resources\edit_button_140.png" />
+    <BundleResource Include="Resources\delete_button_140.png" />
+    <BundleResource Include="Resources\cancel_button_140.png" />
+    <BundleResource Include="Resources\battle_button_140.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

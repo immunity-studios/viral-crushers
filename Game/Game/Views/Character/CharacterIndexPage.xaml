@@ -26,11 +26,12 @@
                Text="Characters"
                Style="{StaticResource RedCurvedLabel}"
                FrameHorizontalOptions="Center"
-               Margin="0,100,0,0" />
+               Margin="0,100,0,-20" />
 
             <CollectionView
                 Grid.Row="1"
                 ItemsSource="{Binding Dataset}"
+                BackgroundColor="{StaticResource ViralCrusherBlueColor}"
                 SelectionMode="Single"
                 SelectionChanged="CollectionView_SelectionChanged"
                 x:Name="CharactersCollectionView">
