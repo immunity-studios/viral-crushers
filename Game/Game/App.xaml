@@ -468,6 +468,18 @@
             </Style>
 
             <Style TargetType="Frame"
+                x:Key="AttributeFrame">
+                <Setter Property="Margin" Value="5" />
+                <Setter Property="Padding" Value="5" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="HasShadow" Value="True" />
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="BorderColor" Value="{StaticResource ViralCrusherDarkPurpleColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource ViralCrusherDarkPurpleColor}" />
+            </Style>
+
+            <Style TargetType="Frame"
                 x:Key="CharacterFrame">
                 <Setter Property="Margin" Value="2" />
                 <Setter Property="Padding" Value="2" />
