@@ -78,7 +78,7 @@
             </Style>
 
             <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
-                <Setter Property="BackgroundColor" Value="{DynamicResource ViralCrusherBlueColor}" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource ViralCrusherPurpleColor}" />
                 <Setter Property="Padding" Value="10,10,10,10" />
             </Style>
 
@@ -469,8 +469,8 @@
                 <Setter Property="VerticalOptions" Value="Start" />
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="HasShadow" Value="false" />
-                <Setter Property="BorderColor" Value="{StaticResource PrimaryBackgroundColor}" />
-                <Setter Property="BackgroundColor" Value="{StaticResource PrimaryBackgroundColor}" />
+                <Setter Property="BorderColor" Value="{StaticResource ViralCrusherBlueColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource ViralCrusherBlueColor}" />
             </Style>
 
             <Style TargetType="Frame"
