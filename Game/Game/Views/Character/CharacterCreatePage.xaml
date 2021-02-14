@@ -81,7 +81,7 @@
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
-                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
@@ -92,40 +92,40 @@
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
 
-                            <Image WidthRequest="70" HeightRequest="70" BackgroundColor="{StaticResource ViralCrusherWhiteColor}" />
+                                <!--  Level -->
+                                <Image Style="{StaticResource CreatePageDisplaySliderTitleImageStyle}" />
 
-                            <Slider x:Name="LevelSlider"
-                                    Grid.Column="1"
-                                    Maximum="20"
-                                    Minimum="1"
-                                    Value="{Binding Data.Level, Mode=TwoWay}" />
+                                <Slider Grid.Column="1"
+                                        x:Name="LevelSlider"                                       
+                                        Maximum="20"
+                                        Minimum="1"
+                                        Value="{Binding Data.Level, Mode=TwoWay}" />
 
-                            <Label Grid.Column="2" Text="{Binding Path=Value, Source={x:Reference LevelSlider}, StringFormat='{0:F0}'}"
-                                   WidthRequest="70"
-                                   HeightRequest="70"
-                                   BackgroundColor="{StaticResource ViralCrusherWhiteColor}"
-                                   HorizontalTextAlignment="Center"
-                                   VerticalTextAlignment="Center"/>
+                                <Label Grid.Column="2"
+                                       Text="{Binding Path=Value, Source={x:Reference LevelSlider}, StringFormat='{0:F0}'}"
+                                       Style="{StaticResource CreatePageDisplaySliderValueLabelStyle}" />
+
+                                <!--  Attack -->
+                                <Image Grid.Row="1"
+                                       Style="{StaticResource CreatePageDisplaySliderTitleImageStyle}" />
+
+                                <Slider Grid.Row="1"
+                                        Grid.Column="1"
+                                        x:Name="AttackSlider"                                       
+                                        Maximum="5"
+                                        Minimum="0"
+                                        Value="{Binding Data.Attack, Mode=TwoWay}" />
+
+                                <Label Grid.Row="1"
+                                       Grid.Column="2"
+                                       Text="{Binding Path=Value, Source={x:Reference AttackSlider}, StringFormat='{0:F0}'}"
+                                       Style="{StaticResource CreatePageDisplaySliderValueLabelStyle}" />
+
                         </Grid>
 
+
+
                         <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="FillAndExpand">
-                        
-                            <Label Text="Level"
-                                    Style="{StaticResource LabelStyle}" />
-
-                            <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0">
-                                <Label 
-                                    Text="{Binding Data.Level, Mode=OneWay}"
-                                    x:Name="LevelValue"
-                                    Style="{StaticResource ValueStyle}"
-                                    Padding="0,0,10,0"
-                                    HorizontalOptions="End"
-                                    HorizontalTextAlignment="End"/>
-                                <Stepper Minimum="1" Maximum="10"
-                                            Value="{Binding Data.Level, Mode=TwoWay}"
-                                            ValueChanged="Level_OnStepperValueChanged"/>
-                            </StackLayout>
-
                             <Label 
                                     Text="Max Health" 
                                     Style="{StaticResource LabelStyle}"/>
