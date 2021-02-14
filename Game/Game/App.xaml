@@ -487,8 +487,8 @@
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="HasShadow" Value="False" />
                 <Setter Property="CornerRadius" Value="35" />
-                <Setter Property="BorderColor" Value="White" />
-                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="BorderColor" Value="{StaticResource ViralCrusherWhiteColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource ViralCrusherWhiteColor}" />
             </Style>
 
             <Style TargetType="Frame"
