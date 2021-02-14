@@ -52,7 +52,27 @@ namespace Game.Views
             await Navigation.PushAsync(new ScoreReadPage(new GenericViewModel<ScoreModel>(data)));
 
             // Manually deselect item.
-            DataListView.SelectedItem = null;
+            //DataListView.SelectedItem = null;
+        }
+
+        /// <summary>
+        /// Select the score from the list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs args)
+        {
+            ScoreModel data = ScoresCollectionView.SelectedItem as ScoreModel;
+            if (data == null)
+            {
+                return;
+            }
+
+            // Open the Read Page
+            await Navigation.PushAsync(new ScoreReadPage(new GenericViewModel<ScoreModel>(data)));
+
+            // Manually deselect item.
+            ScoresCollectionView.SelectedItem = null;
         }
 
         /// <summary>
