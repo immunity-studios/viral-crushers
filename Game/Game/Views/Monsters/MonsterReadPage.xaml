@@ -4,18 +4,163 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:views="clr-namespace:Game.Views"
              x:Class="Game.Views.MonsterReadPage"
              Title="{Binding Title}">
 
     <ScrollView>
+
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto"/>
+                <RowDefinition />
             </Grid.RowDefinitions>
 
-            <Grid HorizontalOptions="Fill" Margin="20">
+            <views:CurvedLabelControl
+               Text="Info"
+               Style="{StaticResource RedCurvedLabel}"
+               FrameHorizontalOptions="Center"
+               FramePadding="30,0,30,20"
+               Margin="0,10,0,-20" />
+            
+            <Frame Grid.Row="1">
+                <StackLayout>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <Frame Grid.RowSpan="3" Style="{StaticResource BorderFrame}">
+                            <Frame Style="{StaticResource CharacterFrame}">
+                                <Image
+                                    Source="{Binding Data.ImageURI}"
+                                    Style="{StaticResource ImageLargeStyle}" />
+                            </Frame>
+                        </Frame>
+
+                        <StackLayout Grid.Column="1"
+                                 HorizontalOptions="Fill">
+
+                            <Label 
+                            Text="{Binding Data.Name}" 
+                            TextTransform="Uppercase"
+                            FontSize="40"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            Style="{DynamicResource BodyStyle}"/>
+
+                            <Label 
+                            Text="{Binding Data.Type}" 
+                            TextTransform="Default"
+                            FontSize="Small"
+                            FontAttributes="Italic"
+                            TextColor="White"
+                            Style="{DynamicResource BodyStyle}"/>
+
+                            <Label 
+                            Text="{Binding Data.Description}" 
+                            LineBreakMode="WordWrap"
+                            FontAttributes="Italic" 
+                            TextColor="White"
+                            Style="{StaticResource ValueStyle}"
+                            FontSize="Small"/>
+
+                        </StackLayout>
+                    </Grid>
+
+                    <Grid Padding="20">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Padding="5">
+
+                            <StackLayout Style="{StaticResource HorizontalStack}">
+                                <Label 
+                                    Text="Attack: " 
+                                    Style="{StaticResource StatsBoldStyle}"/>
+
+                                <Label 
+                                    Text="{Binding Data.Attack}" 
+                                    Style="{StaticResource StatsBoldStyle}"/>
+                            </StackLayout>
+
+                            <ProgressBar
+                                Progress="{Binding Data.Attack, Converter={StaticResource StatToPercentageConverter}}"
+                                HeightRequest="30"
+                                Style="{StaticResource StatsProgressBar}" />
+
+                        </StackLayout>
+
+                        <StackLayout
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Padding="5">
+
+                            <StackLayout Style="{StaticResource HorizontalStack}">
+                                <Label 
+                                    Text="Defense: " 
+                                    Style="{StaticResource StatsBoldStyle}"/>
+
+                                <Label 
+                                    Text="{Binding Data.Defense}" 
+                                    Style="{StaticResource StatsBoldStyle}"/>
+                            </StackLayout>
+
+                            <ProgressBar
+                                Progress="{Binding Data.Defense, Converter={StaticResource StatToPercentageConverter}}"
+                                HeightRequest="30"
+                                Style="{StaticResource StatsProgressBar}" />
+
+                        </StackLayout>
+
+                        <StackLayout
+                            Grid.Row="1"
+                            Padding="5">
+
+                            <StackLayout Style="{StaticResource HorizontalStack}">
+                                <Label 
+                                    Text="Speed: " 
+                                    Style="{StaticResource StatsBoldStyle}"/>
+
+                                <Label 
+                                    Text="{Binding Data.Speed}" 
+                                    Style="{StaticResource StatsBoldStyle}"/>
+                            </StackLayout>
+
+                            <ProgressBar
+                                Progress="{Binding Data.Speed, Converter={StaticResource StatToPercentageConverter}}"
+                                HeightRequest="30"
+                                Style="{StaticResource StatsProgressBar}" />
+
+                        </StackLayout>
+
+                        <Button Grid.Row="2" Text="Edit" Clicked="Update_Clicked" HorizontalOptions="Fill" Margin="10" />
+
+                        <Button Grid.Row="2" Grid.Column="1" Clicked="Delete_Clicked" Text="Delete" HorizontalOptions="Fill" Margin="10"/>
+
+                    </Grid>
+                </StackLayout>
+
+
+            </Frame>
+        </Grid>
+
+
+        <!--<Grid HorizontalOptions="Fill" Margin="20">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
@@ -55,6 +200,8 @@
                         FontSize="Small"/>
 
                 </StackLayout>
+            
+                
 
             </Grid>
 
@@ -149,7 +296,7 @@
                 <Button Grid.Column="1" Clicked="Delete_Clicked" Text="Delete" HorizontalOptions="Fill" Margin="10"/>
 
             </Grid>
-        </Grid>
+        </Grid>-->
 
     </ScrollView>
 </ContentPage>
