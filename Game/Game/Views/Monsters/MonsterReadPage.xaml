@@ -5,8 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:views="clr-namespace:Game.Views"
-             x:Class="Game.Views.MonsterReadPage"
-             Title="{Binding Title}">
+             x:Class="Game.Views.MonsterReadPage">
 
     <ScrollView>
 
@@ -22,8 +21,8 @@
                FrameHorizontalOptions="Center"
                FramePadding="30,0,30,20"
                Margin="0,10,0,-20" />
-            
-            <Frame Grid.Row="1">
+
+            <Frame Margin="5,0,5,10" Grid.Row="1">
                 <StackLayout>
                     <Grid>
                         <Grid.RowDefinitions>
@@ -34,7 +33,7 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
 
-                        <Frame Grid.RowSpan="3" Style="{StaticResource BorderFrame}">
+                        <Frame VerticalOptions="CenterAndExpand" Style="{StaticResource BorderFrame}">
                             <Frame Style="{StaticResource CharacterFrame}">
                                 <Image
                                     Source="{Binding Data.ImageURI}"
@@ -74,9 +73,9 @@
 
                     <Grid Padding="20">
                         <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition />
-                            <RowDefinition />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="100" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
@@ -148,9 +147,9 @@
 
                         </StackLayout>
 
-                        <Button Grid.Row="2" Text="Edit" Clicked="Update_Clicked" HorizontalOptions="Fill" Margin="10" />
-
-                        <Button Grid.Row="2" Grid.Column="1" Clicked="Delete_Clicked" Text="Delete" HorizontalOptions="Fill" Margin="10"/>
+                        <ImageButton Grid.Row="2" Source="edit_button_140.png" Clicked="Update_Clicked" />
+                        
+                        <ImageButton Grid.Row="2" Grid.Column="1" Source="delete_button_140.png" Clicked="Delete_Clicked" />
 
                     </Grid>
                 </StackLayout>
