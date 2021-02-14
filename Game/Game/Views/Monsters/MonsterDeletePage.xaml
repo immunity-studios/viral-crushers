@@ -17,7 +17,7 @@
         <StackLayout 
                 Padding="20" HorizontalOptions="Center">
 
-            <Frame HasShadow="True" Padding="5">
+            <Frame CornerRadius="20" HasShadow="True" Padding="5">
                 <Grid RowSpacing="5" ColumnSpacing="5">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="20"/>
