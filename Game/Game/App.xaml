@@ -81,7 +81,6 @@
 
             <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
                 <Setter Property="BackgroundColor" Value="{DynamicResource ViralCrusherDarkPurpleColor}" />
-                <Setter Property="Padding" Value="10,10,10,10" />
             </Style>
 
             <!--<Style TargetType="ContentPage"
@@ -302,6 +301,14 @@
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+
+            <Style TargetType="ImageButton"
+                x:Key="ToolbarMenuImageButtonStyle">
+                <Setter Property="HeightRequest" Value="70" />
+                <Setter Property="WidthRequest" Value="70" />
+                <Setter Property="BackgroundColor" Value="{StaticResource ViralCrusherWhiteColor}" />
+                <Setter Property="Padding" Value="0,10" />
             </Style>
 
             <!-- ImageButton -->

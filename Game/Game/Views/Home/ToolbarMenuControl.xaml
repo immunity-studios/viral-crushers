@@ -2,7 +2,8 @@
 <ContentView
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="Game.Views.ToolbarMenuControl">
+    x:Class="Game.Views.ToolbarMenuControl"
+    BackgroundColor="{StaticResource ViralCrusherWhiteColor}">
 
     <ContentView.Content>
 
@@ -16,35 +17,35 @@
             </Grid.ColumnDefinitions>
 
                 <ImageButton
-                    x:Name="GamePageImageButton"
-                    Source="icon_red_dice.png"
-                    Style="{StaticResource ImageSmallStyle}"
-                    Clicked="DungeonButton_Clicked" />
-
-                <ImageButton Grid.Column="1"
                     x:Name="CharactersImageButton"
                     Source="icon_menu_characters_girl.png"
-                    Style="{StaticResource ImageSmallStyle}"
+                    Style="{StaticResource ToolbarMenuImageButtonStyle}"
                     Clicked="CharacterButton_Clicked"/>
 
-                <ImageButton Grid.Column="2"
+                <ImageButton Grid.Column="1"
                     x:Name="MonstersImageButton"
-                    Source="icon_menu_monsters.png"
-                    Style="{StaticResource ImageSmallStyle}"
+                    Source="menu_monster_icon_100.png"
+                    Style="{StaticResource ToolbarMenuImageButtonStyle}"
                     Clicked="MonsterButton_Clicked"/>
+
+                <ImageButton Grid.Column="2"
+                    x:Name="GamePageImageButton"
+                    Source="menu_battle_icon_100.png"
+                    Style="{StaticResource ToolbarMenuImageButtonStyle}"
+                    Clicked="DungeonButton_Clicked" />
 
                 <ImageButton Grid.Column="3"
                     x:Name="ItemsImageButton"
-                    Source="icon_menu_items.png"
-                    Style="{StaticResource ImageSmallStyle}"
+                    Source="menu_items_icon_100.png"
+                    Style="{StaticResource ToolbarMenuImageButtonStyle}"
                     Clicked="ItemButton_Clicked" />
 
                 <ImageButton Grid.Column="4"
                     x:Name="ScoresImageButton"
-                    Source="icon_black_dice.png"
-                    Style="{StaticResource ImageSmallStyle}"
+                    Source="menu_score_icon_100.png"
+                    Style="{StaticResource ToolbarMenuImageButtonStyle}"
                     Clicked="ScoreButton_Clicked" />
-            
+
         </Grid>
 
     </ContentView.Content>
