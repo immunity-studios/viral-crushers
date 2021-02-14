@@ -82,16 +82,6 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Catch the change to the stepper for Attack
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void Attack_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
-        {
-            AttackValue.Text = String.Format("{0}", e.NewValue);
-        }
-
-        /// <summary>
         /// Catch the change to the stepper for Defense
         /// </summary>
         /// <param name="sender"></param>
@@ -99,26 +89,6 @@ namespace Game.Views
         public void Defense_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
             DefenseValue.Text = String.Format("{0}", e.NewValue);
-        }
-
-        /// <summary>
-        /// Catch the change to the stepper for Speed
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void Speed_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
-        {
-            SpeedValue.Text = String.Format("{0}", e.NewValue);
-        }
-
-        /// <summary>
-        /// Catch the change to the stepper for Level
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void Level_OnStepperValueChanged(System.Object sender, Xamarin.Forms.ValueChangedEventArgs e)
-        {
-            LevelValue.Text = String.Format("{0}", e.NewValue);
         }
     }
 }
