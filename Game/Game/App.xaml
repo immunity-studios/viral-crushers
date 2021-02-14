@@ -468,6 +468,30 @@
             </Style>
 
             <Style TargetType="Frame"
+                x:Key="CharacterFrame">
+                <Setter Property="Margin" Value="2" />
+                <Setter Property="Padding" Value="2" />
+                <Setter Property="VerticalOptions" Value="Start" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="CornerRadius" Value="35" />
+                <Setter Property="BorderColor" Value="{StaticResource ViralCrusherDarkPurpleColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource ViralCrusherDarkPurpleColor}" />
+            </Style>
+
+            <Style TargetType="Frame"
+                x:Key="BorderFrame">
+                <Setter Property="Margin" Value="2" />
+                <Setter Property="Padding" Value="2" />
+                <Setter Property="VerticalOptions" Value="Start" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="CornerRadius" Value="35" />
+                <Setter Property="BorderColor" Value="White" />
+                <Setter Property="BackgroundColor" Value="White" />
+            </Style>
+
+            <Style TargetType="Frame"
                 x:Key="PlayerBattleOuterFrame">
                 <Setter Property="HeightRequest" Value="112" />
                 <Setter Property="WidthRequest" Value="250" />

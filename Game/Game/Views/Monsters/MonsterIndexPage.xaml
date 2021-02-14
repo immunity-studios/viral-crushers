@@ -25,7 +25,7 @@
                Text="Monsters"
                Style="{StaticResource RedCurvedLabel}"
                FrameHorizontalOptions="Center"
-               Margin="0,100,0,0" />
+               Margin="0,50,0,0" />
 
             <Frame Margin="5,0,5,10" Grid.Row="1">
                 <CollectionView                 
@@ -53,10 +53,14 @@
                                     <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
 
-                                <Image
-                                    Grid.Row="0"                                
-                                    Source="{Binding ImageURI}"
-                                    Style="{StaticResource ImageLargeStyle}"/>
+                                <Frame Style="{StaticResource BorderFrame}">
+                                    <Frame Style="{StaticResource CharacterFrame}">
+                                        <Image
+                                            Grid.Row="0"                                
+                                            Source="{Binding ImageURI}"
+                                            Style="{StaticResource ImageLargeStyle}"/>
+                                    </Frame>
+                                </Frame>
 
                                 <views:CurvedLabelControl
                                     Grid.Row="1"
