@@ -94,6 +94,12 @@
 
                                 <!--  Level -->
                                 <Image Style="{StaticResource CreatePageDisplaySliderTitleImageStyle}" />
+                                <Label Grid.Row="0"
+                                       Grid.Column="0"
+                                       Text="Level"
+                                       TextColor="{StaticResource ViralCrusherRedColor}" />
+                                
+                                
 
                                 <Slider Grid.Column="1"
                                         x:Name="LevelSlider"                                       
@@ -109,12 +115,17 @@
                                 <!--  Attack -->
                                 <Image Grid.Row="1"
                                        Style="{StaticResource CreatePageDisplaySliderTitleImageStyle}" />
+                                <Label Grid.Row="1"
+                                           Grid.Column="0"
+                                           Text="Attack"
+                                           TextColor="{StaticResource ViralCrusherRedColor}" />
+                               
 
                                 <Slider Grid.Row="1"
                                         Grid.Column="1"
                                         x:Name="AttackSlider"                                       
-                                        Maximum="5"
-                                        Minimum="0"
+                                        Maximum="8"
+                                        Minimum="1"
                                         Value="{Binding Data.Attack, Mode=TwoWay}" />
 
                                 <Label Grid.Row="1"
@@ -126,17 +137,41 @@
                                 <!--  Speed -->
                                 <Image Grid.Row="2"
                                        Style="{StaticResource CreatePageDisplaySliderTitleImageStyle}" />
+                                <Label Grid.Row="2"
+                                           Grid.Column="0"
+                                           Text="Speed"
+                                           TextColor="{StaticResource ViralCrusherRedColor}" />
 
                                 <Slider Grid.Row="2"
                                         Grid.Column="1"
                                         x:Name="SpeedSlider"                                       
                                         Maximum="5"
-                                        Minimum="0"
+                                        Minimum="1"
                                         Value="{Binding Data.Speed, Mode=TwoWay}" />
 
                                 <Label Grid.Row="2"
                                        Grid.Column="2"
                                        Text="{Binding Path=Value, Source={x:Reference SpeedSlider}, StringFormat='{0:F0}'}"
+                                       Style="{StaticResource CreatePageDisplaySliderValueLabelStyle}" />
+
+                                <!--  Defence -->
+                                <Image Grid.Row="3"
+                                       Style="{StaticResource CreatePageDisplaySliderTitleImageStyle}" />
+                                <Label Grid.Row="3"
+                                           Grid.Column="0"
+                                           Text="Defense"
+                                           TextColor="{StaticResource ViralCrusherRedColor}" />
+
+                                <Slider Grid.Row="3"
+                                        Grid.Column="1"
+                                        x:Name="DefenseSlider"                                       
+                                        Maximum="10"
+                                        Minimum="1"
+                                        Value="{Binding Data.Defense, Mode=TwoWay}" />
+
+                                <Label Grid.Row="3"
+                                       Grid.Column="2"
+                                       Text="{Binding Path=Value, Source={x:Reference DefenseSlider}, StringFormat='{0:F0}'}"
                                        Style="{StaticResource CreatePageDisplaySliderValueLabelStyle}" />
 
                         </Grid>
@@ -147,7 +182,6 @@
                             <Label 
                                     Text="Max Health" 
                                     Style="{StaticResource LabelStyle}"/>
-
                             <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
 
                                 <Label Text="{Binding Data.Range}"
@@ -158,31 +192,10 @@
                                         HorizontalTextAlignment="End"/> 
                                 <Stepper Value="{Binding Data.MaxHealth, Mode=TwoWay}"
                                             ValueChanged="MaxHealth_OnStepperValueChanged"/>
-
                             </StackLayout>
-
-
-                           
-
-                            <Label 
-                                Text="Defense" 
-                                Style="{StaticResource LabelStyle}"/>
-                    
-                            <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
-                                <Label 
-                                    Text="{Binding Data.Defense}" 
-                                    x:Name="DefenseValue"
-                                    Style="{StaticResource ValueStyle}"
-                                    Padding="0,0,10,0"
-                                    HorizontalOptions="End"
-                                    HorizontalTextAlignment="End"/>
-
-                                <Stepper 
-                                    Value="{Binding Data.Defense, Mode=TwoWay}"
-                                    ValueChanged="Defense_OnStepperValueChanged"/>
-                    
-                            </StackLayout>                           
                         </StackLayout>
+
+
 
                         <Grid>
                             <Grid.ColumnDefinitions>
