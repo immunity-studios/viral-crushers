@@ -23,10 +23,9 @@
 
         <Frame
             CornerRadius="{Binding CornerRadius, Source={x:Reference this}}"
-            Padding="10,0"
+            Padding="{Binding FramePadding, Source={x:Reference this}}"
             BackgroundColor="{Binding TextBackgroundColor, Source={x:Reference this}}"
             BorderColor="Transparent"
-            Margin="15,10,15,10"
             HorizontalOptions="{Binding FrameHorizontalOptions, Source={x:Reference this}}"
             HasShadow="False">
 
