@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:helpers="clr-namespace:Game.Helpers"
+             xmlns:views="clr-namespace:Game.Views"
              mc:Ignorable="d"
              x:Class="Game.App">
 
@@ -68,7 +69,7 @@
 
             <!-- <Thickness x:Key="PageMargin">0</Thickness> -->
 
-            <helpers:StatToPercentageConverter x:Key="StatToPercentageConverter" />
+            <helpers:StatToPercentageConverter x:Key="StatToPercentageConverter" />            
 
 
             <!-- Pages -->
@@ -153,22 +154,6 @@
                 <Setter Property="BackgroundColor" Value="{StaticResource ViralCrusherYellowColor}"/>                
                 <Setter Property="LineBreakMode" Value="TailTruncation" />
             </Style>
-
-            <Style TargetType="Label"
-                x:Key="IndexPageCategoryTitleLabelStyle"
-                BasedOn="{StaticResource LabelBaseStyle}">
-                <Setter Property="FontSize" Value="40" />
-                <Setter Property="FontFamily" Value="Lobster" />
-                <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="FontAttributes" Value="Italic" />
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="Padding" Value="30,0,30,0" />
-                <Setter Property="HorizontalTextAlignment" Value="Center" />
-                <Setter Property="TextColor" Value="{StaticResource ViralCrusherWhiteColor}" />
-                <Setter Property="BackgroundColor" Value="{StaticResource ViralCrusherRedColor}" />                
-                <Setter Property="LineBreakMode" Value="WordWrap" />
-            </Style>
-
 
             <Style TargetType="Label"
                 x:Key="ListStyle"
@@ -560,6 +545,15 @@
                 <Setter Property="HeightRequest" Value="20" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
             </Style>
+
+
+            <!-- Custom User Controls-->
+            <Style TargetType="views:CurvedLabelControl"
+                   x:Key="CurvedLabel">
+                <Setter Property="CornerRadius" Value="25" />
+                <Setter Property="TextBackgroundColor" Value="{StaticResource ViralCrusherRedColor}" />
+                <Setter Property="FontSize" Value="35" />
+            </Style >
 
         </ResourceDictionary>
     </Application.Resources>

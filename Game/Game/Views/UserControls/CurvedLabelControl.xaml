@@ -2,10 +2,45 @@
 <ContentView
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="Game.Views.CurvedLabelControl" >
+    x:Class="Game.Views.CurvedLabelControl"
+    x:Name="this">
+    <ContentView.Resources>
+            <Style TargetType="Label"
+                x:Key="CurvedLabelInnerLabelStyle"
+                BasedOn="{StaticResource LabelBaseStyle}">
+                <Setter Property="FontSize" Value="40" />
+                <Setter Property="FontFamily" Value="Lobster" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontAttributes" Value="Italic" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="Padding" Value="30,0,30,0" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="TextColor" Value="{StaticResource ViralCrusherWhiteColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource ViralCrusherRedColor}" />                
+                <Setter Property="LineBreakMode" Value="WordWrap" />
+            </Style>
+    </ContentView.Resources>
 
     <ContentView.Content>
 
+        <Frame
+            CornerRadius="{Binding CornerRadius, Source={x:Reference this}}"
+            Padding="0"
+            BackgroundColor="{Binding TextBackgroundColor, Source={x:Reference this}}"
+            BorderColor="Transparent"
+            Margin="15,10,15,10" 
+            HasShadow="False">
+
+        <Label
+            Margin="5"
+            Style="{StaticResource CurvedLabelInnerLabelStyle}"
+            HorizontalOptions="Center" 
+            BackgroundColor="Transparent" 
+            Text="{Binding Text, Source={x:Reference this}}"
+            FontSize="{Binding FontSize, Source={x:Reference this}}"/>
+
+              
+        </Frame>
     </ContentView.Content>
 
 </ContentView>
