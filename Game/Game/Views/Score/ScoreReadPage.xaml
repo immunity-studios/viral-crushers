@@ -28,6 +28,12 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
 
+                <Image
+                    Grid.RowSpan="3"
+                    Grid.Row="0"
+                    Source="{Binding Data.ImageURI}"
+                    Style="{StaticResource ImageBattleMediumStyle}" />
+
                 <StackLayout Grid.Column="1"
                                  Style="{StaticResource VerticalStack}"
                                  HorizontalOptions="Fill">
