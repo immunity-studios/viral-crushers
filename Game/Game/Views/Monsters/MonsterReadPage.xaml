@@ -29,7 +29,7 @@
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="150" />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
 
@@ -37,7 +37,8 @@
                             <Frame Style="{StaticResource CharacterFrame}">
                                 <Image
                                     Source="{Binding Data.ImageURI}"
-                                    Style="{StaticResource ImageLargeStyle}" />
+                                    HeightRequest="100"
+                                    WidthRequest="100"/>
                             </Frame>
                         </Frame>
 
@@ -47,7 +48,7 @@
                             <Label 
                             Text="{Binding Data.Name}" 
                             TextTransform="Uppercase"
-                            FontSize="40"
+                            FontSize="Medium"
                             TextColor="White"
                             FontAttributes="Bold"
                             Style="{DynamicResource BodyStyle}"/>
@@ -71,15 +72,15 @@
                         </StackLayout>
                     </Grid>
 
-                    <Grid Padding="20">
+                    <Grid Padding="10">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="100" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="200"/>
-                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
 
                         <Frame Style="{StaticResource AttributeFrame}">
@@ -106,7 +107,7 @@
                         <Frame Style="{StaticResource AttributeFrame}"
                                Grid.Row="0"
                                Grid.Column="1">
-                            
+
                             <StackLayout>
 
                                 <StackLayout Style="{StaticResource HorizontalStack}">
@@ -151,7 +152,7 @@
                         </Frame>
 
                         <ImageButton Grid.Row="2" Grid.Column="1" HorizontalOptions="CenterAndExpand" Source="edit_button_140.png" Clicked="Update_Clicked" />
-                        
+
                         <ImageButton Grid.Row="2" HorizontalOptions="CenterAndExpand" Source="delete_button_140.png" Clicked="Delete_Clicked" />
 
                     </Grid>
@@ -160,145 +161,6 @@
 
             </Frame>
         </Grid>
-
-
-        <!--<Grid HorizontalOptions="Fill" Margin="20">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-
-                <Image
-                    Grid.RowSpan="3"
-                    Grid.Row="0"
-                    Source="{Binding Data.ImageURI}"
-                    Style="{StaticResource ImageLargeStyle}" />
-
-                <StackLayout Grid.Column="1"
-                             HorizontalOptions="Fill">
-
-                    <Label 
-                        Text="{Binding Data.Name}" 
-                        TextTransform="Uppercase"
-                        FontSize="Medium"
-                        FontAttributes="Bold"
-                        Style="{DynamicResource BodyStyle}"/>
-
-                    <Label 
-                        Text="{Binding Data.Type}" 
-                        TextTransform="Default"
-                        FontSize="Small"
-                        FontAttributes="Italic"
-                        Style="{DynamicResource BodyStyle}"/>
-
-                    <Label 
-                        Text="{Binding Data.Description}" 
-                        LineBreakMode="WordWrap"
-                        FontAttributes="Italic" 
-                        Style="{StaticResource ValueStyle}"
-                        FontSize="Small"/>
-
-                </StackLayout>
-            
-                
-
-            </Grid>
-
-
-            <Grid Grid.Row="1" Padding="20">
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-
-                <StackLayout
-                    Grid.Row="0"
-                    Grid.Column="0"
-                    Padding="5">
-
-                    <StackLayout Style="{StaticResource HorizontalStack}">
-                        <Label 
-                        Text="Attack: " 
-                        Style="{StaticResource StatsBoldStyle}"/>
-
-                        <Label 
-                        Text="{Binding Data.Attack}" 
-                        Style="{StaticResource StatsBoldStyle}"/>
-                    </StackLayout>
-
-                    <ProgressBar
-                        Progress="{Binding Data.Attack, Converter={StaticResource StatToPercentageConverter}}"
-                        HeightRequest="30"
-                        Style="{StaticResource StatsProgressBar}" />
-
-                </StackLayout>
-
-                <StackLayout
-                    Grid.Row="0"
-                    Grid.Column="1"
-                    Padding="5">
-
-                    <StackLayout Style="{StaticResource HorizontalStack}">
-                        <Label 
-                        Text="Defense: " 
-                        Style="{StaticResource StatsBoldStyle}"/>
-
-                        <Label 
-                        Text="{Binding Data.Defense}" 
-                        Style="{StaticResource StatsBoldStyle}"/>
-                    </StackLayout>
-
-                    <ProgressBar
-                        Progress="{Binding Data.Defense, Converter={StaticResource StatToPercentageConverter}}"
-                        HeightRequest="30"
-                        Style="{StaticResource StatsProgressBar}" />
-
-                </StackLayout>
-
-                <StackLayout
-                    Grid.Row="1"
-                    Grid.Column="0"
-                    Padding="5">
-
-                    <StackLayout Style="{StaticResource HorizontalStack}">
-                        <Label 
-                        Text="Speed: " 
-                        Style="{StaticResource StatsBoldStyle}"/>
-
-                        <Label 
-                        Text="{Binding Data.Speed}" 
-                        Style="{StaticResource StatsBoldStyle}"/>
-                    </StackLayout>
-
-                    <ProgressBar
-                        Progress="{Binding Data.Speed, Converter={StaticResource StatToPercentageConverter}}"
-                        HeightRequest="30"
-                        Style="{StaticResource StatsProgressBar}" />
-
-                </StackLayout>
-                
-            </Grid>
-
-            <Grid Grid.Row="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-
-                <Button Text="Edit" Clicked="Update_Clicked" HorizontalOptions="Fill" Margin="10" />
-
-                <Button Grid.Column="1" Clicked="Delete_Clicked" Text="Delete" HorizontalOptions="Fill" Margin="10"/>
-
-            </Grid>
-        </Grid>-->
 
     </ScrollView>
 </ContentPage>

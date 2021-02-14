@@ -616,7 +616,7 @@
                 <Setter Property="TextColor" Value="{StaticResource ViralCrusherRedColor}" />
                 <Setter Property="TextBackgroundColor" Value="{StaticResource ViralCrusherYellowColor}" />
                 <Setter Property="FrameHorizontalOptions" Value="Fill" /> 
-                <Setter Property="FontSize" Value="15" />
+                <Setter Property="FontSize" Value="10" />
                 <Setter Property="FramePadding" Value="10,0" />
                 <Setter Property="Margin" Value="10" />
             </Style >

@@ -26,93 +26,94 @@
                 <StackLayout Padding="10"
                     HorizontalOptions="Center">
 
-                    <Frame>
-                        <Grid RowSpacing="5" ColumnSpacing="5">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="40"/>
-                                <RowDefinition Height="40"/>
-                                <RowDefinition Height="40"/>
-                                <RowDefinition Height="40"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="170"/>
-                                <ColumnDefinition Width="90"/>
-                                <ColumnDefinition Width="150"/>
-                                <ColumnDefinition Width="60"/>
-                            </Grid.ColumnDefinitions>
+                    <Grid RowSpacing="5" ColumnSpacing="5" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
 
-                            <Frame Grid.RowSpan="3" VerticalOptions="CenterAndExpand" Style="{StaticResource BorderFrame}">
-                                <Frame Style="{StaticResource CharacterFrame}">
-                                    <Image
+                        <Frame Grid.RowSpan="3" VerticalOptions="CenterAndExpand" Style="{StaticResource BorderFrame}">
+                            <Frame Style="{StaticResource CharacterFrame}">
+                                <Image
                                     Source="{Binding Data.ImageURI}"
-                                    Style="{StaticResource ImageLargeStyle}" />
-                                </Frame>
+                                    WidthRequest="100"
+                                    HeightRequest="100"/>
                             </Frame>
+                        </Frame>
 
-                            <Label Grid.Row="3" 
-                                Text="{Binding Data.Name}"
-                                FontAttributes="Bold"
-                                HorizontalOptions="Center"
-                                FontSize="Large"
-                                TextColor="White"/>
+                        <Label Grid.Row="3" 
+                            Text="{Binding Data.Name}"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center"
+                            FontSize="Medium"
+                            TextTransform="Uppercase"
+                            TextColor="White"/>
 
-                            <Label Grid.Column="1"
-                               Text="Attack"
-                               FontSize="Medium"
-                               TextColor="White"/>
+                        <Label Grid.Column="1"
+                            Text="Atk."
+                            FontSize="Medium"
+                            TextColor="White"/>
 
-                            <ProgressBar
-                                Grid.Row="0"
-                                Grid.Column="2"
-                                Progress="{Binding Data.Attack, Converter={StaticResource StatToPercentageConverter}}" 
-                                Style="{StaticResource StatsProgressBar}"/>
+                        <ProgressBar
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            Progress="{Binding Data.Attack, Converter={StaticResource StatToPercentageConverter}}" 
+                            Style="{StaticResource StatsProgressBar}"/>
 
-                            <Label Grid.Column="3"
-                               FontSize="Medium"
-                               HorizontalOptions="CenterAndExpand"
-                               Text="{Binding Data.Attack}"
-                               TextColor="White"/>
+                        <Label Grid.Column="3"
+                            FontSize="Medium"
+                            HorizontalOptions="CenterAndExpand"
+                            Text="{Binding Data.Attack}"
+                            TextColor="White"/>
 
-                            <Label Grid.Row="1"
-                               Grid.Column="1"
-                               Text="Defense"
-                               FontSize="Medium"
-                               TextColor="White"/>
+                        <Label Grid.Row="1"
+                            Grid.Column="1"
+                            Text="Def."
+                            FontSize="Medium"
+                            TextColor="White"/>
 
-                            <ProgressBar
-                                Grid.Row="1"
-                                Grid.Column="2"
-                                Progress="{Binding Data.Defense, Converter={StaticResource StatToPercentageConverter}}"
-                                Style="{StaticResource StatsProgressBar}"/>
+                        <ProgressBar
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Progress="{Binding Data.Defense, Converter={StaticResource StatToPercentageConverter}}"
+                            Style="{StaticResource StatsProgressBar}"/>
 
-                            <Label Grid.Row="1"
-                               Grid.Column="3"
-                               FontSize="Medium"
-                               HorizontalOptions="CenterAndExpand"
-                               Text="{Binding Data.Defense}"
-                               TextColor="White"/>
+                        <Label Grid.Row="1"
+                            Grid.Column="3"
+                            FontSize="Medium"
+                            HorizontalOptions="CenterAndExpand"
+                            Text="{Binding Data.Defense}"
+                            TextColor="White"/>
 
-                            <Label Grid.Row="2"
-                               Grid.Column="1"
-                               FontSize="Medium"
-                               Text="Speed"
-                               TextColor="White"/>
+                        <Label Grid.Row="2"
+                            Grid.Column="1"
+                            FontSize="Medium"
+                            Text="Spd."
+                            TextColor="White"/>
 
-                            <ProgressBar
-                                Grid.Row="2"
-                                Grid.Column="2"
-                                Progress="{Binding Data.Speed, Converter={StaticResource StatToPercentageConverter}}"
-                                Style="{StaticResource StatsProgressBar}" />
+                        <ProgressBar
+                            Grid.Row="2"
+                            Grid.Column="2"
+                            Progress="{Binding Data.Speed, Converter={StaticResource StatToPercentageConverter}}"
+                            Style="{StaticResource StatsProgressBar}" />
 
-                            <Label Grid.Row="2"
-                               Grid.Column="3"
-                               FontSize="Medium"
-                               HorizontalOptions="CenterAndExpand"
-                               Text="{Binding Data.Speed}"
-                               TextColor="White"/>
+                        <Label Grid.Row="2"
+                            Grid.Column="3"
+                            FontSize="Medium"
+                            HorizontalOptions="CenterAndExpand"
+                            Text="{Binding Data.Speed}"
+                            TextColor="White"/>
 
-                        </Grid>
-                    </Frame>
+                    </Grid>
+
 
                     <Grid>
                         <Grid.RowDefinitions>
