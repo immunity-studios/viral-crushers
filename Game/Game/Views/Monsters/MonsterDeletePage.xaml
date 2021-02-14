@@ -55,7 +55,7 @@
                             HorizontalOptions="Center"
                             FontSize="Medium"
                             TextTransform="Uppercase"
-                            TextColor="White"/>
+                            TextColor="{StaticResource ViralCrusherYellowColor}"/>
 
                         <Label Grid.Column="1"
                             Text="Atk."

@@ -49,7 +49,7 @@
                             Text="{Binding Data.Name}" 
                             TextTransform="Uppercase"
                             FontSize="Medium"
-                            TextColor="White"
+                            TextColor="{StaticResource ViralCrusherYellowColor}"
                             FontAttributes="Bold"
                             Style="{DynamicResource BodyStyle}"/>
 
@@ -79,8 +79,8 @@
                             <RowDefinition Height="100" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="5*"/>
                         </Grid.ColumnDefinitions>
 
                         <Frame Style="{StaticResource AttributeFrame}">
