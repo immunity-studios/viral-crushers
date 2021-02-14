@@ -22,10 +22,8 @@
                <RowDefinition Height="Auto"/>
            </Grid.RowDefinitions>
 
-           <Label
-               Text="Characters"
-               Margin="0,100,0,0"
-               Style="{StaticResource IndexPageCategoryTitleLabelStyle}" />
+           <views:CurvedLabelControl Text="Characters" Style="{StaticResource CurvedLabel}" 
+               Margin="0,100,0,0"/>
 
             <CollectionView
                 Grid.Row="1"
