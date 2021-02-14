@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Name="BrowseItemsPage"
+             x:Name="BrowseScoresPage"
              x:Class="Game.Views.ScoreIndexPage"
              Title="{Binding Title}">
 
@@ -13,54 +13,57 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout Style="{StaticResource OuterBoxStack}">
-            <ListView x:Name="DataListView" 
-                    ItemsSource="{Binding Dataset}"
-                    IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-                    RefreshCommand="{Binding LoadItemsCommand}"
-                    CachingStrategy="RecycleElement"
-                    ItemSelected="OnItemSelected"
-                    HasUnevenRows="true"
-                    Margin="5,0,5,0"
-                    RowHeight="80"
-                    >
-                
-                <ListView.ItemTemplate>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <CollectionView ItemsSource="{Binding Dataset}"
+                            SelectionMode="Single"
+                            SelectionChanged="CollectionView_SelectionChanged"
+                            ItemsLayout="VerticalGrid, 2"
+                            x:Name="ScoresCollectionView">
+
+                <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            <Grid ColumnSpacing="1" RowSpacing="1">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="auto"/>
-                                </Grid.RowDefinitions>
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
 
-                                <Label Grid.Column="0" Grid.Row="0"
-                                       Text="{Binding Name}" 
-                                       Style="{StaticResource ListStyle}"/>
+                            <Image
+                                Grid.RowSpan="2"
+                                Grid.Row="0"
+                                Source="{Binding ImageURI}"
+                                Style="{StaticResource ImageMediumStyle}"
+                                Aspect="AspectFill"
+                                VerticalOptions="Center" />
 
-                                <Label Grid.Column="0" Grid.Row="1"
-                                       Text="Rounds" 
-                                       Style="{StaticResource ListStyle}"/>
 
-                                <Label Grid.Column="1" Grid.Row="1"
-                                       Text="{Binding RoundCount}" 
-                                       Style="{StaticResource ListStyle}"/>
+                            <Label
+                                Grid.Column="1"
+                                Grid.Row="0"
+                                Text="{Binding Name}"
+                                Style="{StaticResource IndexPageCollectionViewBoldStyle}" />
 
-                                <Label Grid.Column="0" Grid.Row="2"
-                                       Text="Score" 
-                                       Style="{StaticResource ListStyle}"/>
-                                
-                                <Label Grid.Column="1" Grid.Row="2"
-                                       Text="{Binding ScoreTotal}" 
-                                       Style="{StaticResource ListStyle}"/>
 
-                            </Grid>
-                        </ViewCell>
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Text="{Binding Description}"
+                                Style="{StaticResource IndexPageCollectionViewItalicStyle}" />
+
+                        </Grid>
+                     
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <!--views:ToolbarMenuControl Grid.Row="1"/-->
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
