@@ -291,4 +291,22 @@
   <ItemGroup>
     <BundleResource Include="Resources\icon_vaccine.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\measles_monster_140.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\malaria_monster_140.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\flu_monster_140.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ebola_monster_140.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\covid_monster_140.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cold_monster_140.png" />
+  </ItemGroup>
 </Project>
