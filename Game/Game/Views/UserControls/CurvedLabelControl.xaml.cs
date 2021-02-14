@@ -39,6 +39,20 @@ namespace Game.Views
             }
         }
 
+        public static readonly BindableProperty TextColorProperty = BindableProperty.Create(nameof(TextColor), typeof(Color), typeof(CurvedLabelControl));
+
+        public Color TextColor
+        {
+            get
+            {
+                return (Color)GetValue(TextColorProperty);
+            }
+            set
+            {
+                SetValue(TextColorProperty, value);
+            }
+        }
+
         public static readonly BindableProperty CornerRadiusProperty = BindableProperty.Create(nameof(CornerRadius), typeof(float), typeof(CurvedLabelControl));
 
         public float CornerRadius
@@ -64,6 +78,20 @@ namespace Game.Views
             set
             {
                 SetValue(FontSizeProperty, value);
+            }
+        }
+
+        public static readonly BindableProperty FrameHorizontalOptionsProperty = BindableProperty.Create(nameof(FrameHorizontalOptions), typeof(LayoutOptions), typeof(CurvedLabelControl));
+
+        public LayoutOptions FrameHorizontalOptions
+        {
+            get
+            {
+                return (LayoutOptions)GetValue(FrameHorizontalOptionsProperty);
+            }
+            set
+            {
+                SetValue(FrameHorizontalOptionsProperty, value);
             }
         }
     }

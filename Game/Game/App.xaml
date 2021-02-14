@@ -549,10 +549,21 @@
 
             <!-- Custom User Controls-->
             <Style TargetType="views:CurvedLabelControl"
-                   x:Key="CurvedLabel">
+                   x:Key="RedCurvedLabel">
                 <Setter Property="CornerRadius" Value="25" />
+                <Setter Property="TextColor" Value="{StaticResource ViralCrusherWhiteColor}" />
                 <Setter Property="TextBackgroundColor" Value="{StaticResource ViralCrusherRedColor}" />
-                <Setter Property="FontSize" Value="35" />
+                <Setter Property="Padding" Value="30,0,30,0" />
+                <Setter Property="FontSize" Value="40" />
+            </Style >
+
+            <Style TargetType="views:CurvedLabelControl"
+                   x:Key="YellowCurvedLabel">
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="TextColor" Value="{StaticResource ViralCrusherRedColor}" />
+                <Setter Property="TextBackgroundColor" Value="{StaticResource ViralCrusherYellowColor}" />
+                <Setter Property="FrameHorizontalOptions" Value="Fill" /> 
+                <Setter Property="FontSize" Value="15" />
             </Style >
 
         </ResourceDictionary>

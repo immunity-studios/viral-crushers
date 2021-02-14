@@ -8,16 +8,14 @@
             <Style TargetType="Label"
                 x:Key="CurvedLabelInnerLabelStyle"
                 BasedOn="{StaticResource LabelBaseStyle}">
-                <Setter Property="FontSize" Value="40" />
+                <Setter Property="FontSize" Value="10" />
                 <Setter Property="FontFamily" Value="Lobster" />
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="FontAttributes" Value="Italic" />
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="Padding" Value="30,0,30,0" />
-                <Setter Property="HorizontalTextAlignment" Value="Center" />
-                <Setter Property="TextColor" Value="{StaticResource ViralCrusherWhiteColor}" />
-                <Setter Property="BackgroundColor" Value="{StaticResource ViralCrusherRedColor}" />                
+                <Setter Property="HorizontalOptions" Value="Center" />                
+                <Setter Property="Margin" Value="5" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />                               
                 <Setter Property="LineBreakMode" Value="WordWrap" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
             </Style>
     </ContentView.Resources>
 
@@ -25,18 +23,17 @@
 
         <Frame
             CornerRadius="{Binding CornerRadius, Source={x:Reference this}}"
-            Padding="0"
+            Padding="10,0"
             BackgroundColor="{Binding TextBackgroundColor, Source={x:Reference this}}"
             BorderColor="Transparent"
-            Margin="15,10,15,10" 
+            Margin="15,10,15,10"
+            HorizontalOptions="{Binding FrameHorizontalOptions, Source={x:Reference this}}"
             HasShadow="False">
 
         <Label
-            Margin="5"
-            Style="{StaticResource CurvedLabelInnerLabelStyle}"
-            HorizontalOptions="Center" 
-            BackgroundColor="Transparent" 
+            Style="{StaticResource CurvedLabelInnerLabelStyle}"            
             Text="{Binding Text, Source={x:Reference this}}"
+            TextColor="{Binding TextColor, Source={x:Reference this}}"
             FontSize="{Binding FontSize, Source={x:Reference this}}"/>
 
               
