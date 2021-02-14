@@ -119,21 +119,17 @@
                         </Grid>
                     </Frame>
 
-                    <StackLayout 
-                        HorizontalOptions="Center" 
-                        Padding="20">
-
-                        <Label Text="Really delete this?" Style="{StaticResource MessageStyle}"/>
-
-                        <Button 
-                            Text="Yes" 
-                            Clicked="Delete_Clicked" 
-                            HorizontalOptions="Center"
-                            FontSize="Medium"
-                            BorderWidth="1" 
-                            BorderColor="black">
-                        </Button>
-                    </StackLayout>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                            <ImageButton Source="cancel_button_140.png" Clicked="Cancel_Clicked" />
+                            <ImageButton Grid.Column="1" Source="delete_button_140.png" Clicked="Delete_Clicked" />
+                    </Grid>
 
                 </StackLayout>
             </Frame>
