@@ -133,6 +133,10 @@
     <BundleResource Include="Resources\icon_black_dice.png" />
     <BundleResource Include="Resources\icon_menu_items.png" />
     <BundleResource Include="Resources\icon_arena.jpg" />
+    <BundleResource Include="Resources\menu_score_icon_100.png" />
+    <BundleResource Include="Resources\menu_monster_icon_100.png" />
+    <BundleResource Include="Resources\menu_items_icon_100.png" />
+    <BundleResource Include="Resources\menu_battle_icon_100.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
