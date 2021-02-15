@@ -57,7 +57,7 @@
 
                                 <Frame Style="{StaticResource BorderFrame}">
                                     <Frame Style="{StaticResource CharacterFrame}">
-                                        <Image                               
+                                        <Image                                                      x:Name="ItemImage"
                                             Source="{Binding ImageURI}"
                                             Style="{StaticResource ImageLargeStyle}"
                                             WidthRequest="100"

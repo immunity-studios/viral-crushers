@@ -98,7 +98,7 @@ namespace Game.Models
         /// </summary>
         private static Dictionary<string, ItemTypeEnum> itemTypeMapping = new Dictionary<string, ItemTypeEnum>
         {
-            {"Handsoap", ItemTypeEnum.HandSoap },
+            {"HandSoap", ItemTypeEnum.HandSoap },
             {"BoxOfTissues", ItemTypeEnum.BoxOfTissues },
             {"Mask", ItemTypeEnum.Mask },
             {"Sanitizer", ItemTypeEnum.Sanitizer },
