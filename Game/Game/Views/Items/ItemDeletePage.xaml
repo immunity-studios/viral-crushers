@@ -11,69 +11,6 @@
 
     <ScrollView HorizontalOptions="CenterAndExpand">
         
-        <!--<StackLayout Style="{StaticResource OuterBoxStack}"
-                Spacing="10">
-
-            <Frame HasShadow="True" Padding="5">
-                <Grid RowSpacing="5" ColumnSpacing="5">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-
-                    <Image Grid.RowSpan="3"
-                           Source="{Binding Data.ImageURI}"/>
-
-                    <Label Grid.Column="1"
-                            Text="{Binding Data.Name}" 
-                            TextTransform="Uppercase"
-                            FontSize="Medium"
-                            Style="{DynamicResource BodyStyle}"/>
-
-                    <StackLayout Grid.Column="1"
-                                 Grid.Row="1"
-                                Style="{StaticResource HorizontalStack}">
-
-                        <Label Text="{Binding Data.Attribute}" />
-                        <Label Text=": +" />
-                        <Label Text="{Binding Data.Value}" />
-
-                    </StackLayout>
-
-                    <StackLayout Grid.Column="1"
-                                 Grid.Row="2"
-                                Style="{StaticResource HorizontalStack}">
-
-                        <Label Text="Location: " />
-                        <Label Text="{Binding Data.Location, Converter={StaticResource ItemLocationToMappedStringConverter}}" />
-
-                    </StackLayout>
-
-                </Grid>
-            </Frame>
-
-            <StackLayout 
-            HorizontalOptions="Center" 
-            Padding="20">
-
-                <Label Text="Really delete this?" Style="{StaticResource MessageStyle}"/>
-
-                <Button 
-                Text="Yes" 
-                Clicked="Delete_Clicked" 
-                HorizontalOptions="Center"
-                FontSize="Medium"
-                BorderWidth="1" 
-                BorderColor="black">
-                </Button>
-            </StackLayout>
-            
-        </StackLayout>-->
 
         <Grid>
             <Grid.RowDefinitions>
@@ -179,10 +116,14 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
 
-                        <ImageButton Clicked="Cancel_Clicked" Source="cancel_button_140.png" />
-                        <ImageButton Grid.Column="1"
+                        
+                        <ImageButton Grid.Column="0"
                                      Clicked="Delete_Clicked"
                                      Source="delete_button_140.png" />
+
+                        <ImageButton Grid.Column="1"
+                                    Clicked="Cancel_Clicked"        Source="cancel_button_140.png" />
+                        
                     </Grid>
 
                 </StackLayout>
