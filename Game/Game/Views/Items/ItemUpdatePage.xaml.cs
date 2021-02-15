@@ -73,24 +73,24 @@ namespace Game.Views
             await Navigation.PopModalAsync();
         }
 
-        /// <summary>
-        /// Catch the change to the Stepper for Range
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void Range_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
-        {
-            RangeValue.Text = String.Format("{0}", e.NewValue);
-        }
+        ///// <summary>
+        ///// Catch the change to the Stepper for Range
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
+        //public void Range_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        //{
+        //    RangeValue.Text = String.Format("{0}", e.NewValue);
+        //}
 
-        /// <summary>
-        /// Catch the change to the stepper for Value
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void Value_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
-        {
-            ValueValue.Text = String.Format("{0}", e.NewValue);
-        }
+        ///// <summary>
+        ///// Catch the change to the stepper for Value
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
+        //public void Value_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        //{
+        //    ValueValue.Text = String.Format("{0}", e.NewValue);
+        //}
     }
 }

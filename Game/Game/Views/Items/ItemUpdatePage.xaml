@@ -6,6 +6,8 @@
              mc:Ignorable="d"
              xmlns:local_helpers="clr-namespace:Game.Helpers"
              xmlns:local="using:Game.Models"
+             xmlns:local_enum="clr-namespace:Game.Models"
+             xmlns:views="clr-namespace:Game.Views"
              x:Class="Game.Views.ItemUpdatePage"
              Title="{Binding Title}">
 
@@ -23,111 +25,183 @@
     <ContentPage.Content>
 
         <ScrollView>
-            <StackLayout Style="{StaticResource OuterBoxStack}"
-                Spacing="10">
 
-                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
 
-                <Grid
-                    RowSpacing="1"
-                    ColumnSpacing="2"
-                    VerticalOptions="Center">
+                <views:CurvedLabelControl
+               Text="Edit"
+               Style="{StaticResource RedCurvedLabel}"
+               FrameHorizontalOptions="Center"
+               FramePadding="30,0,30,20"
+               Margin="0,10,0,-20" />
 
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto"/>
-                    </Grid.ColumnDefinitions>
+                <Frame Grid.Row="1"
+                       Margin="5,0,5,10"
+                       BackgroundColor="{StaticResource ViralCrusherBlueColor}"
+                       BorderColor="Transparent"
+                       HasShadow="True">
 
-                    <Label Grid.Row="0" Grid.Column="0"
-                        Text="Name" 
-                        Style="{StaticResource LabelStyle}"/>
+                    <StackLayout
+                        Style="{StaticResource OuterBoxStack}"
+                        Padding="20"
+                        Spacing="10">
+                        <Grid
+                        RowSpacing="10"
+                        ColumnSpacing="10">
 
-                    <Entry Grid.Row="0" Grid.Column="1"
-                        Text="{Binding Data.Name}" 
-                        Style="{StaticResource EntryStyle}"/>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="2*" />
+                            </Grid.ColumnDefinitions>
 
-                    <Label Grid.Row="1" Grid.Column="0"
-                           Text="Type"
-                           Style="{StaticResource LabelStyle}"/>
+                            <Frame
+                                Grid.RowSpan="5"
+                                Style="{StaticResource BorderFrame}">
 
-                    <Picker Grid.Row="1" Grid.Column="1"
-                        ItemsSource="{x:Static local:ItemTypeEnumHelper.GetListItem}" 
-                        SelectedItem="{Binding Data.ItemType, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                        x:Name="ItemTypePicker"/>
+                                <Frame
+                                    Padding="10"
+                                    Style="{StaticResource CharacterFrame}">
 
-                    <Label Grid.Row="2" Grid.Column="0"
-                        Text="Description" 
-                        Style="{StaticResource LabelStyle}"/>
+                                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                                </Frame>
+                            </Frame>
+                            <StackLayout Orientation="Vertical" Grid.Column="1"  HorizontalOptions="Fill">
+                                <Label Text="Name" 
+                                        Style="{StaticResource LabelStyle}"/>
 
-                    <Editor Grid.Row="2" Grid.Column="1"
-                        Text="{Binding Data.Description}"/>
+                                <Entry Text="{Binding Data.Name}"
+                                        HorizontalOptions="Fill"
+                                        Style="{StaticResource EntryStyle}"/>
+                            </StackLayout>
 
-                    <Label Grid.Row="3" Grid.Column="0"
-                        Text="Location" 
-                        Style="{StaticResource LabelStyle}"/>
+                            <StackLayout Orientation="Vertical" Grid.Column="1" Grid.Row="1" HorizontalOptions="Fill">
+                                <Label Text="Type" 
+                                        Style="{StaticResource LabelStyle}"/>
 
-                    <Picker Grid.Row="3" Grid.Column="1"
-                        ItemsSource="{x:Static local:ItemLocationEnumHelper.GetListCharacter}" 
-                        SelectedItem="{Binding Data.Location, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                        x:Name="LocationPicker"/>
+                                <Picker ItemsSource="{x:Static local_enum:ItemTypeEnumHelper.GetListItem}" 
+                                    SelectedItem="{Binding Data.ItemType, Converter={StaticResource StringEnumConverter}, Mode=TwoWay}" 
+                                    x:Name="ItemTypePicker"/>
+                            </StackLayout>
 
-                    <Label Grid.Row="4" Grid.Column="0"
-                        Text="Attribute" 
-                        Style="{StaticResource LabelStyle}"/>
+                            <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="Fill" Grid.Column="1" Grid.Row="2">
+                                <Label Text="Description" 
+                                        Style="{StaticResource LabelStyle}"/>
 
-                    <Picker Grid.Row="4" Grid.Column="1"
-                        ItemsSource="{x:Static local:AttributeEnumHelper.GetListCharacter}" 
-                        SelectedItem="{Binding Data.Attribute, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                        x:Name="AttributePicker"/>
+                                <Entry Text="{Binding Data.Description}"
+                                        Style="{StaticResource EntryStyle}" />
+                            </StackLayout>
 
-                </Grid>
+                            <StackLayout Orientation="Vertical" Grid.Column="1" Grid.Row="3" HorizontalOptions="Fill">
+                                <Label Text="Location" 
+                                        Style="{StaticResource LabelStyle}"/>
 
-                <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="FillAndExpand">
+                                <Picker ItemsSource="{x:Static local_enum:ItemLocationEnumHelper.GetListCharacter}" 
+                                    SelectedItem="{Binding Data.Location, Converter={StaticResource StringEnumConverter}, Mode=TwoWay}" 
+                                    x:Name="LocationPicker"/>
+                            </StackLayout>
 
-                    <Label 
-                        Text="Range" 
-                        Style="{StaticResource LabelStyle}"/>
 
-                    <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
+                            <StackLayout Orientation="Vertical" Grid.Column="1" Grid.Row="4" HorizontalOptions="Fill">
+                                <Label Text="Attribute" 
+                                        Style="{StaticResource LabelStyle}"/>
 
-                        <Label 
-                            Text="{Binding Data.Range}" 
-                            x:Name="RangeValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
+                                <Picker ItemsSource="{x:Static local_enum:AttributeEnumHelper.GetListCharacter}" 
+                                    SelectedItem="{Binding Data.Attribute, Converter={StaticResource StringEnumConverter}, Mode=TwoWay}" 
+                                    x:Name="AttributePicker"/>
+                            </StackLayout>
 
-                        <Stepper 
-                            Value="{Binding Data.Range, Mode=TwoWay}"
-                            ValueChanged="Range_OnStepperValueChanged"/>
+                        </Grid>
+
+
+                        <Grid x:Name="SlidersRegionGrid" RowSpacing="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <!--Range-->
+                            <views:CurvedLabelControl Style="{StaticResource WhiteCurvedLabelWithNavyText}"
+                                                          Text="Range"/>
+
+                            <Slider Grid.Column="1"
+                                        x:Name="RangeSlider"                                       
+                                        Maximum="5"
+                                        Minimum="0"
+                                        Value="{Binding Data.Range, Mode=TwoWay}" />
+
+                            <views:CurvedLabelControl Grid.Column="2"
+                                        Text="{Binding Path=Value, Source={x:Reference RangeSlider}, StringFormat='{0:F0}'}"
+                                        Style="{StaticResource WhiteCurvedLabelWithNavyText}" />
+
+
+                            <!--Value-->
+                            <views:CurvedLabelControl Grid.Row="1"
+                                                          Style="{StaticResource WhiteCurvedLabelWithNavyText}"
+                                                          Text="Value"/>
+
+                            <Slider Grid.Row="1"
+                                        Grid.Column="1"
+                                        x:Name="ValueSlider"                                       
+                                        Maximum="20"
+                                        Minimum="0"
+                                        Value="{Binding Data.Value, Mode=TwoWay}" />
+
+                            <views:CurvedLabelControl Grid.Row="1"
+                                        Grid.Column="2"
+                                        Text="{Binding Path=Value, Source={x:Reference ValueSlider}, StringFormat='{0:F0}'}"
+                                        Style="{StaticResource WhiteCurvedLabelWithNavyText}" />
+
+
+                            <!--Damage-->
+                            <views:CurvedLabelControl Grid.Row="2"
+                                                          Style="{StaticResource WhiteCurvedLabelWithNavyText}"
+                                                          Text="Damage"/>
+
+                            <Slider Grid.Row="2"
+                                        Grid.Column="1"
+                                        x:Name="DamageSlider"                                       
+                                        Maximum="5"
+                                        Minimum="0"
+                                        Value="{Binding Data.Damage, Mode=TwoWay}" />
+
+                            <views:CurvedLabelControl Grid.Row="2"
+                                        Grid.Column="2"
+                                        Text="{Binding Path=Value, Source={x:Reference DamageSlider}, StringFormat='{0:F0}'}"
+                                        Style="{StaticResource WhiteCurvedLabelWithNavyText}" />
+
+                        </Grid>
+
+                        <Grid x:Name="BottomButtonsRegionGrid">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <ImageButton Source="save_button_140.png" Clicked="Save_Clicked" />
+                            <ImageButton Grid.Column="1" Source="cancel_button_140.png" Clicked="Cancel_Clicked" />
+                        </Grid>
 
                     </StackLayout>
+                </Frame>
+            </Grid>
 
-                    <Label 
-                        Text="Value"
-                        Style="{StaticResource LabelStyle}"/>
-
-                    <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
-
-                        <Label 
-                            Text="{Binding Data.Value}" 
-                            x:Name="ValueValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
-
-                        <Stepper 
-                            Value="{Binding Data.Value, Mode=TwoWay}"
-                            ValueChanged="Value_OnStepperValueChanged"/>
-
-                    </StackLayout>
-
-                </StackLayout>
-            </StackLayout>
         </ScrollView>
+        
     </ContentPage.Content>
 </ContentPage>
