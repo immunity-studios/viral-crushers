@@ -27,13 +27,17 @@
                     <ColumnDefinition />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
+                <StackLayout Style="{StaticResource HorizontalStack}">
+                    <Label
+                        Text="Name: "
+                        Style="{StaticResource HeaderStyle}"
+                    />
 
-                <Image
-                    Grid.RowSpan="3"
-                    Grid.Row="0"
-                    Source="{Binding Data.ImageURI}"
-                    Style="{StaticResource ImageBattleMediumStyle}" />
-
+                    <Label
+                        Text="{Binding Data.Name}"
+                        Style="{StaticResource StatsBoldStyle}"
+                    />
+                </StackLayout>
                 <StackLayout Grid.Column="1"
                                  Style="{StaticResource VerticalStack}"
                                  HorizontalOptions="Fill">
@@ -41,14 +45,22 @@
                             Style="{StaticResource HorizontalStack}">
 
                         <Label
-                                    Text="Name: "
-                                    Style="{StaticResource StatsBoldStyle}"/>
+                            Text="Date: "
+                            Style="{StaticResource HeaderStyle}"
+                            />
 
                         <Label
-                                    Text="{Binding Data.Name}"
+                                    Text="{Binding Data.GameDate}"
                                     Style="{StaticResource StatsBoldStyle}"/>
 
                     </StackLayout>
+                <!--Image
+                    Grid.RowSpan="3"
+                    Grid.Row="0"
+                    Source="{Binding Data.ImageURI}"
+                    Style="{StaticResource ImageBattleMediumStyle}" /-->
+
+                
 
                 </StackLayout>
             </Grid>
