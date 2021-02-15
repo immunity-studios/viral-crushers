@@ -161,10 +161,10 @@
                         </Frame>
 
                         <!-- Update Button -->
-                        <ImageButton Grid.Row="2" Grid.Column="1" HorizontalOptions="CenterAndExpand" Source="edit_button_140.png" Clicked="Update_Clicked" />
+                        <ImageButton Grid.Row="2" Grid.Column="0" HorizontalOptions="CenterAndExpand" Source="edit_button_140.png" Clicked="Update_Clicked" />
 
                         <!-- Delete Button -->
-                        <ImageButton Grid.Row="2" HorizontalOptions="CenterAndExpand" Source="delete_button_140.png" Clicked="Delete_Clicked" />
+                        <ImageButton Grid.Row="2" Grid.Column="1"  HorizontalOptions="CenterAndExpand" Source="delete_button_140.png" Clicked="Delete_Clicked" />
 
                     </Grid>
                 </StackLayout>
