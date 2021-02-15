@@ -156,23 +156,6 @@
             </Style>
 
             <Style TargetType="Label"
-                x:Key="CreatePageDisplaySliderValueLabelStyle"
-                BasedOn="{StaticResource LabelBaseStyle}">
-                <Setter Property="FontSize" Value="Large" />
-                <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="VerticalOptions" Value="Center" />
-                <Setter Property="HorizontalTextAlignment" Value="Center" />
-                <Setter Property="VerticalTextAlignment" Value="Center" />
-                <Setter Property="TextColor" Value="{StaticResource ViralCrusherRedColor}"/>
-                <Setter Property="BackgroundColor" Value="{StaticResource ViralCrusherYellowColor}"/>                
-                <Setter Property="LineBreakMode" Value="TailTruncation" />
-                <Setter Property="WidthRequest" Value="55" />
-                <Setter Property="HeightRequest" Value="55" />
-                <Setter Property="BackgroundColor" Value="{StaticResource ViralCrusherWhiteColor}" />                
-            </Style>
-
-            <Style TargetType="Label"
                 x:Key="ListStyle"
                 BasedOn="{StaticResource LabelBaseStyle}">
                 <Setter Property="FontSize" Value="Micro" />
@@ -247,14 +230,6 @@
 
 
             <!-- Image -->
-            <Style TargetType="Image"
-                x:Key="CreatePageDisplaySliderTitleImageStyle">
-                <Setter Property="HeightRequest" Value="55" />
-                <Setter Property="WidthRequest" Value="55" />
-                <Setter Property="Margin" Value="0,15" />
-                <Setter Property="BackgroundColor" Value="{StaticResource ViralCrusherWhiteColor}" />                
-            </Style>
-
 
             <Style TargetType="Image"
                 x:Key="ImageLargeStyle">
@@ -647,6 +622,15 @@
                 <Setter Property="Margin" Value="10" />
             </Style >
 
+            <Style TargetType="views:CurvedLabelControl"
+                   x:Key="WhiteCurvedLabelWithNavyText">
+                <Setter Property="CornerRadius" Value="5" />
+                <Setter Property="TextColor" Value="{StaticResource ViralCrusherNavyColor}" />
+                <Setter Property="TextBackgroundColor" Value="{StaticResource ViralCrusherWhiteColor}" />
+                <Setter Property="FrameHorizontalOptions" Value="Fill" /> 
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="FramePadding" Value="10,0" />
+            </Style >
         </ResourceDictionary>
     </Application.Resources>
 </Application>

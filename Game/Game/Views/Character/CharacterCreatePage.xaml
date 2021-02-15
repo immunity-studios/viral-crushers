@@ -87,7 +87,7 @@
                         </Grid>
 
 
-                        <Grid x:Name="SlidersRegionGrid" >
+                        <Grid x:Name="SlidersRegionGrid" RowSpacing="10">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
                                 <RowDefinition Height="*" />
@@ -102,33 +102,24 @@
                             </Grid.ColumnDefinitions>
 
                                 <!--  Level -->
-                                <Image Style="{StaticResource CreatePageDisplaySliderTitleImageStyle}" />
-                                <Label Grid.Row="0"
-                                        Grid.Column="0"
-                                        Text="Level"
-                                        TextColor="{StaticResource ViralCrusherRedColor}" />
+                                <views:CurvedLabelControl Style="{StaticResource WhiteCurvedLabelWithNavyText}"
+                                                          Text="Level"/>
                                 
-                                
-
                                 <Slider Grid.Column="1"
                                         x:Name="LevelSlider"                                       
                                         Maximum="20"
                                         Minimum="1"
                                         Value="{Binding Data.Level, Mode=TwoWay}" />
 
-                                <Label Grid.Column="2"
+                                <views:CurvedLabelControl Grid.Column="2"
                                         Text="{Binding Path=Value, Source={x:Reference LevelSlider}, StringFormat='{0:F0}'}"
-                                        Style="{StaticResource CreatePageDisplaySliderValueLabelStyle}" />
+                                        Style="{StaticResource WhiteCurvedLabelWithNavyText}" />
 
 
                                 <!--  Attack -->
-                                <Image Grid.Row="1"
-                                        Style="{StaticResource CreatePageDisplaySliderTitleImageStyle}" />
-                                <Label Grid.Row="1"
-                                            Grid.Column="0"
-                                            Text="Attack"
-                                            TextColor="{StaticResource ViralCrusherRedColor}" />
-                               
+                                <views:CurvedLabelControl Grid.Row="1"
+                                                          Style="{StaticResource WhiteCurvedLabelWithNavyText}"
+                                                          Text="Attack"/>
 
                                 <Slider Grid.Row="1"
                                         Grid.Column="1"
@@ -137,19 +128,16 @@
                                         Minimum="1"
                                         Value="{Binding Data.Attack, Mode=TwoWay}" />
 
-                                <Label Grid.Row="1"
+                                <views:CurvedLabelControl Grid.Row="1"
                                         Grid.Column="2"
                                         Text="{Binding Path=Value, Source={x:Reference AttackSlider}, StringFormat='{0:F0}'}"
-                                        Style="{StaticResource CreatePageDisplaySliderValueLabelStyle}" />
+                                        Style="{StaticResource WhiteCurvedLabelWithNavyText}" />
 
 
                                 <!--  Speed -->
-                                <Image Grid.Row="2"
-                                        Style="{StaticResource CreatePageDisplaySliderTitleImageStyle}" />
-                                <Label Grid.Row="2"
-                                            Grid.Column="0"
-                                            Text="Speed"
-                                            TextColor="{StaticResource ViralCrusherRedColor}" />
+                                <views:CurvedLabelControl Grid.Row="2"
+                                                          Style="{StaticResource WhiteCurvedLabelWithNavyText}"
+                                                          Text="Speed"/>
 
                                 <Slider Grid.Row="2"
                                         Grid.Column="1"
@@ -158,18 +146,15 @@
                                         Minimum="1"
                                         Value="{Binding Data.Speed, Mode=TwoWay}" />
 
-                                <Label Grid.Row="2"
+                                <views:CurvedLabelControl Grid.Row="2"
                                         Grid.Column="2"
                                         Text="{Binding Path=Value, Source={x:Reference SpeedSlider}, StringFormat='{0:F0}'}"
-                                        Style="{StaticResource CreatePageDisplaySliderValueLabelStyle}" />
+                                        Style="{StaticResource WhiteCurvedLabelWithNavyText}" />
 
                                 <!--  Defence -->
-                                <Image Grid.Row="3"
-                                        Style="{StaticResource CreatePageDisplaySliderTitleImageStyle}" />
-                                <Label Grid.Row="3"
-                                            Grid.Column="0"
-                                            Text="Defense"
-                                            TextColor="{StaticResource ViralCrusherRedColor}" />
+                                <views:CurvedLabelControl Grid.Row="3"
+                                                          Style="{StaticResource WhiteCurvedLabelWithNavyText}"
+                                                          Text="Defense"/>
 
                                 <Slider Grid.Row="3"
                                         Grid.Column="1"
@@ -178,18 +163,15 @@
                                         Minimum="1"
                                         Value="{Binding Data.Defense, Mode=TwoWay}" />
 
-                                <Label Grid.Row="3"
+                                <views:CurvedLabelControl Grid.Row="3"
                                         Grid.Column="2"
                                         Text="{Binding Path=Value, Source={x:Reference DefenseSlider}, StringFormat='{0:F0}'}"
-                                        Style="{StaticResource CreatePageDisplaySliderValueLabelStyle}" />
+                                        Style="{StaticResource WhiteCurvedLabelWithNavyText}" />
 
                                 <!--  Max Health -->
-                                <Image Grid.Row="4"
-                                        Style="{StaticResource CreatePageDisplaySliderTitleImageStyle}" />
-                                <Label Grid.Row="4"
-                                            Grid.Column="0"
-                                            Text="Max Health"
-                                            TextColor="{StaticResource ViralCrusherRedColor}" />
+                                <views:CurvedLabelControl Grid.Row="4"
+                                                          Style="{StaticResource WhiteCurvedLabelWithNavyText}"
+                                                          Text="Max Health"/>
 
                                 <Slider Grid.Row="4"
                                         Grid.Column="1"
@@ -198,10 +180,10 @@
                                         Minimum="0"
                                         Value="{Binding Data.MaxHealth, Mode=TwoWay}" />
 
-                                <Label Grid.Row="4"
+                                <views:CurvedLabelControl Grid.Row="4"
                                         Grid.Column="2"
                                         Text="{Binding Path=Value, Source={x:Reference MaxHealthSlider}, StringFormat='{0:F0}'}"
-                                        Style="{StaticResource CreatePageDisplaySliderValueLabelStyle}" />
+                                        Style="{StaticResource WhiteCurvedLabelWithNavyText}" />
 
 
 
