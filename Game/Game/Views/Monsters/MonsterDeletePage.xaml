@@ -66,7 +66,7 @@
                             FontSize="Medium"
                             VerticalOptions="Center"
                             LineBreakMode="TailTruncation"
-                            TextColor="White"/>
+                            TextColor="{StaticResource ViralCrusherWhiteColor}"/>
 
                         <ProgressBar
                             Grid.Row="0"
@@ -79,7 +79,7 @@
                             HorizontalOptions="CenterAndExpand"
                             VerticalOptions="Center"
                             Text="{Binding Data.Attack}"
-                            TextColor="White"/>
+                            TextColor="{StaticResource ViralCrusherWhiteColor}"/>
 
                         <!--Defense-->
                         <Label Grid.Row="1"
@@ -88,7 +88,7 @@
                             FontSize="Medium"
                             VerticalOptions="Center"
                             LineBreakMode="TailTruncation"
-                            TextColor="White"/>
+                            TextColor="{StaticResource ViralCrusherWhiteColor}"/>
 
                         <ProgressBar
                             Grid.Row="1"
@@ -102,7 +102,7 @@
                             HorizontalOptions="CenterAndExpand"
                             VerticalOptions="Center"
                             Text="{Binding Data.Defense}"
-                            TextColor="White"/>
+                            TextColor="{StaticResource ViralCrusherWhiteColor}"/>
 
                         <!--Speed-->
                         <Label Grid.Row="2"
@@ -111,7 +111,7 @@
                             Text="Speed"
                             LineBreakMode="TailTruncation"
                             VerticalOptions="Center"
-                            TextColor="White"/>
+                            TextColor="{StaticResource ViralCrusherWhiteColor}"/>
 
                         <ProgressBar
                             Grid.Row="2"
@@ -125,7 +125,7 @@
                             HorizontalOptions="CenterAndExpand"
                             VerticalOptions="Center"
                             Text="{Binding Data.Speed}"
-                            TextColor="White"/>
+                            TextColor="{StaticResource ViralCrusherWhiteColor}"/>
 
                     </Grid>
 
