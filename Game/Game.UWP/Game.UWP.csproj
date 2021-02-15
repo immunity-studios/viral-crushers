@@ -136,8 +136,6 @@
     <Content Include="covid_monster_140.png" />
     <Content Include="ebola_monster_140.png" />
     <Content Include="flu_monster_140.png" />
-    <Content Include="icon_add.png" />
-    <Content Include="icon_add_temporary.png" />
     <Content Include="icon_athlete.png" />
     <Content Include="icon_blue_monster.png" />
     <Content Include="icon_bug_spray.png" />
@@ -217,6 +215,7 @@
     <Content Include="edit_button_140.png" />
     <Content Include="save_button_140.png" />
     <Content Include="icon_back_button.png" />
+    <Content Include="icon_add_button_140.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

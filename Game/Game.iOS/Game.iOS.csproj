@@ -143,6 +143,7 @@
     <BundleResource Include="Resources\cancel_button_140.png" />
     <BundleResource Include="Resources\battle_button_140.png" />
     <BundleResource Include="Resources\icon_back_button.png" />
+    <BundleResource Include="Resources\icon_add_button_140.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -309,8 +310,5 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\cold_monster_140.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\icon_add_temporary.png" />
   </ItemGroup>
 </Project>

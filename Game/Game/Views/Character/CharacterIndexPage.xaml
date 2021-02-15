@@ -24,7 +24,15 @@
                                       HorizontalOptions="Center"
                                       Style="{StaticResource RedCurvedLabel}"
                                       Text="Characters" />
-            
+
+            <ImageButton Source="icon_add_button_140.png"
+                         HorizontalOptions="End"
+                         VerticalOptions="Center"
+                         Aspect="AspectFill"
+                         Margin="0,30,30,0"
+                         WidthRequest="50"
+                         HeightRequest="50"
+                         Clicked="AddItem_Clicked"/>
 
             <Frame Grid.Row="1" Margin="5,0,5,10">
                 <CollectionView x:Name="CharactersCollectionView"
