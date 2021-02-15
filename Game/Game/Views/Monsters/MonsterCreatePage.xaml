@@ -62,7 +62,9 @@
                                     Padding="10"
                                     Style="{StaticResource CharacterFrame}">
 
-                                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                                    <Image Source="{Binding Data.ImageURI}"
+                                           WidthRequest="100"
+                                           HeightRequest="100"/>
                                 </Frame>
                             </Frame>
 
