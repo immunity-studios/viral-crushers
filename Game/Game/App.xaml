@@ -71,7 +71,7 @@
             <!-- <Thickness x:Key="PageMargin">0</Thickness> -->
 
             <helpers:StatToPercentageConverter x:Key="StatToPercentageConverter" />            
-
+            <helpers:StringEnumConverter x:Key="StringEnumConverter"/>
 
             <!-- Pages -->
             <Style TargetType="NavigationPage">
@@ -605,7 +605,7 @@
                 <Setter Property="TitleColor" Value="{StaticResource PrimaryTextColor}" />
                 <Setter Property="FontSize" Value="Small" />
                 <Setter Property="FontAttributes" Value="None" />
-                <Setter Property="BackgroundColor" Value="{StaticResource LightBackgroundColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource ViralCrusherWhiteColor}" />
             </Style>
 
             <!-- Progress Bar -->

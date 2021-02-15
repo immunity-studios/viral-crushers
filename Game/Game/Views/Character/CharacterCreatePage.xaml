@@ -25,6 +25,7 @@
                Margin="0,10,0,-20" />
 
                 <Frame Grid.Row="1"
+                       Margin="5,0,5,10"
                        BackgroundColor="{StaticResource ViralCrusherBlueColor}"
                        BorderColor="Transparent"
                        HasShadow="True">
@@ -40,7 +41,7 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
-                                <RowDefinition />
+                                <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
@@ -48,7 +49,7 @@
                             </Grid.ColumnDefinitions>
 
                             <Frame
-                                Grid.RowSpan="2"
+                                Grid.RowSpan="3"
                                 Style="{StaticResource BorderFrame}">
 
                                 <Frame
@@ -67,7 +68,16 @@
                                         Style="{StaticResource EntryStyle}"/>
                             </StackLayout>
 
-                            <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="Fill" Grid.Column="1" Grid.Row="1">
+                            <StackLayout Orientation="Vertical" Grid.Column="1" Grid.Row="1" HorizontalOptions="Fill">
+                                <Label Text="Job" 
+                                        Style="{StaticResource LabelStyle}"/>
+                    
+                                <Picker ItemsSource="{x:Static local_enum:CharacterJobEnumHelper.GetListItem}" 
+                                    SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnumConverter}, Mode=TwoWay}" 
+                                    x:Name="JobPicker"/>
+                            </StackLayout>
+
+                            <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="Fill" Grid.Column="1" Grid.Row="2">
                                 <Label Text="Description" 
                                         Style="{StaticResource LabelStyle}"/>
                     

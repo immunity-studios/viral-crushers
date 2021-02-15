@@ -28,8 +28,7 @@ namespace Game.Models
             ExperienceTotal = 0;
             ExperienceRemaining = LevelTableHelper.LevelDetailsList[Level + 1].Experience - 1;
 
-            // Default to unknown, which is no special job
-            Job = CharacterJobEnum.Unknown;
+            Job = CharacterJobEnum.Athlete;
             SpecialAbility = SpecialAbilityEnum.Unknown;
         }
 
