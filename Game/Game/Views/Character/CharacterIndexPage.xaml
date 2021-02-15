@@ -1,46 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage x:Class="Game.Views.CharacterIndexPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:Game.Views"
-             mc:Ignorable="d"
              x:Name="BrowseItemsPage"
-             x:Class="Game.Views.CharacterIndexPage">
+             mc:Ignorable="d">
 
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="AddItem_Clicked" IconImageSource="icon_add.png"/>
+        <ToolbarItem Clicked="AddItem_Clicked"
+                     IconImageSource="icon_add.png"
+                     Text="Add" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        
-       <Grid>
-           <Grid.RowDefinitions>
-               <RowDefinition Height="Auto"/>
-               <RowDefinition Height="*"/>
-               <RowDefinition Height="Auto"/>
-           </Grid.RowDefinitions>
 
-           <views:CurvedLabelControl
-               Text="Characters"
-               Style="{StaticResource RedCurvedLabel}"
-               FrameHorizontalOptions="Center"
-               Margin="0,30,0,-20" />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 
-           <Frame Margin="5,0,5,10" Grid.Row="1">
-                <CollectionView
-                    Margin="0,10,0,0"
-                    ItemsSource="{Binding Dataset}"
-                    SelectionMode="Single"
-                    SelectionChanged="CollectionView_SelectionChanged"
-                    x:Name="CharactersCollectionView">
+            <views:CurvedLabelControl Margin="0,30,0,-20"
+                                      FrameHorizontalOptions="Center"
+                                      Style="{StaticResource RedCurvedLabel}"
+                                      Text="Characters" />
+
+            <Frame Grid.Row="1" Margin="5,0,5,10">
+                <CollectionView x:Name="CharactersCollectionView"
+                                Margin="0,10,0,0"
+                                ItemsSource="{Binding Dataset}"
+                                SelectionChanged="CollectionView_SelectionChanged"
+                                SelectionMode="Single">
 
                     <CollectionView.ItemsLayout>
-                        <GridItemsLayout
-                            Orientation="Vertical"
-                             Span="3"
-                             VerticalItemSpacing="20" />
+                        <GridItemsLayout Orientation="Vertical"
+                                         Span="3"
+                                         VerticalItemSpacing="20" />
                     </CollectionView.ItemsLayout>
 
                     <CollectionView.ItemTemplate>
@@ -48,27 +47,25 @@
 
                             <Grid>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>                               
+                                    <RowDefinition Height="*" />
                                     <RowDefinition Height="Auto" />
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition />                                
+                                    <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
-                                
+
                                 <Frame Style="{StaticResource BorderFrame}">
                                     <Frame Style="{StaticResource CharacterFrame}">
-                                        <Image                               
-                                            Source="{Binding ImageURI}"
-                                            Style="{StaticResource ImageLargeStyle}"
-                                            WidthRequest="100"
-                                            HeightRequest="100" />
+                                        <Image HeightRequest="100"
+                                               Source="{Binding ImageURI}"
+                                               Style="{StaticResource ImageLargeStyle}"
+                                               WidthRequest="100" />
                                     </Frame>
                                 </Frame>
 
-                                <views:CurvedLabelControl
-                                    Grid.Row="1"
-                                    Text="{Binding Name}"
-                                    Style="{StaticResource YellowCurvedLabel}" />
+                                <views:CurvedLabelControl Grid.Row="1"
+                                                          Style="{StaticResource YellowCurvedLabel}"
+                                                          Text="{Binding Name}" />
 
                             </Grid>
 
@@ -76,9 +73,9 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
             </Frame>
-           <views:ToolbarMenuControl Grid.Row="2"/>
+            <views:ToolbarMenuControl Grid.Row="2" />
 
-       </Grid>
+        </Grid>
 
     </ContentPage.Content>
 </ContentPage>
