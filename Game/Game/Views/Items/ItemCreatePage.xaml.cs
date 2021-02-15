@@ -122,12 +122,6 @@ namespace Game.Views
                 return;
             }
 
-            //// If the image in the data box is empty, use the default one..
-            //if (string.IsNullOrEmpty(ViewModel.Data.ImageURI))
-            //{
-            //    ViewModel.Data.ImageURI = Services.ItemService.DefaultImageURI;
-            //}
-
             switch (ViewModel.Data.ItemType)
             {
                 case ItemTypeEnum.HandSoap:
