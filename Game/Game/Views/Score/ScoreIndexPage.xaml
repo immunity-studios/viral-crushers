@@ -7,7 +7,6 @@
              x:Name="BrowseScoresPage"
              xmlns:views="clr-namespace:Game.Views"
              x:Class="Game.Views.ScoreIndexPage"
-             Title="{Binding Title}">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Clicked="AddScore_Clicked" IconImageSource="icon_add_temporary.png"/>
