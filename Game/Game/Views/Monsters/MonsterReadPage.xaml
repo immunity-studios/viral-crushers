@@ -15,6 +15,7 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
+            <!-- Page Title -->
             <views:CurvedLabelControl
                Text="Info"
                Style="{StaticResource RedCurvedLabel}"
@@ -34,6 +35,7 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
 
+                        <!-- Monster Image -->
                         <Frame VerticalOptions="CenterAndExpand" Style="{StaticResource BorderFrame}">
                             <Frame Style="{StaticResource CharacterFrame}">
                                 <Image
@@ -46,6 +48,7 @@
                         <StackLayout Grid.Column="1"
                                  HorizontalOptions="Fill">
 
+                            <!-- Name -->
                             <Label 
                             Text="{Binding Data.Name}" 
                             TextTransform="Uppercase"
@@ -54,6 +57,7 @@
                             FontAttributes="Bold"
                             Style="{DynamicResource BodyStyle}"/>
 
+                            <!-- Type -->
                             <Label 
                             Text="{Binding Data.Type}" 
                             TextTransform="Default"
@@ -62,6 +66,7 @@
                             TextColor="White"
                             Style="{DynamicResource BodyStyle}"/>
 
+                            <!-- Description -->
                             <Label 
                             Text="{Binding Data.Description}" 
                             LineBreakMode="WordWrap"
@@ -84,6 +89,7 @@
                             <ColumnDefinition Width="5*"/>
                         </Grid.ColumnDefinitions>
 
+                        <!-- Attack -->
                         <Frame Style="{StaticResource AttributeFrame}">
                             <StackLayout>
 
@@ -105,6 +111,7 @@
                             </StackLayout>
                         </Frame>
 
+                        <!-- Defense -->
                         <Frame Style="{StaticResource AttributeFrame}"
                                Grid.Row="0"
                                Grid.Column="1">
@@ -129,6 +136,7 @@
                             </StackLayout>
                         </Frame>
 
+                        <!-- Speed -->
                         <Frame Style="{StaticResource AttributeFrame}"
                                Grid.Row="1">
 
@@ -152,8 +160,10 @@
                             </StackLayout>
                         </Frame>
 
+                        <!-- Update Button -->
                         <ImageButton Grid.Row="2" Grid.Column="1" HorizontalOptions="CenterAndExpand" Source="edit_button_140.png" Clicked="Update_Clicked" />
 
+                        <!-- Delete Button -->
                         <ImageButton Grid.Row="2" HorizontalOptions="CenterAndExpand" Source="delete_button_140.png" Clicked="Delete_Clicked" />
 
                     </Grid>

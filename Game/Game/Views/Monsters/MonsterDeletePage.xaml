@@ -15,6 +15,7 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
+            <!-- Page Tilte -->
             <views:CurvedLabelControl
                    Text="Delete"
                    Style="{StaticResource RedCurvedLabel}"
@@ -40,6 +41,7 @@
                             <ColumnDefinition Width="1*"/>
                         </Grid.ColumnDefinitions>
 
+                        <!--Monster Image-->
                         <Frame Grid.RowSpan="3" VerticalOptions="CenterAndExpand" Style="{StaticResource BorderFrame}">
                             <Frame Style="{StaticResource CharacterFrame}">
                                 <Image
@@ -49,6 +51,7 @@
                             </Frame>
                         </Frame>
 
+                        <!--Name-->
                         <Label Grid.Row="3" 
                             Text="{Binding Data.Name}"
                             FontAttributes="Bold"
@@ -57,6 +60,7 @@
                             TextTransform="Uppercase"
                             TextColor="{StaticResource ViralCrusherYellowColor}"/>
 
+                        <!--Attack-->
                         <Label Grid.Column="1"
                             Text="Attack"
                             FontSize="Medium"
@@ -77,9 +81,10 @@
                             Text="{Binding Data.Attack}"
                             TextColor="White"/>
 
+                        <!--Defense-->
                         <Label Grid.Row="1"
                             Grid.Column="1"
-                            Text="Deffense"
+                            Text="Defense"
                             FontSize="Medium"
                             VerticalOptions="Center"
                             LineBreakMode="TailTruncation"
@@ -99,6 +104,7 @@
                             Text="{Binding Data.Defense}"
                             TextColor="White"/>
 
+                        <!--Speed-->
                         <Label Grid.Row="2"
                             Grid.Column="1"
                             FontSize="Medium"
@@ -123,7 +129,7 @@
 
                     </Grid>
 
-
+                    <!--Cancel and Delete Buttons-->
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="100"/>

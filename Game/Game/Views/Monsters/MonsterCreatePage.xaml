@@ -26,6 +26,7 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
 
+                <!-- Page Title -->
                 <views:CurvedLabelControl
                    Text="Create"
                    Style="{StaticResource RedCurvedLabel}"
@@ -53,6 +54,7 @@
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
 
+                            <!--Monster Image-->
                             <Frame
                                 Grid.RowSpan="3" 
                                 VerticalOptions="CenterAndExpand"
@@ -68,6 +70,7 @@
                                 </Frame>
                             </Frame>
 
+                            <!--Name-->
                             <StackLayout Orientation="Vertical" Grid.Column="1"  HorizontalOptions="Fill">
                                 <Label Text="Name" 
                                         Style="{StaticResource LabelStyle}"/>
@@ -78,6 +81,7 @@
 
                             </StackLayout>
 
+                            <!--Type-->
                             <StackLayout Orientation="Vertical" Grid.Column="1" Grid.Row="1" HorizontalOptions="Fill">
                                 <Label Text="Type" 
                                         Style="{StaticResource LabelStyle}"/>
@@ -87,6 +91,7 @@
                                     x:Name="MonsterTypePicker"/>
                             </StackLayout>
 
+                            <!--Description-->
                             <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="Fill" Grid.Column="1" Grid.Row="2">
                                 <Label Text="Description" 
                                         Style="{StaticResource LabelStyle}"/>
@@ -164,6 +169,7 @@
 
                         </Grid>
 
+                        <!--Save and Cancel Buttons-->
                         <Grid x:Name="BottomButtonsRegionGrid">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="100"/>

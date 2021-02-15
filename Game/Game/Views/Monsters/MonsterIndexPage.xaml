@@ -21,6 +21,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
+            <!-- Page Tilte -->
             <views:CurvedLabelControl
                Text="Monsters"
                Style="{StaticResource RedCurvedLabel}"
@@ -54,6 +55,7 @@
                                     <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
 
+                                <!-- Monster Image -->
                                 <Frame Style="{StaticResource BorderFrame}">
                                     <Frame Style="{StaticResource CharacterFrame}">
                                         <Image
@@ -64,6 +66,7 @@
                                     </Frame>
                                 </Frame>
 
+                                <!-- Name -->
                                 <views:CurvedLabelControl
                                     Grid.Row="1"
                                     Text="{Binding Name}"
