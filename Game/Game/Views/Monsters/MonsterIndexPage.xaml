@@ -8,10 +8,6 @@
              x:Name="BrowseItemsPage"
              x:Class="Game.Views.MonsterIndexPage">
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="AddItem_Clicked" IconImageSource="icon_add_temporary.png"/>
-    </ContentPage.ToolbarItems>
-
     <ContentPage.Content>
 
         <Grid>
@@ -21,12 +17,15 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
+            <views:BackButtonControl HorizontalOptions="Start"
+                                     Margin="30,30,0,0"/>
+
             <!-- Page Tilte -->
             <views:CurvedLabelControl
                Text="Monsters"
                Style="{StaticResource RedCurvedLabel}"
                HorizontalOptions="Center"
-               Margin="0,30,0,-20" />
+               Margin="0,60,0,-20" />
 
             <Frame Margin="5,0,5,10" Grid.Row="1">
                 <CollectionView                 
