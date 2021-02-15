@@ -34,7 +34,8 @@
                     <StackLayout Style="{StaticResource HorizontalStack}">
                         <Label
                         Text="Name: "
-                        Style="{StaticResource HeaderStyle}"/> \
+                        Style="{StaticResource HeaderStyle}"/> 
+                        
                         <Label
                         Text="{Binding Data.Name}"
                         Style="{StaticResource StatsBoldStyle}"/>
@@ -143,5 +144,6 @@
 
             </Grid>
         </Grid>
+        
     </ScrollView>
 </ContentPage>

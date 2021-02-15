@@ -5,15 +5,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Game.Views.ItemDeletePage"
+             xmlns:views="clr-namespace:Game.Views"
              Title="{Binding Title}">
-    
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" IconImageSource="icon_cancel.png"/>
-        <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete.png"/>
-    </ContentPage.ToolbarItems>
 
-    <ScrollView>
-        <StackLayout Style="{StaticResource OuterBoxStack}"
+
+    <ScrollView HorizontalOptions="CenterAndExpand">
+        
+        <!--<StackLayout Style="{StaticResource OuterBoxStack}"
                 Spacing="10">
 
             <Frame HasShadow="True" Padding="5">
@@ -75,6 +73,124 @@
                 </Button>
             </StackLayout>
             
-        </StackLayout>
+        </StackLayout>-->
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <views:CurvedLabelControl Margin="0,10,0,-20"
+                                      FrameHorizontalOptions="Center"
+                                      FramePadding="30,0,30,20"
+                                      Style="{StaticResource RedCurvedLabel}"
+                                      Text="Delete" />
+
+            <Frame Grid.Row="1" Margin="5,0,5,10">
+
+                <StackLayout Padding="0,10,0,0" HorizontalOptions="Center">
+
+                    <Grid ColumnSpacing="5" RowSpacing="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="40" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="1.5*" />
+                            <ColumnDefinition Width="3.5*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Frame Grid.RowSpan="3" Style="{StaticResource BorderFrame}">
+                            <Frame Style="{StaticResource CharacterFrame}">
+                                <Image HeightRequest="100"
+                                       Source="{Binding Data.ImageURI}"
+                                       Style="{StaticResource ImageLargeStyle}"
+                                       WidthRequest="100" />
+                            </Frame>
+                        </Frame>
+
+                        <Label Grid.Column="1"
+                               LineBreakMode="TailTruncation"
+                               Style="{StaticResource WhiteMediumFontLabel}"
+                               Text="Range"
+                               VerticalOptions="Center" />
+
+                        <ProgressBar Grid.Column="2"
+                                     Progress="{Binding Data.Range, Converter={StaticResource StatToPercentageConverter}}"
+                                     Style="{StaticResource StatsProgressBar}" />
+
+                        <Label Grid.Column="3"
+                               HorizontalOptions="CenterAndExpand"
+                               Style="{StaticResource WhiteMediumFontLabel}"
+                               Text="{Binding Data.Range}"
+                               VerticalOptions="Center" />
+
+                        <Label Grid.Row="1"
+                               Grid.Column="1"
+                               LineBreakMode="TailTruncation"
+                               Style="{StaticResource WhiteMediumFontLabel}"
+                               Text="Value"
+                               VerticalOptions="Center" />
+
+                        <ProgressBar Grid.Row="1"
+                                     Grid.Column="2"
+                                     Progress="{Binding Data.Value, Converter={StaticResource StatToPercentageConverter}}"
+                                     Style="{StaticResource StatsProgressBar}" />
+
+                        <Label Grid.Row="1"
+                               Grid.Column="3"
+                               HorizontalOptions="CenterAndExpand"
+                               Style="{StaticResource WhiteMediumFontLabel}"
+                               Text="{Binding Data.Value}"
+                               VerticalOptions="Center" />
+
+                        <Label Grid.Row="2"
+                               Grid.Column="1"
+                               LineBreakMode="TailTruncation"
+                               Style="{StaticResource WhiteMediumFontLabel}"
+                               Text="Damage"
+                               VerticalOptions="Center" />
+
+                        <ProgressBar Grid.Row="2"
+                                     Grid.Column="2"
+                                     Progress="{Binding Data.Damage, Converter={StaticResource StatToPercentageConverter}}"
+                                     Style="{StaticResource StatsProgressBar}" />
+
+                        <Label Grid.Row="2"
+                               Grid.Column="3"
+                               HorizontalOptions="CenterAndExpand"
+                               Style="{StaticResource WhiteMediumFontLabel}"
+                               Text="{Binding Data.Damage}"
+                               VerticalOptions="Center" />
+
+                        
+                        <Label Grid.Row="3"
+                               HorizontalOptions="Center"
+                               Style="{StaticResource UppercaseYellowLabel}"
+                               Text="{Binding Data.Name}" />
+                    </Grid>
+
+                    <Grid x:Name="BottomButtonsRegionGrid">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <ImageButton Clicked="Cancel_Clicked" Source="cancel_button_140.png" />
+                        <ImageButton Grid.Column="1"
+                                     Clicked="Delete_Clicked"
+                                     Source="delete_button_140.png" />
+                    </Grid>
+
+                </StackLayout>
+
+            </Frame>
+
+        </Grid>
+
+
     </ScrollView>
 </ContentPage>
