@@ -92,5 +92,108 @@ namespace Game.Models
                     return 1;
             }
         }
+
+        /// <summary>
+        /// Mapping from string to enum value of item type 
+        /// </summary>
+        private static Dictionary<string, ItemTypeEnum> itemTypeMapping = new Dictionary<string, ItemTypeEnum>
+        {
+            {"Handsoap", ItemTypeEnum.HandSoap },
+            {"BoxOfTissues", ItemTypeEnum.BoxOfTissues },
+            {"Mask", ItemTypeEnum.Mask },
+            {"Sanitizer", ItemTypeEnum.Sanitizer },
+            {"FaceShield", ItemTypeEnum.FaceShield },
+            {"Soup", ItemTypeEnum.Soup },
+            {"BugSpray", ItemTypeEnum.BugSpray },
+            {"MosquitoNet", ItemTypeEnum.MosquitoNet },
+            {"Goggles", ItemTypeEnum.Goggles },
+            {"Gloves", ItemTypeEnum.Gloves },
+            {"Vaccine", ItemTypeEnum.Vaccine },
+            {"Medicine" , ItemTypeEnum.Medicine },
+            {"HazmatSuit", ItemTypeEnum.HazmatSuit },
+            {"Panacea", ItemTypeEnum.Panacea },
+            {"InvisibleCloak", ItemTypeEnum.InvisibleCloak }
+        };
+
+        /// <summary>
+        /// Converts from mapped string of item type to ItemType enum value.
+        /// </summary>
+        public static ItemTypeEnum ConvertMappedStringToEnum(string mappedString)
+        {
+            if (itemTypeMapping.TryGetValue(mappedString, out var itemType))
+            {
+                return itemType;
+            }
+
+            return ItemTypeEnum.Unknown;
+        }
+
+        /// <summary>
+        /// Converts from item type enum value to mapped string 
+        /// </summary>
+        public static String ConvertEnumToString(ItemTypeEnum itemType)
+        {
+            foreach (var pair in itemTypeMapping)
+            {
+                if (pair.Value == itemType)
+                {
+                    return pair.Key;
+                }
+            }
+
+            return "";
+
+            //switch (itemType)
+            //{
+            //    case ItemTypeEnum.HandSoap:
+            //        return "HandSoap";
+
+            //    case ItemTypeEnum.BoxOfTissues:
+            //        return "BoxOfTissues";
+
+            //    case ItemTypeEnum.Mask:
+            //        return "Mask";
+
+            //    case ItemTypeEnum.Sanitizer:
+            //        return "Sanitizer";
+
+            //    case ItemTypeEnum.FaceShield:
+            //        return "FaceShield";
+
+            //    case ItemTypeEnum.Soup:
+            //        return "Soup";
+
+            //    case ItemTypeEnum.BugSpray:
+            //        return "BugSpray";
+
+            //    case ItemTypeEnum.MosquitoNet:
+            //        return "MosquitoNet";
+
+            //    case ItemTypeEnum.Goggles:
+            //        return "Goggles";
+
+            //    case ItemTypeEnum.Gloves:
+            //        return "Gloves";
+
+            //    case ItemTypeEnum.Vaccine:
+            //        return "Vaccine";
+
+            //    case ItemTypeEnum.Medicine:
+            //        return "Medicine";
+
+            //    case ItemTypeEnum.HazmatSuit:
+            //        return "HazmatSuit";
+
+            //    case ItemTypeEnum.Panacea:
+            //        return "Panacea";
+
+            //    case ItemTypeEnum.InvisibleCloak:
+            //        return "InvisibleCloak";
+
+            //    default:
+            //        return "";
+            //}
+        }
     }
 }
+

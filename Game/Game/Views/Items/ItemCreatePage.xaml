@@ -72,7 +72,9 @@
                                     Padding="10"
                                     Style="{StaticResource CharacterFrame}">
 
-                                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                                    <Image 
+                                           x:Name="ItemImage"
+                                           Style="{StaticResource ImageLargeStyle}"/>
                                 </Frame>
                             </Frame>
                             <StackLayout Orientation="Vertical" Grid.Column="1"  HorizontalOptions="Fill">
@@ -90,7 +92,9 @@
 
                                 <Picker ItemsSource="{x:Static local_enum:ItemTypeEnumHelper.GetListItem}" 
                                     SelectedItem="{Binding Data.ItemType, Converter={StaticResource StringEnumConverter}, Mode=TwoWay}" 
-                                    x:Name="ItemTypePicker"/>
+                                    x:Name="ItemTypePicker"
+                                       SelectedIndexChanged="OnItemTypePickerSelectedIndexChanged"
+                                        />
                             </StackLayout>
 
                             <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="Fill" Grid.Column="1" Grid.Row="2">
