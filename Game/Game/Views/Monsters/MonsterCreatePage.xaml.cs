@@ -70,35 +70,5 @@ namespace Game.Views
         {
             await Navigation.PopModalAsync();
         }
-
-        /// <summary>
-        /// Catch the change to the stepper for Attack
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void Attack_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
-        {
-            AttackValue.Text = String.Format("{0}", e.NewValue);
-        }
-
-        /// <summary>
-        /// Catch the change to the stepper for Defense
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void Defense_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
-        {
-            DefenseValue.Text = String.Format("{0}", e.NewValue);
-        }
-
-        /// <summary>
-        /// Catch the change to the stepper for Speed
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void Speed_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
-        {
-            SpeedValue.Text = String.Format("{0}", e.NewValue);
-        }
     }
 }
