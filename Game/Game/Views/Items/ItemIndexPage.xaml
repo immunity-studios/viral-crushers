@@ -6,12 +6,7 @@
              xmlns:views="clr-namespace:Game.Views"
              mc:Ignorable="d"
              x:Name="BrowseItemsPage"
-             x:Class="Game.Views.ItemIndexPage"
-             Title="{Binding Title}">
-
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="AddItem_Clicked" IconImageSource="icon_add_temporary.png"/>
-    </ContentPage.ToolbarItems>
+             x:Class="Game.Views.ItemIndexPage">
 
     <ContentPage.Content>
         
@@ -22,11 +17,14 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
+            <views:BackButtonControl HorizontalOptions="Start"
+                                     Margin="30,30,0,0"/>
+
             <views:CurvedLabelControl
                Text="Items"
                Style="{StaticResource RedCurvedLabel}"
                HorizontalOptions="Center"
-               Margin="0,30,0,-20" />
+               Margin="0,60,0,-20" />
 
             <Frame Margin="5,0,5,10" Grid.Row="1">
                 <CollectionView
