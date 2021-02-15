@@ -142,6 +142,7 @@
     <BundleResource Include="Resources\delete_button_140.png" />
     <BundleResource Include="Resources\cancel_button_140.png" />
     <BundleResource Include="Resources\battle_button_140.png" />
+    <BundleResource Include="Resources\icon_back_button.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
