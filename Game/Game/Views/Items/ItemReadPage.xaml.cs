@@ -32,6 +32,8 @@ namespace Game.Views
             InitializeComponent();
 
             BindingContext = this.ViewModel = data;
+
+            ConsumableLabel.Text = data.Data.IsConsumable ? " - Consumable" : " - Non-consumable";
         }
 
         /// <summary>
