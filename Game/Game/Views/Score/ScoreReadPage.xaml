@@ -158,8 +158,22 @@
                         </StackLayout>
 
                     </Grid>
-                    
 
+                    <!-- Update and Delete Buttons -->
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <ImageButton Grid.Column="0" Source="edit_button_140.png" Clicked="Update_Clicked" />
+
+                        <ImageButton Grid.Column="1"
+                                     Source="delete_button_140.png" Clicked="Delete_Clicked" />
+                    </Grid>
                 </Grid>
             </Frame>
         </Grid>
