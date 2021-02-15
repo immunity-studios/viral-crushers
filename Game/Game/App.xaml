@@ -83,6 +83,7 @@
 
             <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
                 <Setter Property="BackgroundColor" Value="{DynamicResource ViralCrusherDarkPurpleColor}" />
+                <Setter Property="NavigationPage.HasNavigationBar" Value="False" />
             </Style>
 
             <!--<Style TargetType="ContentPage"
