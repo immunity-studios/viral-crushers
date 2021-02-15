@@ -49,8 +49,8 @@
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition />
                             </Grid.ColumnDefinitions>
 
                             <Frame
