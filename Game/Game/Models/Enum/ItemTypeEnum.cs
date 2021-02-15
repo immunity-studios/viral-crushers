@@ -92,6 +92,60 @@ namespace Game.Models
             }
         }
 
+        public static string ToImageFile(this ItemTypeEnum itemType)
+        {
+            switch (itemType)
+            {
+                case ItemTypeEnum.HandSoap:
+                    return "icon_hand_soap.png";
+
+                case ItemTypeEnum.BoxOfTissues:
+                    return "icon_tissue_box.png";
+
+                case ItemTypeEnum.Mask:
+                    return "icon_mask.png";
+
+                case ItemTypeEnum.Sanitizer:
+                    return "icon_sanitizer.png";
+
+                case ItemTypeEnum.FaceShield:
+                    return "icon_face_shield.png";
+
+                case ItemTypeEnum.Soup:
+                    return "icon_soup.png";
+
+                case ItemTypeEnum.BugSpray:
+                    return "icon_bug_spray.png";
+
+                case ItemTypeEnum.MosquitoNet:
+                    return "icon_mosquito_net.png";
+
+                case ItemTypeEnum.Goggles:
+                    return "icon_goggles.png";
+
+                case ItemTypeEnum.Gloves:
+                    return "icon_gloves.png";
+
+                case ItemTypeEnum.Vaccine:
+                    return "icon_vaccine.png";
+
+                case ItemTypeEnum.Medicine:
+                    return "icon_medicine.png";
+
+                case ItemTypeEnum.HazmatSuit:
+                    return "icon_hazmat_suit.png";
+
+                case ItemTypeEnum.Panacea:
+                    return "icon_panacea.png";
+
+                case ItemTypeEnum.InvisibleCloak:
+                    return "icon_invisible_cloak.png";
+
+                default:
+                    return null;
+            }
+        }
+
         /// <summary>
         /// Mapping from string to enum value of item type 
         /// </summary>

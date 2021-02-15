@@ -53,72 +53,7 @@ namespace Game.Views
                 await DisplayAlert("Error", "You must enter a valid name.", "OK");
                 return;
             }
-
-            switch (ViewModel.Data.ItemType)
-            {
-                case ItemTypeEnum.HandSoap:
-                    ViewModel.Data.ImageURI = "icon_hand_soap.png";
-                    break;
-
-                case ItemTypeEnum.BoxOfTissues:
-                    ViewModel.Data.ImageURI = "icon_tissue_box.png";
-                    break;
-
-                case ItemTypeEnum.Mask:
-                    ViewModel.Data.ImageURI = "icon_mask.png";
-                    break;
-
-                case ItemTypeEnum.Sanitizer:
-                    ViewModel.Data.ImageURI = "icon_sanitizer.png";
-                    break;
-
-                case ItemTypeEnum.FaceShield:
-                    ItemImage.Source = "icon_face_shield.png";
-                    break;
-
-                case ItemTypeEnum.Soup:
-                    ViewModel.Data.ImageURI = "icon_soup.png";
-                    break;
-
-                case ItemTypeEnum.BugSpray:
-                    ViewModel.Data.ImageURI = "icon_bug_spray.png";
-                    break;
-
-                case ItemTypeEnum.MosquitoNet:
-                    ViewModel.Data.ImageURI = "icon_mosquito_net.png";
-                    break;
-
-                case ItemTypeEnum.Goggles:
-                    ViewModel.Data.ImageURI = "icon_goggles.png";
-                    break;
-
-                case ItemTypeEnum.Gloves:
-                    ViewModel.Data.ImageURI = "icon_gloves.png";
-                    break;
-
-                case ItemTypeEnum.Vaccine:
-                    ViewModel.Data.ImageURI = "icon_vaccine.png";
-                    break;
-
-                case ItemTypeEnum.Medicine:
-                    ViewModel.Data.ImageURI = "icon_medicine.png";
-                    break;
-
-                case ItemTypeEnum.HazmatSuit:
-                    ViewModel.Data.ImageURI = "icon_hazmat_suit.png";
-                    break;
-
-                case ItemTypeEnum.Panacea:
-                    ViewModel.Data.ImageURI = "icon_panacea.png";
-                    break;
-
-                case ItemTypeEnum.InvisibleCloak:
-                    ViewModel.Data.ImageURI = "icon_invisible_cloak.png";
-                    break;
-
-                default:
-                    break;
-            }
+            ViewModel.Data.ImageURI = ViewModel.Data.ItemType.ToImageFile();
 
             MessagingCenter.Send(this, "Update", ViewModel.Data);
             await Navigation.PopModalAsync();
@@ -137,73 +72,8 @@ namespace Game.Views
         private void OnItemTypePickerSelectedIndexChanged(object sender, EventArgs e)
         {
             Picker picker = sender as Picker;
-            var SelectedItem = (ItemTypeEnum)ItemTypeEnumHelper.ConvertMappedStringToEnum((String)picker.SelectedItem);
-
-            switch (SelectedItem)
-            {
-                case ItemTypeEnum.HandSoap:
-                    ItemImage.Source = "icon_hand_soap.png";
-                    break;
-
-                case ItemTypeEnum.BoxOfTissues:
-                    ItemImage.Source = "icon_tissue_box.png";
-                    break;
-
-                case ItemTypeEnum.Mask:
-                    ItemImage.Source = "icon_mask.png";
-                    break;
-
-                case ItemTypeEnum.Sanitizer:
-                    ItemImage.Source = "icon_sanitizer.png";
-                    break;
-
-                case ItemTypeEnum.FaceShield:
-                    ItemImage.Source = "icon_face_shield.png";
-                    break;
-
-                case ItemTypeEnum.Soup:
-                    ItemImage.Source = "icon_soup.png";
-                    break;
-
-                case ItemTypeEnum.BugSpray:
-                    ItemImage.Source = "icon_bug_spray.png";
-                    break;
-
-                case ItemTypeEnum.MosquitoNet:
-                    ItemImage.Source = "icon_mosquito_net.png";
-                    break;
-
-                case ItemTypeEnum.Goggles:
-                    ItemImage.Source = "icon_goggles.png";
-                    break;
-
-                case ItemTypeEnum.Gloves:
-                    ItemImage.Source = "icon_gloves.png";
-                    break;
-
-                case ItemTypeEnum.Vaccine:
-                    ItemImage.Source = "icon_vaccine.png";
-                    break;
-
-                case ItemTypeEnum.Medicine:
-                    ItemImage.Source = "icon_medicine.png";
-                    break;
-
-                case ItemTypeEnum.HazmatSuit:
-                    ItemImage.Source = "icon_hazmat_suit.png";
-                    break;
-
-                case ItemTypeEnum.Panacea:
-                    ItemImage.Source = "icon_panacea.png";
-                    break;
-
-                case ItemTypeEnum.InvisibleCloak:
-                    ItemImage.Source = "icon_invisible_cloak.png";
-                    break;
-
-                default:
-                    break;
-            }
+            var selectedItemType = ItemTypeEnumHelper.ConvertMappedStringToEnum((string)picker.SelectedItem);
+            ItemImage.Source = selectedItemType.ToImageFile();
         }
     }
 }
