@@ -98,7 +98,7 @@
                                         Style="{StaticResource LabelStyle}"/>
 
                                 <Entry Text="{Binding Data.Description}"
-                                        Style="{StaticResource EntryStyle}" />
+                                       Style="{StaticResource EntryStyle}" />
                             </StackLayout>
 
                             <StackLayout Orientation="Vertical" Grid.Column="1" Grid.Row="3" HorizontalOptions="Fill">

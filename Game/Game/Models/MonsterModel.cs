@@ -20,17 +20,17 @@ namespace Game.Models
         {
             PlayerType = PlayerTypeEnum.Monster;
             Guid = Id;
-            Name = "E. coli ";
-            Description = "A Gram-negative, facultative anaerobic, rod-shaped, coliform bacterium commonly found in the lower intestine";
+            Name = "";
+            Description = "";
             Attack = 1;
             Difficulty = DifficultyEnum.Average;
             UniqueItem = null;
-            ImageURI = "icon_red_monster.png";
+            ImageURI = "cold_monster_140.png";
             ExperienceTotal = 0;
             ExperienceRemaining = LevelTableHelper.LevelDetailsList[Level + 1].Experience - 1;
 
             // Default to unknown, which is no special job
-            Type = MonsterTypeEnum.Unknown;
+            Type = MonsterTypeEnum.Cold;
 
         }
 
