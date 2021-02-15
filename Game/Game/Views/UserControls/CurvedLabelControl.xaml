@@ -29,13 +29,29 @@
             HorizontalOptions="{Binding FrameHorizontalOptions, Source={x:Reference this}}"
             HasShadow="False">
 
-        <Label
-            Style="{StaticResource CurvedLabelInnerLabelStyle}"            
-            Text="{Binding Text, Source={x:Reference this}}"
-            TextColor="{Binding TextColor, Source={x:Reference this}}"
-            FontSize="{Binding FontSize, Source={x:Reference this}}"/>
+            <!--<Label 
+                Style="{StaticResource CurvedLabelInnerLabelStyle}"
+                Text="{Binding Text, Source={x:Reference this}}"
+                TextColor="{Binding TextColor, Source={x:Reference this}}"
+                FontSize="{Binding FontSize, Source={x:Reference this}}"/>-->
 
-              
+            <Label
+                Style="{StaticResource CurvedLabelInnerLabelStyle}"        
+                Text="{Binding Text, Source={x:Reference this}}"
+                TextColor="{Binding TextColor, Source={x:Reference this}}"
+                FontSize="{OnPlatform iOS=12, Android=Medium, UWP=16}">
+                
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="MarkerFelt-Thin" />
+                        <On Platform="Android" Value="Lobster-Regular" />
+                        <On Platform="UWP" Value="ArimaMadurai-Black" />
+                    </OnPlatform>
+                </Label.FontFamily>
+                
+            </Label>
+
+
         </Frame>
     </ContentView.Content>
 
