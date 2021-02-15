@@ -1,15 +1,15 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage x:Class="Game.Views.CharacterUpdatePage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:local_enum="clr-namespace:Game.Models"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:Game.Views"
-             xmlns:local_enum="clr-namespace:Game.Models"
-             mc:Ignorable="d"
-             x:Class="Game.Views.CharacterUpdatePage">
+             mc:Ignorable="d">
 
     <ContentPage.Content>
-        
+
         <ScrollView>
 
             <Grid>
@@ -18,12 +18,11 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
 
-                <views:CurvedLabelControl
-               Text="Edit"
-               Style="{StaticResource RedCurvedLabel}"
-               FrameHorizontalOptions="Center"
-               FramePadding="30,0,30,20"
-               Margin="0,10,0,-20" />
+                <views:CurvedLabelControl Margin="0,10,0,-20"
+                                          FrameHorizontalOptions="Center"
+                                          FramePadding="30,0,30,20"
+                                          Style="{StaticResource RedCurvedLabel}"
+                                          Text="Edit" />
 
                 <Frame Grid.Row="1"
                        Margin="5,0,5,10"
@@ -31,13 +30,10 @@
                        BorderColor="Transparent"
                        HasShadow="True">
 
-                    <StackLayout
-                        Style="{StaticResource OuterBoxStack}"
-                        Padding="20"
-                        Spacing="10">
-                         <Grid
-                        RowSpacing="10"
-                        ColumnSpacing="10">
+                    <StackLayout Padding="20"
+                                 Spacing="10"
+                                 Style="{StaticResource OuterBoxStack}">
+                        <Grid ColumnSpacing="10" RowSpacing="10">
 
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
@@ -49,41 +45,41 @@
                                 <ColumnDefinition Width="2*" />
                             </Grid.ColumnDefinitions>
 
-                            <Frame
-                                Grid.RowSpan="3"
-                                Style="{StaticResource BorderFrame}">
+                            <Frame Grid.RowSpan="3" Style="{StaticResource BorderFrame}">
 
-                                <Frame
-                                    Padding="10"
-                                    Style="{StaticResource CharacterFrame}">
+                                <Frame Padding="10" Style="{StaticResource CharacterFrame}">
 
-                                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" />
                                 </Frame>
                             </Frame>
-                            <StackLayout Orientation="Vertical" Grid.Column="1"  HorizontalOptions="Fill">
-                                <Label Text="Name" 
-                                        Style="{StaticResource LabelStyle}"/>
-                    
-                                <Entry Text="{Binding Data.Name}"
-                                        HorizontalOptions="Fill"
-                                        Style="{StaticResource EntryStyle}"/>
+                            <StackLayout Grid.Column="1"
+                                         HorizontalOptions="Fill"
+                                         Orientation="Vertical">
+                                <Label Style="{StaticResource LabelStyle}" Text="Name" />
+
+                                <Entry HorizontalOptions="Fill"
+                                       Style="{StaticResource EntryStyle}"
+                                       Text="{Binding Data.Name}" />
                             </StackLayout>
 
-                            <StackLayout Orientation="Vertical" Grid.Column="1" Grid.Row="1" HorizontalOptions="Fill">
-                                <Label Text="Job" 
-                                        Style="{StaticResource LabelStyle}"/>
-                    
-                                <Picker ItemsSource="{x:Static local_enum:CharacterJobEnumHelper.GetListItem}" 
-                                    SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnumConverter}, Mode=TwoWay}" 
-                                    x:Name="JobPicker"/>
+                            <StackLayout Grid.Row="1"
+                                         Grid.Column="1"
+                                         HorizontalOptions="Fill"
+                                         Orientation="Vertical">
+                                <Label Style="{StaticResource LabelStyle}" Text="Job" />
+
+                                <Picker x:Name="JobPicker"
+                                        ItemsSource="{x:Static local_enum:CharacterJobEnumHelper.GetListItem}"
+                                        SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnumConverter}, Mode=TwoWay}" />
                             </StackLayout>
 
-                            <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="Fill" Grid.Column="1" Grid.Row="2">
-                                <Label Text="Description" 
-                                        Style="{StaticResource LabelStyle}"/>
-                    
-                                <Entry Text="{Binding Data.Description}"
-                                        Style="{StaticResource EntryStyle}" />
+                            <StackLayout Grid.Row="2"
+                                         Grid.Column="1"
+                                         HorizontalOptions="Fill"
+                                         Style="{StaticResource VerticalStack}">
+                                <Label Style="{StaticResource LabelStyle}" Text="Description" />
+
+                                <Entry Style="{StaticResource EntryStyle}" Text="{Binding Data.Description}" />
                             </StackLayout>
                         </Grid>
 
@@ -102,89 +98,88 @@
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
 
-                                <!--  Level -->
-                                <views:CurvedLabelControl Style="{StaticResource WhiteCurvedLabelWithNavyText}"
-                                                          Text="Level"/>
-                                
-                                <Slider Grid.Column="1"
-                                        x:Name="LevelSlider"                                       
-                                        Maximum="20"
-                                        Minimum="1"
-                                        Value="{Binding Data.Level, Mode=TwoWay}" />
+                            <!--  Level  -->
+                            <views:CurvedLabelControl Style="{StaticResource WhiteCurvedLabelWithNavyText}" Text="Level" />
 
-                                <views:CurvedLabelControl Grid.Column="2"
-                                        Text="{Binding Path=Value, Source={x:Reference LevelSlider}, StringFormat='{0:F0}'}"
-                                        Style="{StaticResource WhiteCurvedLabelWithNavyText}" />
+                            <Slider x:Name="LevelSlider"
+                                    Grid.Column="1"
+                                    Maximum="20"
+                                    Minimum="1"
+                                    Value="{Binding Data.Level, Mode=TwoWay}" />
 
-
-                                <!--  Attack -->
-                                <views:CurvedLabelControl Grid.Row="1"
-                                                          Style="{StaticResource WhiteCurvedLabelWithNavyText}"
-                                                          Text="Attack"/>
-
-                                <Slider Grid.Row="1"
-                                        Grid.Column="1"
-                                        x:Name="AttackSlider"                                       
-                                        Maximum="8"
-                                        Minimum="1"
-                                        Value="{Binding Data.Attack, Mode=TwoWay}" />
-
-                                <views:CurvedLabelControl Grid.Row="1"
-                                        Grid.Column="2"
-                                        Text="{Binding Path=Value, Source={x:Reference AttackSlider}, StringFormat='{0:F0}'}"
-                                        Style="{StaticResource WhiteCurvedLabelWithNavyText}" />
+                            <views:CurvedLabelControl Grid.Column="2"
+                                                      Style="{StaticResource WhiteCurvedLabelWithNavyText}"
+                                                      Text="{Binding Path=Value, Source={x:Reference LevelSlider}, StringFormat='{0:F0}'}" />
 
 
-                                <!--  Speed -->
-                                <views:CurvedLabelControl Grid.Row="2"
-                                                          Style="{StaticResource WhiteCurvedLabelWithNavyText}"
-                                                          Text="Speed"/>
+                            <!--  Attack  -->
+                            <views:CurvedLabelControl Grid.Row="1"
+                                                      Style="{StaticResource WhiteCurvedLabelWithNavyText}"
+                                                      Text="Attack" />
 
-                                <Slider Grid.Row="2"
-                                        Grid.Column="1"
-                                        x:Name="SpeedSlider"                                       
-                                        Maximum="5"
-                                        Minimum="1"
-                                        Value="{Binding Data.Speed, Mode=TwoWay}" />
+                            <Slider x:Name="AttackSlider"
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    Maximum="8"
+                                    Minimum="1"
+                                    Value="{Binding Data.Attack, Mode=TwoWay}" />
 
-                                <views:CurvedLabelControl Grid.Row="2"
-                                        Grid.Column="2"
-                                        Text="{Binding Path=Value, Source={x:Reference SpeedSlider}, StringFormat='{0:F0}'}"
-                                        Style="{StaticResource WhiteCurvedLabelWithNavyText}" />
+                            <views:CurvedLabelControl Grid.Row="1"
+                                                      Grid.Column="2"
+                                                      Style="{StaticResource WhiteCurvedLabelWithNavyText}"
+                                                      Text="{Binding Path=Value, Source={x:Reference AttackSlider}, StringFormat='{0:F0}'}" />
 
-                                <!--  Defence -->
-                                <views:CurvedLabelControl Grid.Row="3"
-                                                          Style="{StaticResource WhiteCurvedLabelWithNavyText}"
-                                                          Text="Defense"/>
 
-                                <Slider Grid.Row="3"
-                                        Grid.Column="1"
-                                        x:Name="DefenseSlider"                                       
-                                        Maximum="10"
-                                        Minimum="1"
-                                        Value="{Binding Data.Defense, Mode=TwoWay}" />
+                            <!--  Speed  -->
+                            <views:CurvedLabelControl Grid.Row="2"
+                                                      Style="{StaticResource WhiteCurvedLabelWithNavyText}"
+                                                      Text="Speed" />
 
-                                <views:CurvedLabelControl Grid.Row="3"
-                                        Grid.Column="2"
-                                        Text="{Binding Path=Value, Source={x:Reference DefenseSlider}, StringFormat='{0:F0}'}"
-                                        Style="{StaticResource WhiteCurvedLabelWithNavyText}" />
+                            <Slider x:Name="SpeedSlider"
+                                    Grid.Row="2"
+                                    Grid.Column="1"
+                                    Maximum="5"
+                                    Minimum="1"
+                                    Value="{Binding Data.Speed, Mode=TwoWay}" />
 
-                                <!--  Max Health -->
-                                <views:CurvedLabelControl Grid.Row="4"
-                                                          Style="{StaticResource WhiteCurvedLabelWithNavyText}"
-                                                          Text="Max Health"/>
+                            <views:CurvedLabelControl Grid.Row="2"
+                                                      Grid.Column="2"
+                                                      Style="{StaticResource WhiteCurvedLabelWithNavyText}"
+                                                      Text="{Binding Path=Value, Source={x:Reference SpeedSlider}, StringFormat='{0:F0}'}" />
 
-                                <Slider Grid.Row="4"
-                                        Grid.Column="1"
-                                        x:Name="MaxHealthSlider"                                       
-                                        Maximum="20"
-                                        Minimum="0"
-                                        Value="{Binding Data.MaxHealth, Mode=TwoWay}" />
+                            <!--  Defence  -->
+                            <views:CurvedLabelControl Grid.Row="3"
+                                                      Style="{StaticResource WhiteCurvedLabelWithNavyText}"
+                                                      Text="Defense" />
 
-                                <views:CurvedLabelControl Grid.Row="4"
-                                        Grid.Column="2"
-                                        Text="{Binding Path=Value, Source={x:Reference MaxHealthSlider}, StringFormat='{0:F0}'}"
-                                        Style="{StaticResource WhiteCurvedLabelWithNavyText}" />
+                            <Slider x:Name="DefenseSlider"
+                                    Grid.Row="3"
+                                    Grid.Column="1"
+                                    Maximum="10"
+                                    Minimum="1"
+                                    Value="{Binding Data.Defense, Mode=TwoWay}" />
+
+                            <views:CurvedLabelControl Grid.Row="3"
+                                                      Grid.Column="2"
+                                                      Style="{StaticResource WhiteCurvedLabelWithNavyText}"
+                                                      Text="{Binding Path=Value, Source={x:Reference DefenseSlider}, StringFormat='{0:F0}'}" />
+
+                            <!--  Max Health  -->
+                            <views:CurvedLabelControl Grid.Row="4"
+                                                      Style="{StaticResource WhiteCurvedLabelWithNavyText}"
+                                                      Text="Max Health" />
+
+                            <Slider x:Name="MaxHealthSlider"
+                                    Grid.Row="4"
+                                    Grid.Column="1"
+                                    Maximum="20"
+                                    Minimum="0"
+                                    Value="{Binding Data.MaxHealth, Mode=TwoWay}" />
+
+                            <views:CurvedLabelControl Grid.Row="4"
+                                                      Grid.Column="2"
+                                                      Style="{StaticResource WhiteCurvedLabelWithNavyText}"
+                                                      Text="{Binding Path=Value, Source={x:Reference MaxHealthSlider}, StringFormat='{0:F0}'}" />
 
 
 
@@ -195,12 +190,14 @@
                                 <ColumnDefinition />
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
-                            <ImageButton Source="save_button_140.png" Clicked="Save_Clicked" />
-                            <ImageButton Grid.Column="1" Source="cancel_button_140.png" Clicked="Cancel_Clicked" />
+                            <ImageButton Clicked="Save_Clicked" Source="save_button_140.png" />
+                            <ImageButton Grid.Column="1"
+                                         Clicked="Cancel_Clicked"
+                                         Source="cancel_button_140.png" />
                         </Grid>
-                    
 
-                   
+
+
                     </StackLayout>
                 </Frame>
             </Grid>

@@ -1,134 +1,130 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage x:Class="Game.Views.CharacterDeletePage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="Game.Views.CharacterDeletePage"
-             xmlns:views="clr-namespace:Game.Views" >
+             xmlns:views="clr-namespace:Game.Views"
+             mc:Ignorable="d">
 
     <ScrollView HorizontalOptions="CenterAndExpand">
 
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <views:CurvedLabelControl
-                   Text="Delete"
-                   Style="{StaticResource RedCurvedLabel}"
-                   FrameHorizontalOptions="Center"
-                   FramePadding="30,0,30,20"
-                   Margin="0,10,0,-20" />
+            <views:CurvedLabelControl Margin="0,10,0,-20"
+                                      FrameHorizontalOptions="Center"
+                                      FramePadding="30,0,30,20"
+                                      Style="{StaticResource RedCurvedLabel}"
+                                      Text="Delete" />
 
-            <Frame Grid.Row="1"
-                   Margin="5,0,5,10">
+            <Frame Grid.Row="1" Margin="5,0,5,10">
 
-                <StackLayout HorizontalOptions="Center"
-                             Padding="0,10,0,0">
+                <StackLayout Padding="0,10,0,0" HorizontalOptions="Center">
 
-                    <Grid RowSpacing="5" ColumnSpacing="5">
+                    <Grid ColumnSpacing="5" RowSpacing="5">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="40" />
                             <RowDefinition Height="40" />
                             <RowDefinition Height="40" />
                             <RowDefinition Height="40" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="4*"/>
-                            <ColumnDefinition Width="1.5*"/>
-                            <ColumnDefinition Width="3.5*"/>
-                            <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="1.5*" />
+                            <ColumnDefinition Width="3.5*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
 
-                        <Frame Grid.RowSpan="4"
-                                Style="{StaticResource BorderFrame}">
+                        <Frame Grid.RowSpan="4" Style="{StaticResource BorderFrame}">
                             <Frame Style="{StaticResource CharacterFrame}">
-                                <Image Source="{Binding Data.ImageURI}"
+                                <Image HeightRequest="100"
+                                       Source="{Binding Data.ImageURI}"
                                        Style="{StaticResource ImageLargeStyle}"
-                                       WidthRequest="100"
-                                       HeightRequest="100"/>
+                                       WidthRequest="100" />
                             </Frame>
                         </Frame>
 
                         <Label Grid.Column="1"
-                               Text="Level"
-                               VerticalOptions="Center"
                                LineBreakMode="TailTruncation"
-                               Style="{StaticResource WhiteMediumFontLabel}" />
+                               Style="{StaticResource WhiteMediumFontLabel}"
+                               Text="Level"
+                               VerticalOptions="Center" />
 
                         <ProgressBar Grid.Column="2"
                                      Progress="{Binding Data.Level, Converter={StaticResource StatToPercentageConverter}}"
                                      Style="{StaticResource StatsProgressBar}" />
 
                         <Label Grid.Column="3"
-                               Text="{Binding Data.Level}"
                                HorizontalOptions="CenterAndExpand"
-                               VerticalOptions="Center"
-                               Style="{StaticResource WhiteMediumFontLabel}" />
-                        
-                        <Label Grid.Column="1"
-                               Grid.Row="1"
-                               Text="Attack"
-                               VerticalOptions="Center"
-                               LineBreakMode="TailTruncation"
-                               Style="{StaticResource WhiteMediumFontLabel}" />
+                               Style="{StaticResource WhiteMediumFontLabel}"
+                               Text="{Binding Data.Level}"
+                               VerticalOptions="Center" />
 
-                        <ProgressBar Grid.Column="2"
-                               Grid.Row="1"
+                        <Label Grid.Row="1"
+                               Grid.Column="1"
+                               LineBreakMode="TailTruncation"
+                               Style="{StaticResource WhiteMediumFontLabel}"
+                               Text="Attack"
+                               VerticalOptions="Center" />
+
+                        <ProgressBar Grid.Row="1"
+                                     Grid.Column="2"
                                      Progress="{Binding Data.Attack, Converter={StaticResource StatToPercentageConverter}}"
                                      Style="{StaticResource StatsProgressBar}" />
 
-                        <Label Grid.Column="3"
-                               Grid.Row="1"
-                               Text="{Binding Data.Attack}"
+                        <Label Grid.Row="1"
+                               Grid.Column="3"
                                HorizontalOptions="CenterAndExpand"
-                               VerticalOptions="Center"
-                               Style="{StaticResource WhiteMediumFontLabel}" />
+                               Style="{StaticResource WhiteMediumFontLabel}"
+                               Text="{Binding Data.Attack}"
+                               VerticalOptions="Center" />
 
-                        <Label Grid.Column="1"
-                               Grid.Row="2"
-                               Text="Defense"
-                               VerticalOptions="Center"
+                        <Label Grid.Row="2"
+                               Grid.Column="1"
                                LineBreakMode="TailTruncation"
-                               Style="{StaticResource WhiteMediumFontLabel}" />
+                               Style="{StaticResource WhiteMediumFontLabel}"
+                               Text="Defense"
+                               VerticalOptions="Center" />
 
-                        <ProgressBar Grid.Column="2"
-                               Grid.Row="2"
+                        <ProgressBar Grid.Row="2"
+                                     Grid.Column="2"
                                      Progress="{Binding Data.Defense, Converter={StaticResource StatToPercentageConverter}}"
                                      Style="{StaticResource StatsProgressBar}" />
 
-                        <Label Grid.Column="3"
-                               Grid.Row="2"
-                               Text="{Binding Data.Defense}"
+                        <Label Grid.Row="2"
+                               Grid.Column="3"
                                HorizontalOptions="CenterAndExpand"
-                               VerticalOptions="Center"
-                               Style="{StaticResource WhiteMediumFontLabel}" />
-                        
-                        <Label Grid.Column="1"
-                               Grid.Row="3"
-                               Text="Speed"
-                               VerticalOptions="Center"
-                               LineBreakMode="TailTruncation"
-                               Style="{StaticResource WhiteMediumFontLabel}" />
+                               Style="{StaticResource WhiteMediumFontLabel}"
+                               Text="{Binding Data.Defense}"
+                               VerticalOptions="Center" />
 
-                        <ProgressBar Grid.Column="2"
-                               Grid.Row="3"
+                        <Label Grid.Row="3"
+                               Grid.Column="1"
+                               LineBreakMode="TailTruncation"
+                               Style="{StaticResource WhiteMediumFontLabel}"
+                               Text="Speed"
+                               VerticalOptions="Center" />
+
+                        <ProgressBar Grid.Row="3"
+                                     Grid.Column="2"
                                      Progress="{Binding Data.Speed, Converter={StaticResource StatToPercentageConverter}}"
                                      Style="{StaticResource StatsProgressBar}" />
 
-                        <Label Grid.Column="3"
-                               Grid.Row="3"
-                               Text="{Binding Data.Speed}"
+                        <Label Grid.Row="3"
+                               Grid.Column="3"
                                HorizontalOptions="CenterAndExpand"
-                               VerticalOptions="Center"
-                               Style="{StaticResource WhiteMediumFontLabel}" />
+                               Style="{StaticResource WhiteMediumFontLabel}"
+                               Text="{Binding Data.Speed}"
+                               VerticalOptions="Center" />
 
-                        <Label Text="{Binding Data.Name}"
-                                Grid.Row="3"
-                                HorizontalOptions="Center"
-                                Style="{StaticResource UppercaseYellowLabel}"/>
+                        <Label Grid.Row="3"
+                               HorizontalOptions="Center"
+                               Style="{StaticResource UppercaseYellowLabel}"
+                               Text="{Binding Data.Name}" />
                     </Grid>
 
                     <Grid x:Name="BottomButtonsRegionGrid">
@@ -136,9 +132,11 @@
                             <ColumnDefinition />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
-                            
-                        <ImageButton Source="cancel_button_140.png" Clicked="Cancel_Clicked" />
-                        <ImageButton Grid.Column="1" Source="delete_button_140.png" Clicked="Delete_Clicked" />
+
+                        <ImageButton Clicked="Cancel_Clicked" Source="cancel_button_140.png" />
+                        <ImageButton Grid.Column="1"
+                                     Clicked="Delete_Clicked"
+                                     Source="delete_button_140.png" />
                     </Grid>
 
                 </StackLayout>
