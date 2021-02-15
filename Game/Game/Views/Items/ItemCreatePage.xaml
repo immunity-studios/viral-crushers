@@ -8,13 +8,7 @@
              xmlns:local_helpers="clr-namespace:Game.Helpers"
              xmlns:local_enum="clr-namespace:Game.Models"
              xmlns:views="clr-namespace:Game.Views"
-             x:Class="Game.Views.ItemCreatePage"
-             Title="{Binding Title}">
-
-    <!--<ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" IconImageSource="icon_cancel.png"/>
-        <ToolbarItem Text="Save" Clicked="Save_Clicked" IconImageSource="icon_save.png"/>
-    </ContentPage.ToolbarItems>-->
+             x:Class="Game.Views.ItemCreatePage">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -31,12 +25,13 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
 
+
                 <views:CurvedLabelControl
                Text="Create"
                Style="{StaticResource RedCurvedLabel}"
                HorizontalOptions="Center"
                FramePadding="30,0,30,20"
-               Margin="0,10,0,-20" />
+               Margin="0,60,0,-20" />
 
                 <Frame Grid.Row="1"
                        Margin="5,0,5,10"
