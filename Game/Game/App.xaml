@@ -546,7 +546,7 @@
                 <Setter Property="FontSize" Value="Small" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
                 <Setter Property="VerticalOptions" Value="Center" />
-                <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
+                <Setter Property="TextColor" Value="{StaticResource ViralCrusherNavyColor}" />
                 <Setter Property="BackgroundColor" Value="{StaticResource ViralCrusherWhiteColor}" />
                 <Setter Property="PlaceholderColor" Value="{StaticResource TriciaryTextColor}" />
             </Style>
