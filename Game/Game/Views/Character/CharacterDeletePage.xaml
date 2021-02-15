@@ -5,16 +5,140 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Game.Views.CharacterDeletePage"
-             Title="{Binding Title}">
+             xmlns:views="clr-namespace:Game.Views" >
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" IconImageSource="icon_cancel.png"/>
-        <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete.png"/>
-    </ContentPage.ToolbarItems>
+    <ScrollView HorizontalOptions="CenterAndExpand">
 
-    <ScrollView
-            HorizontalOptions="CenterAndExpand">
-        <StackLayout 
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <views:CurvedLabelControl
+                   Text="Delete"
+                   Style="{StaticResource RedCurvedLabel}"
+                   FrameHorizontalOptions="Center"
+                   FramePadding="30,0,30,20"
+                   Margin="0,10,0,-20" />
+
+            <Frame Grid.Row="1"
+                   Margin="15,0,15,20"
+                   HasShadow="True">
+
+                <StackLayout HorizontalOptions="Center"
+                             Margin="10,0">
+
+                    <Grid x:Name="InformationDisplayRegionGrid">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/> <!-- For Image and Name Region-->
+                            <RowDefinition Height="*" /> <!-- For ProgressBars Region -->
+                        </Grid.RowDefinitions>
+
+                            <Grid RowSpacing="10" ColumnSpacing="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="2*" />
+                            </Grid.ColumnDefinitions>
+
+                                        <Frame Grid.RowSpan="2"
+                                               Style="{StaticResource BorderFrame}">
+
+                                            <Frame Padding="10"
+                                                   Style="{StaticResource CharacterFrame}">
+                                                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                                            </Frame>
+
+                                        </Frame>
+
+                                        <StackLayout Orientation="Vertical"
+                                                     Grid.Column="1"
+                                                     HorizontalOptions="Fill">
+
+                                                <Label Text="Name"
+                                                       Style="{StaticResource LabelStyle}"/>
+                    
+                                                <Entry Text="{Binding Data.Name}"
+                                                       HorizontalOptions="Fill"
+                                                       Style="{StaticResource EntryStyle}"/>
+                                        </StackLayout>
+
+                                        <StackLayout Grid.Row="1"
+                                                     Grid.Column="1"
+                                                     HorizontalOptions="Fill"
+                                                     Style="{StaticResource VerticalStack}">
+
+                                                <Label Text="Description"
+                                                       Style="{StaticResource LabelStyle}"/>
+                    
+                                                <Entry Text="{Binding Data.Description}"
+                                                       Style="{StaticResource EntryStyle}" />
+                                        </StackLayout>
+
+                            </Grid>
+
+                            <Grid Grid.Row="1"
+                                  VerticalOptions="CenterAndExpand"
+                                  HorizontalOptions="FillAndExpand"
+                                  x:Name="ProgressBarsRegionGrid">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <ProgressBar Grid.Row="0"
+                                             Progress="{Binding Data.Level, Converter={StaticResource StatToPercentageConverter}}"
+                                             Style="{StaticResource StatsProgressBar}" />
+
+                                <ProgressBar Grid.Row="1"
+                                             Progress="{Binding Data.Attack, Converter={StaticResource StatToPercentageConverter}}"
+                                             Style="{StaticResource StatsProgressBar}" />
+
+                                <ProgressBar Grid.Row="2"
+                                             Progress="{Binding Data.Speed, Converter={StaticResource StatToPercentageConverter}}"
+                                             Style="{StaticResource StatsProgressBar}" />
+
+                                <ProgressBar Grid.Row="3"
+                                             Progress="{Binding Data.Defense, Converter={StaticResource StatToPercentageConverter}}"
+                                             Style="{StaticResource StatsProgressBar}" />
+
+                                <ProgressBar Grid.Row="4"
+                                             Progress="{Binding Data.MaxHealth, Converter={StaticResource StatToPercentageConverter}}"
+                                             Style="{StaticResource StatsProgressBar}" />
+
+                            </Grid>
+
+                    </Grid>
+
+                    <Grid x:Name="BottomButtonsRegionGrid">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <ImageButton Source="delete_button_140.png" Clicked="Delete_Clicked" />
+                            <ImageButton Grid.Column="1" Source="cancel_button_140.png" Clicked="Cancel_Clicked" />
+                    </Grid>
+
+                </StackLayout>
+
+            </Frame>
+
+        </Grid>
+
+
+
+
+
+
+        <!--<StackLayout 
                 Padding="20" HorizontalOptions="Center">
 
             <Frame HasShadow="True" Padding="5">
@@ -125,6 +249,6 @@
                 </Button>
             </StackLayout>
 
-        </StackLayout>
+        </StackLayout>-->
     </ScrollView>
 </ContentPage>
