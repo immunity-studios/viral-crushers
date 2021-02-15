@@ -36,6 +36,72 @@ namespace Game.Views
             LocationPicker.SelectedItem = ItemLocationEnumHelper.ConvertEnumToMappedString(data.Data.Location);
             AttributePicker.SelectedItem = data.Data.Attribute.ToString();
             ItemTypePicker.SelectedItem = data.Data.ItemType.ToString();
+
+            switch (ViewModel.Data.ItemType)
+            {
+                case ItemTypeEnum.HandSoap:
+                    ItemImage.Source = "icon_hand_soap.png";
+                    break;
+
+                case ItemTypeEnum.BoxOfTissues:
+                    ItemImage.Source = "icon_tissue_box.png";
+                    break;
+
+                case ItemTypeEnum.Mask:
+                    ItemImage.Source = "icon_mask.png";
+                    break;
+
+                case ItemTypeEnum.Sanitizer:
+                    ItemImage.Source = "icon_sanitizer.png";
+                    break;
+
+                case ItemTypeEnum.FaceShield:
+                    ItemImage.Source = "icon_face_shield.png";
+                    break;
+
+                case ItemTypeEnum.Soup:
+                    ItemImage.Source = "icon_soup.png";
+                    break;
+
+                case ItemTypeEnum.BugSpray:
+                    ItemImage.Source = "icon_bug_spray.png";
+                    break;
+
+                case ItemTypeEnum.MosquitoNet:
+                    ItemImage.Source = "icon_mosquito_net.png";
+                    break;
+
+                case ItemTypeEnum.Goggles:
+                    ItemImage.Source = "icon_goggles.png";
+                    break;
+
+                case ItemTypeEnum.Gloves:
+                    ItemImage.Source = "icon_gloves.png";
+                    break;
+
+                case ItemTypeEnum.Vaccine:
+                    ItemImage.Source = "icon_vaccine.png";
+                    break;
+
+                case ItemTypeEnum.Medicine:
+                    ItemImage.Source = "icon_medicine.png";
+                    break;
+
+                case ItemTypeEnum.HazmatSuit:
+                    ItemImage.Source = "icon_hazmat_suit.png";
+                    break;
+
+                case ItemTypeEnum.Panacea:
+                    ItemImage.Source = "icon_panacea.png";
+                    break;
+
+                case ItemTypeEnum.InvisibleCloak:
+                    ItemImage.Source = "icon_invisible_cloak.png";
+                    break;
+
+                default:
+                    break;
+            }
         }
 
         /// <summary>
@@ -73,24 +139,76 @@ namespace Game.Views
             await Navigation.PopModalAsync();
         }
 
-        ///// <summary>
-        ///// Catch the change to the Stepper for Range
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-        //public void Range_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
-        //{
-        //    RangeValue.Text = String.Format("{0}", e.NewValue);
-        //}
+        private void OnItemTypePickerSelectedIndexChanged(object sender, EventArgs e)
+        {
+            Picker picker = sender as Picker;
+            var SelectedItem = (ItemTypeEnum)ItemTypeEnumHelper.ConvertMappedStringToEnum((String)picker.SelectedItem);
 
-        ///// <summary>
-        ///// Catch the change to the stepper for Value
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-        //public void Value_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
-        //{
-        //    ValueValue.Text = String.Format("{0}", e.NewValue);
-        //}
+            switch (SelectedItem)
+            {
+                case ItemTypeEnum.HandSoap:
+                    ItemImage.Source = "icon_hand_soap.png";
+                    break;
+
+                case ItemTypeEnum.BoxOfTissues:
+                    ItemImage.Source = "icon_tissue_box.png";
+                    break;
+
+                case ItemTypeEnum.Mask:
+                    ItemImage.Source = "icon_mask.png";
+                    break;
+
+                case ItemTypeEnum.Sanitizer:
+                    ItemImage.Source = "icon_sanitizer.png";
+                    break;
+
+                case ItemTypeEnum.FaceShield:
+                    ItemImage.Source = "icon_face_shield.png";
+                    break;
+
+                case ItemTypeEnum.Soup:
+                    ItemImage.Source = "icon_soup.png";
+                    break;
+
+                case ItemTypeEnum.BugSpray:
+                    ItemImage.Source = "icon_bug_spray.png";
+                    break;
+
+                case ItemTypeEnum.MosquitoNet:
+                    ItemImage.Source = "icon_mosquito_net.png";
+                    break;
+
+                case ItemTypeEnum.Goggles:
+                    ItemImage.Source = "icon_goggles.png";
+                    break;
+
+                case ItemTypeEnum.Gloves:
+                    ItemImage.Source = "icon_gloves.png";
+                    break;
+
+                case ItemTypeEnum.Vaccine:
+                    ItemImage.Source = "icon_vaccine.png";
+                    break;
+
+                case ItemTypeEnum.Medicine:
+                    ItemImage.Source = "icon_medicine.png";
+                    break;
+
+                case ItemTypeEnum.HazmatSuit:
+                    ItemImage.Source = "icon_hazmat_suit.png";
+                    break;
+
+                case ItemTypeEnum.Panacea:
+                    ItemImage.Source = "icon_panacea.png";
+                    break;
+
+                case ItemTypeEnum.InvisibleCloak:
+                    ItemImage.Source = "icon_invisible_cloak.png";
+                    break;
+
+                default:
+                    break;
+            }
+        }
     }
 }
