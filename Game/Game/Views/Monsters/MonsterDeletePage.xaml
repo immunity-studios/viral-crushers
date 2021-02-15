@@ -138,8 +138,11 @@
                             <ColumnDefinition />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
-                            <ImageButton Source="cancel_button_140.png" Clicked="Cancel_Clicked" />
-                            <ImageButton Grid.Column="1" Source="delete_button_140.png" Clicked="Delete_Clicked" />
+                            
+                            <ImageButton Grid.Column="0" Source="delete_button_140.png" Clicked="Delete_Clicked" />
+
+                        <ImageButton Grid.Column="1"
+                                     Source="cancel_button_140.png" Clicked="Cancel_Clicked" />
                     </Grid>
 
                 </StackLayout>
