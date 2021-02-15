@@ -9,7 +9,7 @@
              x:Class="Game.Views.MonsterIndexPage">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="AddItem_Clicked" IconImageSource="icon_add.png"/>
+        <ToolbarItem Text="Add" Clicked="AddItem_Clicked" IconImageSource="icon_add_temporary.png"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>

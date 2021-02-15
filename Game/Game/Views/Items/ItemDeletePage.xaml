@@ -52,7 +52,7 @@
                                 Style="{StaticResource HorizontalStack}">
 
                         <Label Text="Location: " />
-                        <Label Text="{Binding Data.Location}" />
+                        <Label Text="{Binding Data.Location, Converter={StaticResource ItemLocationToMappedStringConverter}}" />
 
                     </StackLayout>
 

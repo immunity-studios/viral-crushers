@@ -137,6 +137,7 @@
     <Content Include="ebola_monster_140.png" />
     <Content Include="flu_monster_140.png" />
     <Content Include="icon_add.png" />
+    <Content Include="icon_add_temporary.png" />
     <Content Include="icon_athlete.png" />
     <Content Include="icon_blue_monster.png" />
     <Content Include="icon_bug_spray.png" />

@@ -37,7 +37,7 @@ namespace Game.Views
 
             //Need to make the SelectedItem a string, so it can select the correct item.
             ItemTypePicker.SelectedItem = ViewModel.Data.ItemType.ToString();
-            LocationPicker.SelectedItem = ViewModel.Data.Location.ToString();
+            LocationPicker.SelectedItem = ItemLocationEnumHelper.ConvertEnumToMappedString(ViewModel.Data.Location);
             AttributePicker.SelectedItem = ViewModel.Data.Attribute.ToString();
         }
 

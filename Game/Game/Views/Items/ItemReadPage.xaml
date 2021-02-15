@@ -65,7 +65,7 @@
                                     Style="{StaticResource StatsBoldStyle}"/>
 
                                 <Label
-                                    Text="{Binding Data.Location}"
+                                    Text="{Binding Data.Location, Converter={StaticResource ItemLocationToMappedStringConverter}}"
                                     Style="{StaticResource StatsBoldStyle}"/>
 
                         </StackLayout>
