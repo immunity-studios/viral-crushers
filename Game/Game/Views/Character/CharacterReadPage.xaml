@@ -80,6 +80,7 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
@@ -90,13 +91,13 @@
                             <StackLayout>
 
                                 <StackLayout Style="{StaticResource HorizontalStack}">
-                                    <Label Style="{StaticResource StatsBoldStyle}" Text="Max Health: " />
+                                    <Label Style="{StaticResource StatsBoldStyle}" Text="Level: " />
 
-                                    <Label Style="{StaticResource StatsBoldStyle}" Text="{Binding Data.MaxHealth}" />
+                                    <Label Style="{StaticResource StatsBoldStyle}" Text="{Binding Data.Level}" />
                                 </StackLayout>
 
                                 <ProgressBar HeightRequest="30"
-                                             Progress="{Binding Data.MaxHealth, Converter={StaticResource StatToPercentageConverter}}"
+                                             Progress="{Binding Data.Level, Converter={StaticResource StatToPercentageConverter}}"
                                              Style="{StaticResource StatsProgressBar}" />
 
                             </StackLayout>
@@ -107,13 +108,13 @@
                                Style="{StaticResource AttributeFrame}">
                             <StackLayout>
                                 <StackLayout Style="{StaticResource HorizontalStack}">
-                                    <Label Style="{StaticResource StatsBoldStyle}" Text="Speed: " />
+                                    <Label Style="{StaticResource StatsBoldStyle}" Text="Attack: " />
 
-                                    <Label Style="{StaticResource StatsBoldStyle}" Text="{Binding Data.Speed}" />
+                                    <Label Style="{StaticResource StatsBoldStyle}" Text="{Binding Data.Attack}" />
                                 </StackLayout>
 
                                 <ProgressBar HeightRequest="30"
-                                             Progress="{Binding Data.Speed, Converter={StaticResource StatToPercentageConverter}}"
+                                             Progress="{Binding Data.Attack, Converter={StaticResource StatToPercentageConverter}}"
                                              Style="{StaticResource StatsProgressBar}" />
                             </StackLayout>
                         </Frame>
@@ -123,13 +124,13 @@
                                Style="{StaticResource AttributeFrame}">
                             <StackLayout>
                                 <StackLayout Style="{StaticResource HorizontalStack}">
-                                    <Label Style="{StaticResource StatsBoldStyle}" Text="Attack: " />
+                                    <Label Style="{StaticResource StatsBoldStyle}" Text="Speed: " />
 
-                                    <Label Style="{StaticResource StatsBoldStyle}" Text="{Binding Data.Attack}" />
+                                    <Label Style="{StaticResource StatsBoldStyle}" Text="{Binding Data.Speed}" />
                                 </StackLayout>
 
                                 <ProgressBar HeightRequest="30"
-                                             Progress="{Binding Data.Attack, Converter={StaticResource StatToPercentageConverter}}"
+                                             Progress="{Binding Data.Speed, Converter={StaticResource StatToPercentageConverter}}"
                                              Style="{StaticResource StatsProgressBar}" />
                             </StackLayout>
                         </Frame>
@@ -148,6 +149,24 @@
                                 <ProgressBar HeightRequest="30"
                                              Progress="{Binding Data.Defense, Converter={StaticResource StatToPercentageConverter}}"
                                              Style="{StaticResource StatsProgressBar}" />
+                            </StackLayout>
+                        </Frame>
+                        
+                        <Frame Grid.Row="3"
+                               Grid.Column="0"
+                               Style="{StaticResource AttributeFrame}">
+                            <StackLayout>
+
+                                <StackLayout Style="{StaticResource HorizontalStack}">
+                                    <Label Style="{StaticResource StatsBoldStyle}" Text="Max Health: " />
+
+                                    <Label Style="{StaticResource StatsBoldStyle}" Text="{Binding Data.MaxHealth}" />
+                                </StackLayout>
+
+                                <ProgressBar HeightRequest="30"
+                                             Progress="{Binding Data.MaxHealth, Converter={StaticResource StatToPercentageConverter}}"
+                                             Style="{StaticResource StatsProgressBar}" />
+
                             </StackLayout>
                         </Frame>
                     </Grid>
