@@ -142,7 +142,7 @@
 
                             <Slider Grid.Column="1"
                                         x:Name="RangeSlider"                                       
-                                        Maximum="5"
+                                        Maximum="10"
                                         Minimum="0"
                                         Value="{Binding Data.Range, Mode=TwoWay}" />
 
@@ -177,7 +177,7 @@
                             <Slider Grid.Row="2"
                                         Grid.Column="1"
                                         x:Name="DamageSlider"                                       
-                                        Maximum="5"
+                                        Maximum="10"
                                         Minimum="0"
                                         Value="{Binding Data.Damage, Mode=TwoWay}" />
 
