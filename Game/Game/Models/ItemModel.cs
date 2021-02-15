@@ -40,7 +40,7 @@ namespace Game.Models
         public bool IsConsumable { get; set; } = false;
 
         // The type of the item in the game
-        private ItemTypeEnum itemType = ItemTypeEnum.Unknown;
+        private ItemTypeEnum itemType = ItemTypeEnum.Medicine;
         public ItemTypeEnum ItemType
         {
             get => itemType;
