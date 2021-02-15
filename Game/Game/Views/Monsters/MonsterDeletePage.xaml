@@ -58,9 +58,10 @@
                             TextColor="{StaticResource ViralCrusherYellowColor}"/>
 
                         <Label Grid.Column="1"
-                            Text="Atk."
+                            Text="Attack"
                             FontSize="Medium"
                             VerticalOptions="Center"
+                            LineBreakMode="TailTruncation"
                             TextColor="White"/>
 
                         <ProgressBar
@@ -78,9 +79,10 @@
 
                         <Label Grid.Row="1"
                             Grid.Column="1"
-                            Text="Def."
+                            Text="Deffense"
                             FontSize="Medium"
                             VerticalOptions="Center"
+                            LineBreakMode="TailTruncation"
                             TextColor="White"/>
 
                         <ProgressBar
@@ -100,7 +102,8 @@
                         <Label Grid.Row="2"
                             Grid.Column="1"
                             FontSize="Medium"
-                            Text="Spd."
+                            Text="Speed"
+                            LineBreakMode="TailTruncation"
                             VerticalOptions="Center"
                             TextColor="White"/>
 
