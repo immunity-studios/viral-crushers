@@ -43,6 +43,7 @@
                         <Frame Grid.RowSpan="3" Style="{StaticResource BorderFrame}">
                             <Frame Style="{StaticResource CharacterFrame}">
                                 <Image HeightRequest="100"
+                                       x:Name="ItemImage"
                                        Source="{Binding Data.ImageURI}"
                                        Style="{StaticResource ImageLargeStyle}"
                                        WidthRequest="100" />

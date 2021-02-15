@@ -29,6 +29,72 @@ namespace Game.Views
             BindingContext = this.viewModel = data;
 
             this.viewModel.Title = "Delete " + data.Title;
+
+            switch (viewModel.Data.ItemType)
+            {
+                case ItemTypeEnum.HandSoap:
+                    ItemImage.Source = "icon_hand_soap.png";
+                    break;
+
+                case ItemTypeEnum.BoxOfTissues:
+                    ItemImage.Source = "icon_tissue_box.png";
+                    break;
+
+                case ItemTypeEnum.Mask:
+                    ItemImage.Source = "icon_mask.png";
+                    break;
+
+                case ItemTypeEnum.Sanitizer:
+                    ItemImage.Source = "icon_sanitizer.png";
+                    break;
+
+                case ItemTypeEnum.FaceShield:
+                    ItemImage.Source = "icon_face_shield.png";
+                    break;
+
+                case ItemTypeEnum.Soup:
+                    ItemImage.Source = "icon_soup.png";
+                    break;
+
+                case ItemTypeEnum.BugSpray:
+                    ItemImage.Source = "icon_bug_spray.png";
+                    break;
+
+                case ItemTypeEnum.MosquitoNet:
+                    ItemImage.Source = "icon_mosquito_net.png";
+                    break;
+
+                case ItemTypeEnum.Goggles:
+                    ItemImage.Source = "icon_goggles.png";
+                    break;
+
+                case ItemTypeEnum.Gloves:
+                    ItemImage.Source = "icon_gloves.png";
+                    break;
+
+                case ItemTypeEnum.Vaccine:
+                    ItemImage.Source = "icon_vaccine.png";
+                    break;
+
+                case ItemTypeEnum.Medicine:
+                    ItemImage.Source = "icon_medicine.png";
+                    break;
+
+                case ItemTypeEnum.HazmatSuit:
+                    ItemImage.Source = "icon_hazmat_suit.png";
+                    break;
+
+                case ItemTypeEnum.Panacea:
+                    ItemImage.Source = "icon_panacea.png";
+                    break;
+
+                case ItemTypeEnum.InvisibleCloak:
+                    ItemImage.Source = "icon_invisible_cloak.png";
+                    break;
+
+                default:
+                    break;
+            }
         }
 
         /// <summary>
