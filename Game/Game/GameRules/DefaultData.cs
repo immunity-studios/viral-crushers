@@ -36,7 +36,7 @@ namespace Game.GameRules
                     Damage = 1,
                     Value = 9,
                     Location = ItemLocationEnum.OffHand,
-                    Attribute = AttributeEnum.Attack,
+                    Attribute = AttributeEnum.MaxHealth,
                     ItemType = ItemTypeEnum.BoxOfTissues,
                 },
                 new ItemModel {
@@ -47,7 +47,7 @@ namespace Game.GameRules
                     Damage = 10,
                     Value = 2,
                     Location = ItemLocationEnum.Necklass,
-                    Attribute = AttributeEnum.Speed,
+                    Attribute = AttributeEnum.Defense,
                     ItemType = ItemTypeEnum.Mask,
                 },
                 new ItemModel {
@@ -58,7 +58,7 @@ namespace Game.GameRules
                     Damage = 5,
                     Value = 9,
                     Location = ItemLocationEnum.PrimaryHand,
-                    Attribute = AttributeEnum.MaxHealth,
+                    Attribute = AttributeEnum.Attack,
                     ItemType = ItemTypeEnum.Sanitizer,
                 },
                 new ItemModel {
@@ -82,7 +82,7 @@ namespace Game.GameRules
                     Damage = 9,
                     Value = 6,
                     Location = ItemLocationEnum.OffHand,
-                    Attribute = AttributeEnum.Attack,
+                    Attribute = AttributeEnum.Speed,
                     ItemType = ItemTypeEnum.Soup,
                 },
                 new ItemModel {
@@ -95,7 +95,7 @@ namespace Game.GameRules
                     Damage = 9,
                     Value = 6,
                     Location = ItemLocationEnum.OffHand,
-                    Attribute = AttributeEnum.Attack,
+                    Attribute = AttributeEnum.Defense,
                     ItemType = ItemTypeEnum.BugSpray,
                 },
                 new ItemModel {
@@ -106,7 +106,7 @@ namespace Game.GameRules
                     Damage = 9,
                     Value = 6,
                     Location = ItemLocationEnum.OffHand,
-                    Attribute = AttributeEnum.Attack,
+                    Attribute = AttributeEnum.Defense,
                     ItemType = ItemTypeEnum.MosquitoNet,
                 },
                 new ItemModel {
@@ -117,7 +117,7 @@ namespace Game.GameRules
                     Damage = 9,
                     Value = 6,
                     Location = ItemLocationEnum.Finger,
-                    Attribute = AttributeEnum.Attack,
+                    Attribute = AttributeEnum.Defense,
                     ItemType = ItemTypeEnum.Goggles,
                 },
                 new ItemModel {
@@ -130,7 +130,7 @@ namespace Game.GameRules
                     Damage = 9,
                     Value = 6,
                     Location = ItemLocationEnum.PrimaryHand,
-                    Attribute = AttributeEnum.Attack,
+                    Attribute = AttributeEnum.Defense,
                     ItemType = ItemTypeEnum.Gloves,
                 },
                 new ItemModel {
@@ -143,7 +143,7 @@ namespace Game.GameRules
                     Damage = 9,
                     Value = 6,
                     Location = ItemLocationEnum.OffHand,
-                    Attribute = AttributeEnum.Attack,
+                    Attribute = AttributeEnum.MaxHealth,
                     ItemType = ItemTypeEnum.Vaccine,
                 },
                 new ItemModel {
@@ -167,7 +167,7 @@ namespace Game.GameRules
                     Damage = 9,
                     Value = 6,
                     Location = ItemLocationEnum.OffHand,
-                    Attribute = AttributeEnum.Attack,
+                    Attribute = AttributeEnum.Defense,
                     ItemType = ItemTypeEnum.HazmatSuit,
                 },
                 new ItemModel {
@@ -191,7 +191,7 @@ namespace Game.GameRules
                     Damage = 9,
                     Value = 6,
                     Location = ItemLocationEnum.OffHand,
-                    Attribute = AttributeEnum.Attack,
+                    Attribute = AttributeEnum.Defense,
                     ItemType = ItemTypeEnum.InvisibleCloak,
                 }
             };
