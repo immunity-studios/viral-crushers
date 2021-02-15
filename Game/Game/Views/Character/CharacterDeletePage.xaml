@@ -133,10 +133,14 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
 
-                        <ImageButton Clicked="Cancel_Clicked" Source="cancel_button_140.png" />
-                        <ImageButton Grid.Column="1"
+                        
+                        <ImageButton Grid.Column="0"
                                      Clicked="Delete_Clicked"
                                      Source="delete_button_140.png" />
+
+                        <ImageButton Grid.Column="1"
+                            Clicked="Cancel_Clicked" Source="cancel_button_140.png" />
+                        
                     </Grid>
 
                 </StackLayout>
