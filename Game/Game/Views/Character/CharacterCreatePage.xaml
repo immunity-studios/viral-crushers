@@ -17,8 +17,11 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
 
+                <views:BackButtonControl HorizontalOptions="Start"
+                                     Margin="30,30,0,0"/>
+
                 <views:CurvedLabelControl Margin="0,10,0,-20"
-                                          FrameHorizontalOptions="Center"
+                                          HorizontalOptions="Center"
                                           FramePadding="30,0,30,20"
                                           Style="{StaticResource RedCurvedLabel}"
                                           Text="Create" />
