@@ -4,7 +4,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="Game.Views.ToolbarMenuControl"
     BackgroundColor="{StaticResource ViralCrusherWhiteColor}">
-
+    <ContentView.Resources>
+        <Thickness x:Key="ToolbarLabelMargin">0,-10,0,10</Thickness>
+    </ContentView.Resources>
     <ContentView.Content>
 
         <Grid>
@@ -17,27 +19,20 @@
             </Grid.ColumnDefinitions>
 
             <StackLayout Grid.Column="0"
-                         HorizontalOptions="Center"
-                         >
+                         HorizontalOptions="Center">
                 <ImageButton
                     x:Name="CharactersImageButton"
                     Source="icon_menu_characters_girl.png"
                     Style="{StaticResource ToolbarMenuImageButtonStyle}"
                     Clicked="CharacterButton_Clicked"/>
-
+                    
                 <Label Text="Characters"
                        FontSize="Micro"
                        FontAttributes="Bold"
-                       TextColor="#273995"
+                       TextColor="{StaticResource ViralCrusherBlueColor}"
+                       Margin="{StaticResource ToolbarLabelMargin}"
                        HorizontalTextAlignment="Center"/>
-            </StackLayout>    
-            
-                <!--<ImageButton
-                    x:Name="CharactersImageButton"
-                    Source="icon_menu_characters_girl.png"
-                    Style="{StaticResource ToolbarMenuImageButtonStyle}"
-                    Clicked="CharacterButton_Clicked"/>-->
-
+            </StackLayout>
 
             <StackLayout Grid.Column="1"
                          HorizontalOptions="Center">
@@ -50,16 +45,11 @@
                 <Label Text="Monsters"
                        FontSize="Micro"
                        FontAttributes="Bold"
-                       TextColor="#273995"
+                       TextColor="{StaticResource ViralCrusherBlueColor}"
+                       Margin="{StaticResource ToolbarLabelMargin}"
                        HorizontalTextAlignment="Center"/>
             </StackLayout>
             
-                <!--<ImageButton Grid.Column="1"
-                    x:Name="MonstersImageButton"
-                    Source="menu_monster_icon_100.png"
-                    Style="{StaticResource ToolbarMenuImageButtonStyle}"
-                    Clicked="MonsterButton_Clicked"/>-->
-
             <StackLayout Grid.Column="2"
                          HorizontalOptions="Center">
                 <ImageButton 
@@ -71,15 +61,10 @@
                 <Label Text="Battle"
                        FontSize="Micro"
                        FontAttributes="Bold"
-                       TextColor="#273995"
+                       TextColor="{StaticResource ViralCrusherBlueColor}"
+                       Margin="{StaticResource ToolbarLabelMargin}"
                        HorizontalTextAlignment="Center"/>
             </StackLayout>
-
-                <!--<ImageButton Grid.Column="2"
-                    x:Name="GamePageImageButton"
-                    Source="menu_battle_icon_100.png"
-                    Style="{StaticResource ToolbarMenuImageButtonStyle}"
-                    Clicked="DungeonButton_Clicked" />-->
 
             <StackLayout Grid.Column="3"
                          HorizontalOptions="Center">
@@ -92,16 +77,10 @@
                 <Label Text="Items"
                        FontSize="Micro"
                        FontAttributes="Bold"
-                       TextColor="#273995"
+                       TextColor="{StaticResource ViralCrusherBlueColor}"
+                       Margin="{StaticResource ToolbarLabelMargin}"
                        HorizontalTextAlignment="Center"/>
             </StackLayout>
-            
-
-                <!--<ImageButton Grid.Column="3"
-                    x:Name="ItemsImageButton"
-                    Source="menu_items_icon_100.png"
-                    Style="{StaticResource ToolbarMenuImageButtonStyle}"
-                    Clicked="ItemButton_Clicked" />-->
 
             <StackLayout Grid.Column="4"
                          HorizontalOptions="Center">
@@ -114,16 +93,10 @@
                 <Label Text="Scores"
                        FontSize="Micro"
                        FontAttributes="Bold"
-                       TextColor="#273995"
+                       TextColor="{StaticResource ViralCrusherBlueColor}"
+                       Margin="{StaticResource ToolbarLabelMargin}"
                        HorizontalTextAlignment="Center"/>
             </StackLayout>
-
-                <!--<ImageButton Grid.Column="4"
-                    x:Name="ScoresImageButton"
-                    Source="menu_score_icon_100.png"
-                    Style="{StaticResource ToolbarMenuImageButtonStyle}"
-                    Clicked="ScoreButton_Clicked" />-->
-
         </Grid>
 
     </ContentView.Content>
