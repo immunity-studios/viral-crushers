@@ -25,7 +25,7 @@
             <views:CurvedLabelControl
                Text="Items"
                Style="{StaticResource RedCurvedLabel}"
-               FrameHorizontalOptions="Center"
+               HorizontalOptions="Center"
                Margin="0,30,0,-20" />
 
             <Frame Margin="5,0,5,10" Grid.Row="1">

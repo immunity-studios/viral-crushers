@@ -25,7 +25,7 @@
             </Grid.RowDefinitions>
 
             <views:CurvedLabelControl Margin="0,30,0,-20"
-                                      FrameHorizontalOptions="Center"
+                                      HorizontalOptions="Center"
                                       Style="{StaticResource RedCurvedLabel}"
                                       Text="Characters" />
 

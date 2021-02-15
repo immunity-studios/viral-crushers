@@ -109,21 +109,6 @@ namespace Game.Views
             }
         }
 
-
-        public static readonly BindableProperty FrameHorizontalOptionsProperty = BindableProperty.Create(nameof(FrameHorizontalOptions), typeof(LayoutOptions), typeof(CurvedLabelControl));
-
-        public LayoutOptions FrameHorizontalOptions
-        {
-            get
-            {
-                return (LayoutOptions)GetValue(FrameHorizontalOptionsProperty);
-            }
-            set
-            {
-                SetValue(FrameHorizontalOptionsProperty, value);
-            }
-        }
-
         public static readonly BindableProperty FramePaddingProperty = BindableProperty.Create(nameof(FramePadding), typeof(Thickness), typeof(CurvedLabelControl));
 
         public Thickness FramePadding
