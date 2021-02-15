@@ -106,7 +106,7 @@
                                         Style="{StaticResource LabelStyle}"/>
 
                                 <Picker ItemsSource="{x:Static local_enum:ItemLocationEnumHelper.GetListCharacter}" 
-                                    SelectedItem="{Binding Data.Location, Converter={StaticResource StringEnumConverter}, Mode=TwoWay}" 
+                                    SelectedItem="{Binding Data.Location, Converter={StaticResource ItemLocationToMappedStringConverter}, Mode=TwoWay}" 
                                     x:Name="LocationPicker"/>
                             </StackLayout>
 

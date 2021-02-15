@@ -129,12 +129,8 @@ namespace Game.Models
         {
             get
             {
-                var myList = Enum.GetNames(typeof(ItemLocationEnum)).ToList();
-                var myReturn = myList.Where(a =>
-                                           a.ToString() != ItemLocationEnum.Unknown.ToString() &&
-                                            a.ToString() != ItemLocationEnum.Finger.ToString()
-                                            )
-                                            .OrderBy(a => a)
+                var myList = itemLocationMapping.Keys;
+                var myReturn = myList.OrderBy(a => a)
                                             .ToList();
 
                 return myReturn;
@@ -149,6 +145,47 @@ namespace Game.Models
         public static ItemLocationEnum ConvertStringToEnum(string value)
         {
             return (ItemLocationEnum)Enum.Parse(typeof(ItemLocationEnum), value);
+        }
+
+        /// <summary>
+        /// Mapping from string to enum value of location names to show to users.
+        /// </summary>
+        private static Dictionary<string, ItemLocationEnum> itemLocationMapping = new Dictionary<string, ItemLocationEnum>
+        {
+            { "Bag", ItemLocationEnum.OffHand },
+            { "Mouth", ItemLocationEnum.Necklass },
+            { "Hand", ItemLocationEnum.PrimaryHand },
+            { "Face", ItemLocationEnum.Head },
+            { "Eyes", ItemLocationEnum.Finger },
+        };
+
+        /// <summary>
+        /// Converts from mapped string of location name to location enum value.
+        /// </summary>
+        public static ItemLocationEnum ConvertMappedStringToEnum(string mappedString)
+        {
+            if (itemLocationMapping.TryGetValue(mappedString, out var itemLocation))
+            {
+                return itemLocation;
+            }
+
+            return ItemLocationEnum.Unknown;
+        }
+
+        /// <summary>
+        /// Converts from location enum value to mapped string of location name.
+        /// </summary>
+        public static string ConvertEnumToMappedString(ItemLocationEnum itemLocation)
+        {
+            foreach (var pair in itemLocationMapping)
+            {
+                if (pair.Value == itemLocation)
+                {
+                    return pair.Key;
+                }
+            }
+
+            return "Unknown";
         }
 
         /// <summary>
