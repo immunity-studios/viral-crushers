@@ -8,13 +8,10 @@
             <Style TargetType="Label"
                 x:Key="CurvedLabelInnerLabelStyle"
                 BasedOn="{StaticResource LabelBaseStyle}">
-                <Setter Property="FontSize" Value="10" />
-                <Setter Property="FontFamily" Value="Lobster" />
-                <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="HorizontalOptions" Value="Center" />                
                 <Setter Property="Margin" Value="5" />
                 <Setter Property="HorizontalTextAlignment" Value="Center" />                               
-                <Setter Property="LineBreakMode" Value="WordWrap" />
+                <Setter Property="LineBreakMode" Value="TailTruncation" />
                 <Setter Property="BackgroundColor" Value="Transparent" />
             </Style>
     </ContentView.Resources>
@@ -29,28 +26,13 @@
             HorizontalOptions="{Binding FrameHorizontalOptions, Source={x:Reference this}}"
             HasShadow="False">
 
-            <!--<Label 
+            <Label 
                 Style="{StaticResource CurvedLabelInnerLabelStyle}"
                 Text="{Binding Text, Source={x:Reference this}}"
                 TextColor="{Binding TextColor, Source={x:Reference this}}"
-                FontSize="{Binding FontSize, Source={x:Reference this}}"/>-->
-
-            <Label
-                Style="{StaticResource CurvedLabelInnerLabelStyle}"        
-                Text="{Binding Text, Source={x:Reference this}}"
-                TextColor="{Binding TextColor, Source={x:Reference this}}"
-                FontSize="{OnPlatform iOS=12, Android=Medium, UWP=16}">
-                
-                <Label.FontFamily>
-                    <OnPlatform x:TypeArguments="x:String">
-                        <On Platform="iOS" Value="MarkerFelt-Thin" />
-                        <On Platform="Android" Value="Lobster-Regular" />
-                        <On Platform="UWP" Value="ArimaMadurai-Black" />
-                    </OnPlatform>
-                </Label.FontFamily>
-                
-            </Label>
-
+                FontSize="{Binding FontSize, Source={x:Reference this}}"
+                FontFamily="{Binding FontFamily, Source={x:Reference this}}"
+                FontAttributes="{Binding FontAttributes, Source={x:Reference this}}"/>
 
         </Frame>
     </ContentView.Content>

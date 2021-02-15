@@ -81,6 +81,35 @@ namespace Game.Views
             }
         }
 
+        public static readonly BindableProperty FontFamilyProperty = BindableProperty.Create(nameof(FontFamily), typeof(string), typeof(CurvedLabelControl));
+
+        public string FontFamily
+        {
+            get
+            {
+                return (string)GetValue(FontFamilyProperty);
+            }
+            set
+            {
+                SetValue(FontFamilyProperty, value);
+            }
+        }
+
+        public static readonly BindableProperty FontAttributesProperty = BindableProperty.Create(nameof(FontAttributes), typeof(FontAttributes), typeof(CurvedLabelControl));
+
+        public FontAttributes FontAttributes
+        {
+            get
+            {
+                return (FontAttributes)GetValue(FontAttributesProperty);
+            }
+            set
+            {
+                SetValue(FontAttributesProperty, value);
+            }
+        }
+
+
         public static readonly BindableProperty FrameHorizontalOptionsProperty = BindableProperty.Create(nameof(FrameHorizontalOptions), typeof(LayoutOptions), typeof(CurvedLabelControl));
 
         public LayoutOptions FrameHorizontalOptions
