@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Name="BrowseScoresPage"
              xmlns:views="clr-namespace:Game.Views"
-             x:Class="Game.Views.ScoreIndexPage"
+             x:Class="Game.Views.ScoreIndexPage">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Clicked="AddScore_Clicked" IconImageSource="icon_add_temporary.png"/>
