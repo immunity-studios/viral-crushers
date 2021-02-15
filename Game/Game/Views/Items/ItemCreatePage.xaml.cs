@@ -36,7 +36,7 @@ namespace Game.Views
             this.ViewModel.Title = "Item Create";
 
             //Need to make the SelectedItem a string, so it can select the correct item.
-            ItemTypePicker.SelectedItem = ViewModel.Data.ItemType.ToString();
+            ItemTypePicker.SelectedItem = ItemTypeEnumHelper.ConvertEnumToMappedString(ViewModel.Data.ItemType);
             LocationPicker.SelectedItem = ItemLocationEnumHelper.ConvertEnumToMappedString(ViewModel.Data.Location);
             AttributePicker.SelectedItem = ViewModel.Data.Attribute.ToString();
 

@@ -91,7 +91,7 @@
                                         Style="{StaticResource LabelStyle}"/>
 
                                 <Picker ItemsSource="{x:Static local_enum:ItemTypeEnumHelper.GetListItem}" 
-                                    SelectedItem="{Binding Data.ItemType, Converter={StaticResource StringEnumConverter}, Mode=TwoWay}" 
+                                    SelectedItem="{Binding Data.ItemType, Converter={StaticResource ItemTypeToMappedStringConverter}, Mode=TwoWay}" 
                                     x:Name="ItemTypePicker"
                                        SelectedIndexChanged="OnItemTypePickerSelectedIndexChanged"
                                         />

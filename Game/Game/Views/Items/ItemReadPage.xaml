@@ -59,7 +59,7 @@
                                 <Label FontAttributes="Italic"
                                    FontSize="Small"
                                    Style="{DynamicResource BodyStyle}"
-                                   Text="{Binding Data.ItemType}"
+                                   Text="{Binding Data.ItemType, Converter={StaticResource ItemTypeToMappedStringConverter}}"
                                    TextColor="{StaticResource ViralCrusherWhiteColor}"
                                    TextTransform="Default" />
 

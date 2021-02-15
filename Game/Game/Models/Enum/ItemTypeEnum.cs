@@ -37,9 +37,8 @@ namespace Game.Models
         {
             get
             {
-                var myList = Enum.GetNames(typeof(ItemTypeEnum));
-                var myReturn = myList.Where(item => item != ItemTypeEnum.Unknown.ToString())
-                                     .OrderBy(a => a)
+                var myList = itemTypeMapping.Keys;
+                var myReturn = myList.OrderBy(a => a)
                                      .ToList();
                 return myReturn;
             }
@@ -98,21 +97,21 @@ namespace Game.Models
         /// </summary>
         private static Dictionary<string, ItemTypeEnum> itemTypeMapping = new Dictionary<string, ItemTypeEnum>
         {
-            {"HandSoap", ItemTypeEnum.HandSoap },
-            {"BoxOfTissues", ItemTypeEnum.BoxOfTissues },
+            {"Hand Soap", ItemTypeEnum.HandSoap },
+            {"Box Of Tissues", ItemTypeEnum.BoxOfTissues },
             {"Mask", ItemTypeEnum.Mask },
             {"Sanitizer", ItemTypeEnum.Sanitizer },
-            {"FaceShield", ItemTypeEnum.FaceShield },
+            {"Face Shield", ItemTypeEnum.FaceShield },
             {"Soup", ItemTypeEnum.Soup },
-            {"BugSpray", ItemTypeEnum.BugSpray },
-            {"MosquitoNet", ItemTypeEnum.MosquitoNet },
+            {"Bug Spray", ItemTypeEnum.BugSpray },
+            {"Mosquito Net", ItemTypeEnum.MosquitoNet },
             {"Goggles", ItemTypeEnum.Goggles },
             {"Gloves", ItemTypeEnum.Gloves },
             {"Vaccine", ItemTypeEnum.Vaccine },
             {"Medicine" , ItemTypeEnum.Medicine },
-            {"HazmatSuit", ItemTypeEnum.HazmatSuit },
+            {"Hazmat Suit", ItemTypeEnum.HazmatSuit },
             {"Panacea", ItemTypeEnum.Panacea },
-            {"InvisibleCloak", ItemTypeEnum.InvisibleCloak }
+            {"Invisible Cloak", ItemTypeEnum.InvisibleCloak }
         };
 
         /// <summary>
@@ -131,7 +130,7 @@ namespace Game.Models
         /// <summary>
         /// Converts from item type enum value to mapped string 
         /// </summary>
-        public static String ConvertEnumToString(ItemTypeEnum itemType)
+        public static String ConvertEnumToMappedString(ItemTypeEnum itemType)
         {
             foreach (var pair in itemTypeMapping)
             {
@@ -141,58 +140,7 @@ namespace Game.Models
                 }
             }
 
-            return "";
-
-            //switch (itemType)
-            //{
-            //    case ItemTypeEnum.HandSoap:
-            //        return "HandSoap";
-
-            //    case ItemTypeEnum.BoxOfTissues:
-            //        return "BoxOfTissues";
-
-            //    case ItemTypeEnum.Mask:
-            //        return "Mask";
-
-            //    case ItemTypeEnum.Sanitizer:
-            //        return "Sanitizer";
-
-            //    case ItemTypeEnum.FaceShield:
-            //        return "FaceShield";
-
-            //    case ItemTypeEnum.Soup:
-            //        return "Soup";
-
-            //    case ItemTypeEnum.BugSpray:
-            //        return "BugSpray";
-
-            //    case ItemTypeEnum.MosquitoNet:
-            //        return "MosquitoNet";
-
-            //    case ItemTypeEnum.Goggles:
-            //        return "Goggles";
-
-            //    case ItemTypeEnum.Gloves:
-            //        return "Gloves";
-
-            //    case ItemTypeEnum.Vaccine:
-            //        return "Vaccine";
-
-            //    case ItemTypeEnum.Medicine:
-            //        return "Medicine";
-
-            //    case ItemTypeEnum.HazmatSuit:
-            //        return "HazmatSuit";
-
-            //    case ItemTypeEnum.Panacea:
-            //        return "Panacea";
-
-            //    case ItemTypeEnum.InvisibleCloak:
-            //        return "InvisibleCloak";
-
-            //    default:
-            //        return "";
-            //}
+            return "Unknown";
         }
     }
 }

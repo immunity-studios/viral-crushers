@@ -73,6 +73,7 @@
             <helpers:StatToPercentageConverter x:Key="StatToPercentageConverter" />            
             <helpers:StringEnumConverter x:Key="StringEnumConverter"/>
             <helpers:ItemLocationToMappedStringConverter x:Key="ItemLocationToMappedStringConverter" />
+            <helpers:ItemTypeToMappedStringConverter x:Key="ItemTypeToMappedStringConverter" />
 
             <!-- Pages -->
             <Style TargetType="NavigationPage">
