@@ -154,6 +154,15 @@
                     
                     </StackLayout>
                 </StackLayout>
+
+                <Grid x:Name="BottomButtonsRegionGrid">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <ImageButton Source="save_button_140.png" Clicked="Save_Clicked" />
+                    <ImageButton Grid.Column="1" Source="cancel_button_140.png" Clicked="Cancel_Clicked" />
+                </Grid>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
