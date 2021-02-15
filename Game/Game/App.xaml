@@ -631,9 +631,9 @@
             <Style TargetType="views:CurvedLabelControl"
                    x:Key="YellowCurvedLabel">
                 <Setter Property="CornerRadius" Value="10" />
-                <Setter Property="TextColor" Value="{StaticResource ViralCrusherRedColor}" />
+                <Setter Property="TextColor" Value="{StaticResource ViralCrusherNavyColor}" />
                 <Setter Property="TextBackgroundColor" Value="{StaticResource ViralCrusherYellowColor}" />
-                <Setter Property="FrameHorizontalOptions" Value="Fill" /> 
+                <Setter Property="FrameHorizontalOptions" Value="CenterAndExpand" /> 
                 <Setter Property="FontSize" Value="10" />
                 <Setter Property="FramePadding" Value="10,0" />
                 <Setter Property="Margin" Value="10" />
