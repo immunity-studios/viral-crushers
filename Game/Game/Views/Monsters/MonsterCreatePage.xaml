@@ -8,12 +8,7 @@
              xmlns:views="clr-namespace:Game.Views"
              xmlns:local_helpers="clr-namespace:Game.Helpers"
              xmlns:local_enum="clr-namespace:Game.Models"
-             x:Class="Game.Views.MonsterCreatePage"
-
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" IconImageSource="icon_cancel.png"/>
-        <ToolbarItem Text="Save" Clicked="Save_Clicked" IconImageSource="icon_save.png"/>
-    </ContentPage.ToolbarItems>
+             x:Class="Game.Views.MonsterCreatePage">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -178,8 +173,6 @@
                             <ImageButton Source="save_button_140.png" Clicked="Save_Clicked" />
                             <ImageButton Grid.Column="1" Source="cancel_button_140.png" Clicked="Cancel_Clicked" />
                         </Grid>
-
-
 
                     </StackLayout>
                 </Frame>
