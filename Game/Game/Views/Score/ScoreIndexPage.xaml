@@ -8,10 +8,6 @@
              xmlns:views="clr-namespace:Game.Views"
              x:Class="Game.Views.ScoreIndexPage">
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="AddScore_Clicked" IconImageSource="icon_add_temporary.png"/>
-    </ContentPage.ToolbarItems>
-
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -20,12 +16,19 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
+            <views:BackButtonControl HorizontalOptions="Start"
+                                     Margin="30,30,0,0"/>
+
             <!-- Page Tilte -->
             <views:CurvedLabelControl
                Text="Scores"
                Style="{StaticResource RedCurvedLabel}"
                HorizontalOptions="Center"
-               Margin="0,30,0,-20" />
+               Margin="0,60,0,-20" />
+
+            <ImageButton Margin="0,30,30,0"
+                         Style="{StaticResource AddImageButton}"
+                         Clicked="AddScore_Clicked"/>
 
             <Frame Margin="5,0,5,10" Grid.Row="1">
                 <CollectionView                 
