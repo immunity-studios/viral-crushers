@@ -227,7 +227,19 @@
                 <Setter Property="HorizontalOptions" Value="Center" />
             </Style>
 
-
+            <Style TargetType="Label"
+                   x:Key="UppercaseYellowLabel">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="TextTransform" Value="Uppercase" />
+                <Setter Property="TextColor" Value="{StaticResource ViralCrusherYellowColor}" />
+            </Style>
+            
+            <Style TargetType="Label"
+                   x:Key="WhiteMediumFontLabel">
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="TextColor" Value="{StaticResource ViralCrusherWhiteColor}" />
+            </Style>
 
             <!-- Image -->
 
@@ -589,6 +601,10 @@
                 <Setter Property="ProgressColor" Value="{StaticResource ViralCrusherYellowColor}" />
                 <Setter Property="HeightRequest" Value="20" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <!-- Force progress bars to align with text -->
+                <Setter Property="Margin" Value="0,15,0,0" />
+                                     
             </Style>
 
             <!-- Slider -->
