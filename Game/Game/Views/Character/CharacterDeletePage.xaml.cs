@@ -29,6 +29,8 @@ namespace Game.Views
             BindingContext = this.viewModel = data;
 
             this.viewModel.Title = "Character Delete " + data.Title;
+
+            CharacterImage.Source = viewModel.Data.Job.ToImageFile();
         }
 
         /// <summary>
