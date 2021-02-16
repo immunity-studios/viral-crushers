@@ -206,16 +206,66 @@ namespace Game.GameRules
     /// <returns></returns>
     public static List<ScoreModel> LoadData(ScoreModel temp)
     {
-        var datalist = new List<ScoreModel>()
+            var datalist = new List<ScoreModel>()
             {
                 new ScoreModel {
                     Name = "First Score",
-                    Description = "Test Data",
+                    Description = "Great performance",
+                    BattleNumber = 1,
+                    GameDate = new System.DateTime(2019, 6, 1, 7, 47, 0),
+                    AutoBattle = false,
+                    TurnCount = 10,
+                    RoundCount = 4,
+                    MonsterSlainNumber = 20,
+                    MonstersKilledList = "Joe (Ebola, Level 15), Chilly (Flu, Level 2)"
                 },
 
                 new ScoreModel {
                     Name = "Second Score",
-                    Description = "Test Data",
+                    Description = "Instant Replay worthy",
+                    BattleNumber = 2,
+                    GameDate = new System.DateTime(2020, 12, 4, 20, 30, 52),
+                    AutoBattle = false,
+                    TurnCount = 25,
+                    RoundCount = 8,
+                    MonsterSlainNumber = 28,
+                    MonstersKilledList =  "Joe (Ebola, Level 15), Chilly (Flu, Level 2)"
+                },
+
+                new ScoreModel {
+                    Name = "Third Score",
+                    Description = "An exciting game",
+                    BattleNumber = 3,
+                    GameDate = new System.DateTime(2021, 1, 4, 12, 40, 1),
+                    AutoBattle = false,
+                    TurnCount = 10,
+                    RoundCount = 4,
+                    MonsterSlainNumber = 10,
+                    MonstersKilledList =  "Joe (Ebola, Level 15), Chilly (Flu, Level 2)"
+                },
+
+                new ScoreModel {
+                    Name = "Fourth Score",
+                    Description = "One of the great games",
+                    BattleNumber = 4,
+                    GameDate = new System.DateTime(2021, 1, 20, 12, 0, 0),
+                    AutoBattle = false,
+                    TurnCount = 50,
+                    RoundCount = 4,
+                    MonsterSlainNumber = 10,
+                    MonstersKilledList =  "Joe (Ebola, Level 15), Chilly (Flu, Level 2)"
+                },
+                
+                new ScoreModel {
+                    Name = "Fifth Score",
+                    Description = "A cool autobattle",
+                    BattleNumber = 5,
+                    GameDate = new System.DateTime(2021, 2, 4, 12, 40, 1),
+                    AutoBattle = true,
+                    TurnCount = 75,
+                    RoundCount = 30,
+                    MonsterSlainNumber = 70,
+                    MonstersKilledList =  "Will (Covid, Level 12), Mary (Cold, Level 1), Joe (Ebola, Level 12), Boop (Flu, Level 2)"
                 }
             };
 
