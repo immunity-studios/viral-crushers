@@ -60,7 +60,7 @@ namespace Game.AudioSystem
         /// <returns>
         /// Double between 0 and 1 representing the current volume
         /// </returns>
-        public abstract bool GetVolume();
+        public abstract double GetVolume();
 
         /// <summary>
         /// Loads the audio file. Must be called before playback
