@@ -34,11 +34,18 @@ namespace Game.AudioSystem
 
         #endregion Singleton
 
-        public AudioEngine()
+        private AudioEngine()
         {
 
         }
 
+        /// <summary>
+        /// Method that should be called when an audio event happens in the application.
+        /// </summary>
+        /// <param name="audioEvent">
+        /// Enum representing the audio event
+        /// </param>
+        /// <returns></returns>
         public bool ProcessAudioEvent(AudioEventEnum audioEvent)
         {
             switch (audioEvent)
