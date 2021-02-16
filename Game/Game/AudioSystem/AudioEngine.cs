@@ -5,6 +5,10 @@ using Xamarin.Forms;
 
 namespace Game.AudioSystem
 {
+    /// <summary>
+    /// Singleton class which gives the application access to the platform audio system
+    /// The audio engine instance can be notified of events to trigger sound playback and volume changes
+    /// </summary>
     public class AudioEngine
     {
         #region Singleton
@@ -13,6 +17,9 @@ namespace Game.AudioSystem
         private static volatile AudioEngine instance;
         private static readonly object syncRoot = new Object();
 
+        /// <summary>
+        /// Returns the singleton instance of the audio engine
+        /// </summary>
         public static AudioEngine Instance
         {
             get
@@ -34,6 +41,9 @@ namespace Game.AudioSystem
 
         #endregion Singleton
 
+        /// <summary>
+        /// Private audio engine constructor to prevent instantiation
+        /// </summary>
         private AudioEngine()
         {
 
@@ -43,9 +53,11 @@ namespace Game.AudioSystem
         /// Method that should be called when an audio event happens in the application.
         /// </summary>
         /// <param name="audioEvent">
-        /// Enum representing the audio event
+        /// Enum representing the specific audio event that has occured
         /// </param>
-        /// <returns></returns>
+        /// <returns>
+        /// true is event processing is successfull
+        /// </returns>
         public bool ProcessAudioEvent(AudioEventEnum audioEvent)
         {
             switch (audioEvent)
@@ -53,8 +65,10 @@ namespace Game.AudioSystem
                 case AudioEventEnum.Button_GameStart:
                     AudioResources.MENU_CLICK_SOUND.Play();
                     break;
-
-                default: break;
+                
+                default:
+                    // event was not found, so return false
+                    return false;
             }
             return true;
         }
