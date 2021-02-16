@@ -35,11 +35,22 @@ namespace Game.AudioSystem
 
         /// <summary>
         /// Abstract method which should start playback of the audio asset 
+        /// TODO add 'fade length' parameter to this method for fade in
         /// </summary>
         /// <returns>
         /// true on successfull playback
         /// </returns>
         public abstract bool Play();
+
+
+        /// <summary>
+        /// Abstract method which should stop playback of the audio asset
+        /// TODO add 'fade length' parameter to this method for fade out
+        /// </summary>
+        /// <returns>
+        /// true if playback stoppage successfull
+        /// </returns>
+        public abstract bool Stop();
 
         /// <summary>
         /// Abstract method that must set the playback volume of the audio asset
