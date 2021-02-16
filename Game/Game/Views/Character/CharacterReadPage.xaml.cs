@@ -33,6 +33,8 @@ namespace Game.Views
 
             BindingContext = this.ViewModel = data;
 
+            CharacterImage.Source = ViewModel.Data.Job.ToImageFile();
+
             String SpecialAbility = "";
 
             switch (data.Data.Job)

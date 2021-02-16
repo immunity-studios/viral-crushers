@@ -40,7 +40,8 @@
                             <Frame Style="{StaticResource CharacterFrame}">
                                 <Image HeightRequest="100"
                                        Source="{Binding Data.ImageURI}"
-                                       WidthRequest="100" />
+                                       WidthRequest="100"
+                                       x:Name="CharacterImage"/>
                             </Frame>
                         </Frame>
 
