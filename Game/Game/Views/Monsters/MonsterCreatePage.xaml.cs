@@ -37,6 +37,7 @@ namespace Game.Views
 
             MonsterTypePicker.SelectedItem = ViewModel.Data.Type.ConvertEnumToMappedString();
 
+            // Match Monster Image with Monster Type
             MonsterImage.Source = ViewModel.Data.Type.ToImageFile();
         }
 
@@ -55,6 +56,7 @@ namespace Game.Views
                 return;
             }
 
+            // Match Monster Image with Monster Type
             ViewModel.Data.ImageURI = ViewModel.Data.Type.ToImageFile();
 
             MessagingCenter.Send(this, "Create", ViewModel.Data);
@@ -76,8 +78,10 @@ namespace Game.Views
         {
             Picker picker = sender as Picker;
 
+            // Convert selected Monster Type string to MonsterTypeEnum
             var selectedMonsterType = MonsterTypeEnumHelper.ConvertMappedStringToEnum((string)picker.SelectedItem);
 
+            // Match Monster Image with Monster Type
             MonsterImage.Source = selectedMonsterType.ToImageFile();
         }
 

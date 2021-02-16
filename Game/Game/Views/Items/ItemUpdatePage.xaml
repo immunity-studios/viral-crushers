@@ -59,6 +59,8 @@
                                 <ColumnDefinition Width="2*" />
                             </Grid.ColumnDefinitions>
 
+                            
+                            <!--Item Image-->
                             <Frame
                                 Grid.RowSpan="5"
                                 Style="{StaticResource BorderFrame}">
@@ -71,6 +73,9 @@
                                         Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
                                 </Frame>
                             </Frame>
+                            
+                            
+                            <!--Item Name--> 
                             <StackLayout Orientation="Vertical" Grid.Column="1"  HorizontalOptions="Fill">
                                 <Label Text="Name" 
                                         Style="{StaticResource LabelStyle}"/>
@@ -80,6 +85,8 @@
                                         Style="{StaticResource EntryStyle}"/>
                             </StackLayout>
 
+                            
+                            <!--Item Type label and picker-->
                             <StackLayout Orientation="Vertical" Grid.Column="1" Grid.Row="1" HorizontalOptions="Fill">
                                 <Label Text="Type" 
                                         Style="{StaticResource LabelStyle}"/>
@@ -90,6 +97,8 @@
                                         SelectedIndexChanged="OnItemTypePickerSelectedIndexChanged"/>
                             </StackLayout>
 
+                            
+                            <!--Item Description-->
                             <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="Fill" Grid.Column="1" Grid.Row="2">
                                 <Label Text="Description" 
                                         Style="{StaticResource LabelStyle}"/>
@@ -98,6 +107,8 @@
                                         Style="{StaticResource EntryStyle}" />
                             </StackLayout>
 
+                            
+                            <!--Item Location label and picker-->
                             <StackLayout Orientation="Vertical" Grid.Column="1" Grid.Row="3" HorizontalOptions="Fill">
                                 <Label Text="Location" 
                                         Style="{StaticResource LabelStyle}"/>
@@ -110,6 +121,7 @@
                             </StackLayout>
 
 
+                            <!--Item Attribute label and picker-->
                             <StackLayout Orientation="Vertical" Grid.Column="1" Grid.Row="4" HorizontalOptions="Fill">
                                 <Label Text="Attribute" 
                                         Style="{StaticResource LabelStyle}"/>
@@ -188,6 +200,8 @@
 
                         </Grid>
 
+                        
+                        <!--Save and cancel buttons-->
                         <Grid x:Name="BottomButtonsRegionGrid">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition />

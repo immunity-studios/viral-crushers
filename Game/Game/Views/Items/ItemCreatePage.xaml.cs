@@ -40,6 +40,7 @@ namespace Game.Views
             LocationPicker.SelectedItem = ItemLocationEnumHelper.ConvertEnumToMappedString(ViewModel.Data.Location);
             AttributePicker.SelectedItem = ViewModel.Data.Attribute.ToString();
 
+            // Match Item Image with Item Type
             ItemImage.Source = ViewModel.Data.ItemType.ToImageFile();
         }
 
@@ -58,6 +59,7 @@ namespace Game.Views
                 return;
             }
 
+            // Match Item Image with Item Type 
             ViewModel.Data.ImageURI = ViewModel.Data.ItemType.ToImageFile();
 
             MessagingCenter.Send(this, "Create", ViewModel.Data);
@@ -74,10 +76,19 @@ namespace Game.Views
             await Navigation.PopModalAsync();
         }
 
+        /// <summary>
+        /// Update Item Image when selecting from Item Type dropdown list
+        /// </summary>
+        /// <param name="sender">Item Type Picker</param>
+        /// <param name="e">Selecting a different item event</param>
         private void OnItemTypePickerSelectedIndexChanged(object sender, EventArgs e)
         {
             Picker picker = sender as Picker;
+
+            // Convert selected Item Type string to ItemTypeEnum
             var selectedItemType = ItemTypeEnumHelper.ConvertMappedStringToEnum((string)picker.SelectedItem);
+
+            // Match Item Image with Item Type
             ItemImage.Source = selectedItemType.ToImageFile();
         }
     }

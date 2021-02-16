@@ -35,6 +35,7 @@ namespace Game.Views
 
             ConsumableLabel.Text = data.Data.IsConsumable ? " - Consumable" : " - Non-consumable";
 
+            // Match Item Image with Item Type
             ItemImage.Source = ViewModel.Data.ItemType.ToImageFile();
 
         }

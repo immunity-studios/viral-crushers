@@ -36,6 +36,7 @@ namespace Game.Views
             this.ViewModel.Title = "Character Create";
             JobPicker.SelectedItem = ViewModel.Data.Job.ConvertEnumToMappedString();
 
+            // Match Character Image with Character Type
             CharacterImage.Source = ViewModel.Data.Job.ToImageFile();
         }
 
@@ -53,7 +54,8 @@ namespace Game.Views
                 await DisplayAlert("Error", "You must enter a valid name.", "OK");
                 return;
             }
-            
+
+            // Match Character Image with Character Type
             ViewModel.Data.ImageURI = ViewModel.Data.Job.ToImageFile();
 
             MessagingCenter.Send(this, "Create", ViewModel.Data);
@@ -75,8 +77,10 @@ namespace Game.Views
             Picker picker = sender as Picker;
             //var selectedJob = ((string)picker.SelectedItem).ConvertMappedStringToEnum();
 
+            // Convert selected Character Type string to CharacterJobEnum
             var selectedJob = CharacterJobEnumHelper.ConvertMappedStringToEnum((string)picker.SelectedItem);
 
+            // Match Character Image with Character Type
             CharacterImage.Source = selectedJob.ToImageFile();
         }
     }

@@ -40,6 +40,7 @@ namespace Game.Views
             // so we can restore it if the user cancels
             originalCharacterModel = new CharacterModel(data.Data);
 
+            // Match Character Image with Character Type
             JobPicker.SelectedItem = data.Data.Job.ToString();
         }
 
@@ -58,6 +59,7 @@ namespace Game.Views
                 return;
             }
 
+            // Match Character Image with Character Type
             ViewModel.Data.ImageURI = ViewModel.Data.Job.ToImageFile();
 
             MessagingCenter.Send(this, "Update", ViewModel.Data);
@@ -80,10 +82,11 @@ namespace Game.Views
         private void OnJobPickerSelectedIndexChanged(object sender, EventArgs e)
         {
             Picker picker = sender as Picker;
-            //var selectedJob = ((string)picker.SelectedItem).ConvertMappedStringToEnum();
 
+            // Convert selected Character Type string to CharacterJobEnum
             var selectedJob = CharacterJobEnumHelper.ConvertMappedStringToEnum((string)picker.SelectedItem);
 
+            // Match Character Image with Character Type
             CharacterImage.Source = selectedJob.ToImageFile();
         }
 

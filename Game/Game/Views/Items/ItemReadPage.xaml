@@ -35,6 +35,8 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
 
+                        
+                        <!--Item Image-->
                         <Frame Style="{StaticResource BorderFrame}" VerticalOptions="CenterAndExpand">
                             <Frame Style="{StaticResource CharacterFrame}">
                                 <Image HeightRequest="100"
@@ -44,8 +46,11 @@
                             </Frame>
                         </Frame>
 
+                        
+                         
                         <StackLayout Grid.Column="1" HorizontalOptions="Fill">
 
+                            <!--Item Name-->
                             <Label FontAttributes="Bold"
                                    FontSize="Medium"
                                    Style="{DynamicResource BodyStyle}"
@@ -53,8 +58,10 @@
                                    TextColor="{StaticResource ViralCrusherYellowColor}"
                                    TextTransform="Uppercase" />
 
+                            
                             <StackLayout Style="{StaticResource HorizontalStack}">
                                 
+                                <!--Item Type and Consumability-->
                                 <Label Style="{StaticResource StatsBoldStyle}" Text="Type: " />
 
                                 <Label FontAttributes="Italic"
@@ -73,7 +80,8 @@
 
                             </StackLayout>
 
-
+                            
+                            <!--Item Location-->
                             <StackLayout Style="{StaticResource HorizontalStack}">
                                 
                                 <Label Style="{StaticResource StatsBoldStyle}" Text="Location: " />
@@ -88,6 +96,8 @@
                                 
                             </StackLayout>
 
+                            
+                            <!--Item Attribute-->
                             <StackLayout Style="{StaticResource HorizontalStack}">
 
                                 <Label Style="{StaticResource StatsBoldStyle}" Text="Attribute: " />
@@ -103,6 +113,7 @@
                             </StackLayout>
 
 
+                            <!--Item Description-->
                             <StackLayout Style="{StaticResource HorizontalStack}">
 
                                 <Label Style="{StaticResource StatsBoldStyle}" Text="Description: " />
@@ -131,6 +142,8 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
 
+                        
+                        <!--Item Range-->
                         <Frame Style="{StaticResource AttributeFrame}">
                             <StackLayout>
 
@@ -147,6 +160,8 @@
                             </StackLayout>
                         </Frame>
 
+                        
+                        <!--Item Value-->
                         <Frame Grid.Row="0"
                                Grid.Column="1"
                                Style="{StaticResource AttributeFrame}">
@@ -163,6 +178,8 @@
                             </StackLayout>
                         </Frame>
 
+                        
+                        <!--Item Damage-->
                         <Frame Grid.Row="1"
                                Grid.Column="0"
                                Style="{StaticResource AttributeFrame}">
@@ -181,6 +198,8 @@
 
                     </Grid>
 
+                    
+                    <!--Edit and Delete buttons-->
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition />

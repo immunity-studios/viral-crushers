@@ -61,6 +61,8 @@ namespace Game.Views
                 await DisplayAlert("Error", "You must enter a valid name.", "OK");
                 return;
             }
+
+            // Match Item Image with Item Type
             ViewModel.Data.ImageURI = ViewModel.Data.ItemType.ToImageFile();
 
             MessagingCenter.Send(this, "Update", ViewModel.Data);
@@ -82,7 +84,11 @@ namespace Game.Views
         private void OnItemTypePickerSelectedIndexChanged(object sender, EventArgs e)
         {
             Picker picker = sender as Picker;
+
+            // Convert selected Item Type string to ItemTypeEnum
             var selectedItemType = ItemTypeEnumHelper.ConvertMappedStringToEnum((string)picker.SelectedItem);
+
+            // Match Item Image with Item Type
             ItemImage.Source = selectedItemType.ToImageFile();
         }
     }

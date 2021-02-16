@@ -30,6 +30,7 @@ namespace Game.Views
 
             this.viewModel.Title = "Delete " + data.Title;
 
+            // Match Item Image with Item Type
             ItemImage.Source = viewModel.Data.ItemType.ToImageFile();
 
         }

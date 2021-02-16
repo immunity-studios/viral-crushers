@@ -33,10 +33,12 @@ namespace Game.Views
 
             BindingContext = this.ViewModel = data;
 
+            // Match Character Image with Character Type
             CharacterImage.Source = ViewModel.Data.Job.ToImageFile();
 
             String SpecialAbility = "";
 
+            // Display Character's Special Ability
             switch (data.Data.Job)
             {
                 case CharacterJobEnum.Doctor:

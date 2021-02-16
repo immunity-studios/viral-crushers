@@ -39,6 +39,8 @@
                             <ColumnDefinition Width="3.5*" />
                         </Grid.ColumnDefinitions>
 
+                        
+                        <!--Item Image-->
                         <Frame Grid.RowSpan="3" Style="{StaticResource BorderFrame}">
                             <Frame Style="{StaticResource CharacterFrame}">
                                 <Image HeightRequest="100"
@@ -49,6 +51,8 @@
                             </Frame>
                         </Frame>
 
+                        
+                        <!--Item Range-->
                         <Label Grid.Column="1"
                                LineBreakMode="TailTruncation"
                                Style="{StaticResource WhiteMediumFontLabel}"
@@ -65,6 +69,8 @@
                                Text="{Binding Data.Range}"
                                VerticalOptions="Center" />
 
+                        
+                        <!--Item Value-->
                         <Label Grid.Row="1"
                                Grid.Column="1"
                                LineBreakMode="TailTruncation"
@@ -84,6 +90,8 @@
                                Text="{Binding Data.Value}"
                                VerticalOptions="Center" />
 
+                        
+                        <!--Item Damage-->
                         <Label Grid.Row="2"
                                Grid.Column="1"
                                LineBreakMode="TailTruncation"
@@ -104,19 +112,21 @@
                                VerticalOptions="Center" />
 
                         
+                        <!--Item Name--> 
                         <Label Grid.Row="3"
                                HorizontalOptions="Center"
                                Style="{StaticResource UppercaseYellowLabel}"
                                Text="{Binding Data.Name}" />
                     </Grid>
 
+                    
+                    <!--Delete and cancel buttons-->
                     <Grid x:Name="BottomButtonsRegionGrid">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
 
-                        
                         <ImageButton Grid.Column="0"
                                      Clicked="Delete_Clicked"
                                      Source="delete_button_140.png" />
