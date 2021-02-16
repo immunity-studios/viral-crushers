@@ -11165,7 +11165,7 @@ namespace Game.Droid
 			public const int icon_athlete = 2131165314;
 			
 			// aapt resource value: 0x7F070083
-			public const int icon_back_button = 2131165315;
+			public const int icon_back_button_140 = 2131165315;
 			
 			// aapt resource value: 0x7F070084
 			public const int icon_black_dice = 2131165316;

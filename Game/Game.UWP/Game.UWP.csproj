@@ -214,8 +214,8 @@
     <Content Include="delete_button_140.png" />
     <Content Include="edit_button_140.png" />
     <Content Include="save_button_140.png" />
-    <Content Include="icon_back_button.png" />
     <Content Include="icon_add_button_140.png" />
+    <Content Include="icon_back_button_140.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
