@@ -13,7 +13,7 @@ namespace Game.AudioSystem
     public abstract class BaseAudioClip
     {
         /// <summary>
-        /// Constructor that can only be called in inheriting implementation class
+        /// Constructor that can only be called in inheriting class
         /// </summary>
         /// <param name="filepath">
         /// String filepath for the sound file.
@@ -42,7 +42,6 @@ namespace Game.AudioSystem
         /// </returns>
         public abstract bool Play();
 
-
         /// <summary>
         /// Abstract method which should stop playback of the audio asset
         /// TODO add 'fade length' parameter to this method for fade out
@@ -51,6 +50,14 @@ namespace Game.AudioSystem
         /// true if playback stoppage successfull
         /// </returns>
         public abstract bool Stop();
+
+        /// <summary>
+        /// Abstrat method that loads the audio file. Must be called before playback
+        /// </summary>
+        /// <returns>
+        /// True if successful load
+        /// </returns>
+        public abstract bool Load();
 
         /// <summary>
         /// Abstract method that must set the playback volume of the audio asset
@@ -74,12 +81,23 @@ namespace Game.AudioSystem
         public abstract double GetVolume();
 
         /// <summary>
-        /// Loads the audio file. Must be called before playback
+        /// Abstract method that must set the clip's playback setting to loop (repeating playback)
+        /// </summary>
+        /// <param name="loop">
+        /// True if audio clip should loop, false if it should only play once
+        /// </param>
+        /// <returns>
+        /// True if loop sets correctly
+        /// </returns>
+        public abstract bool SetLoop(bool loop);
+
+        /// <summary>
+        /// Abstract method that must return whether the clip is set to loop.
         /// </summary>
         /// <returns>
-        /// True if successful load
+        /// True if audio clip loops, false if only plays once
         /// </returns>
-        public abstract bool Load();
+        public abstract bool IsLoop();
 
         /// <summary>
         /// The max volume of the AudioClip.
