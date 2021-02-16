@@ -70,7 +70,9 @@
                                     Grid.Row="1"
                                     Grid.Column="1"
                                     Text="{Binding Description}"
-                                    Style="{StaticResource IndexPageCollectionViewItalicStyle}" />
+                                    Style="{StaticResource IndexPageCollectionViewItalicStyle}"
+                                    MaxLines="2"
+                                    />
 
                             </Grid>
                      
