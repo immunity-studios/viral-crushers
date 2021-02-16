@@ -79,5 +79,14 @@ namespace Game.Views
             ViewModel.Data.Update(originalCharacterModel);
             await Navigation.PopModalAsync();
         }
+
+
+        private void OnJobPickerSelectedIndexChanged(object sender, EventArgs e)
+        {
+            Picker picker = sender as Picker;
+            var selectedJob = ((string)picker.SelectedItem).ConvertMappedStringToEnum();
+            CharacterImage.Source = selectedJob.ToImageFile();
+        }
+
     }
 }

@@ -78,9 +78,6 @@ namespace Game.Views
         {
             Picker picker = sender as Picker;
             var selectedJob = ((string)picker.SelectedItem).ConvertMappedStringToEnum();
-
-                //ItemTypeEnumHelper.ConvertMappedStringToEnum((string)picker.SelectedItem);
-
             CharacterImage.Source = selectedJob.ToImageFile();
         }
     }
