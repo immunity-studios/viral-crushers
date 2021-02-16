@@ -19,9 +19,11 @@ namespace Game.AudioSystem
             startingVolume: .5
         );
 
+        /// <summary>
+        /// Main menu music loop
+        /// </summary>
         public static AudioClip MX_MENU_SONG1_FULL_LOOP = new AudioClip(
-           filepath: "Game.AudioFiles.Music.Menu.VC-OST_Song1_Full_Loop.mp3",
-           startingVolume: .8,
+           filepath: "Game.AudioFiles.Music.Menu.MENU_116-BPM-LOOP.mp3",
            loop: true
         );
 
