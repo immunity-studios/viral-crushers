@@ -79,22 +79,21 @@
 
                     </StackLayout>
 
-                    <StackLayout 
-                        HorizontalOptions="Center" 
-                        Padding="20">
+                    <!--Cancel and Delete Buttons-->
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
 
-                        <Label Text="Really delete this?" Style="{StaticResource MessageStyle}"/>
+                        <ImageButton Grid.Column="0" Source="delete_button_140.png" Clicked="Delete_Clicked" />
 
-                        <Button 
-                            Text="Yes" 
-                            Clicked="Delete_Clicked" 
-                            HorizontalOptions="Center"
-                            FontSize="Medium"
-                            BorderWidth="1" 
-                            BorderColor="black">
-                        </Button>
-
-                    </StackLayout>
+                        <ImageButton Grid.Column="1"
+                                     Source="cancel_button_140.png" Clicked="Cancel_Clicked" />
+                    </Grid>
                 </StackLayout>
             </Frame>
         </Grid>
