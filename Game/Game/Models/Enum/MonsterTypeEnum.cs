@@ -57,7 +57,7 @@ namespace Game.Models
                     break;
 
                 case MonsterTypeEnum.Covid:
-                    Message = "Covid-19";
+                    Message = "Covid";
                     break;
 
                 case MonsterTypeEnum.Malaria:
@@ -98,7 +98,76 @@ namespace Game.Models
             }
         }
 
-        
+        public static string ToImageFile(this MonsterTypeEnum monsterType)
+        {
+            switch (monsterType)
+            {
+                case MonsterTypeEnum.Cold:
+                    return "cold_monster_140.png.png";
+
+                case MonsterTypeEnum.Flu:
+                    return "flu_monster_140.png.png";
+
+                case MonsterTypeEnum.Measles:
+                    return "measles_monster_140.png.png";
+
+                case MonsterTypeEnum.Covid:
+                    return "covid_monster_140.png.png";
+
+                case MonsterTypeEnum.Malaria:
+                    return "malaria_monster_140.png.png";
+
+                case MonsterTypeEnum.Ebola:
+                    return "ebola_monster_140.png.png";
+
+                default:
+                    return null;
+            }
+        }
+
+        /// <summary>
+        /// Mapping from string to enum value of monster type 
+        /// </summary>
+        private static Dictionary<string, MonsterTypeEnum> monsterTypeMapping = new Dictionary<string, MonsterTypeEnum>
+        {
+            {"Cold", MonsterTypeEnum.Cold },
+            {"Flu", MonsterTypeEnum.Flu },
+            {"Measles", MonsterTypeEnum.Measles },
+            {"Covid", MonsterTypeEnum.Covid },
+            {"Malaria", MonsterTypeEnum.Malaria },
+            {"Ebola", MonsterTypeEnum.Ebola },
+            {"Unknown", MonsterTypeEnum.Unknown }
+        };
+
+        /// <summary>
+        /// Converts from mapped string of monster type to Monster Type enum value.
+        /// </summary>
+        public static MonsterTypeEnum ConvertMappedStringToEnum(this string mappedString)
+        {
+            if (monsterTypeMapping.TryGetValue(mappedString, out var monsterType))
+            {
+                return monsterType;
+            }
+
+            return MonsterTypeEnum.Unknown;
+        }
+
+        /// <summary>
+        /// Converts from monster type enum value to mapped string 
+        /// </summary>
+        public static String ConvertEnumToMappedString(this MonsterTypeEnum monsterType)
+        {
+            foreach (var pair in monsterTypeMapping)
+            {
+                if (pair.Value == monsterType)
+                {
+                    return pair.Key;
+                }
+            }
+
+            return "Unknown";
+        }
+
     }
 
 }

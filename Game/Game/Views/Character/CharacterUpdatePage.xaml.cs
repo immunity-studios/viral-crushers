@@ -80,7 +80,10 @@ namespace Game.Views
         private void OnJobPickerSelectedIndexChanged(object sender, EventArgs e)
         {
             Picker picker = sender as Picker;
-            var selectedJob = ((string)picker.SelectedItem).ConvertMappedStringToEnum();
+            //var selectedJob = ((string)picker.SelectedItem).ConvertMappedStringToEnum();
+
+            var selectedJob = CharacterJobEnumHelper.ConvertMappedStringToEnum((string)picker.SelectedItem);
+
             CharacterImage.Source = selectedJob.ToImageFile();
         }
 
