@@ -58,11 +58,7 @@ namespace Game.Views
                 return;
             }
 
-            // If the image in the data box is empty, use the default one..
-            if (string.IsNullOrEmpty(ViewModel.Data.ImageURI))
-            {
-                ViewModel.Data.ImageURI = Services.ItemService.DefaultImageURI;
-            }
+            ViewModel.Data.ImageURI = ViewModel.Data.Type.ToImageFile();
 
             MessagingCenter.Send(this, "Update", ViewModel.Data);
             await Navigation.PopModalAsync();
@@ -78,6 +74,16 @@ namespace Game.Views
             // Since the user clicked cancel, restore the original data
             ViewModel.Data.Update(originalMonsterModel);
             await Navigation.PopModalAsync();
+        }
+
+
+        private void OnMonsterTypePickerSelectedIndexChanged(object sender, EventArgs e)
+        {
+            Picker picker = sender as Picker;
+
+            var selectedMonsterType = MonsterTypeEnumHelper.ConvertMappedStringToEnum((string)picker.SelectedItem);
+
+            MonsterImage.Source = selectedMonsterType.ToImageFile();
         }
     }
 }
