@@ -5,13 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:views="clr-namespace:Game.Views"
-             x:Class="Game.Views.ScoreDeletePage"
-             Title="{Binding Title}">
-    
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" IconImageSource="icon_cancel.png"/>
-        <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete.png"/>
-    </ContentPage.ToolbarItems>
+             x:Class="Game.Views.ScoreDeletePage">
 
     <ScrollView>
         <Grid>
