@@ -16,6 +16,10 @@ namespace Game.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ScoreUpdatePage : ContentPage
     {
+        // Original score model before changes
+        // used to restore if the user clicks cancel
+        private ScoreModel originalScoreModel;
+
         // View Model for Score
         public readonly GenericViewModel<ScoreModel> ViewModel;
 
@@ -32,6 +36,10 @@ namespace Game.Views
             BindingContext = this.ViewModel = data;
 
             this.ViewModel.Title = "Update " + data.Title;
+
+            // Save a copy of the original score model
+            // so we can restore it if the user cancels
+            originalScoreModel = new ScoreModel(data.Data);
         }
 
         /// <summary>
@@ -60,6 +68,8 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Cancel_Clicked(object sender, EventArgs e)
         {
+            // Since the user clicked cancel, restore the original data
+            ViewModel.Data.Update(originalScoreModel);
             await Navigation.PopModalAsync();
         }
     }

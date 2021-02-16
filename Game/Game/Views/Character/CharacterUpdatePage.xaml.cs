@@ -15,6 +15,10 @@ namespace Game.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CharacterUpdatePage : ContentPage
     {
+        // Original character model before changes
+        // used to restore if the user clicks cancel
+        private CharacterModel originalCharacterModel;
+
         // View Model for Item
         public readonly GenericViewModel<CharacterModel> ViewModel;
 
@@ -31,6 +35,10 @@ namespace Game.Views
             BindingContext = this.ViewModel = data;
 
             this.ViewModel.Title = "Character Update " + data.Title;
+
+            // Save a copy of the original character model
+            // so we can restore it if the user cancels
+            originalCharacterModel = new CharacterModel(data.Data);
 
             JobPicker.SelectedItem = data.Data.Job.ToString();
         }
@@ -67,6 +75,8 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Cancel_Clicked(object sender, EventArgs e)
         {
+            // Since the user clicked cancel, restore the original data
+            ViewModel.Data.Update(originalCharacterModel);
             await Navigation.PopModalAsync();
         }
     }

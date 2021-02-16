@@ -15,6 +15,10 @@ namespace Game.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ItemUpdatePage : ContentPage
     {
+        // Original item model before changes
+        // used to restore if the user clicks cancel
+        private ItemModel originalItemModel;
+
         // View Model for Item
         public readonly GenericViewModel<ItemModel> ViewModel;
 
@@ -31,6 +35,10 @@ namespace Game.Views
             BindingContext = this.ViewModel = data;
 
             this.ViewModel.Title = "Update " + data.Title;
+
+            // Save a copy of the original item model
+            // so we can restore it if the user cancels
+            originalItemModel = new ItemModel(data.Data);
 
             //Need to make the SelectedItem a string, so it can select the correct item.
             LocationPicker.SelectedItem = ItemLocationEnumHelper.ConvertEnumToMappedString(data.Data.Location);
@@ -66,6 +74,8 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Cancel_Clicked(object sender, EventArgs e)
         {
+            // Since the user clicked cancel, restore the original data
+            ViewModel.Data.Update(originalItemModel);
             await Navigation.PopModalAsync();
         }
 
