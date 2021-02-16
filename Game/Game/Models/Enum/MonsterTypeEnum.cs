@@ -103,22 +103,22 @@ namespace Game.Models
             switch (monsterType)
             {
                 case MonsterTypeEnum.Cold:
-                    return "cold_monster_140.png.png";
+                    return "cold_monster_140.png";
 
                 case MonsterTypeEnum.Flu:
-                    return "flu_monster_140.png.png";
+                    return "flu_monster_140.png";
 
                 case MonsterTypeEnum.Measles:
-                    return "measles_monster_140.png.png";
+                    return "measles_monster_140.png";
 
                 case MonsterTypeEnum.Covid:
-                    return "covid_monster_140.png.png";
+                    return "covid_monster_140.png";
 
                 case MonsterTypeEnum.Malaria:
-                    return "malaria_monster_140.png.png";
+                    return "malaria_monster_140.png";
 
                 case MonsterTypeEnum.Ebola:
-                    return "ebola_monster_140.png.png";
+                    return "ebola_monster_140.png";
 
                 default:
                     return null;

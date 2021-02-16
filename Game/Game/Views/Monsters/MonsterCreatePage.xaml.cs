@@ -35,7 +35,9 @@ namespace Game.Views
 
             this.ViewModel.Title = "Monster Create";
 
-            MonsterTypePicker.SelectedItem = ViewModel.Data.Type.ToString();
+            MonsterTypePicker.SelectedItem = ViewModel.Data.Type.ConvertEnumToMappedString();
+
+            MonsterImage.Source = ViewModel.Data.Type.ToImageFile();
         }
 
         /// <summary>
@@ -53,11 +55,7 @@ namespace Game.Views
                 return;
             }
 
-            // If the image in the data box is empty, use the default one..
-            if (string.IsNullOrEmpty(ViewModel.Data.ImageURI))
-            {
-                ViewModel.Data.ImageURI = Services.ItemService.DefaultImageURI;
-            }
+            ViewModel.Data.ImageURI = ViewModel.Data.Type.ToImageFile();
 
             MessagingCenter.Send(this, "Create", ViewModel.Data);
             await Navigation.PopModalAsync();
@@ -72,5 +70,16 @@ namespace Game.Views
         {
             await Navigation.PopModalAsync();
         }
+
+
+        private void OnMonsterTypePickerSelectedIndexChanged(object sender, EventArgs e)
+        {
+            Picker picker = sender as Picker;
+
+            var selectedMonsterType = MonsterTypeEnumHelper.ConvertMappedStringToEnum((string)picker.SelectedItem);
+
+            MonsterImage.Source = selectedMonsterType.ToImageFile();
+        }
+
     }
 }

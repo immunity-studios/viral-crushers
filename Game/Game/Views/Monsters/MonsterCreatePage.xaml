@@ -64,7 +64,7 @@
                                     Padding="10"
                                     Style="{StaticResource CharacterFrame}">
 
-                                    <Image Source="{Binding Data.ImageURI}"
+                                    <Image x:Name="MonsterImage"
                                            WidthRequest="100"
                                            HeightRequest="100"/>
                                 </Frame>
@@ -88,7 +88,8 @@
 
                                 <Picker ItemsSource="{x:Static local_enum:MonsterTypeEnumHelper.GetListItem}" 
                                     SelectedItem="{Binding Data.Type, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                                    x:Name="MonsterTypePicker"/>
+                                    x:Name="MonsterTypePicker"
+                                        SelectedIndexChanged="OnMonsterTypePickerSelectedIndexChanged"/>
                             </StackLayout>
 
                             <!--Description-->
