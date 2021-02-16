@@ -34,7 +34,9 @@ namespace Game.Views
             BindingContext = this.ViewModel;
 
             this.ViewModel.Title = "Character Create";
-            JobPicker.SelectedItem = ViewModel.Data.Job.ToString();
+            JobPicker.SelectedItem = ViewModel.Data.Job.ConvertEnumToMappedString();
+
+            CharacterImage.Source = ViewModel.Data.Job.ToImageFile();
         }
 
         /// <summary>
@@ -70,6 +72,16 @@ namespace Game.Views
         public async void Cancel_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopModalAsync();
+        }
+
+        private void OnJobPickerSelectedIndexChanged(object sender, EventArgs e)
+        {
+            Picker picker = sender as Picker;
+            var selectedJob = ((string)picker.SelectedItem).ConvertMappedStringToEnum();
+
+                //ItemTypeEnumHelper.ConvertMappedStringToEnum((string)picker.SelectedItem);
+
+            CharacterImage.Source = selectedJob.ToImageFile();
         }
     }
 }

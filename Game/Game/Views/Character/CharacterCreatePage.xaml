@@ -48,7 +48,8 @@
 
                                 <Frame Padding="10" Style="{StaticResource CharacterFrame}">
 
-                                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" />
+                                    <Image x:Name="CharacterImage"
+                                        Style="{StaticResource ImageLargeStyle}" />
                                 </Frame>
                             </Frame>
                             <StackLayout Grid.Column="1"
@@ -69,7 +70,8 @@
 
                                 <Picker x:Name="JobPicker"
                                         ItemsSource="{x:Static local_enum:CharacterJobEnumHelper.GetListItem}"
-                                        SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnumConverter}, Mode=TwoWay}" />
+                                        SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnumConverter}, Mode=TwoWay}" 
+                                       SelectedIndexChanged="OnJobPickerSelectedIndexChanged"/>
                             </StackLayout>
 
                             <StackLayout Grid.Row="2"

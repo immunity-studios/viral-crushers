@@ -59,7 +59,7 @@ namespace Game.Models
                     break;
 
                 case CharacterJobEnum.Athlete:
-                    Message = "Athelete";
+                    Message = "Athlete";
                     break;
 
                 case CharacterJobEnum.PoliceOfficer:
@@ -95,9 +95,9 @@ namespace Game.Models
         {
             get
             {
-                var myList = Enum.GetNames(typeof(CharacterJobEnum)).ToList();
-
-                var myReturn = myList.Where(job => job !=         CharacterJobEnum.Unknown.ToString())
+                //var myList = Enum.GetNames(typeof(CharacterJobEnum)).ToList();
+                var myList = characterTypeMapping.Keys;
+                var myReturn = myList.Where(job => job !=         CharacterJobEnum.Unknown.ConvertEnumToMappedString())
                     .OrderBy(a => a).ToList();
 
                 return myReturn;
@@ -139,16 +139,17 @@ namespace Game.Models
         {
             {"Doctor", CharacterJobEnum.Doctor },
             {"Teacher", CharacterJobEnum.Teacher },
-            {"Athelete", CharacterJobEnum.Athlete },
-            {"Police Officer", CharacterJobEnum.PoliceOfficer },
-            {"College Student", CharacterJobEnum.CollegeStudent },
-            {"Firefighter", CharacterJobEnum.Firefighter }
+            {"Athlete", CharacterJobEnum.Athlete },
+            {"PoliceOfficer", CharacterJobEnum.PoliceOfficer },
+            {"CollegeStudent", CharacterJobEnum.CollegeStudent },
+            {"Firefighter", CharacterJobEnum.Firefighter },
+            {"Unknown", CharacterJobEnum.Unknown }
         };
 
         /// <summary>
         /// Converts from mapped string of character type to CharacterJob enum value.
         /// </summary>
-        public static CharacterJobEnum ConvertMappedStringToEnum(string mappedString)
+        public static CharacterJobEnum ConvertMappedStringToEnum(this string mappedString)
         {
             if (characterTypeMapping.TryGetValue(mappedString, out var characterType))
             {
@@ -161,7 +162,7 @@ namespace Game.Models
         /// <summary>
         /// Converts from character type enum value to mapped string 
         /// </summary>
-        public static String ConvertEnumToMappedString(CharacterJobEnum characterType)
+        public static String ConvertEnumToMappedString(this CharacterJobEnum characterType)
         {
             foreach (var pair in characterTypeMapping)
             {
