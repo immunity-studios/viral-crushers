@@ -104,7 +104,77 @@ namespace Game.Models
             }
         }
 
-        
+
+        public static string ToImageFile(this CharacterJobEnum characterJob)
+        {
+            switch (characterJob)
+            {
+                case CharacterJobEnum.Doctor:
+                    return "icon_doctor.png";
+
+                case CharacterJobEnum.Teacher:
+                    return "icon_teacher.png";
+
+                case CharacterJobEnum.Athlete:
+                    return "icon_athlete.png";
+
+                case CharacterJobEnum.PoliceOfficer:
+                    return "icon_officer.png";
+
+                case CharacterJobEnum.CollegeStudent:
+                    return "icon_student.png";
+
+                case CharacterJobEnum.Firefighter:
+                    return "icon_firefighter.png";
+
+                default:
+                    return null;
+            }
+        }
+
+        /// <summary>
+        /// Mapping from string to enum value of item type 
+        /// </summary>
+        private static Dictionary<string, CharacterJobEnum> characterTypeMapping = new Dictionary<string, CharacterJobEnum>
+        {
+            {"Doctor", CharacterJobEnum.Doctor },
+            {"Teacher", CharacterJobEnum.Teacher },
+            {"Athelete", CharacterJobEnum.Athlete },
+            {"Police Officer", CharacterJobEnum.PoliceOfficer },
+            {"College Student", CharacterJobEnum.CollegeStudent },
+            {"Firefighter", CharacterJobEnum.Firefighter }
+        };
+
+        /// <summary>
+        /// Converts from mapped string of character type to CharacterJob enum value.
+        /// </summary>
+        public static CharacterJobEnum ConvertMappedStringToEnum(string mappedString)
+        {
+            if (characterTypeMapping.TryGetValue(mappedString, out var characterType))
+            {
+                return characterType;
+            }
+
+            return CharacterJobEnum.Unknown;
+        }
+
+        /// <summary>
+        /// Converts from character type enum value to mapped string 
+        /// </summary>
+        public static String ConvertEnumToMappedString(CharacterJobEnum characterType)
+        {
+            foreach (var pair in characterTypeMapping)
+            {
+                if (pair.Value == characterType)
+                {
+                    return pair.Key;
+                }
+            }
+
+            return "Unknown";
+        }
+
+
     }
 
 }
