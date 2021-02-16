@@ -15,7 +15,7 @@ namespace Game.AudioSystem
         /// Default menu click sound
         /// </summary>
         public static AudioClip MENU_CLICK_SOUND = new AudioClip(
-            filepath: "Game.AudioFiles.Music.Menu.TestMX1_Stinger_Bells.wav",
+            filepath: "Game.AudioFiles.SFX.Menu.UI_CLICK_1.wav",
             startingVolume: .5
         );
 
