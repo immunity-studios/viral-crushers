@@ -45,6 +45,7 @@
                         <Frame Grid.RowSpan="3" VerticalOptions="CenterAndExpand" Style="{StaticResource BorderFrame}">
                             <Frame Style="{StaticResource CharacterFrame}">
                                 <Image
+                                    x:Name="MonsterImage"
                                     Source="{Binding Data.ImageURI}"
                                     WidthRequest="100"
                                     HeightRequest="100"/>

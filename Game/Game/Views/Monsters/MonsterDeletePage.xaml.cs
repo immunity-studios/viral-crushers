@@ -29,6 +29,8 @@ namespace Game.Views
             BindingContext = this.viewModel = data;
 
             this.viewModel.Title = "Delete " + data.Title;
+
+            MonsterImage.Source = viewModel.Data.Type.ToImageFile();
         }
 
         /// <summary>
