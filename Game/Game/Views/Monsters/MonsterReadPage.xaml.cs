@@ -32,6 +32,8 @@ namespace Game.Views
             InitializeComponent();
 
             BindingContext = this.ViewModel = data;
+
+            MonsterImage.Source = ViewModel.Data.Type.ToImageFile();
         }
 
         /// <summary>
