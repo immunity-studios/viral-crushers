@@ -5,8 +5,15 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:Game.Views"
+             xmlns:local_helpers="clr-namespace:Game.Helpers"
              Title="{Binding Title}"
              mc:Ignorable="d">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local_helpers:JobToMappedStringConverter x:Key="JobToMappedStringConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <ScrollView>
 
@@ -57,7 +64,7 @@
                             <Label FontAttributes="Italic"
                                    FontSize="Small"
                                    Style="{DynamicResource BodyStyle}"
-                                   Text="{Binding Data.Job}"
+                                   Text="{Binding Data.Job, Converter={StaticResource JobToMappedStringConverter}}"
                                    TextColor="{StaticResource ViralCrusherWhiteColor}"
                                    TextTransform="Default" />
 
