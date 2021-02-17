@@ -14,16 +14,17 @@ namespace Game.AudioSystem
         /// <summary>
         /// Default menu click sound
         /// </summary>
-        public static AudioClip MENU_CLICK_SOUND = new AudioClip(
-            filepath: "Game.AudioFiles.SFX.Menu.UI_CLICK_1.wav",
-            startingVolume: .5
+        public static BaseAudioClip MENU_CLICK_SOUND = new SimpleAudioClip(
+            filePath: "Game.AudioFiles.SFX.Menu.UI_CLICK_1.wav",
+            //volumeMax: 1,
+            loop: false
         );
 
         /// <summary>
         /// Main menu music loop
         /// </summary>
-        public static AudioClip MX_MENU_SONG1_FULL_LOOP = new AudioClip(
-           filepath: "Game.AudioFiles.Music.Menu.MENU_116-BPM-LOOP.mp3",
+        public static BaseAudioClip MX_MENU_SONG1_FULL_LOOP = new SimpleAudioClip(
+           filePath: "Game.AudioFiles.Music.Menu.MENU_116-BPM-LOOP.wav",
            loop: true
         );
 
@@ -31,10 +32,10 @@ namespace Game.AudioSystem
         /// All AudioClips should be added to this list for use in loading
         /// and setting up volume busses
         /// </summary>
-        public static List<AudioClip> AudioClips = new List<AudioClip>() { 
-            MENU_CLICK_SOUND, 
+        public static List<BaseAudioClip> AudioClips = new List<BaseAudioClip>() {
+            MENU_CLICK_SOUND,
             MX_MENU_SONG1_FULL_LOOP
         };
-      
+
     }
 }
