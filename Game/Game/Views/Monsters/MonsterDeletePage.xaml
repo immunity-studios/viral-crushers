@@ -1,149 +1,147 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage x:Class="Game.Views.MonsterDeletePage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
              xmlns:views="clr-namespace:Game.Views"
-             x:Class="Game.Views.MonsterDeletePage">
+             mc:Ignorable="d">
 
-    <ScrollView
-            HorizontalOptions="CenterAndExpand">
+    <ScrollView HorizontalOptions="CenterAndExpand">
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto" />
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <!-- Page Tilte -->
-            <views:CurvedLabelControl
-                   Text="Delete"
-                   Style="{StaticResource RedCurvedLabel}"
-                   HorizontalOptions="Center"
-                   FramePadding="30,0,30,20"
-                   Margin="0,60,0,-20" />
+            <!--  Page Tilte  -->
+            <views:CurvedLabelControl Margin="0,60,0,-20"
+                                      FramePadding="30,0,30,20"
+                                      HorizontalOptions="Center"
+                                      Style="{StaticResource RedCurvedLabel}"
+                                      Text="Delete" />
 
-            <Frame Margin="5,0,5,10" Grid.Row="1">
-                <StackLayout Padding="0,10,0,0"
-                    HorizontalOptions="Center">
+            <Frame Grid.Row="1" Margin="5,0,5,10">
+                <StackLayout Padding="0,10,0,0" HorizontalOptions="Center">
 
-                    <Grid RowSpacing="5" ColumnSpacing="5" >
+                    <Grid ColumnSpacing="5" RowSpacing="5">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="40"/>
-                            <RowDefinition Height="40"/>
-                            <RowDefinition Height="40"/>
-                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="40" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="4*"/>
-                            <ColumnDefinition Width="1.5*"/>
-                            <ColumnDefinition Width="3.5*"/>
-                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="1.5*" />
+                            <ColumnDefinition Width="3.5*" />
+                            <ColumnDefinition Width="1*" />
                         </Grid.ColumnDefinitions>
 
-                        <!--Monster Image-->
-                        <Frame Grid.RowSpan="3" VerticalOptions="CenterAndExpand" Style="{StaticResource BorderFrame}">
+                        <!--  Monster Image  -->
+                        <Frame Grid.RowSpan="3"
+                               Style="{StaticResource BorderFrame}"
+                               VerticalOptions="CenterAndExpand">
                             <Frame Style="{StaticResource CharacterFrame}">
-                                <Image
-                                    x:Name="MonsterImage"
-                                    Source="{Binding Data.ImageURI}"
-                                    WidthRequest="100"
-                                    HeightRequest="100"/>
+                                <Image x:Name="MonsterImage"
+                                       HeightRequest="100"
+                                       Source="{Binding Data.ImageURI}"
+                                       WidthRequest="100" />
                             </Frame>
                         </Frame>
 
-                        <!--Name-->
-                        <Label Grid.Row="3" 
-                            Text="{Binding Data.Name}"
-                            FontAttributes="Bold"
-                            HorizontalOptions="Center"
-                            FontSize="Medium"
-                            TextTransform="Uppercase"
-                            TextColor="{StaticResource ViralCrusherYellowColor}"/>
+                        <!--  Name  -->
+                        <Label Grid.Row="3"
+                               FontAttributes="Bold"
+                               FontSize="Medium"
+                               HorizontalOptions="Center"
+                               Text="{Binding Data.Name}"
+                               TextColor="{StaticResource ViralCrusherYellowColor}"
+                               TextTransform="Uppercase" />
 
-                        <!--Attack-->
+                        <!--  Attack  -->
                         <Label Grid.Column="1"
-                            Text="Attack"
-                            FontSize="Medium"
-                            VerticalOptions="Center"
-                            LineBreakMode="TailTruncation"
-                            TextColor="{StaticResource ViralCrusherWhiteColor}"/>
+                               FontSize="Medium"
+                               LineBreakMode="TailTruncation"
+                               Text="Attack"
+                               TextColor="{StaticResource ViralCrusherWhiteColor}"
+                               VerticalOptions="Center" />
 
-                        <ProgressBar
-                            Grid.Row="0"
-                            Grid.Column="2"
-                            Progress="{Binding Data.Attack, Converter={StaticResource StatToPercentageConverter}}" 
-                            Style="{StaticResource StatsProgressBar}"/>
+                        <ProgressBar Grid.Row="0"
+                                     Grid.Column="2"
+                                     Progress="{Binding Data.Attack, Converter={StaticResource StatToPercentageConverter}}"
+                                     Style="{StaticResource StatsProgressBar}" />
 
                         <Label Grid.Column="3"
-                            FontSize="Medium"
-                            HorizontalOptions="CenterAndExpand"
-                            VerticalOptions="Center"
-                            Text="{Binding Data.Attack}"
-                            TextColor="{StaticResource ViralCrusherWhiteColor}"/>
+                               FontSize="Medium"
+                               HorizontalOptions="CenterAndExpand"
+                               Text="{Binding Data.Attack}"
+                               TextColor="{StaticResource ViralCrusherWhiteColor}"
+                               VerticalOptions="Center" />
 
-                        <!--Defense-->
+                        <!--  Defense  -->
                         <Label Grid.Row="1"
-                            Grid.Column="1"
-                            Text="Defense"
-                            FontSize="Medium"
-                            VerticalOptions="Center"
-                            LineBreakMode="TailTruncation"
-                            TextColor="{StaticResource ViralCrusherWhiteColor}"/>
+                               Grid.Column="1"
+                               FontSize="Medium"
+                               LineBreakMode="TailTruncation"
+                               Text="Defense"
+                               TextColor="{StaticResource ViralCrusherWhiteColor}"
+                               VerticalOptions="Center" />
 
-                        <ProgressBar
-                            Grid.Row="1"
-                            Grid.Column="2"
-                            Progress="{Binding Data.Defense, Converter={StaticResource StatToPercentageConverter}}"
-                            Style="{StaticResource StatsProgressBar}"/>
+                        <ProgressBar Grid.Row="1"
+                                     Grid.Column="2"
+                                     Progress="{Binding Data.Defense, Converter={StaticResource StatToPercentageConverter}}"
+                                     Style="{StaticResource StatsProgressBar}" />
 
                         <Label Grid.Row="1"
-                            Grid.Column="3"
-                            FontSize="Medium"
-                            HorizontalOptions="CenterAndExpand"
-                            VerticalOptions="Center"
-                            Text="{Binding Data.Defense}"
-                            TextColor="{StaticResource ViralCrusherWhiteColor}"/>
+                               Grid.Column="3"
+                               FontSize="Medium"
+                               HorizontalOptions="CenterAndExpand"
+                               Text="{Binding Data.Defense}"
+                               TextColor="{StaticResource ViralCrusherWhiteColor}"
+                               VerticalOptions="Center" />
 
-                        <!--Speed-->
+                        <!--  Speed  -->
                         <Label Grid.Row="2"
-                            Grid.Column="1"
-                            FontSize="Medium"
-                            Text="Speed"
-                            LineBreakMode="TailTruncation"
-                            VerticalOptions="Center"
-                            TextColor="{StaticResource ViralCrusherWhiteColor}"/>
+                               Grid.Column="1"
+                               FontSize="Medium"
+                               LineBreakMode="TailTruncation"
+                               Text="Speed"
+                               TextColor="{StaticResource ViralCrusherWhiteColor}"
+                               VerticalOptions="Center" />
 
-                        <ProgressBar
-                            Grid.Row="2"
-                            Grid.Column="2"
-                            Progress="{Binding Data.Speed, Converter={StaticResource StatToPercentageConverter}}"
-                            Style="{StaticResource StatsProgressBar}" />
+                        <ProgressBar Grid.Row="2"
+                                     Grid.Column="2"
+                                     Progress="{Binding Data.Speed, Converter={StaticResource StatToPercentageConverter}}"
+                                     Style="{StaticResource StatsProgressBar}" />
 
                         <Label Grid.Row="2"
-                            Grid.Column="3"
-                            FontSize="Medium"
-                            HorizontalOptions="CenterAndExpand"
-                            VerticalOptions="Center"
-                            Text="{Binding Data.Speed}"
-                            TextColor="{StaticResource ViralCrusherWhiteColor}"/>
+                               Grid.Column="3"
+                               FontSize="Medium"
+                               HorizontalOptions="CenterAndExpand"
+                               Text="{Binding Data.Speed}"
+                               TextColor="{StaticResource ViralCrusherWhiteColor}"
+                               VerticalOptions="Center" />
 
                     </Grid>
 
-                    <!--Cancel and Delete Buttons-->
+                    <!--  Cancel and Delete Buttons  -->
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="100"/>
+                            <RowDefinition Height="100" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
-                            
-                            <ImageButton Grid.Column="0" Source="delete_button_140.png" Clicked="Delete_Clicked" />
+
+                        <ImageButton Grid.Column="0"
+                                     Clicked="Delete_Clicked"
+                                     Source="delete_button_140.png" />
 
                         <ImageButton Grid.Column="1"
-                                     Source="cancel_button_140.png" Clicked="Cancel_Clicked" />
+                                     Clicked="Cancel_Clicked"
+                                     Source="cancel_button_140.png" />
                     </Grid>
 
                 </StackLayout>

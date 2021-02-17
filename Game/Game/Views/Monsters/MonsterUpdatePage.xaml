@@ -1,18 +1,18 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage x:Class="Game.Views.MonsterUpdatePage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             xmlns:local_helpers="clr-namespace:Game.Helpers"
-             xmlns:local_enum="clr-namespace:Game.Models"
              xmlns:local="using:Game.Models"
+             xmlns:local_enum="clr-namespace:Game.Models"
+             xmlns:local_helpers="clr-namespace:Game.Helpers"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:Game.Views"
-             x:Class="Game.Views.MonsterUpdatePage">
+             mc:Ignorable="d">
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <local_helpers:StringEnumConverter x:Key="StringEnum"/>
+            <local_helpers:StringEnumConverter x:Key="StringEnum" />
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -26,23 +26,19 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
 
-                <!-- Page Tilte -->
-                <views:CurvedLabelControl
-                   Text="Edit"
-                   Style="{StaticResource RedCurvedLabel}"
-                   HorizontalOptions="Center"
-                   FramePadding="30,0,30,20"
-                   Margin="0,60,0,-20" />
+                <!--  Page Tilte  -->
+                <views:CurvedLabelControl Margin="0,60,0,-20"
+                                          FramePadding="30,0,30,20"
+                                          HorizontalOptions="Center"
+                                          Style="{StaticResource RedCurvedLabel}"
+                                          Text="Edit" />
 
                 <Frame Grid.Row="1"
                        Margin="5,0,5,10"
                        HasShadow="True">
 
-                    <StackLayout
-                        Style="{StaticResource OuterBoxStack}"
-                        Padding="10">
-                        <Grid RowSpacing="5"
-                            ColumnSpacing="10">
+                    <StackLayout Padding="10" Style="{StaticResource OuterBoxStack}">
+                        <Grid ColumnSpacing="10" RowSpacing="5">
 
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
@@ -54,57 +50,58 @@
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
 
-                            <!--Monster Image-->
-                            <Frame
-                                Grid.RowSpan="3" 
-                                VerticalOptions="CenterAndExpand"
-                                Style="{StaticResource BorderFrame}">
+                            <!--  Monster Image  -->
+                            <Frame Grid.RowSpan="3"
+                                   Style="{StaticResource BorderFrame}"
+                                   VerticalOptions="CenterAndExpand">
 
-                                <Frame
-                                    Padding="10"
-                                    Style="{StaticResource CharacterFrame}">
+                                <Frame Padding="10" Style="{StaticResource CharacterFrame}">
 
                                     <Image x:Name="MonsterImage"
-                                        Source="{Binding Data.ImageURI}" 
-                                           WidthRequest="100"
-                                           HeightRequest="100"/>
+                                           HeightRequest="100"
+                                           Source="{Binding Data.ImageURI}"
+                                           WidthRequest="100" />
                                 </Frame>
                             </Frame>
 
-                            <!--Name-->
-                            <StackLayout Orientation="Vertical" Grid.Column="1"  HorizontalOptions="Fill">
-                                <Label Text="Name" 
-                                        Style="{StaticResource LabelStyle}"/>
+                            <!--  Name  -->
+                            <StackLayout Grid.Column="1"
+                                         HorizontalOptions="Fill"
+                                         Orientation="Vertical">
+                                <Label Style="{StaticResource LabelStyle}" Text="Name" />
 
-                                <Entry Text="{Binding Data.Name}"
-                                        HorizontalOptions="Fill"
-                                        Style="{StaticResource EntryStyle}"/>
+                                <Entry HorizontalOptions="Fill"
+                                       Style="{StaticResource EntryStyle}"
+                                       Text="{Binding Data.Name}" />
 
                             </StackLayout>
 
-                            <!--Type-->
-                            <StackLayout Orientation="Vertical" Grid.Column="1" Grid.Row="1" HorizontalOptions="Fill">
-                                <Label Text="Type" 
-                                        Style="{StaticResource LabelStyle}"/>
+                            <!--  Type  -->
+                            <StackLayout Grid.Row="1"
+                                         Grid.Column="1"
+                                         HorizontalOptions="Fill"
+                                         Orientation="Vertical">
+                                <Label Style="{StaticResource LabelStyle}" Text="Type" />
 
-                                <Picker ItemsSource="{x:Static local_enum:MonsterTypeEnumHelper.GetListItem}" 
-                                    SelectedItem="{Binding Data.Type, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                                    x:Name="MonsterTypePicker"
-                                        SelectedIndexChanged="OnMonsterTypePickerSelectedIndexChanged"/>
+                                <Picker x:Name="MonsterTypePicker"
+                                        ItemsSource="{x:Static local_enum:MonsterTypeEnumHelper.GetListItem}"
+                                        SelectedIndexChanged="OnMonsterTypePickerSelectedIndexChanged"
+                                        SelectedItem="{Binding Data.Type, Converter={StaticResource StringEnum}, Mode=TwoWay}" />
                             </StackLayout>
 
-                            <!--Description-->
-                            <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="Fill" Grid.Column="1" Grid.Row="2">
-                                <Label Text="Description" 
-                                        Style="{StaticResource LabelStyle}"/>
+                            <!--  Description  -->
+                            <StackLayout Grid.Row="2"
+                                         Grid.Column="1"
+                                         HorizontalOptions="Fill"
+                                         Style="{StaticResource VerticalStack}">
+                                <Label Style="{StaticResource LabelStyle}" Text="Description" />
 
-                                <Entry Text="{Binding Data.Description}"
-                                        Style="{StaticResource EntryStyle}" />
+                                <Entry Style="{StaticResource EntryStyle}" Text="{Binding Data.Description}" />
                             </StackLayout>
                         </Grid>
 
 
-                        <Grid x:Name="SlidersRegionGrid" 
+                        <Grid x:Name="SlidersRegionGrid"
                               Padding="0,10,0,0"
                               RowSpacing="5">
                             <Grid.RowDefinitions>
@@ -120,70 +117,72 @@
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
 
-                            <!--  Attack -->
+                            <!--  Attack  -->
                             <views:CurvedLabelControl Grid.Row="0"
-                                                          Style="{StaticResource WhiteCurvedLabelWithNavyText}"
-                                                          Text="Attack"/>
+                                                      Style="{StaticResource WhiteCurvedLabelWithNavyText}"
+                                                      Text="Attack" />
 
-                            <Slider Grid.Row="0"
-                                        Grid.Column="1"
-                                        x:Name="AttackSlider"                                       
-                                        Maximum="8"
-                                        Minimum="1"
-                                        Value="{Binding Data.Attack, Mode=TwoWay}" />
+                            <Slider x:Name="AttackSlider"
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Maximum="8"
+                                    Minimum="1"
+                                    Value="{Binding Data.Attack, Mode=TwoWay}" />
 
                             <views:CurvedLabelControl Grid.Row="0"
-                                        Grid.Column="2"
-                                        Text="{Binding Path=Value, Source={x:Reference AttackSlider}, StringFormat='{0:F0}'}"
-                                        Style="{StaticResource WhiteCurvedLabelWithNavyText}" />
+                                                      Grid.Column="2"
+                                                      Style="{StaticResource WhiteCurvedLabelWithNavyText}"
+                                                      Text="{Binding Path=Value, Source={x:Reference AttackSlider}, StringFormat='{0:F0}'}" />
 
-                            <!--  Defense -->
+                            <!--  Defense  -->
                             <views:CurvedLabelControl Grid.Row="1"
-                                                          Style="{StaticResource WhiteCurvedLabelWithNavyText}"
-                                                          Text="Defense"/>
+                                                      Style="{StaticResource WhiteCurvedLabelWithNavyText}"
+                                                      Text="Defense" />
 
-                            <Slider Grid.Row="1"
-                                        Grid.Column="1"
-                                        x:Name="DefenseSlider"                                       
-                                        Maximum="10"
-                                        Minimum="1"
-                                        Value="{Binding Data.Defense, Mode=TwoWay}" />
+                            <Slider x:Name="DefenseSlider"
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    Maximum="10"
+                                    Minimum="1"
+                                    Value="{Binding Data.Defense, Mode=TwoWay}" />
 
                             <views:CurvedLabelControl Grid.Row="1"
-                                        Grid.Column="2"
-                                        Text="{Binding Path=Value, Source={x:Reference DefenseSlider}, StringFormat='{0:F0}'}"
-                                        Style="{StaticResource WhiteCurvedLabelWithNavyText}" />
+                                                      Grid.Column="2"
+                                                      Style="{StaticResource WhiteCurvedLabelWithNavyText}"
+                                                      Text="{Binding Path=Value, Source={x:Reference DefenseSlider}, StringFormat='{0:F0}'}" />
 
-                            <!--  Speed -->
+                            <!--  Speed  -->
                             <views:CurvedLabelControl Grid.Row="2"
-                                                          Style="{StaticResource WhiteCurvedLabelWithNavyText}"
-                                                          Text="Speed"/>
+                                                      Style="{StaticResource WhiteCurvedLabelWithNavyText}"
+                                                      Text="Speed" />
 
-                            <Slider Grid.Row="2"
-                                        Grid.Column="1"
-                                        x:Name="SpeedSlider"                                       
-                                        Maximum="5"
-                                        Minimum="1"
-                                        Value="{Binding Data.Speed, Mode=TwoWay}" />
+                            <Slider x:Name="SpeedSlider"
+                                    Grid.Row="2"
+                                    Grid.Column="1"
+                                    Maximum="5"
+                                    Minimum="1"
+                                    Value="{Binding Data.Speed, Mode=TwoWay}" />
 
                             <views:CurvedLabelControl Grid.Row="2"
-                                        Grid.Column="2"
-                                        Text="{Binding Path=Value, Source={x:Reference SpeedSlider}, StringFormat='{0:F0}'}"
-                                        Style="{StaticResource WhiteCurvedLabelWithNavyText}" />
+                                                      Grid.Column="2"
+                                                      Style="{StaticResource WhiteCurvedLabelWithNavyText}"
+                                                      Text="{Binding Path=Value, Source={x:Reference SpeedSlider}, StringFormat='{0:F0}'}" />
 
                         </Grid>
 
-                        <!--Save and Cancel Buttons-->
+                        <!--  Save and Cancel Buttons  -->
                         <Grid x:Name="BottomButtonsRegionGrid">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="100"/>
+                                <RowDefinition Height="100" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition />
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
-                            <ImageButton Source="save_button_140.png" Clicked="Save_Clicked" />
-                            <ImageButton Grid.Column="1" Source="cancel_button_140.png" Clicked="Cancel_Clicked" />
+                            <ImageButton Clicked="Save_Clicked" Source="save_button_140.png" />
+                            <ImageButton Grid.Column="1"
+                                         Clicked="Cancel_Clicked"
+                                         Source="cancel_button_140.png" />
                         </Grid>
 
                     </StackLayout>
