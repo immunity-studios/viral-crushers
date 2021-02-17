@@ -5,7 +5,7 @@ using System.Text;
 namespace Game.AudioSystem
 {
     /// <summary>
-    /// Collection of game sounds that are loaded at compilation time.
+    /// Collection of game sounds that are loaded at compilation time. 
     /// TODO trigger menu click sounds via an inherited menu class
     /// with preset button handlers (get rid of globals)
     /// </summary>

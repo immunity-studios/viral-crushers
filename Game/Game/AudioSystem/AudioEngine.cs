@@ -53,7 +53,7 @@ namespace Game.AudioSystem
         {
             foreach (var audioClip in AudioResources.AudioClips)
             {
-                audioClip.Load();
+                bool loaded = audioClip.Load();
             }
 
             return true;
