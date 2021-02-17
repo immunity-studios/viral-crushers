@@ -21,6 +21,9 @@ namespace Game
             // Add each model here to warm up and load it.
             Helpers.DataSetsHelper.WarmUp();
 
+            // Load audio files
+            AudioSystem.AudioEngine.Instance.LoadAudio();
+
             // Call the Main Page to open
             MainPage = new NavigationPage(new HomePage());
         }
