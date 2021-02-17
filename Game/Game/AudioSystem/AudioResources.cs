@@ -29,10 +29,27 @@ namespace Game.AudioSystem
         );
 
         /// <summary>
+        /// Main menu music loop
+        /// </summary>
+        public static BaseAudioClip MX_MENU_FULL= new SimpleAudioClip(
+           filePath: "Game.AudioFiles.Music.Menu.MENU_116-BPM-FULL.ogg",
+           loop: true
+        );
+
+
+        /// <summary>
         /// Main battle music loop
         /// </summary>
         public static BaseAudioClip MX_BATTLE_LOOP = new SimpleAudioClip(
            filePath: "Game.AudioFiles.Music.Battle.BATTLE_142-BPM-LOOP.wav",
+           loop: true
+        );
+
+        /// <summary>
+        /// Main battle music loop
+        /// </summary>
+        public static BaseAudioClip MX_BATTLE_FULL = new SimpleAudioClip(
+           filePath: "Game.AudioFiles.Music.Battle.BATTLE_142-BPM-FULL.ogg",
            loop: true
         );
 
