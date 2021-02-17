@@ -11,6 +11,7 @@ namespace Game.AudioSystem
     /// </summary>
     public enum AudioEventEnum
     {
+        // Default
         Unknown = 0,
 
         // UI click events
@@ -39,6 +40,10 @@ namespace Game.AudioSystem
         Character_LevelUp_Doctor = 42,
         Character_LevelUp_Firefighter = 43,
         Character_LevelUp_PoliceOfficer = 44,
-        Character_LevelUp_Teacher = 45
+        Character_LevelUp_Teacher = 45,
+
+        // Music Event Triggers
+        MenuStart = 200,
+        BattleStart = 210
     }
 }
