@@ -144,6 +144,7 @@
     <BundleResource Include="Resources\battle_button_140.png" />
     <BundleResource Include="Resources\icon_add_button_140.png" />
     <BundleResource Include="Resources\icon_back_button_140.png" />
+    <BundleResource Include="Resources\icon_about_button.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

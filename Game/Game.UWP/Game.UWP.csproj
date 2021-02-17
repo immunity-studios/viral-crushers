@@ -216,6 +216,7 @@
     <Content Include="save_button_140.png" />
     <Content Include="icon_add_button_140.png" />
     <Content Include="icon_back_button_140.png" />
+    <Content Include="icon_about_button.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
