@@ -61,6 +61,7 @@ namespace Game.AudioSystem
 
         /// <summary>
         /// Method that should be called when an audio event happens in the application.
+        /// The audio event enum is processed and audio is played/stopped/managed in this method
         /// </summary>
         /// <param name="audioEvent">
         /// Enum representing the specific audio event that has occured
@@ -78,9 +79,12 @@ namespace Game.AudioSystem
                 case AudioEventEnum.MenuStart:
                     AudioResources.MX_MENU_SONG1_FULL_LOOP.Play();
                     break;
+                case AudioEventEnum.BattleStart:
+                    AudioResources.MX_MENU_SONG1_FULL_LOOP.Stop();
+                    AudioResources.MX_BATTLE_LOOP.Play();
+                    break;
                 default:
-                    // event was not found, so return false
-                    return false;
+                    return false; // event was not found, so return false
             }
             return true;
         }
