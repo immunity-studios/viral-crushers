@@ -4,20 +4,33 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Game.Views.AboutPage"
-             Title="About">
+             xmlns:views="clr-namespace:Game.Views"
+             x:Class="Game.Views.AboutPage" >
 
     <ScrollView
-      Padding="10,10,10,10"
       VerticalOptions="Start"
       HorizontalOptions="FillAndExpand"
       Orientation="Vertical">
 
-        <StackLayout Style="{StaticResource VerticalStack}">
+        <StackLayout Orientation="Vertical" VerticalOptions="Start">
+
+            <views:BackButtonControl HorizontalOptions="Start"
+                                     Margin="30,50,0,40"/>
+
+            <Frame Grid.Row="1"
+                   CornerRadius="50"
+                   WidthRequest="150"
+                   HeightRequest="150"
+                   BackgroundColor="{StaticResource ViralCrusherGreenColor}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   HasShadow="True"/>
+
+
+             <StackLayout Orientation="Vertical"
+                          HorizontalOptions="Center">
 
             <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand">
-
-                <Image Source="item.png" Style="{StaticResource ImageMediumStyle}"/>
                 <Label Text="Immunity Studios" Style="{StaticResource HeaderStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
                 <Label Text="Leila Mirzaei" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
                 <Label Text="Ross Hoyt" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
@@ -136,15 +149,17 @@
                 </StackLayout>
             </StackLayout>
 
-            <!--Audio Settings-->
-            <Label
-                    Text="Volume"
-                    Style="{DynamicResource LabelStyle}"
-                    />
-            <Slider 
-                Minimum="0" Maximum="1"
-                ValueChanged="OnVolumeSliderValueChanged"
-                />
+                 <!--Audio Settings-->
+
+                 <Label Text="Volume"
+                   Style="{DynamicResource LabelStyle}"/>
+
+
+                 <Slider Minimum="0"
+                    Maximum="1"
+                    ValueChanged="OnVolumeSliderValueChanged"/>
+            
+             </StackLayout>
         </StackLayout>
     </ScrollView>
 </ContentPage>

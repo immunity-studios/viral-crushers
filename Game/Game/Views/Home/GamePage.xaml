@@ -20,15 +20,15 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <views:BackButtonControl HorizontalOptions="Start"
-                                     Margin="30,50,0,0"/>
+            <ImageButton HorizontalOptions="Start"
+                         Source="icon_about_button.png"
+                         Margin="30,50,0,0"
+                         VerticalOptions="Center"
+                         Aspect="AspectFill"
+                         WidthRequest="50"
+                         HeightRequest="50"
+                         Clicked="AboutButton_Clicked"/>
 
-            <!--<Image Grid.Row="1"
-                   Source="icon_hospital.png"
-                   Style="{StaticResource ImageLargeStyle}"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center"
-                />-->
             <Frame Grid.Row="1"
                    CornerRadius="50"
                    WidthRequest="220"
