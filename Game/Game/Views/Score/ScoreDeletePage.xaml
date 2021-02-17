@@ -1,96 +1,77 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage x:Class="Game.Views.ScoreDeletePage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
              xmlns:views="clr-namespace:Game.Views"
-             x:Class="Game.Views.ScoreDeletePage">
+             mc:Ignorable="d">
 
     <ScrollView>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto" />
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <!-- Page Tilte -->
-            <views:CurvedLabelControl
-                   Text="Delete"
-                   Style="{StaticResource RedCurvedLabel}"
-                   HorizontalOptions="Center"
-                   FramePadding="30,0,30,20"
-                   Margin="0,60,0,-20" />
+            <!--  Page Tilte  -->
+            <views:CurvedLabelControl Margin="0,60,0,-20"
+                                      FramePadding="30,0,30,20"
+                                      HorizontalOptions="Center"
+                                      Style="{StaticResource RedCurvedLabel}"
+                                      Text="Delete" />
 
-            <Frame Margin="5,0,5,10" Grid.Row="1">
-                <StackLayout Style="{StaticResource OuterBoxStack}"
-                    Spacing="10">
+            <Frame Grid.Row="1" Margin="5,0,5,10">
+                <StackLayout Spacing="10" Style="{StaticResource OuterBoxStack}">
 
                     <StackLayout>
                         <StackLayout Style="{StaticResource HorizontalStack}">
-                            <Label 
-                                Text="Name : " 
-                                Style="{StaticResource LabelStyle}"/>
-                            <Label 
-                                Text="{Binding Data.Name}" 
-                                Style="{StaticResource ValueStyle}"/>
+                            <Label Style="{StaticResource LabelStyle}" Text="Name : " />
+                            <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.Name}" />
                         </StackLayout>
 
                         <StackLayout Style="{StaticResource HorizontalStack}">
-                            <Label 
-                            Text="Game Date:"
-                            Style="{StaticResource LabelStyle}"/>
+                            <Label Style="{StaticResource LabelStyle}" Text="Game Date:" />
 
-                            <Label 
-                            Text="{Binding Data.GameDate}"
-                            Style="{StaticResource ValueStyle}"/>
+                            <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.GameDate}" />
                         </StackLayout>
 
                         <StackLayout Style="{StaticResource HorizontalStack}">
-                            <Label 
-                                Text="AutoBattle:"                      
-                                Style="{StaticResource LabelStyle}"/>
+                            <Label Style="{StaticResource LabelStyle}" Text="AutoBattle:" />
 
-                            <Label 
-                                Text="{Binding Data.AutoBattle}"
-                                Style="{StaticResource ValueStyle}"/>
+                            <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.AutoBattle}" />
                         </StackLayout>
 
                         <StackLayout Style="{StaticResource HorizontalStack}">
-                            <Label 
-                                Text="Score:" 
-                                Style="{StaticResource LabelStyle}"/>
-                            <Label 
-                                Text="{Binding Data.ScoreTotal}"
-                                Style="{StaticResource ValueStyle}"/>
+                            <Label Style="{StaticResource LabelStyle}" Text="Score:" />
+                            <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.ScoreTotal}" />
                         </StackLayout>
 
                         <StackLayout Style="{StaticResource HorizontalStack}">
-                            <Label 
-                                Text="Number of Rounds:"                      
-                                Style="{StaticResource LabelStyle}"/>
+                            <Label Style="{StaticResource LabelStyle}" Text="Number of Rounds:" />
 
-                            <Label 
-                                Text="{Binding Data.RoundCount}"
-                                Style="{StaticResource ValueStyle}"/>
+                            <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.RoundCount}" />
                         </StackLayout>
 
                     </StackLayout>
 
-                    <!--Cancel and Delete Buttons-->
+                    <!--  Cancel and Delete Buttons  -->
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="100"/>
+                            <RowDefinition Height="100" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
 
-                        <ImageButton Grid.Column="0" Source="delete_button_140.png" Clicked="Delete_Clicked" />
+                        <ImageButton Grid.Column="0"
+                                     Clicked="Delete_Clicked"
+                                     Source="delete_button_140.png" />
 
                         <ImageButton Grid.Column="1"
-                                     Source="cancel_button_140.png" Clicked="Cancel_Clicked" />
+                                     Clicked="Cancel_Clicked"
+                                     Source="cancel_button_140.png" />
                     </Grid>
                 </StackLayout>
             </Frame>

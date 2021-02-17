@@ -1,48 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage x:Class="Game.Views.ScoreIndexPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Name="BrowseScoresPage"
              xmlns:views="clr-namespace:Game.Views"
-             x:Class="Game.Views.ScoreIndexPage">
+             x:Name="BrowseScoresPage"
+             mc:Ignorable="d">
 
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <views:BackButtonControl HorizontalOptions="Start"
-                                     Margin="30,30,0,0"/>
+            <views:BackButtonControl Margin="30,30,0,0" HorizontalOptions="Start" />
 
-            <!-- Page Tilte -->
-            <views:CurvedLabelControl
-               Text="Scores"
-               Style="{StaticResource RedCurvedLabel}"
-               HorizontalOptions="Center"
-               Margin="0,60,0,-20" />
+            <!--  Page Tilte  -->
+            <views:CurvedLabelControl Margin="0,60,0,-20"
+                                      HorizontalOptions="Center"
+                                      Style="{StaticResource RedCurvedLabel}"
+                                      Text="Scores" />
 
             <ImageButton Margin="0,30,30,0"
-                         Style="{StaticResource AddImageButton}"
-                         Clicked="AddScore_Clicked"/>
+                         Clicked="AddScore_Clicked"
+                         Style="{StaticResource AddImageButton}" />
 
-            <Frame Margin="5,0,5,10" Grid.Row="1">
-                <CollectionView                 
-                    ItemsSource="{Binding Dataset}"
-                    SelectionMode="Single"
-                    SelectionChanged="CollectionView_SelectionChanged"
-                    ItemsLayout="VerticalGrid, 2"
-                    x:Name="ScoresCollectionView">
+            <Frame Grid.Row="1" Margin="5,0,5,10">
+                <CollectionView x:Name="ScoresCollectionView"
+                                ItemsLayout="VerticalGrid, 2"
+                                ItemsSource="{Binding Dataset}"
+                                SelectionChanged="CollectionView_SelectionChanged"
+                                SelectionMode="Single">
 
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <Grid Padding="10">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto" />
                                     <RowDefinition Height="*" />
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
@@ -50,38 +47,34 @@
                                     <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
 
-                                <Image
-                                    Grid.RowSpan="2"
-                                    Grid.Row="0"
-                                    Source="{Binding ImageURI}"
-                                    Style="{StaticResource ImageMediumStyle}"
-                                    Aspect="AspectFill"
-                                    VerticalOptions="Center" />
+                                <Image Grid.Row="0"
+                                       Grid.RowSpan="2"
+                                       Aspect="AspectFill"
+                                       Source="{Binding ImageURI}"
+                                       Style="{StaticResource ImageMediumStyle}"
+                                       VerticalOptions="Center" />
 
 
-                                <Label
-                                    Grid.Column="1"
-                                    Grid.Row="0"
-                                    Text="{Binding Name}"
-                                    Style="{StaticResource IndexPageCollectionViewBoldStyle}" />
+                                <Label Grid.Row="0"
+                                       Grid.Column="1"
+                                       Style="{StaticResource IndexPageCollectionViewBoldStyle}"
+                                       Text="{Binding Name}" />
 
 
-                                <Label
-                                    Grid.Row="1"
-                                    Grid.Column="1"
-                                    Text="{Binding Description}"
-                                    Style="{StaticResource IndexPageCollectionViewItalicStyle}"
-                                    MaxLines="2"
-                                    />
+                                <Label Grid.Row="1"
+                                       Grid.Column="1"
+                                       MaxLines="2"
+                                       Style="{StaticResource IndexPageCollectionViewItalicStyle}"
+                                       Text="{Binding Description}" />
 
                             </Grid>
-                     
+
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
             </Frame>
 
-            <views:ToolbarMenuControl Grid.Row="2"/>
+            <views:ToolbarMenuControl Grid.Row="2" />
         </Grid>
     </ContentPage.Content>
 </ContentPage>
