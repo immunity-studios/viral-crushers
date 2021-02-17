@@ -32,7 +32,7 @@ namespace Game.AudioSystem
         /// Main battle music loop
         /// </summary>
         public static BaseAudioClip MX_BATTLE_LOOP = new SimpleAudioClip(
-           filePath: "Game.AudioFiles.Music.Menu.MENU_116-BPM-LOOP.wav",
+           filePath: "Game.AudioFiles.Music.Battle.BATTLE_142-BPM-LOOP.wav",
            loop: true
         );
 
@@ -42,7 +42,8 @@ namespace Game.AudioSystem
         /// </summary>
         public static List<BaseAudioClip> AudioClips = new List<BaseAudioClip>() {
             MENU_CLICK_SOUND,
-            MX_MENU_SONG1_FULL_LOOP
+            MX_MENU_SONG1_FULL_LOOP,
+            MX_BATTLE_LOOP
         };
 
     }
