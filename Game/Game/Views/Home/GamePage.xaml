@@ -29,6 +29,7 @@
                          HeightRequest="50"
                          Clicked="AboutButton_Clicked"/>
 
+            <!-- Temporary Frame, replace with logo -->
             <Frame Grid.Row="1"
                    CornerRadius="50"
                    WidthRequest="220"
@@ -36,8 +37,12 @@
                    BackgroundColor="{StaticResource ViralCrusherGreenColor}"
                    HorizontalOptions="Center"
                    VerticalOptions="Center"
-                   HasShadow="True"/>
+                   HasShadow="True">
+
+                <Label Text="Game Page" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{StaticResource ViralCrusherNavyColor}"/>
                                       
+            </Frame>
+
 
             <StackLayout Grid.Row="2" Style="{StaticResource CardImageTextBox}">
 
