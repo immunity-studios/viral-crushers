@@ -42,9 +42,9 @@ namespace Game.AudioSystem
         #endregion Singleton
 
         /// <summary>
-        /// Private audio engine constructor to prevent instantiation
+        /// Audio engine constructor
         /// </summary>
-        private AudioEngine()
+        public AudioEngine()
         {
 
         }
