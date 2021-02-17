@@ -17,6 +17,8 @@ namespace Game.Views
 		{
 			InitializeComponent();
 			// TODO Start menu music here
+			AudioSystem.AudioEngine.Instance.ProcessAudioEvent(AudioSystem.AudioEventEnum.MenuStart);
+
 		}
 
 		/// <summary>
@@ -27,7 +29,7 @@ namespace Game.Views
 		public async void GameButton_Clicked(object sender, EventArgs e)
         {
 			// Update audio engine that start button has been pressed
-			//AudioSystem.AudioEngine.Instance.ProcessAudioEvent(AudioSystem.AudioEventEnum.Button_GameStart);
+			AudioSystem.AudioEngine.Instance.ProcessAudioEvent(AudioSystem.AudioEventEnum.Button_GameStart);
 			// Navigate to Game Page from Home Page	
 			await Navigation.PushAsync(new GamePage()); 		
 		}
