@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage x:Class="Game.Views.ItemReadPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:Game.Views"
-             mc:Ignorable="d"
-             x:Class="Game.Views.ItemReadPage">
+             mc:Ignorable="d">
 
     <ScrollView>
 
@@ -15,12 +15,11 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <views:BackButtonControl HorizontalOptions="Start"
-                                     Margin="30,30,0,0"/>
+            <views:BackButtonControl Margin="30,30,0,0" HorizontalOptions="Start" />
 
             <views:CurvedLabelControl Margin="0,60,0,-20"
-                                      HorizontalOptions="Center"
                                       FramePadding="30,0,30,20"
+                                      HorizontalOptions="Center"
                                       Style="{StaticResource RedCurvedLabel}"
                                       Text="Info" />
 
@@ -35,22 +34,22 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
 
-                        
-                        <!--Item Image-->
+
+                        <!--  Item Image  -->
                         <Frame Style="{StaticResource BorderFrame}" VerticalOptions="CenterAndExpand">
                             <Frame Style="{StaticResource CharacterFrame}">
-                                <Image HeightRequest="100"
+                                <Image x:Name="ItemImage"
+                                       HeightRequest="100"
                                        Source="{Binding Data.ImageURI}"
-                                       WidthRequest="100" 
-                                       x:Name="ItemImage"/>
+                                       WidthRequest="100" />
                             </Frame>
                         </Frame>
 
-                        
-                         
+
+
                         <StackLayout Grid.Column="1" HorizontalOptions="Fill">
 
-                            <!--Item Name-->
+                            <!--  Item Name  -->
                             <Label FontAttributes="Bold"
                                    FontSize="Medium"
                                    Style="{DynamicResource BodyStyle}"
@@ -58,72 +57,72 @@
                                    TextColor="{StaticResource ViralCrusherYellowColor}"
                                    TextTransform="Uppercase" />
 
-                            
+
                             <StackLayout Style="{StaticResource HorizontalStack}">
-                                
-                                <!--Item Type and Consumability-->
+
+                                <!--  Item Type and Consumability  -->
                                 <Label Style="{StaticResource StatsBoldStyle}" Text="Type: " />
 
                                 <Label FontAttributes="Italic"
-                                   FontSize="Small"
-                                   Style="{DynamicResource BodyStyle}"
-                                   Text="{Binding Data.ItemType, Converter={StaticResource ItemTypeToMappedStringConverter}}"
-                                   TextColor="{StaticResource ViralCrusherWhiteColor}"
-                                   TextTransform="Default" />
+                                       FontSize="Small"
+                                       Style="{DynamicResource BodyStyle}"
+                                       Text="{Binding Data.ItemType, Converter={StaticResource ItemTypeToMappedStringConverter}}"
+                                       TextColor="{StaticResource ViralCrusherWhiteColor}"
+                                       TextTransform="Default" />
 
-                                <Label FontAttributes="Italic"
-                                   FontSize="Small"
-                                   Style="{DynamicResource BodyStyle}"
-                                   TextColor="{StaticResource ViralCrusherWhiteColor}"
-                                   TextTransform="Default"
-                                   x:Name="ConsumableLabel"/>
+                                <Label x:Name="ConsumableLabel"
+                                       FontAttributes="Italic"
+                                       FontSize="Small"
+                                       Style="{DynamicResource BodyStyle}"
+                                       TextColor="{StaticResource ViralCrusherWhiteColor}"
+                                       TextTransform="Default" />
 
                             </StackLayout>
 
-                            
-                            <!--Item Location-->
+
+                            <!--  Item Location  -->
                             <StackLayout Style="{StaticResource HorizontalStack}">
-                                
+
                                 <Label Style="{StaticResource StatsBoldStyle}" Text="Location: " />
 
                                 <Label x:Name="LocationLabel"
-                                   FontAttributes="Italic"
-                                   FontSize="Small"
-                                   LineBreakMode="WordWrap"
-                                   Style="{StaticResource ValueStyle}"
-                                   Text="{Binding Data.Location, Converter={StaticResource ItemLocationToMappedStringConverter}}"
-                                   TextColor="{StaticResource ViralCrusherWhiteColor}" />
-                                
+                                       FontAttributes="Italic"
+                                       FontSize="Small"
+                                       LineBreakMode="WordWrap"
+                                       Style="{StaticResource ValueStyle}"
+                                       Text="{Binding Data.Location, Converter={StaticResource ItemLocationToMappedStringConverter}}"
+                                       TextColor="{StaticResource ViralCrusherWhiteColor}" />
+
                             </StackLayout>
 
-                            
-                            <!--Item Attribute-->
+
+                            <!--  Item Attribute  -->
                             <StackLayout Style="{StaticResource HorizontalStack}">
 
                                 <Label Style="{StaticResource StatsBoldStyle}" Text="Attribute: " />
 
                                 <Label x:Name="AttributeLabel"
-                                   FontAttributes="Italic"
-                                   FontSize="Small"
-                                   LineBreakMode="WordWrap"
-                                   Style="{StaticResource ValueStyle}"
-                                   Text="{Binding Data.Attribute}"
-                                   TextColor="{StaticResource ViralCrusherWhiteColor}" />
+                                       FontAttributes="Italic"
+                                       FontSize="Small"
+                                       LineBreakMode="WordWrap"
+                                       Style="{StaticResource ValueStyle}"
+                                       Text="{Binding Data.Attribute}"
+                                       TextColor="{StaticResource ViralCrusherWhiteColor}" />
 
                             </StackLayout>
 
 
-                            <!--Item Description-->
+                            <!--  Item Description  -->
                             <StackLayout Style="{StaticResource HorizontalStack}">
 
                                 <Label Style="{StaticResource StatsBoldStyle}" Text="Description: " />
 
                                 <Label FontAttributes="Italic"
-                                   FontSize="Small"
-                                   LineBreakMode="WordWrap"
-                                   Style="{StaticResource ValueStyle}"
-                                   Text="{Binding Data.Description}"
-                                   TextColor="{StaticResource ViralCrusherWhiteColor}" />
+                                       FontSize="Small"
+                                       LineBreakMode="WordWrap"
+                                       Style="{StaticResource ValueStyle}"
+                                       Text="{Binding Data.Description}"
+                                       TextColor="{StaticResource ViralCrusherWhiteColor}" />
 
                             </StackLayout>
 
@@ -142,8 +141,8 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
 
-                        
-                        <!--Item Range-->
+
+                        <!--  Item Range  -->
                         <Frame Style="{StaticResource AttributeFrame}">
                             <StackLayout>
 
@@ -160,8 +159,8 @@
                             </StackLayout>
                         </Frame>
 
-                        
-                        <!--Item Value-->
+
+                        <!--  Item Value  -->
                         <Frame Grid.Row="0"
                                Grid.Column="1"
                                Style="{StaticResource AttributeFrame}">
@@ -178,8 +177,8 @@
                             </StackLayout>
                         </Frame>
 
-                        
-                        <!--Item Damage-->
+
+                        <!--  Item Damage  -->
                         <Frame Grid.Row="1"
                                Grid.Column="0"
                                Style="{StaticResource AttributeFrame}">
@@ -198,8 +197,8 @@
 
                     </Grid>
 
-                    
-                    <!--Edit and Delete buttons-->
+
+                    <!--  Edit and Delete buttons  -->
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition />

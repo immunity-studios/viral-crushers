@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage x:Class="Game.Views.ItemDeletePage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="Game.Views.ItemDeletePage"
-             xmlns:views="clr-namespace:Game.Views">
+             xmlns:views="clr-namespace:Game.Views"
+             mc:Ignorable="d">
 
 
     <ScrollView HorizontalOptions="CenterAndExpand">
-        
+
 
         <Grid>
             <Grid.RowDefinitions>
@@ -18,8 +18,8 @@
             </Grid.RowDefinitions>
 
             <views:CurvedLabelControl Margin="0,60,0,-20"
-                                      HorizontalOptions="Center"
                                       FramePadding="30,0,30,20"
+                                      HorizontalOptions="Center"
                                       Style="{StaticResource RedCurvedLabel}"
                                       Text="Delete" />
 
@@ -39,20 +39,20 @@
                             <ColumnDefinition Width="3.5*" />
                         </Grid.ColumnDefinitions>
 
-                        
-                        <!--Item Image-->
+
+                        <!--  Item Image  -->
                         <Frame Grid.RowSpan="3" Style="{StaticResource BorderFrame}">
                             <Frame Style="{StaticResource CharacterFrame}">
-                                <Image HeightRequest="100"
-                                       x:Name="ItemImage"
+                                <Image x:Name="ItemImage"
+                                       HeightRequest="100"
                                        Source="{Binding Data.ImageURI}"
                                        Style="{StaticResource ImageLargeStyle}"
                                        WidthRequest="100" />
                             </Frame>
                         </Frame>
 
-                        
-                        <!--Item Range-->
+
+                        <!--  Item Range  -->
                         <Label Grid.Column="1"
                                LineBreakMode="TailTruncation"
                                Style="{StaticResource WhiteMediumFontLabel}"
@@ -69,8 +69,8 @@
                                Text="{Binding Data.Range}"
                                VerticalOptions="Center" />
 
-                        
-                        <!--Item Value-->
+
+                        <!--  Item Value  -->
                         <Label Grid.Row="1"
                                Grid.Column="1"
                                LineBreakMode="TailTruncation"
@@ -90,8 +90,8 @@
                                Text="{Binding Data.Value}"
                                VerticalOptions="Center" />
 
-                        
-                        <!--Item Damage-->
+
+                        <!--  Item Damage  -->
                         <Label Grid.Row="2"
                                Grid.Column="1"
                                LineBreakMode="TailTruncation"
@@ -111,16 +111,16 @@
                                Text="{Binding Data.Damage}"
                                VerticalOptions="Center" />
 
-                        
-                        <!--Item Name--> 
+
+                        <!--  Item Name  -->
                         <Label Grid.Row="3"
                                HorizontalOptions="Center"
                                Style="{StaticResource UppercaseYellowLabel}"
                                Text="{Binding Data.Name}" />
                     </Grid>
 
-                    
-                    <!--Delete and cancel buttons-->
+
+                    <!--  Delete and cancel buttons  -->
                     <Grid x:Name="BottomButtonsRegionGrid">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition />
@@ -132,8 +132,9 @@
                                      Source="delete_button_140.png" />
 
                         <ImageButton Grid.Column="1"
-                                    Clicked="Cancel_Clicked"        Source="cancel_button_140.png" />
-                        
+                                     Clicked="Cancel_Clicked"
+                                     Source="cancel_button_140.png" />
+
                     </Grid>
 
                 </StackLayout>
