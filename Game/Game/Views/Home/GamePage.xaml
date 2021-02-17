@@ -2,9 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:views="clr-namespace:Game.Views"
-             x:Class="Game.Views.GamePage"
-             Title="Game"
-             >
+             x:Class="Game.Views.GamePage">
+
+
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="About" Clicked="AboutButton_Clicked" IconImageSource="tab_about.png"/>
     </ContentPage.ToolbarItems>
@@ -13,20 +13,33 @@
 
         <Grid x:Name="PageGrid">
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="2*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <Image
-                Source="icon_hospital.png"
-                Style="{StaticResource ImageLargeStyle}"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                />
+            <views:BackButtonControl HorizontalOptions="Start"
+                                     Margin="30,50,0,0"/>
 
-            <StackLayout Grid.Row="1" Style="{StaticResource CardImageTextBox}">
+            <!--<Image Grid.Row="1"
+                   Source="icon_hospital.png"
+                   Style="{StaticResource ImageLargeStyle}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                />-->
+            <Frame Grid.Row="1"
+                   CornerRadius="50"
+                   WidthRequest="220"
+                   HeightRequest="220"
+                   BackgroundColor="{StaticResource ViralCrusherGreenColor}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   HasShadow="True"/>
+                                      
+
+            <StackLayout Grid.Row="2" Style="{StaticResource CardImageTextBox}">
 
                 <ImageButton
                         Source="item.png"
@@ -38,7 +51,7 @@
                         Style="{StaticResource CenterMessageStyle}"/>
             </StackLayout>
 
-            <StackLayout Grid.Row="2" Style="{StaticResource CardImageTextBox}">
+            <StackLayout Grid.Row="3" Style="{StaticResource CardImageTextBox}">
 
                 <ImageButton
                         Source="item.png"
@@ -51,7 +64,7 @@
             </StackLayout>
 
 
-            <views:ToolbarMenuControl Grid.Row="3" />
+            <views:ToolbarMenuControl Grid.Row="4" />
         </Grid>
     </ContentPage.Content>
 </ContentPage>
