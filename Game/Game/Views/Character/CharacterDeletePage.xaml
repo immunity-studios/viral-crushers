@@ -16,8 +16,8 @@
             </Grid.RowDefinitions>
 
             <views:CurvedLabelControl Margin="0,60,0,-20"
-                                      HorizontalOptions="Center"
                                       FramePadding="30,0,30,20"
+                                      HorizontalOptions="Center"
                                       Style="{StaticResource RedCurvedLabel}"
                                       Text="Delete" />
 
@@ -41,8 +41,8 @@
 
                         <Frame Grid.RowSpan="4" Style="{StaticResource BorderFrame}">
                             <Frame Style="{StaticResource CharacterFrame}">
-                                <Image HeightRequest="100"
-                                       x:Name="CharacterImage"
+                                <Image x:Name="CharacterImage"
+                                       HeightRequest="100"
                                        Source="{Binding Data.ImageURI}"
                                        Style="{StaticResource ImageLargeStyle}"
                                        WidthRequest="100" />
@@ -134,14 +134,15 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
 
-                        
+
                         <ImageButton Grid.Column="0"
                                      Clicked="Delete_Clicked"
                                      Source="delete_button_140.png" />
 
                         <ImageButton Grid.Column="1"
-                            Clicked="Cancel_Clicked" Source="cancel_button_140.png" />
-                        
+                                     Clicked="Cancel_Clicked"
+                                     Source="cancel_button_140.png" />
+
                     </Grid>
 
                 </StackLayout>

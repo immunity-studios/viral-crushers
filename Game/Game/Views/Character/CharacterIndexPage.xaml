@@ -16,9 +16,8 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            
-            <views:BackButtonControl HorizontalOptions="Start"
-                                     Margin="30,30,0,0"/>
+
+            <views:BackButtonControl Margin="30,30,0,0" HorizontalOptions="Start" />
 
             <views:CurvedLabelControl Margin="0,60,0,-20"
                                       HorizontalOptions="Center"
@@ -26,8 +25,8 @@
                                       Text="Characters" />
 
             <ImageButton Margin="0,30,30,0"
-                         Style="{StaticResource AddImageButton}"
-                         Clicked="AddItem_Clicked"/>
+                         Clicked="AddItem_Clicked"
+                         Style="{StaticResource AddImageButton}" />
 
             <Frame Grid.Row="1" Margin="5,0,5,10">
                 <CollectionView x:Name="CharactersCollectionView"

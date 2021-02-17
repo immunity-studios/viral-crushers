@@ -4,14 +4,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:local_enum="clr-namespace:Game.Models"
+             xmlns:local_helpers="clr-namespace:Game.Helpers"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:Game.Views"
-             xmlns:local_helpers="clr-namespace:Game.Helpers"
              mc:Ignorable="d">
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <local_helpers:JobToMappedStringConverter x:Key="JobToMappedStringConverter"/>
+            <local_helpers:JobToMappedStringConverter x:Key="JobToMappedStringConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -26,8 +26,8 @@
                 </Grid.RowDefinitions>
 
                 <views:CurvedLabelControl Margin="0,60,0,-20"
-                                          HorizontalOptions="Center"
                                           FramePadding="30,0,30,20"
+                                          HorizontalOptions="Center"
                                           Style="{StaticResource RedCurvedLabel}"
                                           Text="Edit" />
 
@@ -57,7 +57,8 @@
                                 <Frame Padding="10" Style="{StaticResource CharacterFrame}">
 
                                     <Image x:Name="CharacterImage"
-                                        Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" />
+                                           Source="{Binding Data.ImageURI}"
+                                           Style="{StaticResource ImageLargeStyle}" />
                                 </Frame>
                             </Frame>
                             <StackLayout Grid.Column="1"
@@ -77,8 +78,8 @@
                                 <Label Style="{StaticResource LabelStyle}" Text="Job" />
 
                                 <Picker x:Name="JobPicker"
-                                        SelectedIndexChanged="OnJobPickerSelectedIndexChanged"
                                         ItemsSource="{x:Static local_enum:CharacterJobEnumHelper.GetListItem}"
+                                        SelectedIndexChanged="OnJobPickerSelectedIndexChanged"
                                         SelectedItem="{Binding Data.Job, Converter={StaticResource JobToMappedStringConverter}, Mode=TwoWay}" />
                             </StackLayout>
 

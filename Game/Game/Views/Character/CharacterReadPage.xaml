@@ -3,15 +3,15 @@
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:local_helpers="clr-namespace:Game.Helpers"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:Game.Views"
-             xmlns:local_helpers="clr-namespace:Game.Helpers"
              Title="{Binding Title}"
              mc:Ignorable="d">
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <local_helpers:JobToMappedStringConverter x:Key="JobToMappedStringConverter"/>
+            <local_helpers:JobToMappedStringConverter x:Key="JobToMappedStringConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -23,12 +23,11 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <views:BackButtonControl HorizontalOptions="Start"
-                                     Margin="30,30,0,0"/>
+            <views:BackButtonControl Margin="30,30,0,0" HorizontalOptions="Start" />
 
             <views:CurvedLabelControl Margin="0,60,0,-20"
-                                      HorizontalOptions="Center"
                                       FramePadding="30,0,30,20"
+                                      HorizontalOptions="Center"
                                       Style="{StaticResource RedCurvedLabel}"
                                       Text="Info" />
 
@@ -45,10 +44,10 @@
 
                         <Frame Style="{StaticResource BorderFrame}" VerticalOptions="CenterAndExpand">
                             <Frame Style="{StaticResource CharacterFrame}">
-                                <Image HeightRequest="100"
+                                <Image x:Name="CharacterImage"
+                                       HeightRequest="100"
                                        Source="{Binding Data.ImageURI}"
-                                       WidthRequest="100"
-                                       x:Name="CharacterImage"/>
+                                       WidthRequest="100" />
                             </Frame>
                         </Frame>
 
@@ -162,7 +161,7 @@
                                              Style="{StaticResource StatsProgressBar}" />
                             </StackLayout>
                         </Frame>
-                        
+
                         <Frame Grid.Row="3"
                                Grid.Column="0"
                                Style="{StaticResource AttributeFrame}">
