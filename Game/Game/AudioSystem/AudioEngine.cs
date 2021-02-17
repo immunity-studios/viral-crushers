@@ -49,6 +49,16 @@ namespace Game.AudioSystem
 
         }
 
+        public bool LoadAudio()
+        {
+            foreach (var audioClip in AudioResources.AudioClips)
+            {
+                audioClip.Load();
+            }
+
+            return true;
+        }
+
         /// <summary>
         /// Method that should be called when an audio event happens in the application.
         /// </summary>
