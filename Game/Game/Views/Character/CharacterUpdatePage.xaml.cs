@@ -41,7 +41,8 @@ namespace Game.Views
             originalCharacterModel = new CharacterModel(data.Data);
 
             // Match Character Image with Character Type
-            JobPicker.SelectedItem = data.Data.Job.ToString();
+            JobPicker.SelectedItem = CharacterJobEnumHelper.ConvertEnumToMappedString(data.Data.Job);
+
         }
 
         /// <summary>

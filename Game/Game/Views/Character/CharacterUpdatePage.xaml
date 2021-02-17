@@ -6,7 +6,14 @@
              xmlns:local_enum="clr-namespace:Game.Models"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:Game.Views"
+             xmlns:local_helpers="clr-namespace:Game.Helpers"
              mc:Ignorable="d">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local_helpers:JobToMappedStringConverter x:Key="JobToMappedStringConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <ContentPage.Content>
 
@@ -72,7 +79,7 @@
                                 <Picker x:Name="JobPicker"
                                         SelectedIndexChanged="OnJobPickerSelectedIndexChanged"
                                         ItemsSource="{x:Static local_enum:CharacterJobEnumHelper.GetListItem}"
-                                        SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnumConverter}, Mode=TwoWay}" />
+                                        SelectedItem="{Binding Data.Job, Converter={StaticResource JobToMappedStringConverter}, Mode=TwoWay}" />
                             </StackLayout>
 
                             <StackLayout Grid.Row="2"
