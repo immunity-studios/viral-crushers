@@ -75,7 +75,9 @@ namespace Game.AudioSystem
                 case AudioEventEnum.Button_GameStart:
                     AudioResources.MENU_CLICK_SOUND.Play();
                     break;
-                
+                case AudioEventEnum.MenuStart:
+                    AudioResources.MX_MENU_SONG1_FULL_LOOP.Play();
+                    break;
                 default:
                     // event was not found, so return false
                     return false;
