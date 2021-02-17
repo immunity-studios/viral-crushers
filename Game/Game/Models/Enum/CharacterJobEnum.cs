@@ -140,8 +140,8 @@ namespace Game.Models
             {"Doctor", CharacterJobEnum.Doctor },
             {"Teacher", CharacterJobEnum.Teacher },
             {"Athlete", CharacterJobEnum.Athlete },
-            {"PoliceOfficer", CharacterJobEnum.PoliceOfficer },
-            {"CollegeStudent", CharacterJobEnum.CollegeStudent },
+            {"Police Officer", CharacterJobEnum.PoliceOfficer },
+            {"College Student", CharacterJobEnum.CollegeStudent },
             {"Firefighter", CharacterJobEnum.Firefighter },
             {"Unknown", CharacterJobEnum.Unknown }
         };
