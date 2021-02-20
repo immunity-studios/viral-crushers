@@ -25,7 +25,7 @@
                                       Text="Characters" />
 
             <ImageButton Margin="0,30,30,0"
-                         Clicked="AddItem_Clicked"
+                         Clicked="AddCharacter_Clicked"
                          Style="{StaticResource AddImageButton}" />
 
             <Frame Grid.Row="1" Margin="5,0,5,10">
