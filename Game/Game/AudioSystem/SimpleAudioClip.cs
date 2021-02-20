@@ -20,6 +20,11 @@ namespace Game.AudioSystem
 
         protected override bool Setup()
         {
+            // Check if we're in the Test Build, which uses DotNet standard.
+            // SimpleAudioPlayer only works in platform-specific builds.
+            #if NETSTANDARD1_0
+                return false;
+            #endif
             // Create sound player
             simpleAudioPlayer = CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
             return true;
