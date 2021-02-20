@@ -93,6 +93,23 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+        
+        [Test]
+        public void CharacterCreatePage_Save_Clicked_Non_Empty_String_Should_Pass()
+        {
+            // Arrange
+            page.ViewModel.Data.Name = "TestName";
+            page.ViewModel.Data.Job = CharacterJobEnum.Athlete;
+
+            // Act
+            page.Save_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.NotNull(page.ViewModel.Data.ImageURI);
+            Assert.AreEqual("icon_athlete.png", page.ViewModel.Data.ImageURI);
+        }
 
         [Test]
         public void CharacterCreatePage_OnBackButtonPressed_Valid_Should_Pass()
