@@ -115,7 +115,7 @@
                                 <Picker x:Name="LocationPicker"
                                         Grid.Row="3"
                                         Grid.Column="1"
-                                        ItemsSource="{x:Static local:ItemLocationEnumHelper.GetListCharacter}"
+                                        ItemsSource="{x:Static local_enum:ItemLocationEnumHelper.GetListCharacter}"
                                         SelectedItem="{Binding Data.Location, Converter={StaticResource ItemLocationToMappedStringConverter}, Mode=TwoWay}" />
 
                             </StackLayout>
@@ -131,7 +131,7 @@
                                 <Picker x:Name="AttributePicker"
                                         Grid.Row="4"
                                         Grid.Column="1"
-                                        ItemsSource="{x:Static local:AttributeEnumHelper.GetListCharacter}"
+                                        ItemsSource="{x:Static local_enum:AttributeEnumHelper.GetListCharacter}"
                                         SelectedItem="{Binding Data.Attribute, Converter={StaticResource StringEnum}, Mode=TwoWay}" />
 
                             </StackLayout>
