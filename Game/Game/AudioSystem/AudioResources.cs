@@ -60,7 +60,9 @@ namespace Game.AudioSystem
         public static List<BaseAudioClip> AudioClips = new List<BaseAudioClip>() {
             MENU_CLICK_SOUND,
             MX_MENU_SONG1_FULL_LOOP,
-            MX_BATTLE_LOOP
+            MX_BATTLE_LOOP,
+            MX_MENU_FULL,
+            MX_BATTLE_FULL
         };
 
     }
