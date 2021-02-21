@@ -12,13 +12,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="AudioFiles\Music\Battle\BATTLE_142-BPM-FULL.ogg" />
     <None Remove="AudioFiles\Music\Battle\BATTLE_142-BPM-LOOP.wav" />
+    <None Remove="AudioFiles\Music\Menu\MENU_116-BPM-FULL.ogg" />
     <None Remove="AudioFiles\Music\Menu\MENU_116-BPM-LOOP.wav" />
     <None Remove="AudioFiles\SFX\Menu\UI_CLICK_1.wav" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="AudioFiles\Music\Battle\BATTLE_142-BPM-FULL.ogg" />
     <EmbeddedResource Include="AudioFiles\Music\Battle\BATTLE_142-BPM-LOOP.wav" />
+    <EmbeddedResource Include="AudioFiles\Music\Menu\MENU_116-BPM-FULL.ogg" />
     <EmbeddedResource Include="AudioFiles\Music\Menu\MENU_116-BPM-LOOP.wav" />
     <EmbeddedResource Include="AudioFiles\Music\Menu\TestMX1_Stinger_Bells.wav" />
     <EmbeddedResource Include="AudioFiles\Music\Menu\VC-OST_Song1_Full_Loop.mp3" />
