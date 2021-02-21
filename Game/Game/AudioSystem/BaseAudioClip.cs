@@ -17,15 +17,25 @@ namespace Game.AudioSystem
     public abstract class BaseAudioClip
     {
         /// <summary>
-        /// Abstract method that must setup the audio clip within 
-        /// the user's chosen audio API implementation.
-        /// Called in the first line of the BaseAudioClip constructor,
-        /// before other properties of the audio clip are set.
+        /// Abstract method that is called in the first line of the BaseAudioClip constructor.
+        /// REQUIRED: Implementation must try to initialize the underlying audio API
+        /// REQUIRED: Implementation must set the IsSetup bool flag to 'true' if initialization is successful
         /// </summary>
         /// <returns>
         /// true, or false if setup fails
         /// </returns>
         protected abstract bool Setup();
+
+        /// <summary>
+        /// Bool flag that represents whether the inheriting class' Setup() method
+        /// implementation executed successfully.
+        /// Default value = false
+        /// REQUIRED: Must be set to 'true' in the inheriting class' Setup method
+        /// implementation if setup succeeds.
+        /// REQUIRED: In implementation class methods, IsSetup must = 'true' before
+        /// any calls to the underlying audio API are made.
+        /// </summary>
+        public bool IsSetup { get; protected set; } = false;
 
         /// <summary>
         /// Abstract method which should start playback of the audio asset 
