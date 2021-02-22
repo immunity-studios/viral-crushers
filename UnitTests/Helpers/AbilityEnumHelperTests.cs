@@ -32,10 +32,10 @@ namespace UnitTests.Helpers
             // Arrange
 
             // Act
-            var result = AbilityEnumHelper.GetListFireFighter;
+            var result = AbilityEnumHelper.GetListFighter;
 
             // Assert
-            Assert.AreEqual(5, result.Count());
+            Assert.AreEqual(4, result.Count());
         }
 
         [Test]
@@ -44,7 +44,7 @@ namespace UnitTests.Helpers
             // Arrange
 
             // Act
-            var result = AbilityEnumHelper.GetListTeacher;
+            var result = AbilityEnumHelper.GetListCleric;
 
             // Assert
             Assert.AreEqual(5, result.Count());
