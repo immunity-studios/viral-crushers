@@ -69,6 +69,19 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void GamePage_VillageButton_Clicked_Default_Should_Pass()
+        {
+            // Arrange
+            // Act
+            page.VillageButton_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
         public void GamePage_AutobattleButton_Clicked_Default_Should_Pass()
         {
             // Arrange
