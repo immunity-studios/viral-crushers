@@ -42,21 +42,23 @@ namespace Game.AudioSystem
         #endregion Singleton
 
         /// <summary>
-        /// Audio engine constructor
+        /// Audio engine constructor which initializes AudioResources
         /// </summary>
         public AudioEngine()
         {
-
+            audioResources = new AudioResources();
         }
 
         public bool LoadAudio()
         {
-            foreach (var audioClip in AudioResources.AudioClips)
+            foreach (var audioClip in audioResources.AudioClips)
             {
                 bool loaded = audioClip.Load();
+                //Console.WriteLine(loaded? "Loaded" : "Failed to load" + " audio file with path " + audioClip.Filepath);
             }
 
             return true;
+
         }
 
         /// <summary>
@@ -74,14 +76,14 @@ namespace Game.AudioSystem
             switch (audioEvent)
             {
                 case AudioEventEnum.Button_GameStart:
-                    AudioResources.MENU_CLICK_SOUND.Play();
+                    audioResources.MENU_CLICK_SOUND.Play();
                     break;
                 case AudioEventEnum.MenuStart:
-                    AudioResources.MX_MENU_SONG1_FULL_LOOP.Play();
+                    audioResources.MX_MENU_FULL.Play(); 
                     break;
                 case AudioEventEnum.BattleStart:
-                    AudioResources.MX_MENU_SONG1_FULL_LOOP.Stop();
-                    AudioResources.MX_BATTLE_LOOP.Play();
+                    audioResources.MX_MENU_FULL.Stop();
+                    audioResources.MX_BATTLE_FULL.Play();
                     break;
                 default:
                     return false; // event was not found, so return false
@@ -105,7 +107,7 @@ namespace Game.AudioSystem
             {
                 case AudioBusEnum.Master:
                     // loop through each audio clip and scale its volume based on provided value
-                    foreach(var audioClip in AudioResources.AudioClips)
+                    foreach(var audioClip in audioResources.AudioClips)
                     {
                         audioClip.SetVolume(volume);
                     }
@@ -113,5 +115,7 @@ namespace Game.AudioSystem
             }
             return true;
         }
+
+        private AudioResources audioResources;
     }
 }

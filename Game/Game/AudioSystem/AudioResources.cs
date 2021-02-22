@@ -5,16 +5,28 @@ using System.Text;
 namespace Game.AudioSystem
 {
     /// <summary>
-    /// Collection of game sounds that are loaded at compilation time. 
-    /// TODO trigger menu click sounds via an inherited menu class
-    /// with preset button handlers (get rid of globals)
+    /// Class that manages the game sounds that are used by the AudioEngine 
     /// </summary>
     public class AudioResources
     {
         /// <summary>
+        /// Constructor which adds all BaseAudioClip members to the AudioClips list
+        /// </summary>
+        public AudioResources()
+        {
+            AudioClips = new List<BaseAudioClip>() {
+                MENU_CLICK_SOUND,
+                MX_MENU_SONG1_FULL_LOOP,
+                MX_BATTLE_LOOP,
+                MX_MENU_FULL,
+                MX_BATTLE_FULL
+            };
+        }
+
+        /// <summary>
         /// Default menu click sound
         /// </summary>
-        public static BaseAudioClip MENU_CLICK_SOUND = new SimpleAudioClip(
+        public BaseAudioClip MENU_CLICK_SOUND = new SimpleAudioClip(
             filePath: "Game.AudioFiles.SFX.Menu.UI_CLICK_1.wav",
             //volumeMax: 1,
             loop: false
@@ -23,15 +35,15 @@ namespace Game.AudioSystem
         /// <summary>
         /// Main menu music loop
         /// </summary>
-        public static BaseAudioClip MX_MENU_SONG1_FULL_LOOP = new SimpleAudioClip(
+        public BaseAudioClip MX_MENU_SONG1_FULL_LOOP = new SimpleAudioClip(
            filePath: "Game.AudioFiles.Music.Menu.MENU_116-BPM-LOOP.wav",
            loop: true
         );
 
         /// <summary>
-        /// Main menu music loop
+        /// Long version of the Main Menu Loop
         /// </summary>
-        public static BaseAudioClip MX_MENU_FULL= new SimpleAudioClip(
+        public BaseAudioClip MX_MENU_FULL= new SimpleAudioClip(
            filePath: "Game.AudioFiles.Music.Menu.MENU_116-BPM-FULL.ogg",
            loop: true
         );
@@ -40,30 +52,24 @@ namespace Game.AudioSystem
         /// <summary>
         /// Main battle music loop
         /// </summary>
-        public static BaseAudioClip MX_BATTLE_LOOP = new SimpleAudioClip(
+        public BaseAudioClip MX_BATTLE_LOOP = new SimpleAudioClip(
            filePath: "Game.AudioFiles.Music.Battle.BATTLE_142-BPM-LOOP.wav",
            loop: true
         );
 
         /// <summary>
-        /// Main battle music loop
+        /// Long version of the Battle music loop
         /// </summary>
-        public static BaseAudioClip MX_BATTLE_FULL = new SimpleAudioClip(
+        public BaseAudioClip MX_BATTLE_FULL = new SimpleAudioClip(
            filePath: "Game.AudioFiles.Music.Battle.BATTLE_142-BPM-FULL.ogg",
            loop: true
         );
 
         /// <summary>
-        /// All AudioClips should be added to this list for use in loading
+        /// All AudioClips are added to this list for use in loading
         /// and setting up volume busses
         /// </summary>
-        public static List<BaseAudioClip> AudioClips = new List<BaseAudioClip>() {
-            MENU_CLICK_SOUND,
-            MX_MENU_SONG1_FULL_LOOP,
-            MX_BATTLE_LOOP,
-            MX_MENU_FULL,
-            MX_BATTLE_FULL
-        };
+        public List<BaseAudioClip> AudioClips;
 
     }
 }
