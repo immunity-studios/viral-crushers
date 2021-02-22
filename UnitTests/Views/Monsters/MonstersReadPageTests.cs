@@ -95,74 +95,74 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
-        [Test]
-        public void MonsterReadPage_GetItemToDisplay_Valid_Should_Pass()
-        {
+        //[Test]
+        //public void MonsterReadPage_GetItemToDisplay_Valid_Should_Pass()
+        //{
             // Arrange
 
             // Act
-            page.GetItemToDisplay();
+        //    page.GetItemToDisplay();
 
             // Reset
 
             // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void MonsterReadPage_GetItemToDisplay_Valid_Popup_Should_Have_Clickable_Button()
-        {
+        //[Test]
+        //public void MonsterReadPage_GetItemToDisplay_Valid_Popup_Should_Have_Clickable_Button()
+        //{
             // Arrange
-            page.ViewModel.Data.UniqueItem = ItemIndexViewModel.Instance.GetDefaultItemId(ItemLocationEnum.Head);
+        //    page.ViewModel.Data.UniqueItem = ItemIndexViewModel.Instance.GetDefaultItemId(ItemLocationEnum.Head);
 
             // Act
-            page.GetItemToDisplay();
+        //    page.GetItemToDisplay();
 
             // Reset
 
             // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void MonsterReadPage_GetItemToDisplay_Valid_Click_Button_Should_Open_Popup()
-        {
+        //[Test]
+        //public void MonsterReadPage_GetItemToDisplay_Valid_Click_Button_Should_Open_Popup()
+        //{
             // Arrange
-            page.ViewModel.Data.UniqueItem = ItemIndexViewModel.Instance.GetDefaultItemId(ItemLocationEnum.Head);
+        //    page.ViewModel.Data.UniqueItem = ItemIndexViewModel.Instance.GetDefaultItemId(ItemLocationEnum.Head);
 
-            var stackView = page.GetItemToDisplay();
+        //    var stackView = page.GetItemToDisplay();
 
-            ImageButton imageButtonView = new ImageButton();
+        //    ImageButton imageButtonView = new ImageButton();
 
-            foreach (View i in ((StackLayout)stackView).Children.Where(x => x.GetType() == typeof(ImageButton))) 
-            {
-                imageButtonView = (ImageButton)i;
-            }
+        //    foreach (View i in ((StackLayout)stackView).Children.Where(x => x.GetType() == typeof(ImageButton))) 
+        //    {
+        //        imageButtonView = (ImageButton)i;
+        //    }
 
             // Act
-            imageButtonView.PerformClick();
+        //    imageButtonView.PerformClick();
 
             // Reset
 
             // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void MonsterReadPage_ShowPopup_Valid_Should_Pass()
-        {
+        //[Test]
+        //public void MonsterReadPage_ShowPopup_Valid_Should_Pass()
+        //{
             // Arrange
 
             // Act
-            page.ShowPopup(new ItemModel());
+        //    page.ShowPopup(new ItemModel());
 
             // Reset
 
             // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
+/*        [Test]
         public void MonsterReadPage_ClosePopup_Clicked_Default_Should_Pass()
         {
             // Arrange
@@ -174,9 +174,9 @@ namespace UnitTests.Views
 
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        }*/
 
-        [Test]
+/*        [Test]
         public void MonsterReadPage_AddItemsToDisplay_With_Data_Should_Remove_And_Pass()
         {
             // Arrange
@@ -194,9 +194,9 @@ namespace UnitTests.Views
 
             // Assert
             Assert.AreEqual(1, itemBox.Children.Count()); // Got to here, so it happened...
-        }
+        }*/
 
-        [Test]
+/*        [Test]
         public async Task MonsterReadPage_GetItemToDisplay_With_Item_Should_Pass()
         {
             // Arrange
@@ -249,7 +249,7 @@ namespace UnitTests.Views
 
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        }*/
 
     }
 }
