@@ -3,7 +3,6 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using Game.Engine.EngineKoenig;
 using Game.Models;
 using Game.ViewModels;
 using Game.Engine.EngineInterfaces;
@@ -27,6 +26,11 @@ namespace Game.Views
 			InitializeComponent ();
 		}
 
+		/// <summary>
+		/// Defines what happens when the AutoBattleButton is clicked.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		public async void AutobattleButton_Clicked(object sender, EventArgs e)
 		{
 			// Call into Auto Battle from here to do the Battle...
@@ -41,9 +45,12 @@ namespace Game.Views
 
 			var CharacterPlayer = new PlayerInfoModel(Character);
 
+			// Turn on the Koenig version for now...
+			BattleEngineViewModel.Instance.SetBattleEngineToKoenig();
+
 			BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
 
-			await AutoBattle.RunAutoBattle();
+			await BattleEngineViewModel.Instance.AutoBattleEngine.RunAutoBattle();
 			
 			var BattleMessage = string.Format("Done {0} Rounds", AutoBattle.Battle.EngineSettings.BattleScore.RoundCount);
 
