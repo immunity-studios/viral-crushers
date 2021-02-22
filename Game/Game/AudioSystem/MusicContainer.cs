@@ -15,7 +15,7 @@ namespace Game.AudioSystem
         /// <param name="layers">
         /// A list of looping audio files that should be played in sync.
         /// </param>
-        public MusicContainer(List<AudioClip> layers)
+        public MusicContainer(List<BaseAudioClip> layers)
         {
             this.layers = layers;
         }
@@ -25,7 +25,7 @@ namespace Game.AudioSystem
         /// </summary>
         public void Play()
         {
-            foreach (AudioClip clip in layers)
+            foreach (BaseAudioClip clip in layers)
             {
                 clip.Play();
             }
@@ -34,7 +34,7 @@ namespace Game.AudioSystem
         /// <summary>
         /// List of audio clips that play in sync.
         /// </summary>
-        private List<AudioClip> layers;
+        private List<BaseAudioClip> layers;
 
         // TODO
         // public void Stop();
