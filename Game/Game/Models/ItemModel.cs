@@ -124,7 +124,10 @@ namespace Game.Models
                             Attribute.ToString() +
                             "+" + Value + " , " +
                             "Damage : " + Damage + " , " +
-                            "Range : " + Range;
+                            "Range : " + Range + " , " + 
+                            "IsComsumable : " + IsConsumable +  
+                            "Count : " + Count + 
+                            "ItemType : " + ItemType.ToString();
 
             return myReturn.Trim();
         }

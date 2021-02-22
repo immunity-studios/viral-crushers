@@ -15,10 +15,11 @@ namespace UnitTests.Helpers
             // Arrange
 
             // Act
-            var result = CharacterJobEnumHelper.GetJobList;
+            //var result = CharacterJobEnumHelper.GetJobList;
+            var result = CharacterJobEnumHelper.GetListItem;
 
             // Assert
-            Assert.AreEqual(2,result.Count());
+            Assert.AreEqual(6,result.Count());
 
             // Assert
         }

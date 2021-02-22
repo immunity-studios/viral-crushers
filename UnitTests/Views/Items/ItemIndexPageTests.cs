@@ -90,7 +90,7 @@ namespace UnitTests.Views
             var selectedItemChangedEventArgs = new SelectedItemChangedEventArgs(selectedItem, 0);
 
             // Act
-            page.OnItemSelected(null, selectedItemChangedEventArgs);
+            //page.OnItemSelected(null, selectedItemChangedEventArgs);
 
             // Reset
 
@@ -106,7 +106,7 @@ namespace UnitTests.Views
             var selectedItemChangedEventArgs = new SelectedItemChangedEventArgs(null, 0);
 
             // Act
-            page.OnItemSelected(null, selectedItemChangedEventArgs);
+            //page.OnItemSelected(null, selectedItemChangedEventArgs);
 
             // Reset
 

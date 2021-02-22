@@ -120,6 +120,11 @@ namespace UnitTests.Models
         {
             // Arrange
             var data  = new ItemModel();
+            data.Name = "Test Item";
+            data.Description = "Test Item Description";
+            data.Location = ItemLocationEnum.PrimaryHand;
+            data.Attribute = AttributeEnum.Attack;
+            data.ItemType = ItemTypeEnum.BoxOfTissues;
 
             // Act
             var result = data.FormatOutput();
@@ -127,7 +132,8 @@ namespace UnitTests.Models
             // Reset
 
             // Assert 
-            Assert.AreEqual("This is an Item , Item Description for Unknown with Unknown+0 , Damage : 0 , Range : 0", result);
+            //Assert.AreEqual("This is an Item , Item Description for Unknown with Unknown+0 , Damage : 0 , Range : 0", result);
+            Assert.AreEqual("Test Item , Test Item Description for PrimaryHand with Attack+0 , Damage : 0 , Range : 0, IsConsumable : true, Count : 10, ItemType : BoxOfTissues", result);
         }
 
         [Test]

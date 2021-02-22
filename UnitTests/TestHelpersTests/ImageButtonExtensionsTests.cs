@@ -82,17 +82,17 @@ namespace UnitTests.TestHelpers
 
             page.ViewModel.Data.UniqueItem = ItemIndexViewModel.Instance.GetDefaultItemId(ItemLocationEnum.Head);
 
-            var stackView = page.GetItemToDisplay();
+            //var stackView = page.GetItemToDisplay();
 
-            ImageButton imageButtonView = new ImageButton();
+            //ImageButton imageButtonView = new ImageButton();
 
-            foreach (View i in ((StackLayout)stackView).Children.Where(x => x.GetType() == typeof(ImageButton)))
-            {
-                imageButtonView = (ImageButton)i;
-            }
+            //foreach (View i in ((StackLayout)stackView).Children.Where(x => x.GetType() == typeof(ImageButton)))
+            //{
+            //    imageButtonView = (ImageButton)i;
+            //}
 
-            // Act
-            imageButtonView.PerformClick();
+            //// Act
+            //imageButtonView.PerformClick();
 
             // Reset
 

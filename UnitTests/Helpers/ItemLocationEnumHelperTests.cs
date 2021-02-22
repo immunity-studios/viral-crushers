@@ -270,7 +270,8 @@ namespace UnitTests.Helpers
         [Test]
         public void ItemLocationEnumConvert_String_Should_Pass()
         {
-            var myConverter = new ItemLocationEnumConverter();
+            //var myConverter = new ItemLocationEnumConverter();
+            var myConverter = new ItemLocationToMappedStringConverter();
 
             var myObject = "Feet";
             var Result = myConverter.Convert(myObject, typeof(ItemLocationEnum), null, null);
@@ -282,7 +283,8 @@ namespace UnitTests.Helpers
         [Test]
         public void ItemLocationEnumConvert_Enum_Should_Pass()
         {
-            var myConverter = new ItemLocationEnumConverter();
+            //var myConverter = new ItemLocationEnumConverter();
+            var myConverter = new ItemLocationToMappedStringConverter();
 
             var myObject = ItemLocationEnum.Feet;
             var Result = myConverter.Convert(myObject, null, null, null);
@@ -294,7 +296,8 @@ namespace UnitTests.Helpers
         [Test]
         public void ItemLocationEnumConvert_Other_Should_Skip()
         {
-            var myConverter = new ItemLocationEnumConverter();
+            //var myConverter = new ItemLocationEnumConverter();
+            var myConverter = new ItemLocationToMappedStringConverter();
 
             var myObject = new ItemModel();
             var Result = myConverter.Convert(myObject, null, null, null);
@@ -332,7 +335,8 @@ namespace UnitTests.Helpers
         [Test]
         public void ItemLocationEnumConvertBack_String_Should_Pass()
         {
-            var myConverter = new ItemLocationEnumConverter();
+            //var myConverter = new ItemLocationEnumConverter();
+            var myConverter = new ItemLocationToMappedStringConverter();
 
             var myObject = "Feet";
             var Result = myConverter.ConvertBack(myObject, typeof(ItemLocationEnum), null, null);
@@ -344,7 +348,8 @@ namespace UnitTests.Helpers
         [Test]
         public void ItemLocationEnumConvertBack_Enum_Should_Skip()
         {
-            var myConverter = new ItemLocationEnumConverter();
+            //var myConverter = new ItemLocationEnumConverter();
+            var myConverter = new ItemLocationToMappedStringConverter();
 
             var myObject = ItemLocationEnum.Feet;
             var Result = myConverter.ConvertBack(myObject, null, null, null);
@@ -356,7 +361,8 @@ namespace UnitTests.Helpers
         [Test]
         public void ItemLocationEnumConvertBack_Other_Should_Skip()
         {
-            var myConverter = new ItemLocationEnumConverter();
+            //var myConverter = new ItemLocationEnumConverter();
+            var myConverter = new ItemLocationToMappedStringConverter();
 
             var myObject = new ItemModel();
             var Result = myConverter.ConvertBack(myObject, null, null, null);
@@ -368,7 +374,8 @@ namespace UnitTests.Helpers
         [Test]
         public void ItemLocationEnumConvertBack_Int_Should_Pass()
         {
-            var myConverter = new ItemLocationEnumConverter();
+            //var myConverter = new ItemLocationEnumConverter();
+            var myConverter = new ItemLocationToMappedStringConverter();
 
             int myObject = 40;
             var Result = myConverter.ConvertBack(myObject, typeof(ItemLocationEnum), null, null);
@@ -386,7 +393,8 @@ namespace UnitTests.Helpers
             // Arrange
 
             // Act
-            var result = ItemLocationEnumHelper.ConvertMessageToEnum("Feet");
+            //var result = ItemLocationEnumHelper.ConvertMessageToEnum("Feet");
+            var result = ItemLocationEnumHelper.ConvertStringToEnum("Feet");
 
             // Assert
             Assert.AreEqual(ItemLocationEnum.Feet, result);
@@ -398,7 +406,8 @@ namespace UnitTests.Helpers
             // Arrange
 
             // Act
-            var result = ItemLocationEnumHelper.ConvertMessageToEnum("bogus");
+            //var result = ItemLocationEnumHelper.ConvertMessageToEnum("bogus");
+            var result = ItemLocationEnumHelper.ConvertStringToEnum("Feet");
 
             // Assert
             Assert.AreEqual(ItemLocationEnum.Unknown, result);
@@ -413,7 +422,8 @@ namespace UnitTests.Helpers
             // Arrange
 
             // Act
-            var result = ItemLocationEnumHelper.GetListMessageCharacter;
+            //var result = ItemLocationEnumHelper.GetListMessageCharacter;
+            var result = ItemLocationEnumHelper.GetListCharacter;
 
             // Assert
             Assert.AreEqual(7, result.Count());
