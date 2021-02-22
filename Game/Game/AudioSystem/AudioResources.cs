@@ -5,14 +5,45 @@ using System.Text;
 namespace Game.AudioSystem
 {
     /// <summary>
-    /// Class that manages the game sounds that are used by the AudioEngine 
+    /// Class that manages the game sounds that are used by the AudioEngine
     /// </summary>
     public class AudioResources
     {
+
+        #region Singleton
+
+        // Make AudioResources a singleton so it only exists one time.
+        private static volatile AudioResources instance;
+        private static readonly object syncRoot = new Object();
+
+        /// <summary>
+        /// Returns the singleton instance of the audio resources
+        /// </summary>
+        public static AudioResources Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    lock (syncRoot)
+                    {
+                        if (instance == null)
+                        {
+                            instance = new AudioResources();
+                        }
+                    }
+                }
+
+                return instance;
+            }
+        }
+
+        #endregion Singleton
+
         /// <summary>
         /// Constructor which adds all BaseAudioClip members to the AudioClips list
         /// </summary>
-        public AudioResources()
+        private AudioResources()
         {
             AudioClips = new List<BaseAudioClip>() {
                 MENU_CLICK_SOUND,

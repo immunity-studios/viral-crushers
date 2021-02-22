@@ -46,7 +46,6 @@ namespace Game.AudioSystem
         /// </summary>
         public AudioEngine()
         {
-            audioResources = new AudioResources();
             busVolumes = new Dictionary<AudioBusEnum, double>();
             // Set starting volume of all audio buses to 0
             double startingVolume = 0;
@@ -58,7 +57,7 @@ namespace Game.AudioSystem
 
         public bool LoadAudio()
         {
-            foreach (var audioClip in audioResources.AudioClips)
+            foreach (var audioClip in AudioResources.Instance.AudioClips)
             {
                 bool loaded = audioClip.Load();
                 //Console.WriteLine(loaded? "Loaded" : "Failed to load" + " audio file with path " + audioClip.Filepath);
@@ -82,16 +81,16 @@ namespace Game.AudioSystem
             switch (audioEvent)
             {
                 case AudioEventEnum.Button_GameStart:
-                    audioResources.MENU_CLICK_SOUND.Play();
+                    AudioResources.Instance.MENU_CLICK_SOUND.Play();
                     break;
 
                 case AudioEventEnum.MenuStart:
-                    audioResources.MX_MENU_FULL.Play(); 
+                    AudioResources.Instance.MX_MENU_FULL.Play(); 
                     break;
                 
                 case AudioEventEnum.BattleStart:
-                    audioResources.MX_MENU_FULL.Stop();
-                    audioResources.MX_BATTLE_FULL.Play();
+                    AudioResources.Instance.MX_MENU_FULL.Stop();
+                    AudioResources.Instance.MX_BATTLE_FULL.Play();
                     break;
                 
                 default:
@@ -116,7 +115,7 @@ namespace Game.AudioSystem
             {
                 case AudioBusEnum.Master:
                     // loop through each audio clip and scale its volume based on provided value
-                    foreach(var audioClip in audioResources.AudioClips)
+                    foreach(var audioClip in AudioResources.Instance.AudioClips)
                     {
                         audioClip.SetVolume(volume);
                     }
@@ -138,8 +137,6 @@ namespace Game.AudioSystem
         {
             return busVolumes[bus];
         }
-
-        private AudioResources audioResources;
 
         /// <summary>
         /// Dictionary containing the volumes of the audio buses.
