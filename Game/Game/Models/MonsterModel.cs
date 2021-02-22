@@ -20,7 +20,7 @@ namespace Game.Models
         {
             PlayerType = PlayerTypeEnum.Monster;
             Guid = Id;
-            Name = "";
+            Name = "Bubbletooth";
             Description = "";
             Attack = 1;
             Difficulty = DifficultyEnum.Average;
