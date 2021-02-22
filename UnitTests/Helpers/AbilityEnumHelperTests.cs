@@ -35,7 +35,7 @@ namespace UnitTests.Helpers
             var result = AbilityEnumHelper.GetListFireFighter;
 
             // Assert
-            Assert.AreEqual(4, result.Count());
+            Assert.AreEqual(5, result.Count());
         }
 
         [Test]
