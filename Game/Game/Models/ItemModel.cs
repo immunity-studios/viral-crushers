@@ -125,8 +125,8 @@ namespace Game.Models
                             "+" + Value + " , " +
                             "Damage : " + Damage + " , " +
                             "Range : " + Range + " , " + 
-                            "IsComsumable : " + IsConsumable +  
-                            "Count : " + Count + 
+                            "IsConsumable : " + IsConsumable + " , " +
+                            "Count : " + Count + " , " +
                             "ItemType : " + ItemType.ToString();
 
             return myReturn.Trim();

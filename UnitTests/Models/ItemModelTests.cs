@@ -55,6 +55,9 @@ namespace UnitTests.Models
             Assert.IsNotNull(result.Damage);
             Assert.IsNotNull(result.Attribute);
             Assert.IsNotNull(result.Location);
+            Assert.IsNotNull(result.IsConsumable);
+            Assert.IsNotNull(result.Count);
+            Assert.IsNotNull(result.ItemType);
         }
 
         [Test]
@@ -69,6 +72,7 @@ namespace UnitTests.Models
             result.Damage = 8;
             result.Attribute = AttributeEnum.Attack;
             result.Location = ItemLocationEnum.Feet;
+            result.ItemType = ItemTypeEnum.BoxOfTissues;
 
             // Reset
 
@@ -78,6 +82,9 @@ namespace UnitTests.Models
             Assert.AreEqual(8, result.Damage);
             Assert.AreEqual(AttributeEnum.Attack, result.Attribute);
             Assert.AreEqual(ItemLocationEnum.Feet, result.Location);
+            Assert.AreEqual(ItemTypeEnum.BoxOfTissues, result.ItemType);
+            Assert.AreEqual(true, result.IsConsumable);
+            Assert.AreEqual(10, result.Count);
         }
 
         [Test]
@@ -133,7 +140,7 @@ namespace UnitTests.Models
 
             // Assert 
             //Assert.AreEqual("This is an Item , Item Description for Unknown with Unknown+0 , Damage : 0 , Range : 0", result);
-            Assert.AreEqual("Test Item , Test Item Description for PrimaryHand with Attack+0 , Damage : 0 , Range : 0, IsConsumable : true, Count : 10, ItemType : BoxOfTissues", result);
+            Assert.AreEqual("Test Item , Test Item Description for PrimaryHand with Attack+0 , Damage : 0 , Range : 0 , IsConsumable : True , Count : 10 , ItemType : BoxOfTissues", result);
         }
 
         [Test]
