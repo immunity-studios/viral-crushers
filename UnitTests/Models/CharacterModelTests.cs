@@ -312,6 +312,187 @@ namespace UnitTests.Models
             // Assert
             Assert.AreEqual(9, result);
         }
+
+        [Test]
+        public void CharacterModel_GetAttack_Doctor_Should_Pass()
+        {
+            // ArDefense
+            var data = new CharacterModel { Job = CharacterJobEnum.Doctor };
+
+            // Act
+            var result = data.GetAttack();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(11, result);
+        }
+
+        [Test]
+        public void CharacterModel_GetDefense_Doctor_Should_Pass()
+        {
+            // ArDefense
+            var data = new CharacterModel { Job = CharacterJobEnum.Doctor };
+
+            // Act
+            var result = data.GetDefense();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(11, result);
+        }
+
+        [Test]
+        public void CharacterModel_GetSpeed_Doctor_Should_Pass()
+        {
+            // ArDefense
+            var data = new CharacterModel { Job = CharacterJobEnum.Doctor };
+
+            // Act
+            var result = data.GetSpeed();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(11, result);
+        }
+
+        [Test]
+        public void CharacterModel_GetAttack_Athlete_Should_Pass()
+        {
+            // ArDefense
+            var data = new CharacterModel { Job = CharacterJobEnum.Athlete };
+
+            // Act
+            var result = data.GetAttack();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(7, result);
+        }
+
+        [Test]
+        public void CharacterModel_GetDefense_Athlete_Should_Pass()
+        {
+            // ArDefense
+            var data = new CharacterModel { Job = CharacterJobEnum.Athlete };
+
+            // Act
+            var result = data.GetDefense();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(7, result);
+        }
+
+        [Test]
+        public void CharacterModel_GetSpeed_Athlete_Should_Pass()
+        {
+            // ArDefense
+            var data = new CharacterModel { Job = CharacterJobEnum.Athlete };
+
+            // Act
+            var result = data.GetSpeed();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(7, result);
+        }
+
+        [Test]
+        public void CharacterModel_GetAttack_PoliceOfficer_Should_Pass()
+        {
+            // ArDefense
+            var data = new CharacterModel { Job = CharacterJobEnum.PoliceOfficer };
+
+            // Act
+            var result = data.GetAttack();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(5, result);
+        }
+
+        [Test]
+        public void CharacterModel_GetDefense_PoliceOfficer_Should_Pass()
+        {
+            // ArDefense
+            var data = new CharacterModel { Job = CharacterJobEnum.PoliceOfficer };
+
+            // Act
+            var result = data.GetDefense();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(5, result);
+        }
+
+        [Test]
+        public void CharacterModel_GetSpeed_PoliceOfficer_Should_Pass()
+        {
+            // ArDefense
+            var data = new CharacterModel { Job = CharacterJobEnum.PoliceOfficer };
+
+            // Act
+            var result = data.GetSpeed();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(5, result);
+        }
+
+        [Test]
+        public void CharacterModel_GetAttack_CollegeStudent_Should_Pass()
+        {
+            // ArDefense
+            var data = new CharacterModel { Job = CharacterJobEnum.CollegeStudent };
+
+            // Act
+            var result = data.GetAttack();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(3, result);
+        }
+
+        [Test]
+        public void CharacterModel_GetDefense_CollegeStudent_Should_Pass()
+        {
+            // ArDefense
+            var data = new CharacterModel { Job = CharacterJobEnum.CollegeStudent };
+
+            // Act
+            var result = data.GetDefense();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(3, result);
+        }
+
+        [Test]
+        public void CharacterModel_GetSpeed_CollegeStudent_Should_Pass()
+        {
+            // ArDefense
+            var data = new CharacterModel { Job = CharacterJobEnum.CollegeStudent };
+
+            // Act
+            var result = data.GetSpeed();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(3, result);
+        }
+
         [Test]
         public void CharacterModel_GetAttack_Default_Should_Pass()
         {
