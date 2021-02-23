@@ -347,7 +347,6 @@ namespace UnitTests.Helpers
         [Test]
         public void ItemLocationEnumConvertBack_Enum_Should_Skip()
         {
-            //var myConverter = new ItemLocationEnumConverter();
             var myConverter = new ItemLocationToMappedStringConverter();
 
             var myObject = ItemLocationEnum.Feet;
@@ -360,7 +359,6 @@ namespace UnitTests.Helpers
         [Test]
         public void ItemLocationEnumConvertBack_Other_Should_Skip()
         {
-            //var myConverter = new ItemLocationEnumConverter();
             var myConverter = new ItemLocationToMappedStringConverter();
 
             var myObject = new ItemModel();
