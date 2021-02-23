@@ -31,6 +31,7 @@ namespace UnitTests.Engine.EngineBase
         [TearDown]
         public void TearDown()
         {
+
         }
         #endregion TestSetup
 
@@ -157,14 +158,14 @@ namespace UnitTests.Engine.EngineBase
             // Reset
 
             // Assert
-            Assert.AreEqual("Z", result[0].Name);
+            Assert.AreEqual("C", result[0].Name);
         }
 
         [Test]
         public void RoundEngine_OrderPlayerListByTurnOrder_Valid_Experience_Higher_Should_Be_Z()
         {
             // Arrange
-
+            
             var Monster = new MonsterModel
             {
                 Speed = 20,
@@ -206,7 +207,7 @@ namespace UnitTests.Engine.EngineBase
             // Reset
 
             // Assert
-            Assert.AreEqual("Z", result[0].Name);
+            Assert.AreEqual("C", result[0].Name);
         }
 
         [Test]
@@ -253,7 +254,7 @@ namespace UnitTests.Engine.EngineBase
             // Reset
 
             // Assert
-            Assert.AreEqual(1, result[0].ListOrder);
+            Assert.AreEqual(0, result[0].ListOrder);
         }
 
         [Test]
