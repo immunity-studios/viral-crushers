@@ -87,7 +87,7 @@ namespace UnitTests.Models
             Assert.IsNotNull(result.Id);
             Assert.AreEqual(result.Id, result.Guid);
 
-            Assert.AreEqual("item.png", result.ImageURI);
+            Assert.AreEqual("icon_character.png", result.ImageURI);
             Assert.AreEqual(PlayerTypeEnum.Character, result.PlayerType);
 
             Assert.AreEqual(true, result.Alive);
@@ -109,7 +109,7 @@ namespace UnitTests.Models
 
             Assert.AreEqual(DifficultyEnum.Unknown, result.Difficulty);
 
-            Assert.AreEqual(CharacterJobEnum.Unknown, result.Job);
+            Assert.AreEqual(CharacterJobEnum.Athlete, result.Job);
         }
 
         [Test]
@@ -224,7 +224,7 @@ namespace UnitTests.Models
         }
 
         [Test]
-        public void CharacterModel_GetAttack_Fighter_Should_Pass()
+        public void CharacterModel_GetAttack_Firefighter_Should_Pass()
         {
             // ArDefense
             var data = new CharacterModel { Job = CharacterJobEnum.Firefighter };
@@ -239,55 +239,10 @@ namespace UnitTests.Models
         }
 
         [Test]
-        public void CharacterModel_GetDefense_Fighter_Should_Pass()
+        public void CharacterModel_GetDefense_Firefighter_Should_Pass()
         {
             // ArDefense
             var data = new CharacterModel { Job = CharacterJobEnum.Firefighter };
-
-            // Act
-            var result = data.GetDefense();
-
-            // Reset
-
-            // Assert
-            Assert.AreEqual(0, result);
-        }
-
-        [Test]
-        public void CharacterModel_GetSpeed_Fighter_Should_Pass()
-        {
-            // ArDefense
-            var data = new CharacterModel { Job = CharacterJobEnum.Firefighter };
-
-            // Act
-            var result = data.GetSpeed();
-
-            // Reset
-
-            // Assert
-            Assert.AreEqual(2, result);
-        }
-
-        [Test]
-        public void CharacterModel_GetAttack_Cleric_Should_Pass()
-        {
-            // ArDefense
-            var data = new CharacterModel { Job = CharacterJobEnum.Teacher };
-
-            // Act
-            var result = data.GetAttack();
-
-            // Reset
-
-            // Assert
-            Assert.AreEqual(0, result);
-        }
-
-        [Test]
-        public void CharacterModel_GetDefense_Cleric_Should_Pass()
-        {
-            // ArDefense
-            var data = new CharacterModel { Job = CharacterJobEnum.Teacher };
 
             // Act
             var result = data.GetDefense();
@@ -299,7 +254,52 @@ namespace UnitTests.Models
         }
 
         [Test]
-        public void CharacterModel_GetSpeed_Cleric_Should_Pass()
+        public void CharacterModel_GetSpeed_Firefighter_Should_Pass()
+        {
+            // ArDefense
+            var data = new CharacterModel { Job = CharacterJobEnum.Firefighter };
+
+            // Act
+            var result = data.GetSpeed();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(3, result);
+        }
+
+        [Test]
+        public void CharacterModel_GetAttack_Teacher_Should_Pass()
+        {
+            // ArDefense
+            var data = new CharacterModel { Job = CharacterJobEnum.Teacher };
+
+            // Act
+            var result = data.GetAttack();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(9, result);
+        }
+
+        [Test]
+        public void CharacterModel_GetDefense_Teacher_Should_Pass()
+        {
+            // ArDefense
+            var data = new CharacterModel { Job = CharacterJobEnum.Teacher };
+
+            // Act
+            var result = data.GetDefense();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(9, result);
+        }
+
+        [Test]
+        public void CharacterModel_GetSpeed_Teacher_Should_Pass()
         {
             // ArDefense
             var data = new CharacterModel { Job = CharacterJobEnum.Teacher };
@@ -310,7 +310,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(1, result);
+            Assert.AreEqual(9, result);
         }
         [Test]
         public void CharacterModel_GetAttack_Default_Should_Pass()
@@ -324,7 +324,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(1, result);
+            Assert.AreEqual(7, result);
         }
 
         [Test]
@@ -339,7 +339,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(1, result);
+            Assert.AreEqual(7, result);
         }
 
         [Test]
@@ -354,7 +354,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(1, result);
+            Assert.AreEqual(7, result);
         }
 
         [Test]
@@ -400,21 +400,6 @@ namespace UnitTests.Models
 
             // Assert
             Assert.AreEqual(false, result);
-        }
-
-        [Test]
-        public void CharacterModel_FormatOutput_Default_Should_Pass()
-        {
-            // ArDefense
-            var data = new CharacterModel();
-
-            // Act
-            var result = data.FormatOutput();
-
-            // Reset
-
-            // Assert
-            Assert.AreEqual(true, result.Contains("Elf"));
         }
 
         [Test]
@@ -747,7 +732,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(7654321, result);
+            Assert.AreEqual(7654327, result);
         }
 
         [Test]
@@ -784,7 +769,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(7654321, result);
+            Assert.AreEqual(7654327, result);
         }
 
         [Test]
@@ -821,7 +806,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(7654321, result);
+            Assert.AreEqual(7654327, result);
         }
 
         [Test]
@@ -863,7 +848,7 @@ namespace UnitTests.Models
             Game.Helpers.DiceHelper.DisableForcedRolls();
 
             // Assert
-            Assert.AreEqual(2, result);
+            Assert.AreEqual(1, result);
         }
 
         [Test]
