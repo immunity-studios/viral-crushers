@@ -283,12 +283,11 @@ namespace UnitTests.Helpers
         [Test]
         public void ItemLocationEnumConvert_Enum_Should_Pass()
         {
-            //var myConverter = new ItemLocationEnumConverter();
             var myConverter = new ItemLocationToMappedStringConverter();
 
-            var myObject = ItemLocationEnum.Feet;
+            var myObject = ItemLocationEnum.OffHand;
             var Result = myConverter.Convert(myObject, null, null, null);
-            var Expected = "Feet";
+            var Expected = "Bag";
 
             Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
         }
@@ -407,7 +406,7 @@ namespace UnitTests.Helpers
 
             // Act
             //var result = ItemLocationEnumHelper.ConvertMessageToEnum("bogus");
-            var result = ItemLocationEnumHelper.ConvertStringToEnum("Feet");
+            var result = ItemLocationEnumHelper.ConvertMappedStringToEnum("Feet");
 
             // Assert
             Assert.AreEqual(ItemLocationEnum.Unknown, result);
