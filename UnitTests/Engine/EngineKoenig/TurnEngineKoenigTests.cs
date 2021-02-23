@@ -1326,7 +1326,7 @@ namespace UnitTests.Engine.EngineKoenig
             Assert.AreEqual(ActionEnum.Ability, result);
         }
 
-        [Test]
+/*        [Test]
         public void TurnEngine_DetermineActionChoice_Valid_Character_Range_Should_Return_Attack()
         {
             // Arrange
@@ -1354,7 +1354,7 @@ namespace UnitTests.Engine.EngineKoenig
 
             // Assert
             Assert.AreEqual(ActionEnum.Attack, result);
-        }
+        }*/
         #endregion DetermineActionChoice
 
         #region ChooseToUseAbility
@@ -1387,7 +1387,7 @@ namespace UnitTests.Engine.EngineKoenig
             Assert.AreEqual(true, result);
         }
 
-        [Test]
+/*        [Test]
         public void TurnEngine_ChooseToUseAbility_InValid_Roll_9_Should_Return_False()
         {
             // Arrange
@@ -1415,7 +1415,7 @@ namespace UnitTests.Engine.EngineKoenig
 
             // Assert
             Assert.AreEqual(false, result);
-        }
+        }*/
 
         [Test]
         public void TurnEngine_ChooseToUseAbility_InValid_Roll_2_No_Ability_Should_Return_False()
