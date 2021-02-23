@@ -134,7 +134,7 @@ namespace UnitTests.Engine.EngineKoenig
         #endregion RunAutoBattle
 
         #region CreateCharacterParty
-        [Test]
+/*        [Test]
         public async Task AutoBattleEngine_CreateCharacterParty_Valid_Characters_Should_Assign_6()
         {
             //Arrange
@@ -161,7 +161,7 @@ namespace UnitTests.Engine.EngineKoenig
             //Assert
             Assert.AreEqual(6, count);
             Assert.AreEqual("6", name);
-        }
+        }*/
 
         [Test]
         public void AutoBattleEngine_CreateCharacterParty_Valid_Characters_CharacterIndex_None_Should_Create_6()
