@@ -27,7 +27,7 @@ namespace Game.Helpers
                 return ItemLocationEnumHelper.ConvertMappedStringToEnum(stringValue);
             }
 
-            return value;
+            return 0;
         }
     }
 }
