@@ -61,7 +61,7 @@ namespace UnitTests.Views
             // Reset
 
             // Assert
-            Assert.IsNotNull(result);
+            Assert.IsNull(result);
         }
 
         [Test]
