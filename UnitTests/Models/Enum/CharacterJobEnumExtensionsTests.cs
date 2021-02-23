@@ -18,11 +18,11 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("Player", result);
+            Assert.AreEqual("Character", result);
         }
 
         [Test]
-        public void CharacterJobEnumExtensionsTests_Fighter_Default_Should_Pass()
+        public void CharacterJobEnumExtensionsTests_Firefighter_Default_Should_Pass()
         {
             // Arrange
 
@@ -32,11 +32,11 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("Fighter", result);
+            Assert.AreEqual("Firefighter", result);
         }
 
         [Test]
-        public void CharacterJobEnumExtensionsTests_Cleric_Default_Should_Pass()
+        public void CharacterJobEnumExtensionsTests_Teacher_Default_Should_Pass()
         {
             // Arrange
 
@@ -46,7 +46,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("Cleric", result);
+            Assert.AreEqual("Teacher", result);
         }
     }
 }
