@@ -104,7 +104,7 @@ namespace UnitTests.Models
             var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Teacher });
 
             // Act
-            var result = data.IsAbilityAvailable(AbilityEnum.Heal);
+            var result = data.IsAbilityAvailable(AbilityEnum.Bandage);
 
             // Reset
 
