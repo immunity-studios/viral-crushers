@@ -34,6 +34,7 @@ namespace Scenario
         [TearDown]
         public void TearDown()
         {
+            EngineViewModel.Engine.EndBattle();
         }
         #endregion TestSetup
 
