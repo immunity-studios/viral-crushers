@@ -273,9 +273,9 @@ namespace UnitTests.Helpers
             //var myConverter = new ItemLocationEnumConverter();
             var myConverter = new ItemLocationToMappedStringConverter();
 
-            var myObject = "Feet";
-            var Result = myConverter.Convert(myObject, typeof(ItemLocationEnum), null, null);
-            var Expected = ItemLocationEnum.Feet.ToMessage();
+            var myObject = "Bag";
+            var Result = myConverter.ConvertBack(myObject, typeof(ItemLocationEnum), null, null);
+            var Expected = ItemLocationEnum.OffHand;
 
             Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
         }
