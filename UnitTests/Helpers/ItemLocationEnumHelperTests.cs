@@ -38,7 +38,9 @@ namespace UnitTests.Helpers
             var myList = Enum.GetNames(typeof(ItemLocationEnum)).ToList();
             var myExpectedList = myList.Where(a =>
                                           a.ToString() != ItemLocationEnum.Unknown.ToString() &&
-                                           a.ToString() != ItemLocationEnum.Finger.ToString()
+                                           a.ToString() != ItemLocationEnum.LeftFinger.ToString() &&
+                                            a.ToString() != ItemLocationEnum.RightFinger.ToString() &&
+                                            a.ToString() != ItemLocationEnum.Feet.ToString()
                                             )
                                             .OrderBy(a => a)
                                             .ToList();
@@ -51,7 +53,7 @@ namespace UnitTests.Helpers
                 var found = false;
                 foreach (var expected in myExpectedList)
                 {
-                    if (item == expected)
+                    if (ItemLocationEnumHelper.ConvertMappedStringToEnum(item).ToString() == expected)
                     {
                         found = true;
                         break;
@@ -69,7 +71,7 @@ namespace UnitTests.Helpers
                 var found = false;
                 {
                     foreach (var item in myDataList)
-                        if (item == expected)
+                        if (ItemLocationEnumHelper.ConvertMappedStringToEnum(item).ToString() == expected)
                         {
                             found = true;
                             break;
