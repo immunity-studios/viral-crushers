@@ -371,12 +371,11 @@ namespace UnitTests.Helpers
         [Test]
         public void ItemLocationEnumConvertBack_Int_Should_Pass()
         {
-            //var myConverter = new ItemLocationEnumConverter();
-            var myConverter = new ItemLocationToMappedStringConverter();
+            var myConverter = new IntEnumConverter();
 
-            int myObject = 40;
+            int myObject = 22;
             var Result = myConverter.ConvertBack(myObject, typeof(ItemLocationEnum), null, null);
-            var Expected = "Feet";
+            var Expected = "OffHand";
 
             Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
         }
