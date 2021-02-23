@@ -423,7 +423,7 @@ namespace UnitTests.Helpers
             var result = ItemLocationEnumHelper.GetListCharacter;
 
             // Assert
-            Assert.AreEqual(7, result.Count());
+            Assert.AreEqual(5, result.Count());
         }
         #endregion GetListMessageCharacter
     }
