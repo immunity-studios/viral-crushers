@@ -155,7 +155,7 @@ namespace UnitTests.Engine.EngineKoenig
             // Reset
 
             // Assert
-            Assert.AreEqual("Z", result[0].Name);
+            Assert.AreEqual("C", result[0].Name);
         }
 
         [Test]
@@ -204,7 +204,7 @@ namespace UnitTests.Engine.EngineKoenig
             // Reset
 
             // Assert
-            Assert.AreEqual("Z", result[0].Name);
+            Assert.AreEqual("C", result[0].Name);
         }
 
         [Test]
@@ -251,7 +251,7 @@ namespace UnitTests.Engine.EngineKoenig
             // Reset
 
             // Assert
-            Assert.AreEqual(1, result[0].ListOrder);
+            Assert.AreEqual(0, result[0].ListOrder);
         }
 
         [Test]
