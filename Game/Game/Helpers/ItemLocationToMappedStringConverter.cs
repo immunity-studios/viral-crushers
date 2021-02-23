@@ -16,7 +16,8 @@ namespace Game.Helpers
                 return ItemLocationEnumHelper.ConvertEnumToMappedString(enumValue);
             }
 
-            return value;
+            //return value;
+            return 0;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
