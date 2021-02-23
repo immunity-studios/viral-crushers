@@ -405,8 +405,7 @@ namespace UnitTests.Helpers
             // Arrange
 
             // Act
-            //var result = ItemLocationEnumHelper.ConvertMessageToEnum("bogus");
-            var result = ItemLocationEnumHelper.ConvertMappedStringToEnum("Feet");
+            var result = ItemLocationEnumHelper.ConvertMappedStringToEnum("bogus");
 
             // Assert
             Assert.AreEqual(ItemLocationEnum.Unknown, result);
