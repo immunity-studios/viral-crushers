@@ -27,7 +27,31 @@ namespace UnitTests.Helpers
         }
 
         [Test]
-        public void AbilityEnumHelper_GetListFighter_Should_Pass()
+        public void AbilityEnumHelper_GetListFirefighter_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = AbilityEnumHelper.GetListFireFighter;
+
+            // Assert
+            Assert.AreEqual(5, result.Count());
+        }
+
+        [Test]
+        public void AbilityEnumHelper_GetListDoctor_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = AbilityEnumHelper.GetListDoctor;
+
+            // Assert
+            Assert.AreEqual(5, result.Count());
+        }
+
+        [Test]
+        public void AbilityEnumHelper_GetListTeacher_Should_Pass()
         {
             // Arrange
 
@@ -35,16 +59,40 @@ namespace UnitTests.Helpers
             var result = AbilityEnumHelper.GetListTeacher;
 
             // Assert
-            Assert.AreEqual(4, result.Count());
+            Assert.AreEqual(5, result.Count());
         }
 
         [Test]
-        public void AbilityEnumHelper_GetListCleric_Should_Pass()
+        public void AbilityEnumHelper_GetListCollegeStudent_Should_Pass()
         {
             // Arrange
 
             // Act
-            var result = AbilityEnumHelper.GetListDoctor;
+            var result = AbilityEnumHelper.GetListCollegeStudent;
+
+            // Assert
+            Assert.AreEqual(5, result.Count());
+        }
+
+        [Test]
+        public void AbilityEnumHelper_GetListPoliceOfficer_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = AbilityEnumHelper.GetListPoliceOfficer;
+
+            // Assert
+            Assert.AreEqual(5, result.Count());
+        }
+
+        [Test]
+        public void AbilityEnumHelper_GetListAthlete_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = AbilityEnumHelper.GetListAthlete;
 
             // Assert
             Assert.AreEqual(5, result.Count());
