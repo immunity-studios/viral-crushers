@@ -66,11 +66,11 @@ namespace Game.ViewModels
         // Hold the Proposed List of Characters for the Battle to Use
         public ObservableCollection<CharacterModel> PartyCharacterList { get; set; } = new ObservableCollection<CharacterModel>();
 
-        //// Hold the View Model to the CharacterIndexViewModel
-        //public CharacterIndexViewModel DatabaseCharacterViewModel = CharacterIndexViewModel.Instance;
+        // Hold the View Model to the CharacterIndexViewModel
+        public CharacterIndexViewModel DatabaseCharacterViewModel = CharacterIndexViewModel.Instance;
 
-        //// Have the Database Character List point to the Character View Model List
-        //public ObservableCollection<CharacterModel> DatabaseCharacterList { get; set; } = CharacterIndexViewModel.Instance.Dataset;
+        // Have the Database Character List point to the Character View Model List
+        public ObservableCollection<CharacterModel> DatabaseCharacterList { get; set; } = CharacterIndexViewModel.Instance.Dataset;
 
      
         #region Constructor
