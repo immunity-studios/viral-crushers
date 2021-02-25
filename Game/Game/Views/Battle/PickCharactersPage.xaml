@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Name="BrowseItemsPage"
+             xmlns:views="clr-namespace:Game.Views"
              x:Class="Game.Views.PickCharactersPage"
              Title="{Binding Title}">
 
@@ -12,7 +13,7 @@
         <ScrollView VerticalScrollBarVisibility="Never">
             <StackLayout Style="{StaticResource OuterBoxStack}">
 
-                <Label Text="Battle Time" Style="{StaticResource CenterMessageLargeStyle}"/>
+                <!--<Label Text="Battle Time" Style="{StaticResource CenterMessageLargeStyle}"/>
 
                 <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand">
 
@@ -118,7 +119,119 @@
                             </ListView.ItemTemplate>
                         </ListView>
                     </StackLayout>
-                </StackLayout>
+                </StackLayout>-->
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <views:BackButtonControl Margin="30,30,0,0" HorizontalOptions="Start" />
+
+                    <views:CurvedLabelControl Margin="0,60,0,-20"
+                                      HorizontalOptions="Center"
+                                      Style="{StaticResource RedCurvedLabel}"
+                                      Text=" Pick Characters" />
+
+                    <ImageButton Margin="0,30,30,0"
+                         Clicked="AddCharacter_Clicked"
+                         Style="{StaticResource AddImageButton}" />
+
+                    <Frame Grid.Row="1" Margin="5,0,5,10">
+                        <CollectionView x:Name="CharactersCollectionView"
+                                Margin="0,10,0,0"
+                                ItemsSource="{Binding DatabaseCharacterList}"
+                                SelectionChanged="OnDatabaseCharacterItemSelected"
+                                SelectedItems="{Binding PartyCharacterList}"
+                                SelectionMode="Multiple">
+
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Vertical"
+                                         Span="3"
+                                         VerticalItemSpacing="20" />
+                            </CollectionView.ItemsLayout>
+
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition />
+                                        </Grid.ColumnDefinitions>
+
+                                        <Frame Style="{StaticResource BorderFrame}">
+                                            <Frame Style="{StaticResource CharacterFrame}">
+                                                <Image HeightRequest="100"
+                                               Source="{Binding ImageURI}"
+                                               Style="{StaticResource ImageLargeStyle}"
+                                               WidthRequest="100" />
+                                            </Frame>
+                                        </Frame>
+
+                                        <views:CurvedLabelControl Grid.Row="1"
+                                                          Style="{StaticResource YellowCurvedLabel}"
+                                                          Text="{Binding Name}" />
+
+                                    </Grid>
+
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </Frame>
+
+                    <StackLayout Grid.Row="2">
+
+                        <Label Text="Party" Style="{StaticResource CenterMessageStyle}"/>
+
+                        <ListView 
+                                x:Name="PartyListView" 
+                                ItemsSource="{Binding PartyCharacterList}"
+                                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                                RefreshCommand="{Binding LoadItemsCommand}"
+                                CachingStrategy="RecycleElement"
+                                ItemSelected="OnPartyCharacterItemSelected"
+                                HasUnevenRows="true"
+                                Margin="5,0,5,0"
+                                RowHeight="80">
+
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid>
+                                            <Image  Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
+                                                    Source="{Binding ImageURI}"
+                                                    Style="{StaticResource ImageMediumStyle}"/>
+
+                                            <Label Grid.Column="1" Grid.Row="0"
+                                                   Text="{Binding Name}" 
+                                                   Style="{StaticResource ListStyle}"
+                                                   FontAttributes="Bold"/>
+
+                                            <Label Grid.Column="1" Grid.Row="1"
+                                                   Text="{Binding Path=Level, StringFormat='Level {0:G}'}" 
+                                                   Style="{StaticResource ListStyle}"/>
+
+                                            <Label Grid.Column="1" Grid.Row="2"
+                                                    Text="{Binding Path=MaxHealth, StringFormat= '{0:G} hp'}" 
+                                                    Style="{StaticResource ListStyle}"/>
+
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+
+                    <views:ToolbarMenuControl Grid.Row="3" />
+
+                </Grid>
 
             </StackLayout>
         </ScrollView>

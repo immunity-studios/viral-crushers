@@ -45,7 +45,7 @@ namespace Game.Views
             // Clear the Database List and the Party List to start
             BattleEngineViewModel.Instance.PartyCharacterList.Clear();
 
-            UpdateNextButtonState();
+/*            UpdateNextButtonState();*/
         }
 
         /// <summary>
@@ -53,24 +53,33 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        public void OnDatabaseCharacterItemSelected(object sender, SelectedItemChangedEventArgs args)
+        public void OnDatabaseCharacterItemSelected(object sender, SelectionChangedEventArgs args)
         {
-            CharacterModel data = args.SelectedItem as CharacterModel;
-            if (data == null)
+            /*CharacterModel data = args.SelectedItem as CharacterModel;*/
+
+            if (args.CurrentSelection.Count >= args.PreviousSelection.Count)
             {
-                return;
+                CharacterModel data = args.CurrentSelection.LastOrDefault() as CharacterModel;
+                if (data == null)
+                {
+                    return;
+                }
+                // Don't add more than the party max
+                if (BattleEngineViewModel.Instance.PartyCharacterList.Count() < BattleEngineViewModel.Instance.Engine.EngineSettings.MaxNumberPartyCharacters)
+                {
+                    BattleEngineViewModel.Instance.PartyCharacterList.Add(data);
+                }
+            } else
+            {
+                // Manually deselect Character.
+                CharactersCollectionView.SelectedItem = null;
+
+                CharacterModel data = args.PreviousSelection.LastOrDefault() as CharacterModel;
+                // Remove the character from the list
+                BattleEngineViewModel.Instance.PartyCharacterList.Remove(data);
             }
 
-            // Manually deselect Character.
-            CharactersListView.SelectedItem = null;
-
-            // Don't add more than the party max
-            if (BattleEngineViewModel.Instance.PartyCharacterList.Count() < BattleEngineViewModel.Instance.Engine.EngineSettings.MaxNumberPartyCharacters)
-            {
-                BattleEngineViewModel.Instance.PartyCharacterList.Add(data);
-            }
-
-            UpdateNextButtonState();
+            /*            UpdateNextButtonState();*/
         }
 
         /// <summary>
@@ -92,10 +101,10 @@ namespace Game.Views
             // Remove the character from the list
             BattleEngineViewModel.Instance.PartyCharacterList.Remove(data);
 
-            UpdateNextButtonState();
+/*            UpdateNextButtonState();*/
         }
 
-        /// <summary>
+/*        /// <summary>
         /// Next Button is based on the count
         /// 
         /// If no selected characters, disable
@@ -131,7 +140,7 @@ namespace Game.Views
             await Navigation.PushModalAsync(new NavigationPage(new BattlePage()));
             await Navigation.PopAsync();
         }
-
+*/
         /// <summary>
         /// Clear out the old list and make the new list
         /// </summary>
@@ -147,5 +156,63 @@ namespace Game.Views
                 BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
             }
         }
+
+/*        #region CollectionView Handlers
+
+        /// <summary>
+        /// Select the item from the list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs args)
+        {
+            CharacterModel data = CharactersCollectionView.SelectedItem as CharacterModel;
+            if (data == null)
+            {
+                return;
+            }
+
+            // Open the Read Page
+            await Navigation.PushAsync(new CharacterReadPage(new GenericViewModel<CharacterModel>(data)));
+
+            // Manually deselect item.
+            CharactersCollectionView.SelectedItem = null;
+        }
+
+        #endregion*/
+
+        /// <summary>
+        /// Call to Add a new record
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public async void AddCharacter_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new NavigationPage(new CharacterCreatePage()));
+        }
+
+/*        /// <summary>
+        /// Refresh the list on page appearing
+        /// </summary>
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            BindingContext = null;
+
+            // If no data, then set it for needing refresh
+            if (ViewModel.Dataset.Count == 0)
+            {
+                ViewModel.SetNeedsRefresh(true);
+            }
+
+            // If the needs Refresh flag is set update it
+            if (ViewModel.NeedsRefresh())
+            {
+                ViewModel.LoadDatasetCommand.Execute(null);
+            }
+
+            BindingContext = ViewModel;
+        }*/
     }
 }
