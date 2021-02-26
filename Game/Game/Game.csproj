@@ -39,6 +39,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\Battle\ShowMonstersPage.xaml.cs">
+      <DependentUpon>ShowMonstersPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Battle\PickItemsPage.xaml.cs">
       <DependentUpon>PickItemsPage.xaml</DependentUpon>
     </Compile>
