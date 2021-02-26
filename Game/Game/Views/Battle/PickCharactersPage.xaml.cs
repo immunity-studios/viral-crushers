@@ -58,6 +58,8 @@ namespace Game.Views
         public void OnDatabaseCharacterItemSelected(object sender, SelectionChangedEventArgs args)
         {
             /*CharacterModel data = args.SelectedItem as CharacterModel;*/
+            var currentList = args.CurrentSelection.ToList();
+            var previousList = args.PreviousSelection.ToList();
 
             if (args.CurrentSelection.Count >= args.PreviousSelection.Count)
             {
@@ -74,9 +76,10 @@ namespace Game.Views
             } else
             {
                 // Manually deselect Character.
-                CharactersCollectionView.SelectedItem = null;
 
-                CharacterModel data = args.PreviousSelection.LastOrDefault() as CharacterModel;
+                CharacterModel data = previousList.LastOrDefault() as CharacterModel;
+
+                CharactersCollectionView.SelectionChangedCommand = null;
                 // Remove the character from the list
                 BattleEngineViewModel.Instance.PartyCharacterList.Remove(data);
             }
