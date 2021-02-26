@@ -45,7 +45,7 @@ namespace Game.Views
             // Clear the Database List and the Party List to start
             BattleEngineViewModel.Instance.PartyCharacterList.Clear();
 
-/*            UpdateNextButtonState();*/
+            UpdateNextButtonState();
         }
 
         #region CollectionView Handlers
@@ -81,7 +81,7 @@ namespace Game.Views
                 BattleEngineViewModel.Instance.PartyCharacterList.Remove(data);
             }
 
-            /*            UpdateNextButtonState();*/
+            UpdateNextButtonState();
         }
 
         #endregion
@@ -105,10 +105,10 @@ namespace Game.Views
             // Remove the character from the list
             BattleEngineViewModel.Instance.PartyCharacterList.Remove(data);
 
-/*            UpdateNextButtonState();*/
+            UpdateNextButtonState();
         }
 
-/*        /// <summary>
+        /// <summary>
         /// Next Button is based on the count
         /// 
         /// If no selected characters, disable
@@ -124,12 +124,12 @@ namespace Game.Views
             var currentCount = BattleEngineViewModel.Instance.PartyCharacterList.Count();
             if (currentCount == 0)
             {
-              BeginBattleButton.IsEnabled = false;
+                BeginBattleButton.IsEnabled = false;
             }
 
-            PartyCountLabel.Text = currentCount.ToString();
+            /*PartyCountLabel.Text = currentCount.ToString();*/
         }
-*/
+
 
         /// <summary>
         /// Jump to the Battle
@@ -140,13 +140,13 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void NextButton_Clicked(object sender, EventArgs e)
         {
-            // CreateEngineCharacterList();
+            CreateEngineCharacterList();
 
             await Navigation.PushModalAsync(new NavigationPage(new ShowMonstersPage()));
             await Navigation.PopAsync();
         }
 
-/*        /// <summary>
+        /// <summary>
         /// Clear out the old list and make the new list
         /// </summary>
         public void CreateEngineCharacterList()
@@ -160,7 +160,7 @@ namespace Game.Views
                 data.CurrentHealth = data.GetMaxHealthTotal;
                 BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
             }
-        }*/
+        }
 
         /// <summary>
         /// Call to Add a new record

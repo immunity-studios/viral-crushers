@@ -186,9 +186,11 @@
                                 </CollectionView.ItemTemplate>
                             </CollectionView>
 
-                            <ImageButton HorizontalOptions="Center"
+                            <ImageButton x:Name="BeginBattleButton"
+                                         HorizontalOptions="Center"
                                          Clicked="NextButton_Clicked" 
-                                         Source="battle_button_140.png" />
+                                         Source="battle_button_140.png" 
+                                         IsEnabled="False"/>
 
                         </StackLayout>
                     </Frame>
