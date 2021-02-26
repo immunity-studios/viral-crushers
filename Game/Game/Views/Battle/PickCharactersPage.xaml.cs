@@ -48,6 +48,8 @@ namespace Game.Views
 /*            UpdateNextButtonState();*/
         }
 
+        #region CollectionView Handlers
+
         /// <summary>
         /// The row selected from the list
         /// </summary>
@@ -81,6 +83,8 @@ namespace Game.Views
 
             /*            UpdateNextButtonState();*/
         }
+
+        #endregion
 
         /// <summary>
         /// The row selected from the list
@@ -125,6 +129,7 @@ namespace Game.Views
 
             PartyCountLabel.Text = currentCount.ToString();
         }
+*/
 
         /// <summary>
         /// Jump to the Battle
@@ -135,13 +140,13 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void BattleButton_Clicked(object sender, EventArgs e)
         {
-            CreateEngineCharacterList();
+            // CreateEngineCharacterList();
 
             await Navigation.PushModalAsync(new NavigationPage(new BattlePage()));
             await Navigation.PopAsync();
         }
-*/
-        /// <summary>
+
+/*        /// <summary>
         /// Clear out the old list and make the new list
         /// </summary>
         public void CreateEngineCharacterList()
@@ -155,31 +160,7 @@ namespace Game.Views
                 data.CurrentHealth = data.GetMaxHealthTotal;
                 BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
             }
-        }
-
-/*        #region CollectionView Handlers
-
-        /// <summary>
-        /// Select the item from the list
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
-        public async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs args)
-        {
-            CharacterModel data = CharactersCollectionView.SelectedItem as CharacterModel;
-            if (data == null)
-            {
-                return;
-            }
-
-            // Open the Read Page
-            await Navigation.PushAsync(new CharacterReadPage(new GenericViewModel<CharacterModel>(data)));
-
-            // Manually deselect item.
-            CharactersCollectionView.SelectedItem = null;
-        }
-
-        #endregion*/
+        }*/
 
         /// <summary>
         /// Call to Add a new record
