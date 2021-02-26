@@ -23,56 +23,62 @@
             <views:CurvedLabelControl Margin="0,60,0,-20"
                                       HorizontalOptions="Center"
                                       Style="{StaticResource RedCurvedLabel}"
-                                      Text="Monsters" />
+                                      Text="Monsters Party" />
 
             <ImageButton Margin="0,30,30,0"
                          Clicked="AddItem_Clicked"
                          Style="{StaticResource AddImageButton}" />
 
             <Frame Grid.Row="1" Margin="5,0,5,10">
-                <CollectionView x:Name="MonstersCollectionView"
+                <StackLayout Padding="0,10,0,0">
+                    <CollectionView x:Name="MonstersCollectionView"
                                 ItemsSource="{Binding Dataset}"
                                 SelectionChanged="CollectionView_SelectionChanged"
                                 SelectionMode="Single">
 
-                    <CollectionView.ItemsLayout>
-                        <GridItemsLayout Orientation="Vertical"
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout Orientation="Vertical"
                                          Span="3"
                                          VerticalItemSpacing="10" />
-                    </CollectionView.ItemsLayout>
+                        </CollectionView.ItemsLayout>
 
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
 
-                            <Grid Padding="0,10,0,0" HorizontalOptions="Center">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*" />
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition />
-                                </Grid.ColumnDefinitions>
+                                <Grid Padding="0,10,0,0" HorizontalOptions="Center">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
 
-                                <!--  Monster Image  -->
-                                <Frame Style="{StaticResource BorderFrame}">
-                                    <Frame Style="{StaticResource CharacterFrame}">
-                                        <Image Grid.Row="0"
+                                    <!--  Monster Image  -->
+                                    <Frame Style="{StaticResource BorderFrame}">
+                                        <Frame Style="{StaticResource CharacterFrame}">
+                                            <Image Grid.Row="0"
                                                HeightRequest="100"
                                                Source="{Binding ImageURI}"
                                                WidthRequest="100" />
+                                        </Frame>
                                     </Frame>
-                                </Frame>
 
-                                <!--  Name  -->
-                                <views:CurvedLabelControl Grid.Row="1"
+                                    <!--  Name  -->
+                                    <views:CurvedLabelControl Grid.Row="1"
                                                           Style="{StaticResource YellowCurvedLabel}"
                                                           Text="{Binding Name}" />
 
-                            </Grid>
+                                </Grid>
 
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                    <ImageButton HorizontalOptions="Center"
+                                         Clicked="BattleButton_Clicked" 
+                                         Source="battle_button_140.png" />
+                </StackLayout>
             </Frame>
 
             <views:ToolbarMenuControl Grid.Row="2" />
