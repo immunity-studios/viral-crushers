@@ -139,7 +139,7 @@ namespace Game.Engine.EngineGame
 
             // Do the turn..
 
-            throw new System.NotImplementedException();
+            return base.RoundNextTurn();
         }
 
         /// <summary>
