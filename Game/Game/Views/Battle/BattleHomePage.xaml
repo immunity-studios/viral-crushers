@@ -4,11 +4,6 @@
              xmlns:views="clr-namespace:Game.Views"
              x:Class="Game.Views.BattleHomePage">
 
-
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="About" Clicked="AboutButton_Clicked" IconImageSource="tab_about.png"/>
-    </ContentPage.ToolbarItems>
-
     <ContentPage.Content>
         <StackLayout>
 
