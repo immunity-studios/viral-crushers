@@ -248,7 +248,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool RemoveCharacterBuffs()
         {
-            throw new System.NotImplementedException();
+            return base.RemoveCharacterBuffs();
         }
     }
 }
