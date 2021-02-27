@@ -188,7 +188,7 @@
 
                             <ImageButton x:Name="BeginBattleButton"
                                          HorizontalOptions="Center"
-                                         Clicked="NextButton_Clicked" 
+                                         Clicked="BattleButton_Clicked" 
                                          Source="battle_button_140.png" 
                                          IsEnabled="False"/>
 
