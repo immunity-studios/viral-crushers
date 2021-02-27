@@ -173,7 +173,7 @@ namespace Game.Engine.EngineGame
 
             // Do Attack
 
-            throw new System.NotImplementedException();
+            return base.Attack(Attacker);
         }
 
         /// <summary>
