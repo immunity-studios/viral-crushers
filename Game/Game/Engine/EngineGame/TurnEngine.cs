@@ -248,7 +248,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override HitStatusEnum BattleSettingsOverride(PlayerInfoModel Attacker)
         {
-            throw new System.NotImplementedException();
+            return base.BattleSettingsOverride(Attacker);
         }
 
         /// <summary>
