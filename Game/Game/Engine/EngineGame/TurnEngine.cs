@@ -239,7 +239,7 @@ namespace Game.Engine.EngineGame
 
             // Battle Message 
 
-            throw new System.NotImplementedException();
+            return base.TurnAsAttack(Attacker, Target);
         }
 
         /// <summary>
