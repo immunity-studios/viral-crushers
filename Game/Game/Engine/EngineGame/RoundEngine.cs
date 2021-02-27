@@ -116,7 +116,8 @@ namespace Game.Engine.EngineGame
             // In Auto Battle this happens and the characters get their items
             // When called manualy, make sure to do the character pickup before calling EndRound
 
-            throw new System.NotImplementedException();
+            // TOD: Return for now, and revisit this functionality.
+            return;
         }
 
         /// <summary>
