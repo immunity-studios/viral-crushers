@@ -317,7 +317,7 @@ namespace Game.Engine.EngineGame
 
             // Add the MonsterModel to the killed list
 
-            throw new System.NotImplementedException();
+            return base.TargetDied(Target);
         }
 
         /// <summary>
