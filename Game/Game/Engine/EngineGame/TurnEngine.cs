@@ -258,7 +258,7 @@ namespace Game.Engine.EngineGame
         {
             // Based on the Hit Status, establish a message
 
-            throw new System.NotImplementedException();
+            return base.BattleSettingsOverrideHitStatusEnum(myEnum);
         }
 
         /// <summary>
