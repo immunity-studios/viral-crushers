@@ -58,7 +58,7 @@ namespace Game.Engine.EngineGame
 
             // Reset the Action to unknown for next time
 
-            throw new System.NotImplementedException();
+            return base.TakeTurn(Attacker);
         }
 
         /// <summary>
