@@ -208,7 +208,7 @@ namespace Game.Engine.EngineGame
 
             // Return the next element
 
-            throw new System.NotImplementedException();
+            return base.GetNextPlayerInList();
         }
 
         /// <summary>
