@@ -10,66 +10,41 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
+        <StackLayout>
 
-        <Grid x:Name="PageGrid">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="2*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
+            <Button HorizontalOptions="Center"
+                    Clicked="BattlePage_Clicked"
+                    Text="Battle Page"/>
 
-            <ImageButton HorizontalOptions="Start"
-                         Source="icon_about_button.png"
-                         Margin="30,50,0,0"
-                         VerticalOptions="Center"
-                         Aspect="AspectFill"
-                         WidthRequest="50"
-                         HeightRequest="50"
-                         Clicked="AboutButton_Clicked"/>
+            <Button HorizontalOptions="Center"
+                    Clicked="BattleSettingsPage_Clicked"
+                    Text="Battle Settings Page"/>
 
-            <!-- Temporary Frame, replace with logo -->
-            <Frame Grid.Row="1"
-                   CornerRadius="50"
-                   WidthRequest="220"
-                   HeightRequest="220"
-                   BackgroundColor="{StaticResource ViralCrusherGreenColor}"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center"
-                   HasShadow="True">
+            <Button HorizontalOptions="Center"
+                    Clicked="PickCharactersPage_Clicked"
+                    Text="Pick Character Page"/>
 
-                <Label Text="Game Page" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{StaticResource ViralCrusherNavyColor}"/>
-                                      
-            </Frame>
+            <Button HorizontalOptions="Center"
+                    Clicked="ShowMonstersPage_Clicked"
+                    Text="Show Monsters Page"/>
 
+            <Button HorizontalOptions="Center"
+                    Clicked="PickItemsPage_Clicked"
+                    Text="Items Pickup Page"/>
 
-            <StackLayout Grid.Row="2" Style="{StaticResource CardImageTextBox}">
+            <Button HorizontalOptions="Center"
+                    Clicked="RoundOverPage_Clicked"
+                    Text="Round Over Page"/>
 
-                <ImageButton
-                        Source="item.png"
-                        Style="{StaticResource ImageMediumStyle}"
-                        Clicked="DungeonButton_Clicked"/>
+            <Button HorizontalOptions="Center"
+                    Clicked="NewRoundPage_Clicked"
+                    Text="New Round Page"/>
 
-                <Label 
-                        Text="Dungeon/Battle"
-                        Style="{StaticResource CenterMessageStyle}"/>
-            </StackLayout>
+            <Button HorizontalOptions="Center"
+                    Clicked="ScorePage_Clicked"
+                    Text="Score Page"/>
 
-            <StackLayout Grid.Row="3" Style="{StaticResource CardImageTextBox}">
-
-                <ImageButton
-                        Source="item.png"
-                        Style="{StaticResource ImageSmallStyle}"
-                        Clicked="AutobattleButton_Clicked"/>
-
-                <Label 
-                        Text="Auto Battle"
-                        Style="{StaticResource CenterMessageStyle}"/>
-            </StackLayout>
-
-
-            <views:ToolbarMenuControl Grid.Row="4" />
-        </Grid>
+        </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>

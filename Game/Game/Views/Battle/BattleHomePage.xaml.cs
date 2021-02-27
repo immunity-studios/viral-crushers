@@ -23,25 +23,48 @@ namespace Game.Views
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		public async void AutobattleButton_Clicked(object sender, EventArgs e)
+		public async void BattlePage_Clicked(object sender, EventArgs e)
 		{
-			await Navigation.PushAsync(new AutoBattlePage());
+			await Navigation.PushAsync(new BattlePage());
 		}
 
 		
-		public async void AboutButton_Clicked(object sender, EventArgs e)
+		public async void BattleSettingsPage_Clicked(object sender, EventArgs e)
 		{
-			await Navigation.PushAsync(new AboutPage());
+			await Navigation.PushAsync(new BattleSettingsPage());
 		}
 
 		/// <summary>
 		/// Jump to the Dungeon/Hospital
 		/// </summary>
-		public async void DungeonButton_Clicked(object sender, EventArgs e)
+		public async void PickCharactersPage_Clicked(object sender, EventArgs e)
 		{
 			await Navigation.PushAsync(new PickCharactersPage());
-			// Update Audio Engine the battle has started
-			AudioSystem.AudioEngine.Instance.ProcessAudioEvent(AudioSystem.AudioEventEnum.BattleStart);
+		}
+
+		public async void ShowMonstersPage_Clicked(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new ShowMonstersPage());
+		}
+
+		public async void PickItemsPage_Clicked(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new PickItemsPage());
+		}
+
+		public async void RoundOverPage_Clicked(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new RoundOverPage());
+		}
+
+		public async void NewRoundPage_Clicked(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new NewRoundPage());
+		}
+
+		public async void ScorePage_Clicked(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new ScorePage());
 		}
 	}
 }
