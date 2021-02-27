@@ -1,6 +1,8 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Threading.Tasks;
 using Game.Engine.EngineBase;
 using Game.Engine.EngineInterfaces;
+using Game.GameRules;
 
 namespace Game.Engine.EngineGame
 {
@@ -44,7 +46,12 @@ namespace Game.Engine.EngineGame
 
         public override bool CreateCharacterParty()
         {
-            throw new System.NotImplementedException();
+            for (int i = Battle.EngineSettings.CharacterList.Count(); i < Battle.EngineSettings.MaxNumberPartyCharacters; i++)
+            {
+                Battle.PopulateCharacterList(RandomPlayerHelper.GetRandomCharacter(1));
+            }
+
+            return true;
         }
 
         public override bool DetectInfinateLoop()
