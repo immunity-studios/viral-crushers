@@ -181,7 +181,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override PlayerInfoModel AttackChoice(PlayerInfoModel data)
         {
-            throw new System.NotImplementedException();
+            return base.AttackChoice(data);
         }
 
         /// <summary>
