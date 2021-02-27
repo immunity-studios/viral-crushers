@@ -185,7 +185,7 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
-        [Test]
+/*        [Test]
         public void PickCharactersPage_OnDatabaseCharacterItemSelected_Default_Should_Pass()
         {
             // Arrange
@@ -201,9 +201,9 @@ namespace UnitTests.Views
 
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        }*/
 
-        [Test]
+/*        [Test]
         public void PickCharactersPage_OnDatabaseCharacterItemSelected_InValid_Should_Pass()
         {
             // Arrange
@@ -217,6 +217,6 @@ namespace UnitTests.Views
 
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        }*/
     }
 }
