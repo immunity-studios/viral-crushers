@@ -59,33 +59,33 @@ namespace UnitTests.Engine.EngineGame
         #endregion Constructor
 
         #region RunAutoBattle
-        //[Test]
-        //public async Task AutoBattleEngine_RunAutoBattle_Valid_Default_Should_Pass()
-        //{
-        //    //Arrange
+        [Test]
+        public async Task AutoBattleEngine_RunAutoBattle_Valid_Default_Should_Pass()
+        {
+            //Arrange
 
-        //    DiceHelper.EnableForcedRolls();
-        //    DiceHelper.SetForcedRollValue(3);
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(3);
 
-        //    var data = new CharacterModel { Level = 1, MaxHealth = 10 };
+            var data = new CharacterModel { Level = 1, MaxHealth = 10 };
 
-        //    AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
-        //    AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
-        //    AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
-        //    AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
-        //    AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
-        //    AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+            AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+            AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+            AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+            AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+            AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+            AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
 
-        //    //Act
-        //    var result = await AutoBattleEngine.RunAutoBattle();
+            //Act
+            var result = await AutoBattleEngine.RunAutoBattle();
 
-        //    //Reset
-        //    DiceHelper.DisableForcedRolls();
-        //    CharacterIndexViewModel.Instance.ForceDataRefresh();
+            //Reset
+            DiceHelper.DisableForcedRolls();
+            CharacterIndexViewModel.Instance.ForceDataRefresh();
 
-        //    //Assert
-        //    Assert.AreEqual(true, result);
-        //}
+            //Assert
+            Assert.AreEqual(true, result);
+        }
 
         //[Test]
         //public async Task AutoBattleEngine_RunAutoBattle_Valid_Monsters_1_Should_Pass()
