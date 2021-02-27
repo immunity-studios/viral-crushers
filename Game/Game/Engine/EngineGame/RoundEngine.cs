@@ -185,7 +185,7 @@ namespace Game.Engine.EngineGame
 
             // Add the Monsters
 
-            throw new System.NotImplementedException();
+            return base.MakePlayerList();
         }
 
         /// <summary>
