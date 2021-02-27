@@ -356,8 +356,9 @@ namespace Game.Engine.EngineGame
 
             // The Number drop can be Up to the Round Count, but may be less.  
             // Negative results in nothing dropped
+            // TODO: Need to fix it
 
-            throw new System.NotImplementedException();
+            return base.GetRandomMonsterItemDrops(round);
         }
 
         /// <summary>
