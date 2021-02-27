@@ -159,7 +159,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override List<PlayerInfoModel> RemoveDeadPlayersFromList()
         {
-            throw new System.NotImplementedException();
+            return base.RemoveDeadPlayersFromList();
         }
 
         /// <summary>
