@@ -61,7 +61,7 @@ namespace Game.Engine.EngineGame
 
         public override Task<bool> RunAutoBattle()
         {
-            throw new System.NotImplementedException();
+            return base.RunAutoBattle();
         }
     }
 }
