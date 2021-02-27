@@ -151,7 +151,7 @@ namespace Game.Engine.EngineGame
 
             // Get Next Player
 
-            throw new System.NotImplementedException();
+            return base.GetNextPlayerTurn();
         }
 
         /// <summary>
