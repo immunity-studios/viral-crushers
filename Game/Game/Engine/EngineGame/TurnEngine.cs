@@ -332,7 +332,7 @@ namespace Game.Engine.EngineGame
 
             // Add to ScoreModel
 
-            throw new System.NotImplementedException();
+            return base.DropItems(Target);
         }
 
         /// <summary>
