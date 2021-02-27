@@ -85,8 +85,8 @@ namespace Game.Engine.EngineGame
         public override int AddMonstersToRound()
         {
             // TODO: Teams, You need to implement your own Logic can not use mine.
-
-            throw new System.NotImplementedException();
+            // TODO: Need to fix it
+            return base.AddMonstersToRound();
         }
 
         /// <summary>
