@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:Game.Views"
+             x:Class="Game.Views.BattleHomePage">
+
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="About" Clicked="AboutButton_Clicked" IconImageSource="tab_about.png"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+
+        <Grid x:Name="PageGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <ImageButton HorizontalOptions="Start"
+                         Source="icon_about_button.png"
+                         Margin="30,50,0,0"
+                         VerticalOptions="Center"
+                         Aspect="AspectFill"
+                         WidthRequest="50"
+                         HeightRequest="50"
+                         Clicked="AboutButton_Clicked"/>
+
+            <!-- Temporary Frame, replace with logo -->
+            <Frame Grid.Row="1"
+                   CornerRadius="50"
+                   WidthRequest="220"
+                   HeightRequest="220"
+                   BackgroundColor="{StaticResource ViralCrusherGreenColor}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   HasShadow="True">
+
+                <Label Text="Game Page" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{StaticResource ViralCrusherNavyColor}"/>
+                                      
+            </Frame>
+
+
+            <StackLayout Grid.Row="2" Style="{StaticResource CardImageTextBox}">
+
+                <ImageButton
+                        Source="item.png"
+                        Style="{StaticResource ImageMediumStyle}"
+                        Clicked="DungeonButton_Clicked"/>
+
+                <Label 
+                        Text="Dungeon/Battle"
+                        Style="{StaticResource CenterMessageStyle}"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="3" Style="{StaticResource CardImageTextBox}">
+
+                <ImageButton
+                        Source="item.png"
+                        Style="{StaticResource ImageSmallStyle}"
+                        Clicked="AutobattleButton_Clicked"/>
+
+                <Label 
+                        Text="Auto Battle"
+                        Style="{StaticResource CenterMessageStyle}"/>
+            </StackLayout>
+
+
+            <views:ToolbarMenuControl Grid.Row="4" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
