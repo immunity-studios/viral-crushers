@@ -168,8 +168,9 @@ namespace Game.Engine.EngineGame
         public override List<PlayerInfoModel> OrderPlayerListByTurnOrder()
         {
             // TODO Teams: Implement the order
+            // TODO: Need to fix it
 
-            throw new System.NotImplementedException();
+            return base.OrderPlayerListByTurnOrder();
         }
 
         /// <summary>
