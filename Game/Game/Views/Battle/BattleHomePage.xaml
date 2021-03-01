@@ -25,7 +25,7 @@
 
             <Button HorizontalOptions="Center"
                     Clicked="PickItemsPage_Clicked"
-                    Text="Items Pickup Page"/>
+                    Text="Pick Items Page"/>
 
             <Button HorizontalOptions="Center"
                     Clicked="RoundOverPage_Clicked"
@@ -37,7 +37,7 @@
 
             <Button HorizontalOptions="Center"
                     Clicked="ScorePage_Clicked"
-                    Text="Score Page"/>
+                    Text="Game Over Page"/>
 
         </StackLayout>
         
