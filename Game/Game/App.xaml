@@ -634,6 +634,16 @@
                 <Setter Property="FramePadding" Value="10,0,10,20" />
             </Style>
 
+            <Style x:Key="YellowCurvedTitle"
+                   BasedOn="{StaticResource BaseCurvedLabelStyle}"
+                   TargetType="views:CurvedLabelControl">
+                <Setter Property="CornerRadius" Value="25" />
+                <Setter Property="TextColor" Value="{StaticResource ViralCrusherWhiteColor}" />
+                <Setter Property="TextBackgroundColor" Value="{StaticResource ViralCrusherYellowColor}" />
+                <Setter Property="FontSize" Value="30" />
+                <Setter Property="FramePadding" Value="10,0,10,20" />
+            </Style>
+
             <Style x:Key="YellowCurvedLabel"
                    BasedOn="{StaticResource BaseCurvedLabelStyle}"
                    TargetType="views:CurvedLabelControl">
