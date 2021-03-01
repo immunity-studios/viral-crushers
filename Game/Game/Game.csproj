@@ -58,8 +58,8 @@
     <Compile Update="Views\Battle\NewRoundPage.xaml.cs">
       <DependentUpon>NewRoundPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Battle\ScorePage.xaml.cs">
-      <DependentUpon>ScorePage.xaml</DependentUpon>
+    <Compile Update="Views\Battle\GameOverPage.xaml.cs">
+      <DependentUpon>GameOverPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\Battle\PickCharactersPage.xaml.cs">
       <DependentUpon>PickCharactersPage.xaml</DependentUpon>

@@ -19,7 +19,7 @@ namespace UnitTests.Views
     public class ScorePageTests
     {
         App app;
-        ScorePage page;
+        GameOverPage page;
 
         [SetUp]
         public void Setup()
@@ -34,7 +34,7 @@ namespace UnitTests.Views
             // For now, set the engine to the Koenig Engine, change when ready 
             BattleEngineViewModel.Instance.SetBattleEngineToKoenig();
 
-            page = new ScorePage();
+            page = new GameOverPage();
         }
 
         [TearDown]

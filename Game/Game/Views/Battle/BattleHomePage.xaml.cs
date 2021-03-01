@@ -64,7 +64,7 @@ namespace Game.Views
 
 		public async void ScorePage_Clicked(object sender, EventArgs e)
 		{
-			await Navigation.PushAsync(new ScorePage());
+			await Navigation.PushAsync(new GameOverPage());
 		}
 	}
 }
