@@ -5,7 +5,8 @@
              x:Class="Game.Views.BattleHomePage">
 
     <ContentPage.Content>
-        <StackLayout Padding="0,20,0,0">
+        <StackLayout VerticalOptions="CenterAndExpand"
+                     HorizontalOptions="CenterAndExpand">
 
             <Button HorizontalOptions="Center"
                     Clicked="AutoBattlePage_Clicked"
