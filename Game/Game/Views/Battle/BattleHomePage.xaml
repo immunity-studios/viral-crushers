@@ -8,12 +8,12 @@
         <StackLayout Padding="0,20,0,0">
 
             <Button HorizontalOptions="Center"
-                    Clicked="BattlePage_Clicked"
-                    Text="Battle Page"/>
+                    Clicked="AutoBattlePage_Clicked"
+                    Text="Auto Battle Page"/>
 
             <Button HorizontalOptions="Center"
-                    Clicked="BattleSettingsPage_Clicked"
-                    Text="Battle Settings Page"/>
+                    Clicked="BattlePage_Clicked"
+                    Text="Battle Page"/>
 
             <Button HorizontalOptions="Center"
                     Clicked="PickCharactersPage_Clicked"

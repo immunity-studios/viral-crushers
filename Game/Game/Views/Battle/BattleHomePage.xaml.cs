@@ -29,9 +29,9 @@ namespace Game.Views
 		}
 
 		
-		public async void BattleSettingsPage_Clicked(object sender, EventArgs e)
+		public async void AutoBattlePage_Clicked(object sender, EventArgs e)
 		{
-			await Navigation.PushAsync(new BattleSettingsPage());
+			await Navigation.PushAsync(new AutoBattlePage());
 		}
 
 		/// <summary>
