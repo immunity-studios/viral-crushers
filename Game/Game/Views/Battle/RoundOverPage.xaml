@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Game.Views.RoundOverPage">
+             x:Class="Game.Views.RoundOverPage"
+             xmlns:views="clr-namespace:Game.Views">
 
     <ContentPage.Content>
 
         <AbsoluteLayout
-        HorizontalOptions="FillAndExpand"
-        VerticalOptions="FillAndExpand"
-        >
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand" >
 
             <StackLayout Style="{StaticResource VerticalStack}"
                     AbsoluteLayout.LayoutBounds="1,1,1,1" 
@@ -17,35 +17,65 @@
                 <ScrollView x:Name="ScrollView">
 
                     <StackLayout Style="{StaticResource VerticalStack}">
+                        
+                        <!--Page Title-->
+                        <views:CurvedLabelControl Margin="0,60,0,-20"
+                                      HorizontalOptions="Center"
+                                      Style="{StaticResource RedCurvedLabel}"
+                                      Text="Round Cleared" />
 
-                        <Label Text="Round Cleared" Style="{StaticResource CenterMessageLargeStyle}"/>
+                        <Frame HorizontalOptions="FillAndExpand" Margin="5,0,5,10">
+                            <StackLayout Padding="10,10,0,10"  Style="{StaticResource HorizontalStack}">
+                                <Label Text="Round : " Style="{StaticResource MessageStyle}"/>
+                                <Label Text="0" x:Name="TotalRound" Style="{StaticResource MessageStyle}"/>
+                                <StackLayout Padding="1"></StackLayout>
+                            </StackLayout>
 
+                        </Frame>
+
+                        <!--Close Button-->
                         <Button Clicked="CloseButton_Clicked" Text="Close"/>
 
-                        <StackLayout Style="{StaticResource HorizontalStack}">
-                            <Label Text="Round : " Style="{StaticResource MessageStyle}"/>
-                            <Label Text="0" x:Name="TotalRound" Style="{StaticResource MessageStyle}"/>
-                        </StackLayout>
 
-                        <Label Text="Characters" Style="{StaticResource MessageStyle}"/>
-                        <FlexLayout x:Name="CharacterListFrame"
+                        <!--Character List-->
+                        <views:CurvedLabelControl Margin="20,20,0,-20"
+                                      HorizontalOptions="Start"
+                                      Style="{StaticResource YellowCurvedTitle}"
+                                      Text="Characters" />
+
+                        <Frame Margin="5,0,5,10">
+                            <StackLayout Padding="0,10,0,0">
+                                <FlexLayout x:Name="CharacterListFrame"
                                     JustifyContent="Start"
                                     AlignContent="Start"
                                     Wrap="Wrap"/>
+                            </StackLayout>
+                        </Frame>
 
-                        <Label Text="Items Found" Style="{StaticResource MessageStyle}"/>
-                        <StackLayout Style="{StaticResource HorizontalStack}">
-                            <Label Text="Found : " Style="{StaticResource LabelStyle}"/>
-                            <Label Text="0" x:Name="TotalFound" Style="{StaticResource ValueStyle}"/>
-                        </StackLayout>
-                        <FlexLayout x:Name="ItemListFoundFrame"
+                        <!--Items Found List-->
+                        <views:CurvedLabelControl Margin="20,20,0,-20"
+                                      HorizontalOptions="Start"
+                                      Style="{StaticResource YellowCurvedTitle}"
+                                      Text="Items Found" />
+
+                        <Frame Margin="5,0,5,10">
+                            <StackLayout>
+
+                                <StackLayout Padding="10,10,10,0" Style="{StaticResource HorizontalStack}">
+                                    <Label Text="Found : " Style="{StaticResource LabelStyle}"/>
+                                    <Label Text="0" x:Name="TotalFound" Style="{StaticResource ValueStyle}"/>
+                                </StackLayout>
+
+                                <FlexLayout x:Name="ItemListFoundFrame"
                                     JustifyContent="Start"
                                     AlignContent="Start"
                                     Wrap="Wrap"/>
+                            </StackLayout>
+                        </Frame>
 
-                        <Button Clicked="AutoAssignButton_Clicked" Text="Assign Items"/>
+                        
 
-                        <Label Text="Items Selected" Style="{StaticResource MessageStyle}"/>
+                        <!--<Label Text="Items Selected" Style="{StaticResource MessageStyle}"/>
                         <StackLayout Style="{StaticResource HorizontalStack}">
                             <Label Text="Selected : " Style="{StaticResource LabelStyle}"/>
                             <Label Text="0" x:Name="TotalSelected" Style="{StaticResource ValueStyle}"/>
@@ -53,9 +83,16 @@
                         <FlexLayout x:Name="ItemListSelectedFrame"
                                     JustifyContent="Start"
                                     AlignContent="Start"
-                                    Wrap="Wrap"/>
+                                    Wrap="Wrap"/>-->
 
-                        <Button Clicked="CloseButton_Clicked" Text="Close"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Button Clicked="AutoAssignButton_Clicked" Text="Assign Items"/>
+                            <Button Grid.Column="1"  Clicked="CloseButton_Clicked" Text="Close"/>
+                        </Grid>
 
                     </StackLayout>
                 </ScrollView>
