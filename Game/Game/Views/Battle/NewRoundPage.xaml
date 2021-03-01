@@ -1,30 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Game.Views.NewRoundPage">
+             x:Class="Game.Views.NewRoundPage"
+             xmlns:views="clr-namespace:Game.Views">
 
     <ContentPage.Content>
         <ScrollView VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never">
 
             <StackLayout Style="{StaticResource VerticalStack}">
 
-                <Label Text="Beginning a Round" Style="{StaticResource CenterMessageLargeStyle}"/>
+                <views:CurvedLabelControl Margin="0,60,0,0"
+                                      HorizontalOptions="Center"
+                                      Style="{StaticResource RedCurvedLabel}"
+                                      FramePadding="10,0,10,0"
+                                      Text="Begin a Round" />
 
-                <Button Clicked="BeginButton_Clicked" Text="Begin"/>
+                <views:CurvedLabelControl Margin="20,60,0,-20"
+                                      HorizontalOptions="Start"
+                                      Style="{StaticResource YellowCurvedTitle}"
+                                      Text="Characters" />
 
-                <Label Text="Characters" Style="{StaticResource MessageLargeStyle}"/>
+                <Frame Margin="5,0,5,10">
 
-                <FlexLayout x:Name="PartyListFrame"
+                    <FlexLayout x:Name="PartyListFrame"
+                                        JustifyContent="Start"
+                                        AlignContent="Start"
+                                        Wrap="Wrap"/>
+                </Frame>
+
+                <views:CurvedLabelControl Margin="20,20,0,-20"
+                                      HorizontalOptions="Start"
+                                      Style="{StaticResource YellowCurvedTitle}"
+                                      Text="Monsters" />
+
+                <Frame Margin="5,0,5,10">
+
+                    <FlexLayout x:Name="MonsterListFrame"
                                     JustifyContent="Start"
                                     AlignContent="Start"
                                     Wrap="Wrap"/>
-
-                <Label Text="Monsters" Style="{StaticResource MessageLargeStyle}"/>
-
-                <FlexLayout x:Name="MonsterListFrame"
-                                    JustifyContent="Start"
-                                    AlignContent="Start"
-                                    Wrap="Wrap"/>
+                </Frame>
 
                 <StackLayout Padding="1"></StackLayout>
 
