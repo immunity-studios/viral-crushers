@@ -16,7 +16,7 @@ using Game.ViewModels;
 namespace UnitTests.Views
 {
     [TestFixture]
-    public class ScorePageTests
+    public class GameOverPageTests
     {
         App app;
         GameOverPage page;
@@ -44,7 +44,7 @@ namespace UnitTests.Views
         }
 
         [Test]
-        public void ScorePage_Constructor_Default_Should_Pass()
+        public void GameOverPage_Constructor_Default_Should_Pass()
         {
             // Arrange
 
@@ -58,7 +58,7 @@ namespace UnitTests.Views
         }
 
         [Test]
-        public void ScorePage_CloseButton_Clicked_Default_Should_Pass()
+        public void GameOverPage_CloseButton_Clicked_Default_Should_Pass()
         {
             // Arrange
 
@@ -72,7 +72,7 @@ namespace UnitTests.Views
         }
 
         [Test]
-        public void ScorePage_CreateCharacterBox_Default_Should_Pass()
+        public void GameOverPage_CreateCharacterBox_Default_Should_Pass()
         {
             // Arrange
             var data = new PlayerInfoModel(new CharacterModel());
@@ -87,7 +87,7 @@ namespace UnitTests.Views
         }
 
         [Test]
-        public void ScorePage_CreateCharacterBox_Null_Should_Pass()
+        public void GameOverPage_CreateCharacterBox_Null_Should_Pass()
         {
             // Arrange
 
@@ -101,7 +101,7 @@ namespace UnitTests.Views
         }
 
         [Test]
-        public void ScorePage_CreateMonsterBox_Default_Should_Pass()
+        public void GameOverPage_CreateMonsterBox_Default_Should_Pass()
         {
             // Arrange
             var data = new PlayerInfoModel(new MonsterModel());
@@ -116,7 +116,7 @@ namespace UnitTests.Views
         }
 
         [Test]
-        public void ScorePage_CreateMonsterBox_Null_Should_Pass()
+        public void GameOverPage_CreateMonsterBox_Null_Should_Pass()
         {
             // Arrange
 
@@ -130,7 +130,7 @@ namespace UnitTests.Views
         }
 
         [Test]
-        public void ScorePage_CreateItemBox_Default_Should_Pass()
+        public void GameOverPage_CreateItemBox_Default_Should_Pass()
         {
             // Arrange
             var data = new ItemModel();
@@ -145,7 +145,7 @@ namespace UnitTests.Views
         }
 
         [Test]
-        public void ScorePage_CreateItemBox_Null_Should_Pass()
+        public void GameOverPage_CreateItemBox_Null_Should_Pass()
         {
             // Arrange
 
@@ -159,7 +159,7 @@ namespace UnitTests.Views
         }
 
         [Test]
-        public void ScorePage__Default_Should_Pass()
+        public void GameOverPage__Default_Should_Pass()
         {
             // Arrange
 
