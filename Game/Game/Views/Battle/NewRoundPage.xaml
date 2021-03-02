@@ -15,17 +15,18 @@
                                       FramePadding="10,0,10,0"
                                       Text="Begin a Round" />
 
-                <views:CurvedLabelControl Margin="20,60,0,-20"
+                <views:CurvedLabelControl Margin="20,20,0,-20"
                                       HorizontalOptions="Start"
                                       Style="{StaticResource YellowCurvedTitle}"
                                       Text="Characters" />
 
-                <Frame Margin="5,0,5,10">
-
+                <Frame Margin="5,0,5,10"
+                       HorizontalOptions="FillAndExpand">
                     <FlexLayout x:Name="PartyListFrame"
-                                        JustifyContent="Start"
-                                        AlignContent="Start"
-                                        Wrap="Wrap"/>
+                                            JustifyContent="Start"
+                                            AlignContent="Start"
+                                            Wrap="Wrap"/>
+
                 </Frame>
 
                 <views:CurvedLabelControl Margin="20,20,0,-20"
@@ -33,7 +34,8 @@
                                       Style="{StaticResource YellowCurvedTitle}"
                                       Text="Monsters" />
 
-                <Frame Margin="5,0,5,10">
+                <Frame Margin="5,0,5,10"
+                       HorizontalOptions="FillAndExpand">
 
                     <FlexLayout x:Name="MonsterListFrame"
                                     JustifyContent="Start"
