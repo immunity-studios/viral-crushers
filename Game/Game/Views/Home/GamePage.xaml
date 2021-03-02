@@ -47,7 +47,7 @@
             <StackLayout Grid.Row="2" Style="{StaticResource CardImageTextBox}">
 
                 <ImageButton
-                        Source="item.png"
+                        Source="icon_gate.png"
                         Style="{StaticResource ImageMediumStyle}"
                         Clicked="DungeonButton_Clicked"/>
 
@@ -59,7 +59,7 @@
             <StackLayout Grid.Row="3" Style="{StaticResource CardImageTextBox}">
 
                 <ImageButton
-                        Source="item.png"
+                        Source="icon_play.png"
                         Style="{StaticResource ImageSmallStyle}"
                         Clicked="AutobattleButton_Clicked"/>
 
