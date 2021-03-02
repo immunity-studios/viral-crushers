@@ -68,6 +68,7 @@ namespace Game.Engine.EngineGame
         /// <returns></returns>
         public override ActionEnum DetermineActionChoice(PlayerInfoModel Attacker)
         {
+            return base.DetermineActionChoice(Attacker);
             // If it is the characters turn, and NOT auto battle, use what was sent into the engine
 
             /*
@@ -84,7 +85,6 @@ namespace Game.Engine.EngineGame
 
             // See if Desired Target is within Range, and if so attack away
 
-            throw new System.NotImplementedException();
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool MoveAsTurn(PlayerInfoModel Attacker)
         {
-
+            return base.MoveAsTurn(Attacker);
             /*
              * TODO: TEAMS Work out your own move logic if you are implementing move
              * 
@@ -108,24 +108,24 @@ namespace Game.Engine.EngineGame
              */
 
             // If the Monster the calculate the options
-            if (Attacker.PlayerType == PlayerTypeEnum.Monster)
-            {
-                // For Attack, Choose Who
+            //if (Attacker.PlayerType == PlayerTypeEnum.Monster)
+            //{
+            //    // For Attack, Choose Who
 
-                // Get X, Y for Defender
+            //    // Get X, Y for Defender
 
-                // Get X, Y for the Attacker
+            //    // Get X, Y for the Attacker
 
-                // Find Location Nearest to Defender that is Open.
+            //    // Find Location Nearest to Defender that is Open.
 
-                // Get the Open Locations
+            //    // Get the Open Locations
 
-                // Format a message to show
+            //    // Format a message to show
 
-                throw new System.NotImplementedException();
-            }
+            //    throw new System.NotImplementedException();
+            //}
 
-            return true;
+            //return true;
         }
 
         /// <summary>
@@ -135,6 +135,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool ChooseToUseAbility(PlayerInfoModel Attacker)
         {
+            return base.ChooseToUseAbility(Attacker);
             // See if healing is needed.
 
             // If not needed, then role dice to see if other ability should be used
@@ -142,8 +143,6 @@ namespace Game.Engine.EngineGame
             // Select the ability
 
             // Don't try
-
-            throw new System.NotImplementedException();
         }
 
         /// <summary>
@@ -151,7 +150,8 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool UseAbility(PlayerInfoModel Attacker)
         {
-            throw new System.NotImplementedException();
+            return base.UseAbility(Attacker);
+
         }
 
         /// <summary>
@@ -364,9 +364,9 @@ namespace Game.Engine.EngineGame
         /// <summary>
         /// Critical Miss Problem
         /// </summary>
-        public override bool DetermineCriticalMissProblem(PlayerInfoModel attacker)
+        public override bool DetermineCriticalMissProblem(PlayerInfoModel Attacker)
         {
-            throw new System.NotImplementedException();
+            return base.DetermineCriticalMissProblem(Attacker);
         }
     }
 }
