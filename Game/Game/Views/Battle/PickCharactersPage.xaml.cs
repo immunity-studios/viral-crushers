@@ -89,7 +89,7 @@ namespace Game.Views
 
         #endregion
 
-        /// <summary>
+/*        /// <summary>
         /// The row selected from the list
         /// </summary>
         /// <param name="sender"></param>
@@ -109,7 +109,7 @@ namespace Game.Views
             BattleEngineViewModel.Instance.PartyCharacterList.Remove(data);
 
             UpdateNextButtonState();
-        }
+        }*/
 
         /// <summary>
         /// Next Button is based on the count
