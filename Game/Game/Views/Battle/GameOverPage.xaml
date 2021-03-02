@@ -39,11 +39,23 @@
                                       Text="Characters" />
 
                 <Frame Margin="5,0,5,10">
-                    <StackLayout Padding="0,10,0,0">
+                    <StackLayout>
+                    <!--<StackLayout Padding="0,10,0,0">
                         <FlexLayout  x:Name="CharacterListFrame"
                                             JustifyContent="Start"
                                             AlignContent="Start"
                                             Wrap="Wrap"/>
+                    </StackLayout>-->
+                    <StackLayout Padding="10,10,10,0" Style="{StaticResource HorizontalStack}">
+                        <Label Text="Killed : " Style="{StaticResource LabelStyle}"/>
+                        <Label Text="0" x:Name="TotalCharactersKilled" Style="{StaticResource ValueStyle}"/>
+                    </StackLayout>
+
+                    <FlexLayout x:Name="CharacterListFrame"
+                                        JustifyContent="Start"
+                                        AlignContent="Start"
+                                        Wrap="Wrap"/>
+
                     </StackLayout>
                 </Frame>
 
