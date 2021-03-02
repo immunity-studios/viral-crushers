@@ -71,6 +71,7 @@
                         </CollectionView.ItemTemplate>
                     </CollectionView>
 
+                    <!--Battle Button-->
                     <ImageButton HorizontalOptions="Center"
                                          Clicked="BattleButton_Clicked" 
                                          Source="battle_button_140.png" />
