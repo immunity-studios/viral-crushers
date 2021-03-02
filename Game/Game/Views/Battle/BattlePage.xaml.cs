@@ -560,12 +560,12 @@ namespace Game.Views
             AttackerHealth.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.GetCurrentHealthTotal.ToString() + " / " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.GetMaxHealthTotal.ToString();
 
             // Show what action the Attacker used
-            AttackerAttack.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.PreviousAction.ToImageURI();
+            //AttackerAttack.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.PreviousAction.ToImageURI();
             
             var item = ItemIndexViewModel.Instance.GetItem(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PrimaryHand);
             if (item != null)
             {
-                AttackerAttack.Source = item.ImageURI;
+               // AttackerAttack.Source = item.ImageURI;
             }
             
             DefenderImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.ImageURI;
@@ -603,7 +603,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void AttackButton_Clicked(object sender, EventArgs e)
+        public void CharacterMoveButton_Clicked(object sender, EventArgs e)
         {
             NextAttackExample();
         }
@@ -849,10 +849,10 @@ namespace Game.Views
         public void HideUIElements()
         {
             NextRoundButton.IsVisible = false;
-            StartBattleButton.IsVisible = false;
-            AttackButton.IsVisible = false;
-            MessageDisplayBox.IsVisible = false;
-            BattlePlayerInfomationBox.IsVisible = false;
+            CharacterAttackButton.IsVisible = false;
+            CharacterMoveButton.IsVisible = false;
+            //MessageDisplayBox.IsVisible = false;
+            //BattlePlayerInfomationBox.IsVisible = false;
         }
 
         /// <summary>
@@ -873,7 +873,7 @@ namespace Game.Views
             DrawPlayerBoxes();
 
             // Update the Mode
-            BattleModeValue.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum.ToMessage();
+            //BattleModeValue.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum.ToMessage();
 
             ShowBattleModeDisplay();
 
@@ -889,20 +889,20 @@ namespace Game.Views
             {
                 case BattleStateEnum.Starting:
                     //GameUIDisplay.IsVisible = false;
-                    AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
-                    StartBattleButton.IsVisible = true;
+                    //AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
+                    CharacterAttackButton.IsVisible = true;
                     break;
 
                 case BattleStateEnum.NewRound:
                     UpdateMapGrid();
-                    AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
+                    //AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
                     NextRoundButton.IsVisible = true;
                     break;
 
                 case BattleStateEnum.GameOver:
                     // Hide the Game Board
                     GameUIDisplay.IsVisible = false;
-                    AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
+                    //AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
 
                     // Show the Game Over Display
                     await Navigation.PushAsync(new GameOverPage());
@@ -912,9 +912,9 @@ namespace Game.Views
                 case BattleStateEnum.RoundOver:
                 case BattleStateEnum.Battling:
                     GameUIDisplay.IsVisible = true;
-                    BattlePlayerInfomationBox.IsVisible = true;
-                    MessageDisplayBox.IsVisible = true;
-                    AttackButton.IsVisible = true;
+                    //BattlePlayerInfomationBox.IsVisible = true;
+                    //MessageDisplayBox.IsVisible = true;
+                    CharacterMoveButton.IsVisible = true;
                     break;
 
                 // Based on the State disable buttons
@@ -934,7 +934,7 @@ namespace Game.Views
                 case BattleModeEnum.MapAbility:
                 case BattleModeEnum.MapFull:
                 case BattleModeEnum.MapNext:
-                    GamePlayersTopDisplay.IsVisible = false;
+                    //GamePlayersTopDisplay.IsVisible = false;
                     BattleMapDisplay.IsVisible = true;
                     break;
 
@@ -942,7 +942,7 @@ namespace Game.Views
                 case BattleModeEnum.SimpleNext:
                 case BattleModeEnum.Unknown:
                 default:
-                    GamePlayersTopDisplay.IsVisible = true;
+                    //GamePlayersTopDisplay.IsVisible = true;
                     BattleMapDisplay.IsVisible = false;
                     break;
             }
