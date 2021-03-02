@@ -14,18 +14,12 @@ namespace Game.Engine.EngineGame
         // Hold the BaseEngine
         public new EngineSettingsModel EngineSettings = EngineSettingsModel.Instance;
 
-        // The Turn Engine
-        public new ITurnEngineInterface Turn
+        /// <summary>
+        /// Default RoundEngine constructor
+        /// </summary>
+        public RoundEngine()
         {
-            get
-            {
-                if (base.Turn == null)
-                {
-                    base.Turn = new TurnEngine();
-                }
-                return base.Turn;
-            }
-            set { base.Turn = Turn; }
+            Turn = new TurnEngine();
         }
 
         /// <summary>

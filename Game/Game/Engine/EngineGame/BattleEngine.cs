@@ -10,22 +10,18 @@ namespace Game.Engine.EngineGame
     /// </summary>
     public class BattleEngine : BattleEngineBase, IBattleEngineInterface
     {
-        // The Round
-        public new IRoundEngineInterface Round
-        {
-            get
-            {
-                if (base.Round == null)
-                {
-                    base.Round = new RoundEngine();
-                }
-                return base.Round;
-            }
-            set { base.Round = Round; }
-        }
 
         // The BaseEngine
         public new EngineSettingsModel EngineSettings { get; set; } = EngineSettingsModel.Instance;
+
+        /// <summary>
+        /// Default BattleEngine constructor
+        /// </summary>
+        public BattleEngine()
+        {
+            Round = new RoundEngine();
+        }
+
 
         /// <summary>
         /// Add the charcter to the character list

@@ -31,17 +31,12 @@ namespace Game.Engine.EngineGame
         // Output Score
         #endregion Algrorithm
 
-        public new IBattleEngineInterface Battle
+        /// <summary>
+        /// Default AutoBattleEngine constructor
+        /// </summary>
+        public AutoBattleEngine()
         {
-            get
-            {
-                if (base.Battle == null)
-                {
-                    base.Battle = new BattleEngine();
-                }
-                return base.Battle;
-            }
-            set { base.Battle = Battle; }
+            Battle = new BattleEngine();
         }
 
         public override bool CreateCharacterParty()
