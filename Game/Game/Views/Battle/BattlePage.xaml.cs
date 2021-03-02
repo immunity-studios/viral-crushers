@@ -883,7 +883,7 @@ namespace Game.Views
         /// <summary>
         /// Control the UI Elements to display
         /// </summary>
-        public void ShowBattleModeUIElements()
+        public async void ShowBattleModeUIElements()
         {
             switch (BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum)
             {
@@ -905,7 +905,8 @@ namespace Game.Views
                     AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
 
                     // Show the Game Over Display
-                    GameOverDisplay.IsVisible = true;
+                    await Navigation.PushAsync(new GameOverPage());
+                    //GameOverDisplay.IsVisible = true;
                     break;
 
                 case BattleStateEnum.RoundOver:
