@@ -25,10 +25,6 @@
                                       Style="{StaticResource RedCurvedLabel}"
                                       Text="Monsters Party" />
 
-            <ImageButton Margin="0,30,30,0"
-                         Clicked="AddItem_Clicked"
-                         Style="{StaticResource AddImageButton}" />
-
             <Frame Grid.Row="1" Margin="5,0,5,10">
                 <StackLayout Padding="0,10,0,0">
                     <CollectionView x:Name="MonstersCollectionView"
