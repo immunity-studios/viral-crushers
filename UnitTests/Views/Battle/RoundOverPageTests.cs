@@ -228,26 +228,26 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
-        [Test]
-        public void RoundOverPage_DrawSelectedItems_Valid_Should_Pass()
-        {
-            // Arrange
+        //[Test]
+        //public void RoundOverPage_DrawSelectedItems_Valid_Should_Pass()
+        //{
+        //    // Arrange
 
-            // Draw the Items
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.Add(new ItemModel());
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList.Add(new ItemModel());
+        //    // Draw the Items
+        //    BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.Add(new ItemModel());
+        //    BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList.Add(new ItemModel());
 
-            // Draw two times
-            page.DrawSelectedItems();
+        //    // Draw two times
+        //    page.DrawSelectedItems();
 
-            // Act
-            page.DrawSelectedItems();
+        //    // Act
+        //    page.DrawSelectedItems();
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
         [Test]
         public void RoundOverPage_GetItemToDisplay_Click_Button_Valid_Should_Pass()
