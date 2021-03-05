@@ -10,35 +10,51 @@
 
             <Button HorizontalOptions="Center"
                     Clicked="AutoBattlePage_Clicked"
-                    Text="Auto Battle Page"/>
+                    Text="Auto Battle Page"
+                    CornerRadius="8"
+                    VerticalOptions="Center"/>
 
             <Button HorizontalOptions="Center"
                     Clicked="BattlePage_Clicked"
-                    Text="Battle Page"/>
+                    Text="Battle Page"
+                    CornerRadius="8"
+                    VerticalOptions="Center"/>
 
             <Button HorizontalOptions="Center"
                     Clicked="PickCharactersPage_Clicked"
-                    Text="Pick Character Page"/>
+                    Text="Pick Character Page"
+                    CornerRadius="8"
+                    VerticalOptions="Center"/>
 
             <Button HorizontalOptions="Center"
                     Clicked="ShowMonstersPage_Clicked"
-                    Text="Show Monsters Page"/>
+                    Text="Show Monsters Page"
+                    CornerRadius="8"
+                    VerticalOptions="Center"/>
 
             <Button HorizontalOptions="Center"
                     Clicked="PickItemsPage_Clicked"
-                    Text="Pick Items Page"/>
+                    Text="Pick Items Page"
+                    CornerRadius="8"
+                    VerticalOptions="Center"/>
 
             <Button HorizontalOptions="Center"
                     Clicked="RoundOverPage_Clicked"
-                    Text="Round Over Page"/>
+                    Text="Round Over Page"
+                    CornerRadius="8"
+                    VerticalOptions="Center"/>
 
             <Button HorizontalOptions="Center"
                     Clicked="NewRoundPage_Clicked"
-                    Text="New Round Page"/>
+                    Text="New Round Page"
+                    CornerRadius="8"
+                    VerticalOptions="Center"/>
 
             <Button HorizontalOptions="Center"
                     Clicked="ScorePage_Clicked"
-                    Text="Game Over Page"/>
+                    Text="Game Over Page"
+                    CornerRadius="8"
+                    VerticalOptions="Center"/>
 
         </StackLayout>
         

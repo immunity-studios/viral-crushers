@@ -23,7 +23,7 @@
                     <StackLayout Style="{StaticResource CardImageTextBox}">
 
                         <ImageButton
-                            Source="item.png"
+                            Source="icon_play.png"
                             Style="{StaticResource ImageLargeStyle}"
                             Clicked="AutobattleButton_Clicked"/>
 

@@ -107,12 +107,15 @@ namespace Game.Engine.EngineBase
                 TargetLevel = Convert.ToInt32(EngineSettings.CharacterList.Min(m => m.Level));
             }
 
+            List<String> images = new List<string> { "ebola_monster_140.png", "malaria_monster_140.png", "covid_monster_140.png", "measles_monster_140.png", "flu_monster_140.png", "cold_monster_140.png" };
+
             for (var i = 0; i < EngineSettings.MaxNumberPartyMonsters; i++)
             {
                 var data = RandomPlayerHelper.GetRandomMonster(TargetLevel, EngineSettings.BattleSettingsModel.AllowMonsterItems);
 
                 // Help identify which Monster it is
                 data.Name += " " + EngineSettings.MonsterList.Count() + 1;
+                data.ImageURI = images[i];
 
                 EngineSettings.MonsterList.Add(new PlayerInfoModel(data));
             }

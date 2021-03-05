@@ -143,9 +143,11 @@
     <Content Include="icon_character.png" />
     <Content Include="icon_delete.png" />
     <Content Include="icon_doctor.png" />
+    <Content Include="icon_dungeon.png" />
     <Content Include="icon_edit.png" />
     <Content Include="icon_face_shield.png" />
     <Content Include="icon_firefighter.png" />
+    <Content Include="icon_gate.png" />
     <Content Include="icon_gift.png" />
     <Content Include="icon_gloves.png" />
     <Content Include="icon_goggles.png" />
@@ -163,6 +165,7 @@
     <Content Include="icon_officer.png" />
     <Content Include="icon_orange_monster.png" />
     <Content Include="icon_panacea.png" />
+    <Content Include="icon_play.png" />
     <Content Include="icon_purple_monster.png" />
     <Content Include="icon_red_monster.png" />
     <Content Include="icon_sanitizer.png" />

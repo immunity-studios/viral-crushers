@@ -312,4 +312,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\cold_monster_140.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_gate.png" />
+  </ItemGroup>
 </Project>
