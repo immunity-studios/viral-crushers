@@ -1,8 +1,13 @@
-﻿using System.Collections.Generic;
-using Game.Engine.EngineBase;
+﻿using Game.Engine.EngineBase;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
 using Game.Engine.EngineInterfaces;
 using Game.Engine.EngineModels;
+using Game.GameRules;
 using Game.Models;
+using Game.ViewModels;
 
 namespace Game.Engine.EngineGame
 {
@@ -78,9 +83,26 @@ namespace Game.Engine.EngineGame
         /// <returns></returns>
         public override int AddMonstersToRound()
         {
-            // TODO: Teams, You need to implement your own Logic can not use mine.
-            // TODO: Need to fix it
-            return base.AddMonstersToRound();
+            int TargetLevel = 1;
+
+            if (EngineSettings.CharacterList.Count() > 0)
+            {
+                // Get the Min Character Level (linq is soo cool....)
+                TargetLevel = Convert.ToInt32(EngineSettings.CharacterList.Min(m => m.Level));
+            }
+            // Loop through all monsters in database
+            for (var i = 0; i < BattleEngineViewModel.Instance.DatabaseMonsterList.Count(); i++)
+            {
+                var data = BattleEngineViewModel.Instance.DatabaseMonsterList.ElementAt(i);
+
+                // Only get monster who has level <= characters' level
+                if (data.Level <= TargetLevel)
+                {
+                    EngineSettings.MonsterList.Add(new PlayerInfoModel(data));
+                }
+            }
+
+            return EngineSettings.MonsterList.Count();
         }
 
         /// <summary>
