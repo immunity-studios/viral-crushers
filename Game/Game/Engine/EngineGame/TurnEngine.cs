@@ -4,6 +4,11 @@ using Game.Models;
 using Game.Engine.EngineInterfaces;
 using Game.Engine.EngineModels;
 using Game.Engine.EngineBase;
+using System.Linq;
+using System.Diagnostics;
+using Game.Helpers;
+using Game.ViewModels;
+using Game.GameRules;
 
 namespace Game.Engine.EngineGame
 {
@@ -58,7 +63,49 @@ namespace Game.Engine.EngineGame
 
             // Reset the Action to unknown for next time
 
-            return base.TakeTurn(Attacker);
+            bool result = false;
+
+            // If the action is not set, then try to set it or use Attact
+            if (EngineSettings.CurrentAction == ActionEnum.Unknown)
+            {
+                // Set the action if one is not set
+                EngineSettings.CurrentAction = DetermineActionChoice(Attacker);
+
+                // When in doubt, attack...
+                if (EngineSettings.CurrentAction == ActionEnum.Unknown)
+                {
+                    EngineSettings.CurrentAction = ActionEnum.Attack;
+                }
+            }
+
+            switch (EngineSettings.CurrentAction)
+            {
+                //case ActionEnum.Unknown:
+                //    // Action already happened
+                //    break;
+
+                case ActionEnum.Attack:
+                    result = Attack(Attacker);
+                    break;
+
+                case ActionEnum.Ability:
+                    result = UseAbility(Attacker);
+                    break;
+
+                case ActionEnum.Move:
+                    result = MoveAsTurn(Attacker);
+                    break;
+            }
+
+            EngineSettings.BattleScore.TurnCount++;
+
+            // Save the Previous Action off
+            EngineSettings.PreviousAction = EngineSettings.CurrentAction;
+
+            // Reset the Action to unknown for next time
+            EngineSettings.CurrentAction = ActionEnum.Unknown;
+
+            return result;
         }
 
         /// <summary>
@@ -68,7 +115,6 @@ namespace Game.Engine.EngineGame
         /// <returns></returns>
         public override ActionEnum DetermineActionChoice(PlayerInfoModel Attacker)
         {
-            return base.DetermineActionChoice(Attacker);
             // If it is the characters turn, and NOT auto battle, use what was sent into the engine
 
             /*
@@ -84,6 +130,32 @@ namespace Game.Engine.EngineGame
             // Check to see if ability is avaiable
 
             // See if Desired Target is within Range, and if so attack away
+            // If it is the characters turn, and NOT auto battle, use what was sent into the engine
+            if (Attacker.PlayerType == PlayerTypeEnum.Character)
+            {
+                if (EngineSettings.BattleScore.AutoBattle == false)
+                {
+                    return EngineSettings.CurrentAction;
+                }
+            }
+
+            // Assume Move if nothing else happens
+            EngineSettings.CurrentAction = ActionEnum.Move;
+
+            // Check to see if ability is avaiable
+            if (ChooseToUseAbility(Attacker))
+            {
+                EngineSettings.CurrentAction = ActionEnum.Ability;
+                return EngineSettings.CurrentAction;
+            }
+
+            // See if Desired Target is within Range, and if so attack away
+            if (EngineSettings.MapModel.IsTargetInRange(Attacker, AttackChoice(Attacker)))
+            {
+                EngineSettings.CurrentAction = ActionEnum.Attack;
+            }
+
+            return EngineSettings.CurrentAction;
 
         }
 
@@ -94,7 +166,6 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool MoveAsTurn(PlayerInfoModel Attacker)
         {
-            return base.MoveAsTurn(Attacker);
             /*
              * TODO: TEAMS Work out your own move logic if you are implementing move
              * 
@@ -126,6 +197,43 @@ namespace Game.Engine.EngineGame
             //}
 
             //return true;
+
+            if (Attacker.PlayerType == PlayerTypeEnum.Monster)
+            {
+                // For Attack, Choose Who
+                EngineSettings.CurrentDefender = AttackChoice(Attacker);
+
+                if (EngineSettings.CurrentDefender == null)
+                {
+                    return false;
+                }
+
+                // Get X, Y for Defender
+                var locationDefender = EngineSettings.MapModel.GetLocationForPlayer(EngineSettings.CurrentDefender);
+                if (locationDefender == null)
+                {
+                    return false;
+                }
+
+                var locationAttacker = EngineSettings.MapModel.GetLocationForPlayer(Attacker);
+                if (locationAttacker == null)
+                {
+                    return false;
+                }
+
+                // Find Location Nearest to Defender that is Open.
+
+                // Get the Open Locations
+                var openSquare = EngineSettings.MapModel.ReturnClosestEmptyLocation(locationDefender);
+
+                Debug.WriteLine(string.Format("{0} moves from {1},{2} to {3},{4}", locationAttacker.Player.Name, locationAttacker.Column, locationAttacker.Row, openSquare.Column, openSquare.Row));
+
+                EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " moves closer to " + EngineSettings.CurrentDefender.Name;
+
+                return EngineSettings.MapModel.MovePlayerOnMap(locationAttacker, openSquare);
+            }
+
+            return true;
         }
 
         /// <summary>
@@ -173,7 +281,22 @@ namespace Game.Engine.EngineGame
 
             // Do Attack
 
-            return base.Attack(Attacker);
+            // INFO: Teams, AttackChoice will auto pick the target, good for auto battle
+            if (EngineSettings.BattleScore.AutoBattle)
+            {
+                // For Attack, Choose Who
+                EngineSettings.CurrentDefender = AttackChoice(Attacker);
+
+                if (EngineSettings.CurrentDefender == null)
+                {
+                    return false;
+                }
+            }
+
+            // Do Attack
+            TurnAsAttack(Attacker, EngineSettings.CurrentDefender);
+
+            return true;
         }
 
         /// <summary>
@@ -181,7 +304,15 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override PlayerInfoModel AttackChoice(PlayerInfoModel data)
         {
-            return base.AttackChoice(data);
+            switch (data.PlayerType)
+            {
+                case PlayerTypeEnum.Monster:
+                    return SelectCharacterToAttack();
+
+                case PlayerTypeEnum.Character:
+                default:
+                    return SelectMonsterToAttack();
+            }
         }
 
         /// <summary>
@@ -194,7 +325,24 @@ namespace Game.Engine.EngineGame
             // TODO: Teams, You need to implement your own Logic can not use mine.
             // TODO: Need to fix it
 
-            return base.SelectCharacterToAttack();
+            if (EngineSettings.PlayerList == null)
+            {
+                return null;
+            }
+
+            if (EngineSettings.PlayerList.Count < 1)
+            {
+                return null;
+            }
+
+            // Select first in the list
+
+            // TODO: Teams, You need to implement your own Logic can not use mine.
+            var Defender = EngineSettings.PlayerList
+                .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
+                .OrderBy(m => m.ListOrder).FirstOrDefault();
+
+            return Defender;
         }
 
         /// <summary>
@@ -208,7 +356,26 @@ namespace Game.Engine.EngineGame
             // TODO: Teams, You need to implement your own Logic can not use mine.
             // TODO: Need to fix it.
 
-            return base.SelectMonsterToAttack();
+            if (EngineSettings.PlayerList == null)
+            {
+                return null;
+            }
+
+            if (EngineSettings.PlayerList.Count < 1)
+            {
+                return null;
+            }
+
+            // Select first one to hit in the list for now...
+            // Attack the Weakness (lowest HP) MonsterModel first 
+
+            // TODO: Teams, You need to implement your own Logic can not use mine.
+
+            var Defender = EngineSettings.PlayerList
+                .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Monster)
+                .OrderBy(m => m.CurrentHealth).FirstOrDefault();
+
+            return Defender;
         }
 
         /// <summary>

@@ -134,6 +134,41 @@ namespace Game.Models
                     }
                     break;
 
+                case CharacterJobEnum.Athlete:
+                    foreach (var item in AbilityEnumHelper.GetListAthlete)
+                    {
+                        AbilityTracker.Add(AbilityEnumHelper.ConvertStringToEnum(item), Level);
+                    }
+                    break;
+
+                case CharacterJobEnum.Teacher:
+                    foreach (var item in AbilityEnumHelper.GetListTeacher)
+                    {
+                        AbilityTracker.Add(AbilityEnumHelper.ConvertStringToEnum(item), Level);
+                    }
+                    break;
+
+                case CharacterJobEnum.Firefighter:
+                    foreach (var item in AbilityEnumHelper.GetListFireFighter)
+                    {
+                        AbilityTracker.Add(AbilityEnumHelper.ConvertStringToEnum(item), Level);
+                    }
+                    break;
+
+                case CharacterJobEnum.PoliceOfficer:
+                    foreach (var item in AbilityEnumHelper.GetListPoliceOfficer)
+                    {
+                        AbilityTracker.Add(AbilityEnumHelper.ConvertStringToEnum(item), Level);
+                    }
+                    break;
+
+                case CharacterJobEnum.CollegeStudent:
+                    foreach (var item in AbilityEnumHelper.GetListCollegeStudent)
+                    {
+                        AbilityTracker.Add(AbilityEnumHelper.ConvertStringToEnum(item), Level);
+                    }
+                    break;
+
                 default:
                     foreach (var item in AbilityEnumHelper.GetListOthers)
                     {
