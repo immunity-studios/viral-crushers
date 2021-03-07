@@ -692,7 +692,7 @@ namespace UnitTests.Views
             // Get the current valute
 
             // Act
-            page.Setttings_Clicked(null,null);
+            page.Settings_Clicked(null,null);
 
             // Reset
 
