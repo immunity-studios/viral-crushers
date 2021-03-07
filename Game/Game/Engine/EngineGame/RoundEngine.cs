@@ -38,6 +38,26 @@ namespace Game.Engine.EngineGame
         }
 
         /// <summary>
+        /// Set the Current Attacker
+        /// </summary>
+        public override bool SetCurrentAttacker(PlayerInfoModel player)
+        {
+            EngineSettings.CurrentAttacker = player;
+
+            return true;
+        }
+
+        /// <summary>
+        /// Set the Current Attacker
+        /// </summary>
+        public override bool SetCurrentDefender(PlayerInfoModel player)
+        {
+            EngineSettings.CurrentDefender = player;
+
+            return true;
+        }
+
+        /// <summary>
         /// Call to make a new set of monsters..
         /// </summary>
         public override bool NewRound()
@@ -164,10 +184,12 @@ namespace Game.Engine.EngineGame
         public override PlayerInfoModel GetNextPlayerTurn()
         {
             // Remove the Dead
+            RemoveDeadPlayersFromList();
 
             // Get Next Player
+            var PlayerCurrent = GetNextPlayerInList();
 
-            return base.GetNextPlayerTurn();
+            return PlayerCurrent;
         }
 
         /// <summary>
@@ -210,21 +232,39 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override PlayerInfoModel GetNextPlayerInList()
         {
+
+            //var Defender = EngineSettings.PlayerList
+            //    .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Monster)
+            //    .OrderBy(m => m.CurrentHealth).FirstOrDefault();
             // Walk the list from top to bottom
             // If Player is found, then see if next player exist, if so return that.
             // If not, return first player (looped)
 
             // If List is empty, return null
+            if (EngineSettings.PlayerList.Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Monster).Count() == 0)
+            {
+                return null;
+            }
 
             // No current player, so set the first one
+            if (EngineSettings.CurrentDefender == null)
+            {
+                return EngineSettings.PlayerList.Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Monster).FirstOrDefault();
+            }
 
             // Find current player in the list
+            // var index = EngineSettings.PlayerList.FindIndex(m => m.Guid.Equals(EngineSettings.CurrentAttacker.Guid));
 
             // If at the end of the list, return the first element
+            //if (index == EngineSettings.PlayerList.Count() - 1)
+            //{
+            //    return EngineSettings.PlayerList.FirstOrDefault();
+            //}
 
             // Return the next element
-
-            return base.GetNextPlayerInList();
+            return EngineSettings.PlayerList
+                .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Monster)
+                .OrderBy(m => m.CurrentHealth).FirstOrDefault();
         }
 
         /// <summary>
