@@ -682,13 +682,20 @@ namespace Game.Views
             Task.Delay(WaitTime);
 
 
+            NextMonsterAttack();
+
+
+        }
+
+        public void NextMonsterAttack()
+        {
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
 
             // Get the turn, set the current player and attacker to match
             SetAttackerAndDefender();
 
             // Hold the current state
-            RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
+            var RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
 
             // Output the Message of what happened.
             GameMessage();
@@ -726,8 +733,6 @@ namespace Game.Views
                 GameOver();
                 return;
             }
-
-
         }
 
         /// <summary>
