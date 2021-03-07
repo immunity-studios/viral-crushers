@@ -73,6 +73,8 @@
                     <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand">
 
                         <Button x:Name="AttackButton" Clicked="AttackButton_Clicked" Text="Attack" IsVisible="False" IsEnabled="False"/>
+                        <Button x:Name="AbilityButton" Clicked="AbilityButton_Clicked" Text="Use Ability" IsVisible="False"/>
+                        <Button x:Name="MoveButton" Clicked="MoveButton_Clicked" Text="Move" IsVisible="False"/>
                         <Button x:Name="NextRoundButton" Clicked="NextRoundButton_Clicked" Text="Next Round" IsVisible="False"/>
                         <Button x:Name="StartBattleButton" Clicked="StartButton_Clicked" Text="Start Battle" IsVisible="False"/>
                         <Button x:Name="SettingsButton" Clicked="Settings_Clicked" Text="Settings"/>

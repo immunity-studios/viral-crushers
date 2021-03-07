@@ -618,6 +618,28 @@ namespace Game.Views
         }
 
         /// <summary>
+        /// Ability Action
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void AbilityButton_Clicked(object sender, EventArgs e)
+        {
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction = ActionEnum.Ability;
+            NextAttackExample();
+        }
+
+        /// <summary>
+        /// Move Action
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void MoveButton_Clicked(object sender, EventArgs e)
+        {
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction = ActionEnum.Move;
+            NextAttackExample();
+        }
+
+        /// <summary>
         /// Settings Page
         /// </summary>
         /// <param name="sender"></param>
@@ -951,6 +973,8 @@ namespace Game.Views
             NextRoundButton.IsVisible = false;
             StartBattleButton.IsVisible = false;
             AttackButton.IsVisible = false;
+            AbilityButton.IsVisible = false;
+            MoveButton.IsVisible = false;
             MessageDisplayBox.IsVisible = false;
             BattlePlayerInfomationBox.IsVisible = false;
         }
@@ -1014,6 +1038,8 @@ namespace Game.Views
                     BattlePlayerInfomationBox.IsVisible = true;
                     MessageDisplayBox.IsVisible = true;
                     AttackButton.IsVisible = true;
+                    AbilityButton.IsVisible = true;
+                    MoveButton.IsVisible = true;
                     break;
 
                 // Based on the State disable buttons
