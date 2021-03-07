@@ -681,10 +681,30 @@ namespace Game.Views
             // Pause
             Task.Delay(WaitTime);
 
+            // Add a event to the user can click the item and see more
+            ShowPopup();
+        }
 
+        /// <summary>
+        /// Show the Popup for the Monster Turn
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public bool ShowPopup()
+        {
+            PopupLoadingView.IsVisible = true;
+            return true;
+        }
+
+        /// <summary>
+        /// Close the popup
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void ClosePopup_Clicked(object sender, EventArgs e)
+        {
+            PopupLoadingView.IsVisible = false;
             NextMonsterAttack();
-
-
         }
 
         public void NextMonsterAttack()

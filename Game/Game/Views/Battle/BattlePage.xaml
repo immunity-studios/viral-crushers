@@ -116,6 +116,27 @@
                 </StackLayout>
             </StackLayout>
 
+            <!--The Monster Turn Popup-->
+            <StackLayout 
+                    x:Name="PopupLoadingView"
+                    IsVisible="false"
+                    AbsoluteLayout.LayoutBounds=".5, .5,.5,.5" 
+                    AbsoluteLayout.LayoutFlags="All">
+
+                <Frame 
+                             BorderColor="{StaticResource TriciaryTextColor}" Padding="1">
+
+                    <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand" Padding="20">
+
+                        <Label x:Name="PopupMonsterTurn" Text="It is Monster's Turn!" Style="{StaticResource PopupItemTextStyle}" MaxLines="2" LineBreakMode="WordWrap" />
+
+                        <Button x:Name="PopupCloseButton" 
+                                Clicked="ClosePopup_Clicked" 
+                                Text="Close"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
             <!--The Game Over Screen -->
             <StackLayout 
                     Style="{StaticResource VerticalStack}"
