@@ -489,6 +489,10 @@ namespace Game.Views
              * For Mike's simple battle grammar there is no selection of action so I just return true
              */
             BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = data.Player;
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker != null)
+            {
+                AttackButton.IsEnabled = true;
+            }
             data.IsSelectedTarget = true;
             return true;
         }
@@ -509,6 +513,10 @@ namespace Game.Views
              * For Mike's simple battle grammar there is no selection of action so I just return true
              */
             BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = data.Player;
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender != null)
+            {
+                AttackButton.IsEnabled = true;
+            }
             data.IsSelectedTarget = true;
             return true;
         }
@@ -691,6 +699,8 @@ namespace Game.Views
         public void CloseUserPopup_Clicked(object sender, EventArgs e)
         {
             PopupUserLoadingView.IsVisible = false;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = null;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = null;
         }
 
         /// <summary>
@@ -701,6 +711,8 @@ namespace Game.Views
         public bool ShowMonsterPopup()
         {
             PopupMonsterLoadingView.IsVisible = true;
+
+            AttackButton.IsEnabled = false;
             return true;
         }
 
@@ -713,6 +725,8 @@ namespace Game.Views
         {
             PopupMonsterLoadingView.IsVisible = false;
             NextMonsterAttack();
+
+            PopupUserLoadingView.IsVisible = true;
         }
 
         public void NextMonsterAttack()
@@ -881,6 +895,7 @@ namespace Game.Views
 
             ShowBattleMode();
             await Navigation.PushModalAsync(new NewRoundPage());
+
             PopupUserLoadingView.IsVisible = true;
         }
 
