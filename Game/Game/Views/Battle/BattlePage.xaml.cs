@@ -653,7 +653,7 @@ namespace Game.Views
             // Show the outcome on the Board
             DrawGameAttackerDefenderBoard();
 
-            if (RoundCondition == RoundEnum.NewRound)
+            if ((RoundCondition == RoundEnum.NewRound) || (BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Count < 1))
             {
                 BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.NewRound;
 
@@ -668,7 +668,7 @@ namespace Game.Views
             }
 
             // Check for Game Over
-            if (RoundCondition == RoundEnum.GameOver)
+            if ((RoundCondition == RoundEnum.GameOver) || (BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Count < 1))
             {
                 BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
 
@@ -745,7 +745,7 @@ namespace Game.Views
             // Show the outcome on the Board
             DrawGameAttackerDefenderBoard();
 
-            if (RoundCondition == RoundEnum.NewRound)
+            if ((RoundCondition == RoundEnum.NewRound) || (BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Count < 1))
             {
                 BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.NewRound;
 
@@ -760,7 +760,7 @@ namespace Game.Views
             }
 
             // Check for Game Over
-            if (RoundCondition == RoundEnum.GameOver)
+            if ((RoundCondition == RoundEnum.GameOver) || (BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Count < 1))
             {
                 BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
 
