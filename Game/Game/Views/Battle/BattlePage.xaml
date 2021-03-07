@@ -72,7 +72,7 @@
 
                     <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand">
 
-                        <Button x:Name="AttackButton" Clicked="AttackButton_Clicked" Text="Next Attack" IsVisible="False"/>
+                        <Button x:Name="AttackButton" Clicked="AttackButton_Clicked" Text="Attack" IsVisible="False"/>
                         <Button x:Name="NextRoundButton" Clicked="NextRoundButton_Clicked" Text="Next Round" IsVisible="False"/>
                         <Button x:Name="StartBattleButton" Clicked="StartButton_Clicked" Text="Start Battle" IsVisible="False"/>
                         <Button x:Name="SettingsButton" Clicked="Settings_Clicked" Text="Settings"/>
@@ -116,22 +116,41 @@
                 </StackLayout>
             </StackLayout>
 
-            <!--The Monster Turn Popup-->
+            <!--The User's Turn Popup-->
             <StackLayout 
-                    x:Name="PopupLoadingView"
+                    x:Name="PopupUserLoadingView"
                     IsVisible="false"
                     AbsoluteLayout.LayoutBounds=".5, .5,.5,.5" 
                     AbsoluteLayout.LayoutFlags="All">
 
-                <Frame 
-                             BorderColor="{StaticResource TriciaryTextColor}" Padding="1">
+                <Frame BorderColor="{StaticResource TriciaryTextColor}" Padding="1">
+
+                    <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand" Padding="20">
+
+                        <Label x:Name="PopupUserTurn" Text="It is your Turn!" Style="{StaticResource PopupItemTextStyle}" MaxLines="2" LineBreakMode="WordWrap" />
+
+                        <Button x:Name="PopupUserCloseButton" 
+                                Clicked="CloseUserPopup_Clicked" 
+                                Text="Close"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+            <!--The Monster's Turn Popup-->
+            <StackLayout 
+                    x:Name="PopupMonsterLoadingView"
+                    IsVisible="false"
+                    AbsoluteLayout.LayoutBounds=".5, .5,.5,.5" 
+                    AbsoluteLayout.LayoutFlags="All">
+
+                <Frame BorderColor="{StaticResource TriciaryTextColor}" Padding="1">
 
                     <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand" Padding="20">
 
                         <Label x:Name="PopupMonsterTurn" Text="It is Monster's Turn!" Style="{StaticResource PopupItemTextStyle}" MaxLines="2" LineBreakMode="WordWrap" />
 
-                        <Button x:Name="PopupCloseButton" 
-                                Clicked="ClosePopup_Clicked" 
+                        <Button x:Name="PopupMonsterCloseButton" 
+                                Clicked="CloseMonsterPopup_Clicked" 
                                 Text="Close"/>
                     </StackLayout>
                 </Frame>

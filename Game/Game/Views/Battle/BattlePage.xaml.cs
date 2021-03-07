@@ -636,8 +636,6 @@ namespace Game.Views
         {
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
 
-            
-
             // Hold the current state
             var RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
 
@@ -681,29 +679,39 @@ namespace Game.Views
             // Pause
             Task.Delay(WaitTime);
 
-            // Add a event to the user can click the item and see more
-            ShowPopup();
+            // Add a event to the user can click to move to Monster's Turn
+            ShowMonsterPopup();
         }
 
         /// <summary>
-        /// Show the Popup for the Monster Turn
+        /// Close the User's Turn popup
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void CloseUserPopup_Clicked(object sender, EventArgs e)
+        {
+            PopupUserLoadingView.IsVisible = false;
+        }
+
+        /// <summary>
+        /// Show the Popup for the Monster's Turn
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
-        public bool ShowPopup()
+        public bool ShowMonsterPopup()
         {
-            PopupLoadingView.IsVisible = true;
+            PopupMonsterLoadingView.IsVisible = true;
             return true;
         }
 
         /// <summary>
-        /// Close the popup
+        /// Close the Monster's Turn popup
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void ClosePopup_Clicked(object sender, EventArgs e)
+        public void CloseMonsterPopup_Clicked(object sender, EventArgs e)
         {
-            PopupLoadingView.IsVisible = false;
+            PopupMonsterLoadingView.IsVisible = false;
             NextMonsterAttack();
         }
 
@@ -873,6 +881,7 @@ namespace Game.Views
 
             ShowBattleMode();
             await Navigation.PushModalAsync(new NewRoundPage());
+            PopupUserLoadingView.IsVisible = true;
         }
 
         /// <summary>
