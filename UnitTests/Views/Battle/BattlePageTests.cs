@@ -31,9 +31,11 @@ namespace UnitTests.Views
             Application.Current = app;
 
             // For now, set the engine to the Koenig Engine, change when ready 
-            BattleEngineViewModel.Instance.SetBattleEngineToKoenig();
+            BattleEngineViewModel.Instance.SetBattleEngineToGame();
 
             page = new BattlePage();
+            
+           
 
             // Put seed data into the system for all tests
             BattleEngineViewModel.Instance.Engine.Round.ClearLists();
@@ -84,6 +86,7 @@ namespace UnitTests.Views
         public void BattlePage_AttackButton_Clicked_Default_Should_Pass()
         {
             // Arrange
+
 
             // Act
             page.AttackButton_Clicked(null, null);
