@@ -127,13 +127,8 @@ namespace Game.Models
             get
             {
                 List<string> AbilityList = new List<string>{
-                AbilityEnum.Quick.ToString(),
-                AbilityEnum.Barrier.ToString(),
-                AbilityEnum.Curse.ToString(),
                 AbilityEnum.Heal.ToString()
                 };
-
-                AbilityList.AddRange(GetListOthers);
                 return AbilityList;
             }
         }
@@ -147,13 +142,8 @@ namespace Game.Models
             get
             {
                 List<string> AbilityList = new List<string>{
-                AbilityEnum.Quick.ToString(),
-                AbilityEnum.Barrier.ToString(),
-                AbilityEnum.Curse.ToString(),
-                AbilityEnum.Heal.ToString()
+                AbilityEnum.Bandage.ToString()
                 };
-
-                 AbilityList.AddRange(GetListOthers);
                 return AbilityList;
             }
         }
@@ -167,13 +157,8 @@ namespace Game.Models
             get
             {
                 List<string> AbilityList = new List<string>{
-                AbilityEnum.Quick.ToString(),
-                AbilityEnum.Barrier.ToString(),
-                AbilityEnum.Curse.ToString(),
-                AbilityEnum.Heal.ToString()
+                AbilityEnum.Quick.ToString()
                 };
-
-                AbilityList.AddRange(GetListOthers);
                 return AbilityList;
             }
         }
@@ -187,13 +172,8 @@ namespace Game.Models
             get
             {
                 List<string> AbilityList = new List<string>{
-                AbilityEnum.Quick.ToString(),
-                AbilityEnum.Barrier.ToString(),
-                AbilityEnum.Curse.ToString(),
-                AbilityEnum.Heal.ToString()
+                AbilityEnum.Barrier.ToString()
                 };
-
-                AbilityList.AddRange(GetListOthers);
                 return AbilityList;
             }
         }
@@ -207,13 +187,8 @@ namespace Game.Models
             get
             {
                 List<string> AbilityList = new List<string>{
-                AbilityEnum.Quick.ToString(),
-                AbilityEnum.Barrier.ToString(),
-                AbilityEnum.Curse.ToString(),
-                AbilityEnum.Heal.ToString()
+                AbilityEnum.Focus.ToString()
                 };
-
-                AbilityList.AddRange(GetListOthers);
                 return AbilityList;
             }
         }
@@ -227,13 +202,8 @@ namespace Game.Models
             get
             {
                 List<string> AbilityList = new List<string>{
-                AbilityEnum.Quick.ToString(),
-                AbilityEnum.Barrier.ToString(),
-                AbilityEnum.Curse.ToString(),
-                AbilityEnum.Heal.ToString()
+                AbilityEnum.Toughness.ToString()
                 };
-
-                AbilityList.AddRange(GetListOthers);
                 return AbilityList;
             }
         }
