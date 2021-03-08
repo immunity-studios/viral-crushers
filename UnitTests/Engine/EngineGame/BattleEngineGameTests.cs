@@ -15,8 +15,6 @@ namespace UnitTests.Engine.EngineGame
         public void Setup()
         {
             Engine = new BattleEngine();
-            Engine.Round = new RoundEngine();
-            Engine.Round.Turn = new TurnEngine();
         }
 
         [TearDown]
