@@ -35,7 +35,7 @@ namespace UnitTests.Helpers
             var result = AbilityEnumHelper.GetListFireFighter;
 
             // Assert
-            Assert.AreEqual(5, result.Count());
+            Assert.AreEqual(1, result.Count());
         }
 
         [Test]
@@ -47,7 +47,7 @@ namespace UnitTests.Helpers
             var result = AbilityEnumHelper.GetListDoctor;
 
             // Assert
-            Assert.AreEqual(5, result.Count());
+            Assert.AreEqual(1, result.Count());
         }
 
         [Test]
@@ -59,7 +59,7 @@ namespace UnitTests.Helpers
             var result = AbilityEnumHelper.GetListTeacher;
 
             // Assert
-            Assert.AreEqual(5, result.Count());
+            Assert.AreEqual(1, result.Count());
         }
 
         [Test]
@@ -71,7 +71,7 @@ namespace UnitTests.Helpers
             var result = AbilityEnumHelper.GetListCollegeStudent;
 
             // Assert
-            Assert.AreEqual(5, result.Count());
+            Assert.AreEqual(1, result.Count());
         }
 
         [Test]
@@ -83,7 +83,7 @@ namespace UnitTests.Helpers
             var result = AbilityEnumHelper.GetListPoliceOfficer;
 
             // Assert
-            Assert.AreEqual(5, result.Count());
+            Assert.AreEqual(1, result.Count());
         }
 
         [Test]
@@ -95,7 +95,7 @@ namespace UnitTests.Helpers
             var result = AbilityEnumHelper.GetListAthlete;
 
             // Assert
-            Assert.AreEqual(5, result.Count());
+            Assert.AreEqual(1, result.Count());
         }
 
         [Test]
