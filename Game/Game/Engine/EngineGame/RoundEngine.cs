@@ -246,39 +246,48 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override PlayerInfoModel GetNextPlayerInList()
         {
-
-            //var Defender = EngineSettings.PlayerList
-            //    .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Monster)
-            //    .OrderBy(m => m.CurrentHealth).FirstOrDefault();
             // Walk the list from top to bottom
             // If Player is found, then see if next player exist, if so return that.
             // If not, return first player (looped)
 
             // If List is empty, return null
-            if (EngineSettings.PlayerList.Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Monster).Count() == 0)
+            if (EngineSettings.PlayerList.Count == 0)
             {
                 return null;
             }
 
             // No current player, so set the first one
-            if (EngineSettings.CurrentDefender == null)
+            if (EngineSettings.CurrentAttacker == null)
             {
-                return EngineSettings.PlayerList.Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Monster).FirstOrDefault();
+                return EngineSettings.PlayerList.FirstOrDefault();
             }
 
-            // Find current player in the list
-            // var index = EngineSettings.PlayerList.FindIndex(m => m.Guid.Equals(EngineSettings.CurrentAttacker.Guid));
+            if (EngineSettings.BattleScore.AutoBattle)
+            {
+                // Find current player in the list
+                var index = EngineSettings.PlayerList.FindIndex(m => m.Guid.Equals(EngineSettings.CurrentAttacker.Guid));
 
-            // If at the end of the list, return the first element
-            //if (index == EngineSettings.PlayerList.Count() - 1)
-            //{
-            //    return EngineSettings.PlayerList.FirstOrDefault();
-            //}
+                // If at the end of the list, return the first element
+                if (index == EngineSettings.PlayerList.Count() - 1)
+                {
+                    return EngineSettings.PlayerList.FirstOrDefault();
+                }
 
-            // Return the next element
-            return EngineSettings.PlayerList
-                .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Monster)
-                .OrderBy(m => m.CurrentHealth).FirstOrDefault();
+                // Return the next element
+                return EngineSettings.PlayerList[index + 1];
+            } else
+            {
+                // If Monster List is empty, return null
+                if (EngineSettings.MonsterList.Count == 0)
+                {
+                    return null;
+                }
+                // Return the next element and remove it from the top then add the player to the end of the list
+                var NextPlayer = EngineSettings.MonsterList.FirstOrDefault();
+                EngineSettings.MonsterList.RemoveAt(0);
+                EngineSettings.MonsterList.Add(NextPlayer);
+                return NextPlayer;
+            }
         }
 
         /// <summary>
