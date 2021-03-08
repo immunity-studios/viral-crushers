@@ -319,6 +319,24 @@ namespace Game.Models
             return AbilityEnum.Unknown;
         }
 
+        public AbilityEnum CharacterSelectAbilityToUse()
+        {
+            // Walk the other abilities and see which can be used
+            foreach (var ability in AbilityTracker)
+            {
+                var data = ability.Key;
+
+                var result = AbilityTracker.TryGetValue(data, out int remaining);
+                if (remaining > 0)
+                {
+                    // Got one so can prepare it to be used
+                    return data;
+                }
+            }
+
+            return AbilityEnum.Unknown;
+        }
+
         public bool IsAbilityAvailable(AbilityEnum ability)
         {
             var avaible = AbilityTracker.TryGetValue(ability, out int remaining);

@@ -493,6 +493,7 @@ namespace Game.Views
             {
                 AttackButton.IsEnabled = true;
             }
+
             data.IsSelectedTarget = true;
             return true;
         }
@@ -516,6 +517,18 @@ namespace Game.Views
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender != null)
             {
                 AttackButton.IsEnabled = true;
+            }
+
+            foreach (var ability in data.Player.AbilityTracker)
+            {
+                var temp = ability.Key;
+
+                var result = data.Player.AbilityTracker.TryGetValue(temp, out int remaining);
+                if (remaining > 0)
+                {
+                    AbilityButton.IsEnabled = true;
+                    break;
+                }
             }
             data.IsSelectedTarget = true;
             return true;
@@ -735,6 +748,7 @@ namespace Game.Views
             PopupMonsterLoadingView.IsVisible = true;
 
             AttackButton.IsEnabled = false;
+            AbilityButton.IsEnabled = false;
             return true;
         }
 
