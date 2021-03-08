@@ -6,7 +6,7 @@ namespace Game.Views
 {
 	/// <summary>
 	/// This page is temporarily holding links to all battle pages for debugging/UI development
-	/// TODO delete this page and remove dungeon button from game page
+	/// TODO delete this page and remove "dungeon" button from game page
 	/// </summary>
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class BattleHomePage : ContentPage
@@ -76,9 +76,9 @@ namespace Game.Views
 		}
 
 		/// <summary>
-		/// Jump to the score page
+		/// Jump to the game over page
 		/// </summary>
-		public async void ScorePage_Clicked(object sender, EventArgs e)
+		public async void GameOverPage_Clicked(object sender, EventArgs e)
 		{
 			await Navigation.PushModalAsync(new GameOverPage());
 		}

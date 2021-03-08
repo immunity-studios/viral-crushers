@@ -51,7 +51,7 @@
                     VerticalOptions="Center"/>
 
             <Button HorizontalOptions="Center"
-                    Clicked="ScorePage_Clicked"
+                    Clicked="GameOverPage_Clicked"
                     Text="Game Over Page"
                     CornerRadius="8"
                     VerticalOptions="Center"/>
