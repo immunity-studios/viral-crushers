@@ -205,10 +205,24 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override List<PlayerInfoModel> OrderPlayerListByTurnOrder()
         {
-            // TODO Teams: Implement the order
-            // TODO: Need to fix it
+            // TODO
+            // Order is based by... 
+            // Order by Speed (Desending)
+            // Then by Highest level (Descending)
+            // Then by Highest Experience Points (Descending)
+            // Then by Character before MonsterModel (enum assending)
+            // Then by Alphabetic on Name (Assending)
+            // Then by First in list order (Assending
 
-            return base.OrderPlayerListByTurnOrder();
+            EngineSettings.PlayerList = EngineSettings.PlayerList.OrderByDescending(a => a.GetSpeed())
+                .ThenByDescending(a => a.Level)
+                .ThenByDescending(a => a.ExperienceTotal)
+                .ThenByDescending(a => a.PlayerType)
+                .ThenBy(a => a.Name)
+                .ThenBy(a => a.ListOrder)
+                .ToList();
+
+            return EngineSettings.PlayerList;
         }
 
         /// <summary>
