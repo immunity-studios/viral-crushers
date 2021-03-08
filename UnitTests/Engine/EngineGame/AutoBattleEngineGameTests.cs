@@ -1,15 +1,12 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Linq;
 
-//using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
 
 using Game.Models;
 using Game.Helpers;
 using Game.ViewModels;
 using Game.Engine.EngineGame;
-
 
 namespace UnitTests.Engine.EngineGame
 {
@@ -29,11 +26,7 @@ namespace UnitTests.Engine.EngineGame
             AutoBattleEngine.Battle.EngineSettings.CurrentDefender = null;
             AutoBattleEngine.Battle.EngineSettings.CurrentAttacker = null;
 
-            AutoBattleEngine.Battle.Round = new RoundEngine();
-            AutoBattleEngine.Battle.Round.Turn = new TurnEngine();
-
-            // Remove this comment when the Battle engine is ready to go...
-            // AutoBattleEngine.Battle.StartBattle(true);   // Clear the Engine
+            AutoBattleEngine.Battle.StartBattle(true);   // Clear the Engine
         }
 
         [TearDown]
@@ -56,6 +49,25 @@ namespace UnitTests.Engine.EngineGame
             // Assert
             Assert.IsNotNull(result);
         }
+
+
+        [Test]
+        public void AutoBattleEngine_Constructor_Valid_Battle_Round_Turn_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = AutoBattleEngine;
+            result.Battle = new BattleEngine();
+            result.Battle.Round = new RoundEngine();
+            result.Battle.Round.Turn = new TurnEngine();
+
+            // Reset
+
+            // Assert
+            Assert.IsNotNull(result);
+        }
+
         #endregion Constructor
 
         #region RunAutoBattle
@@ -87,69 +99,60 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(true, result);
         }
 
-        //[Test]
-        //public async Task AutoBattleEngine_RunAutoBattle_Valid_Monsters_1_Should_Pass()
-        //{
-        //    //Arrange
+        [Test]
+        public async Task AutoBattleEngine_RunAutoBattle_Valid_Monsters_1_Should_Pass()
+        {
+            //Arrange
 
-        //    // Need to set the Monster count to 1, so the battle goes to Next Round Faster
-        //    AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyMonsters = 1;
-        //    AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyCharacters = 1;
+            // Need to set the Monster count to 1, so the battle goes to Next Round Faster
+            AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyMonsters = 1;
+            AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyCharacters = 1;
 
-        //    var CharacterPlayerMike = new PlayerInfoModel(
-        //                    new CharacterModel
-        //                    {
-        //                        Speed = -1,
-        //                        Level = 10,
-        //                        CurrentHealth = 11,
-        //                        ExperienceTotal = 1,
-        //                        ExperienceRemaining = 1,
-        //                        Name = "Mike",
-        //                        ListOrder = 1,
-        //                    });
+            var CharacterPlayerMike = new PlayerInfoModel(
+                            new CharacterModel
+                            {
+                                Speed = -1,
+                                Level = 10,
+                                CurrentHealth = 11,
+                                ExperienceTotal = 1,
+                                ExperienceRemaining = 1,
+                                Name = "Mike",
+                                ListOrder = 1,
+                            });
 
-        //    AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(CharacterPlayerMike);
+            AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(CharacterPlayerMike);
 
-        //    //Act
-        //    var result = await AutoBattleEngine.RunAutoBattle();
+            //Act
+            var result = await AutoBattleEngine.RunAutoBattle();
 
-        //    //Reset
-        //    CharacterIndexViewModel.Instance.ForceDataRefresh();
+            //Reset
+            CharacterIndexViewModel.Instance.ForceDataRefresh();
 
-        //    //Assert
-        //    Assert.AreEqual(true, result);
-        //}
+            //Assert
+            Assert.AreEqual(true, result);
+        }
         #endregion RunAutoBattle
 
         #region CreateCharacterParty
-        //[Test]
-        //public async Task AutoBattleEngine_CreateCharacterParty_Valid_Characters_Should_Assign_6()
-        //{
-        //    //Arrange
-        //    AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyCharacters = 6;
+        [Test]
+        public async Task AutoBattleEngine_CreateCharacterParty_Valid_Characters_Should_Assign_6()
+        {
+            //Arrange
+            AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyCharacters = 6;
 
-        //    CharacterIndexViewModel.Instance.Dataset.Clear();
+            CharacterIndexViewModel.Instance.Dataset.Clear();
 
-        //    await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "1" });
-        //    await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "2" });
-        //    await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "3" });
-        //    await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "4" });
-        //    await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "5" });
-        //    await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "6" });
-        //    await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "7" });
+            //Act
+            var result = AutoBattleEngine.CreateCharacterParty();
+            var count = AutoBattleEngine.Battle.EngineSettings.CharacterList.Count();
+            var name = AutoBattleEngine.Battle.EngineSettings.CharacterList.ElementAt(5).Name;
 
-        //    //Act
-        //    var result = AutoBattleEngine.CreateCharacterParty();
-        //    var count = AutoBattleEngine.Battle.EngineSettings.CharacterList.Count();
-        //    var name = AutoBattleEngine.Battle.EngineSettings.CharacterList.ElementAt(5).Name;
+            //Reset
+            CharacterIndexViewModel.Instance.ForceDataRefresh();
 
-        //    //Reset
-        //    CharacterIndexViewModel.Instance.ForceDataRefresh();
-
-        //    //Assert
-        //    Assert.AreEqual(6, count);
-        //    Assert.AreEqual("6", name);
-        //}
+            //Assert
+            Assert.AreEqual(6, count);
+        }
 
         [Test]
         public void AutoBattleEngine_CreateCharacterParty_Valid_Characters_CharacterIndex_None_Should_Create_6()
