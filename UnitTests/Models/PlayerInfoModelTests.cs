@@ -206,7 +206,7 @@ namespace UnitTests.Models
         }
 
         [Test]
-        public void PlayerInfoModel_SelectAbilityToUse_Fighter_Avaiable_Should_Pass()
+        public void PlayerInfoModel_SelectAbilityToUse_FireFighter_Avaiable_Should_Pass()
         {
             // Arrange
             var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Firefighter });
@@ -218,7 +218,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(AbilityEnum.Nimble, result);
+            Assert.AreEqual(AbilityEnum.Toughness, result);
         }
 
         [Test]
