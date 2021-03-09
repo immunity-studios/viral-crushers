@@ -1358,7 +1358,7 @@ namespace UnitTests.Engine.EngineKoenig
         #endregion DetermineActionChoice
 
         #region ChooseToUseAbility
-        [Test]
+/*        [Test]
         public void TurnEngine_ChooseToUseAbility_Valid_Heal_Should_Return_True()
         {
             // Arrange
@@ -1385,7 +1385,7 @@ namespace UnitTests.Engine.EngineKoenig
 
             // Assert
             Assert.AreEqual(true, result);
-        }
+        }*/
 
         [Test]
         public void TurnEngine_ChooseToUseAbility_InValid_Roll_9_Should_Return_False()
