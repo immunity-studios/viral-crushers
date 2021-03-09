@@ -354,6 +354,7 @@ namespace UnitTests.Views
         public void BattlePage_SetAttackerAndDefender_Character_vs_Monster_Should_Pass()
         {
             // Arrange
+
             BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Clear();
             BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Clear();
             BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Clear();
@@ -364,7 +365,7 @@ namespace UnitTests.Views
             var CharacterPlayer = new PlayerInfoModel(
                             new CharacterModel
                             {
-                                Speed = 100,
+                                Speed = -1,
                                 Level = 10,
                                 CurrentHealth = 11,
                                 ExperienceTotal = 1,
@@ -382,7 +383,7 @@ namespace UnitTests.Views
             var MonsterPlayer = new PlayerInfoModel(
                             new MonsterModel
                             {
-                                Speed = -1,
+                                Speed = 100,
                                 Level = 10,
                                 CurrentHealth = 11,
                                 ExperienceTotal = 1,
@@ -391,12 +392,12 @@ namespace UnitTests.Views
                                 ListOrder = 1,
                             });
 
+            BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
+
             BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
             BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(MonsterPlayer);
 
-            BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(MonsterPlayer);
-
-            BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(null);
+            BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(CharacterPlayer);
 
             // Act
             page.SetAttackerAndDefender();
