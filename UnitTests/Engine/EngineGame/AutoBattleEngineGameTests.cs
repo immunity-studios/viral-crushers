@@ -111,7 +111,7 @@ namespace UnitTests.Engine.EngineGame
             var CharacterPlayerMike = new PlayerInfoModel(
                             new CharacterModel
                             {
-                                Speed = -1,
+                                Speed = 1,
                                 Level = 10,
                                 CurrentHealth = 11,
                                 ExperienceTotal = 1,
