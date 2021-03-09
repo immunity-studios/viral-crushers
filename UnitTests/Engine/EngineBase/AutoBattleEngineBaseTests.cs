@@ -192,7 +192,7 @@ namespace UnitTests.Engine.EngineBase
                 });
 
             AutoBattleEngine.Battle.EngineSettings.MonsterList.Add(MonsterPlayerSue);
-            
+
             //Act
             var result = await AutoBattleEngine.RunAutoBattle();
 
@@ -201,52 +201,7 @@ namespace UnitTests.Engine.EngineBase
             //Assert
             Assert.AreEqual(false, result);
         }
-        #endregion RunAutoBattle
-
-        //#region CreateCharacterParty
-        //[Test]
-        //public async Task AutoBattleEngine_CreateCharacterParty_Valid_Characters_Should_Assign_6()
-        //{
-        //    //Arrange
-        //    AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyCharacters = 6;
-
-        //    CharacterIndexViewModel.Instance.Dataset.Clear();
-
-        //    await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "1" });
-        //    await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "2" });
-        //    await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "3" });
-        //    await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "4" });
-        //    await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "5" });
-        //    await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "6" });
-        //    await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "7" });
-
-        //    //Act
-        //    var result = AutoBattleEngine.CreateCharacterParty();
-
-        //    //Reset
-
-        //    //Assert
-        //    Assert.AreEqual(6, AutoBattleEngine.Battle.EngineSettings.CharacterList.Count());
-        //    Assert.AreEqual("6", AutoBattleEngine.Battle.EngineSettings.CharacterList.ElementAt(5).Name);
-        //}
-
-        //[Test]
-        //public void AutoBattleEngine_CreateCharacterParty_Valid_Characters_CharacterIndex_None_Should_Create_6()
-        //{
-        //    //Arrange
-        //    AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyCharacters = 6;
-
-        //    CharacterIndexViewModel.Instance.Dataset.Clear();
-
-        //    //Act
-        //    var result = AutoBattleEngine.CreateCharacterParty();
-
-        //    //Reset
-
-        //    //Assert
-        //    Assert.AreEqual(6, AutoBattleEngine.Battle.EngineSettings.CharacterList.Count());
-        //}
-        //#endregion CreateCharacterParty   
+        #endregion RunAutoBattle  
 
         #region DetectInfinateLoop
         [Test]
@@ -261,7 +216,7 @@ namespace UnitTests.Engine.EngineBase
             // Reset
 
             // Assert
-            Assert.AreEqual(true,result);
+            Assert.AreEqual(true, result);
         }
 
         [Test]
@@ -283,7 +238,7 @@ namespace UnitTests.Engine.EngineBase
         public void AutoBattleEngine_DetectInfinateLoop_Valid_Counts_Less_Than_Max_Should_Return_false()
         {
             // Arrange
-            AutoBattleEngine.Battle.EngineSettings.BattleScore.TurnCount = AutoBattleEngine.Battle.EngineSettings.MaxTurnCount -1;
+            AutoBattleEngine.Battle.EngineSettings.BattleScore.TurnCount = AutoBattleEngine.Battle.EngineSettings.MaxTurnCount - 1;
             AutoBattleEngine.Battle.EngineSettings.BattleScore.RoundCount = AutoBattleEngine.Battle.EngineSettings.MaxRoundCount - 1;
 
             // Act
