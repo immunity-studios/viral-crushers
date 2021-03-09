@@ -1328,7 +1328,7 @@ namespace UnitTests.Engine.EngineBase
             Assert.AreEqual(ActionEnum.Ability, result);
         }
 
-/*        [Test]
+        [Test]
         public void TurnEngine_DetermineActionChoice_Valid_Character_Range_Should_Return_Attack()
         {
             // Arrange
@@ -1356,40 +1356,40 @@ namespace UnitTests.Engine.EngineBase
 
             // Assert
             Assert.AreEqual(ActionEnum.Attack, result);
-        }*/
+        }
         #endregion DetermineActionChoice
 
         #region ChooseToUseAbility
 
-/*        [Test]
-        public void TurnEngine_ChooseToUseAbility_InValid_Roll_9_Should_Return_False()
-        {
-            // Arrange
+        /*        [Test]
+                public void TurnEngine_ChooseToUseAbility_InValid_Roll_9_Should_Return_False()
+                {
+                    // Arrange
 
-            var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
+                    var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
 
-            // Get the longest range weapon in stock.
-            var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
-            CharacterPlayer.PrimaryHand = weapon.Id;
+                    // Get the longest range weapon in stock.
+                    var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
+                    CharacterPlayer.PrimaryHand = weapon.Id;
 
-            Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
+                    Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
 
-            Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+                    Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
 
-            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
-            Engine.EngineSettings.BattleScore.AutoBattle = true;
+                    Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
+                    Engine.EngineSettings.BattleScore.AutoBattle = true;
 
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(9);
-            // Act
-            var result = Engine.Round.Turn.ChooseToUseAbility(CharacterPlayer);
+                    DiceHelper.EnableForcedRolls();
+                    DiceHelper.SetForcedRollValue(9);
+                    // Act
+                    var result = Engine.Round.Turn.ChooseToUseAbility(CharacterPlayer);
 
-            // Reset
-            DiceHelper.DisableForcedRolls();
+                    // Reset
+                    DiceHelper.DisableForcedRolls();
 
-            // Assert
-            Assert.AreEqual(false, result);
-        }*/
+                    // Assert
+                    Assert.AreEqual(false, result);
+                }*/
 
         [Test]
         public void TurnEngine_ChooseToUseAbility_InValid_Roll_2_No_Ability_Should_Return_False()
