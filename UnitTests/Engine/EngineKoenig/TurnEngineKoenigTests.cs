@@ -1315,7 +1315,7 @@ namespace UnitTests.Engine.EngineKoenig
             CharacterPlayer.MaxHealth = 1000;
 
             Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
-            Engine.EngineSettings.BattleScore.AutoBattle = true;
+            Engine.EngineSettings.BattleScore.AutoBattle = false;
 
             // Act
             var result = Engine.Round.Turn.DetermineActionChoice(CharacterPlayer);
@@ -1323,16 +1323,16 @@ namespace UnitTests.Engine.EngineKoenig
             // Reset
 
             // Assert
-            Assert.AreEqual(ActionEnum.Ability, result);
+            Assert.AreEqual(ActionEnum.Unknown, result);
         }
 
-/*        [Test]
+        [Test]
         public void TurnEngine_DetermineActionChoice_Valid_Character_Range_Should_Return_Attack()
         {
             // Arrange
 
             var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
-            
+
             // Get the longest range weapon in stock.
             var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
             CharacterPlayer.PrimaryHand = weapon.Id;
@@ -1354,7 +1354,7 @@ namespace UnitTests.Engine.EngineKoenig
 
             // Assert
             Assert.AreEqual(ActionEnum.Attack, result);
-        }*/
+        }
         #endregion DetermineActionChoice
 
         #region ChooseToUseAbility
