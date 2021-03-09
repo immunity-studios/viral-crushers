@@ -170,7 +170,7 @@ namespace UnitTests.Engine.EngineBase
                 Speed = 20,
                 Level = 1,
                 CurrentHealth = 100,
-                ExperienceTotal = 1,
+                ExperienceTotal = 2,
                 Name = "Z",
                 ListOrder = 1,
             };
