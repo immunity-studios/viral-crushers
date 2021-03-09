@@ -1360,34 +1360,6 @@ namespace UnitTests.Engine.EngineGame
         #endregion DetermineActionChoice
 
         #region ChooseToUseAbility
-        [Test]
-        public void TurnEngine_ChooseToUseAbility_Valid_Heal_Should_Return_True()
-        {
-            // Arrange
-
-            var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
-
-            // Get the longest range weapon in stock.
-            var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
-            CharacterPlayer.PrimaryHand = weapon.Id;
-            CharacterPlayer.CurrentHealth = 1;
-            CharacterPlayer.MaxHealth = 100;
-
-            Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
-
-            Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
-
-            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
-            Engine.EngineSettings.BattleScore.AutoBattle = true;
-
-            // Act
-            var result = Engine.Round.Turn.ChooseToUseAbility(CharacterPlayer);
-
-            // Reset
-
-            // Assert
-            Assert.AreEqual(true, result);
-        }
 
         [Test]
         public void TurnEngine_ChooseToUseAbility_InValid_Roll_9_Should_Return_False()

@@ -160,9 +160,6 @@ namespace Game.Engine.EngineGame
                 }
             }
 
-            // Assume Move if nothing else happens
-            EngineSettings.CurrentAction = ActionEnum.Move;
-
             // Check to see if ability is avaiable
             if (ChooseToUseAbility(Attacker))
             {
@@ -175,6 +172,9 @@ namespace Game.Engine.EngineGame
             {
                 EngineSettings.CurrentAction = ActionEnum.Attack;
             }
+
+            // Assume Move if nothing else happens
+            EngineSettings.CurrentAction = ActionEnum.Move;
 
             return EngineSettings.CurrentAction;
 
