@@ -153,7 +153,7 @@ namespace Game.Engine.EngineGame
             // When called manualy, make sure to do the character pickup before calling EndRound
 
             // TOD: Return for now, and revisit this functionality.
-            return;
+            return base.PickupItemsForAllCharacters();
         }
 
         /// <summary>
@@ -300,7 +300,7 @@ namespace Game.Engine.EngineGame
 
             // I use the same logic for Auto Battle as I do for Manual Battle
 
-            throw new System.NotImplementedException();
+            return base.PickupItemsFromPool(character);
         }
 
         /// <summary>
@@ -310,7 +310,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool GetItemFromPoolIfBetter(PlayerInfoModel character, ItemLocationEnum setLocation)
         {
-            throw new System.NotImplementedException();
+            return base.GetItemFromPoolIfBetter(character, setLocation);
         }
 
         /// <summary>
@@ -320,7 +320,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override ItemModel SwapCharacterItem(PlayerInfoModel character, ItemLocationEnum setLocation, ItemModel PoolItem)
         {
-            throw new System.NotImplementedException();
+            return base.SwapCharacterItem(character, setLocation, PoolItem);
         }
 
         /// <summary>
