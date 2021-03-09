@@ -1292,7 +1292,7 @@ namespace UnitTests.Engine.EngineGame
         public void RoundEngine_GetNextPlayerInList_Base_Valid_Default_Should_Pass()
         {
             // Arrange
-
+            
             // Act
             var result = Engine.Round.GetNextPlayerInList();
 
@@ -1302,47 +1302,62 @@ namespace UnitTests.Engine.EngineGame
             Assert.IsNotNull(result);
         }
 
-/*        [Test]
-        public void RoundEngine_PickupItemsFromPool_Base_Valid_Default_Should_Pass()
-        {
-            // Arrange
-
-            // Act
-            var result = Engine.Round.PickupItemsFromPool(null);
-
-            // Reset
-
-            // Assert
-            Assert.IsNotNull(result);
-        }
-
         [Test]
-        public void RoundEngine_GetItemFromPoolIfBetter_Base_Valid_Default_Should_Pass()
+        public void RoundEngine_GetNextPlayerInList_Empty_MonsterList_Should_Return_Null()
         {
             // Arrange
-
+            Engine.EngineSettings.BattleScore.AutoBattle = false;
+            Engine.EngineSettings.MonsterList.Clear();
             // Act
-            var result = Engine.Round.GetItemFromPoolIfBetter(null, ItemLocationEnum.Unknown);
-
-            // Reset
-
-            // Assert
-            Assert.IsNotNull(result);
-        }
-
-        [Test]
-        public void RoundEngine_SwapCharacterItem_Base_Valid_Default_Should_Pass()
-        {
-            // Arrange
-
-            // Act
-            var result = Engine.Round.SwapCharacterItem(null, ItemLocationEnum.Unknown, null);
+            var result = Engine.Round.GetNextPlayerInList();
 
             // Reset
 
             // Assert
             Assert.IsNull(result);
-        }*/
+        }
+
+        /*        [Test]
+                public void RoundEngine_PickupItemsFromPool_Base_Valid_Default_Should_Pass()
+                {
+                    // Arrange
+
+                    // Act
+                    var result = Engine.Round.PickupItemsFromPool(null);
+
+                    // Reset
+
+                    // Assert
+                    Assert.IsNotNull(result);
+                }
+
+                [Test]
+                public void RoundEngine_GetItemFromPoolIfBetter_Base_Valid_Default_Should_Pass()
+                {
+                    // Arrange
+
+                    // Act
+                    var result = Engine.Round.GetItemFromPoolIfBetter(null, ItemLocationEnum.Unknown);
+
+                    // Reset
+
+                    // Assert
+                    Assert.IsNotNull(result);
+                }
+
+                [Test]
+                public void RoundEngine_SwapCharacterItem_Base_Valid_Default_Should_Pass()
+                {
+                    // Arrange
+
+                    // Act
+                    var result = Engine.Round.SwapCharacterItem(null, ItemLocationEnum.Unknown, null);
+
+                    // Reset
+
+                    // Assert
+                    Assert.IsNull(result);
+                }*/
 
         [Test]
         public void RoundEngine_RemoveCharacterBuffs_Base_Valid_Default_Should_Pass()

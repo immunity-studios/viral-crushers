@@ -153,7 +153,7 @@ namespace Game.Engine.EngineGame
             // When called manualy, make sure to do the character pickup before calling EndRound
 
             // TOD: Return for now, and revisit this functionality.
-            return base.PickupItemsForAllCharacters();
+            return;
         }
 
         /// <summary>
@@ -256,14 +256,15 @@ namespace Game.Engine.EngineGame
                 return null;
             }
 
-            // No current player, so set the first one
-            if (EngineSettings.CurrentAttacker == null)
-            {
-                return EngineSettings.PlayerList.FirstOrDefault();
-            }
-
             if (EngineSettings.BattleScore.AutoBattle)
             {
+
+                // No current player, so set the first one
+                if (EngineSettings.CurrentAttacker == null)
+                {
+                    return EngineSettings.PlayerList.FirstOrDefault();
+                }
+
                 // Find current player in the list
                 var index = EngineSettings.PlayerList.FindIndex(m => m.Guid.Equals(EngineSettings.CurrentAttacker.Guid));
 
