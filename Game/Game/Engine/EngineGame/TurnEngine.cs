@@ -153,11 +153,8 @@ namespace Game.Engine.EngineGame
              * Next use Ability or Move
              */
 
-            // See if Desired Target is within Range, and if so attack away
-            if (EngineSettings.MapModel.IsTargetInRange(Attacker, AttackChoice(Attacker)))
-            {
-                EngineSettings.CurrentAction = ActionEnum.Attack;
-            }
+            // Assume Move if nothing else happens
+            EngineSettings.CurrentAction = ActionEnum.Move;
 
             // Check to see if ability is avaiable
             if (ChooseToUseAbility(Attacker))
@@ -166,8 +163,11 @@ namespace Game.Engine.EngineGame
                 return EngineSettings.CurrentAction;
             }
 
-            // Assume Move if nothing else happens
-            EngineSettings.CurrentAction = ActionEnum.Move;
+            // See if Desired Target is within Range, and if so attack away
+            if (EngineSettings.MapModel.IsTargetInRange(Attacker, AttackChoice(Attacker)))
+            {
+                EngineSettings.CurrentAction = ActionEnum.Attack;
+            }
 
             return EngineSettings.CurrentAction;
 

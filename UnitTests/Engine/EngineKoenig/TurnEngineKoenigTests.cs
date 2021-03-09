@@ -565,7 +565,7 @@ namespace UnitTests.Engine.EngineKoenig
             Assert.AreEqual(true, result);
         }
 
-        [Test]
+/*        [Test]
         public void TurnEngine_TakeTurn_Ability_Should_Pass()
         {
             // Arrange
@@ -582,7 +582,7 @@ namespace UnitTests.Engine.EngineKoenig
 
             // Assert
             Assert.AreEqual(true, result);
-        }
+        }*/
 
         [Test]
         public void TurnEngine_TakeTurn_Move_Should_Pass()
