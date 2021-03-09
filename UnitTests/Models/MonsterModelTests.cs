@@ -750,7 +750,7 @@ namespace UnitTests.Models
             Game.Helpers.DiceHelper.DisableForcedRolls();
  
             // Assert
-            Assert.AreEqual(1, result);
+            Assert.AreEqual(2, result);
         }
 
         [Test]
