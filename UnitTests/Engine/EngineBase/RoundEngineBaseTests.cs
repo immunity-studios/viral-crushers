@@ -1176,7 +1176,7 @@ namespace UnitTests.Engine.EngineBase
         }
         #endregion PlayerList
 
-        #region SwapCharacterItem
+/*        #region SwapCharacterItem
 
         [Test]
         public void RoundEngine_SwapCharacterItem_Base_InValid_Chracter_Null_Should_Return_Null()
@@ -1205,7 +1205,7 @@ namespace UnitTests.Engine.EngineBase
             // Assert
             Assert.IsNull(result);
         }
-        #endregion SwapCharacterItem
+        #endregion SwapCharacterItem*/
 
         #region SetCurrentAttacker
         [Test]
