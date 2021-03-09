@@ -173,6 +173,7 @@
     <Content Include="icon_soup.png" />
     <Content Include="icon_student.png" />
     <Content Include="icon_teacher.png" />
+    <Content Include="icon_tile.png" />
     <Content Include="icon_tissue_box.png" />
     <Content Include="icon_vaccine.png" />
     <Content Include="item.png" />

@@ -318,4 +318,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\icon_gate.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_tile.png" />
+  </ItemGroup>
 </Project>
