@@ -613,10 +613,8 @@ namespace UnitTests.Engine.EngineGame
         {
             // Arrange
 
-            Engine.EngineSettings.CurrentAction = ActionEnum.Move;
-
             var character = new PlayerInfoModel(new CharacterModel());
-            var monster = new PlayerInfoModel(new CharacterModel());
+            var monster = new PlayerInfoModel(new MonsterModel());
 
             Engine.EngineSettings.PlayerList.Add(character);
             Engine.EngineSettings.PlayerList.Add(monster);
@@ -631,13 +629,14 @@ namespace UnitTests.Engine.EngineGame
 
 
             // Act
-            var result = Engine.Round.Turn.TakeTurn(character);
+            var result = Engine.Round.Turn.TakeTurn(monster);
 
             // Reset
 
             // Assert
             Assert.AreEqual(true, result);
         }
+
         #endregion TakeTurn
 
         #region DropItems
