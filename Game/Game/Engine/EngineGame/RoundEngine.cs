@@ -214,7 +214,7 @@ namespace Game.Engine.EngineGame
             // Then by Alphabetic on Name (Assending)
             // Then by First in list order (Assending
 
-            EngineSettings.PlayerList = EngineSettings.PlayerList.OrderByDescending(a => a.GetSpeed())
+            EngineSettings.PlayerList = EngineSettings.PlayerList.OrderByDescending(a => a.Speed)
                 .ThenByDescending(a => a.Level)
                 .ThenByDescending(a => a.ExperienceTotal)
                 .ThenByDescending(a => a.PlayerType)
