@@ -12,7 +12,7 @@ namespace Game.Engine.EngineGame
     {
 
         // The BaseEngine
-        public new EngineSettingsModel EngineSettings { get; set; } = EngineSettingsModel.Instance;
+        public new EngineSettingsModel EngineSettings { get; } = EngineSettingsModel.Instance;
 
         /// <summary>
         /// Default BattleEngine constructor
