@@ -1314,7 +1314,7 @@ namespace UnitTests.Engine.EngineGame
             CharacterPlayer.MaxHealth = 1000;
 
             Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
-            Engine.EngineSettings.BattleScore.AutoBattle = true;
+            Engine.EngineSettings.BattleScore.AutoBattle = false;
 
             // Act
             var result = Engine.Round.Turn.DetermineActionChoice(CharacterPlayer);
@@ -1322,7 +1322,7 @@ namespace UnitTests.Engine.EngineGame
             // Reset
 
             // Assert
-            Assert.AreEqual(ActionEnum.Ability, result);
+            Assert.AreEqual(ActionEnum.Unknown, result);
         }
 
         [Test]
