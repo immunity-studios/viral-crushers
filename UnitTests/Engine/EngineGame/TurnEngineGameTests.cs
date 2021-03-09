@@ -585,6 +585,25 @@ namespace UnitTests.Engine.EngineGame
         }
 
         [Test]
+        public void TurnEngine_TakeTurn_Monster_Ability_Should_Pass()
+        {
+            // Arrange
+
+            Engine.EngineSettings.CurrentAction = ActionEnum.Ability;
+            Engine.EngineSettings.CurrentActionAbility = AbilityEnum.Bandage;
+
+            var PlayerInfo = new PlayerInfoModel(new MonsterModel());
+
+            // Act
+            var result = Engine.Round.Turn.TakeTurn(PlayerInfo);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
         public void TurnEngine_TakeTurn_Move_Should_Pass()
         {
             // Arrange
