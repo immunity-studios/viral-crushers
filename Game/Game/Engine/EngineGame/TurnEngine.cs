@@ -63,11 +63,15 @@ namespace Game.Engine.EngineGame
                     // Set the action if one is not set
                     EngineSettings.CurrentAction = DetermineActionChoice(Attacker);
 
+
+                    // NOTE: (Ross) I have commented out the block below, because there is no way the CurrentAction 
+                    // will be Unknown at this point. (The above call to DetermineActionChoice cannot return ActionEnum.Unknown)
+                    
                     // When in doubt, attack...
-                    if (EngineSettings.CurrentAction == ActionEnum.Unknown)
-                    {
-                        EngineSettings.CurrentAction = ActionEnum.Attack;
-                    }
+                    //if (EngineSettings.CurrentAction == ActionEnum.Unknown)
+                    //{
+                    //    EngineSettings.CurrentAction = ActionEnum.Attack;
+                    //}
                 }
 
                 switch (EngineSettings.CurrentAction)
@@ -93,11 +97,14 @@ namespace Game.Engine.EngineGame
                     // Set the action if one is not set
                     EngineSettings.CurrentAction = DetermineActionChoice(Attacker);
 
+                    // NOTE: (Ross) I have commented out the block below, because there is no way the CurrentAction 
+                    // will be Unknown at this point. (The above call to DetermineActionChoice cannot return ActionEnum.Unknown)
+
                     // When in doubt, attack...
-                    if (EngineSettings.CurrentAction == ActionEnum.Unknown)
-                    {
-                        EngineSettings.CurrentAction = ActionEnum.Attack;
-                    }
+                    //if (EngineSettings.CurrentAction == ActionEnum.Unknown)
+                    //{
+                    //    EngineSettings.CurrentAction = ActionEnum.Attack;
+                    //}
                 }
 
                 switch (EngineSettings.CurrentAction)
