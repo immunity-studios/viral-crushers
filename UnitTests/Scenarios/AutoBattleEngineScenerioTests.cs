@@ -85,57 +85,57 @@ namespace Scenario
             Assert.AreEqual(true, result);
         }
 
-        //[Test]
-        //public async Task AutoBattleEngine_RunAutoBattle_Character_Level_Up_Should_Pass()
-        //{
+        [Test]
+        public async Task AutoBattleEngine_RunAutoBattle_Character_Level_Up_Should_Pass()
+        {
 
-        //    /* 
-        //     * Test to force leveling up of a character during the battle
-        //     * 
-        //     * 1 Character, Experience set at next level mark
-        //     * 
-        //     * 6 Monsters
-        //     * 
-        //     * Character Should Level UP 1 level
-        //     * 
-        //     */
+            /* 
+             * Test to force leveling up of a character during the battle
+             * 
+             * 1 Character, Experience set at next level mark
+             * 
+             * 6 Monsters
+             * 
+             * Character Should Level UP 1 level
+             * 
+             */
 
-        //    //Arrange
+            //Arrange
 
-        //    // Add Characters
+            // Add Characters
 
-        //    AutoBattle.Battle.EngineSettings.MaxNumberPartyCharacters = 1;
+            AutoBattle.Battle.EngineSettings.MaxNumberPartyCharacters = 1;
 
-        //    CharacterIndexViewModel.Instance.Dataset.Clear();
+            CharacterIndexViewModel.Instance.Dataset.Clear();
 
-        //    // To See Level UP happening, a character needs to be close to the next level
-        //    var Character = new CharacterModel
-        //    {
-        //        ExperienceTotal = 300,    // Enough for next level
-        //        Name = "Mike Level Example",
-        //        Speed = 100,    // Go first
-        //    };
+            // To See Level UP happening, a character needs to be close to the next level
+            var Character = new CharacterModel
+            {
+                ExperienceTotal = 300,    // Enough for next level
+                Name = "Mike Level Example",
+                Speed = 100,    // Go first
+            };
 
-        //    // Remember Start Level
-        //    var StartLevel = Character.Level;
+            // Remember Start Level
+            var StartLevel = Character.Level;
 
-        //    var CharacterPlayer = new PlayerInfoModel(Character);
+            var CharacterPlayer = new PlayerInfoModel(Character);
 
-        //    AutoBattle.Battle.EngineSettings.CharacterList.Add(CharacterPlayer);
+            AutoBattle.Battle.EngineSettings.CharacterList.Add(CharacterPlayer);
 
 
-        //    // Add Monsters
+            // Add Monsters
 
-        //    //Act
-        //    var result = await AutoBattle.RunAutoBattle();
+            //Act
+            var result = await AutoBattle.RunAutoBattle();
 
-        //    //Reset
+            //Reset
 
-        //    //Assert
-        //    Assert.AreEqual(true, result);
-        //    Assert.AreEqual(true, AutoBattle.Battle.EngineSettings.BattleScore.CharacterAtDeathList.Contains("Mike Level Example"));
-        //   // Assert.AreEqual(StartLevel+1, Engine.EngineSettings.BattleScore.CharacterModelDeathList.Where(m=>m.Guid.Equals(Character.Guid)).First().Level);
-        //}
+            //Assert
+            Assert.AreEqual(true, result);
+            Assert.AreEqual(true, AutoBattle.Battle.EngineSettings.BattleScore.CharacterAtDeathList.Contains("Mike Level Example"));
+           // Assert.AreEqual(StartLevel+1, Engine.EngineSettings.BattleScore.CharacterModelDeathList.Where(m=>m.Guid.Equals(Character.Guid)).First().Level);
+        }
 
         [Test]
         public async Task AutoBattleEngine_RunAutoBattle_GameOver_Round_1_Should_Pass()
