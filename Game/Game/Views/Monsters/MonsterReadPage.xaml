@@ -37,7 +37,7 @@
 
                         <!--  Monster Image  -->
                         <Frame Style="{StaticResource BorderFrame}" VerticalOptions="CenterAndExpand">
-                            <Frame Style="{StaticResource CharacterFrame}">
+                            <Frame Style="{StaticResource MonsterFrame}">
                                 <Image x:Name="MonsterImage"
                                        HeightRequest="100"
                                        Source="{Binding Data.ImageURI}"

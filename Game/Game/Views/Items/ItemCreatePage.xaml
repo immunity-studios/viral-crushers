@@ -58,7 +58,7 @@
                             <!--  Item Image  -->
                             <Frame Grid.RowSpan="5" Style="{StaticResource BorderFrame}">
 
-                                <Frame Padding="10" Style="{StaticResource CharacterFrame}">
+                                <Frame Padding="10" Style="{StaticResource ItemFrame}">
 
                                     <Image x:Name="ItemImage" Style="{StaticResource ImageLargeStyle}" />
                                 </Frame>

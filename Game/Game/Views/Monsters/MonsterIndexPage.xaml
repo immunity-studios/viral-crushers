@@ -55,7 +55,7 @@
 
                                 <!--  Monster Image  -->
                                 <Frame Style="{StaticResource BorderFrame}">
-                                    <Frame Style="{StaticResource CharacterFrame}">
+                                    <Frame Style="{StaticResource MonsterFrame}">
                                         <Image Grid.Row="0"
                                                HeightRequest="100"
                                                Source="{Binding ImageURI}"

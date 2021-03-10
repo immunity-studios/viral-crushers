@@ -55,7 +55,7 @@
                                    Style="{StaticResource BorderFrame}"
                                    VerticalOptions="CenterAndExpand">
 
-                                <Frame Padding="10" Style="{StaticResource CharacterFrame}">
+                                <Frame Padding="10" Style="{StaticResource MonsterFrame}">
 
                                     <Image x:Name="MonsterImage"
                                            HeightRequest="100"

@@ -501,8 +501,30 @@
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="HasShadow" Value="False" />
                 <Setter Property="CornerRadius" Value="35" />
+                <Setter Property="BorderColor" Value="{StaticResource ViralCrusherYellowColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource ViralCrusherYellowColor}" />
+            </Style>
+
+            <Style x:Key="MonsterFrame" TargetType="Frame">
+                <Setter Property="Margin" Value="2" />
+                <Setter Property="Padding" Value="2" />
+                <Setter Property="VerticalOptions" Value="Start" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="CornerRadius" Value="35" />
                 <Setter Property="BorderColor" Value="{StaticResource ViralCrusherDarkPurpleColor}" />
                 <Setter Property="BackgroundColor" Value="{StaticResource ViralCrusherDarkPurpleColor}" />
+            </Style>
+
+            <Style x:Key="ItemFrame" TargetType="Frame">
+                <Setter Property="Margin" Value="2" />
+                <Setter Property="Padding" Value="2" />
+                <Setter Property="VerticalOptions" Value="Start" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="CornerRadius" Value="35" />
+                <Setter Property="BorderColor" Value="{StaticResource ViralCrusherGreenColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource ViralCrusherGreenColor}" />
             </Style>
 
             <Style x:Key="BorderFrame" TargetType="Frame">
