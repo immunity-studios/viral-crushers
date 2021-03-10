@@ -407,7 +407,7 @@ namespace Game.GameRules
             var datalist = new List<MonsterModel>()
             {
                 new MonsterModel {
-                    Name = "Bubbletooth",
+                    Name = "Giggleglow",
                     Type = MonsterTypeEnum.Ebola,
                     Description = "A viral hemorrhagic fever caused by ebolaviruses. Symptoms are fever, sore throat, muscular pain, and headaches.",
                     ImageURI = "ebola_monster_140.png",
@@ -459,7 +459,7 @@ namespace Game.GameRules
                 },
 
                 new MonsterModel {
-                    Name = "Startlescream",
+                    Name = "Laserbeak",
                     Type = MonsterTypeEnum.Flu,
                     Description = "An infectious disease caused by influenza virus. Symptoms include fever, runny nose, sore throat, headache, and fatigue.",
                     ImageURI = "flu_monster_140.png",

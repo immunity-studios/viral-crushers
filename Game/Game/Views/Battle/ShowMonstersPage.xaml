@@ -17,20 +17,31 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <views:BackButtonControl Margin="30,30,0,0" HorizontalOptions="Start" />
+            <!--<views:BackButtonControl Margin="30,20,0,0" HorizontalOptions="Start" Scale="0.8" />-->
 
             <!--  Page Tilte  -->
-            <views:CurvedLabelControl Margin="0,60,0,-20"
+            <views:CurvedLabelControl Margin="0,45,0,-20"
                                       HorizontalOptions="Center"
                                       Style="{StaticResource RedCurvedLabel}"
-                                      Text="Monsters Party" />
+                                      Text="Monsters Party"
+                                      FontSize="25"/>
 
             <Frame Grid.Row="1" Margin="5,0,5,10">
                 <StackLayout Padding="0,10,0,0">
-                    <CollectionView x:Name="MonstersCollectionView"
+
+                    <Grid>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="4*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <CollectionView x:Name="MonstersCollectionView"
                                 ItemsSource="{Binding Dataset}"
                                 SelectionChanged="CollectionView_SelectionChanged"
-                                SelectionMode="Single">
+                                SelectionMode="Single"
+                                        Grid.Row="0"
+                                        VerticalScrollBarVisibility="Never">
 
                         <CollectionView.ItemsLayout>
                             <GridItemsLayout Orientation="Vertical"
@@ -52,7 +63,7 @@
 
                                     <!--  Monster Image  -->
                                     <Frame Style="{StaticResource BorderFrame}">
-                                        <Frame Style="{StaticResource CharacterFrame}">
+                                        <Frame Style="{StaticResource MonsterFrame}">
                                             <Image Grid.Row="0"
                                                HeightRequest="100"
                                                Source="{Binding ImageURI}"
@@ -74,7 +85,11 @@
                     <!--Battle Button-->
                     <ImageButton HorizontalOptions="Center"
                                          Clicked="BattleButton_Clicked" 
-                                         Source="battle_button_140.png" />
+                                         Source="battle_button_140.png" 
+                                 Grid.Row="1"
+                                         Scale="0.7"/>
+
+                    </Grid>
                 </StackLayout>
             </Frame>
 
