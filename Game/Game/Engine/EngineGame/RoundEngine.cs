@@ -152,8 +152,11 @@ namespace Game.Engine.EngineGame
             // In Auto Battle this happens and the characters get their items
             // When called manualy, make sure to do the character pickup before calling EndRound
 
-            // TOD: Return for now, and revisit this functionality.
-            return;
+            // Have each character pickup items...
+            foreach (var character in EngineSettings.CharacterList)
+            {
+                PickupItemsFromPool(character);
+            }
         }
 
         /// <summary>
@@ -301,7 +304,19 @@ namespace Game.Engine.EngineGame
 
             // I use the same logic for Auto Battle as I do for Manual Battle
 
-            return base.PickupItemsFromPool(character);
+            //if (BaseEngine.BattleScore.AutoBattle)
+            {
+                // Have the character, walk the items in the pool, and decide if any are better than current one.
+
+                GetItemFromPoolIfBetter(character, ItemLocationEnum.Head);
+                GetItemFromPoolIfBetter(character, ItemLocationEnum.Necklass);
+                GetItemFromPoolIfBetter(character, ItemLocationEnum.PrimaryHand);
+                GetItemFromPoolIfBetter(character, ItemLocationEnum.OffHand);
+                GetItemFromPoolIfBetter(character, ItemLocationEnum.RightFinger);
+                GetItemFromPoolIfBetter(character, ItemLocationEnum.LeftFinger);
+                GetItemFromPoolIfBetter(character, ItemLocationEnum.Feet);
+            }
+            return true;
         }
 
         /// <summary>
