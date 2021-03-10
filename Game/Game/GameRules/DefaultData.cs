@@ -324,7 +324,7 @@ namespace Game.GameRules
                 },
 
                 new CharacterModel {
-                    Name = "Ashley",
+                    Name = "Ben",
                     Job = CharacterJobEnum.Athlete,
                     Description = "Diligent, breezy, thundering",
                     SpecialAbility = SpecialAbilityEnum.IncreaseDefense,
