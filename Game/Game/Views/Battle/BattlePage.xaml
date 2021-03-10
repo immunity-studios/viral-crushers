@@ -46,11 +46,11 @@
                 <!--The Bottom of the Battle UI  Holds the Player to Player boxes, Buttons, and the Messages-->
                 <StackLayout x:Name="BattleBottomBox" Style="{StaticResource BattleUIBottomBox}" VerticalOptions="Start">
 
-                    <Grid RowSpacing="0">
+                    <Grid RowSpacing="10" >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"></RowDefinition>
-                            <RowDefinition Height="Auto"></RowDefinition>
-                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="40"></RowDefinition>
+                            <RowDefinition Height="40"></RowDefinition>
                         </Grid.RowDefinitions>
                     
                     <Frame x:Name="BattlePlayerInfomationBox"
@@ -64,32 +64,33 @@
 
                             <StackLayout x:Name="AttackerBox" Style="{StaticResource PlayerBattleInfoBox}" HorizontalOptions="Start">
                                 <Image x:Name="AttackerImage" Source="item.png" Style="{StaticResource ImageBattleMediumStyle}"/>
-                                <Label x:Name="AttackerName" Text="" Style="{StaticResource ValueStyleBattleMicro}"/>
-                                <Label x:Name="AttackerHealth" Text="" Style="{StaticResource ValueStyleBattleMicro}"/>
+                                <Label x:Name="AttackerName" Text="" Style="{StaticResource ValueStyleBattleMicro}" TextColor="{StaticResource ViralCrusherGreenColor}" FontAttributes="Bold"/>
+                                    <Label x:Name="AttackerHealth" Text="" Style="{StaticResource ValueStyleBattleMicro}" TextColor="{StaticResource ViralCrusherGreenColor}" FontAttributes="Bold"/>
                             </StackLayout>
 
                             <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
                                 <Label x:Name="BattlePlayerBoxVersus" Text="vs" Style="{StaticResource ValueStyleBattleMicro}"
                                     Padding="0,5,0,5"
-                                    VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                                    VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center"
+                                       TextColor="{StaticResource ViralCrusherRedColor}" FontAttributes="Bold"/>
                                 <Image x:Name="AttackerAttack" Source="mapcell.png" Style="{StaticResource ImageSmallStyle}"/>
                             </StackLayout>
 
                             <StackLayout x:Name="DefenderBox" Style="{StaticResource PlayerBattleInfoBox}" HorizontalOptions="End">
                                 <Image x:Name="DefenderImage" Source="item.png" Style="{StaticResource ImageBattleMediumStyle}"/>
-                                <Label x:Name="DefenderName" Text="" Style="{StaticResource ValueStyleBattleMicro}"/>
-                                <Label x:Name="DefenderHealth" Text="" Style="{StaticResource ValueStyleBattleMicro}"/>
+                                    <Label x:Name="DefenderName" Text="" Style="{StaticResource ValueStyleBattleMicro}" TextColor="{StaticResource ViralCrusherGreenColor}" FontAttributes="Bold"/>
+                                    <Label x:Name="DefenderHealth" Text="" Style="{StaticResource ValueStyleBattleMicro}" TextColor="{StaticResource ViralCrusherGreenColor}" FontAttributes="Bold"/>
                             </StackLayout>
                         </StackLayout>
                     </Frame>
 
                     
-                        <StackLayout Grid.Row="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand" Padding="0,5,0,0"
+                        <StackLayout Grid.Row="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand" Scale="0.8"
                                      >
 
-                            <Button x:Name="AttackButton" Clicked="AttackButton_Clicked" Text="Attack" IsVisible="False" IsEnabled="False"/>
-                            <Button x:Name="AbilityButton" Clicked="AbilityButton_Clicked" Text="Use Ability" IsVisible="False" IsEnabled="False"/>
-                            <Button x:Name="MoveButton" Clicked="MoveButton_Clicked" Text="Move" IsVisible="False" IsEnabled="False"/>
+                            <ImageButton x:Name="AttackButton" Clicked="AttackButton_Clicked" Source="icon_battle_attack_button" IsVisible="False" IsEnabled="False" />
+                            <ImageButton x:Name="AbilityButton" Clicked="AbilityButton_Clicked" Source="icon_battle_ability_button" IsVisible="False" IsEnabled="False" />
+                            <ImageButton x:Name="MoveButton" Clicked="MoveButton_Clicked" Source="icon_battle_move_button" IsVisible="False" IsEnabled="False" />
                             <!--<Button x:Name="NextRoundButton" Clicked="NextRoundButton_Clicked" Text="Next Round" IsVisible="False"/>
                             <Button x:Name="StartBattleButton" Clicked="StartButton_Clicked" Text="Start Battle" IsVisible="False"/>
                             <Button x:Name="SettingsButton" Clicked="Settings_Clicked" Text="Settings"/>
@@ -98,15 +99,15 @@
                         </StackLayout>
 
 
-                        <StackLayout Grid.Row="2" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand">
+                        <StackLayout Grid.Row="2" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand" Scale="0.7">
 
                             <!--<Button x:Name="AttackButton" Clicked="AttackButton_Clicked" Text="Attack" IsVisible="False" IsEnabled="False"/>
                             <Button x:Name="AbilityButton" Clicked="AbilityButton_Clicked" Text="Use Ability" IsVisible="False" IsEnabled="False"/>
                             <Button x:Name="MoveButton" Clicked="MoveButton_Clicked" Text="Move" IsVisible="False" IsEnabled="False"/>-->
-                            <Button x:Name="NextRoundButton" Clicked="NextRoundButton_Clicked" Text="Next Round" IsVisible="False"/>
-                            <Button x:Name="StartBattleButton" Clicked="StartButton_Clicked" Text="Start Battle" IsVisible="False"/>
+                            <ImageButton x:Name="NextRoundButton" Clicked="NextRoundButton_Clicked" Source="icon_battle_next_round_button" IsVisible="False" />
+                            <ImageButton x:Name="StartBattleButton" Clicked="StartButton_Clicked" Source="icon_battle_start_button" IsVisible="False" />
                             <Button x:Name="SettingsButton" Clicked="Settings_Clicked" Text="Settings" />
-                            <Button x:Name="CancelButton" Clicked="ExitButton_Clicked" Text="Exit" />
+                            <ImageButton x:Name="CancelButton" Clicked="ExitButton_Clicked" Source="icon_battle_exit_button"  />
 
                         </StackLayout>
                     </Grid>
@@ -136,12 +137,13 @@
                                     HorizontalOptions="CenterAndExpand">
 
                             <Label x:Name="BattleMessages" 
-                                    HorizontalOptions="FillAndExpand" 
+                                    HorizontalOptions="CenterAndExpand" 
                                     LineBreakMode="WordWrap" 
                                     MaxLines="3"
                                     LineHeight="1"
                                     CharacterSpacing="1"
                                     Style="{StaticResource LabelStyle}"
+                                   TextColor="{StaticResource ViralCrusherWhiteColor}"
                                     FontSize="12"/>
 
                             <!--<WebView
@@ -175,19 +177,26 @@
                                Text="IT IS YOUR TURN!" 
                                Style="{StaticResource PopupItemTextStyle}" 
                                MaxLines="2" 
-                               LineBreakMode="WordWrap" />
+                               LineBreakMode="WordWrap" 
+                               TextColor="{StaticResource ViralCrusherGreenColor}"
+                               FontSize="Small"/>
                         <Label Text="1. Choose one Character as Attacker." 
                                Style="{StaticResource PopupItemTextStyle}" 
                                MaxLines="2" 
-                               LineBreakMode="WordWrap" />
+                               LineBreakMode="WordWrap" 
+                               TextColor="{StaticResource ViralCrusherGreenColor}"
+                               FontSize="Small"/>
                         <Label Text="2. Choose one Monster as Defender." 
                                Style="{StaticResource PopupItemTextStyle}" 
                                MaxLines="2" 
-                               LineBreakMode="WordWrap" />
+                               LineBreakMode="WordWrap" 
+                               TextColor="{StaticResource ViralCrusherGreenColor}"
+                               FontSize="Small"/>
 
-                        <Button x:Name="PopupUserCloseButton" 
+                        <ImageButton x:Name="PopupUserCloseButton" 
                                 Clicked="CloseUserPopup_Clicked" 
-                                Text="Close"/>
+                                Source="icon_battle_close_button"
+                                     Scale="0.5"/>
                     </StackLayout>
                 </Frame>
             </StackLayout>
@@ -201,13 +210,18 @@
 
                 <Frame BorderColor="{StaticResource TriciaryTextColor}" Padding="1">
 
-                    <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand" Padding="20">
+                    <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand" Padding="5">
 
-                        <Label x:Name="PopupMonsterTurn" Text="IT IS MONSTER'S TURN!" Style="{StaticResource PopupItemTextStyle}" MaxLines="2" LineBreakMode="WordWrap" />
+                        <Label x:Name="PopupMonsterTurn" Text="IT IS MONSTER'S TURN!" Style="{StaticResource PopupItemTextStyle}" MaxLines="2" LineBreakMode="WordWrap" 
+                               TextColor="{StaticResource ViralCrusherGreenColor}"
+                               FontSize="Small"
+                               />
 
-                        <Button x:Name="PopupMonsterCloseButton" 
+                        <ImageButton x:Name="PopupMonsterCloseButton" 
                                 Clicked="CloseMonsterPopup_Clicked" 
-                                Text="Close"/>
+                                Scale="0.5"
+                                     Source="icon_battle_close_button"
+                                />
                     </StackLayout>
                 </Frame>
             </StackLayout>

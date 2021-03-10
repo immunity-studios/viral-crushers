@@ -22,7 +22,7 @@
                          HorizontalOptions="Center">
                 <ImageButton
                     x:Name="CharactersImageButton"
-                    Source="icon_menu_characters_girl.png"
+                    Source="icon_characters_bottom_menu.png"
                     Style="{StaticResource ToolbarMenuImageButtonStyle}"
                     Clicked="CharacterButton_Clicked"/>
                     

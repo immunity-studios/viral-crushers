@@ -45,7 +45,7 @@
 
                 <StackLayout Padding="1"></StackLayout>
 
-                <Button Clicked="BeginButton_Clicked" Text="Begin"/>
+                <ImageButton Clicked="BeginButton_Clicked" Source="icon_battle_begin_button"/>
                 
             </StackLayout>
         </ScrollView>
