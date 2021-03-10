@@ -61,8 +61,8 @@
 
             <!--  Battle Map Colors for Backgrounds  -->
             <Color x:Key="BattleMapTransparentColor">Transparent</Color>
-            <Color x:Key="BattleMapCharacterColor">purple</Color>
-            <Color x:Key="BattleMapMonsterColor">lavender</Color>
+            <Color x:Key="BattleMapCharacterColor">#F4B84D</Color>
+            <Color x:Key="BattleMapMonsterColor">#3B0456</Color>
             <Color x:Key="BattleMapDeathColor">lightgreen</Color>
             <Color x:Key="BattleMapHitColor">darkorange</Color>
             <Color x:Key="BattleMapMissColor">darkred</Color>
@@ -483,6 +483,17 @@
                 <Setter Property="BackgroundColor" Value="{StaticResource ViralCrusherBlueColor}" />
             </Style>
 
+            <Style x:Key="GridCellFrame" TargetType="Frame">
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="VerticalOptions" Value="Start" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="HasShadow" Value="True" />
+                <Setter Property="CornerRadius" Value="0" />
+                <Setter Property="BorderColor" Value="{StaticResource TransparentColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource TransparentColor}" />
+            </Style>
+
             <Style x:Key="AttributeFrame" TargetType="Frame">
                 <Setter Property="Margin" Value="5" />
                 <Setter Property="Padding" Value="5" />
@@ -512,8 +523,8 @@
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="HasShadow" Value="False" />
                 <Setter Property="CornerRadius" Value="35" />
-                <Setter Property="BorderColor" Value="{StaticResource ViralCrusherDarkPurpleColor}" />
-                <Setter Property="BackgroundColor" Value="{StaticResource ViralCrusherDarkPurpleColor}" />
+                <Setter Property="BorderColor" Value="{StaticResource ViralCrusherPurpleColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource ViralCrusherPurpleColor}" />
             </Style>
 
             <Style x:Key="ItemFrame" TargetType="Frame">
