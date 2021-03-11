@@ -23,6 +23,7 @@ namespace Game
 
             // Setup Audio Engine
             AudioSystem.AudioEngine.Instance.Setup();
+            AudioSystem.AudioEngine.Instance.SetBusVolume(AudioSystem.AudioBusEnum.Master, .6);
 
             // Call the Main Page to open
             MainPage = new NavigationPage(new HomePage());
