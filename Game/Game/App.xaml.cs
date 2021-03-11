@@ -21,8 +21,8 @@ namespace Game
             // Add each model here to warm up and load it.
             Helpers.DataSetsHelper.WarmUp();
 
-            // Load audio files
-            AudioSystem.AudioEngine.Instance.LoadAudio();
+            // Setup Audio Engine
+            AudioSystem.AudioEngine.Instance.Setup();
 
             // Call the Main Page to open
             MainPage = new NavigationPage(new HomePage());

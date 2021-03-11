@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using Xamarin.Forms;
+
 
 namespace Game.AudioSystem
 {
@@ -55,12 +54,20 @@ namespace Game.AudioSystem
             }
         }
 
+        public bool Setup()
+        {
+            //CrossMediaManager.Current.Init();
+            LoadAudio();
+            return true;
+
+        }
+
         public bool LoadAudio()
         {
             foreach (var audioClip in AudioResources.Instance.AudioClips)
             {
                 bool loaded = audioClip.Load();
-                //Console.WriteLine(loaded? "Loaded" : "Failed to load" + " audio file with path " + audioClip.Filepath);
+                Console.WriteLine(loaded? "Loaded" : "Failed to load" + " audio file with path " + audioClip.Filepath);
             }
             SetBusVolume(AudioBusEnum.Master, 0);
             return true;
@@ -84,8 +91,9 @@ namespace Game.AudioSystem
                     AudioResources.Instance.MENU_CLICK_SOUND.Play();
                     break;
 
-                case AudioEventEnum.MenuStart:
-                    AudioResources.Instance.MX_MENU_FULL.Play(); 
+                case AudioEventEnum.MenuStart: 
+                    //AudioResources.Instance.MX_MENU_FULL.Play(); 
+                    AudioResources.Instance.MX_MENU_SONG1_FULL_LOOP.Play();
                     break;
                 
                 case AudioEventEnum.BattleStart:
