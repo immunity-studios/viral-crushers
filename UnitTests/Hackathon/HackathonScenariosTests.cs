@@ -2,6 +2,7 @@
 
 using Game.Models;
 using System.Threading.Tasks;
+using Xamarin.Forms.Mocks;
 using Game.ViewModels;
 
 namespace Hackathon
@@ -15,6 +16,9 @@ namespace Hackathon
         [SetUp]
         public void Setup()
         {
+            // Initilize Xamarin Forms
+            MockForms.Init();
+
             // Choose which engine to run
             EngineViewModel.SetBattleEngineToGame();
 
