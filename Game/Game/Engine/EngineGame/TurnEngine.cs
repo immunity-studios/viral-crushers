@@ -414,7 +414,70 @@ namespace Game.Engine.EngineGame
 
             // Battle Message 
 
-            return base.TurnAsAttack(Attacker, Target);
+            if (Attacker == null)
+            {
+                return false;
+            }
+
+            if (Target == null)
+            {
+                return false;
+            }
+
+            // Set Messages to empty
+            EngineSettings.BattleMessagesModel.ClearMessages();
+
+            // Do the Attack
+            CalculateAttackStatus(Attacker, Target);
+
+            // See if the Battle Settings Overrides the Roll
+            EngineSettings.BattleMessagesModel.HitStatus = BattleSettingsOverride(Attacker);
+
+            switch (EngineSettings.BattleMessagesModel.HitStatus)
+            {
+                case HitStatusEnum.Miss:
+                    // It's a Miss
+
+                    break;
+
+                case HitStatusEnum.CriticalMiss:
+                    // It's a Critical Miss, so Bad things may happen
+                    DetermineCriticalMissProblem(Attacker);
+
+                    break;
+
+                case HitStatusEnum.CriticalHit:
+                case HitStatusEnum.Hit:
+                    // It's a Hit
+
+                    //Calculate Damage
+                    EngineSettings.BattleMessagesModel.DamageAmount = Attacker.GetDamageRollValue();
+
+                    // If critical Hit, double the damage
+                    if (EngineSettings.BattleMessagesModel.HitStatus == HitStatusEnum.CriticalHit)
+                    {
+                        EngineSettings.BattleMessagesModel.DamageAmount *= 2;
+                    }
+
+                    // Apply the Damage
+                    ApplyDamage(Target);
+
+                    EngineSettings.BattleMessagesModel.TurnMessageSpecial = EngineSettings.BattleMessagesModel.GetCurrentHealthMessage();
+
+                    // Check if Dead and Remove
+                    RemoveIfDead(Target);
+
+                    // If it is a character apply the experience earned
+                    CalculateExperience(Attacker, Target);
+
+                    break;
+            }
+
+            // Battle Message
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + EngineSettings.BattleMessagesModel.AttackStatus + Target.Name + EngineSettings.BattleMessagesModel.TurnMessageSpecial + EngineSettings.BattleMessagesModel.ExperienceEarned;
+            Debug.WriteLine(EngineSettings.BattleMessagesModel.TurnMessage);
+
+            return true;
         }
 
         /// <summary>
@@ -449,7 +512,29 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override HitStatusEnum CalculateAttackStatus(PlayerInfoModel Attacker, PlayerInfoModel Target)
         {
-            return base.CalculateAttackStatus(Attacker, Target);
+            // Remember Current Player
+            EngineSettings.BattleMessagesModel.PlayerType = PlayerTypeEnum.Monster;
+
+            // Choose who to attack
+            EngineSettings.BattleMessagesModel.TargetName = Target.Name;
+            EngineSettings.BattleMessagesModel.AttackerName = Attacker.Name;
+
+            // Set Attack and Defense
+            var AttackScore = Attacker.Level + Attacker.GetAttack();
+            var DefenseScore = Target.GetDefense() + Target.Level;
+
+            // HACKATHON
+            // Hackathon Scenario: If Character is Bob then Bob always misses. 
+            if (Attacker.PlayerType == PlayerTypeEnum.Character && Attacker.Name == "Bob")
+            {
+                EngineSettings.BattleMessagesModel.AttackStatus = " tries to attack but misses ";
+                EngineSettings.BattleMessagesModel.HitStatus = HitStatusEnum.Miss;
+            } else
+            {
+                EngineSettings.BattleMessagesModel.HitStatus = RollToHitTarget(AttackScore, DefenseScore);
+            }
+
+            return EngineSettings.BattleMessagesModel.HitStatus;
         }
 
         /// <summary>
