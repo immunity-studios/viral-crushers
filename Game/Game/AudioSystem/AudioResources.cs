@@ -50,7 +50,10 @@ namespace Game.AudioSystem
                 MX_MENU_SONG1_FULL_LOOP,
                 MX_BATTLE_LOOP,
                 MX_MENU_FULL,
-                MX_BATTLE_FULL
+                MX_BATTLE_FULL,
+                SFX_BATTLE_PLAYER_ATTACK_HIT,
+                SFX_BATTLE_PLAYER_ATTACK_MISS,
+                SFX_BATTLE_PLAYER_DEATH
             };
         }
 
@@ -94,6 +97,20 @@ namespace Game.AudioSystem
         public BaseAudioClip MX_BATTLE_FULL = new SimpleAudioClip(
            filePath: "Game.AudioFiles.Music.Battle.BATTLE_142-BPM-FULL.ogg",
            loop: true
+        );
+
+        public BaseAudioClip SFX_BATTLE_PLAYER_ATTACK_HIT = new SimpleAudioClip(
+            filePath: "Game.AudioFiles.SFX.Battle.General.Player_Attack_Hit.wav",
+            loop: false
+        );
+
+        public BaseAudioClip SFX_BATTLE_PLAYER_ATTACK_MISS = new SimpleAudioClip(
+            filePath: "Game.AudioFiles.SFX.Battle.General.Player_Attack_Miss.wav",
+            loop: false
+        );
+        public BaseAudioClip SFX_BATTLE_PLAYER_DEATH = new SimpleAudioClip(
+            filePath: "Game.AudioFiles.SFX.Battle.General.Player_Death.wav",
+            loop: false
         );
 
         /// <summary>
