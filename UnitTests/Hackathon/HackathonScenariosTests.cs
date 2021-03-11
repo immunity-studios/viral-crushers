@@ -4,6 +4,7 @@ using Game.Models;
 using System.Threading.Tasks;
 using Xamarin.Forms.Mocks;
 using Game.ViewModels;
+using Game.Helpers;
 
 namespace Hackathon
 {
@@ -351,8 +352,63 @@ namespace Hackathon
         #endregion Scenario34
 
 
-        
+        #region Scenario19
+        [Test]
+        public async Task HackathonScenario_Scenario_19_Valid_Hit_Should_Return_HitSoundEffectMessage()
+        {
+            /* 
+            * Scenario Number:  
+            *      19
+            *      
+            * Description: 
+            *      Sound for the actions: Hit, Miss, and Death.
+            * 
+            * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
+            *      Changed in BattleMessagesModel.cs 
+            *      Changed in TurnAsAttack method in TurnEngine.cs
+            *      Changed in GameMessage method in BattlePage.xaml.cs
+            * 
+            * Test Algrorithm:
+            *      Create Character and Monster
+            *      Run TurnAsAttack
+            * 
+            * Test Conditions:
+            *      Force a hit
+            * 
+            * Validation:
+            *      Verify HitSoundEffectMessage equals "Hit sound effect is played"
+            *  
+            */
+
+            // Arrange
+            var Character = new CharacterModel();
+            var CharacterPlayer = new PlayerInfoModel(Character);
+            EngineViewModel.Engine.EngineSettings.CharacterList.Clear();
+            EngineViewModel.Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
+
+            var Monster = new MonsterModel();
+            var MonsterPlayer = new PlayerInfoModel(Monster);
+            EngineViewModel.Engine.EngineSettings.MonsterList.Clear();
+            EngineViewModel.Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
+
+            // Force a Hit
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(20);
+
+            // Act
+            EngineViewModel.Engine.EngineSettings.BattleMessagesModel.HitSoundEffectMessage = string.Empty;
+            EngineViewModel.Engine.Round.Turn.TurnAsAttack(CharacterPlayer, MonsterPlayer);
+            var result = EngineViewModel.Engine.EngineSettings.BattleMessagesModel.HitSoundEffectMessage;
+
+            // Reset
+            DiceHelper.DisableForcedRolls();
+
+            // Assert
+            Assert.AreEqual("Hit sound effect is played", result);
+        }
+
+        #endregion Scenario19
 
 
-}
+    }
 }
