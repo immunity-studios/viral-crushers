@@ -228,6 +228,63 @@ namespace Hackathon
             //Assert
             Assert.AreEqual(HitStatusEnum.Miss, result);
         }
+
+        [Test]
+        public async Task HackathonScenario_Scenario_2_Valid_Ability_Should_Pass()
+        {
+            /* 
+            * Scenario Number:  
+            *      2
+            *      
+            * Description: 
+            *      Make a Character called Bob, who always miss but can do other action such as use abilities
+            * 
+            * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
+            *      Changed Method CalculateAttackStatus in TurnEngine.cs 
+            * 
+            * Test Algrorithm:
+            *      Create Character named Bob
+            *      Set Bob as Current Attacker
+            *      Set Current Action is Ability
+            *      Set Current Action Ability is Bandage
+            * 
+            * Test Conditions:
+            *      Default condition is sufficient
+            * 
+            * Validation:
+            *      Verify Returned True
+            *  
+            */
+
+            //Arrange
+
+            EngineViewModel.Engine.EngineSettings.CurrentAction = ActionEnum.Ability;
+            EngineViewModel.Engine.EngineSettings.CurrentActionAbility = AbilityEnum.Bandage;
+
+            // Set Character Conditions
+
+            EngineViewModel.Engine.EngineSettings.MaxNumberPartyCharacters = 1;
+
+            var CharacterPlayerBob = new PlayerInfoModel(
+                            new CharacterModel
+                            {
+                                Speed = 8,
+                                Level = 1,
+                                CurrentHealth = 5,
+                                ExperienceTotal = 1,
+                                ExperienceRemaining = 1,
+                                Name = "Bob",
+                            });
+
+            EngineViewModel.Engine.EngineSettings.CharacterList.Clear();
+            EngineViewModel.Engine.EngineSettings.CharacterList.Add(CharacterPlayerBob);
+
+            //Act
+            var result = EngineViewModel.Engine.Round.Turn.TakeTurn(CharacterPlayerBob);
+
+            //Assert
+            Assert.AreEqual(true, result);
+        }
         #endregion Scenario2
     }
 }
