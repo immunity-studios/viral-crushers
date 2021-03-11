@@ -85,30 +85,52 @@
                     </Frame>
 
                     
-                        <StackLayout Grid.Row="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand" Scale="0.6"
+                        <StackLayout Grid.Row="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand" Scale="1"
                                      >
                             <Button x:Name="RestButton" Clicked="RestButton_Clicked" Text="Rest" IsVisible="False" IsEnabled="False" />
+
+                            <Button x:Name="AttackButton" Clicked="AttackButton_Clicked" Text="Attack" IsVisible="False" IsEnabled="False"/>
                             
-                            <ImageButton x:Name="AttackButton" Clicked="AttackButton_Clicked" Source="icon_battle_attack_button" IsVisible="False" IsEnabled="False" />
+                            <Button x:Name="AbilityButton" Clicked="AbilityButton_Clicked" Text="Use Ability" IsVisible="False" IsEnabled="False"/>
+                            
+                            <Button x:Name="MoveButton" Clicked="MoveButton_Clicked" Text="Move" IsVisible="False" IsEnabled="False"/>
+
+                            <!--<ImageButton x:Name="AttackButton" Clicked="AttackButton_Clicked" Source="icon_battle_attack_button" IsVisible="False" IsEnabled="False" />
                             <ImageButton x:Name="AbilityButton" Clicked="AbilityButton_Clicked" Source="icon_battle_ability_button" IsVisible="False" IsEnabled="False" />
-                            <ImageButton x:Name="MoveButton" Clicked="MoveButton_Clicked" Source="icon_battle_move_button" IsVisible="False" IsEnabled="False" />
+                            <ImageButton x:Name="MoveButton" Clicked="MoveButton_Clicked" Source="icon_battle_move_button" IsVisible="False" IsEnabled="False" />-->
+                            
                             <!--<Button x:Name="NextRoundButton" Clicked="NextRoundButton_Clicked" Text="Next Round" IsVisible="False"/>
+                            
                             <Button x:Name="StartBattleButton" Clicked="StartButton_Clicked" Text="Start Battle" IsVisible="False"/>
+                            
                             <Button x:Name="SettingsButton" Clicked="Settings_Clicked" Text="Settings"/>
+                            
                             <Button x:Name="CancelButton" Clicked="ExitButton_Clicked" Text="Exit"/>-->
 
                         </StackLayout>
 
 
-                        <StackLayout Grid.Row="2" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand" Scale="0.6">
+                        <StackLayout Grid.Row="2" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand" Scale="1">
 
                             <!--<Button x:Name="AttackButton" Clicked="AttackButton_Clicked" Text="Attack" IsVisible="False" IsEnabled="False"/>
+                            
                             <Button x:Name="AbilityButton" Clicked="AbilityButton_Clicked" Text="Use Ability" IsVisible="False" IsEnabled="False"/>
+                            
                             <Button x:Name="MoveButton" Clicked="MoveButton_Clicked" Text="Move" IsVisible="False" IsEnabled="False"/>-->
-                            <ImageButton x:Name="NextRoundButton" Clicked="NextRoundButton_Clicked" Source="icon_battle_next_round_button" IsVisible="False" />
+                            
+                            <!--<ImageButton x:Name="NextRoundButton" Clicked="NextRoundButton_Clicked" Source="icon_battle_next_round_button" IsVisible="False" />
                             <ImageButton x:Name="StartBattleButton" Clicked="StartButton_Clicked" Source="icon_battle_start_button" IsVisible="False" />
                             <Button x:Name="SettingsButton" Clicked="Settings_Clicked" Text="Settings" />
-                            <ImageButton x:Name="CancelButton" Clicked="ExitButton_Clicked" Source="icon_battle_exit_button"  />
+                            <ImageButton x:Name="CancelButton" Clicked="ExitButton_Clicked" Source="icon_battle_exit_button"  />-->
+
+                            <Button x:Name="NextRoundButton" Clicked="NextRoundButton_Clicked" Text="Next Round" IsVisible="False"/>
+
+                            <Button x:Name="StartBattleButton" Clicked="StartButton_Clicked" Text="Start Battle" IsVisible="False"/>
+
+                            <Button x:Name="SettingsButton" Clicked="Settings_Clicked" Text="Settings"/>
+
+                            <Button x:Name="CancelButton" Clicked="ExitButton_Clicked" Text="Exit"/>
+                            
 
                         </StackLayout>
                     </Grid>
@@ -116,11 +138,17 @@
                     <!--<StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand">
 
                         <Button x:Name="AttackButton" Clicked="AttackButton_Clicked" Text="Attack" IsVisible="False" IsEnabled="False"/>
+                    
                         <Button x:Name="AbilityButton" Clicked="AbilityButton_Clicked" Text="Use Ability" IsVisible="False" IsEnabled="False"/>
+                    
                         <Button x:Name="MoveButton" Clicked="MoveButton_Clicked" Text="Move" IsVisible="False" IsEnabled="False"/>
+                    
                         <Button x:Name="NextRoundButton" Clicked="NextRoundButton_Clicked" Text="Next Round" IsVisible="False"/>
+                    
                         <Button x:Name="StartBattleButton" Clicked="StartButton_Clicked" Text="Start Battle" IsVisible="False"/>
+                    
                         <Button x:Name="SettingsButton" Clicked="Settings_Clicked" Text="Settings"/>
+                    
                         <Button x:Name="CancelButton" Clicked="ExitButton_Clicked" Text="Exit"/>
 
                     </StackLayout>-->
@@ -194,10 +222,15 @@
                                TextColor="{StaticResource ViralCrusherGreenColor}"
                                FontSize="Small"/>
 
-                        <ImageButton x:Name="PopupUserCloseButton" 
+                        <!--<ImageButton x:Name="PopupUserCloseButton" 
                                 Clicked="CloseUserPopup_Clicked" 
                                 Source="icon_battle_close_button"
-                                     Scale="0.5"/>
+                                     Scale="0.5"/>-->
+
+                        <Button x:Name="PopupUserCloseButton" 
+                                Clicked="CloseUserPopup_Clicked" 
+                                Text="Close"/>
+                        
                     </StackLayout>
                 </Frame>
             </StackLayout>
@@ -218,11 +251,15 @@
                                FontSize="Small"
                                />
 
-                        <ImageButton x:Name="PopupMonsterCloseButton" 
+                        <!--<ImageButton x:Name="PopupMonsterCloseButton" 
                                 Clicked="CloseMonsterPopup_Clicked" 
                                 Scale="0.5"
                                      Source="icon_battle_close_button"
-                                />
+                                />-->
+
+                        <Button x:Name="PopupMonsterCloseButton" 
+                                Clicked="CloseMonsterPopup_Clicked" 
+                                Text="Close"/>
                     </StackLayout>
                 </Frame>
             </StackLayout>
