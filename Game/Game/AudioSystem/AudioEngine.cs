@@ -100,7 +100,19 @@ namespace Game.AudioSystem
                     AudioResources.Instance.MX_MENU_FULL.Stop();
                     AudioResources.Instance.MX_BATTLE_FULL.Play();
                     break;
-                
+
+                // HACKATHON sound effects
+                case AudioEventEnum.Player_Attack_Hit:
+                    AudioResources.Instance.SFX_BATTLE_PLAYER_ATTACK_HIT.Play();
+                    break;
+                case AudioEventEnum.Player_Attack_Miss:
+                    AudioResources.Instance.SFX_BATTLE_PLAYER_ATTACK_MISS.Play();
+                    break;
+                case AudioEventEnum.Player_Death:
+                    AudioResources.Instance.SFX_BATTLE_PLAYER_DEATH.Play();
+                    break;
+                // End hackathon sound effects
+
                 default:
                     return false; // event was not found, so return false
             }
