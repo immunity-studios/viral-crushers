@@ -23,8 +23,14 @@
         // Turn Message
         public string TurnMessage = string.Empty;
 
-        // Sound Effect Message
-        public string SoundEffectMessage = string.Empty;
+        // Death Sound Effect Message
+        public string DeathSoundEffectMessage = string.Empty;
+
+        // Hit Sound Effect Message
+        public string HitSoundEffectMessage = string.Empty;
+
+        // Miss Sound Effect Message
+        public string MissSoundEffectMessage = string.Empty;
 
         // Turn Special Message
         public string TurnMessageSpecial = string.Empty;
