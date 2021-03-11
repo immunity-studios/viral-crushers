@@ -907,14 +907,33 @@ namespace Game.Views
 
             Debug.WriteLine(BattleMessages.Text);
 
-            if (BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.SoundEffectMessage != string.Empty)
+            // Output the Hit Sound Effect Message
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.HitSoundEffectMessage != string.Empty)
             {
-                BattleMessages.Text = string.Format("{0} \n{1}", BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.SoundEffectMessage, BattleMessages.Text);
+                BattleMessages.Text = string.Format("{0} \n{1}", BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.HitSoundEffectMessage, BattleMessages.Text);
 
                 Debug.WriteLine(BattleMessages.Text);
-                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.SoundEffectMessage = string.Empty;
+                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.HitSoundEffectMessage = string.Empty;
             }
-            
+
+            // Output the Miss Sound Effect Message
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.MissSoundEffectMessage != string.Empty)
+            {
+                BattleMessages.Text = string.Format("{0} \n{1}", BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.MissSoundEffectMessage, BattleMessages.Text);
+
+                Debug.WriteLine(BattleMessages.Text);
+                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.MissSoundEffectMessage = string.Empty;
+            }
+
+            // Ouput the Death Sound Effect Message
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.DeathSoundEffectMessage != string.Empty)
+            {
+                BattleMessages.Text = string.Format("{0} \n{1}", BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.DeathSoundEffectMessage, BattleMessages.Text);
+
+                Debug.WriteLine(BattleMessages.Text);
+                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.DeathSoundEffectMessage = string.Empty;
+            }
+
 
             if (!string.IsNullOrEmpty(BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.LevelUpMessage))
             {
