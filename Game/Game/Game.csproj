@@ -16,6 +16,9 @@
     <None Remove="AudioFiles\Music\Battle\BATTLE_142-BPM-LOOP.wav" />
     <None Remove="AudioFiles\Music\Menu\MENU_116-BPM-FULL.ogg" />
     <None Remove="AudioFiles\Music\Menu\MENU_116-BPM-LOOP.wav" />
+    <None Remove="AudioFiles\SFX\Battle\General\Player_Attack_Hit.wav" />
+    <None Remove="AudioFiles\SFX\Battle\General\Player_Attack_Miss.wav" />
+    <None Remove="AudioFiles\SFX\Battle\General\Player_Death.wav" />
     <None Remove="AudioFiles\SFX\Menu\UI_CLICK_1.wav" />
   </ItemGroup>
 
@@ -26,13 +29,15 @@
     <EmbeddedResource Include="AudioFiles\Music\Menu\MENU_116-BPM-LOOP.wav" />
     <EmbeddedResource Include="AudioFiles\Music\Menu\TestMX1_Stinger_Bells.wav" />
     <EmbeddedResource Include="AudioFiles\Music\Menu\VC-OST_Song1_Full_Loop.mp3" />
+    <EmbeddedResource Include="AudioFiles\SFX\Battle\General\Player_Attack_Hit.wav" />
+    <EmbeddedResource Include="AudioFiles\SFX\Battle\General\Player_Attack_Miss.wav" />
+    <EmbeddedResource Include="AudioFiles\SFX\Battle\General\Player_Death.wav" />
     <EmbeddedResource Include="AudioFiles\SFX\Menu\ButtonClickTest.wav" />
     <EmbeddedResource Include="AudioFiles\SFX\Menu\UI_CLICK_1.wav" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="Plugin.MediaManager" Version="1.0.8" />
     <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
     <PackageReference Include="Xam.Plugin.SimpleAudioPlayer" Version="1.4.0" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />  
