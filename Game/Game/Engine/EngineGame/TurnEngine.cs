@@ -439,7 +439,7 @@ namespace Game.Engine.EngineGame
                     // It's a Miss
                     // Play the miss sound effect
                     AudioSystem.AudioEngine.Instance.ProcessAudioEvent(AudioSystem.AudioEventEnum.Player_Attack_Miss);
-                    EngineSettings.BattleMessagesModel.SoundEffectMessage += "Miss sound effect is played ";
+                    EngineSettings.BattleMessagesModel.MissSoundEffectMessage = "Miss sound effect is played";
                     break;
 
                 case HitStatusEnum.CriticalMiss:
@@ -453,7 +453,7 @@ namespace Game.Engine.EngineGame
                     // It's a Hit
                     // Play the hit sound effect
                     AudioSystem.AudioEngine.Instance.ProcessAudioEvent(AudioSystem.AudioEventEnum.Player_Attack_Hit);
-                    EngineSettings.BattleMessagesModel.SoundEffectMessage += "Hit sound effect is played ";
+                    EngineSettings.BattleMessagesModel.HitSoundEffectMessage = "Hit sound effect is played";
 
                     //Calculate Damage
                     EngineSettings.BattleMessagesModel.DamageAmount = Attacker.GetDamageRollValue();
@@ -481,7 +481,6 @@ namespace Game.Engine.EngineGame
             // Battle Message
             EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + EngineSettings.BattleMessagesModel.AttackStatus + Target.Name + EngineSettings.BattleMessagesModel.TurnMessageSpecial + EngineSettings.BattleMessagesModel.ExperienceEarned;
             Debug.WriteLine(EngineSettings.BattleMessagesModel.TurnMessage);
-            Debug.WriteLine(EngineSettings.BattleMessagesModel.SoundEffectMessage);
 
             return true;
         }
@@ -584,7 +583,7 @@ namespace Game.Engine.EngineGame
 
             // play the death sound effect
             AudioSystem.AudioEngine.Instance.ProcessAudioEvent(AudioSystem.AudioEventEnum.Player_Death);
-            EngineSettings.BattleMessagesModel.SoundEffectMessage += "Death sound effect is played ";
+            EngineSettings.BattleMessagesModel.DeathSoundEffectMessage = "Death sound effect is played";
 
             bool found;
 
