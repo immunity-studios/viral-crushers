@@ -41,16 +41,20 @@ namespace Game.AudioSystem
         #endregion Singleton
 
         /// <summary>
+        /// The default starting volume for the audio engine
+        /// </summary>
+        private const double STARTING_VOLUME = .6;
+
+        /// <summary>
         /// Audio engine constructor which initializes AudioResources
         /// </summary>
         public AudioEngine()
         {
             busVolumes = new Dictionary<AudioBusEnum, double>();
-            // Set starting volume of all audio buses to 0
-            double startingVolume = 0;
+            
             foreach(AudioBusEnum bus in Enum.GetValues(typeof(AudioBusEnum)))
             {
-                busVolumes.Add(bus, startingVolume);
+                busVolumes.Add(bus, STARTING_VOLUME);
             }
         }
 
@@ -157,7 +161,6 @@ namespace Game.AudioSystem
         {
             return busVolumes[bus];
         }
-
         /// <summary>
         /// Dictionary containing the volumes of the audio buses.
         /// Is set-up in the AudioEngine constructor
