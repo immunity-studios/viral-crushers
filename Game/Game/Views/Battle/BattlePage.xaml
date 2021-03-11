@@ -85,9 +85,10 @@
                     </Frame>
 
                     
-                        <StackLayout Grid.Row="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand" Scale="0.8"
+                        <StackLayout Grid.Row="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand" Scale="0.6"
                                      >
-
+                            <Button x:Name="RestButton" Clicked="RestButton_Clicked" Text="Rest" IsVisible="False" IsEnabled="False" />
+                            
                             <ImageButton x:Name="AttackButton" Clicked="AttackButton_Clicked" Source="icon_battle_attack_button" IsVisible="False" IsEnabled="False" />
                             <ImageButton x:Name="AbilityButton" Clicked="AbilityButton_Clicked" Source="icon_battle_ability_button" IsVisible="False" IsEnabled="False" />
                             <ImageButton x:Name="MoveButton" Clicked="MoveButton_Clicked" Source="icon_battle_move_button" IsVisible="False" IsEnabled="False" />
@@ -99,7 +100,7 @@
                         </StackLayout>
 
 
-                        <StackLayout Grid.Row="2" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand" Scale="0.7">
+                        <StackLayout Grid.Row="2" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand" Scale="0.6">
 
                             <!--<Button x:Name="AttackButton" Clicked="AttackButton_Clicked" Text="Attack" IsVisible="False" IsEnabled="False"/>
                             <Button x:Name="AbilityButton" Clicked="AbilityButton_Clicked" Text="Use Ability" IsVisible="False" IsEnabled="False"/>

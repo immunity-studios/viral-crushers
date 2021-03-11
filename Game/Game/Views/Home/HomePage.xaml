@@ -10,11 +10,12 @@
             
             <StackLayout
                 VerticalOptions="Center"
-                HorizontalOptions="Center">
+                HorizontalOptions="Center"
+                Spacing="30">
 
                 <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
                     <Image
-                         Source="item.png"
+                         Source="icon_defense_shield.png"
                          Style="{StaticResource ImageLargeStyle}"/>
                 
                 </StackLayout>
@@ -22,19 +23,25 @@
                 <StackLayout HorizontalOptions="Center" Padding="70,5,70,0"> 
                
                     <Label 
-                        Text="Your Game Information"
+                        Text="Welcome to Viral Crushers!"
                         Style="{StaticResource CenterMessageStyle}"
-                        FontSize="Micro"
+                        FontSize="Medium"
                         LineBreakMode="WordWrap"
                         MaxLines="5"
+                        TextColor="{StaticResource ViralCrusherYellowColor}"
+                        FontAttributes="Bold"
+                        TextTransform="Uppercase"
+                        
                         />
 
                     <Label 
-                        Text="Help them on their mission."
+                        Text="where the ordinary meet the deftly miniscule"
                         Style="{StaticResource CenterMessageStyle}"
-                        FontSize="Micro"
+                        FontSize="Small"
                         LineBreakMode="WordWrap"
                         MaxLines="5"
+                        TextColor="{StaticResource ViralCrusherYellowColor}"
+                        FontAttributes="Bold"
                         />
                 </StackLayout>
 

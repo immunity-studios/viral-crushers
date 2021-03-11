@@ -492,6 +492,7 @@ namespace Game.Views
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker != null)
             {
                 AttackButton.IsEnabled = true;
+                RestButton.IsEnabled = true;
             }
 
             data.IsSelectedTarget = true;
@@ -514,6 +515,9 @@ namespace Game.Views
              * For Mike's simple battle grammar there is no selection of action so I just return true
              */
             BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = data.Player;
+
+            RestButton.IsEnabled = true;
+
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender != null)
             {
                 AttackButton.IsEnabled = true;
@@ -619,6 +623,31 @@ namespace Game.Views
 
             BattlePlayerBoxVersus.Text = string.Empty;
         }
+
+        private static string restMessage;
+
+        /// <summary>
+        /// Allows Character to take a break and skip a turn while regaining health points.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void RestButton_Clicked(object sender, EventArgs e)
+        {
+            restMessage = "";
+
+            restMessage += BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.Name;
+
+            restMessage += "'s Health After Rest: " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.CurrentHealth.ToString();
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.CurrentHealth += 2;
+
+
+            restMessage += " -> " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.CurrentHealth.ToString();
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction = ActionEnum.Rest;
+            NextAttackExample();
+        }
+
 
         /// <summary>
         /// Attack Action
@@ -750,6 +779,8 @@ namespace Game.Views
 
             AttackButton.IsEnabled = false;
             AbilityButton.IsEnabled = false;
+
+            RestButton.IsEnabled = false;
             return true;
         }
 
@@ -768,6 +799,8 @@ namespace Game.Views
 
         public void NextMonsterAttack()
         {
+            
+
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
 
             // Get the turn, set the current player and attacker to match
@@ -879,6 +912,12 @@ namespace Game.Views
                 BattleMessages.Text = string.Format("{0} \n{1}", BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.LevelUpMessage, BattleMessages.Text);
             }
 
+            if (!string.IsNullOrEmpty(restMessage))
+            {
+                BattleMessages.Text = string.Format("{0} \n{1}", restMessage, BattleMessages.Text);
+                restMessage = "";
+            }
+
             //htmlSource.Html = BattleEngineViewModel.Instance.Engine.BattleMessagesModel.GetHTMLFormattedTurnMessage();
             //HtmlBox.Source = HtmlBox.Source = htmlSource;
         }
@@ -896,6 +935,9 @@ namespace Game.Views
         #endregion MessageHandelers
 
         #region PageHandelers
+
+
+        
 
         /// <summary>
         /// Battle Over, so Exit Button
@@ -992,6 +1034,8 @@ namespace Game.Views
             MoveButton.IsVisible = false;
             MessageDisplayBox.IsVisible = false;
             BattlePlayerInfomationBox.IsVisible = false;
+
+            RestButton.IsVisible = false;
         }
 
         /// <summary>
@@ -1055,6 +1099,9 @@ namespace Game.Views
                     AttackButton.IsVisible = true;
                     AbilityButton.IsVisible = true;
                     MoveButton.IsVisible = true;
+
+                    RestButton.IsVisible = true;
+
                     break;
 
                 // Based on the State disable buttons

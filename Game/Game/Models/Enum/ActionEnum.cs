@@ -16,7 +16,13 @@
         Move = 10,
 
         // Ability
-        Ability = 20
+        Ability = 20,
+
+
+        // Rest
+        Rest = 40
+
+
     }
 
     /// <summary>
@@ -36,6 +42,10 @@
 
             switch (value)
             {
+                case ActionEnum.Rest:
+                    Message = " Rests ";
+                    break;
+
                 case ActionEnum.Attack:
                     Message = " Attacks ";
                     break;
@@ -68,6 +78,10 @@
 
             switch (value)
             {
+                case ActionEnum.Rest:
+                    Message = "item.png";
+                    break;
+
                 case ActionEnum.Attack:
                     Message = "item.png";
                     break;
