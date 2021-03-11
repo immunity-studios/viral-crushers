@@ -109,6 +109,10 @@ namespace Game.Engine.EngineGame
 
                 switch (EngineSettings.CurrentAction)
                 {
+                    case ActionEnum.Rest:
+                        result = Rest(Attacker);
+                        break;
+
                     case ActionEnum.Attack:
                         result = Attack(Attacker);
                         break;
@@ -282,6 +286,20 @@ namespace Game.Engine.EngineGame
             return base.UseAbility(Attacker);
 
         }
+
+
+        /// <summary>
+        /// Add 2 to Character's CurrentHealth
+        /// </summary>
+        public bool Rest(PlayerInfoModel Attacker)
+        {
+            Attacker.CurrentHealth += 2;
+
+            return true;
+
+        }
+
+
 
         /// <summary>
         /// Attack as a Turn

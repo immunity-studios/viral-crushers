@@ -292,6 +292,67 @@ namespace Hackathon
         #endregion Scenario2
 
 
+        #region Scenario34
+        [Test]
+        public void HakathonScenario_Scenario_34_Valid_Default_Should_Pass()
+        {
+            /* 
+            * Scenario Number:  
+            *      34
+            *      
+            * Description: 
+            *      Allow characters to choose to do nothing for their turn.
+            *      Resting restores 2 health per rest.
+            * 
+            * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
+            *      ActionEnum.cs: Added an enum value for action Rest
+            *      BattlePage.xaml: Added a Rest button
+            *      BattlePage.xaml.cs: Added a Rest button clicked function to increase the selected character's current health by 2.
+            *      TurnEngine.cs: Add 2 to current attacker's CurrentHealth
+            * 
+            * Test Algrorithm:
+            *      Create a Character named Alice with CurrentHealth of 5
+            *      Set Alice as current attacker
+            *      Set current actiont to Rest
+            *      Let Alice have the turn
+            *      Verify Alice's new CurrentHealth to be 7
+            * 
+            * Test Conditions:
+            *      <List the different test conditions to make>
+            * 
+            * Validation:
+            *      Alice's CurrentHealth increased from 5 to 7
+            *  
+            */
+
+            //Arrange
+            EngineViewModel.Engine.EngineSettings.MaxNumberPartyCharacters = 1;
+
+            var CharacterPlayerAlice = new PlayerInfoModel(
+                            new CharacterModel
+                            {
+                                CurrentHealth = 5,
+                                Name = "Alice",
+                            });
+
+            EngineViewModel.Engine.EngineSettings.CharacterList.Clear();
+            EngineViewModel.Engine.EngineSettings.CharacterList.Add(CharacterPlayerAlice);
+
+            EngineViewModel.Engine.EngineSettings.CurrentAttacker = CharacterPlayerAlice;
+            EngineViewModel.Engine.EngineSettings.CurrentAction = ActionEnum.Rest;
+
+            //Act
+            EngineViewModel.Engine.Round.Turn.TakeTurn(CharacterPlayerAlice);
+            var result = CharacterPlayerAlice.CurrentHealth;
+
+            //Assert
+            Assert.AreEqual(7, result);
+        }
+        #endregion Scenario34
+
+
         
-    }
+
+
+}
 }

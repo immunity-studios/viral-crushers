@@ -639,12 +639,14 @@ namespace Game.Views
 
             restMessage += "'s Health After Rest: " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.CurrentHealth.ToString();
 
-            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.CurrentHealth += 2;
+            //BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.CurrentHealth += 2;
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction = ActionEnum.Rest;
 
 
             restMessage += " -> " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.CurrentHealth.ToString();
 
-            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction = ActionEnum.Rest;
+            
             NextAttackExample();
         }
 
