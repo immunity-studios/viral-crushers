@@ -439,6 +439,7 @@ namespace Game.Engine.EngineGame
                     // It's a Miss
                     // Play the miss sound effect
                     AudioSystem.AudioEngine.Instance.ProcessAudioEvent(AudioSystem.AudioEventEnum.Player_Attack_Miss);
+                    EngineSettings.BattleMessagesModel.SoundEffectMessage += "Miss sound effect is played ";
                     break;
 
                 case HitStatusEnum.CriticalMiss:
@@ -452,6 +453,8 @@ namespace Game.Engine.EngineGame
                     // It's a Hit
                     // Play the hit sound effect
                     AudioSystem.AudioEngine.Instance.ProcessAudioEvent(AudioSystem.AudioEventEnum.Player_Attack_Hit);
+                    EngineSettings.BattleMessagesModel.SoundEffectMessage += "Hit sound effect is played ";
+
                     //Calculate Damage
                     EngineSettings.BattleMessagesModel.DamageAmount = Attacker.GetDamageRollValue();
 
@@ -478,6 +481,7 @@ namespace Game.Engine.EngineGame
             // Battle Message
             EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + EngineSettings.BattleMessagesModel.AttackStatus + Target.Name + EngineSettings.BattleMessagesModel.TurnMessageSpecial + EngineSettings.BattleMessagesModel.ExperienceEarned;
             Debug.WriteLine(EngineSettings.BattleMessagesModel.TurnMessage);
+            Debug.WriteLine(EngineSettings.BattleMessagesModel.SoundEffectMessage);
 
             return true;
         }
@@ -578,7 +582,53 @@ namespace Game.Engine.EngineGame
 
             // Add the MonsterModel to the killed list
 
-            return base.TargetDied(Target);
+            // play the death sound effect
+            AudioSystem.AudioEngine.Instance.ProcessAudioEvent(AudioSystem.AudioEventEnum.Player_Death);
+            EngineSettings.BattleMessagesModel.SoundEffectMessage += "Death sound effect is played ";
+
+            bool found;
+
+            // Mark Status in output
+            EngineSettings.BattleMessagesModel.TurnMessageSpecial = " and causes death. ";
+
+            // Removing the 
+            EngineSettings.MapModel.RemovePlayerFromMap(Target);
+
+            // INFO: Teams, Hookup your Boss if you have one...
+
+            // Using a switch so in the future additional PlayerTypes can be added (Boss...)
+            switch (Target.PlayerType)
+            {
+                case PlayerTypeEnum.Character:
+                    // Add the Character to the killed list
+                    EngineSettings.BattleScore.CharacterAtDeathList += Target.FormatOutput() + "\n";
+
+                    EngineSettings.BattleScore.CharacterModelDeathList.Add(Target);
+
+                    DropItems(Target);
+
+                    found = EngineSettings.CharacterList.Remove(EngineSettings.CharacterList.Find(m => m.Guid.Equals(Target.Guid)));
+                    found = EngineSettings.PlayerList.Remove(EngineSettings.PlayerList.Find(m => m.Guid.Equals(Target.Guid)));
+
+                    return true;
+
+                case PlayerTypeEnum.Monster:
+                default:
+                    // Add one to the monsters killed count...
+                    EngineSettings.BattleScore.MonsterSlainNumber++;
+
+                    // Add the MonsterModel to the killed list
+                    EngineSettings.BattleScore.MonstersKilledList += Target.FormatOutput() + "\n";
+
+                    EngineSettings.BattleScore.MonsterModelDeathList.Add(Target);
+
+                    DropItems(Target);
+
+                    found = EngineSettings.MonsterList.Remove(EngineSettings.MonsterList.Find(m => m.Guid.Equals(Target.Guid)));
+                    found = EngineSettings.PlayerList.Remove(EngineSettings.PlayerList.Find(m => m.Guid.Equals(Target.Guid)));
+
+                    return true;
+            }
         }
 
         /// <summary>
