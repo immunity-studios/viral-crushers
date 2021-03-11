@@ -407,6 +407,62 @@ namespace Hackathon
             Assert.AreEqual("Hit sound effect is played", result);
         }
 
+
+        [Test]
+        public async Task HackathonScenario_Scenario_19_Valid_Miss_Should_Return_MissSoundEffectMessage()
+        {
+            /* 
+            * Scenario Number:  
+            *      19
+            *      
+            * Description: 
+            *      Sound for the actions: Hit, Miss, and Death.
+            * 
+            * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
+            *      Changed in BattleMessagesModel.cs 
+            *      Changed in TurnAsAttack method in TurnEngine.cs
+            *      Changed in GameMessage method in BattlePage.xaml.cs
+            * 
+            * Test Algrorithm:
+            *      Create Character and Monster
+            *      Run TurnAsAttack
+            * 
+            * Test Conditions:
+            *      Force a miss
+            * 
+            * Validation:
+            *      Verify MissSoundEffectMessage equals "Miss sound effect is played"
+            *  
+            */
+
+            // Arrange
+            var Character = new CharacterModel();
+            var CharacterPlayer = new PlayerInfoModel(Character);
+            EngineViewModel.Engine.EngineSettings.CharacterList.Clear();
+            EngineViewModel.Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
+
+            var Monster = new MonsterModel();
+            var MonsterPlayer = new PlayerInfoModel(Monster);
+            EngineViewModel.Engine.EngineSettings.MonsterList.Clear();
+            EngineViewModel.Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
+
+            // Force a Hit
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(1);
+
+            // Act
+            EngineViewModel.Engine.EngineSettings.BattleMessagesModel.MissSoundEffectMessage = string.Empty;
+            EngineViewModel.Engine.Round.Turn.TurnAsAttack(CharacterPlayer, MonsterPlayer);
+            var result = EngineViewModel.Engine.EngineSettings.BattleMessagesModel.MissSoundEffectMessage;
+
+            // Reset
+            DiceHelper.DisableForcedRolls();
+
+            // Assert
+            Assert.AreEqual("Miss sound effect is played", result);
+        }
+
+
         #endregion Scenario19
 
 
