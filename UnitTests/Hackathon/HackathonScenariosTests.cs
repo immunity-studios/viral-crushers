@@ -4,7 +4,7 @@ using Game.Models;
 using System.Threading.Tasks;
 using Game.ViewModels;
 
-namespace Scenario
+namespace Hackathon
 {
     [TestFixture]
     public class HackathonScenarioTests
@@ -153,5 +153,81 @@ namespace Scenario
             //Assert.AreEqual(2, EngineViewModel.Engine.EngineSettings.BattleScore.RoundCount);
         }
         #endregion Scenario1
+
+        #region Scenario2
+        [Test]
+        public async Task HackathonScenario_Scenario_2_Valid_Attack_Should_Miss()
+        {
+            /* 
+            * Scenario Number:  
+            *      2
+            *      
+            * Description: 
+            *      Make a Character called Bob, who always miss but can do other action such as move or use abilities
+            * 
+            * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
+            *      Changed Method CalculateAttackStatus in TurnEngine.cs 
+            * 
+            * Test Algrorithm:
+            *      Create Character named Bob
+            *      Set Bob as Current Attacker
+            *      
+            *      Create Monster named Bubble
+            *      Set Bubble as Current Defender
+            *      Run Attack Turn
+            * 
+            * Test Conditions:
+            *      Default condition is sufficient
+            * 
+            * Validation:
+            *      Verify Turn Returned Miss
+            *  
+            */
+
+            //Arrange
+
+            // Set Character Conditions
+
+            EngineViewModel.Engine.EngineSettings.MaxNumberPartyCharacters = 1;
+
+            var CharacterPlayerBob = new PlayerInfoModel(
+                            new CharacterModel
+                            {
+                                Speed = 8, 
+                                Level = 1,
+                                CurrentHealth = 5,
+                                ExperienceTotal = 1,
+                                ExperienceRemaining = 1,
+                                Name = "Bob",
+                            });
+
+            EngineViewModel.Engine.EngineSettings.CharacterList.Clear();
+            EngineViewModel.Engine.EngineSettings.CharacterList.Add(CharacterPlayerBob);
+
+            // Set Monsters Conditions
+
+            EngineViewModel.Engine.EngineSettings.MaxNumberPartyMonsters = 1;
+
+            var MonsterPlayerBubble = new PlayerInfoModel(
+                            new MonsterModel
+                            {
+                                Speed = 1,
+                                Level = 1,
+                                CurrentHealth = 3,
+                                ExperienceTotal = 1,
+                                ExperienceRemaining = 1,
+                                Name = "Bubble",
+                            });
+
+            EngineViewModel.Engine.EngineSettings.MonsterList.Clear();
+            EngineViewModel.Engine.EngineSettings.MonsterList.Add(MonsterPlayerBubble);
+
+            //Act
+            var result = EngineViewModel.Engine.Round.Turn.CalculateAttackStatus(CharacterPlayerBob, MonsterPlayerBubble);
+
+            //Assert
+            Assert.AreEqual(HitStatusEnum.Miss, result);
+        }
+        #endregion Scenario2
     }
 }
