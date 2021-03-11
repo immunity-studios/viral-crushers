@@ -23,6 +23,9 @@
         // Turn Message
         public string TurnMessage = string.Empty;
 
+        // Sound Effect Message
+        public string SoundEffectMessage = string.Empty;
+
         // Turn Special Message
         public string TurnMessageSpecial = string.Empty;
 
