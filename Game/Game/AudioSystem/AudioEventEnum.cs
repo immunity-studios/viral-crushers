@@ -44,6 +44,13 @@ namespace Game.AudioSystem
 
         // Music Event Triggers
         MenuStart = 200,
-        BattleStart = 210
+        BattleStart = 210,
+
+
+        // General (Monsters and Characters) Battle Sound Events for the Hackathon
+        Player_Attack_Hit = 300,
+        Player_Attack_Miss = 301,
+        Player_Death = 302
+        
     }
 }
