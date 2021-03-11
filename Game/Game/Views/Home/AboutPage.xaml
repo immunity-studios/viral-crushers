@@ -160,8 +160,10 @@
                                    Style="{DynamicResource LabelStyle}"/>
 
 
-                                 <Slider Minimum="0"
+                                 <Slider 
+                                    Minimum="0"
                                     Maximum="1"
+                                    x:Name="masterVolume"
                                     ValueChanged="OnVolumeSliderValueChanged"/>
             
              </StackLayout>

@@ -39,6 +39,9 @@ namespace Game.Views
 
             // Init the Server Item Value to 100 to get everything
             SetServerItemValue("100");
+
+            // Get the volume of the audio engine, to start the sliders
+            SetVolumeSliderLevelsToAudioEngineBusLevels();
         }
 
         /// <summary>
@@ -237,6 +240,13 @@ namespace Game.Views
             double value = args.NewValue;
             // Set volume of global audio engine with value of slider 
             AudioSystem.AudioEngine.Instance.SetBusVolume(AudioSystem.AudioBusEnum.Master, value);
+        }
+
+        bool SetVolumeSliderLevelsToAudioEngineBusLevels()
+        {
+            
+            masterVolume.Value = AudioSystem.AudioEngine.Instance.GetBusVolume(AudioSystem.AudioBusEnum.Master);
+            return true;
         }
     }
 }
