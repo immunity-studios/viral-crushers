@@ -573,9 +573,6 @@ namespace Game.Engine.EngineBase
         /// <param name="Target"></param>
         public virtual bool TargetDied(PlayerInfoModel Target)
         {
-            // play the death sound effect
-            AudioSystem.AudioEngine.Instance.ProcessAudioEvent(AudioSystem.AudioEventEnum.Player_Death);
-
             bool found;
 
             // Mark Status in output
