@@ -294,9 +294,9 @@ namespace Game.Engine.EngineGame
         public bool Rest(PlayerInfoModel Attacker)
         {
             Attacker.CurrentHealth += 2;
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " Uses Rest, " + Attacker.Name + "'s Current Health +2 to " + Attacker.CurrentHealth;
 
             return true;
-
         }
 
 
