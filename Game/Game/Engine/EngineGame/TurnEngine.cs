@@ -437,7 +437,8 @@ namespace Game.Engine.EngineGame
             {
                 case HitStatusEnum.Miss:
                     // It's a Miss
-
+                    // Play the miss sound effect
+                    AudioSystem.AudioEngine.Instance.ProcessAudioEvent(AudioSystem.AudioEventEnum.Player_Attack_Miss);
                     break;
 
                 case HitStatusEnum.CriticalMiss:
@@ -449,7 +450,8 @@ namespace Game.Engine.EngineGame
                 case HitStatusEnum.CriticalHit:
                 case HitStatusEnum.Hit:
                     // It's a Hit
-
+                    // Play the hit sound effect
+                    AudioSystem.AudioEngine.Instance.ProcessAudioEvent(AudioSystem.AudioEventEnum.Player_Attack_Hit);
                     //Calculate Damage
                     EngineSettings.BattleMessagesModel.DamageAmount = Attacker.GetDamageRollValue();
 
