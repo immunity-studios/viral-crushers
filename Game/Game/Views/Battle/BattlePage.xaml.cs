@@ -907,6 +907,15 @@ namespace Game.Views
 
             Debug.WriteLine(BattleMessages.Text);
 
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.SoundEffectMessage != string.Empty)
+            {
+                BattleMessages.Text = string.Format("{0} \n{1}", BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.SoundEffectMessage, BattleMessages.Text);
+
+                Debug.WriteLine(BattleMessages.Text);
+                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.SoundEffectMessage = string.Empty;
+            }
+            
+
             if (!string.IsNullOrEmpty(BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.LevelUpMessage))
             {
                 BattleMessages.Text = string.Format("{0} \n{1}", BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.LevelUpMessage, BattleMessages.Text);
