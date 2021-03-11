@@ -624,8 +624,6 @@ namespace Game.Views
             BattlePlayerBoxVersus.Text = string.Empty;
         }
 
-        private static string restMessage;
-
         /// <summary>
         /// Allows Character to take a break and skip a turn while regaining health points.
         /// </summary>
@@ -633,20 +631,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public void RestButton_Clicked(object sender, EventArgs e)
         {
-            restMessage = "";
-
-            restMessage += BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.Name;
-
-            restMessage += "'s Health After Rest: " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.CurrentHealth.ToString();
-
-            //BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.CurrentHealth += 2;
-
             BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction = ActionEnum.Rest;
-
-
-            restMessage += " -> " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.CurrentHealth.ToString();
-
-            
             NextAttackExample();
         }
 
@@ -942,11 +927,6 @@ namespace Game.Views
                 BattleMessages.Text = string.Format("{0} \n{1}", BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.LevelUpMessage, BattleMessages.Text);
             }
 
-            if (!string.IsNullOrEmpty(restMessage))
-            {
-                BattleMessages.Text = string.Format("{0} \n{1}", restMessage, BattleMessages.Text);
-                restMessage = "";
-            }
 
             //htmlSource.Html = BattleEngineViewModel.Instance.Engine.BattleMessagesModel.GetHTMLFormattedTurnMessage();
             //HtmlBox.Source = HtmlBox.Source = htmlSource;
