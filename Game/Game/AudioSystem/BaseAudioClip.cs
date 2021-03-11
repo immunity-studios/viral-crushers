@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Game.AudioSystem
+﻿namespace Game.AudioSystem
 {
     /// <summary>
     /// An abstract implementation of an audio clip, this is 
@@ -16,6 +12,35 @@ namespace Game.AudioSystem
     /// </summary>
     public abstract class BaseAudioClip
     {
+        #region Constructor
+        /// <summary>
+        /// Base constructor that must be called by the inheriting class
+        /// Calls the Setup() method in the sealed inheriting class, 
+        /// then sets the value of class members filepath and maxVolume
+        /// </summary>
+        /// <param name="filepath">
+        /// string of relative filepath to the sound file.
+        /// Path should be relative from the solution root, 
+        /// and should have '/' replaced with  '.' for directories, e.g. 
+        /// "Game.AudioFiles.SFX.Menu.ButtonClickTest.wav"
+        /// </param>
+        /// <param name="maxVolume">
+        /// floating point value between 0 and 1 that scales down the volume of the audio clip
+        /// Default value: 1 (No volume scaling)
+        /// NOTE: for debug purposes only
+        /// </param>
+        protected BaseAudioClip(string filepath, double maxVolume = 1.0)
+        {
+            // TODO move to be called before Setup()
+            MaxVolume = maxVolume;
+            Filepath = filepath;
+            // call inheriting class' implementation
+            Setup();   
+        }
+        #endregion Constructor
+
+        #region Setup
+
         /// <summary>
         /// Abstract method that is called in the first line of the BaseAudioClip constructor.
         /// REQUIRED: Implementation must try to initialize the underlying audio API
@@ -31,20 +56,69 @@ namespace Game.AudioSystem
         /// implementation executed successfully.
         /// Default value = false
         /// REQUIRED: Must be set to 'true' in the inheriting class' Setup method
-        /// implementation if setup succeeds.
-        /// REQUIRED: In implementation class methods, IsSetup must = 'true' before
-        /// any calls to the underlying audio API are made.
+        /// implementation, if Setup() succeeds.
         /// </summary>
         public bool IsSetup { get; protected set; } = false;
 
+        #endregion Setup
+
+        #region Load
+
         /// <summary>
-        /// Abstract method which should start playback of the audio asset 
-        /// TODO Add 'fade length' parameter to this method for fade in
+        /// Abstract method that loads the audio file. Must be called before playback
+        /// </summary>
+        /// <returns>
+        /// True, or false if fails
+        /// </returns>
+        public bool Load()
+        {
+            if (!IsSetup)
+            {
+                return false;
+            }
+
+            if (!IsLoaded)
+            {
+                return _Load();
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Abstract method that must load the file in the underlying audio api.
+        /// </summary>
+        /// <returns></returns>
+        protected abstract bool _Load();
+
+
+        protected bool IsLoaded = false;
+
+        #endregion Load
+
+        #region Play
+        /// <summary>
+        /// Abstract method which starts playback of the audio asset 
+        /// if it is setup and loaded
+        /// TODO could add 'fade length' parameter to this method for fade in
         /// </summary>
         /// <returns>
         /// true, or false if playback fails
         /// </returns>
-        public abstract bool Play();
+        public bool Play()
+        {
+            if (!IsSetup || !IsLoaded)
+            {
+                return false;
+            }
+            return _Play();
+        }
+
+
+        protected abstract bool _Play();
+
+        #endregion Play
+
+        #region Stop
 
         /// <summary>
         /// Abstract method which should stop playback of the audio asset
@@ -53,15 +127,25 @@ namespace Game.AudioSystem
         /// <returns>
         /// true, or false if playback stoppage fails
         /// </returns>
-        public abstract bool Stop();
+        public bool Stop()
+        {
+            if (!IsSetup || !IsLoaded)
+            {
+                return false;
+            }
 
+            return _Stop();
+        }
+
+        protected abstract bool _Stop();
+
+
+        #endregion Stop
+        #region Volume
         /// <summary>
-        /// Abstrat method that loads the audio file. Must be called before playback
+        /// The current volume of the base audio clip
         /// </summary>
-        /// <returns>
-        /// True, or false if fails
-        /// </returns>
-        public abstract bool Load();
+        private double volume = 0;
 
         /// <summary>
         /// Abstract method that must set the playback volume of the audio asset
@@ -74,7 +158,31 @@ namespace Game.AudioSystem
         /// <returns>
         /// True, or false if set volume fails
         /// </returns>
-        public abstract bool SetVolume(double volume);
+        public bool SetVolume(double volume)
+        {
+            if (!IsSetup || !IsLoaded)
+            {
+                return false;
+            }
+            // set the volume field
+            this.volume = volume;
+            // set the underlying audio API clip's volume
+            return _SetVolume(volume);
+        }
+
+        /// <summary>
+        /// Abstract method that must set the playback volume of the audio asset
+        /// Implementation must multiply the passed-parameter volume by the maxVolume
+        /// before setting the clip volume.
+        /// </summary>
+        /// <param name="volume">
+        /// Double between 0 and 1 representing the current volume
+        /// </param>
+        /// <returns>
+        /// True, or false if set volume fails
+        /// </returns>
+        protected abstract bool _SetVolume(double volume);
+
 
         /// <summary>
         /// Abstract method that gets the current volume of the underlying audio clip
@@ -82,7 +190,17 @@ namespace Game.AudioSystem
         /// <returns>
         /// Double between 0 and 1 representing the current volume
         /// </returns>
-        public abstract double GetVolume();
+        public double GetVolume()
+        {
+            if (!IsSetup || !IsLoaded)
+            {
+                return 0;
+            }
+            return volume;
+        }
+        #endregion Volume
+
+        #region Loop
 
         /// <summary>
         /// Abstract method that must set the clip's playback setting to loop (repeating playback)
@@ -93,7 +211,18 @@ namespace Game.AudioSystem
         /// <returns>
         /// True, or false if set loop fails
         /// </returns>
-        public abstract bool SetLoop(bool loop);
+        public bool SetLoop(bool loop)
+        {
+            if (!IsSetup || !IsLoaded)
+            {
+                return false;
+            }
+            this.loop = loop;
+            return _SetLoop(loop);
+        }
+
+
+        protected abstract bool _SetLoop(bool loop);
 
         /// <summary>
         /// Abstract method that must get the clip's playback setting for loop (repeating playback)
@@ -101,7 +230,18 @@ namespace Game.AudioSystem
         /// <returns>
         /// True if this is a looping audio clip
         /// </returns>
-        public abstract bool GetLoop();
+        public bool GetLoop()
+        {
+            return loop;
+        }
+
+
+        // TODO create bool flag for looping, separate from implementation
+        protected bool loop = false;
+
+        #endregion Loop
+
+        #region MaxVolume
 
         /// <summary>
         /// The max volume of the AudioClip.
@@ -109,39 +249,17 @@ namespace Game.AudioSystem
         /// </summary>
         protected double MaxVolume { get; private set; } = 1.0;
 
+        #endregion MaxVolume
+
+        #region Filepath
         /// <summary>
         /// The filepath of the audio clip 
         /// Set in BaseAudioClip constructor
         /// Relative path in form 'Game.AudioFiles.Example.mp3"
         /// </summary>
-        public string Filepath { get; private set; }
+        public string Filepath { get; }
 
-        /// <summary>
-        /// Flag which must be internally set to true if implementation of Load() succeeds when called
-        /// </summary>
-        public bool IsLoaded { get; private set; } = false;
-
-        /// <summary>
-        /// Base constructor that must be called by the inheriting class
-        /// Calls Setup() method in the inheriting class, then sets 
-        /// the value of class members filepath and maxVolume
-        /// </summary>
-        /// <param name="filepath">
-        /// String filepath for the sound file.
-        /// Path should be relative from the solution root, and should 
-        /// have '/' replaced with  '.' for directories, 
-        /// e.g. "Game.AudioFiles.SFX.Menu.ButtonClickTest.wav"
-        /// </param>
-        /// <param name="maxVolume">
-        /// Floating point value between 0 and 1 (Scales the volume of the audio clip)
-        /// Default value: 1 (No volume scaling)
-        /// </param>
-        protected BaseAudioClip(string filepath, double maxVolume = 1.0)
-        {
-            Setup();
-            MaxVolume = maxVolume;
-            Filepath = filepath;
-        }
+        #endregion Filepath
 
     }
 }
