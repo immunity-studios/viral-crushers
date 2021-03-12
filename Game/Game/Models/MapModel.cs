@@ -61,36 +61,34 @@ namespace Game.Models
         public bool PopulateMapModel(List<PlayerInfoModel> PlayerList)
         {
             ClearMapGrid();
-            if (PlayerList.Count() > 0)
+
+            int x = 0;
+            int y = 0;
+            foreach (var data in PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Character))
             {
-                int x = 0;
-                int y = 0;
-                foreach (var data in PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Character))
-                {
-                    MapGridLocation[x, y].Player = data;
+                MapGridLocation[x, y].Player = data;
 
-                    // If too many to fit on a row, start at the next row
-                    x++;
-                    if (x >= MapXAxiesCount)
-                    {
-                        x = 0;
-                        y++;
-                    }
+                // If too many to fit on a row, start at the next row
+                x++;
+                if (x >= MapXAxiesCount)
+                {
+                    x = 0;
+                    y++;
                 }
+            }
 
-                x = 0;
-                y = MapYAxiesCount - 1;
-                foreach (var data in PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster))
+            x = 0;
+            y = MapYAxiesCount - 1;
+            foreach (var data in PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster))
+            {
+                MapGridLocation[x, y].Player = data;
+
+                // If too many to fit on a row, start at the next row
+                x++;
+                if (x >= MapXAxiesCount)
                 {
-                    MapGridLocation[x, y].Player = data;
-
-                    // If too many to fit on a row, start at the next row
-                    x++;
-                    if (x >= MapXAxiesCount)
-                    {
-                        x = 0;
-                        y--;
-                    }
+                    x = 0;
+                    y--;
                 }
             }
             return true;
