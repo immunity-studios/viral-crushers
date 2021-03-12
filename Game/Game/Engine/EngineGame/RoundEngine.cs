@@ -304,7 +304,7 @@ namespace Game.Engine.EngineGame
 
             // I use the same logic for Auto Battle as I do for Manual Battle
 
-            //if (BaseEngine.BattleScore.AutoBattle)
+            if (EngineSettings.BattleScore.AutoBattle)
             {
                 // Have the character, walk the items in the pool, and decide if any are better than current one.
 
@@ -315,6 +315,17 @@ namespace Game.Engine.EngineGame
                 GetItemFromPoolIfBetter(character, ItemLocationEnum.RightFinger);
                 GetItemFromPoolIfBetter(character, ItemLocationEnum.LeftFinger);
                 GetItemFromPoolIfBetter(character, ItemLocationEnum.Feet);
+            } else
+            {
+                var CharacterItem = character.GetItemByLocation(EngineSettings.AssignedItem.Location);
+                if (CharacterItem != null)
+                {
+                    SwapCharacterItem(character, EngineSettings.AssignedItem.Location, EngineSettings.AssignedItem);
+                    return true;
+                } else
+                {
+                    character.AddItem(EngineSettings.AssignedItem.Location, EngineSettings.AssignedItem.Id);
+                }
             }
             return true;
         }

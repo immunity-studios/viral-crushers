@@ -59,8 +59,14 @@ namespace Game.Engine.EngineModels
         // Current Player who is the Defender
          public PlayerInfoModel CurrentDefender { get; set; }
 
+        // Current Player who is assigned item
+        public PlayerInfoModel EquipForCharacter { get; set; }
+
+        // Current Item assigned to character
+        public ItemModel AssignedItem { get; set; }
+
         // The Action 
-         public ActionEnum CurrentAction { get; set; }
+        public ActionEnum CurrentAction { get; set; }
 
         // The Action that just happened
          public ActionEnum PreviousAction { get; set; } = ActionEnum.Unknown;

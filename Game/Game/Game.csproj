@@ -20,6 +20,7 @@
     <None Remove="AudioFiles\SFX\Battle\General\Player_Attack_Miss.wav" />
     <None Remove="AudioFiles\SFX\Battle\General\Player_Death.wav" />
     <None Remove="AudioFiles\SFX\Menu\UI_CLICK_1.wav" />
+    <None Remove="Views\Battle\PickItemsPage.xaml.cs~RF1129f39.TMP" />
   </ItemGroup>
 
   <ItemGroup>
