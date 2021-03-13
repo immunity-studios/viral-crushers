@@ -461,13 +461,8 @@ namespace Game.Views
         /// <returns></returns>
         public bool SetSelectedEmpty(MapModelLocation data)
         {
-            // TODO: Info
-
             /*
-             * This gets called when the characters is clicked on
-             * Usefull if you want to select the location to move to etc.
-             * 
-             * For Mike's simple battle grammar there is no selection of action so I just return true
+             * This gets called when the characters is clicked on empty position in the map
              */
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker != null)
             {
@@ -485,13 +480,8 @@ namespace Game.Views
         /// <returns></returns>
         public bool SetSelectedMonster(MapModelLocation data)
         {
-            // TODO: Info
-
             /*
-             * This gets called when the Monster is clicked on
-             * Usefull if you want to select the monster to attack etc.
-             * 
-             * For Mike's simple battle grammar there is no selection of action so I just return true
+             * This gets called when the Monster is clicked on as defender
              */
             BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = data.Player;
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker != null
@@ -511,13 +501,8 @@ namespace Game.Views
         /// <returns></returns>
         public bool SetSelectedCharacter(MapModelLocation data)
         {
-            // TODO: Info
-
             /*
-             * This gets called when the characters is clicked on
-             * Usefull if you want to select the character and then set state or do something
-             * 
-             * For Mike's simple battle grammar there is no selection of action so I just return true
+             * This gets called when the characters is clicked on as Attacker
              */
             BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = data.Player;
 
