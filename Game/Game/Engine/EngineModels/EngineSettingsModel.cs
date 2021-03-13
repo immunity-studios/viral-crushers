@@ -77,8 +77,10 @@ namespace Game.Engine.EngineModels
         // When the current action is an ability, what ability was selected
          public CordinatesModel CurrentMapLocation { get; set; }
 
+        public MapModelLocation SelectedMapLocation { get; set; }
+
         // When the current action is an ability, what ability was selected
-         public CordinatesModel MoveMapLocation { get; set; }
+        public CordinatesModel MoveMapLocation { get; set; }
 
         // Hold the list of players (MonsterModel, and character by guid), and order by speed
          public List<PlayerInfoModel> PlayerList { get; set; } = new List<PlayerInfoModel>();
