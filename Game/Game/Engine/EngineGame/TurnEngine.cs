@@ -256,9 +256,32 @@ namespace Game.Engine.EngineGame
                 EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " moves closer to " + EngineSettings.CurrentDefender.Name;
 
                 return EngineSettings.MapModel.MovePlayerOnMap(locationAttacker, openSquare);
-            }
+            } else
+            {
+                // Get X, Y for Defender
+                var locationDefender = EngineSettings.MapModel.GetLocationForPlayer(EngineSettings.CurrentDefender);
+                if (locationDefender == null)
+                {
+                    return false;
+                }
 
-            return true;
+                var locationAttacker = EngineSettings.MapModel.GetLocationForPlayer(Attacker);
+                if (locationAttacker == null)
+                {
+                    return false;
+                }
+
+                // Find Location Nearest to Defender that is Open.
+
+                // Get the Open Locations
+                var openSquare = EngineSettings.MapModel.ReturnClosestEmptyLocation(locationDefender);
+
+                Debug.WriteLine(string.Format("{0} moves from {1},{2} to {3},{4}", locationAttacker.Player.Name, locationAttacker.Column, locationAttacker.Row, openSquare.Column, openSquare.Row));
+
+                EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " moves closer to " + EngineSettings.CurrentDefender.Name;
+
+                return EngineSettings.MapModel.MovePlayerOnMap(locationAttacker, openSquare);
+            }
         }
 
         /// <summary>

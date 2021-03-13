@@ -708,6 +708,12 @@ namespace Game.Views
             if ((RoundCondition == RoundEnum.NewRound) || (BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Count < 1))
             {
                 BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.NewRound;
+                BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(null);
+                BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(null);
+                
+                DrawMapGridInitialState();
+                DrawGameAttackerDefenderBoard();
+                ShowBattleMode();
 
                 // Pause
                 Task.Delay(WaitTime);
@@ -723,6 +729,11 @@ namespace Game.Views
             if ((RoundCondition == RoundEnum.GameOver) || (BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Count < 1))
             {
                 BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
+                BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(null);
+                BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(null);
+                DrawMapGridInitialState();
+                DrawGameAttackerDefenderBoard();
+                ShowBattleMode();
 
                 // Wrap up
                 BattleEngineViewModel.Instance.Engine.EndBattle();
@@ -751,8 +762,8 @@ namespace Game.Views
         public void CloseUserPopup_Clicked(object sender, EventArgs e)
         {
             PopupUserLoadingView.IsVisible = false;
-            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = null;
-            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = null;
+            BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(null);
+            BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(null);
         }
 
         /// <summary>
@@ -805,6 +816,11 @@ namespace Game.Views
             if ((RoundCondition == RoundEnum.NewRound) || (BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Count < 1))
             {
                 BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.NewRound;
+                BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(null);
+                BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(null);
+                DrawMapGridInitialState();
+                DrawGameAttackerDefenderBoard();
+                ShowBattleMode();
 
                 // Pause
                 Task.Delay(WaitTime);
@@ -820,6 +836,11 @@ namespace Game.Views
             if ((RoundCondition == RoundEnum.GameOver) || (BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Count < 1))
             {
                 BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
+                BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(null);
+                BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(null);
+                DrawMapGridInitialState();
+                DrawGameAttackerDefenderBoard();
+                ShowBattleMode();
 
                 // Wrap up
                 BattleEngineViewModel.Instance.Engine.EndBattle();
@@ -969,8 +990,15 @@ namespace Game.Views
         public async void NextRoundButton_Clicked(object sender, EventArgs e)
         {
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
-            ShowBattleMode();
             await Navigation.PushModalAsync(new NewRoundPage());
+
+            PopupUserLoadingView.IsVisible = true;
+            ShowBattleMode();
+            DrawGameAttackerDefenderBoard();
+            AttackButton.IsEnabled = false;
+            AbilityButton.IsEnabled = false;
+            MoveButton.IsEnabled = false;
+            RestButton.IsEnabled = false;
         }
 
         /// <summary>
@@ -1007,8 +1035,9 @@ namespace Game.Views
         /// </summary>
         public async void ShowModalRoundOverPage()
         {
-            ShowBattleMode();
+            
             await Navigation.PushModalAsync(new RoundOverPage());
+            ShowBattleMode();
         }
 
         /// <summary>

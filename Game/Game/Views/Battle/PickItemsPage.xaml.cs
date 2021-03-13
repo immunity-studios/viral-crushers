@@ -18,7 +18,7 @@ namespace Game.Views
     public partial class PickItemsPage : ContentPage
     {
         // The view model, used for data binding
-        readonly ItemIndexViewModel ViewModel = ItemIndexViewModel.Instance;
+        //readonly ItemIndexViewModel ViewModel = ItemIndexViewModel.Instance;
 
         /// <summary>
         /// Constructor
@@ -89,7 +89,7 @@ namespace Game.Views
 
             foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.Distinct())
             {
-                ItemListFoundFrame.Children.Add(GetItemToDisplay(data));
+                ItemListFoundFrame.Children.Add(GetDroppedItemToDisplay(data));
             }
         }
 
@@ -107,7 +107,7 @@ namespace Game.Views
 
             foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList)
             {
-                ItemListSelectedFrame.Children.Add(GetItemToDisplay(data));
+                ItemListSelectedFrame.Children.Add(GetSelectedItemToDisplay(data));
             }
         }
 
@@ -116,7 +116,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="location"></param>
         /// <returns></returns>
-        public StackLayout GetItemToDisplay(ItemModel item)
+        public StackLayout GetDroppedItemToDisplay(ItemModel item)
         {
             if (item == null)
             {
@@ -132,14 +132,14 @@ namespace Game.Views
             var ClickableButton = true;
 
             //var data = ItemIndexViewModel.Instance.GetItem(item.Id);
-/*            if (item == null)
+            if (item == null)
             {
                 // Show the Default Icon for the Location
                 item = new ItemModel { Name = "Unknown", ImageURI = "icon_cancel.png" };
 
                 // Turn off click action
                 ClickableButton = false;
-            }*/
+            }
 
             // Hookup the Image Button to show the Item picture
             var ItemButton = new ImageButton
@@ -153,6 +153,44 @@ namespace Game.Views
                 // Add a event to the user can click the item and see more
                 ItemButton.Clicked += (sender, args) => SetSelectedItem(item);
             }
+
+            // Put the Image Button and Text inside a layout
+            var ItemStack = new StackLayout
+            {
+                Padding = 3,
+                Style = (Style)Application.Current.Resources["ItemImageBox"],
+                HorizontalOptions = LayoutOptions.Center,
+                Children = {
+                    ItemButton,
+                },
+            };
+
+            return ItemStack;
+        }
+
+        /// <summary>
+        /// Look up the Selected Item to Display
+        /// </summary>
+        /// <param name="location"></param>
+        /// <returns></returns>
+        public StackLayout GetSelectedItemToDisplay(ItemModel item)
+        {
+            if (item == null)
+            {
+                return new StackLayout();
+            }
+
+            if (string.IsNullOrEmpty(item.Id))
+            {
+                return new StackLayout();
+            }
+
+            // Hookup the Image Button to show the Item picture
+            var ItemButton = new ImageButton
+            {
+                Style = (Style)Application.Current.Resources["ImageMediumStyle"],
+                Source = item.ImageURI
+            };
 
             // Put the Image Button and Text inside a layout
             var ItemStack = new StackLayout
