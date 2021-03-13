@@ -469,6 +469,11 @@ namespace Game.Views
              * 
              * For Mike's simple battle grammar there is no selection of action so I just return true
              */
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker != null)
+            {
+                MoveButton.IsEnabled = true;
+                BattleEngineViewModel.Instance.Engine.EngineSettings.SelectedMapLocation = data;
+            }
 
             return true;
         }
@@ -489,10 +494,10 @@ namespace Game.Views
              * For Mike's simple battle grammar there is no selection of action so I just return true
              */
             BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = data.Player;
-            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker != null)
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker != null
+                && BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.IsTargetInRange(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker, data.Player))
             {
                 AttackButton.IsEnabled = true;
-                RestButton.IsEnabled = true;
             }
 
             data.IsSelectedTarget = true;
@@ -518,7 +523,8 @@ namespace Game.Views
 
             RestButton.IsEnabled = true;
 
-            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender != null)
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender != null
+                && BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.IsTargetInRange(data.Player, BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender))
             {
                 AttackButton.IsEnabled = true;
             }
@@ -777,6 +783,7 @@ namespace Game.Views
 
             AttackButton.IsEnabled = false;
             AbilityButton.IsEnabled = false;
+            MoveButton.IsEnabled = false;
 
             RestButton.IsEnabled = false;
             return true;

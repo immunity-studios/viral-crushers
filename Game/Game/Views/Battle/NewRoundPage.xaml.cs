@@ -96,6 +96,20 @@ namespace Game.Views
                 MaxLines = 1,
             };
 
+            // Add the Range
+            var PlayerRangeLabel = new Label
+            {
+                Text = "Range : " + data.GetRange(),
+                Style = (Style)Application.Current.Resources["ValueStyleMicro"],
+                HorizontalOptions = LayoutOptions.Center,
+                HorizontalTextAlignment = TextAlignment.Center,
+                Padding = 0,
+                LineBreakMode = LineBreakMode.TailTruncation,
+                CharacterSpacing = 1,
+                LineHeight = 1,
+                MaxLines = 1,
+            };
+
             var PlayerNameLabel = new Label()
             {
                 Text = data.Name,
@@ -121,6 +135,7 @@ namespace Game.Views
                     PlayerNameLabel,
                     PlayerLevelLabel,
                     PlayerHPLabel,
+                    PlayerRangeLabel,
                 },
             };
 
