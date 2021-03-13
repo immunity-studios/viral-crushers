@@ -360,10 +360,10 @@ namespace Game.Engine.EngineGame
             }
 
             // Select first in the list
-            // Attack the Weakness (lowest Level) CharacterModel first 
+            // Attack the Weakness (lowest Defense) CharacterModel first 
             var Defender = EngineSettings.PlayerList
                 .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
-                .OrderBy(m => m.Level).FirstOrDefault();
+                .OrderBy(m => m.Defense).FirstOrDefault();
 
             return Defender;
         }

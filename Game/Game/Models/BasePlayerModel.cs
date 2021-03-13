@@ -188,15 +188,15 @@ namespace Game.Models
                 switch (Job)
                 {
                     case CharacterJobEnum.Doctor:
-                        result = +10;
+                        result = +2;
                         break;
 
                     case CharacterJobEnum.Teacher:
-                        result = +8;
+                        result = +2;
                         break;
 
                     case CharacterJobEnum.Athlete:
-                        result = +6;
+                        result = +3;
                         break;
 
                     case CharacterJobEnum.PoliceOfficer:
@@ -208,7 +208,7 @@ namespace Game.Models
                         break;
 
                     case CharacterJobEnum.Firefighter:
-                        result = +2;
+                        result = +4;
                         break;
 
 
@@ -250,15 +250,15 @@ namespace Game.Models
                 switch (Job)
                 {
                     case CharacterJobEnum.Doctor:
-                        result = +10;
+                        result = +2;
                         break;
 
                     case CharacterJobEnum.Teacher:
-                        result = +8;
+                        result = +2;
                         break;
 
                     case CharacterJobEnum.Athlete:
-                        result = +6;
+                        result = +3;
                         break;
 
                     case CharacterJobEnum.PoliceOfficer:
@@ -270,7 +270,7 @@ namespace Game.Models
                         break;
 
                     case CharacterJobEnum.Firefighter:
-                        result = +2;
+                        result = +4;
                         break;
                     case CharacterJobEnum.Unknown:
                     default:
@@ -307,19 +307,19 @@ namespace Game.Models
                 switch (Job)
                 {
                     case CharacterJobEnum.Doctor:
-                        result = +10;
+                        result = +2;
                         break;
 
                     case CharacterJobEnum.Teacher:
-                        result = +8;
+                        result = +2;
                         break;
 
                     case CharacterJobEnum.Athlete:
-                        result = +6;
+                        result = +4;
                         break;
 
                     case CharacterJobEnum.PoliceOfficer:
-                        result = +4;
+                        result = +3;
                         break;
 
                     case CharacterJobEnum.CollegeStudent:
@@ -327,7 +327,7 @@ namespace Game.Models
                         break;
 
                     case CharacterJobEnum.Firefighter:
-                        result = +2;
+                        result = +3;
                         break;
                     case CharacterJobEnum.Unknown:
                     default:

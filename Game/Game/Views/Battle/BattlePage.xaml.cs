@@ -464,6 +464,15 @@ namespace Game.Views
             /*
              * This gets called when the characters is clicked on empty position in the map
              */
+
+            // Clear defender in battle information box
+            DefenderImage.Source = string.Empty;
+            DefenderName.Text = string.Empty;
+            DefenderHealth.Text = string.Empty;
+            DefenderImage.BackgroundColor = Color.Transparent;
+
+            BattlePlayerBoxVersus.Text = string.Empty;
+
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker != null)
             {
                 MoveButton.IsEnabled = true;
@@ -484,6 +493,14 @@ namespace Game.Views
              * This gets called when the Monster is clicked on as defender
              */
             BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = data.Player;
+
+            // Draw defender in the battle infomation box
+            DefenderImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.ImageURI;
+            DefenderName.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.Name;
+            DefenderHealth.Text = "HP: " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.GetCurrentHealthTotal.ToString() + " / " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.GetMaxHealthTotal.ToString();
+
+            BattlePlayerBoxVersus.Text = "vs";
+
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker != null
                 && BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.IsTargetInRange(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker, data.Player))
             {
@@ -505,6 +522,14 @@ namespace Game.Views
              * This gets called when the characters is clicked on as Attacker
              */
             BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = data.Player;
+
+            // Clear Game Board
+            DrawGameBoardClear();
+
+            // Draw Attacker in the battle infomation
+            AttackerImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.ImageURI;
+            AttackerName.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.Name;
+            AttackerHealth.Text = "HP: " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.GetCurrentHealthTotal.ToString() + " / " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.GetMaxHealthTotal.ToString();
 
             RestButton.IsEnabled = true;
 
@@ -574,7 +599,7 @@ namespace Game.Views
 
             AttackerImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.ImageURI;
             AttackerName.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.Name;
-            AttackerHealth.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.GetCurrentHealthTotal.ToString() + " / " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.GetMaxHealthTotal.ToString();
+            AttackerHealth.Text = "HP: " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.GetCurrentHealthTotal.ToString() + " / " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.GetMaxHealthTotal.ToString();
 
             // Show what action the Attacker used
             AttackerAttack.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.PreviousAction.ToImageURI();
@@ -587,7 +612,7 @@ namespace Game.Views
             
             DefenderImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.ImageURI;
             DefenderName.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.Name;
-            DefenderHealth.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.GetCurrentHealthTotal.ToString() + " / " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.GetMaxHealthTotal.ToString();
+            DefenderHealth.Text = "HP: " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.GetCurrentHealthTotal.ToString() + " / " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.GetMaxHealthTotal.ToString();
 
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.Alive == false)
             {
@@ -657,6 +682,10 @@ namespace Game.Views
         public void MoveButton_Clicked(object sender, EventArgs e)
         {
             BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction = ActionEnum.Move;
+
+            // Clear Game Board
+            DrawGameBoardClear();
+
             NextAttackExample();
         }
 
@@ -693,8 +722,11 @@ namespace Game.Views
             // Output the Message of what happened.
             GameMessage();
 
-            // Show the outcome on the Board
-            DrawGameAttackerDefenderBoard();
+            // If Current Action is not Move, then Show the outcome on the Board
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction != ActionEnum.Move)
+            {
+                DrawGameAttackerDefenderBoard();
+            }           
 
             if ((RoundCondition == RoundEnum.NewRound) || (BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Count < 1))
             {
@@ -703,7 +735,6 @@ namespace Game.Views
                 BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(null);
                 
                 DrawMapGridInitialState();
-                DrawGameAttackerDefenderBoard();
                 ShowBattleMode();
 
                 // Pause
@@ -722,8 +753,10 @@ namespace Game.Views
                 BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
                 BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(null);
                 BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(null);
+
+                PopupMonsterLoadingView.IsVisible = false;
+                PopupUserLoadingView.IsVisible = false;
                 DrawMapGridInitialState();
-                DrawGameAttackerDefenderBoard();
                 ShowBattleMode();
 
                 // Wrap up
@@ -784,7 +817,10 @@ namespace Game.Views
             PopupMonsterLoadingView.IsVisible = false;
             NextMonsterAttack();
 
-            PopupUserLoadingView.IsVisible = true;
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Count() > 0)
+            {
+                PopupUserLoadingView.IsVisible = true;
+            }
         }
 
         public void NextMonsterAttack()
@@ -811,7 +847,6 @@ namespace Game.Views
                 BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(null);
                 BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(null);
                 DrawMapGridInitialState();
-                DrawGameAttackerDefenderBoard();
                 ShowBattleMode();
 
                 // Pause
@@ -830,8 +865,9 @@ namespace Game.Views
                 BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
                 BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(null);
                 BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(null);
+
+                
                 DrawMapGridInitialState();
-                DrawGameAttackerDefenderBoard();
                 ShowBattleMode();
 
                 // Wrap up
@@ -1065,6 +1101,8 @@ namespace Game.Views
             MoveButton.IsVisible = false;
             MessageDisplayBox.IsVisible = false;
             BattlePlayerInfomationBox.IsVisible = false;
+            PopupMonsterLoadingView.IsVisible = false;
+            PopupUserLoadingView.IsVisible = false;
 
             RestButton.IsVisible = false;
         }
