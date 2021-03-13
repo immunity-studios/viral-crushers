@@ -192,36 +192,15 @@ namespace Game.Engine.EngineGame
         public override bool MoveAsTurn(PlayerInfoModel Attacker)
         {
             /*
-             * TODO: TEAMS Work out your own move logic if you are implementing move
-             * 
-             * Mike's Logic
-             * The monster or charcter will move to a different square if one is open
+             * The monster will move to a different square if one is open
              * Find the Desired Target
              * Jump to the closest space near the target that is open
              * 
              * If no open spaces, return false
              * 
+             * The Character will move to the selected position in the map.
+             * 
              */
-
-            // If the Monster the calculate the options
-            //if (Attacker.PlayerType == PlayerTypeEnum.Monster)
-            //{
-            //    // For Attack, Choose Who
-
-            //    // Get X, Y for Defender
-
-            //    // Get X, Y for the Attacker
-
-            //    // Find Location Nearest to Defender that is Open.
-
-            //    // Get the Open Locations
-
-            //    // Format a message to show
-
-            //    throw new System.NotImplementedException();
-            //}
-
-            //return true;
 
             if (Attacker.PlayerType == PlayerTypeEnum.Monster)
             {
@@ -258,29 +237,17 @@ namespace Game.Engine.EngineGame
                 return EngineSettings.MapModel.MovePlayerOnMap(locationAttacker, openSquare);
             } else
             {
-                // Get X, Y for Defender
-                var locationDefender = EngineSettings.MapModel.GetLocationForPlayer(EngineSettings.CurrentDefender);
-                if (locationDefender == null)
-                {
-                    return false;
-                }
-
                 var locationAttacker = EngineSettings.MapModel.GetLocationForPlayer(Attacker);
                 if (locationAttacker == null)
                 {
                     return false;
                 }
 
-                // Find Location Nearest to Defender that is Open.
+                Debug.WriteLine(string.Format("{0} moves from {1},{2} to {3},{4}", locationAttacker.Player.Name, locationAttacker.Column, locationAttacker.Row, EngineSettings.SelectedMapLocation.Column, EngineSettings.SelectedMapLocation.Row));
 
-                // Get the Open Locations
-                var openSquare = EngineSettings.MapModel.ReturnClosestEmptyLocation(locationDefender);
+                EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " moves to position(" + EngineSettings.SelectedMapLocation.Row + ", " + EngineSettings.SelectedMapLocation.Column + ")";
 
-                Debug.WriteLine(string.Format("{0} moves from {1},{2} to {3},{4}", locationAttacker.Player.Name, locationAttacker.Column, locationAttacker.Row, openSquare.Column, openSquare.Row));
-
-                EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " moves closer to " + EngineSettings.CurrentDefender.Name;
-
-                return EngineSettings.MapModel.MovePlayerOnMap(locationAttacker, openSquare);
+                return EngineSettings.MapModel.MovePlayerOnMap(locationAttacker, EngineSettings.SelectedMapLocation);
             }
         }
 
