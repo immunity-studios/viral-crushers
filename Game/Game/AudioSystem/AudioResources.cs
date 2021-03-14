@@ -42,6 +42,8 @@ namespace Game.AudioSystem
 
         /// <summary>
         /// Constructor which adds all BaseAudioClip members to the AudioClips list
+        /// Newly added Base Audio Clips must also be added to the AudioClips list
+        /// in order to be loaded.
         /// </summary>
         private AudioResources()
         {
@@ -79,7 +81,7 @@ namespace Game.AudioSystem
         /// NEW Main part of the menu music. Played when user gets to game page
         /// </summary>
         public BaseAudioClip MX_MENU_P2_4XLOOP_4_4_116BPM = new SimpleAudioClip(
-            filePath: "Game.AudioFiles.Music.Menu.General.MX_MENU_P1_4XLOOP_4_4_116BPM.wav",
+            filePath: "Game.AudioFiles.Music.Menu.MX_MENU_P2_4XLOOP_4_4_116BPM.wav",
             loop: true
         );
 
@@ -87,7 +89,7 @@ namespace Game.AudioSystem
         /// NEW Escalation of the menu music. Played when user goes to battle page
         /// </summary>
         public BaseAudioClip MX_MENU_P3_4XLOOP_4_4_116BPM = new SimpleAudioClip(
-            filePath: "Game.AudioFiles.Music.Menu.General.MX_MENU_P1_4XLOOP_4_4_116BPM.wav",
+            filePath: "Game.AudioFiles.Music.Menu.MX_MENU_P3_4XLOOP_4_4_116BPM.wav",
             loop: true
         );
 
@@ -95,7 +97,7 @@ namespace Game.AudioSystem
         /// NEW Battle music that starts when the Battle Map page is reached
         /// </summary>
         public BaseAudioClip MX_BATTLE_P1_1XLOOP_4_4_140BPM_LONG = new SimpleAudioClip(
-            filePath: "Game.AudioFiles.Music.Battle.General.MX_BATTLE_P1_1XLOOP_4_4_140BPM_LONG.wav",
+            filePath: "Game.AudioFiles.Music.Battle.MX_BATTLE_P1_1XLOOP_4_4_140BPM_LONG.wav",
             loop: true
         );
 
