@@ -70,11 +70,11 @@ namespace Game.AudioSystem
         protected override bool _Load()
         {
             Console.WriteLine("In SimpleAudioClip.Load() for file " + Filepath);
-
+            bool success = false;
             try
             {
                 // Load the audio file as a stream, then load it into the audio player.
-                simpleAudioPlayer.Load(Helpers.ResourceFileHelpers.GetStreamFromFile(Filepath));
+                success = simpleAudioPlayer.Load(Helpers.ResourceFileHelpers.GetStreamFromFile(Filepath));
             }
             catch (Exception e)
             {
@@ -83,7 +83,7 @@ namespace Game.AudioSystem
                 return false;
             }
             // Load succeeded
-            IsLoaded = true;
+            IsLoaded = success;
             return true;
         }
 
