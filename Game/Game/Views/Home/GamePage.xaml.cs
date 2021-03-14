@@ -16,6 +16,8 @@ namespace Game.Views
 		public GamePage ()
 		{
 			InitializeComponent ();
+			// Update audio engine that user has reached Game Page
+			AudioSystem.AudioEngine.Instance.ProcessAudioEvent(AudioSystem.AudioEventEnum.GamePageReached);
 		}
 
 		/// <summary>
