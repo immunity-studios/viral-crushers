@@ -40,6 +40,9 @@ namespace Game.Views
         {
             InitializeComponent();
 
+            // Update audio engine that user has reached the start of the battle
+            AudioSystem.AudioEngine.Instance.ProcessAudioEvent(AudioSystem.AudioEventEnum.BattleStart);
+
             // Set initial State to Starting
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Starting;
 
