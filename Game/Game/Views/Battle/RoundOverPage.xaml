@@ -33,10 +33,6 @@
 
                         </Frame>
 
-                        <!--Close Button-->
-                        <Button Clicked="CloseButton_Clicked" Text="Close"/>
-
-
                         <!--Character List-->
                         <views:CurvedLabelControl Margin="20,20,0,-20"
                                       HorizontalOptions="Start"
