@@ -363,4 +363,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\page_background.JPG" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\character background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monster background.png" />
+  </ItemGroup>
 </Project>
