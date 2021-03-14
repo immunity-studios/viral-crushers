@@ -27,7 +27,7 @@ namespace Game.Views
             TotalFound.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.Count().ToString();
 
             // Update the Selected Number, this gets updated later when selected refresh happens
-            TotalSelected.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList.Count().ToString();
+            //TotalSelected.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList.Count().ToString();
 
             DrawCharacterList();
 
@@ -64,10 +64,10 @@ namespace Game.Views
         public void DrawItemLists()
         {
             DrawDroppedItems();
-            DrawSelectedItems();
+            //DrawSelectedItems();
 
             // Only need to update the selected, the Dropped is set in the constructor
-            TotalSelected.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList.Count().ToString();
+            //TotalSelected.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList.Count().ToString();
         }
 
         /// <summary>
@@ -88,23 +88,23 @@ namespace Game.Views
             }
         }
 
-        /// <summary>
-        /// Add the Dropped Items to the Display
-        /// </summary>
-        public void DrawSelectedItems()
-        {
-            // Clear and Populate the Dropped Items
-            var FlexList = ItemListSelectedFrame.Children.ToList();
-            foreach (var data in FlexList)
-            {
-                ItemListSelectedFrame.Children.Remove(data);
-            }
+        ///// <summary>
+        ///// Add the Dropped Items to the Display
+        ///// </summary>
+        //public void DrawSelectedItems()
+        //{
+        //    // Clear and Populate the Dropped Items
+        //    var FlexList = ItemListSelectedFrame.Children.ToList();
+        //    foreach (var data in FlexList)
+        //    {
+        //        ItemListSelectedFrame.Children.Remove(data);
+        //    }
 
-            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList)
-            {
-                ItemListSelectedFrame.Children.Add(GetItemToDisplay(data));
-            }
-        }
+        //    foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList)
+        //    {
+        //        ItemListSelectedFrame.Children.Add(GetItemToDisplay(data));
+        //    }
+        //}
 
         /// <summary>
         /// Look up the Item to Display
@@ -139,15 +139,52 @@ namespace Game.Views
             // Hookup the Image Button to show the Item picture
             var ItemButton = new ImageButton
             {
-                Style = (Style)Application.Current.Resources["ImageMediumStyle"],
+                Style = (Style)Application.Current.Resources["ImageBattleMediumStyle"],
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
                 Source = data.ImageURI
             };
+
+            // Hookup the background image
+            var BackgroundImage = new Image
+            {
+                Style = (Style)Application.Current.Resources["ImageBattleLargeStyle"],
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
+                Source = "item background.png"
+            };
+
+            // Player Image Grid
+            var ImageGrid = new Grid()
+            {
+                RowDefinitions =
+            {
+                new RowDefinition()
+            }
+            };
+
+            // Row 0
+            ImageGrid.Children.Add(BackgroundImage);
+            ImageGrid.Children.Add(ItemButton);
 
             if (ClickableButton)
             {
                 // Add a event to the user can click the item and see more
                 ItemButton.Clicked += (sender, args) => ShowPopup(data);
             }
+
+            var ItemNameLabel = new Label()
+            {
+                Text = data.Name,
+                TextColor = Color.DarkOrange,
+                Style = (Style)Application.Current.Resources["ValueStyle"],
+                HorizontalOptions = LayoutOptions.Center,
+                HorizontalTextAlignment = TextAlignment.Center,
+                Padding = 0,
+                CharacterSpacing = 1,
+                LineHeight = 1,
+                MaxLines = 1,
+            };
 
             // Put the Image Button and Text inside a layout
             var ItemStack = new StackLayout
@@ -156,7 +193,7 @@ namespace Game.Views
                 Style = (Style)Application.Current.Resources["ItemImageBox"],
                 HorizontalOptions = LayoutOptions.Center,
                 Children = {
-                    ItemButton,
+                    ImageGrid,
                 },
             };
 
@@ -178,14 +215,56 @@ namespace Game.Views
             // Hookup the image
             var PlayerImage = new Image
             {
-                Style = (Style)Application.Current.Resources["ImageBattleLargeStyle"],
+                Style = (Style)Application.Current.Resources["ImageBattleMediumStyle"],
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
                 Source = data.ImageURI
             };
+
+            // Hookup the background image
+            var CharacterBackgroundImage = new Image
+            {
+                Style = (Style)Application.Current.Resources["ImageBattleLargeStyle"],
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
+                Source = "character background.png"
+            };
+
+            // Hookup the background image
+            var MonsterBackgroundImage = new Image
+            {
+                Style = (Style)Application.Current.Resources["ImageBattleLargeStyle"],
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
+                Source = "monster background.png"
+            };
+
+            // Player Image Grid
+            var ImageGrid = new Grid()
+            {
+                RowDefinitions =
+            {
+                new RowDefinition()
+            }
+            };
+
+            // Row 0
+            if (data.PlayerType == PlayerTypeEnum.Character)
+            {
+                ImageGrid.Children.Add(CharacterBackgroundImage);
+            }
+            else
+            {
+                ImageGrid.Children.Add(MonsterBackgroundImage);
+            }
+
+            ImageGrid.Children.Add(PlayerImage);
 
             // Add the Level
             var PlayerLevelLabel = new Label
             {
-                Text = "Level : " + data.Level,
+                Text = "Level: " + data.Level,
+                TextColor = Color.DarkOrange,
                 Style = (Style)Application.Current.Resources["ValueStyleMicro"],
                 HorizontalOptions = LayoutOptions.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
@@ -199,12 +278,46 @@ namespace Game.Views
             // Add the HP
             var PlayerHPLabel = new Label
             {
-                Text = "HP : " + data.GetCurrentHealthTotal,
+                Text = "Hp:" + data.GetCurrentHealthTotal,
+                TextColor = Color.DarkOrange,
                 Style = (Style)Application.Current.Resources["ValueStyleMicro"],
-                HorizontalOptions = LayoutOptions.Center,
-                HorizontalTextAlignment = TextAlignment.Center,
-                Padding = 0,
-                LineBreakMode = LineBreakMode.TailTruncation,
+                Padding = 1,
+                CharacterSpacing = 1,
+                LineHeight = 1,
+                MaxLines = 1,
+            };
+
+            // Add the Speed
+            var PlayerSpeedLabel = new Label
+            {
+                Text = "Spd:" + data.Speed,
+                TextColor = Color.DarkOrange,
+                Style = (Style)Application.Current.Resources["ValueStyleMicro"],
+                Padding = 1,
+                CharacterSpacing = 1,
+                LineHeight = 1,
+                MaxLines = 1,
+            };
+
+            // Add the Attack
+            var PlayerAttackLabel = new Label
+            {
+                Text = "Atk:" + data.Attack,
+                TextColor = Color.DarkOrange,
+                Style = (Style)Application.Current.Resources["ValueStyleMicro"],
+                Padding = 1,
+                CharacterSpacing = 1,
+                LineHeight = 1,
+                MaxLines = 1,
+            };
+
+            // Add the Defense
+            var PlayerDefenseLabel = new Label
+            {
+                Text = "Def:" + data.Defense,
+                TextColor = Color.DarkOrange,
+                Style = (Style)Application.Current.Resources["ValueStyleMicro"],
+                Padding = 1,
                 CharacterSpacing = 1,
                 LineHeight = 1,
                 MaxLines = 1,
@@ -213,28 +326,50 @@ namespace Game.Views
             var PlayerNameLabel = new Label()
             {
                 Text = data.Name,
+                TextColor = Color.DarkOrange,
                 Style = (Style)Application.Current.Resources["ValueStyle"],
                 HorizontalOptions = LayoutOptions.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
                 Padding = 0,
-                LineBreakMode = LineBreakMode.TailTruncation,
                 CharacterSpacing = 1,
                 LineHeight = 1,
                 MaxLines = 1,
             };
+
+            // Put player information into Grid
+            var AttributeGrid = new Grid()
+            {
+                RowDefinitions =
+            {
+                new RowDefinition(),
+                new RowDefinition()
+            },
+                ColumnDefinitions =
+            {
+                new ColumnDefinition(),
+                new ColumnDefinition()
+            }
+            };
+
+            // Row 0
+            AttributeGrid.Children.Add(PlayerAttackLabel);
+            AttributeGrid.Children.Add(PlayerDefenseLabel, 0, 1);
+
+            // Row 1
+            AttributeGrid.Children.Add(PlayerHPLabel, 1, 0);
+            AttributeGrid.Children.Add(PlayerSpeedLabel, 1, 1);
 
             // Put the Image Button and Text inside a layout
             var PlayerStack = new StackLayout
             {
                 Style = (Style)Application.Current.Resources["PlayerInfoBox"],
                 HorizontalOptions = LayoutOptions.Center,
-                Padding = 0,
+                Padding = 2,
                 Spacing = 0,
                 Children = {
-                    PlayerImage,
                     PlayerNameLabel,
-                    PlayerLevelLabel,
-                    PlayerHPLabel,
+                    ImageGrid,
+                    AttributeGrid,
                 },
             };
 

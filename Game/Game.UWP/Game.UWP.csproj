@@ -191,6 +191,7 @@
     <Content Include="icon_tile.png" />
     <Content Include="icon_tissue_box.png" />
     <Content Include="icon_vaccine.png" />
+    <Content Include="item background.png" />
     <Content Include="item.png" />
     <Content Include="malaria_monster_140.png" />
     <Content Include="mapcell.png" />

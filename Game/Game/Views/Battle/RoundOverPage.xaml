@@ -19,15 +19,23 @@
                     <StackLayout Style="{StaticResource VerticalStack}">
                         
                         <!--Page Title-->
-                        <views:CurvedLabelControl Margin="0,60,0,-20"
+                        <views:CurvedLabelControl Margin="0,60,0,0"
                                       HorizontalOptions="Center"
                                       Style="{StaticResource RedCurvedLabel}"
+                                      FramePadding="10,0,10,0"
                                       Text="Round Cleared" />
 
-                        <Frame HorizontalOptions="FillAndExpand" Margin="5,0,5,10">
-                            <StackLayout Padding="10,10,0,10"  Style="{StaticResource HorizontalStack}">
-                                <Label Text="Round : " Style="{StaticResource MessageStyle}"/>
-                                <Label Text="0" x:Name="TotalRound" Style="{StaticResource MessageStyle}"/>
+                        <Frame
+                            CornerRadius="10"
+                            Padding="20,0,20,0"
+                            BackgroundColor="{StaticResource ViralCrusherYellowColor}"            
+                            HorizontalOptions="Center"
+                            BorderColor="Transparent"
+                            HasShadow="False">
+
+                            <StackLayout Style="{StaticResource HorizontalStack}">
+                                <Label Text="Round " FontSize="Large" TextColor="{StaticResource ViralCrusherWhiteColor}"/>
+                                <Label Text="0" x:Name="TotalRound" FontSize="Large" TextColor="{StaticResource ViralCrusherWhiteColor}"/>
                                 <StackLayout Padding="1"></StackLayout>
                             </StackLayout>
 
@@ -49,7 +57,7 @@
                         </Frame>
 
                         <!--Items Found List-->
-                        <views:CurvedLabelControl Margin="20,20,0,-20"
+                        <views:CurvedLabelControl Margin="20,10,0,-20"
                                       HorizontalOptions="Start"
                                       Style="{StaticResource YellowCurvedTitle}"
                                       Text="Items Found" />
@@ -58,9 +66,11 @@
                             <StackLayout>
 
                                 <StackLayout Padding="10,10,10,0" Style="{StaticResource HorizontalStack}">
-                                    <Label Text="Found : " Style="{StaticResource LabelStyle}"/>
-                                    <Label Text="0" x:Name="TotalFound" Style="{StaticResource ValueStyle}"/>
+                                    <Label Text="Found : " TextColor="{StaticResource ViralCrusherYellowColor}" FontSize="Medium"/>
+                                    <Label Text="0" x:Name="TotalFound" TextColor="{StaticResource ViralCrusherYellowColor}" FontSize="Medium"/>
                                 </StackLayout>
+
+                                <BoxView Style="{StaticResource Separator}" />
 
                                 <FlexLayout x:Name="ItemListFoundFrame"
                                     JustifyContent="Start"
@@ -71,7 +81,7 @@
 
                         
 
-                        <Label Text="Items Selected" Style="{StaticResource MessageStyle}"/>
+                        <!--<Label Text="Items Selected" Style="{StaticResource MessageStyle}"/>
                         <StackLayout Style="{StaticResource HorizontalStack}">
                             <Label Text="Selected : " Style="{StaticResource LabelStyle}"/>
                             <Label Text="0" x:Name="TotalSelected" Style="{StaticResource ValueStyle}"/>
@@ -79,7 +89,7 @@
                         <FlexLayout x:Name="ItemListSelectedFrame"
                                     JustifyContent="Start"
                                     AlignContent="Start"
-                                    Wrap="Wrap"/>
+                                    Wrap="Wrap"/>-->
 
                         <Grid>
                             <Grid.ColumnDefinitions>
