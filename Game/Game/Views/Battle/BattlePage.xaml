@@ -10,7 +10,7 @@
                 VerticalOptions="FillAndExpand">
 
             <!--The Game UI Screen -->
-            <StackLayout VerticalOptions="FillAndExpand"
+            <StackLayout VerticalOptions="Fill"
                         x:Name="GameUIDisplay" 
                         IsVisible="True" 
                         AbsoluteLayout.LayoutBounds="1,1,1,1" 

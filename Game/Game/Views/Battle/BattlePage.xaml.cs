@@ -408,14 +408,26 @@ namespace Game.Views
             switch (MapLocationModel.Player.PlayerType)
             {
                 case PlayerTypeEnum.Character:
-                    data.Clicked += (sender, args) => SetSelectedCharacter(MapLocationModel);
+
+                    data.Clicked += (sender, args) =>
+                    {
+                        SetSelectedCharacter(MapLocationModel);
+                    };
                     break;
                 case PlayerTypeEnum.Monster:
-                    data.Clicked += (sender, args) => SetSelectedMonster(MapLocationModel);
+
+                    data.Clicked += (sender, args) =>
+                    {
+                        SetSelectedMonster(MapLocationModel);
+                    };
                     break;
                 case PlayerTypeEnum.Unknown:
                 default:
-                    data.Clicked += (sender, args) => SetSelectedEmpty(MapLocationModel);
+
+                    data.Clicked += (sender, args) =>
+                    {
+                        SetSelectedEmpty(MapLocationModel);
+                    };
 
                     // Use the blank cell
                     data.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.EmptySquare.ImageURI;
