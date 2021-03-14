@@ -132,7 +132,7 @@
     <Content Include="Assets\StoreLogo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-125.png" />
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
-    <Content Include="character background.png" />
+    <Content Include="character_background.png" />
     <Content Include="cold_monster_140.png" />
     <Content Include="covid_monster_140.png" />
     <Content Include="ebola_monster_140.png" />
@@ -191,12 +191,12 @@
     <Content Include="icon_tile.png" />
     <Content Include="icon_tissue_box.png" />
     <Content Include="icon_vaccine.png" />
-    <Content Include="item background.png" />
+    <Content Include="item_background.png" />
     <Content Include="item.png" />
     <Content Include="malaria_monster_140.png" />
     <Content Include="mapcell.png" />
     <Content Include="measles_monster_140.png" />
-    <Content Include="monster background.png" />
+    <Content Include="monster_background.png" />
     <Content Include="page_background.JPG" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LargeTile.scale-100.png" />

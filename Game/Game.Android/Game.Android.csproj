@@ -417,13 +417,13 @@
     <AndroidResource Include="Resources\drawable\page_background.JPG" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\character background.png" />
+    <AndroidResource Include="Resources\drawable\character_background.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\monster background.png" />
+    <AndroidResource Include="Resources\drawable\monster_background.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\item background.png" />
+    <AndroidResource Include="Resources\drawable\item_background.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
