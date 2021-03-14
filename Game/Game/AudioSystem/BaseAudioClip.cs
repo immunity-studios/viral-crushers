@@ -29,13 +29,16 @@
         /// Default value: 1 (No volume scaling)
         /// NOTE: for debug purposes only
         /// </param>
-        protected BaseAudioClip(string filepath, double maxVolume = 1.0)
+        protected BaseAudioClip(string filepath, double maxVolume = 1.0, bool loop = false)
         {
-            // TODO move to be called before Setup()
+            System.Console.WriteLine("In BaseAudioClip()");
+            // Set fields not dependant on implementation first
             MaxVolume = maxVolume;
             Filepath = filepath;
+            IsLoop = loop;
             // call inheriting class' implementation
-            Setup();   
+            
+
         }
         #endregion Constructor
 
@@ -72,6 +75,7 @@
         /// </returns>
         public bool Load()
         {
+            System.Console.WriteLine("In BaseAudioClip.Load()" );
             if (!IsSetup)
             {
                 return false;
@@ -213,11 +217,12 @@
         /// </returns>
         public bool SetLoop(bool loop)
         {
-            if (!IsSetup || !IsLoaded)
+            if (!IsSetup)
             {
                 return false;
             }
-            this.loop = loop;
+            
+            this.IsLoop = loop;
             return _SetLoop(loop);
         }
 
@@ -232,12 +237,12 @@
         /// </returns>
         public bool GetLoop()
         {
-            return loop;
+            return this.IsLoop;
         }
 
 
         // TODO create bool flag for looping, separate from implementation
-        protected bool loop = false;
+        protected bool IsLoop = false;
 
         #endregion Loop
 

@@ -22,21 +22,20 @@ namespace Game.AudioSystem
 
         /// <inheritdoc cref="BaseAudioClip"/>
         public SimpleAudioClip(string filePath, double volumeMax = 1.0, bool loop = false)
-            : base(filePath, volumeMax)
+            : base(filePath, volumeMax, loop)
         {
-            //LoopIds = new Stack<int>(3);
-            // Set audio player settings
-            if(!PlatformIsAndroid())
-                SetLoop(loop);
-
-            // To initialize the volume, we'll multiply the preset volume (1) by MaxVolume 
-            SetVolume(GetVolume() * MaxVolume);
+            System.Console.WriteLine("In SimpleAudioClip()");
+           if (Setup())
+            {
+                _SetLoop(IsLoop);
+                _SetVolume(MaxVolume);
+            }
         }
 
         /// <inheritdoc cref="BaseAudioClip.Setup"/>
         protected override bool Setup()
         {
-            Console.WriteLine("Setting up SimpleAudioClip with file: " + Filepath + "...");
+            Console.WriteLine("SimpleAudioClip.Setup() with file: " + Filepath + "...");
             // Create sound player
             simpleAudioPlayer = CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
             if (simpleAudioPlayer == null)
@@ -49,28 +48,39 @@ namespace Game.AudioSystem
             // Audio api initialization successful - set IsSetup flag and return true
             IsSetup = true;
             Console.WriteLine("Setup Succeeded!");
+
+            simpleAudioPlayer.PlaybackEnded += _PlaybackEnded;
+
             return true;
         }
-        
-        
+
+         void _PlaybackEnded(object sender, EventArgs e)
+        {
+            //SimpleAudioClip clip = (SimpleAudioClip)sender;
+            Console.WriteLine("Playback Ended");
+            //if (GetLoop())
+            //{
+                
+            //}
+        }
+
+
 
         /// <inheritdoc cref="BaseAudioClip.Load"/>
         protected override bool _Load()
         {
-            Console.WriteLine("Loading file " + Filepath);
-            if (!IsLoaded)
+            Console.WriteLine("In SimpleAudioClip.Load() for file " + Filepath);
+
+            try
             {
-                try
-                {
-                    // Load the audio file as a stream, then load it into the audio player.
-                    simpleAudioPlayer.Load(Helpers.ResourceFileHelpers.GetStreamFromFile(Filepath));
-                }
-                catch (Exception e)
-                {
-                    // Load failed
-                    Debug.WriteLine(e);
-                    return false;
-                }
+                // Load the audio file as a stream, then load it into the audio player.
+                simpleAudioPlayer.Load(Helpers.ResourceFileHelpers.GetStreamFromFile(Filepath));
+            }
+            catch (Exception e)
+            {
+                // Load failed
+                Debug.WriteLine(e);
+                return false;
             }
             // Load succeeded
             IsLoaded = true;
@@ -81,13 +91,12 @@ namespace Game.AudioSystem
         protected override bool _Play()
         {
             Console.WriteLine("Playing " + Filepath);
-            // Check if we are on android and loop is set (TODO have IsLoop flag separate from implementation's flag (player.Loop)
-            if (PlatformIsAndroid() && GetLoop())
-            {
-                // start the initial play
-                return PlayLoopAndroid(currentLoopID);
-                
-            }
+            // Check if we are on android and loop is set
+            //if (GetLoop() && PlatformIsAndroid())
+            //{
+            //    // start the initial play
+            //    return PlayLoopAndroid(currentLoopID);
+            //}
             simpleAudioPlayer.Play();
             return true;
         }
@@ -97,45 +106,18 @@ namespace Game.AudioSystem
             return Device.RuntimePlatform == Device.Android;
         }
 
-        //private int loopCount = 0;
-        private int currentLoopID = 0;
-        private Stack<int> LoopIds;
 
 
         private bool PlayLoopAndroid(int initialLoopId)
         {
-            // compare current ID of playback when the loop
-            // call was initiated to the current loop id
-
-
-            TimeSpan timeSpan = TimeSpan.FromSeconds(simpleAudioPlayer.Duration);//simpleAudioPlayer.Duration);
-            Console.WriteLine("Loop timer length = " + timeSpan);
-            
-            if (initialLoopId != currentLoopID)
-            {
-                Console.WriteLine("Initial Loop ID was not current Loop ID, stopping the requested loop playback");
-                return false;
-            }
-
-            if (simpleAudioPlayer.IsPlaying)
-                simpleAudioPlayer.Stop();
-            Console.WriteLine("Starting Playback");
-            simpleAudioPlayer.Play();
-            Console.WriteLine("Starting Timer");
-            Device.StartTimer(
-                timeSpan,
-                () => PlayLoopAndroid(initialLoopId: currentLoopID));
-
+            //Device.StartTimer(System.TimeSpan.FromMilliseconds(2000), () => { System.Console.WriteLine("This fired after 2 seconds"); return true; });
             return true;
+
         }
 
         /// <inheritdoc cref="BaseAudioClip.SetLoop"/>
         protected override bool _SetLoop(bool loop)
         {
-            if (!IsSetup)
-            {
-                return false;
-            }
             simpleAudioPlayer.Loop = loop;
             return true;
         }
@@ -150,21 +132,16 @@ namespace Game.AudioSystem
         /// <inheritdoc cref="BaseAudioClip.Stop"/>
         protected override bool _Stop()
         {
-            simpleAudioPlayer.Stop();
+            // check if clip is currently playing
+            if (!simpleAudioPlayer.IsPlaying)
+            {
+                return false;
+            }
 
-            if (PlatformIsAndroid())
-                currentLoopID++;
+            simpleAudioPlayer.Stop();
 
             return true;
         }
-
-        //private bool StopAndroid()
-        //{
-        //    simpleAudioPlayer.Stop();
-        //    currentLoopID++;
-        //    return true;
-        //}
-
         
     }
 }
