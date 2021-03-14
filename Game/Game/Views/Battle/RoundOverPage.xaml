@@ -66,7 +66,7 @@
                             <StackLayout>
 
                                 <StackLayout Padding="10,10,10,0" Style="{StaticResource HorizontalStack}">
-                                    <Label Text="Found : " TextColor="{StaticResource ViralCrusherYellowColor}" FontSize="Medium"/>
+                                    <Label Text="Found: " TextColor="{StaticResource ViralCrusherYellowColor}" FontSize="Medium"/>
                                     <Label Text="0" x:Name="TotalFound" TextColor="{StaticResource ViralCrusherYellowColor}" FontSize="Medium"/>
                                 </StackLayout>
 
@@ -107,43 +107,49 @@
             <!--The Item Popup-->
             <StackLayout 
                     x:Name="PopupLoadingView" 
-                    BackgroundColor="{StaticResource PageBackgroundColor}" 
                     IsVisible="false" 
                     AbsoluteLayout.LayoutBounds=".5, .5,.5,.5" 
                     AbsoluteLayout.LayoutFlags="All">
 
-                <StackLayout 
-                        VerticalOptions="CenterAndExpand" 
-                        HorizontalOptions="CenterAndExpand"
-                        WidthRequest="300"
-                        HeightRequest="300"
-                        >
+                <Frame 
+                    BorderColor="{StaticResource TriciaryTextColor}" Padding="1">
 
-                    <Frame 
-                             BorderColor="{StaticResource TriciaryTextColor}" Padding="1">
+                    <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand" Padding="20,20,20,20">
 
-                        <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand" Padding="2">
-                            <Image x:Name="PopupItemImage" Style="{StaticResource ImageLargeStyle}"/>
+                        <!--  Item Names  -->
+                        <views:CurvedLabelControl x:Name="PopupItemName" Grid.Row="1"
+                                                          Style="{StaticResource YellowCurvedLabel}"/>
+                        <!--  Item Images  -->
+                        <Frame x:Name="BorderFrame" Style="{StaticResource BorderFrame}">
+                            <Frame x:Name="BackgroundFrame" Style="{StaticResource ItemFrame}">
+                                <Image x:Name="PopupItemImage"
+                                               Style="{StaticResource ImageLargeStyle}" />
+                            </Frame>
+                        </Frame>
 
-                            <Label x:Name="PopupItemName" Style="{StaticResource PopupItemTextStyle}" MaxLines="2" LineBreakMode="WordWrap" />
-                            <Label x:Name="PopupItemDescription" Style="{StaticResource PopupItemTextStyle}" MaxLines="2" LineBreakMode="WordWrap" />
+                        <Label x:Name="PopupItemDescription" Style="{StaticResource PopupItemTextStyle}"
+                               FontAttributes="Italic" MaxLines="2" LineBreakMode="WordWrap" 
+                               TextColor="{StaticResource ViralCrusherWhiteColor}"/>
 
-                            <StackLayout Style="{StaticResource HorizontalStack}">
-                                <Label Text="Location : " Style="{StaticResource LabelStyle}" />
-                                <Label x:Name="PopupItemLocation" Style="{StaticResource ValueStyle}" />
-                            </StackLayout>
+                        <StackLayout Style="{StaticResource HorizontalStack}" Padding="0,10,0,0">
+                            <Label Text="Location: " Style="{StaticResource LabelStyle}" 
+                                   TextColor="{StaticResource ViralCrusherWhiteColor}"/>
+                            <Label x:Name="PopupItemLocation" Style="{StaticResource ValueStyle}" 
+                                   TextColor="{StaticResource ViralCrusherWhiteColor}"/>
+                        </StackLayout>
 
-                            <StackLayout Style="{StaticResource HorizontalStack}">
-                                <Label x:Name="PopupItemAttribute" Style="{StaticResource LabelStyle}" />
-                                <Label x:Name="PopupItemValue" Style="{StaticResource ValueStyle}" />
-                            </StackLayout>
+                        <StackLayout Style="{StaticResource HorizontalStack}">
+                            <Label x:Name="PopupItemAttribute" Style="{StaticResource LabelStyle}" 
+                                   TextColor="{StaticResource ViralCrusherWhiteColor}"/>
+                            <Label x:Name="PopupItemValue" Style="{StaticResource ValueStyle}" 
+                                   TextColor="{StaticResource ViralCrusherWhiteColor}"/>
+                        </StackLayout>
 
-                            <Button x:Name="PopupCloseButton" 
+                        <Button x:Name="PopupCloseButton" 
                                 Clicked="ClosePopup_Clicked" 
                                 Text="Close"/>
-                        </StackLayout>
-                    </Frame>
-                </StackLayout>
+                    </StackLayout>
+                </Frame>
             </StackLayout>
 
         </AbsoluteLayout>
