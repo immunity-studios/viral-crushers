@@ -363,4 +363,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\icon_battle_begin_button.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\page_background.JPG" />
+  </ItemGroup>
 </Project>

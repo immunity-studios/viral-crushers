@@ -194,6 +194,7 @@
     <Content Include="malaria_monster_140.png" />
     <Content Include="mapcell.png" />
     <Content Include="measles_monster_140.png" />
+    <Content Include="page_background.JPG" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
@@ -226,6 +227,7 @@
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </AndroidResource>
+    <Content Include="splash_screen_640x960.png" />
     <Content Include="vaccine.png" />
     <Content Include="menu_battle_icon_100.png" />
     <Content Include="menu_items_icon_100.png" />
