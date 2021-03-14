@@ -116,7 +116,7 @@ namespace Game.GameRules
                     Range = 0,
                     Damage = 2,
                     Value = 6,
-                    Location = ItemLocationEnum.Finger,
+                    Location = ItemLocationEnum.RightFinger,
                     Attribute = AttributeEnum.Defense,
                     ItemType = ItemTypeEnum.Goggles,
                 },

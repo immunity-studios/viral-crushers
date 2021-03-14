@@ -29,7 +29,7 @@ namespace Game.Views
             InitializeComponent();
 
             // Update the Found Number
-            TotalFound.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.Count().ToString();
+            //TotalFound.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.Count().ToString();
 
             // Update the Selected Number, this gets updated later when selected refresh happens
             TotalSelected.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList.Count().ToString();
@@ -144,7 +144,9 @@ namespace Game.Views
             // Hookup the Image Button to show the Item picture
             var ItemButton = new ImageButton
             {
-                Style = (Style)Application.Current.Resources["ImageMediumStyle"],
+                Style = (Style)Application.Current.Resources["ImageBattleMediumStyle"],
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
                 Source = item.ImageURI
             };
 
@@ -154,6 +156,28 @@ namespace Game.Views
                 ItemButton.Clicked += (sender, args) => SetSelectedItem(item);
             }
 
+            // Hookup the background image
+            var BackgroundImage = new Image
+            {
+                Style = (Style)Application.Current.Resources["ImageBattleLargeStyle"],
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
+                Source = "item background.png"
+            };
+
+            // Player Image Grid
+            var ImageGrid = new Grid()
+            {
+                RowDefinitions =
+            {
+                new RowDefinition()
+            }
+            };
+
+            // Row 0
+            ImageGrid.Children.Add(BackgroundImage);
+            ImageGrid.Children.Add(ItemButton);
+
             // Put the Image Button and Text inside a layout
             var ItemStack = new StackLayout
             {
@@ -161,7 +185,7 @@ namespace Game.Views
                 Style = (Style)Application.Current.Resources["ItemImageBox"],
                 HorizontalOptions = LayoutOptions.Center,
                 Children = {
-                    ItemButton,
+                    ImageGrid,
                 },
             };
 
@@ -188,9 +212,33 @@ namespace Game.Views
             // Hookup the Image Button to show the Item picture
             var ItemButton = new ImageButton
             {
-                Style = (Style)Application.Current.Resources["ImageMediumStyle"],
+                Style = (Style)Application.Current.Resources["ImageBattleMediumStyle"],
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
                 Source = item.ImageURI
             };
+
+            // Hookup the background image
+            var BackgroundImage = new Image
+            {
+                Style = (Style)Application.Current.Resources["ImageBattleLargeStyle"],
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
+                Source = "item background.png"
+            };
+
+            // Player Image Grid
+            var ImageGrid = new Grid()
+            {
+                RowDefinitions =
+            {
+                new RowDefinition()
+            }
+            };
+
+            // Row 0
+            ImageGrid.Children.Add(BackgroundImage);
+            ImageGrid.Children.Add(ItemButton);
 
             // Put the Image Button and Text inside a layout
             var ItemStack = new StackLayout
@@ -199,7 +247,7 @@ namespace Game.Views
                 Style = (Style)Application.Current.Resources["ItemImageBox"],
                 HorizontalOptions = LayoutOptions.Center,
                 Children = {
-                    ItemButton,
+                    ImageGrid,
                 },
             };
 
@@ -230,7 +278,9 @@ namespace Game.Views
             // Hookup the image
             var PlayerImage = new ImageButton
             {
-                Style = (Style)Application.Current.Resources["ImageBattleLargeStyle"],
+                Style = (Style)Application.Current.Resources["ImageBattleMediumStyle"],
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
                 Source = data.ImageURI
             };
 
@@ -239,6 +289,28 @@ namespace Game.Views
                 // Add a event to the user can click the item and see more
                 PlayerImage.Clicked += (sender, args) => SetSelectedCharacter(data);
             }
+
+            // Hookup the background image
+            var CharacterBackgroundImage = new Image
+            {
+                Style = (Style)Application.Current.Resources["ImageBattleLargeStyle"],
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
+                Source = "character background.png"
+            };
+
+            // Player Image Grid
+            var ImageGrid = new Grid()
+            {
+                RowDefinitions =
+            {
+                new RowDefinition()
+            }
+            };
+
+            // Row 0
+            ImageGrid.Children.Add(CharacterBackgroundImage);
+            ImageGrid.Children.Add(PlayerImage);
 
             // Add the Level
             var PlayerLevelLabel = new Label
@@ -410,11 +482,8 @@ namespace Game.Views
                 Padding = 0,
                 Spacing = 0,
                 Children = {
-                    PlayerImage,
+                    ImageGrid,
                     PlayerNameLabel,
-                    PlayerLevelLabel,
-                    PlayerHPLabel,
-                    PlayerItemLabel,
                 },
             };
 
@@ -426,14 +495,37 @@ namespace Game.Views
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
-        public bool SetSelectedCharacter(PlayerInfoModel data)
+        public bool SetSelectedCharacter(PlayerInfoModel player)
         {
             /*
              * This gets called when the characters is clicked on
              * Usefull if you want to select the character and then set state or do something
              */
-            BattleEngineViewModel.Instance.Engine.EngineSettings.EquipForCharacter = data;
-            PopupNoticeLoadingView.IsVisible = true;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.EquipForCharacter = player;
+            var data = BattleEngineViewModel.Instance.Engine.EngineSettings.AssignedItem;
+
+            PopupLoadingView.IsVisible = true;
+            
+
+            var CharacterItem = player.GetItemByLocation(data.Location);
+            if (CharacterItem != null)
+            {
+                ShowPopup(CharacterItem);
+            }
+            else
+            {
+                PopupItemImage.Source = "icon_tile.png";
+
+                PopupItemName.Text = "No Item";
+            }
+
+            PopupNewItemImage.Source = data.ImageURI;
+
+            PopupNewItemName.Text = data.Name;
+            PopupNewItemDescription.Text = data.Description;
+            PopupNewItemLocation.Text = data.Location.ToMessage();
+            PopupNewItemAttribute.Text = data.Attribute.ToMessage();
+            PopupNewItemValue.Text = " + " + data.Value.ToString();
 
             return true;
         }
@@ -461,7 +553,7 @@ namespace Game.Views
         /// <returns></returns>
         public bool ShowPopup(ItemModel data)
         {
-            PopupLoadingView.IsVisible = true;
+            
             PopupItemImage.Source = data.ImageURI;
 
             PopupItemName.Text = data.Name;
@@ -497,7 +589,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public void CloseNoticePopup_Clicked(object sender, EventArgs e)
         {
-            PopupNoticeLoadingView.IsVisible = false;
+            PopupLoadingView.IsVisible = false;
         }
 
         /// <summary>
@@ -520,70 +612,9 @@ namespace Game.Views
             BattleEngineViewModel.Instance.Engine.EngineSettings.EquipForCharacter = null;
             BattleEngineViewModel.Instance.Engine.EngineSettings.AssignedItem = null;
 
-            PopupNoticeLoadingView.IsVisible = false;
+            PopupLoadingView.IsVisible = false;
             AssignedCharacterList.IsVisible = false;
         }
 
-
-        /*
-        /// <summary>
-        /// Quit the Battle
-        /// 
-        /// Quitting out
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public async void CloseButton_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PopModalAsync();
-        }
-
-        #region CollectionView Handlers
-
-        /// <summary>
-        /// Select the item from the list
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
-        public async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs args)
-        {
-            ItemModel data = ItemsCollectionView.SelectedItem as ItemModel;
-            if (data == null)
-            {
-                return;
-            }
-
-            // Open the Read Page
-            await Navigation.PushAsync(new ItemReadPage(new GenericViewModel<ItemModel>(data)));
-
-            // Manually deselect item.
-            ItemsCollectionView.SelectedItem = null;
-        }
-
-        #endregion
-
-        /// <summary>
-        /// Refresh the list on page appearing
-        /// </summary>
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
-            BindingContext = null;
-
-            // If no data, then set it for needing refresh
-            if (ViewModel.Dataset.Count == 0)
-            {
-                ViewModel.SetNeedsRefresh(true);
-            }
-
-            // If the needs Refresh flag is set update it
-            if (ViewModel.NeedsRefresh())
-            {
-                ViewModel.LoadDatasetCommand.Execute(null);
-            }
-
-            BindingContext = ViewModel;
-        }*/
     }
 }
