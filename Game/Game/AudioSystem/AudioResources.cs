@@ -46,16 +46,60 @@ namespace Game.AudioSystem
         private AudioResources()
         {
             AudioClips = new List<BaseAudioClip>() {
+                // new music
+                MX_MENU_P1_4XLOOP_4_4_116BPM,
+                MX_MENU_P2_4XLOOP_4_4_116BPM,
+                MX_MENU_P3_4XLOOP_4_4_116BPM,
+                MX_BATTLE_P1_1XLOOP_4_4_140BPM_LONG,
+                // end new music
+
                 MENU_CLICK_SOUND,
                 MX_MENU_SONG1_FULL_LOOP,
                 MX_BATTLE_LOOP,
                 MX_MENU_FULL,
                 MX_BATTLE_FULL,
+
+                // hackathon SFX
                 SFX_BATTLE_PLAYER_ATTACK_HIT,
                 SFX_BATTLE_PLAYER_ATTACK_MISS,
                 SFX_BATTLE_PLAYER_DEATH
+                // end hackathon SFX
             };
         }
+
+        /// <summary>
+        /// NEW Intro music
+        /// </summary>
+        public BaseAudioClip MX_MENU_P1_4XLOOP_4_4_116BPM = new SimpleAudioClip(
+            filePath: "Game.AudioFiles.Music.Menu.MX_MENU_P1_4XLOOP_4_4_116BPM.wav",
+            loop: true
+        );
+
+        /// <summary>
+        /// NEW Main part of the menu music. Played when user gets to game page
+        /// </summary>
+        public BaseAudioClip MX_MENU_P2_4XLOOP_4_4_116BPM = new SimpleAudioClip(
+            filePath: "Game.AudioFiles.Music.Menu.General.MX_MENU_P1_4XLOOP_4_4_116BPM.wav",
+            loop: true
+        );
+
+        /// <summary>
+        /// NEW Escalation of the menu music. Played when user goes to battle page
+        /// </summary>
+        public BaseAudioClip MX_MENU_P3_4XLOOP_4_4_116BPM = new SimpleAudioClip(
+            filePath: "Game.AudioFiles.Music.Menu.General.MX_MENU_P1_4XLOOP_4_4_116BPM.wav",
+            loop: true
+        );
+
+        /// <summary>
+        /// NEW Battle music that starts when the Battle Map page is reached
+        /// </summary>
+        public BaseAudioClip MX_BATTLE_P1_1XLOOP_4_4_140BPM_LONG = new SimpleAudioClip(
+            filePath: "Game.AudioFiles.Music.Battle.General.MX_BATTLE_P1_1XLOOP_4_4_140BPM_LONG.wav",
+            loop: true
+        );
+
+
 
         /// <summary>
         /// Default menu click sound
@@ -77,7 +121,7 @@ namespace Game.AudioSystem
         /// <summary>
         /// Long version of the Main Menu Loop
         /// </summary>
-        public BaseAudioClip MX_MENU_FULL= new SimpleAudioClip(
+        public BaseAudioClip MX_MENU_FULL = new SimpleAudioClip(
            filePath: "Game.AudioFiles.Music.Menu.MENU_116-BPM-FULL.ogg",
            loop: true
         );
@@ -99,15 +143,25 @@ namespace Game.AudioSystem
            loop: true
         );
 
+        /// <summary>
+        /// Hackathon SFX #1
+        /// </summary>
         public BaseAudioClip SFX_BATTLE_PLAYER_ATTACK_HIT = new SimpleAudioClip(
             filePath: "Game.AudioFiles.SFX.Battle.General.Player_Attack_Hit.wav",
             loop: false
         );
 
+        /// <summary>
+        /// Hackathon SFX #2
+        /// </summary>
         public BaseAudioClip SFX_BATTLE_PLAYER_ATTACK_MISS = new SimpleAudioClip(
             filePath: "Game.AudioFiles.SFX.Battle.General.Player_Attack_Miss.wav",
             loop: false
         );
+
+        /// <summary>
+        /// Hackathon SFX #3
+        /// </summary>
         public BaseAudioClip SFX_BATTLE_PLAYER_DEATH = new SimpleAudioClip(
             filePath: "Game.AudioFiles.SFX.Battle.General.Player_Death.wav",
             loop: false
