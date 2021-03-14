@@ -91,18 +91,12 @@ namespace Game.AudioSystem
         {
             switch (audioEvent)
             {
+                // UI Menu click events
                 case AudioEventEnum.Button_GameStart:
                     AudioResources.Instance.MENU_CLICK_SOUND.Play();
                     break;
-
-                case AudioEventEnum.MenuStart: 
-                    //AudioResources.Instance.MX_MENU_FULL.Play(); 
-                    AudioResources.Instance.MX_MENU_SONG1_FULL_LOOP.Play();
-                    break;
-                
-                case AudioEventEnum.BattleStart:
-                    AudioResources.Instance.MX_MENU_FULL.Stop();
-                    AudioResources.Instance.MX_BATTLE_FULL.Play();
+                case AudioEventEnum.Button_Default:
+                    AudioResources.Instance.MENU_CLICK_SOUND.Play();
                     break;
 
                 // HACKATHON sound effects
@@ -116,6 +110,23 @@ namespace Game.AudioSystem
                     AudioResources.Instance.SFX_BATTLE_PLAYER_DEATH.Play();
                     break;
                 // End hackathon sound effects
+
+                // Music implementation
+                case AudioEventEnum.MenuStart:
+                    AudioResources.Instance.MX_MENU_P1_4XLOOP_4_4_116BPM.Play();
+                    break;
+                case AudioEventEnum.GamePageReached:
+                    AudioResources.Instance.MX_MENU_P1_4XLOOP_4_4_116BPM.Stop();
+                    AudioResources.Instance.MX_MENU_P2_4XLOOP_4_4_116BPM.Play();
+                    break;
+                case AudioEventEnum.BattleSequenceStarted:
+                    AudioResources.Instance.MX_MENU_P2_4XLOOP_4_4_116BPM.Stop();
+                    AudioResources.Instance.MX_MENU_P3_4XLOOP_4_4_116BPM.Play();
+                    break;
+                case AudioEventEnum.BattleStart:
+                    AudioResources.Instance.MX_MENU_P3_4XLOOP_4_4_116BPM.Stop();
+                    AudioResources.Instance.MX_BATTLE_P1_1XLOOP_4_4_140BPM_LONG.Play();
+                    break;
 
                 default:
                     return false; // event was not found, so return false
