@@ -517,6 +517,7 @@ namespace Game.Views
                 PopupItemImage.Source = "icon_tile.png";
 
                 PopupItemName.Text = "No Item";
+                PopupItemLocation.Text = "Unknown";
             }
 
             PopupNewItemImage.Source = data.ImageURI;
