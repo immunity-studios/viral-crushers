@@ -41,7 +41,7 @@ namespace Game.Views
             InitializeComponent();
 
             // Update audio engine that user has reached the start of the battle
-            AudioSystem.AudioEngine.Instance.ProcessAudioEvent(AudioSystem.AudioEventEnum.BattleStart);
+            //AudioSystem.AudioEngine.Instance.ProcessAudioEvent(AudioSystem.AudioEventEnum.BattleStart);
 
             // Set initial State to Starting
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Starting;
@@ -1094,7 +1094,7 @@ namespace Game.Views
         {
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
             await Navigation.PushModalAsync(new NewRoundPage());
-
+            
             PopupUserLoadingView.IsVisible = true;
             ShowBattleMode();
             DrawGameAttackerDefenderBoard();

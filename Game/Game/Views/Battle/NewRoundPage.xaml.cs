@@ -46,7 +46,8 @@ namespace Game.Views
 		/// <param name="e"></param>
 		public async void BeginButton_Clicked(object sender, EventArgs e)
 		{
-			await Navigation.PopModalAsync();
+            AudioSystem.AudioEngine.Instance.ProcessAudioEvent(AudioSystem.AudioEventEnum.BattleStart);
+            await Navigation.PopModalAsync();
 		}
 
 		/// <summary>
