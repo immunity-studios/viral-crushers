@@ -51,6 +51,7 @@ namespace Game.AudioSystem
         public AudioEngine()
         {
             busVolumes = new Dictionary<AudioBusEnum, double>();
+            loopsPlaying = new List<BaseAudioClip>();
             
             foreach(AudioBusEnum bus in Enum.GetValues(typeof(AudioBusEnum)))
             {
@@ -85,7 +86,7 @@ namespace Game.AudioSystem
         /// Enum representing the specific audio event that has occured
         /// </param>
         /// <returns>
-        /// true is event processing is successfull
+        /// true is event processing is successfull, false if audioEvent was not processed
         /// </returns>
         public bool ProcessAudioEvent(AudioEventEnum audioEvent)
         {
@@ -113,24 +114,39 @@ namespace Game.AudioSystem
 
                 // Music implementation
                 case AudioEventEnum.MenuStart:
-                    AudioResources.Instance.MX_MENU_P1_4XLOOP_4_4_116BPM.Play();
+                    StopAllLoops();
+                    loopsPlaying.Add(AudioResources.Instance.MX_MENU_P1_4XLOOP_4_4_116BPM.Play());
                     break;
                 case AudioEventEnum.GamePageReached:
-                    AudioResources.Instance.MX_MENU_P1_4XLOOP_4_4_116BPM.Stop();
-                    AudioResources.Instance.MX_MENU_P2_4XLOOP_4_4_116BPM.Play();
+                    StopAllLoops();
+                    loopsPlaying.Add(AudioResources.Instance.MX_MENU_P2_4XLOOP_4_4_116BPM.Play());
                     break;
                 case AudioEventEnum.BattleSequenceStarted:
-                    AudioResources.Instance.MX_MENU_P2_4XLOOP_4_4_116BPM.Stop();
-                    AudioResources.Instance.MX_MENU_P3_4XLOOP_4_4_116BPM.Play();
+                    StopAllLoops();
+                    loopsPlaying.Add(AudioResources.Instance.MX_MENU_P3_4XLOOP_4_4_116BPM.Play());
                     break;
                 case AudioEventEnum.BattleStart:
-                    AudioResources.Instance.MX_MENU_P3_4XLOOP_4_4_116BPM.Stop();
-                    AudioResources.Instance.MX_BATTLE_P1_1XLOOP_4_4_140BPM_LONG.Play();
+                    StopAllLoops();
+                    loopsPlaying.Add(AudioResources.Instance.MX_BATTLE_P1_1XLOOP_4_4_140BPM_LONG.Play());
                     break;
 
                 default:
                     return false; // event was not found, so return false
             }
+            return true;
+        }
+
+        /// <summary>
+        /// Method that stops all loops in the loopsPlaying list, and clears the list
+        /// </summary>
+        /// <returns>true if successfull</returns>
+        private bool StopAllLoops()
+        {
+            // stop all loops
+            foreach (BaseAudioClip clip in loopsPlaying)
+                clip.Stop();
+            // clear the list
+            loopsPlaying.Clear();
             return true;
         }
 
@@ -172,10 +188,18 @@ namespace Game.AudioSystem
         {
             return busVolumes[bus];
         }
+
+
+
         /// <summary>
         /// Dictionary containing the volumes of the audio buses.
         /// Is set-up in the AudioEngine constructor
         /// </summary>
         private Dictionary<AudioBusEnum, double> busVolumes;
+
+        /// <summary>
+        /// List holding references to BaseAudioClip loops that are currently playing
+        /// </summary>
+        private List<BaseAudioClip> loopsPlaying;
     }
 }
