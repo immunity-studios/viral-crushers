@@ -120,5 +120,8 @@
     <Compile Update="Views\Score\ScoreUpdatePage.xaml.cs">
       <DependentUpon>ScoreUpdatePage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\UserControls\VolumeSlidersControl.xaml.cs">
+      <DependentUpon>VolumeSlidersControl.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>
