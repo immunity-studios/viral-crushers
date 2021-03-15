@@ -160,16 +160,12 @@
 
                     </StackLayout>-->
 
-                    <StackLayout 
-                            Style="{StaticResource VerticalStack}" 
-                            HeightRequest="100"
-                            HorizontalOptions="FillAndExpand">
+                    <StackLayout VerticalOptions="End">
 
                         <Frame x:Name="MessageDisplayBox" 
                             IsVisible="true"
                                      Margin="0,20,0,0"
-                               BackgroundColor="AliceBlue"
-                                    VerticalOptions="StartAndExpand"
+                               BackgroundColor="FloralWhite"
                                     HorizontalOptions="FillAndExpand"
                                HeightRequest="100">
 
@@ -182,7 +178,7 @@
                                     CharacterSpacing="1"
                                     Style="{StaticResource LabelStyle}"
                                    TextColor="{StaticResource ViralCrusherDarkPurpleColor}"
-                                    FontSize="12"/>
+                                    FontSize="20"/>
 
                             <!--<WebView
                         x:Name="HtmlBox"
