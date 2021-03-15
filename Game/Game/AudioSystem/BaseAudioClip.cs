@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Collections.Generic;
 
 namespace Game.AudioSystem
 {
@@ -39,6 +40,7 @@ namespace Game.AudioSystem
             Filepath = filepath;
             IsLoop = loop;
             NumberOfLoopsContained = numberOfLoopsContained;
+            loopPoints = new List<double>();
             // call inheriting class' implementation
             
 
@@ -83,14 +85,48 @@ namespace Game.AudioSystem
             {
                 return false;
             }
-
+           
             if (!IsLoaded)
             {
-                return _Load();
+                // load the file
+                if (_Load())
+                {
+
+                    SetupAfterSuccessfullLoad();
+
+                    // load succeeded, so set the internal loop points if there are any
+                    //for(int i = 0; i < NumberOfLoopsContained; ++i)
+                    //{
+                    //    loopPoints.Add()
+                    //}
+                }
+                else // implemented _Load() method did not succeed, return false
+                {
+                    return false;
+                }
+
+
             }
+            return true;
+            
+        }
+
+        private double TimeLengthSeconds = 0;
+
+        public double GetTimeLengthSeconds()
+        {
+            return TimeLengthSeconds;
+        }
+
+        protected bool SetupAfterSuccessfullLoad()
+        {
+            TimeLengthSeconds = _SetTimeLengthSeconds();
+            System.Console.WriteLine("Time Length Seconds is " + TimeLengthSeconds);
             return true;
         }
 
+        protected abstract double _SetTimeLengthSeconds();
+            
         /// <summary>
         /// Abstract method that must load the file in the underlying audio api.
         /// </summary>
@@ -256,6 +292,8 @@ namespace Game.AudioSystem
         /// 
         /// </summary>
         public int NumberOfLoopsContained { get; private set; } = 0;
+
+        protected List<double> loopPoints;
 
 
         #endregion Loop

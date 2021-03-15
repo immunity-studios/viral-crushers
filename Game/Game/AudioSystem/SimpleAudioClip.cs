@@ -54,8 +54,11 @@ namespace Game.AudioSystem
             return true;
         }
 
-         
 
+        protected override double _SetTimeLengthSeconds()
+        {
+            return simpleAudioPlayer.Duration;
+        }
 
 
         /// <inheritdoc cref="BaseAudioClip.Load"/>
@@ -82,13 +85,8 @@ namespace Game.AudioSystem
         /// <inheritdoc cref="BaseAudioClip.Play"/>
         protected override bool _Play()
         {
-            Console.WriteLine("Playing " + Filepath);
-            // Check if we are on android and loop is set
-            //if (GetLoop() && PlatformIsAndroid())
-            //{
-            //    // start the initial play
-            //    return PlayLoopAndroid(currentLoopID);
-            //}
+            //Console.WriteLine("Playing " + Filepath);
+           
             simpleAudioPlayer.Play();
             return true;
         }
