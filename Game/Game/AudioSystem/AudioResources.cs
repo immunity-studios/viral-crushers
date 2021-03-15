@@ -109,7 +109,8 @@ namespace Game.AudioSystem
         public BaseAudioClip MENU_CLICK_SOUND = new SimpleAudioClip(
             filePath: "Game.AudioFiles.SFX.Menu.UI_CLICK_1.wav",
             //volumeMax: 1,
-            loop: false
+            loop: false,
+            audioBus: AudioBusEnum.SFX
         );
 
         /// <summary>
@@ -117,7 +118,8 @@ namespace Game.AudioSystem
         /// </summary>
         public BaseAudioClip SFX_BATTLE_PLAYER_ATTACK_HIT = new SimpleAudioClip(
             filePath: "Game.AudioFiles.SFX.Battle.General.Player_Attack_Hit.wav",
-            loop: false
+            loop: false,
+            audioBus: AudioBusEnum.SFX
         );
 
         /// <summary>
@@ -125,7 +127,8 @@ namespace Game.AudioSystem
         /// </summary>
         public BaseAudioClip SFX_BATTLE_PLAYER_ATTACK_MISS = new SimpleAudioClip(
             filePath: "Game.AudioFiles.SFX.Battle.General.Player_Attack_Miss.wav",
-            loop: false
+            loop: false,
+            audioBus: AudioBusEnum.SFX
         );
 
         /// <summary>
@@ -133,7 +136,8 @@ namespace Game.AudioSystem
         /// </summary>
         public BaseAudioClip SFX_BATTLE_PLAYER_DEATH = new SimpleAudioClip(
             filePath: "Game.AudioFiles.SFX.Battle.General.Player_Death.wav",
-            loop: false
+            loop: false,
+            audioBus: AudioBusEnum.SFX
         );
 
         /// <summary>
