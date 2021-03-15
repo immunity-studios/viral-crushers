@@ -37,6 +37,9 @@ namespace Game.Views
         {
             InitializeComponent();
 
+            // Update audio engine that user has started battle sequence
+            AudioSystem.AudioEngine.Instance.ProcessAudioEvent(AudioSystem.AudioEventEnum.BattleSequenceStarted);
+
             BindingContext = BattleEngineViewModel.Instance;
 
             // Clear the Database List and the Party List to start

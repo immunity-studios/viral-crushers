@@ -54,15 +54,7 @@ namespace Game.AudioSystem
             return true;
         }
 
-         void _PlaybackEnded(object sender, EventArgs e)
-        {
-            //SimpleAudioClip clip = (SimpleAudioClip)sender;
-            Console.WriteLine("Playback Ended");
-            //if (GetLoop())
-            //{
-                
-            //}
-        }
+         
 
 
 
@@ -99,6 +91,21 @@ namespace Game.AudioSystem
             //}
             simpleAudioPlayer.Play();
             return true;
+        }
+
+        /// <summary>
+        /// Callback for when audio clips end.
+        /// Used by android build to 'loop' audio playback
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void _PlaybackEnded(object sender, EventArgs e)
+        {
+            // if we're on android and this clip is a loop, we'll need to play again
+            if (PlatformIsAndroid() && IsLoop)
+            {
+                Play();
+            }
         }
 
         private bool PlatformIsAndroid()

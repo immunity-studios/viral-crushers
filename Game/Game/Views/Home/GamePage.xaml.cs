@@ -42,8 +42,6 @@ namespace Game.Views
 		public async void DungeonButton_Clicked(object sender, EventArgs e)
 		{
 			await Navigation.PushAsync(new PickCharactersPage());
-			// Update Audio Engine the battle has started
-			AudioSystem.AudioEngine.Instance.ProcessAudioEvent(AudioSystem.AudioEventEnum.BattleStart);
 		}
 	}
 }

@@ -1,4 +1,6 @@
-﻿namespace Game.AudioSystem
+﻿using System.Diagnostics;
+
+namespace Game.AudioSystem
 {
     /// <summary>
     /// An abstract implementation of an audio clip, this is 
@@ -29,13 +31,14 @@
         /// Default value: 1 (No volume scaling)
         /// NOTE: for debug purposes only
         /// </param>
-        protected BaseAudioClip(string filepath, double maxVolume = 1.0, bool loop = false)
+        protected BaseAudioClip(string filepath, double maxVolume = 1.0, bool loop = false, int numberOfLoopsContained = 0)
         {
             System.Console.WriteLine("In BaseAudioClip()");
             // Set fields not dependant on implementation first
             MaxVolume = maxVolume;
             Filepath = filepath;
             IsLoop = loop;
+            NumberOfLoopsContained = numberOfLoopsContained;
             // call inheriting class' implementation
             
 
@@ -106,15 +109,18 @@
         /// TODO could add 'fade length' parameter to this method for fade in
         /// </summary>
         /// <returns>
-        /// true, or false if playback fails
+        /// This BaseAudioClip object, or null if it is not setup or not loaded
         /// </returns>
-        public bool Play()
+        public BaseAudioClip Play()
         {
             if (!IsSetup || !IsLoaded)
             {
-                return false;
+                return null;
             }
-            return _Play();
+            LastPlaybackTimestamp = Stopwatch.GetTimestamp();
+            System.Console.WriteLine("Stored playback time of ", LastPlaybackTimestamp);
+            _Play();
+            return this;
         }
 
 
@@ -143,8 +149,8 @@
 
         protected abstract bool _Stop();
 
-
         #endregion Stop
+
         #region Volume
         /// <summary>
         /// The current volume of the base audio clip
@@ -240,11 +246,36 @@
             return this.IsLoop;
         }
 
-
-        // TODO create bool flag for looping, separate from implementation
+        /// <summary>
+        /// TODO make private, access in inheriting class via get loop
+        /// TODO could convert to use C# get/set syntax
+        /// </summary>
         protected bool IsLoop = false;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public int NumberOfLoopsContained { get; private set; } = 0;
+
+
         #endregion Loop
+
+        #region Playback
+
+        /// <summary>
+        /// Date/Timestamp formatted long that is set to the current Date/Time
+        /// when method Play() is called and the clip has already been setup.
+        /// Default value is -1, which means the BaseAudioClip has not yet been set
+        /// </summary>
+        public long LastPlaybackTimestamp { get; private set; } = -1;
+
+        #endregion Playback
+
+
+        //#region Rhythmn
+        //protected bool IsTempoSynced = false;
+        //protected double BPM = 0;
+        //#endregion Rhythmn
 
         #region MaxVolume
 
