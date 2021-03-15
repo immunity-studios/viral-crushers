@@ -62,6 +62,11 @@ namespace Game.Views
             #endregion
         }
 
+        protected override void OnAppearing()
+        {
+            volumeSlidersControl.SetVolumeSliderLevelsToAudioEngineBusLevels();
+        }
+
         /// <summary>
         /// Set the Character Hit Enum
         /// </summary>

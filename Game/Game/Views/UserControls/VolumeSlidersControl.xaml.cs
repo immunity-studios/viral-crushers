@@ -12,7 +12,7 @@ namespace Game.Views
             InitializeComponent();
         }
 
-        #region Click Handlers
+        #region SliderHandlers
 
         /// <summary>
         /// Volume slider for music which controls the audio engine
@@ -42,12 +42,12 @@ namespace Game.Views
             AudioSystem.AudioEngine.Instance.SetBusVolume(AudioSystem.AudioBusEnum.SFX, value);
         }
 
-        bool SetVolumeSliderLevelsToAudioEngineBusLevels()
+        public bool SetVolumeSliderLevelsToAudioEngineBusLevels()
         {
             musicVolume.Value = AudioSystem.AudioEngine.Instance.GetBusVolume(AudioSystem.AudioBusEnum.Music);
             sfxVolume.Value = AudioSystem.AudioEngine.Instance.GetBusVolume(AudioSystem.AudioBusEnum.SFX);
             return true;
         }
-        #endregion
+        #endregion SliderHandlers
     }
 }

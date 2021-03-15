@@ -180,6 +180,7 @@ namespace Game.AudioSystem
         /// <returns></returns>
         public bool SetBusVolume(AudioBusEnum bus, double volume)
         {
+            busVolumes[bus] = volume;
             foreach (var audioClip in AudioResources.Instance.AudioClips)
             {
                 if(audioClip.GetAudioBus() == bus)
