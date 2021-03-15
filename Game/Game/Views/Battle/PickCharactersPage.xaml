@@ -37,7 +37,7 @@
                             <RowDefinition Height="4*" />
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                                
+
                         <CollectionView x:Name="CharactersCollectionView"
                                         
                                         ItemsSource="{Binding DatabaseCharacterList}"
@@ -47,44 +47,51 @@
                                                 Grid.Row="0"
                                         VerticalScrollBarVisibility="Never">
 
-                                <CollectionView.ItemsLayout>
-                                    <GridItemsLayout Orientation="Vertical"
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Vertical"
                                              Span="3"
                                              VerticalItemSpacing="10" />
-                                </CollectionView.ItemsLayout>
+                            </CollectionView.ItemsLayout>
 
-                                <CollectionView.ItemTemplate>
-                                    <DataTemplate>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
 
-                                        <Grid Padding="0,10,0,0" HorizontalOptions="Center">
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="Auto" />
-                                                <RowDefinition Height="Auto" />
-                                            </Grid.RowDefinitions>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition />
-                                            </Grid.ColumnDefinitions>
+                                    <Grid Padding="0,10,0,0" HorizontalOptions="Center">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition />
+                                        </Grid.ColumnDefinitions>
 
-                                            <Frame Style="{StaticResource BorderFrame}">
+                                        <!--<Frame Style="{StaticResource BorderFrame}">
                                                 <Frame Style="{StaticResource CharacterFrame}">
                                                     <Image HeightRequest="100"
                                                    Source="{Binding ImageURI}"
                                                    Grid.Row="0"
                                                    WidthRequest="100" />
                                                 </Frame>
-                                            </Frame>
+                                            </Frame>-->
 
-                                            <views:CurvedLabelControl Grid.Row="1"
+                                        <Image x:Name="CharacterImage"
+                                                   HeightRequest="100"
+                                                   Source="{Binding ImageURI}"
+                                                   Grid.Row="0"
+                                                   WidthRequest="100" 
+                                                   IsAnimationPlaying="True"/>
+
+                                        <views:CurvedLabelControl Grid.Row="1"
                                                               Style="{StaticResource YellowCurvedLabel}"
                                                               Text="{Binding Name}" />
 
-                                        </Grid>
+                                    </Grid>
 
-                                    </DataTemplate>
-                                </CollectionView.ItemTemplate>
-                            </CollectionView>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
 
-                            <ImageButton x:Name="BeginBattleButton"
+                        <ImageButton x:Name="BeginBattleButton"
                                          HorizontalOptions="Center"
                                          Clicked="BattleButton_Clicked" 
                                          Source="battle_button_140.png" 

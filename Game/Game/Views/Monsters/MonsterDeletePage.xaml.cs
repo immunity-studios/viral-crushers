@@ -31,7 +31,7 @@ namespace Game.Views
             this.viewModel.Title = "Delete " + data.Title;
 
             // Match Monster Image with Monster Type
-            MonsterImage.Source = viewModel.Data.Type.ToImageFile();
+            MonsterImage.Source = viewModel.Data.Type.ToGifFile();
         }
 
         /// <summary>

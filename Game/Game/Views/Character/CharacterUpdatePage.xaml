@@ -52,7 +52,7 @@
                                 <ColumnDefinition Width="2*" />
                             </Grid.ColumnDefinitions>
 
-                            <Frame Grid.RowSpan="3" Style="{StaticResource BorderFrame}">
+                            <!--<Frame Grid.RowSpan="3" Style="{StaticResource BorderFrame}">
 
                                 <Frame Padding="10" Style="{StaticResource CharacterFrame}">
 
@@ -60,7 +60,13 @@
                                            Source="{Binding Data.ImageURI}"
                                            Style="{StaticResource ImageLargeStyle}" />
                                 </Frame>
-                            </Frame>
+                            </Frame>-->
+
+                            <Image x:Name="CharacterImage"
+                                           Source="{Binding Data.ImageURI}"
+                                           Style="{StaticResource ImageLargeStyle}" 
+                                           IsAnimationPlaying="True"/>
+
                             <StackLayout Grid.Column="1"
                                          HorizontalOptions="Fill"
                                          Orientation="Vertical">

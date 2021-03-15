@@ -38,7 +38,7 @@ namespace Game.Views
             MonsterTypePicker.SelectedItem = ViewModel.Data.Type.ConvertEnumToMappedString();
 
             // Match Monster Image with Monster Type
-            MonsterImage.Source = ViewModel.Data.Type.ToImageFile();
+            MonsterImage.Source = ViewModel.Data.Type.ToGifFile();
         }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace Game.Views
             }
 
             // Match Monster Image with Monster Type
-            ViewModel.Data.ImageURI = ViewModel.Data.Type.ToImageFile();
+            ViewModel.Data.ImageURI = ViewModel.Data.Type.ToGifFile();
 
             MessagingCenter.Send(this, "Create", ViewModel.Data);
             await Navigation.PopModalAsync();
@@ -82,7 +82,7 @@ namespace Game.Views
             var selectedMonsterType = MonsterTypeEnumHelper.ConvertMappedStringToEnum((string)picker.SelectedItem);
 
             // Match Monster Image with Monster Type
-            MonsterImage.Source = selectedMonsterType.ToImageFile();
+            MonsterImage.Source = selectedMonsterType.ToGifFile();
         }
 
     }

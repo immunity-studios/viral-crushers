@@ -42,14 +42,20 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
 
-                        <Frame Style="{StaticResource BorderFrame}" VerticalOptions="CenterAndExpand">
+                        <!--<Frame Style="{StaticResource BorderFrame}" VerticalOptions="CenterAndExpand">
                             <Frame Style="{StaticResource CharacterFrame}">
                                 <Image x:Name="CharacterImage"
                                        HeightRequest="100"
                                        Source="{Binding Data.ImageURI}"
                                        WidthRequest="100" />
                             </Frame>
-                        </Frame>
+                        </Frame>-->
+
+                        <Image x:Name="CharacterImage"
+                                       HeightRequest="100"
+                                       Source="{Binding Data.ImageURI}"
+                                       WidthRequest="100" 
+                                       IsAnimationPlaying="True"/>
 
                         <StackLayout Grid.Column="1" HorizontalOptions="Fill">
 

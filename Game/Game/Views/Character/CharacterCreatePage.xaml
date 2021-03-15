@@ -37,7 +37,7 @@
                        BorderColor="Transparent"
                        HasShadow="True">
 
-                    <StackLayout Padding="20"
+                    <StackLayout x:Name="Test"  Padding="20"
                                  Spacing="10"
                                  Style="{StaticResource OuterBoxStack}">
                         <Grid ColumnSpacing="10" RowSpacing="10">
@@ -52,13 +52,16 @@
                                 <ColumnDefinition Width="2*" />
                             </Grid.ColumnDefinitions>
 
-                            <Frame Grid.RowSpan="3" Style="{StaticResource BorderFrame}">
+                            <!--<Frame Grid.RowSpan="3" Style="{StaticResource BorderFrame}">
 
                                 <Frame Padding="10" Style="{StaticResource CharacterFrame}">
 
                                     <Image x:Name="CharacterImage" Style="{StaticResource ImageLargeStyle}" />
                                 </Frame>
-                            </Frame>
+                            </Frame>-->
+
+                            <Image x:Name="CharacterImage" Style="{StaticResource ImageLargeStyle}" IsAnimationPlaying="True"/>
+                            
                             <StackLayout Grid.Column="1"
                                          HorizontalOptions="Fill"
                                          Orientation="Vertical">

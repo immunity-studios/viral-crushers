@@ -61,7 +61,7 @@ namespace Game.Views
             }
 
             // Match Character Image with Character Type
-            ViewModel.Data.ImageURI = ViewModel.Data.Job.ToImageFile();
+            ViewModel.Data.ImageURI = ViewModel.Data.Job.ToGifFile();
 
             MessagingCenter.Send(this, "Update", ViewModel.Data);
             await Navigation.PopModalAsync();
@@ -88,7 +88,7 @@ namespace Game.Views
             var selectedJob = CharacterJobEnumHelper.ConvertMappedStringToEnum((string)picker.SelectedItem);
 
             // Match Character Image with Character Type
-            CharacterImage.Source = selectedJob.ToImageFile();
+            CharacterImage.Source = selectedJob.ToGifFile();
         }
 
     }
