@@ -108,17 +108,18 @@ namespace Game.AudioSystem
         /// TODO could add 'fade length' parameter to this method for fade in
         /// </summary>
         /// <returns>
-        /// true, or false if playback fails
+        /// This BaseAudioClip object, or null if it is not setup or not loaded
         /// </returns>
-        public bool Play()
+        public BaseAudioClip Play()
         {
             if (!IsSetup || !IsLoaded)
             {
-                return false;
+                return null;
             }
             LastPlaybackTimestamp = Stopwatch.GetTimestamp();
             System.Console.WriteLine("Stored playback time of ", LastPlaybackTimestamp);
-            return _Play();
+            _Play();
+            return this;
         }
 
 
@@ -247,6 +248,8 @@ namespace Game.AudioSystem
         // TODO create bool flag for looping, separate from implementation
         protected bool IsLoop = false;
 
+
+
         #endregion Loop
 
         #region Playback
@@ -256,7 +259,7 @@ namespace Game.AudioSystem
         /// when method Play() is called and the clip has already been setup.
         /// Default value is -1, which means the BaseAudioClip has not yet been set
         /// </summary>
-        protected long LastPlaybackTimestamp { get; private set; } = -1;
+        public long LastPlaybackTimestamp { get; private set; } = -1;
 
         #endregion Playback
 
