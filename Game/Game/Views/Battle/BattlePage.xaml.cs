@@ -556,6 +556,8 @@ namespace Game.Views
 
             // Enable Rest Button
             RestButton.IsEnabled = true;
+            RestButton.Source = "icon_battle_rest_button.png";
+
 
             // If haven't chosen Defender and the Targer isn't in the attack range of Attacker 
             // then the Attack Button is not enabled to click
@@ -838,6 +840,7 @@ namespace Game.Views
             AttackButton.Source = "icon_battle_attack_button_gray.png";
             MoveButton.Source = "icon_battle_move_button_gray.png";
             AbilityButton.Source = "icon_battle_ability_button_gray.png";
+            RestButton.Source = "icon_battle_rest_button_gray.png";
 
 
             return true;
@@ -1067,6 +1070,8 @@ namespace Game.Views
             AttackButton.Source = "icon_battle_attack_button_gray.png";
             MoveButton.Source = "icon_battle_move_button_gray.png";
             AbilityButton.Source = "icon_battle_ability_button_gray.png";
+            RestButton.Source = "icon_battle_rest_button_gray.png";
+
 
 
         }

@@ -23,12 +23,12 @@
                     <StackLayout Style="{StaticResource CardImageTextBox}">
 
                         <ImageButton
-                            Source="icon_play.png"
-                            Style="{StaticResource ImageLargeStyle}"
+                            Source="icon_auto_battle_button.png"
+                            
                             Clicked="AutobattleButton_Clicked"/>
 
                         <Label 
-                            Text="Begin Battle"
+                            Text=""
                             Style="{StaticResource CenterMessageStyle}"/>
                     </StackLayout>
 

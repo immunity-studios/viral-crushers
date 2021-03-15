@@ -78,7 +78,7 @@
                             </StackLayout>
 
                             <StackLayout x:Name="DefenderBox" Style="{StaticResource PlayerBattleInfoBox}" HorizontalOptions="End">
-                                    <Image x:Name="DefenderImage" Source="item.png" Style="{StaticResource ImageBattleMediumStyle}"/>
+                                    <Image x:Name="DefenderImage" Source="" Style="{StaticResource ImageBattleMediumStyle}"/>
                                     <Label x:Name="DefenderName" Text="" Style="{StaticResource ValueStyleBattleMicro}" TextColor="{StaticResource ViralCrusherGreenColor}" FontAttributes="Bold"/>
                                     <Label x:Name="DefenderHealth" Text="" Style="{StaticResource ValueStyleBattleMicro}" TextColor="{StaticResource ViralCrusherGreenColor}" FontAttributes="Bold"/>
                             </StackLayout>
@@ -88,7 +88,7 @@
                     
                         <StackLayout Grid.Row="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand" Scale="1"
                                      >
-                            <ImageButton x:Name="RestButton" Clicked="RestButton_Clicked" Source="icon_battle_rest_button.png" IsVisible="False" IsEnabled="False" />
+                            <ImageButton x:Name="RestButton" Clicked="RestButton_Clicked" Source="icon_battle_rest_button_gray.png" IsVisible="False" IsEnabled="False" />
 
                             <!--<Button x:Name="AttackButton" Clicked="AttackButton_Clicked" Text="Attack" IsVisible="False" IsEnabled="False"/>
                             

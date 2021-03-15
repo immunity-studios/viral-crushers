@@ -53,8 +53,7 @@
             <StackLayout Grid.Row="3" Style="{StaticResource CardImageTextBox}">
 
                 <ImageButton
-                        Source="icon_play.png"
-                        Style="{StaticResource ImageSmallStyle}"
+                        Source="icon_auto_battle_button.png"
                         Clicked="AutobattleButton_Clicked"/>
 
                 <Label 
