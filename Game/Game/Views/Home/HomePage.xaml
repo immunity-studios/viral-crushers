@@ -46,8 +46,8 @@
                         />
                 </StackLayout>
 
-                <Button
-                    Text="Enter"
+                <ImageButton
+                    Source="icon_enter_button.png"
                     Clicked="GameButton_Clicked"/>
 
             </StackLayout>
