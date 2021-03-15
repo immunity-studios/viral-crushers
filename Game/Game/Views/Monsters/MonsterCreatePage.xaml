@@ -59,7 +59,8 @@
 
                                     <Image x:Name="MonsterImage"
                                            HeightRequest="100"
-                                           WidthRequest="100" />
+                                           WidthRequest="100" 
+                                           IsAnimationPlaying="True"/>
                                 </Frame>
                             </Frame>
 

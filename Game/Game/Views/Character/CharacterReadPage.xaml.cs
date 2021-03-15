@@ -34,7 +34,7 @@ namespace Game.Views
             BindingContext = this.ViewModel = data;
 
             // Match Character Image with Character Type
-            CharacterImage.Source = ViewModel.Data.Job.ToImageFile();
+            CharacterImage.Source = ViewModel.Data.Job.ToGifFile();
 
             String SpecialAbility = "";
 

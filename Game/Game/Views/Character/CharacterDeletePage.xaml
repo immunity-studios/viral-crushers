@@ -39,7 +39,7 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
 
-                        <Frame Grid.RowSpan="4" Style="{StaticResource BorderFrame}">
+                        <!--<Frame Grid.RowSpan="4" Style="{StaticResource BorderFrame}">
                             <Frame Style="{StaticResource CharacterFrame}">
                                 <Image x:Name="CharacterImage"
                                        HeightRequest="100"
@@ -47,7 +47,14 @@
                                        Style="{StaticResource ImageLargeStyle}"
                                        WidthRequest="100" />
                             </Frame>
-                        </Frame>
+                        </Frame>-->
+
+                        <Image x:Name="CharacterImage"
+                                       Grid.RowSpan="4"
+                                       HeightRequest="100"
+                                       Source="{Binding Data.ImageURI}"
+                                       WidthRequest="100" 
+                                       IsAnimationPlaying="True"/>
 
                         <Label Grid.Column="1"
                                LineBreakMode="TailTruncation"

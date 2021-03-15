@@ -31,7 +31,7 @@ namespace Game.Views
             this.viewModel.Title = "Character Delete " + data.Title;
 
             // Match Character Image with Character Type
-            CharacterImage.Source = viewModel.Data.Job.ToImageFile();
+            CharacterImage.Source = viewModel.Data.Job.ToGifFile();
         }
 
         /// <summary>

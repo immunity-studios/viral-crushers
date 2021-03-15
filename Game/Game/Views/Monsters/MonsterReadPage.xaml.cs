@@ -34,7 +34,7 @@ namespace Game.Views
             BindingContext = this.ViewModel = data;
 
             // Match Monster Image with Monster Type
-            MonsterImage.Source = ViewModel.Data.Type.ToImageFile();
+            MonsterImage.Source = ViewModel.Data.Type.ToGifFile();
         }
 
         /// <summary>

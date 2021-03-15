@@ -132,6 +132,33 @@ namespace Game.Models
             }
         }
 
+        public static string ToGifFile(this CharacterJobEnum characterJob)
+        {
+            switch (characterJob)
+            {
+                case CharacterJobEnum.Doctor:
+                    return "docgif.gif";
+
+                case CharacterJobEnum.Teacher:
+                    return "teachergif.gif";
+
+                case CharacterJobEnum.Athlete:
+                    return "athletegif.gif";
+
+                case CharacterJobEnum.PoliceOfficer:
+                    return "police.gif";
+
+                case CharacterJobEnum.CollegeStudent:
+                    return "studentgif.gif";
+
+                case CharacterJobEnum.Firefighter:
+                    return "firefightergif.gif";
+
+                default:
+                    return null;
+            }
+        }
+
         /// <summary>
         /// Mapping from string to enum value of item type 
         /// </summary>

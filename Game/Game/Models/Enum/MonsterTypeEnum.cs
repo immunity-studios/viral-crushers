@@ -125,6 +125,33 @@ namespace Game.Models
             }
         }
 
+        public static string ToGifFile(this MonsterTypeEnum monsterType)
+        {
+            switch (monsterType)
+            {
+                case MonsterTypeEnum.Cold:
+                    return "coldgif.gif";
+
+                case MonsterTypeEnum.Flu:
+                    return "flugif.gif";
+
+                case MonsterTypeEnum.Measles:
+                    return "measlesgif.gif";
+
+                case MonsterTypeEnum.Covid:
+                    return "covidgif.gif";
+
+                case MonsterTypeEnum.Malaria:
+                    return "malariagif.gif";
+
+                case MonsterTypeEnum.Ebola:
+                    return "ebolagif.gif";
+
+                default:
+                    return null;
+            }
+        }
+
         /// <summary>
         /// Mapping from string to enum value of monster type 
         /// </summary>

@@ -37,7 +37,7 @@ namespace Game.Views
             JobPicker.SelectedItem = ViewModel.Data.Job.ConvertEnumToMappedString();
 
             // Match Character Image with Character Type
-            CharacterImage.Source = ViewModel.Data.Job.ToImageFile();
+            CharacterImage.Source = ViewModel.Data.Job.ToGifFile();
         }
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Game.Views
             }
 
             // Match Character Image with Character Type
-            ViewModel.Data.ImageURI = ViewModel.Data.Job.ToImageFile();
+            ViewModel.Data.ImageURI = ViewModel.Data.Job.ToGifFile();
 
             MessagingCenter.Send(this, "Create", ViewModel.Data);
             await Navigation.PopModalAsync();
@@ -81,7 +81,7 @@ namespace Game.Views
             var selectedJob = CharacterJobEnumHelper.ConvertMappedStringToEnum((string)picker.SelectedItem);
 
             // Match Character Image with Character Type
-            CharacterImage.Source = selectedJob.ToImageFile();
+            CharacterImage.Source = selectedJob.ToGifFile();
         }
     }
 }
