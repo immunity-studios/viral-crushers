@@ -1,4 +1,6 @@
-﻿namespace Game.AudioSystem
+﻿using System.Diagnostics;
+
+namespace Game.AudioSystem
 {
     /// <summary>
     /// An abstract implementation of an audio clip, this is 
@@ -114,6 +116,8 @@
             {
                 return false;
             }
+            LastPlaybackTimestamp = Stopwatch.GetTimestamp();
+            System.Console.WriteLine("Stored playback time of ", LastPlaybackTimestamp);
             return _Play();
         }
 
@@ -143,8 +147,8 @@
 
         protected abstract bool _Stop();
 
-
         #endregion Stop
+
         #region Volume
         /// <summary>
         /// The current volume of the base audio clip
@@ -240,11 +244,27 @@
             return this.IsLoop;
         }
 
-
         // TODO create bool flag for looping, separate from implementation
         protected bool IsLoop = false;
 
         #endregion Loop
+
+        #region Playback
+
+        /// <summary>
+        /// Date/Timestamp formatted long that is set to the current Date/Time
+        /// when method Play() is called and the clip has already been setup.
+        /// Default value is -1, which means the BaseAudioClip has not yet been set
+        /// </summary>
+        protected long LastPlaybackTimestamp { get; private set; } = -1;
+
+        #endregion Playback
+
+
+        //#region Rhythmn
+        //protected bool IsTempoSynced = false;
+        //protected double BPM = 0;
+        //#endregion Rhythmn
 
         #region MaxVolume
 
