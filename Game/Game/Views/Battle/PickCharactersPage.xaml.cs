@@ -13,9 +13,7 @@ namespace Game.Views
     /// <summary>
     /// Selecting Characters for the Game
     /// 
-    /// TODO: Team
-    /// Mike's game allows duplicate characters in a party (6 Mikes can all fight)
-    /// If you do not allow duplicates, change the code below
+    /// Our game doesm't allow duplicate characters in a party
     /// Instead of using the database list directly make a copy of it in the viewmodel
     /// Then have on select of the database remove the character from that list and add to the part list
     /// Have select from the party list remove it from the party list and add it to the database list
@@ -40,7 +38,6 @@ namespace Game.Views
             InitializeComponent();
 
             BindingContext = BattleEngineViewModel.Instance;
-            //BindingContext = BattleEngineViewModel.Instance;
 
             // Clear the Database List and the Party List to start
             BattleEngineViewModel.Instance.PartyCharacterList.Clear();
@@ -51,13 +48,12 @@ namespace Game.Views
         #region CollectionView Handlers
 
         /// <summary>
-        /// The row selected from the list
+        /// The muntilple characters selected from the collection
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
         public void OnDatabaseCharacterItemSelected(object sender, SelectionChangedEventArgs args)
         {
-            /*CharacterModel data = args.SelectedItem as CharacterModel;*/
             var currentList = args.CurrentSelection.ToList();
             var previousList = args.PreviousSelection.ToList();
 
@@ -91,28 +87,6 @@ namespace Game.Views
 
         #endregion
 
-/*        /// <summary>
-        /// The row selected from the list
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
-        public void OnPartyCharacterItemSelected(object sender, SelectedItemChangedEventArgs args)
-        {
-            CharacterModel data = args.SelectedItem as CharacterModel;
-            if (data == null)
-            {
-                return;
-            }
-
-            // Manually deselect Character.
-            PartyListView.SelectedItem = null;
-
-            // Remove the character from the list
-            BattleEngineViewModel.Instance.PartyCharacterList.Remove(data);
-
-            UpdateNextButtonState();
-        }*/
-
         /// <summary>
         /// Next Button is based on the count
         /// 
@@ -131,8 +105,6 @@ namespace Game.Views
             {
                 BeginBattleButton.IsEnabled = false;
             }
-
-            /*PartyCountLabel.Text = currentCount.ToString();*/
         }
 
 
