@@ -541,19 +541,28 @@ namespace Game.Views
             // Clear Game Board
             DrawGameBoardClear();
 
-            // Draw Attacker in the battle infomation
+            if (data.Player.Job == CharacterJobEnum.Athlete)
+            {
+                data.Player.ImageURI = "athletegif.gif";
+            }
+
+            // Draw Attacker in the battle infomation box
             AttackerImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.ImageURI;
             AttackerName.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.Name;
             AttackerHealth.Text = "HP: " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.GetCurrentHealthTotal.ToString() + " / " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.GetMaxHealthTotal.ToString();
 
+            // Enable Rest Button
             RestButton.IsEnabled = true;
 
+            // If haven't chosen Defender and the Targer isn't in the attack range of Attacker 
+            // then the Attack Button is not enabled to click
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender != null
                 && BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.IsTargetInRange(data.Player, BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender))
             {
                 AttackButton.IsEnabled = true;
             }
 
+            // If ability of character is still available then the Ability Button is enabled to click
             foreach (var ability in data.Player.AbilityTracker)
             {
                 var temp = ability.Key;

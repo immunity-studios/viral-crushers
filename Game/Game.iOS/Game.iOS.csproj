@@ -372,4 +372,40 @@
   <ItemGroup>
     <BundleResource Include="Resources\item_background.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\athletegif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\coldgif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\covidgif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ebolagif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\flugif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\malariagif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\measlesgif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\docgif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\firefightergif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\policegif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\studentgif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\teachergif.gif" />
+  </ItemGroup>
 </Project>

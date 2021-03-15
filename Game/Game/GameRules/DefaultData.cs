@@ -330,7 +330,7 @@ namespace Game.GameRules
                     SpecialAbility = SpecialAbilityEnum.IncreaseDefense,
                     Level = 1,
                     MaxHealth = 5,
-                    ImageURI = "icon_athlete.png",
+                    ImageURI = "athletegif.gif",
                     Head = HeadString,
                     Necklass = NecklassString,
                     PrimaryHand = PrimaryHandString,
