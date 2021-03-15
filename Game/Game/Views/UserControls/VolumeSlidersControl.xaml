@@ -2,15 +2,15 @@
 <ContentView
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="Game.Views.VolumeSlidersControl"
-    BackgroundColor="{StaticResource ViralCrusherWhiteColor}">
+    x:Class="Game.Views.VolumeSlidersControl">
+    <!--BackgroundColor="{StaticResource ViralCrusherWhiteColor}"-->
     <ContentView.Resources>
         <Thickness x:Key="ToolbarLabelMargin">0,-10,0,10</Thickness>
     </ContentView.Resources>
     <ContentView.Content>
         <StackLayout Orientation="Vertical"
                      HorizontalOptions="Center">
-            <!--Audio Settings-->
+        <!--Audio Settings-->
         
         <Label Text="Music Volume:"
                         Style="{DynamicResource LabelStyle}"/>
