@@ -12,11 +12,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="AudioFiles\Music\Battle\BATTLE_142-BPM-FULL.ogg" />
-    <None Remove="AudioFiles\Music\Battle\BATTLE_142-BPM-LOOP.wav" />
     <None Remove="AudioFiles\Music\Battle\MX_BATTLE_P1_1XLOOP_4_4_140BPM_LONG.wav" />
-    <None Remove="AudioFiles\Music\Menu\MENU_116-BPM-FULL.ogg" />
-    <None Remove="AudioFiles\Music\Menu\MENU_116-BPM-LOOP.wav" />
     <None Remove="AudioFiles\Music\Menu\MX_MENU_P1_4XLOOP_4_4_116BPM.wav" />
     <None Remove="AudioFiles\Music\Menu\MX_MENU_P2_4XLOOP_4_4_116BPM.wav" />
     <None Remove="AudioFiles\Music\Menu\MX_MENU_P3_4XLOOP_4_4_116BPM.wav" />
@@ -28,16 +24,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="AudioFiles\Music\Battle\BATTLE_142-BPM-FULL.ogg" />
-    <EmbeddedResource Include="AudioFiles\Music\Battle\BATTLE_142-BPM-LOOP.wav" />
     <EmbeddedResource Include="AudioFiles\Music\Battle\MX_BATTLE_P1_1XLOOP_4_4_140BPM_LONG.wav" />
-    <EmbeddedResource Include="AudioFiles\Music\Menu\MENU_116-BPM-FULL.ogg" />
-    <EmbeddedResource Include="AudioFiles\Music\Menu\MENU_116-BPM-LOOP.wav" />
     <EmbeddedResource Include="AudioFiles\Music\Menu\MX_MENU_P1_4XLOOP_4_4_116BPM.wav" />
     <EmbeddedResource Include="AudioFiles\Music\Menu\MX_MENU_P2_4XLOOP_4_4_116BPM.wav" />
     <EmbeddedResource Include="AudioFiles\Music\Menu\MX_MENU_P3_4XLOOP_4_4_116BPM.wav" />
     <EmbeddedResource Include="AudioFiles\Music\Menu\TestMX1_Stinger_Bells.wav" />
-    <EmbeddedResource Include="AudioFiles\Music\Menu\VC-OST_Song1_Full_Loop.mp3" />
     <EmbeddedResource Include="AudioFiles\SFX\Battle\General\Player_Attack_Hit.wav" />
     <EmbeddedResource Include="AudioFiles\SFX\Battle\General\Player_Attack_Miss.wav" />
     <EmbeddedResource Include="AudioFiles\SFX\Battle\General\Player_Death.wav" />
