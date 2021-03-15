@@ -575,6 +575,8 @@ namespace Game.Views
                 if (remaining > 0)
                 {
                     AbilityButton.IsEnabled = true;
+                    AbilityButton.Source = "icon_battle_ability_button.png";
+
                     break;
                 }
             }
@@ -835,6 +837,8 @@ namespace Game.Views
 
             AttackButton.Source = "icon_battle_attack_button_gray.png";
             MoveButton.Source = "icon_battle_move_button_gray.png";
+            AbilityButton.Source = "icon_battle_ability_button_gray.png";
+
 
             return true;
         }
@@ -1062,6 +1066,8 @@ namespace Game.Views
 
             AttackButton.Source = "icon_battle_attack_button_gray.png";
             MoveButton.Source = "icon_battle_move_button_gray.png";
+            AbilityButton.Source = "icon_battle_ability_button_gray.png";
+
 
         }
 

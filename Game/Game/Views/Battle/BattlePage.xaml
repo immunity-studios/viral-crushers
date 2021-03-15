@@ -64,7 +64,7 @@
                             <StackLayout x:Name="BattlePlayerBox" Style="{StaticResource PlayerBattleOuterBox}" VerticalOptions="Center" Padding="0,10,0,10">
 
                             <StackLayout x:Name="AttackerBox" Style="{StaticResource PlayerBattleInfoBox}" HorizontalOptions="Start">
-                                <Image x:Name="AttackerImage" Source="item.png" Style="{StaticResource ImageBattleMediumStyle}"/>
+                                <Image x:Name="AttackerImage" Source="" Style="{StaticResource ImageBattleMediumStyle}"/>
                                 <Label x:Name="AttackerName" Text="" Style="{StaticResource ValueStyleBattleMicro}" TextColor="{StaticResource ViralCrusherGreenColor}" FontAttributes="Bold"/>
                                     <Label x:Name="AttackerHealth" Text="" Style="{StaticResource ValueStyleBattleMicro}" TextColor="{StaticResource ViralCrusherGreenColor}" FontAttributes="Bold"/>
                             </StackLayout>
@@ -98,7 +98,7 @@
 
                             <ImageButton x:Name="AttackButton" Clicked="AttackButton_Clicked" Source="icon_battle_attack_button_gray.png" IsVisible="False" IsEnabled="False" />
                             
-                            <ImageButton x:Name="AbilityButton" Clicked="AbilityButton_Clicked" Source="icon_battle_ability_button.png" IsVisible="False" IsEnabled="False" />
+                            <ImageButton x:Name="AbilityButton" Clicked="AbilityButton_Clicked" Source="icon_battle_ability_button_gray.png" IsVisible="False" IsEnabled="False" />
                             
                             <ImageButton x:Name="MoveButton" Clicked="MoveButton_Clicked" Source="icon_battle_move_button_gray.png" IsVisible="False" IsEnabled="False" />
                             
