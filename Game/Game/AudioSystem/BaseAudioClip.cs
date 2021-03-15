@@ -230,7 +230,7 @@ namespace Game.AudioSystem
             // set the volume field
             this.volume = volume;
             // set the underlying audio API clip's volume
-            return _SetVolume(volume);
+            return _SetVolume(volume * MaxVolume);
         }
 
         /// <summary>
