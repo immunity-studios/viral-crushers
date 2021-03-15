@@ -180,16 +180,22 @@ namespace Game.AudioSystem
         /// <returns></returns>
         public bool SetBusVolume(AudioBusEnum bus, double volume)
         {
-            switch (bus)
+            foreach (var audioClip in AudioResources.Instance.AudioClips)
             {
-                case AudioBusEnum.Master:
-                    // loop through each audio clip and scale its volume based on provided value
-                    foreach(var audioClip in AudioResources.Instance.AudioClips)
-                    {
-                        audioClip.SetVolume(volume);
-                    }
-                    break;
+                if(audioClip.GetAudioBus() == bus)
+                    audioClip.SetVolume(volume);
             }
+            //switch (bus)
+            //{
+            //    case AudioBusEnum.Master:
+            //        // loop through each audio clip and scale its volume based on provided value
+            //        foreach(var audioClip in AudioResources.Instance.AudioClips)
+            //        {
+            //            audioClip.SetVolume(volume);
+            //        }
+            //        break;
+            //    case AudioBusEnum.Music
+            //}
             return true;
         }
 
