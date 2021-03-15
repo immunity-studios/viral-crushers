@@ -91,14 +91,7 @@ namespace Game.AudioSystem
                 // load the file
                 if (_Load())
                 {
-
-                    SetupAfterSuccessfullLoad();
-
-                    // load succeeded, so set the internal loop points if there are any
-                    //for(int i = 0; i < NumberOfLoopsContained; ++i)
-                    //{
-                    //    loopPoints.Add()
-                    //}
+                    SetupAfterSuccessfullLoad();                    
                 }
                 else // implemented _Load() method did not succeed, return false
                 {
@@ -120,13 +113,37 @@ namespace Game.AudioSystem
 
         protected bool SetupAfterSuccessfullLoad()
         {
+            // set the time length of the clip from implementation's returned val
             TimeLengthSeconds = _SetTimeLengthSeconds();
             System.Console.WriteLine("Time Length Seconds is " + TimeLengthSeconds);
+            SetupLoopPoints();
+            // Debug prints out loop points (TODO delete)
+            System.Console.Write("Loop Points: ");// + loopPoints.ToString());
+            foreach (var loopPoint in loopPoints)  System.Console.Write("[" + loopPoint + "],");
+            System.Console.WriteLine();
+
             return true;
         }
 
+        // TODO rename this method to GetImplementationTimeLengthSeconds()
         protected abstract double _SetTimeLengthSeconds();
-            
+         
+        /// <summary>
+        /// Sets up the loop points for the clip
+        /// Loop points are time points where the clip could 
+        /// stop and a new clip could start in a musically effective way
+        /// </summary>
+        /// <returns></returns>
+        private bool SetupLoopPoints()
+        {
+            for (int i = 1; i <= NumberOfLoopsContained; ++i)
+            {
+                loopPoints.Add(TimeLengthSeconds / NumberOfLoopsContained * i);
+            }
+            return true;
+        }
+
+
         /// <summary>
         /// Abstract method that must load the file in the underlying audio api.
         /// </summary>
