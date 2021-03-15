@@ -115,19 +115,19 @@ namespace Game.AudioSystem
                 // Music implementation
                 case AudioEventEnum.MenuStart:
                     StopAllLoops();
-                    loopsPlaying.Add(AudioResources.Instance.MX_MENU_P1_4XLOOP_4_4_116BPM.Play());
+                    TryPlayClip(AudioResources.Instance.MX_MENU_P1_4XLOOP_4_4_116BPM);
                     break;
                 case AudioEventEnum.GamePageReached:
                     StopAllLoops();
-                    loopsPlaying.Add(AudioResources.Instance.MX_MENU_P2_4XLOOP_4_4_116BPM.Play());
+                    TryPlayClip(AudioResources.Instance.MX_MENU_P2_4XLOOP_4_4_116BPM);
                     break;
                 case AudioEventEnum.BattleSequenceStarted:
                     StopAllLoops();
-                    loopsPlaying.Add(AudioResources.Instance.MX_MENU_P3_4XLOOP_4_4_116BPM.Play());
+                    TryPlayClip(AudioResources.Instance.MX_MENU_P3_4XLOOP_4_4_116BPM);
                     break;
                 case AudioEventEnum.BattleStart:
                     StopAllLoops();
-                    loopsPlaying.Add(AudioResources.Instance.MX_BATTLE_P1_1XLOOP_4_4_140BPM_LONG.Play());
+                    TryPlayClip(AudioResources.Instance.MX_BATTLE_P1_1XLOOP_4_4_140BPM_LONG);
                     break;
 
                 default:
@@ -147,6 +147,24 @@ namespace Game.AudioSystem
                 clip.Stop();
             // clear the list
             loopsPlaying.Clear();
+            return true;
+        }
+
+        /// <summary>
+        /// Method that tries to play a clip
+        /// If playback succeeds, the clip is added to the loopsPlaying list
+        /// </summary>
+        /// <param name="clip"></param>
+        /// <returns></returns>
+        private bool TryPlayClip(BaseAudioClip clip)
+        {
+            var result = clip.Play();
+            
+            if(result != null)
+            {
+                loopsPlaying.Add(clip);
+            }
+
             return true;
         }
 
