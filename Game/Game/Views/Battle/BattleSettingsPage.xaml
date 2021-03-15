@@ -125,7 +125,7 @@
                     Toggled="AllowMonsterItems_Toggled"/>
             </Grid>
 
-            <Button Clicked="CloseButton_Clicked" Text="Close" HorizontalOptions="CenterAndExpand"/>
+            <ImageButton Clicked="CloseButton_Clicked" Source="icon_battle_close_button.png" HorizontalOptions="CenterAndExpand" Scale="0.5"/>
 
         </StackLayout>
     </ContentPage.Content>
