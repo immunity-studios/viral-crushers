@@ -55,10 +55,6 @@
                 <ImageButton
                         Source="icon_auto_battle_button.png"
                         Clicked="AutobattleButton_Clicked"/>
-
-                <Label 
-                        Text="Auto Battle"
-                        Style="{StaticResource CenterMessageStyle}"/>
             </StackLayout>
 
 

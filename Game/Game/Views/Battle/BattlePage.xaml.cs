@@ -622,29 +622,34 @@ namespace Game.Views
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker == null)
             {
                 return;
-            }
-
-            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender == null)
-            {
-                return;
-            }
+            }           
 
             AttackerImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.ImageURI;
             AttackerName.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.Name;
             AttackerHealth.Text = "HP: " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.GetCurrentHealthTotal.ToString();
 
             // Show what action the Attacker used
-            AttackerAttack.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.PreviousAction.ToImageURI();
+            //AttackerAttack.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.PreviousAction.ToImageURI();
             
-            var item = ItemIndexViewModel.Instance.GetItem(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PrimaryHand);
-            if (item != null)
+            //var item = ItemIndexViewModel.Instance.GetItem(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PrimaryHand);
+            //if (item != null)
+            //{
+            //    AttackerAttack.Source = item.ImageURI;
+            //}
+
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender != null)
             {
-                AttackerAttack.Source = item.ImageURI;
+                DefenderImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.ImageURI;
+                DefenderName.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.Name;
+                DefenderHealth.Text = "HP: " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.GetCurrentHealthTotal.ToString();
+
+                if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.Alive == false)
+                {
+                    UpdateMapGrid();
+                    DefenderImage.BackgroundColor = Color.Red;
+                }
             }
             
-            DefenderImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.ImageURI;
-            DefenderName.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.Name;
-            DefenderHealth.Text = "HP: " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.GetCurrentHealthTotal.ToString();
 
             // Attack Animation
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.PreviousAction == ActionEnum.Attack)
@@ -658,32 +663,34 @@ namespace Game.Views
                 await DefenderImage.ScaleTo(1, 150);
             }
 
+            // Move Animation
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.PreviousAction == ActionEnum.Move)
+            {
+                await AttackerImage.TranslateTo(20, 0, 150);
+                await AttackerImage.TranslateTo(-20, 0, 150);
+                await AttackerImage.TranslateTo(20, 0, 150);               
+                await AttackerImage.TranslateTo(-20, 0, 150);
+                await AttackerImage.TranslateTo(0, 0, 150);
+            }
+
             // Ability Animation
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.PreviousAction == ActionEnum.Ability)
             {
-                AttackerImage.ScaleTo(1.5, 200);
-                await AttackerImage.RotateTo(20, 200);
-                AttackerImage.ScaleTo(1, 150);
-                await AttackerImage.RotateTo(-20, 200);
-                AttackerImage.ScaleTo(1.5, 150);
-                await AttackerImage.RotateTo(-20, 200);
-                AttackerImage.ScaleTo(1, 150);
-                await AttackerImage.RotateTo(20, 200);
+
+                AttackerImage.ScaleTo(2, 500);
+                await AttackerImage.TranslateTo(0,20, 500);
+                AttackerImage.ScaleTo(1, 200);
+                await AttackerImage.TranslateTo(0, 0, 200);
             }
 
             // Rest Animation
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.PreviousAction == ActionEnum.Rest)
             {
-                await AttackerImage.RotateTo(360, 150);
-                await AttackerImage.RotateTo(360, 150);
-                await AttackerImage.RotateTo(360, 150);
+                await AttackerImage.RotateTo(360, 500);
+                await AttackerImage.RotateTo(360, 500);
             }
 
-            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.Alive == false)
-            {
-                UpdateMapGrid();
-                DefenderImage.BackgroundColor = Color.Red;
-            }
+            
 
             BattlePlayerBoxVersus.Text = "vs";
         }
@@ -748,9 +755,6 @@ namespace Game.Views
         {
             BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction = ActionEnum.Move;
 
-            // Clear Game Board
-            DrawGameBoardClear();
-
             NextAttackExample();
         }
 
@@ -777,7 +781,7 @@ namespace Game.Views
         /// So the pattern is Click Next, Next, Next until game is over
         /// 
         /// </summary>
-        public void NextAttackExample()
+        public async void NextAttackExample()
         {
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
 
@@ -787,11 +791,7 @@ namespace Game.Views
             // Output the Message of what happened.
             GameMessage();
 
-            // If Current Action is not Move, then Show the outcome on the Board
-            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction != ActionEnum.Move)
-            {
-                DrawGameAttackerDefenderBoard();
-            }           
+            DrawGameAttackerDefenderBoard();    
 
             if ((RoundCondition == RoundEnum.NewRound) || (BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Count < 1))
             {
@@ -835,12 +835,13 @@ namespace Game.Views
                 GameOver();
                 return;
             }
-
             // Pause
-            Task.Delay(WaitTime);
+            await Task.Delay(1000);
 
             // Add a event to the user can click to move to Monster's Turn
             ShowMonsterPopup();
+
+            
         }
 
         /// <summary>
@@ -884,10 +885,12 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void CloseMonsterPopup_Clicked(object sender, EventArgs e)
+        public async void CloseMonsterPopup_Clicked(object sender, EventArgs e)
         {
             PopupMonsterLoadingView.IsVisible = false;
             NextMonsterAttack();
+
+            await Task.Delay(1000);
 
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Count() > 0)
             {
@@ -1221,20 +1224,20 @@ namespace Game.Views
             {
                 case BattleStateEnum.Starting:
                     //GameUIDisplay.IsVisible = false;
-                    AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
+                    //AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
                     StartBattleButton.IsVisible = true;
                     break;
 
                 case BattleStateEnum.NewRound:
                     UpdateMapGrid();
-                    AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
+                    //AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
                     NextRoundButton.IsVisible = true;
                     break;
 
                 case BattleStateEnum.GameOver:
                     // Hide the Game Board
                     GameUIDisplay.IsVisible = false;
-                    AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
+                    //AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
 
                     // Show the Game Over Display
                     GameOverDisplay.IsVisible = true;

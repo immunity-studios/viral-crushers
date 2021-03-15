@@ -87,6 +87,10 @@ namespace Game.Engine.EngineGame
                     case ActionEnum.Move:
                         result = MoveAsTurn(Attacker);
                         break;
+
+                    case ActionEnum.Rest:
+                        result = Rest(Attacker);
+                        break;
                 }
             }
             else
