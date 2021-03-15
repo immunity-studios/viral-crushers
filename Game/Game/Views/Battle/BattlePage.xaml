@@ -297,9 +297,9 @@
                                TextColor="{StaticResource ViralCrusherYellowColor}"
                                LineBreakMode="WordWrap" HorizontalTextAlignment="Center" MaxLines="5" Padding="20"/>
 
-                        <Button x:Name="ShowScoreButton" Clicked="ShowScoreButton_Clicked" Text="Score" WidthRequest="50"/>
+                        <Button x:Name="ShowScoreButton" Clicked="ShowScoreButton_Clicked" Text="Score"/>
 
-                        <Button x:Name="ExitButton" Clicked="ExitButton_Clicked" Text="Exit" WidthRequest="50"></Button>
+                        <Button x:Name="ExitButton" Clicked="ExitButton_Clicked" Text="Exit"></Button>
 
                     </StackLayout>
                 </Frame>
