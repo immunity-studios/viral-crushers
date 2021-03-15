@@ -21,10 +21,10 @@ namespace Game.AudioSystem
 
 
         /// <inheritdoc cref="BaseAudioClip"/>
-        public SimpleAudioClip(string filePath, double volumeMax = 1.0, bool loop = false)
-            : base(filePath, volumeMax, loop)
+        public SimpleAudioClip(string filePath, double volumeMax = 1.0, bool loop = false, int numberOfLoopsContained = 0)
+            : base(filePath, volumeMax, loop, numberOfLoopsContained)
         {
-            System.Console.WriteLine("In SimpleAudioClip()");
+           System.Console.WriteLine("In SimpleAudioClip()");
            if (Setup())
             {
                 _SetLoop(IsLoop);
