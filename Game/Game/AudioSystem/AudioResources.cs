@@ -98,6 +98,7 @@ namespace Game.AudioSystem
         public BaseAudioClip MX_BATTLE_P1_1XLOOP_4_4_140BPM_LONG = new SimpleAudioClip(
             filePath: "Game.AudioFiles.Music.Battle.MX_BATTLE_P1_1XLOOP_4_4_140BPM_LONG.wav",
             loop: true,
+            volumeMax: .65,
             numberOfLoopsContained: 1
         );
 
