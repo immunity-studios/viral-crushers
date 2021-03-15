@@ -32,9 +32,9 @@ namespace Game.AudioSystem
         /// Default value: 1 (No volume scaling)
         /// NOTE: for debug purposes only
         /// </param>
-        protected BaseAudioClip(string filepath, double maxVolume = 1.0, bool loop = false, int numberOfLoopsContained = 0)
+        protected BaseAudioClip(string filepath, double maxVolume = 1.0, bool loop = false, int numberOfLoopsContained = 0, AudioBusEnum audioBus = AudioBusEnum.Music)
         {
-            System.Console.WriteLine("In BaseAudioClip()");
+            AudioBus = audioBus;
             // Set fields not dependant on implementation first
             MaxVolume = maxVolume;
             Filepath = filepath;
@@ -352,5 +352,12 @@ namespace Game.AudioSystem
 
         #endregion Filepath
 
+        #region Bus
+        public AudioBusEnum GetAudioBus()
+        {
+            return AudioBus;
+        }
+        private AudioBusEnum AudioBus;
+        #endregion Bus
     }
 }
