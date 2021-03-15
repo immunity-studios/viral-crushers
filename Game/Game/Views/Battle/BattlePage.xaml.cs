@@ -520,6 +520,7 @@ namespace Game.Views
                 && BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.IsTargetInRange(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker, data.Player))
             {
                 AttackButton.IsEnabled = true;
+                AttackButton.Source = "icon_battle_attack_button.png";
             }
 
             data.IsSelectedTarget = true;
@@ -560,6 +561,7 @@ namespace Game.Views
                 && BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.IsTargetInRange(data.Player, BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender))
             {
                 AttackButton.IsEnabled = true;
+                AttackButton.Source = "icon_battle_attack_button.png";
             }
 
             // If ability of character is still available then the Ability Button is enabled to click
@@ -828,6 +830,9 @@ namespace Game.Views
             MoveButton.IsEnabled = false;
 
             RestButton.IsEnabled = false;
+
+            AttackButton.Source = "icon_battle_attack_button_gray.png";
+
             return true;
         }
 
@@ -1051,6 +1056,8 @@ namespace Game.Views
             AbilityButton.IsEnabled = false;
             MoveButton.IsEnabled = false;
             RestButton.IsEnabled = false;
+
+            AttackButton.Source = "icon_battle_attack_button_gray.png";
         }
 
         /// <summary>
