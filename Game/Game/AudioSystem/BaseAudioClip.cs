@@ -31,13 +31,14 @@ namespace Game.AudioSystem
         /// Default value: 1 (No volume scaling)
         /// NOTE: for debug purposes only
         /// </param>
-        protected BaseAudioClip(string filepath, double maxVolume = 1.0, bool loop = false)
+        protected BaseAudioClip(string filepath, double maxVolume = 1.0, bool loop = false, int numberOfLoopsContained = 0)
         {
             System.Console.WriteLine("In BaseAudioClip()");
             // Set fields not dependant on implementation first
             MaxVolume = maxVolume;
             Filepath = filepath;
             IsLoop = loop;
+            NumberOfLoopsContained = numberOfLoopsContained;
             // call inheriting class' implementation
             
 
@@ -245,9 +246,16 @@ namespace Game.AudioSystem
             return this.IsLoop;
         }
 
-        // TODO create bool flag for looping, separate from implementation
+        /// <summary>
+        /// TODO make private, access in inheriting class via get loop
+        /// TODO could convert to use C# get/set syntax
+        /// </summary>
         protected bool IsLoop = false;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public int NumberOfLoopsContained { get; private set; } = 0;
 
 
         #endregion Loop
