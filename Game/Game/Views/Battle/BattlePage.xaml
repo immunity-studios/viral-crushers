@@ -97,9 +97,10 @@
                             <!--<Button x:Name="MoveButton" Clicked="MoveButton_Clicked" Text="Move" IsVisible="False" IsEnabled="False"/>-->
 
                             <ImageButton x:Name="AttackButton" Clicked="AttackButton_Clicked" Source="icon_battle_attack_button_gray.png" IsVisible="False" IsEnabled="False" />
+                            
                             <ImageButton x:Name="AbilityButton" Clicked="AbilityButton_Clicked" Source="icon_battle_ability_button.png" IsVisible="False" IsEnabled="False" />
                             
-                            <ImageButton x:Name="MoveButton" Clicked="MoveButton_Clicked" Source="icon_battle_move_button.png" IsVisible="False" IsEnabled="False" />
+                            <ImageButton x:Name="MoveButton" Clicked="MoveButton_Clicked" Source="icon_battle_move_button_gray.png" IsVisible="False" IsEnabled="False" />
                             
                             <!--<Button x:Name="NextRoundButton" Clicked="NextRoundButton_Clicked" Text="Next Round" IsVisible="False"/>
                             

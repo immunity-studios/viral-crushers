@@ -491,6 +491,8 @@ namespace Game.Views
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker != null)
             {
                 MoveButton.IsEnabled = true;
+                MoveButton.Source = "icon_battle_move_button.png";
+
                 BattleEngineViewModel.Instance.Engine.EngineSettings.SelectedMapLocation = data;
             }
 
@@ -832,6 +834,7 @@ namespace Game.Views
             RestButton.IsEnabled = false;
 
             AttackButton.Source = "icon_battle_attack_button_gray.png";
+            MoveButton.Source = "icon_battle_move_button_gray.png";
 
             return true;
         }
@@ -1058,6 +1061,8 @@ namespace Game.Views
             RestButton.IsEnabled = false;
 
             AttackButton.Source = "icon_battle_attack_button_gray.png";
+            MoveButton.Source = "icon_battle_move_button_gray.png";
+
         }
 
         /// <summary>
