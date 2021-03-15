@@ -155,6 +155,8 @@
     <Content Include="icon_battle_exit_button.png" />
     <Content Include="icon_battle_move_button.png" />
     <Content Include="icon_battle_next_round_button.png" />
+    <Content Include="icon_battle_rest_button.png" />
+    <Content Include="icon_battle_settings_icon.png" />
     <Content Include="icon_battle_start_button.png" />
     <Content Include="icon_blue_monster.png" />
     <Content Include="icon_bug_spray.png" />

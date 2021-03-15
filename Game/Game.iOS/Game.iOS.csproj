@@ -423,4 +423,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\s_background_image.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_battle_settings_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_battle_rest_button.png" />
+  </ItemGroup>
 </Project>

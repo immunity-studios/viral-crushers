@@ -88,7 +88,7 @@
                     
                         <StackLayout Grid.Row="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand" Scale="1"
                                      >
-                            <Button x:Name="RestButton" Clicked="RestButton_Clicked" Text="Rest" IsVisible="False" IsEnabled="False" />
+                            <ImageButton x:Name="RestButton" Clicked="RestButton_Clicked" Source="icon_battle_rest_button.png" IsVisible="False" IsEnabled="False" />
 
                             <!--<Button x:Name="AttackButton" Clicked="AttackButton_Clicked" Text="Attack" IsVisible="False" IsEnabled="False"/>
                             
@@ -124,7 +124,7 @@
                             
                             <ImageButton x:Name="StartBattleButton" Clicked="StartButton_Clicked" Source="icon_battle_start_button.png" IsVisible="False" />
                             
-                            <Button x:Name="SettingsButton" Clicked="Settings_Clicked" Text="Settings" />
+                            <ImageButton x:Name="SettingsButton" Clicked="Settings_Clicked" Source="icon_battle_settings_icon.png" />
                             
                             <ImageButton x:Name="CancelButton" Clicked="ExitButton_Clicked" Source="icon_battle_exit_button.png"  />
 
@@ -161,14 +161,14 @@
                     <StackLayout 
                             Style="{StaticResource VerticalStack}" 
                             HeightRequest="100"
-                            HorizontalOptions="CenterAndExpand">
+                            HorizontalOptions="FillAndExpand">
 
                         <Frame x:Name="MessageDisplayBox" 
                             IsVisible="false"
                                      Margin="0,20,0,0"
                                BackgroundColor="AliceBlue"
                                     VerticalOptions="StartAndExpand"
-                                    HorizontalOptions="CenterAndExpand">
+                                    HorizontalOptions="FillAndExpand">
 
                             <Label x:Name="BattleMessages" 
                                     HorizontalOptions="CenterAndExpand" 
@@ -227,14 +227,14 @@
                                TextColor="{StaticResource ViralCrusherGreenColor}"
                                FontSize="Small"/>
 
-                        <!--<ImageButton x:Name="PopupUserCloseButton" 
+                        <ImageButton x:Name="PopupUserCloseButton" 
                                 Clicked="CloseUserPopup_Clicked" 
-                                Source="icon_battle_close_button"
-                                     Scale="0.5"/>-->
+                                Source="icon_battle_close_button.png"
+                                     Scale="0.5"/>
 
-                        <Button x:Name="PopupUserCloseButton" 
+                        <!--<Button x:Name="PopupUserCloseButton" 
                                 Clicked="CloseUserPopup_Clicked" 
-                                Text="Close"/>
+                                Text="Close"/>-->
                         
                     </StackLayout>
                 </Frame>
@@ -256,15 +256,15 @@
                                FontSize="Small"
                                />
 
-                        <!--<ImageButton x:Name="PopupMonsterCloseButton" 
+                        <ImageButton x:Name="PopupMonsterCloseButton" 
                                 Clicked="CloseMonsterPopup_Clicked" 
                                 Scale="0.5"
-                                     Source="icon_battle_close_button"
-                                />-->
+                                     Source="icon_battle_close_button.png"
+                                />
 
-                        <Button x:Name="PopupMonsterCloseButton" 
+                        <!--<Button x:Name="PopupMonsterCloseButton" 
                                 Clicked="CloseMonsterPopup_Clicked" 
-                                Text="Close"/>
+                                Text="Close"/>-->
                     </StackLayout>
                 </Frame>
             </StackLayout>
