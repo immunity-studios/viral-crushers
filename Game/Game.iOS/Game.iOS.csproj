@@ -408,4 +408,19 @@
   <ItemGroup>
     <BundleResource Include="Resources\teachergif.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\background_image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\vc_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autobutton_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\studio_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\s_background_image.png" />
+  </ItemGroup>
 </Project>

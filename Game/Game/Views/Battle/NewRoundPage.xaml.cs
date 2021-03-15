@@ -67,17 +67,18 @@ namespace Game.Views
                 Style = (Style)Application.Current.Resources["ImageBattleMediumStyle"],
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center,
-                Source = data.ImageURI
+                Source = data.ImageURI,
+                IsAnimationPlaying = true
             };
 
             // Hookup the background image
-            var CharacterBackgroundImage = new Image
-            {
-                Style = (Style)Application.Current.Resources["ImageBattleLargeStyle"],
-                HorizontalOptions = LayoutOptions.Center,
-                VerticalOptions = LayoutOptions.Center,
-                Source = "character background.png"
-            };
+            //var CharacterBackgroundImage = new Image
+            //{
+            //    Style = (Style)Application.Current.Resources["ImageBattleLargeStyle"],
+            //    HorizontalOptions = LayoutOptions.Center,
+            //    VerticalOptions = LayoutOptions.Center,
+            //    Source = "character_background.png"
+            //};
 
             // Hookup the background image
             var MonsterBackgroundImage = new Image
@@ -85,7 +86,7 @@ namespace Game.Views
                 Style = (Style)Application.Current.Resources["ImageBattleLargeStyle"],
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center,
-                Source = "monster background.png"
+                Source = "monster_background.png"
             };
 
             // Player Image Grid
@@ -98,12 +99,12 @@ namespace Game.Views
             };
 
             // Row 0
-            if (data.PlayerType == PlayerTypeEnum.Character)
-            {
-                ImageGrid.Children.Add(CharacterBackgroundImage);
-            } else
+            if (data.PlayerType == PlayerTypeEnum.Monster)
             {
                 ImageGrid.Children.Add(MonsterBackgroundImage);
+            } else
+            {
+                PlayerImage.Style = (Style)Application.Current.Resources["ImageBattleLargeStyle"];
             }
             
             ImageGrid.Children.Add(PlayerImage);

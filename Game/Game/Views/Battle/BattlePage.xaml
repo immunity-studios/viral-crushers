@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Game.Views.BattlePage">
+             x:Class="Game.Views.BattlePage"
+             xmlns:views="clr-namespace:Game.Views">
 
     <ContentPage.Content>
         <AbsoluteLayout
@@ -77,7 +78,7 @@
                             </StackLayout>
 
                             <StackLayout x:Name="DefenderBox" Style="{StaticResource PlayerBattleInfoBox}" HorizontalOptions="End">
-                                <Image x:Name="DefenderImage" Source="item.png" Style="{StaticResource ImageBattleMediumStyle}"/>
+                                    <Image x:Name="DefenderImage" Source="item.png" Style="{StaticResource ImageBattleMediumStyle}"/>
                                     <Label x:Name="DefenderName" Text="" Style="{StaticResource ValueStyleBattleMicro}" TextColor="{StaticResource ViralCrusherGreenColor}" FontAttributes="Bold"/>
                                     <Label x:Name="DefenderHealth" Text="" Style="{StaticResource ValueStyleBattleMicro}" TextColor="{StaticResource ViralCrusherGreenColor}" FontAttributes="Bold"/>
                             </StackLayout>
@@ -158,10 +159,10 @@
                             HeightRequest="100"
                             HorizontalOptions="CenterAndExpand">
 
-                        <StackLayout x:Name="MessageDisplayBox" 
+                        <Frame x:Name="MessageDisplayBox" 
                             IsVisible="false"
                                      Margin="0,20,0,0"
-                            Style="{StaticResource VerticalStack}" 
+                               BackgroundColor="AliceBlue"
                                     VerticalOptions="StartAndExpand"
                                     HorizontalOptions="CenterAndExpand">
 
@@ -172,7 +173,7 @@
                                     LineHeight="1"
                                     CharacterSpacing="1"
                                     Style="{StaticResource LabelStyle}"
-                                   TextColor="{StaticResource ViralCrusherWhiteColor}"
+                                   TextColor="{StaticResource ViralCrusherDarkPurpleColor}"
                                     FontSize="12"/>
 
                             <!--<WebView
@@ -186,7 +187,7 @@
                         BackgroundColor="Transparent"
                         IsVisible="false"
                         />-->
-                        </StackLayout>
+                        </Frame>
                     </StackLayout>
                 </StackLayout>
             </StackLayout>
@@ -273,16 +274,35 @@
                     x:Name="GameOverDisplay" 
                     IsVisible="false">
 
-                <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Padding="10">
-                    <Label Text="Thank you for Playing" Style="{StaticResource CenterMessageLargeStyle}"/>
+                <views:CurvedLabelControl Margin="0,60,0,-20"
+                                      FramePadding="30,0,30,20"
+                                      HorizontalOptions="Center"
+                                      Style="{StaticResource RedCurvedLabel}"
+                                      Text="Game Over" />
 
-                    <Label Text="Check your score, or click Exit and return soon" Style="{StaticResource MessageStyle}" LineBreakMode="WordWrap" HorizontalTextAlignment="Center" MaxLines="5" Padding="20"/>
+                <Frame Grid.Row="1" Margin="5,0,5,10" HorizontalOptions="FillAndExpand">
+                    <StackLayout Padding="0,10,0,0">
+                        <!--<StackLayout Padding="10,10,10,0" Style="{StaticResource HorizontalStack}">
+                            <Label Text="Found: " TextColor="{StaticResource ViralCrusherYellowColor}" FontSize="Medium"/>
+                            <Label Text="0" x:Name="TotalFound" TextColor="{StaticResource ViralCrusherYellowColor}" FontSize="Medium"/>
+                        </StackLayout>-->
 
-                    <Button x:Name="ShowScoreButton" Clicked="ShowScoreButton_Clicked" Text="Score" WidthRequest="50"/>
+                        
+                        <Label Text="Thank you for Playing!" Style="{StaticResource CenterMessageLargeStyle}"/>
 
-                    <Button x:Name="ExitButton" Clicked="ExitButton_Clicked" Text="Exit" WidthRequest="50"></Button>
+                        <BoxView Style="{StaticResource Separator}" />
 
-                </StackLayout>
+                        <Label Text="Check your score, or click Exit and return soon" 
+                               Style="{StaticResource MessageStyle}" 
+                               TextColor="{StaticResource ViralCrusherYellowColor}"
+                               LineBreakMode="WordWrap" HorizontalTextAlignment="Center" MaxLines="5" Padding="20"/>
+
+                        <Button x:Name="ShowScoreButton" Clicked="ShowScoreButton_Clicked" Text="Score" WidthRequest="50"/>
+
+                        <Button x:Name="ExitButton" Clicked="ExitButton_Clicked" Text="Exit" WidthRequest="50"></Button>
+
+                    </StackLayout>
+                </Frame>
             </StackLayout>
         </AbsoluteLayout>
     </ContentPage.Content>

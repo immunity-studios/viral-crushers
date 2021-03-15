@@ -162,7 +162,7 @@ namespace Game.Views
                 Style = (Style)Application.Current.Resources["ImageBattleLargeStyle"],
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center,
-                Source = "item background.png"
+                Source = "item_background.png"
             };
 
             // Player Image Grid
@@ -224,7 +224,7 @@ namespace Game.Views
                 Style = (Style)Application.Current.Resources["ImageBattleLargeStyle"],
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center,
-                Source = "item background.png"
+                Source = "item_background.png"
             };
 
             // Player Image Grid
@@ -278,7 +278,7 @@ namespace Game.Views
             // Hookup the image
             var PlayerImage = new ImageButton
             {
-                Style = (Style)Application.Current.Resources["ImageBattleMediumStyle"],
+                Style = (Style)Application.Current.Resources["ImageBattleLargeStyle"],
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center,
                 Source = data.ImageURI
@@ -289,28 +289,6 @@ namespace Game.Views
                 // Add a event to the user can click the item and see more
                 PlayerImage.Clicked += (sender, args) => SetSelectedCharacter(data);
             }
-
-            // Hookup the background image
-            var CharacterBackgroundImage = new Image
-            {
-                Style = (Style)Application.Current.Resources["ImageBattleLargeStyle"],
-                HorizontalOptions = LayoutOptions.Center,
-                VerticalOptions = LayoutOptions.Center,
-                Source = "character background.png"
-            };
-
-            // Player Image Grid
-            var ImageGrid = new Grid()
-            {
-                RowDefinitions =
-            {
-                new RowDefinition()
-            }
-            };
-
-            // Row 0
-            ImageGrid.Children.Add(CharacterBackgroundImage);
-            ImageGrid.Children.Add(PlayerImage);
 
             // Add the Level
             var PlayerLevelLabel = new Label
@@ -482,7 +460,7 @@ namespace Game.Views
                 Padding = 0,
                 Spacing = 0,
                 Children = {
-                    ImageGrid,
+                    PlayerImage,
                     PlayerNameLabel,
                 },
             };

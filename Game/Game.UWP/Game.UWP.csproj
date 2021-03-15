@@ -133,6 +133,8 @@
     <Content Include="Assets\Wide310x150Logo.scale-125.png" />
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
     <Content Include="athletegif.gif" />
+    <Content Include="autobutton_icon.png" />
+    <Content Include="background_image.png" />
     <Content Include="character_background.png" />
     <Content Include="coldgif.gif" />
     <Content Include="cold_monster_140.png" />
@@ -238,6 +240,8 @@
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
     <Content Include="splash_screen_620x300.png" />
     <Content Include="studentgif.gif" />
+    <Content Include="studio_logo.png" />
+    <Content Include="s_background_image.png" />
     <Content Include="teachergif.gif" />
     <Content Include="vaccine.png" />
     <Content Include="menu_battle_icon_100.png" />
@@ -252,6 +256,7 @@
     <Content Include="icon_add_button_140.png" />
     <Content Include="icon_back_button_140.png" />
     <Content Include="icon_about_button.png" />
+    <Content Include="vc_logo.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

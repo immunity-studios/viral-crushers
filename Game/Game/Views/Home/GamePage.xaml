@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:views="clr-namespace:Game.Views"
              x:Class="Game.Views.GamePage"
-             BackgroundImage="page_background.JPG">
+             BackgroundImage="background_image.png">
 
 
     <!--<ContentPage.ToolbarItems>
@@ -32,14 +32,12 @@
 
             <!-- Temporary Frame, replace with logo -->
             <Frame Grid.Row="1"
-                   CornerRadius="50"
                    BorderColor="Transparent"
-                   WidthRequest="220"
-                   HeightRequest="220"
                    BackgroundColor="Transparent"
                    HorizontalOptions="Center"
                    VerticalOptions="Center"
                    HasShadow="False">
+                <Image Source="vc_logo.png"></Image>
 
             </Frame>
 
