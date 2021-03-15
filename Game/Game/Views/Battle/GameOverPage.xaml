@@ -13,24 +13,24 @@
                                       HorizontalOptions="Center"
                                       Style="{StaticResource RedCurvedLabel}"
                                       FramePadding="10,0,10,0"
-                                      Text="Battle Over" />
-
-                <!--Close Button-->
-                <Button Clicked="CloseButton_Clicked" Text="Close"/>
+                                      Text="Game Over" />
 
                 <!--Total Score-->
-                <views:CurvedLabelControl Margin="20,20,0,-20"
-                                      HorizontalOptions="Start"
-                                      Style="{StaticResource YellowCurvedTitle}"
-                                      Text="Score" />
+                <Frame
+                    CornerRadius="10"
+                    Padding="10,0,10,0"
+                    BackgroundColor="{StaticResource ViralCrusherYellowColor}"            
+                    HorizontalOptions="Center"
+                    BorderColor="Transparent"
+                    HasShadow="False">
 
-                <Frame Margin="5,0,5,10" HorizontalOptions="FillAndExpand">
-                    <StackLayout Padding="10,10,0,10"  Style="{StaticResource HorizontalStack}">
-                        <Label Text="Score : " Style="{StaticResource MessageStyle}"/>
-                        <Label Text="0" x:Name="TotalScore" Style="{StaticResource MessageStyle}"/>
-                        <StackLayout Padding="1"></StackLayout>
+                    <StackLayout Padding="10,10,0,10" Style="{StaticResource HorizontalStack}">
+                        <Label Text="Score : " FontSize="Large" TextColor="{StaticResource ViralCrusherWhiteColor}"/>
+                        <Label Text="0" x:Name="TotalScore" FontSize="Large" TextColor="{StaticResource ViralCrusherWhiteColor}"/>
                     </StackLayout>
+
                 </Frame>
+
 
                 <!--Character List-->
                 <views:CurvedLabelControl Margin="20,20,0,-20"
@@ -47,9 +47,12 @@
                                             Wrap="Wrap"/>
                     </StackLayout>-->
                     <StackLayout Padding="10,10,10,0" Style="{StaticResource HorizontalStack}">
-                        <Label Text="Killed : " Style="{StaticResource LabelStyle}"/>
-                        <Label Text="0" x:Name="TotalCharactersKilled" Style="{StaticResource ValueStyle}"/>
+                        <Label Text="Killed: " TextColor="{StaticResource ViralCrusherYellowColor}" FontSize="Medium"/>
+                        <Label Text="0" x:Name="TotalCharactersKilled" TextColor="{StaticResource ViralCrusherYellowColor}" FontSize="Medium"/>
                     </StackLayout>
+
+                    <BoxView Style="{StaticResource Separator}" />
+
 
                     <FlexLayout x:Name="CharacterListFrame"
                                         JustifyContent="Start"
@@ -69,10 +72,12 @@
                     <StackLayout>
 
                         <StackLayout Padding="10,10,10,0" Style="{StaticResource HorizontalStack}">
-                            <Label Text="Killed : " Style="{StaticResource LabelStyle}"/>
-                            <Label Text="0" x:Name="TotalKilled" Style="{StaticResource ValueStyle}"/>
+                            <Label Text="Killed: " TextColor="{StaticResource ViralCrusherYellowColor}" FontSize="Medium"/>
+                            <Label Text="0" x:Name="TotalKilled" TextColor="{StaticResource ViralCrusherYellowColor}" FontSize="Medium"/>
                         </StackLayout>
 
+                        <BoxView Style="{StaticResource Separator}" />
+                        
                         <FlexLayout x:Name="MonsterListFrame"
                                         JustifyContent="Start"
                                         AlignContent="Start"
@@ -90,9 +95,11 @@
                     <StackLayout>
 
                         <StackLayout Padding="10,10,10,0" Style="{StaticResource HorizontalStack}">
-                            <Label Text="Collected : " Style="{StaticResource LabelStyle}"/>
-                            <Label Text="0" x:Name="TotalCollected" Style="{StaticResource ValueStyle}"/>
+                            <Label Text="Collected: " TextColor="{StaticResource ViralCrusherYellowColor}" FontSize="Medium"/>
+                            <Label Text="0" x:Name="TotalCollected" TextColor="{StaticResource ViralCrusherYellowColor}" FontSize="Medium"/>
                         </StackLayout>
+
+                        <BoxView Style="{StaticResource Separator}" />
 
                         <FlexLayout x:Name="ItemListFrame"
                                         JustifyContent="Start"

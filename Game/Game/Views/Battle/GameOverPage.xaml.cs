@@ -82,6 +82,7 @@ namespace Game.Views
             {
                 Text = "Level : " + data.Level,
                 Style = (Style)Application.Current.Resources["ValueStyleMicro"],
+                TextColor = Color.DarkOrange,
                 HorizontalOptions = LayoutOptions.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
                 Padding = 0,
