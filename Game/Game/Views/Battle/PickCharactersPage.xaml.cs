@@ -24,6 +24,8 @@ namespace Game.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PickCharactersPage : ContentPage
     {
+        // The view model, used for data binding
+        readonly CharacterIndexViewModel ViewModel = CharacterIndexViewModel.Instance;
 
         // Empty Constructor for UTs
         public PickCharactersPage(bool UnitTest) { }
