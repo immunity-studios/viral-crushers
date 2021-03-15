@@ -429,4 +429,22 @@
   <ItemGroup>
     <BundleResource Include="Resources\icon_battle_rest_button.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_battle_move_button_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_battle_attack_button_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_battle_next_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_auto_battle_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_battle_rest_button_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_battle_ability_button_gray.png" />
+  </ItemGroup>
 </Project>

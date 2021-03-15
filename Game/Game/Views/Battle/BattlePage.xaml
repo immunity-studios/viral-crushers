@@ -164,13 +164,14 @@
                             HorizontalOptions="FillAndExpand">
 
                         <Frame x:Name="MessageDisplayBox" 
-                            IsVisible="false"
+                            IsVisible="true"
                                      Margin="0,20,0,0"
                                BackgroundColor="AliceBlue"
                                     VerticalOptions="StartAndExpand"
                                     HorizontalOptions="FillAndExpand">
 
                             <Label x:Name="BattleMessages" 
+                                    Text="Let the Battle Begin!"
                                     HorizontalOptions="CenterAndExpand" 
                                     LineBreakMode="WordWrap" 
                                     MaxLines="3"
