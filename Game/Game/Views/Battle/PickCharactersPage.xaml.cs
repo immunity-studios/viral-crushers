@@ -77,7 +77,9 @@ namespace Game.Views
             {
                 // Manually deselect Character.
 
-                CharacterModel data = previousList.LastOrDefault() as CharacterModel;
+                var index = previousList.FindIndex(m => !currentList.Contains(m));
+
+                CharacterModel data = previousList.ElementAtOrDefault(index) as CharacterModel;
 
                 CharactersCollectionView.SelectionChangedCommand = null;
                 // Remove the character from the list
