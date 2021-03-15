@@ -74,7 +74,8 @@ namespace Game.AudioSystem
         /// </summary>
         public BaseAudioClip MX_MENU_P1_4XLOOP_4_4_116BPM = new SimpleAudioClip(
             filePath: "Game.AudioFiles.Music.Menu.MX_MENU_P1_4XLOOP_4_4_116BPM.wav",
-            loop: true
+            loop: true,
+            numberOfLoopsContained: 4
         );
 
         /// <summary>
@@ -82,7 +83,8 @@ namespace Game.AudioSystem
         /// </summary>
         public BaseAudioClip MX_MENU_P2_4XLOOP_4_4_116BPM = new SimpleAudioClip(
             filePath: "Game.AudioFiles.Music.Menu.MX_MENU_P2_4XLOOP_4_4_116BPM.wav",
-            loop: true
+            loop: true,
+            numberOfLoopsContained: 4
         );
 
         /// <summary>
@@ -90,7 +92,8 @@ namespace Game.AudioSystem
         /// </summary>
         public BaseAudioClip MX_MENU_P3_4XLOOP_4_4_116BPM = new SimpleAudioClip(
             filePath: "Game.AudioFiles.Music.Menu.MX_MENU_P3_4XLOOP_4_4_116BPM.wav",
-            loop: true
+            loop: true,
+            numberOfLoopsContained: 4
         );
 
         /// <summary>
@@ -98,7 +101,8 @@ namespace Game.AudioSystem
         /// </summary>
         public BaseAudioClip MX_BATTLE_P1_1XLOOP_4_4_140BPM_LONG = new SimpleAudioClip(
             filePath: "Game.AudioFiles.Music.Battle.MX_BATTLE_P1_1XLOOP_4_4_140BPM_LONG.wav",
-            loop: true
+            loop: true,
+            numberOfLoopsContained: 1
         );
 
 
