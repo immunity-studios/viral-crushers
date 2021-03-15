@@ -10,6 +10,8 @@
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="FillAndExpand">
 
+            <!--<views:BattleSettingsButtonControl Margin="30,20,0,0" HorizontalOptions="Start" Scale="0.8" />-->
+
             <!--The Game UI Screen -->
             <StackLayout VerticalOptions="Fill"
                         x:Name="GameUIDisplay" 
@@ -17,6 +19,8 @@
                         AbsoluteLayout.LayoutBounds="1,1,1,1" 
                         AbsoluteLayout.LayoutFlags="All"
                          >
+
+                
 
                 <!--The Top of the Battle UI Holds the List of Players-->
                 <StackLayout VerticalOptions="Start" x:Name="TopPlayerDisplay">
@@ -89,12 +93,6 @@
                         <StackLayout Grid.Row="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand" Scale="1"
                                      >
                             <ImageButton x:Name="RestButton" Clicked="RestButton_Clicked" Source="icon_battle_rest_button_gray.png" IsVisible="False" IsEnabled="False" />
-
-                            <!--<Button x:Name="AttackButton" Clicked="AttackButton_Clicked" Text="Attack" IsVisible="False" IsEnabled="False"/>
-                            
-                            <Button x:Name="AbilityButton" Clicked="AbilityButton_Clicked" Text="Use Ability" IsVisible="False" IsEnabled="False"/>-->
-                            
-                            <!--<Button x:Name="MoveButton" Clicked="MoveButton_Clicked" Text="Move" IsVisible="False" IsEnabled="False"/>-->
 
                             <ImageButton x:Name="AttackButton" Clicked="AttackButton_Clicked" Source="icon_battle_attack_button_gray.png" IsVisible="False" IsEnabled="False" />
                             

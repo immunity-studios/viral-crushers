@@ -559,7 +559,7 @@ namespace Game.Views
             RestButton.Source = "icon_battle_rest_button.png";
 
 
-            // If haven't chosen Defender and the Targer isn't in the attack range of Attacker 
+            // If haven't chosen Defender and the Target isn't in the attack range of Attacker 
             // then the Attack Button is not enabled to click
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender != null
                 && BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.IsTargetInRange(data.Player, BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender))
