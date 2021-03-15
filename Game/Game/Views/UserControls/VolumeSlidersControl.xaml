@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Game.Views.VolumeSlidersControl"
+    BackgroundColor="{StaticResource ViralCrusherWhiteColor}">
+    <ContentView.Resources>
+        <Thickness x:Key="ToolbarLabelMargin">0,-10,0,10</Thickness>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <StackLayout Orientation="Vertical"
+                     HorizontalOptions="Center">
+            <!--Audio Settings-->
+        
+        <Label Text="Music Volume:"
+                        Style="{DynamicResource LabelStyle}"/>
+        <Slider 
+                        Minimum="0"
+                        Maximum="1"
+                        x:Name="musicVolume"
+                        ValueChanged="OnMusicVolumeSliderValueChanged"/>
+
+
+        <Label Text="Sound Effects Volume:"
+                        Style="{DynamicResource LabelStyle}"/>
+        <Slider 
+                        Minimum="0"
+                        Maximum="1"
+                        x:Name="sfxVolume"
+                        ValueChanged="OnSFXVolumeSliderValueChanged"/>
+        </StackLayout>
+
+    </ContentView.Content>
+</ContentView>
