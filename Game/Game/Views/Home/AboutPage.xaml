@@ -155,24 +155,9 @@
                     </StackLayout>
                 </StackLayout>
 
-                <!--Audio Settings-->
-
-                <Label Text="Music Volume:"
-                        Style="{DynamicResource LabelStyle}"/>
-                <Slider 
-                        Minimum="0"
-                        Maximum="1"
-                        x:Name="musicVolume"
-                        ValueChanged="OnMusicVolumeSliderValueChanged"/>
-                
-                 
-                <Label Text="Sound Effects Volume:"
-                        Style="{DynamicResource LabelStyle}"/>
-                <Slider 
-                        Minimum="0"
-                        Maximum="1"
-                        x:Name="sfxVolume"
-                        ValueChanged="OnSFXVolumeSliderValueChanged"/>
+                <views:VolumeSlidersControl
+                    x:Name="volumeSlidersControl"
+                    />
 
             </StackLayout>
         </StackLayout>
