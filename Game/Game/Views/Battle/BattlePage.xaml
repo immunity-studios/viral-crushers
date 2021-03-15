@@ -214,7 +214,7 @@
                                LineBreakMode="WordWrap" 
                                TextColor="{StaticResource ViralCrusherGreenColor}"
                                FontSize="Small"/>
-                        <Label Text="1. Choose one Character as Attacker." 
+                        <!--<Label Text="1. Choose one Character as Attacker." 
                                Style="{StaticResource PopupItemTextStyle}" 
                                MaxLines="2" 
                                LineBreakMode="WordWrap" 
@@ -225,12 +225,13 @@
                                MaxLines="2" 
                                LineBreakMode="WordWrap" 
                                TextColor="{StaticResource ViralCrusherGreenColor}"
-                               FontSize="Small"/>
+                               FontSize="Small"/>-->
 
                         <ImageButton x:Name="PopupUserCloseButton" 
                                 Clicked="CloseUserPopup_Clicked" 
                                 Source="icon_battle_close_button.png"
-                                     Scale="0.5"/>
+                                     Scale="0.3"
+                                     HeightRequest="100"/>
 
                         <!--<Button x:Name="PopupUserCloseButton" 
                                 Clicked="CloseUserPopup_Clicked" 
@@ -249,7 +250,7 @@
 
                 <Frame BorderColor="{StaticResource TriciaryTextColor}" Padding="1">
 
-                    <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand" Padding="5">
+                    <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand" Padding="10">
 
                         <Label x:Name="PopupMonsterTurn" Text="IT IS MONSTER'S TURN!" Style="{StaticResource PopupItemTextStyle}" MaxLines="2" LineBreakMode="WordWrap" 
                                TextColor="{StaticResource ViralCrusherGreenColor}"
@@ -258,7 +259,8 @@
 
                         <ImageButton x:Name="PopupMonsterCloseButton" 
                                 Clicked="CloseMonsterPopup_Clicked" 
-                                Scale="0.5"
+                                Scale="0.3"
+                                     HeightRequest="100"
                                      Source="icon_battle_close_button.png"
                                 />
 

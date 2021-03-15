@@ -227,25 +227,37 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Volume slider which controls the global audio engine volume
-        /// TODO implement a global volume control method for the Audio Engine,
-        /// to be controlled with this slider
+        /// Volume slider for music which controls the audio engine
         /// TODO create a number label which shows the current value of slider
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        void OnVolumeSliderValueChanged(object sender, ValueChangedEventArgs args)
+        void OnMusicVolumeSliderValueChanged(object sender, ValueChangedEventArgs args)
         {
             // get slider value
             double value = args.NewValue;
             // Set volume of global audio engine with value of slider 
-            AudioSystem.AudioEngine.Instance.SetBusVolume(AudioSystem.AudioBusEnum.Master, value);
+            AudioSystem.AudioEngine.Instance.SetBusVolume(AudioSystem.AudioBusEnum.Music, value);
+        }
+
+        /// <summary>
+        /// Volume slider for sound effects (SFX) which controls the audio engine
+        /// TODO create a number label which shows the current value of slider
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        void OnSFXVolumeSliderValueChanged(object sender, ValueChangedEventArgs args)
+        {
+            // get slider value
+            double value = args.NewValue;
+            // Set volume of global audio engine with value of slider 
+            AudioSystem.AudioEngine.Instance.SetBusVolume(AudioSystem.AudioBusEnum.SFX, value);
         }
 
         bool SetVolumeSliderLevelsToAudioEngineBusLevels()
         {
-            
-            masterVolume.Value = AudioSystem.AudioEngine.Instance.GetBusVolume(AudioSystem.AudioBusEnum.Master);
+            musicVolume.Value = AudioSystem.AudioEngine.Instance.GetBusVolume(AudioSystem.AudioBusEnum.Music);
+            sfxVolume.Value = AudioSystem.AudioEngine.Instance.GetBusVolume(AudioSystem.AudioBusEnum.SFX);
             return true;
         }
     }

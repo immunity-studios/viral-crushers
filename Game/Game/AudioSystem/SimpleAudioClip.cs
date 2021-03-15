@@ -21,8 +21,8 @@ namespace Game.AudioSystem
 
 
         /// <inheritdoc cref="BaseAudioClip"/>
-        public SimpleAudioClip(string filePath, double volumeMax = 1.0, bool loop = false, int numberOfLoopsContained = 0)
-            : base(filePath, volumeMax, loop, numberOfLoopsContained)
+        public SimpleAudioClip(string filePath, double volumeMax = 1.0, bool loop = false, int numberOfLoopsContained = 0, AudioBusEnum audioBus = AudioBusEnum.Music)
+            : base(filePath, volumeMax, loop, numberOfLoopsContained, audioBus)
         {
            System.Console.WriteLine("In SimpleAudioClip()");
            if (Setup())
