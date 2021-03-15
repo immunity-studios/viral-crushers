@@ -50,7 +50,7 @@
                         </Frame>-->
 
                         <Image x:Name="CharacterImage"
-                                       Grid.RowSpan="4"
+                                       Grid.RowSpan="3"
                                        HeightRequest="100"
                                        Source="{Binding Data.ImageURI}"
                                        WidthRequest="100" 
