@@ -615,7 +615,7 @@ namespace Game.Views
         /// <summary>
         /// Draws the Game Board Attacker and Defender
         /// </summary>
-        public void DrawGameBoardAttackerDefenderSection()
+        public async void DrawGameBoardAttackerDefenderSection()
         {
             BattlePlayerBoxVersus.Text = "";
 
@@ -631,7 +631,7 @@ namespace Game.Views
 
             AttackerImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.ImageURI;
             AttackerName.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.Name;
-            AttackerHealth.Text = "HP: " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.GetCurrentHealthTotal.ToString() + " / " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.GetMaxHealthTotal.ToString();
+            AttackerHealth.Text = "HP: " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.GetCurrentHealthTotal.ToString();
 
             // Show what action the Attacker used
             AttackerAttack.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.PreviousAction.ToImageURI();
@@ -644,7 +644,40 @@ namespace Game.Views
             
             DefenderImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.ImageURI;
             DefenderName.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.Name;
-            DefenderHealth.Text = "HP: " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.GetCurrentHealthTotal.ToString() + " / " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.GetMaxHealthTotal.ToString();
+            DefenderHealth.Text = "HP: " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.GetCurrentHealthTotal.ToString();
+
+            // Attack Animation
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.PreviousAction == ActionEnum.Attack)
+            {
+                AttackerImage.RotateTo(20, 150);
+                await AttackerImage.TranslateTo(20, 0, 150);
+                AttackerImage.RelRotateTo(-20, 150);
+                await AttackerImage.TranslateTo(0, 0, 150);
+                await DefenderImage.ScaleTo(0.5, 150);
+                await DefenderImage.ScaleTo(2, 150);
+                await DefenderImage.ScaleTo(1, 150);
+            }
+
+            // Ability Animation
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.PreviousAction == ActionEnum.Ability)
+            {
+                AttackerImage.ScaleTo(1.5, 200);
+                await AttackerImage.RotateTo(20, 200);
+                AttackerImage.ScaleTo(1, 150);
+                await AttackerImage.RotateTo(-20, 200);
+                AttackerImage.ScaleTo(1.5, 150);
+                await AttackerImage.RotateTo(-20, 200);
+                AttackerImage.ScaleTo(1, 150);
+                await AttackerImage.RotateTo(20, 200);
+            }
+
+            // Rest Animation
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.PreviousAction == ActionEnum.Rest)
+            {
+                await AttackerImage.RotateTo(360, 150);
+                await AttackerImage.RotateTo(360, 150);
+                await AttackerImage.RotateTo(360, 150);
+            }
 
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.Alive == false)
             {
