@@ -108,7 +108,7 @@ namespace UnitTests.Views
 
             // Assert
             Assert.NotNull(page.ViewModel.Data.ImageURI);
-            Assert.AreEqual("icon_athlete.png", page.ViewModel.Data.ImageURI);
+            Assert.AreEqual("athletegif.gif", page.ViewModel.Data.ImageURI);
         }
 
         [Test]
