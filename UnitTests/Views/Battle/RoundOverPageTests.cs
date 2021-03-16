@@ -255,11 +255,12 @@ namespace UnitTests.Views
             // Arrange
             var item = ItemIndexViewModel.Instance.GetDefaultItem(ItemLocationEnum.PrimaryHand);
             var StackItem = page.GetItemToDisplay(item);
-            var dataImage = StackItem.Children[0];
-
+            // stack layout holds a grid now, first get that
+            var grid = (Grid)StackItem.Children[0];
+            // grids second child is the image button
+            var imgButton = (ImageButton)grid.Children[1];
             // Act
-            ((ImageButton)dataImage).PropagateUpClicked();
-
+            imgButton.PropagateUpClicked();
             // Reset
 
             // Assert
