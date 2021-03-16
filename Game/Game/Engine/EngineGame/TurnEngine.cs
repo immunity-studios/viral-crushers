@@ -64,10 +64,10 @@ namespace Game.Engine.EngineGame
                     EngineSettings.CurrentAction = DetermineActionChoice(Attacker);
 
                     // When in doubt, attack...
-                    if (EngineSettings.CurrentAction == ActionEnum.Unknown)
-                    {
-                        EngineSettings.CurrentAction = ActionEnum.Attack;
-                    }
+                    //if (EngineSettings.CurrentAction == ActionEnum.Unknown)
+                    //{
+                    //    EngineSettings.CurrentAction = ActionEnum.Attack;
+                    //}
                 }
 
                 switch (EngineSettings.CurrentAction)
@@ -83,10 +83,6 @@ namespace Game.Engine.EngineGame
                     case ActionEnum.Move:
                         result = MoveAsTurn(Attacker);
                         break;
-
-                    case ActionEnum.Rest:
-                        result = Rest(Attacker);
-                        break;
                 }
             }
             else
@@ -98,10 +94,10 @@ namespace Game.Engine.EngineGame
                     EngineSettings.CurrentAction = DetermineActionChoice(Attacker);
 
                     // When in doubt, attack...
-                    if (EngineSettings.CurrentAction == ActionEnum.Unknown)
-                    {
-                        EngineSettings.CurrentAction = ActionEnum.Attack;
-                    }
+                    //if (EngineSettings.CurrentAction == ActionEnum.Unknown)
+                    //{
+                    //    EngineSettings.CurrentAction = ActionEnum.Attack;
+                    //}
                 }
 
                 switch (EngineSettings.CurrentAction)
