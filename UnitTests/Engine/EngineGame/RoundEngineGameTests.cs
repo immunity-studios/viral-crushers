@@ -643,6 +643,63 @@ namespace UnitTests.Engine.EngineGame
             // Assert
             Assert.AreEqual(true, result);
         }
+
+        [Test]
+        public void RoundEngine_PickupItemsFromPool_Valid_Default_Not_AutoBattle_Should_Pass()
+        {
+            Engine.EngineSettings.MonsterList.Clear();
+            Engine.EngineSettings.BattleScore.AutoBattle = false;
+
+            // Both need to be character to fall through to the Name Test
+            // Arrange
+            var Character = new CharacterModel
+            {
+                Speed = 20,
+                Level = 1,
+                CurrentHealth = 1,
+                ExperienceTotal = 1,
+                Name = "Z",
+                ListOrder = 1,
+                Guid = "me"
+            };
+
+            var AssignedItem = new ItemModel
+            {
+                Name = "Kleenex",
+                Description = "Ultra Soft Facial Tissues",
+                ImageURI = "icon_tissue_box.png",
+                IsConsumable = true,
+                Count = 10,
+                Range = 0,
+                Damage = 1,
+                Value = 9,
+                Location = ItemLocationEnum.OffHand,
+                Attribute = AttributeEnum.MaxHealth,
+                ItemType = ItemTypeEnum.BoxOfTissues,
+            };
+
+            // Add each model here to warm up and load it.
+            Game.Helpers.DataSetsHelper.WarmUp();
+
+            var CharacterPlayer = new PlayerInfoModel(Character);
+            Engine.EngineSettings.CharacterList.Clear();
+            Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(Character));
+
+            // Make the List
+            Engine.EngineSettings.PlayerList = Engine.Round.MakePlayerList();
+
+            Engine.EngineSettings.AssignedItem = AssignedItem;
+
+
+            // Act
+            var result = Engine.Round.PickupItemsFromPool(CharacterPlayer);
+
+            // Reset
+            Engine.EngineSettings.AssignedItem = null;
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
         #endregion PickupItemsFromPool
 
         #region EndRound

@@ -325,6 +325,7 @@ namespace Game.Engine.EngineGame
                 } else
                 {
                     character.AddItem(EngineSettings.AssignedItem.Location, EngineSettings.AssignedItem.Id);
+                    return true;
                 }
             }
             return true;

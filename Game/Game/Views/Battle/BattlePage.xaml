@@ -10,7 +10,6 @@
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="FillAndExpand">
 
-            <!--<views:BattleSettingsButtonControl Margin="30,20,0,0" HorizontalOptions="Start" Scale="0.8" />-->
 
             <!--The Game UI Screen -->
             <StackLayout VerticalOptions="Fill"
