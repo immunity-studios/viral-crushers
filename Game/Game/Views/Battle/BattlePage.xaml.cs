@@ -514,8 +514,7 @@ namespace Game.Views
             // Draw defender in the battle infomation box
             DefenderImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.ImageURI;
             DefenderName.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.Name;
-            DefenderHealth.Text = "HP: " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.GetCurrentHealthTotal.ToString() + " / " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.GetMaxHealthTotal.ToString();
-
+            DefenderHealth.Text = "HP: " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.GetCurrentHealthTotal.ToString();
             BattlePlayerBoxVersus.Text = "vs";
 
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker != null
@@ -854,6 +853,7 @@ namespace Game.Views
             PopupUserLoadingView.IsVisible = false;
             BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(null);
             BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(null);
+            DrawGameBoardClear();
         }
 
         /// <summary>
