@@ -1339,6 +1339,7 @@ namespace UnitTests.Engine.EngineBase
             var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
             CharacterPlayer.PrimaryHand = weapon.Id;
             Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
+            CharacterPlayer.Range = 10;
 
             var Monster = new MonsterModel();
             Engine.EngineSettings.PlayerList.Add(new PlayerInfoModel(Monster));
