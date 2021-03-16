@@ -63,15 +63,11 @@ namespace Game.Engine.EngineGame
                     // Set the action if one is not set
                     EngineSettings.CurrentAction = DetermineActionChoice(Attacker);
 
-
-                    // NOTE: (Ross) I have commented out the block below, because there is no way the CurrentAction 
-                    // will be Unknown at this point. (The above call to DetermineActionChoice cannot return ActionEnum.Unknown)
-                    
                     // When in doubt, attack...
-                    //if (EngineSettings.CurrentAction == ActionEnum.Unknown)
-                    //{
-                    //    EngineSettings.CurrentAction = ActionEnum.Attack;
-                    //}
+                    if (EngineSettings.CurrentAction == ActionEnum.Unknown)
+                    {
+                        EngineSettings.CurrentAction = ActionEnum.Attack;
+                    }
                 }
 
                 switch (EngineSettings.CurrentAction)
@@ -101,14 +97,11 @@ namespace Game.Engine.EngineGame
                     // Set the action if one is not set
                     EngineSettings.CurrentAction = DetermineActionChoice(Attacker);
 
-                    // NOTE: (Ross) I have commented out the block below, because there is no way the CurrentAction 
-                    // will be Unknown at this point. (The above call to DetermineActionChoice cannot return ActionEnum.Unknown)
-
                     // When in doubt, attack...
-                    //if (EngineSettings.CurrentAction == ActionEnum.Unknown)
-                    //{
-                    //    EngineSettings.CurrentAction = ActionEnum.Attack;
-                    //}
+                    if (EngineSettings.CurrentAction == ActionEnum.Unknown)
+                    {
+                        EngineSettings.CurrentAction = ActionEnum.Attack;
+                    }
                 }
 
                 switch (EngineSettings.CurrentAction)
@@ -205,8 +198,45 @@ namespace Game.Engine.EngineGame
              * The Character will move to the selected position in the map.
              * 
              */
+            if (EngineSettings.BattleScore.AutoBattle)
+            {
+                if (Attacker.PlayerType == PlayerTypeEnum.Monster)
+                {
+                    // For Attack, Choose Who
+                    EngineSettings.CurrentDefender = AttackChoice(Attacker);
 
-            // if (Attacker.PlayerType == PlayerTypeEnum.Monster)
+                    if (EngineSettings.CurrentDefender == null)
+                    {
+                        return false;
+                    }
+
+                    // Get X, Y for Defender
+                    var locationDefender = EngineSettings.MapModel.GetLocationForPlayer(EngineSettings.CurrentDefender);
+                    if (locationDefender == null)
+                    {
+                        return false;
+                    }
+
+                    var locationAttacker = EngineSettings.MapModel.GetLocationForPlayer(Attacker);
+                    if (locationAttacker == null)
+                    {
+                        return false;
+                    }
+
+                    // Find Location Nearest to Defender that is Open.
+
+                    // Get the Open Locations
+                    var openSquare = EngineSettings.MapModel.ReturnClosestEmptyLocation(locationDefender);
+
+                    Debug.WriteLine(string.Format("{0} moves from {1},{2} to {3},{4}", locationAttacker.Player.Name, locationAttacker.Column, locationAttacker.Row, openSquare.Column, openSquare.Row));
+
+                    EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " moves closer to " + EngineSettings.CurrentDefender.Name;
+
+                    return EngineSettings.MapModel.MovePlayerOnMap(locationAttacker, openSquare);
+                }
+
+                return true;
+            } else
             {
                 // For Attack, Choose Who
                 EngineSettings.CurrentDefender = AttackChoice(Attacker);
@@ -239,7 +269,7 @@ namespace Game.Engine.EngineGame
                 EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " moves closer to " + EngineSettings.CurrentDefender.Name;
 
                 return EngineSettings.MapModel.MovePlayerOnMap(locationAttacker, openSquare);
-            } 
+            }
         }
 
         /// <summary>
