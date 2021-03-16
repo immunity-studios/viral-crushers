@@ -540,9 +540,6 @@ namespace Game.Views
              */
             BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = data.Player;
 
-            // Clear Game Board
-            DrawGameBoardClear();
-
             if (data.Player.Job == CharacterJobEnum.Athlete)
             {
                 data.Player.ImageURI = "athletegif.gif";
