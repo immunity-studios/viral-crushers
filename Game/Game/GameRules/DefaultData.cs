@@ -54,7 +54,7 @@ namespace Game.GameRules
                     Name = "Purell",
                     Description = "Unscent Advanced Hand Sanitizer",
                     ImageURI = "icon_sanitizer.png",
-                    Range = 10,
+                    Range = 100,
                     Damage = 5,
                     Value = 4,
                     Location = ItemLocationEnum.PrimaryHand,
