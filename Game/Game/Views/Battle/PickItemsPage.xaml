@@ -191,10 +191,11 @@
                             Clicked="AssignNoticePopup_Clicked" 
                             Text="Assign"/>
 
-                    <Button Grid.Row="1"
+                    <ImageButton Grid.Row="1"
                             Grid.Column="1"
                             Clicked="CloseNoticePopup_Clicked" 
-                            Text="Close"/>
+                            Source="icon_battle_close_button.png"
+                                 Scale="0.5"/>
                 </Grid>
             </Frame>
 

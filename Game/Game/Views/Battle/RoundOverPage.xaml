@@ -97,7 +97,7 @@
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
                             <ImageButton Clicked="AutoAssignButton_Clicked" Source="icon_battle_assign_items_button.png"/>
-                            <ImageButton Grid.Column="1"  Clicked="CloseButton_Clicked" Source="icon_battle_close_button.png"/>
+                            <ImageButton Grid.Column="1"  Clicked="CloseButton_Clicked" Source="icon_battle_close_button.png" Scale="0.5"/>
                         </Grid>
 
                     </StackLayout>
@@ -145,9 +145,10 @@
                                    TextColor="{StaticResource ViralCrusherWhiteColor}"/>
                         </StackLayout>
 
-                        <Button x:Name="PopupCloseButton" 
+                        <ImageButton x:Name="PopupCloseButton" 
                                 Clicked="ClosePopup_Clicked" 
-                                Text="Close"/>
+                                Source="icon_battle_close_button.png"
+                                     Scale="0.5"/>
                     </StackLayout>
                 </Frame>
             </StackLayout>

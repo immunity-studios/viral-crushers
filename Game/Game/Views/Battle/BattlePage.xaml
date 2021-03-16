@@ -306,7 +306,7 @@
 
                         <Button x:Name="ShowScoreButton" Clicked="ShowScoreButton_Clicked" Text="Score"/>
 
-                        <Button x:Name="ExitButton" Clicked="ExitButton_Clicked" Text="Exit"></Button>
+                        <ImageButton x:Name="ExitButton" Clicked="ExitButton_Clicked" Source="icon_battle_exit_button.png"></ImageButton>
 
                     </StackLayout>
                 </Frame>
