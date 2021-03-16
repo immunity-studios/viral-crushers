@@ -1447,6 +1447,11 @@ namespace UnitTests.Engine.EngineGame
 
             var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Teacher });
 
+
+            // Make player hurt so healing happens
+            CharacterPlayer.CurrentHealth = 1;
+            CharacterPlayer.MaxHealth = 50;
+
             // Get the longest range weapon in stock.
             var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
             CharacterPlayer.PrimaryHand = weapon.Id;
