@@ -206,7 +206,7 @@ namespace Game.Engine.EngineGame
              * 
              */
 
-            if (Attacker.PlayerType == PlayerTypeEnum.Monster)
+            // if (Attacker.PlayerType == PlayerTypeEnum.Monster)
             {
                 // For Attack, Choose Who
                 EngineSettings.CurrentDefender = AttackChoice(Attacker);
@@ -239,20 +239,7 @@ namespace Game.Engine.EngineGame
                 EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " moves closer to " + EngineSettings.CurrentDefender.Name;
 
                 return EngineSettings.MapModel.MovePlayerOnMap(locationAttacker, openSquare);
-            } else
-            {
-                var locationAttacker = EngineSettings.MapModel.GetLocationForPlayer(Attacker);
-                if (locationAttacker == null)
-                {
-                    return false;
-                }
-
-                Debug.WriteLine(string.Format("{0} moves from {1},{2} to {3},{4}", locationAttacker.Player.Name, locationAttacker.Column, locationAttacker.Row, EngineSettings.SelectedMapLocation.Column, EngineSettings.SelectedMapLocation.Row));
-
-                EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " moves to position(" + EngineSettings.SelectedMapLocation.Row + ", " + EngineSettings.SelectedMapLocation.Column + ")";
-
-                return EngineSettings.MapModel.MovePlayerOnMap(locationAttacker, EngineSettings.SelectedMapLocation);
-            }
+            } 
         }
 
         /// <summary>
