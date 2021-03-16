@@ -11,7 +11,13 @@ namespace Game.Models
     public enum CharacterJobEnum
     {
         // Not specified
-        Unknown = 0,    
+        Unknown = 0,
+
+        // Fighters hit hard and have fight abilities
+        Fighter = 10,
+
+        // Clerics defend well and have buff abilities
+        Cleric = 12,
 
         // Doctor can create vaccine
         Doctor = 18,
@@ -23,10 +29,10 @@ namespace Game.Models
         Athlete = 14,
 
         // Police Officer can increase attack for all characters
-        PoliceOfficer = 12,
+        PoliceOfficer = 32,
 
         // College Student can weaken defense of all monsters
-        CollegeStudent = 10,
+        CollegeStudent = 31,
 
         // Firefighter can make panacea
         Firefighter = 20,
@@ -50,6 +56,14 @@ namespace Game.Models
 
             switch (value)
             {
+                case CharacterJobEnum.Fighter:
+                    Message = "Fighter";
+                    break;
+
+                case CharacterJobEnum.Cleric:
+                    Message = "Cleric";
+                    break;
+
                 case CharacterJobEnum.Doctor:
                     Message = "Doctor";
                     break;
