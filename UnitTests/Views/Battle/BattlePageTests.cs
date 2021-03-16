@@ -33,19 +33,24 @@ namespace UnitTests.Views
             // For now, set the engine to the Koenig Engine, change when ready 
             BattleEngineViewModel.Instance.SetBattleEngineToGame();
 
-            page = new BattlePage();
-            
-           
 
             // Put seed data into the system for all tests
             BattleEngineViewModel.Instance.Engine.Round.ClearLists();
+            BattleEngineViewModel.Instance.Engine.EngineSettings.MaxNumberPartyMonsters = 6;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.MaxNumberPartyCharacters = 6;
+
+            for (int i = BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Count; i < BattleEngineViewModel.Instance.Engine.EngineSettings.MaxNumberPartyCharacters; i++)
+            {
+                BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(new CharacterModel()));
+            }
+
+            //BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Add(new PlayerInfoModel(new MonsterModel()));
+            //BattleEngineViewModel.Instance.Engine.Round.MakePlayerList();
 
             //Start the Engine in AutoBattle Mode
             BattleEngineViewModel.Instance.Engine.StartBattle(false);
 
-            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(new CharacterModel()));
-            BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Add(new PlayerInfoModel(new MonsterModel()));
-            BattleEngineViewModel.Instance.Engine.Round.MakePlayerList();
+            page = new BattlePage();
         }
 
         [TearDown]
