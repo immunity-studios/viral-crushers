@@ -567,7 +567,7 @@ namespace UnitTests.Engine.EngineBase
             Assert.AreEqual(true, result);
         }
 
-/*        [Test]
+        [Test]
         public void TurnEngine_TakeTurn_Ability_Should_Pass()
         {
             // Arrange
@@ -576,6 +576,7 @@ namespace UnitTests.Engine.EngineBase
             Engine.EngineSettings.CurrentActionAbility = AbilityEnum.Bandage;
 
             var PlayerInfo = new PlayerInfoModel(new CharacterModel());
+            PlayerInfo.AbilityTracker.Add(AbilityEnum.Bandage, 5);
 
             // Act
             var result = Engine.Round.Turn.TakeTurn(PlayerInfo);
@@ -584,7 +585,7 @@ namespace UnitTests.Engine.EngineBase
 
             // Assert
             Assert.AreEqual(true, result);
-        }*/
+        }
 
         [Test]
         public void TurnEngine_TakeTurn_Move_Should_Pass()

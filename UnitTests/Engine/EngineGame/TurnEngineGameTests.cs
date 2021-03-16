@@ -574,6 +574,7 @@ namespace UnitTests.Engine.EngineGame
             Engine.EngineSettings.CurrentActionAbility = AbilityEnum.Bandage;
 
             var PlayerInfo = new PlayerInfoModel(new CharacterModel());
+            PlayerInfo.AbilityTracker.Add(AbilityEnum.Bandage, 5);
 
             // Act
             var result = Engine.Round.Turn.TakeTurn(PlayerInfo);
@@ -1490,29 +1491,6 @@ namespace UnitTests.Engine.EngineGame
 
             Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
             Engine.EngineSettings.BattleScore.AutoBattle = true;
-
-            // Act
-            var result = Engine.Round.Turn.MoveAsTurn(CharacterPlayer);
-
-            // Reset
-
-            // Assert
-            Assert.AreEqual(true, result);
-        }
-
-        [Test]
-        public void TurnEngine_MoveAsTurn_Valid_Character_Not_AutoBattle_Should_Pass()
-        {
-            // Arrange
-
-            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Teacher });
-
-            Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
-
-            Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
-
-            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
-            Engine.EngineSettings.BattleScore.AutoBattle = false;
 
             // Act
             var result = Engine.Round.Turn.MoveAsTurn(CharacterPlayer);
