@@ -96,9 +96,6 @@
     <Compile Update="Views\Monsters\MonsterIndexPage.xaml.cs">
       <DependentUpon>MonsterIndexPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\UserControls\BattleSettingsButtonControl.xaml.cs">
-      <DependentUpon>BattleSettingsButtonControl.xaml</DependentUpon>
-    </Compile>
     <Compile Update="Views\Village\VillagePage.xaml.cs">
       <DependentUpon>VillagePage.xaml</DependentUpon>
     </Compile>
