@@ -304,7 +304,7 @@ namespace UnitTests.Engine.EngineGame
         }
         #endregion OrderPlayListByTurnOrder
 
-/*        #region GetItemFromPoolIfBetter
+        #region GetItemFromPoolIfBetter
         [Test]
         public async Task RoundEngine_GetItemFromPoolIfBetter_InValid_Location_Empty_Should_Fail()
         {
@@ -604,9 +604,9 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(true, result);
             Assert.AreEqual(item2.Id, CharacterPlayer.LeftFinger);    // The 2nd item is better, so did they swap?
         }
-        #endregion GetItemFromPoolIfBetter*/
+        #endregion GetItemFromPoolIfBetter
 
-/*        #region PickupItemsFromPool
+        #region PickupItemsFromPool
         [Test]
         public void RoundEngine_PickupItemsFromPool_Valid_Default_Should_Pass()
         {
@@ -643,7 +643,7 @@ namespace UnitTests.Engine.EngineGame
             // Assert
             Assert.AreEqual(true, result);
         }
-        #endregion PickupItemsFromPool*/
+        #endregion PickupItemsFromPool
 
         #region EndRound
         [Test]
