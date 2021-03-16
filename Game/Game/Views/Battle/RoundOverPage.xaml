@@ -96,8 +96,8 @@
                                 <ColumnDefinition />
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
-                            <Button Clicked="AutoAssignButton_Clicked" Text="Assign Items"/>
-                            <Button Grid.Column="1"  Clicked="CloseButton_Clicked" Text="Close"/>
+                            <ImageButton Clicked="AutoAssignButton_Clicked" Source="icon_battle_assign_items_button.png"/>
+                            <ImageButton Grid.Column="1"  Clicked="CloseButton_Clicked" Source="icon_battle_close_button.png"/>
                         </Grid>
 
                     </StackLayout>

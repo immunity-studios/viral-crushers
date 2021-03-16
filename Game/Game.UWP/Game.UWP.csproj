@@ -150,6 +150,7 @@
     <Content Include="icon_auto_battle_button.png" />
     <Content Include="icon_battle_ability_button.png" />
     <Content Include="icon_battle_ability_button_gray.png" />
+    <Content Include="icon_battle_assign_items_button.png" />
     <Content Include="icon_battle_attack_button.png" />
     <Content Include="icon_battle_attack_button_gray.png" />
     <Content Include="icon_battle_attack_sword.png" />
