@@ -1,8 +1,6 @@
 ﻿using NUnit.Framework;
 
-using Game.Models;
-
-namespace UnitTests.Models
+namespace UnitTests.AudioSystem
 {
     [TestFixture]
     public class AudioBusEnumExtensionsTests
