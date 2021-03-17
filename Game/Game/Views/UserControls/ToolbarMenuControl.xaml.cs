@@ -20,8 +20,8 @@ namespace Game.Views
 		public async void DungeonButton_Clicked(object sender, EventArgs e)
 		{
 			var previousPage = Navigation.NavigationStack.LastOrDefault();
-			await Navigation.PushAsync(new BattleHomePage());
-			if (!(previousPage is BattleHomePage))
+			await Navigation.PushAsync(new GamePage());
+			if (!(previousPage is GamePage))
 			{
 				Navigation.RemovePage(previousPage);
 			}
