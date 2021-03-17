@@ -210,6 +210,7 @@ namespace Game.GameRules
             {
                 new ScoreModel {
                     Name = "First Score",
+                    ImageURI= "menu_score_icon_100.png",
                     Description = "Great performance",
                     BattleNumber = 1,
                     GameDate = new System.DateTime(2019, 6, 1, 7, 47, 0),
@@ -223,6 +224,7 @@ namespace Game.GameRules
                 new ScoreModel {
                     Name = "Second Score",
                     Description = "Instant Replay worthy",
+                    ImageURI= "menu_score_icon_100.png",
                     BattleNumber = 2,
                     GameDate = new System.DateTime(2020, 12, 4, 20, 30, 52),
                     AutoBattle = false,
@@ -235,6 +237,7 @@ namespace Game.GameRules
                 new ScoreModel {
                     Name = "Third Score",
                     Description = "An exciting game",
+                    ImageURI= "menu_score_icon_100.png",
                     BattleNumber = 3,
                     GameDate = new System.DateTime(2021, 1, 4, 12, 40, 1),
                     AutoBattle = false,
@@ -247,6 +250,7 @@ namespace Game.GameRules
                 new ScoreModel {
                     Name = "Fourth Score",
                     Description = "One of the great games",
+                    ImageURI= "menu_score_icon_100.png",
                     BattleNumber = 4,
                     GameDate = new System.DateTime(2021, 1, 20, 12, 0, 0),
                     AutoBattle = false,
@@ -259,6 +263,7 @@ namespace Game.GameRules
                 new ScoreModel {
                     Name = "Fifth Score",
                     Description = "A cool autobattle",
+                    ImageURI= "menu_score_icon_100.png",
                     BattleNumber = 5,
                     GameDate = new System.DateTime(2021, 2, 4, 12, 40, 1),
                     AutoBattle = true,
