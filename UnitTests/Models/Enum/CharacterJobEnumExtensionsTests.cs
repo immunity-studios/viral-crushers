@@ -132,5 +132,33 @@ namespace UnitTests.Models
             // Assert
             Assert.AreEqual("College Student", result);
         }
+
+        [Test]
+        public void CharacterJobEnumExtensionsTests_Doctor_ToImageFile_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = CharacterJobEnum.Doctor.ToImageFile();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("icon_doctor.png", result);
+        }
+
+        [Test]
+        public void CharacterJobEnumExtensionsTests_Teacher_ToImageFile_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = CharacterJobEnum.Teacher.ToImageFile();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("icon_teacher.png", result);
+        }
     }
 }
