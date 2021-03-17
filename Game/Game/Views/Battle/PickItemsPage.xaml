@@ -78,8 +78,11 @@
                                     <Grid.RowDefinitions>
                                         <RowDefinition />
                                     </Grid.RowDefinitions>
-                                    
-                                    <Button HorizontalOptions="Center" Clicked="CloseButton_Clicked" Text="Close"/>
+
+                                    <ImageButton HorizontalOptions="Center"
+                                                 Source="icon_battle_close_button.png"
+                                                 Clicked="CloseButton_Clicked"
+                                                 Scale="0.5"/>
                                 </Grid>
 
                             </StackLayout>
