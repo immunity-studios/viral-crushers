@@ -1365,6 +1365,8 @@ namespace UnitTests.Engine.EngineGame
             // Arrange
             Engine.EngineSettings.BattleScore.AutoBattle = false;
             Engine.EngineSettings.MonsterList.Clear();
+            Engine.EngineSettings.PlayerList.Clear();
+
             // Act
             var result = Engine.Round.GetNextPlayerInList();
 
