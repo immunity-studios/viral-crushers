@@ -174,5 +174,19 @@ namespace UnitTests.Models
             // Assert
             Assert.AreEqual("icon_athlete.png", result);
         }
+
+        [Test]
+        public void CharacterJobEnumExtensionsTests_PoliceOfficer_ToImageFile_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = CharacterJobEnum.PoliceOfficer.ToImageFile();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("icon_officer.png", result);
+        }
     }
 }
