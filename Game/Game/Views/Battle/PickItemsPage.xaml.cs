@@ -569,6 +569,7 @@ namespace Game.Views
         public void CloseNoticePopup_Clicked(object sender, EventArgs e)
         {
             PopupLoadingView.IsVisible = false;
+            AssignedCharacterList.IsVisible = false;
         }
 
         /// <summary>

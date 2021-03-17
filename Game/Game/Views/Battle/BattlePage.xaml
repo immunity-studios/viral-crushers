@@ -92,15 +92,15 @@
                     </Frame>
 
                     
-                        <StackLayout Grid.Row="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand" Scale="1"
+                        <StackLayout Grid.Row="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="Center"  Scale="1"
                                      >
-                            <ImageButton x:Name="RestButton" Clicked="RestButton_Clicked" Source="icon_battle_rest_button_gray.png" IsVisible="False" IsEnabled="False" />
+                            <ImageButton x:Name="RestButton" WidthRequest="90" Clicked="RestButton_Clicked" Source="icon_battle_rest_button_gray.png" IsVisible="False" IsEnabled="False" />
 
-                            <ImageButton x:Name="AttackButton" Clicked="AttackButton_Clicked" Source="icon_battle_attack_button_gray.png" IsVisible="False" IsEnabled="False" />
-                            
-                            <ImageButton x:Name="AbilityButton" Clicked="AbilityButton_Clicked" Source="icon_battle_ability_button_gray.png" IsVisible="False" IsEnabled="False" />
+                            <ImageButton x:Name="AttackButton" WidthRequest="90" Clicked="AttackButton_Clicked" Source="icon_battle_attack_button_gray.png" IsVisible="False" IsEnabled="False" />
 
-                            <ImageButton x:Name="MoveButton" Clicked="MoveButton_Clicked" Source="icon_battle_move_button_gray.png" IsVisible="False" IsEnabled="False" />
+                            <ImageButton x:Name="AbilityButton" WidthRequest="90" Clicked="AbilityButton_Clicked" Source="icon_battle_ability_button_gray.png" IsVisible="False" IsEnabled="False" />
+
+                            <ImageButton x:Name="MoveButton" WidthRequest="90" Clicked="MoveButton_Clicked" Source="icon_battle_move_button_gray.png" IsVisible="False" IsEnabled="False" />
 
                             <!--<Button x:Name="NextRoundButton" Clicked="NextRoundButton_Clicked" Text="Next Round" IsVisible="False"/>
                             
@@ -113,23 +113,23 @@
                         </StackLayout>
 
 
-                        <StackLayout Grid.Row="2" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand" Scale="1">
+                        <StackLayout Grid.Row="2" Style="{StaticResource HorizontalStack}" HorizontalOptions="Center" Scale="1">
 
                             <!--<Button x:Name="AttackButton" Clicked="AttackButton_Clicked" Text="Attack" IsVisible="False" IsEnabled="False"/>
                             
                             <Button x:Name="AbilityButton" Clicked="AbilityButton_Clicked" Text="Use Ability" IsVisible="False" IsEnabled="False"/>
                             
                             <Button x:Name="MoveButton" Clicked="MoveButton_Clicked" Text="Move" IsVisible="False" IsEnabled="False"/>-->
-                            
-                            <ImageButton x:Name="NextRoundButton" Clicked="NextRoundButton_Clicked" Source="icon_battle_next_button.png" IsVisible="False" />
-                            
-                            <ImageButton x:Name="StartBattleButton" Clicked="StartButton_Clicked" Source="icon_battle_start_button.png" IsVisible="False" />
 
-                            <ImageButton x:Name="StartButton" Clicked="Start_Clicked" Source="icon_battle_start_button.png" IsVisible="False" IsEnabled="False" />
+                            <ImageButton x:Name="NextRoundButton" WidthRequest="90" Clicked="NextRoundButton_Clicked" Source="icon_battle_next_button.png" IsVisible="False" />
 
-                            <ImageButton x:Name="SettingsButton" Clicked="Settings_Clicked" Source="icon_battle_settings_icon.png" />
-                            
-                            <ImageButton x:Name="CancelButton" Clicked="ExitButton_Clicked" Source="icon_battle_exit_button.png"  />
+                            <ImageButton x:Name="StartBattleButton" WidthRequest="90" Clicked="StartButton_Clicked" Source="icon_battle_start_button.png" IsVisible="False" />
+
+                            <ImageButton x:Name="StartButton" WidthRequest="90" Clicked="Start_Clicked" Source="icon_battle_start_button.png" IsVisible="False" IsEnabled="False" />
+
+                            <ImageButton x:Name="SettingsButton" WidthRequest="90" Clicked="Settings_Clicked" Source="icon_battle_settings_icon.png" />
+
+                            <ImageButton x:Name="CancelButton" WidthRequest="90" Clicked="ExitButton_Clicked" Source="icon_battle_exit_button.png"  />
 
                             
 

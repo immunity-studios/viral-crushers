@@ -432,7 +432,7 @@ namespace Game.Views
                     data.Clicked += (sender, args) =>
                     {
                         SetSelectedEmpty(MapLocationModel);
-                        data.Source = "item_background.png";
+                        //data.Source = "item_background.png";
                     };
 
                     // Use the blank cell
@@ -484,7 +484,7 @@ namespace Game.Views
             /*
              * This gets called when the characters is clicked on empty position in the map
              */
-            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType == PlayerTypeEnum.Character)
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker != null)
             {
                 // Clear defender in battle information box
                 DefenderImage.Source = string.Empty;
@@ -519,7 +519,7 @@ namespace Game.Views
             /*
              * This gets called when the Monster is clicked on as defender
              */
-            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType == PlayerTypeEnum.Character)
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker != null)
             {
                 BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = data.Player;
 
@@ -997,7 +997,7 @@ namespace Game.Views
         /// </summary>
         public void SetAttackerAndDefender()
         {
-            BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn());
+            //BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn());
 
             switch (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType)
             {
@@ -1178,11 +1178,10 @@ namespace Game.Views
         public void Start_Clicked(object sender, EventArgs e)
         {
             var attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.FirstOrDefault();
+            BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(attacker);
 
             if (attacker.PlayerType == PlayerTypeEnum.Character)
             {
-                BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(null);
-                BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(null);
                 DrawGameBoardClear();
 
                 // Show intruction for user
