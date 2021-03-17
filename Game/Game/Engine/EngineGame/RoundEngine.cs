@@ -259,39 +259,23 @@ namespace Game.Engine.EngineGame
                 return null;
             }
 
-            if (EngineSettings.BattleScore.AutoBattle)
+            // No current player, so set the first one
+            if (EngineSettings.CurrentAttacker == null)
             {
-
-                // No current player, so set the first one
-                if (EngineSettings.CurrentAttacker == null)
-                {
-                    return EngineSettings.PlayerList.FirstOrDefault();
-                }
-
-                // Find current player in the list
-                var index = EngineSettings.PlayerList.FindIndex(m => m.Guid.Equals(EngineSettings.CurrentAttacker.Guid));
-
-                // If at the end of the list, return the first element
-                if (index == EngineSettings.PlayerList.Count() - 1)
-                {
-                    return EngineSettings.PlayerList.FirstOrDefault();
-                }
-
-                // Return the next element
-                return EngineSettings.PlayerList[index + 1];
-            } else
-            {
-                // If Monster List is empty, return null
-                if (EngineSettings.MonsterList.Count == 0)
-                {
-                    return null;
-                }
-                // Return the next element and remove it from the top then add the player to the end of the list
-                var NextPlayer = EngineSettings.MonsterList.FirstOrDefault();
-                EngineSettings.MonsterList.RemoveAt(0);
-                EngineSettings.MonsterList.Add(NextPlayer);
-                return NextPlayer;
+                return EngineSettings.PlayerList.FirstOrDefault();
             }
+
+            // Find current player in the list
+            var index = EngineSettings.PlayerList.FindIndex(m => m.Guid.Equals(EngineSettings.CurrentAttacker.Guid));
+
+            // If at the end of the list, return the first element
+            if (index == EngineSettings.PlayerList.Count() - 1)
+            {
+                return EngineSettings.PlayerList.FirstOrDefault();
+            }
+
+            // Return the next element
+            return EngineSettings.PlayerList[index + 1];
         }
 
         /// <summary>

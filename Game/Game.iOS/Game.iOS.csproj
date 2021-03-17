@@ -453,4 +453,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\icon_battle_assign_items_button.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\start_button_gray.png" />
+  </ItemGroup>
 </Project>
