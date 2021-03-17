@@ -479,22 +479,25 @@ namespace Game.Views
             /*
              * This gets called when the characters is clicked on empty position in the map
              */
-
-            // Clear defender in battle information box
-            DefenderImage.Source = string.Empty;
-            DefenderName.Text = string.Empty;
-            DefenderHealth.Text = string.Empty;
-            DefenderImage.BackgroundColor = Color.Transparent;
-
-            BattlePlayerBoxVersus.Text = string.Empty;
-
-            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker != null)
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType == PlayerTypeEnum.Character)
             {
-                MoveButton.IsEnabled = true;
-                MoveButton.Source = "icon_battle_move_button.png";
+                // Clear defender in battle information box
+                DefenderImage.Source = string.Empty;
+                DefenderName.Text = string.Empty;
+                DefenderHealth.Text = string.Empty;
+                DefenderImage.BackgroundColor = Color.Transparent;
 
-                BattleEngineViewModel.Instance.Engine.EngineSettings.SelectedMapLocation = data;
+                BattlePlayerBoxVersus.Text = string.Empty;
+
+                if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker != null)
+                {
+                    MoveButton.IsEnabled = true;
+                    MoveButton.Source = "icon_battle_move_button.png";
+
+                    BattleEngineViewModel.Instance.Engine.EngineSettings.SelectedMapLocation = data;
+                }
             }
+            
 
             return true;
         }
@@ -509,22 +512,26 @@ namespace Game.Views
             /*
              * This gets called when the Monster is clicked on as defender
              */
-            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = data.Player;
-
-            // Draw defender in the battle infomation box
-            DefenderImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.ImageURI;
-            DefenderName.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.Name;
-            DefenderHealth.Text = "HP: " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.GetCurrentHealthTotal.ToString();
-            BattlePlayerBoxVersus.Text = "vs";
-
-            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker != null
-                && BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.IsTargetInRange(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker, data.Player))
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType == PlayerTypeEnum.Character)
             {
-                AttackButton.IsEnabled = true;
-                AttackButton.Source = "icon_battle_attack_button.png";
-            }
+                BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = data.Player;
 
-            data.IsSelectedTarget = true;
+                // Draw defender in the battle infomation box
+                DefenderImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.ImageURI;
+                DefenderName.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.Name;
+                DefenderHealth.Text = "HP: " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.GetCurrentHealthTotal.ToString();
+                BattlePlayerBoxVersus.Text = "vs";
+
+                if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker != null
+                    && BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.IsTargetInRange(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker, data.Player))
+                {
+                    AttackButton.IsEnabled = true;
+                    AttackButton.Source = "icon_battle_attack_button.png";
+                }
+
+                data.IsSelectedTarget = true;
+            }
+                
             return true;
         }
 
