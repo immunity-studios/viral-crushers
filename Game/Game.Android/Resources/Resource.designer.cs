@@ -12106,31 +12106,34 @@ namespace Game.Droid
 			public const int splashscreen = 2131165434;
 			
 			// aapt resource value: 0x7F0700FB
-			public const int studentgif = 2131165435;
+			public const int start_button_gray = 2131165435;
 			
 			// aapt resource value: 0x7F0700FC
-			public const int studio_logo = 2131165436;
+			public const int studentgif = 2131165436;
+			
+			// aapt resource value: 0x7F0700FD
+			public const int studio_logo = 2131165437;
 			
 			// aapt resource value: 0x7F0700F8
 			public const int s_background_image = 2131165432;
 			
-			// aapt resource value: 0x7F0700FD
-			public const int teachergif = 2131165437;
-			
 			// aapt resource value: 0x7F0700FE
-			public const int test_custom_background = 2131165438;
+			public const int teachergif = 2131165438;
 			
 			// aapt resource value: 0x7F0700FF
-			public const int tooltip_frame_dark = 2131165439;
+			public const int test_custom_background = 2131165439;
 			
 			// aapt resource value: 0x7F070100
-			public const int tooltip_frame_light = 2131165440;
+			public const int tooltip_frame_dark = 2131165440;
 			
 			// aapt resource value: 0x7F070101
-			public const int vaccine = 2131165441;
+			public const int tooltip_frame_light = 2131165441;
 			
 			// aapt resource value: 0x7F070102
-			public const int vc_logo = 2131165442;
+			public const int vaccine = 2131165442;
+			
+			// aapt resource value: 0x7F070103
+			public const int vc_logo = 2131165443;
 			
 			static Drawable()
 			{
