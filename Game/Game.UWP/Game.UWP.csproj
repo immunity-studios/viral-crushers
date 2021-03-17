@@ -249,6 +249,7 @@
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
     <Content Include="splash_screen_620x300.png" />
+    <Content Include="start_button_gray.png" />
     <Content Include="studentgif.gif" />
     <Content Include="studio_logo.png" />
     <Content Include="s_background_image.png" />

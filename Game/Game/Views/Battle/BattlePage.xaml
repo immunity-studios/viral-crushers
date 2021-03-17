@@ -99,9 +99,9 @@
                             <ImageButton x:Name="AttackButton" Clicked="AttackButton_Clicked" Source="icon_battle_attack_button_gray.png" IsVisible="False" IsEnabled="False" />
                             
                             <ImageButton x:Name="AbilityButton" Clicked="AbilityButton_Clicked" Source="icon_battle_ability_button_gray.png" IsVisible="False" IsEnabled="False" />
-                            
+
                             <ImageButton x:Name="MoveButton" Clicked="MoveButton_Clicked" Source="icon_battle_move_button_gray.png" IsVisible="False" IsEnabled="False" />
-                            
+
                             <!--<Button x:Name="NextRoundButton" Clicked="NextRoundButton_Clicked" Text="Next Round" IsVisible="False"/>
                             
                             <Button x:Name="StartBattleButton" Clicked="StartButton_Clicked" Text="Start Battle" IsVisible="False"/>
@@ -124,10 +124,14 @@
                             <ImageButton x:Name="NextRoundButton" Clicked="NextRoundButton_Clicked" Source="icon_battle_next_button.png" IsVisible="False" />
                             
                             <ImageButton x:Name="StartBattleButton" Clicked="StartButton_Clicked" Source="icon_battle_start_button.png" IsVisible="False" />
-                            
+
+                            <ImageButton x:Name="StartButton" Clicked="Start_Clicked" Source="icon_battle_start_button.png" IsVisible="False" IsEnabled="False" />
+
                             <ImageButton x:Name="SettingsButton" Clicked="Settings_Clicked" Source="icon_battle_settings_icon.png" />
                             
                             <ImageButton x:Name="CancelButton" Clicked="ExitButton_Clicked" Source="icon_battle_exit_button.png"  />
+
+                            
 
                             <!--<Button x:Name="NextRoundButton" Clicked="NextRoundButton_Clicked" Text="Next Round" IsVisible="False"/>
 
@@ -169,15 +173,15 @@
                                HeightRequest="100">
 
                             <Label x:Name="BattleMessages" 
+                                   Padding="10,5,10,5"
                                     Text="Let the Battle Begin!"
-                                    HorizontalOptions="CenterAndExpand" 
                                     LineBreakMode="WordWrap" 
-                                    MaxLines="3"
+                                    MaxLines="10"
                                     LineHeight="1"
                                     CharacterSpacing="1"
                                     Style="{StaticResource LabelStyle}"
                                    TextColor="{StaticResource ViralCrusherDarkPurpleColor}"
-                                    FontSize="20"/>
+                                    FontSize="14"/>
 
                             <!--<WebView
                         x:Name="HtmlBox"

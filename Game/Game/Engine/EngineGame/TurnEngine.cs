@@ -55,72 +55,39 @@ namespace Game.Engine.EngineGame
 
             bool result = false;
 
-            if (Attacker.PlayerType == PlayerTypeEnum.Monster)
+            // If the action is not set, then try to set it or use Attact
+            if (EngineSettings.CurrentAction == ActionEnum.Unknown)
             {
-                // If the action is not set, then try to set it or use Attact
-                if (EngineSettings.CurrentAction == ActionEnum.Unknown)
-                {
-                    // Set the action if one is not set
-                    EngineSettings.CurrentAction = DetermineActionChoice(Attacker);
+                // Set the action if one is not set
+                EngineSettings.CurrentAction = DetermineActionChoice(Attacker);
 
-                    // When in doubt, attack...
-                    //if (EngineSettings.CurrentAction == ActionEnum.Unknown)
-                    //{
-                    //    EngineSettings.CurrentAction = ActionEnum.Attack;
-                    //}
-                }
-
-                switch (EngineSettings.CurrentAction)
-                {
-                    case ActionEnum.Attack:
-                        result = Attack(Attacker);
-                        break;
-
-                    case ActionEnum.Ability:
-                        result = UseAbility(Attacker);
-                        break;
-
-                    case ActionEnum.Move:
-                        result = MoveAsTurn(Attacker);
-                        break;
-                }
+                // When in doubt, attack...
+                //if (EngineSettings.CurrentAction == ActionEnum.Unknown)
+                //{
+                //    EngineSettings.CurrentAction = ActionEnum.Attack;
+                //}
             }
-            else
+
+            switch (EngineSettings.CurrentAction)
             {
-                // If the action is not set, then try to set it or use Attact
-                if (EngineSettings.CurrentAction == ActionEnum.Unknown)
-                {
-                    // Set the action if one is not set
-                    EngineSettings.CurrentAction = DetermineActionChoice(Attacker);
+                case ActionEnum.Rest:
+                    result = Rest(Attacker);
+                    break;
 
-                    // When in doubt, attack...
-                    //if (EngineSettings.CurrentAction == ActionEnum.Unknown)
-                    //{
-                    //    EngineSettings.CurrentAction = ActionEnum.Attack;
-                    //}
-                }
+                case ActionEnum.Attack:
+                    result = Attack(Attacker);
+                    break;
 
-                switch (EngineSettings.CurrentAction)
-                {
-                    case ActionEnum.Rest:
-                        result = Rest(Attacker);
-                        break;
+                case ActionEnum.Ability:
 
-                    case ActionEnum.Attack:
-                        result = Attack(Attacker);
-                        break;
+                    EngineSettings.CurrentActionAbility = Attacker.CharacterSelectAbilityToUse();
 
-                    case ActionEnum.Ability:
+                    result = UseAbility(Attacker);
+                    break;
 
-                        EngineSettings.CurrentActionAbility = Attacker.CharacterSelectAbilityToUse();
-
-                        result = UseAbility(Attacker);
-                        break;
-
-                    case ActionEnum.Move:
-                        result = MoveAsTurn(Attacker);
-                        break;
-                }
+                case ActionEnum.Move:
+                    result = MoveAsTurn(Attacker);
+                    break;
             }
             EngineSettings.BattleScore.TurnCount++;
 

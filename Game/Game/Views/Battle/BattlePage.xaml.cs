@@ -538,47 +538,6 @@ namespace Game.Views
             /*
              * This gets called when the characters is clicked on as Attacker
              */
-            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = data.Player;
-
-            if (data.Player.Job == CharacterJobEnum.Athlete)
-            {
-                data.Player.ImageURI = "athletegif.gif";
-            }
-
-            // Draw Attacker in the battle infomation box
-            AttackerImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.ImageURI;
-            AttackerName.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.Name;
-            AttackerHealth.Text = "HP: " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.GetCurrentHealthTotal.ToString();
-
-            // Enable Rest Button
-            RestButton.IsEnabled = true;
-            RestButton.Source = "icon_battle_rest_button.png";
-
-
-            // If haven't chosen Defender and the Target isn't in the attack range of Attacker 
-            // then the Attack Button is not enabled to click
-            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender != null
-                && BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.IsTargetInRange(data.Player, BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender))
-            {
-                AttackButton.IsEnabled = true;
-                AttackButton.Source = "icon_battle_attack_button.png";
-            }
-
-            // If ability of character is still available then the Ability Button is enabled to click
-            foreach (var ability in data.Player.AbilityTracker)
-            {
-                var temp = ability.Key;
-
-                var result = data.Player.AbilityTracker.TryGetValue(temp, out int remaining);
-                if (remaining > 0)
-                {
-                    AbilityButton.IsEnabled = true;
-                    AbilityButton.Source = "icon_battle_ability_button.png";
-
-                    break;
-                }
-            }
-            data.IsSelectedTarget = true;
             return true;
         }
         #endregion MapEvents
@@ -769,12 +728,10 @@ namespace Game.Views
         /// 
         /// This code example follows the rule of
         /// 
-        /// Auto Select Attacker
-        /// Auto Select Defender
-        /// 
-        /// Do the Attack and show the result
-        /// 
-        /// So the pattern is Click Next, Next, Next until game is over
+        /// To Attack Select one Monster as Targer then click Attack
+        /// To Move Select an empty space then click move
+        /// To use ability click ability
+        /// To Rest click Rest
         /// 
         /// </summary>
         public async void NextAttackExample()
@@ -834,10 +791,8 @@ namespace Game.Views
             // Pause
             await Task.Delay(1000);
 
-            // Add a event to the user can click to move to Monster's Turn
-            ShowMonsterPopup();
-
-            
+            // Move to next turn
+            GetNextPlayer();
         }
 
         /// <summary>
@@ -895,10 +850,73 @@ namespace Game.Views
             }
         }
 
-        public void NextMonsterAttack()
+        public void GetNextPlayer()
         {
-            
+            var attacker = BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn();
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = attacker;
 
+            // Turn off Action Buttons
+            UnenableActionButtons();
+
+            if (attacker.PlayerType == PlayerTypeEnum.Character)
+            {
+                // Set up the turn
+                BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(null);
+                DrawGameBoardClear();
+
+                // Draw Attacker in the battle infomation box
+                AttackerImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.ImageURI;
+                AttackerName.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.Name;
+                AttackerHealth.Text = "HP: " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.GetCurrentHealthTotal.ToString();
+
+                // Enable Rest Button
+                RestButton.IsEnabled = true;
+                RestButton.Source = "icon_battle_rest_button.png";
+
+
+                // If haven't chosen Defender and the Target isn't in the attack range of Attacker 
+                // then the Attack Button is not enabled to click
+                if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender != null
+                    && BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.IsTargetInRange(attacker, BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender))
+                {
+                    AttackButton.IsEnabled = true;
+                    AttackButton.Source = "icon_battle_attack_button.png";
+                }
+
+                // If ability of character is still available then the Ability Button is enabled to click
+                foreach (var ability in attacker.AbilityTracker)
+                {
+                    var temp = ability.Key;
+
+                    var result = attacker.AbilityTracker.TryGetValue(temp, out int remaining);
+                    if (remaining > 0)
+                    {
+                        AbilityButton.IsEnabled = true;
+                        AbilityButton.Source = "icon_battle_ability_button.png";
+
+                        break;
+                    }
+                }
+
+                // Show intruction for user
+                BattleMessages.Text = string.Format("{0} \n{1}", "Choose to do 1 of these actions: Attack, Move, Rest or Ability.", BattleMessages.Text);
+                BattleMessages.Text = string.Format("{0} \n{1}", "IT IS YOUR TURN!", BattleMessages.Text);
+
+                Debug.WriteLine(BattleMessages.Text);
+            }
+            else
+            {
+                NextMonsterAttack();
+
+                // Show Monster turn Message
+                BattleMessages.Text = string.Format("{0} \n{1}", "IT IS MONSTER'S TURN!", BattleMessages.Text);
+
+                Debug.WriteLine(BattleMessages.Text);
+            }
+        }
+
+        public async void NextMonsterAttack()
+        {
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
 
             // Get the turn, set the current player and attacker to match
@@ -953,6 +971,9 @@ namespace Game.Views
                 GameOver();
                 return;
             }
+
+            await Task.Delay(1000);
+            GetNextPlayer();
         }
 
         /// <summary>
@@ -1099,14 +1120,13 @@ namespace Game.Views
             AbilityButton.IsEnabled = false;
             MoveButton.IsEnabled = false;
             RestButton.IsEnabled = false;
+            StartButton.IsEnabled = true;
 
             AttackButton.Source = "icon_battle_attack_button_gray.png";
             MoveButton.Source = "icon_battle_move_button_gray.png";
             AbilityButton.Source = "icon_battle_ability_button_gray.png";
             RestButton.Source = "icon_battle_rest_button_gray.png";
-
-
-
+            StartButton.Source = "icon_battle_start_button.png";
         }
 
         /// <summary>
@@ -1120,8 +1140,43 @@ namespace Game.Views
 
             ShowBattleMode();
             await Navigation.PushModalAsync(new NewRoundPage());
+            StartButton.IsEnabled = true;
 
-            PopupUserLoadingView.IsVisible = true;
+            BattleMessages.Text = string.Format("{0} \n{1}", "Click Start to start the game!", BattleMessages.Text);
+            Debug.WriteLine(BattleMessages.Text);
+        }
+
+        /// <summary>
+        /// The Start Game Button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void Start_Clicked(object sender, EventArgs e)
+        {
+            var attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.FirstOrDefault();
+
+            if (attacker.PlayerType == PlayerTypeEnum.Character)
+            {
+                BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(null);
+                BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(null);
+                DrawGameBoardClear();
+
+                // Show intruction for user
+                BattleMessages.Text = string.Format("{0} \n{1}", "Choose to do 1 of these actions: Attack, Move, Rest or Ability.", BattleMessages.Text);
+                BattleMessages.Text = string.Format("{0} \n{1}", "IT IS YOUR TURN!", BattleMessages.Text);
+
+                Debug.WriteLine(BattleMessages.Text);
+            } else
+            {
+                NextMonsterAttack();
+
+                // Show Monster turn Message
+                BattleMessages.Text = string.Format("{0} \n{1}", "IT IS MONSTER'S TURN!", BattleMessages.Text);
+
+                Debug.WriteLine(BattleMessages.Text);
+            }
+            StartButton.IsEnabled = false;
+            StartButton.Source = "start_button_gray.png";
         }
 
         /// <summary>
@@ -1178,6 +1233,7 @@ namespace Game.Views
             StartBattleButton.IsVisible = false;
             AttackButton.IsVisible = false;
             AbilityButton.IsVisible = false;
+            StartButton.IsVisible = false;
             MoveButton.IsVisible = false;
             MessageDisplayBox.IsVisible = false;
             BattlePlayerInfomationBox.IsVisible = false;
@@ -1185,6 +1241,21 @@ namespace Game.Views
             PopupUserLoadingView.IsVisible = false;
 
             RestButton.IsVisible = false;
+        }
+
+        // Turn off Action buttons
+        public void UnenableActionButtons()
+        {
+            AttackButton.IsEnabled = false;
+            AbilityButton.IsEnabled = false;
+            MoveButton.IsEnabled = false;
+
+            RestButton.IsEnabled = false;
+
+            AttackButton.Source = "icon_battle_attack_button_gray.png";
+            MoveButton.Source = "icon_battle_move_button_gray.png";
+            AbilityButton.Source = "icon_battle_ability_button_gray.png";
+            RestButton.Source = "icon_battle_rest_button_gray.png";
         }
 
         /// <summary>
@@ -1248,6 +1319,7 @@ namespace Game.Views
                     AttackButton.IsVisible = true;
                     AbilityButton.IsVisible = true;
                     MoveButton.IsVisible = true;
+                    StartButton.IsVisible = true;
 
                     RestButton.IsVisible = true;
 
