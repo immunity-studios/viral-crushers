@@ -216,5 +216,19 @@ namespace UnitTests.Models
             // Assert
             Assert.AreEqual("icon_firefighter.png", result);
         }
+
+        [Test]
+        public void CharacterJobEnumExtensionsTests_Unknown_ToImageFile_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = CharacterJobEnum.Unknown.ToImageFile();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(null, result);
+        }
     }
 }
