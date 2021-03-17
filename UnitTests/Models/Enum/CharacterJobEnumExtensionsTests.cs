@@ -188,5 +188,19 @@ namespace UnitTests.Models
             // Assert
             Assert.AreEqual("icon_officer.png", result);
         }
+
+        [Test]
+        public void CharacterJobEnumExtensionsTests_Student_ToImageFile_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = CharacterJobEnum.CollegeStudent.ToImageFile();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("icon_student.png", result);
+        }
     }
 }
