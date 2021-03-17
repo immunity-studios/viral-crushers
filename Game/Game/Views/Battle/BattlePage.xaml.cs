@@ -432,10 +432,13 @@ namespace Game.Views
                     data.Clicked += (sender, args) =>
                     {
                         SetSelectedEmpty(MapLocationModel);
+                        data.Source = "item_background.png";
                     };
 
                     // Use the blank cell
                     data.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.EmptySquare.ImageURI;
+
+                    
                     break;
             }
 
@@ -489,6 +492,7 @@ namespace Game.Views
                 DefenderHealth.Text = string.Empty;
                 DefenderImage.BackgroundColor = Color.Transparent;
 
+
                 BattlePlayerBoxVersus.Text = string.Empty;
 
                 if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker != null)
@@ -497,6 +501,7 @@ namespace Game.Views
                     MoveButton.Source = "icon_battle_move_button.png";
 
                     BattleEngineViewModel.Instance.Engine.EngineSettings.SelectedMapLocation = data;
+                    //data.Player = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.EmptySquareSelected;
                 }
             }
             
