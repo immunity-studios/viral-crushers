@@ -904,8 +904,11 @@ namespace Game.Views
                 }
 
                 // Show intruction for user
-                BattleMessages.Text = string.Format("{0} \n{1}", "Choose to do 1 of these actions: Attack, Move, Rest or Ability.", BattleMessages.Text);
-                BattleMessages.Text = string.Format("{0} \n{1}", "IT IS YOUR TURN!", BattleMessages.Text);
+                //BattleMessages.Text = string.Format("{0} \n{1}", "Choose to do 1 of these actions: Attack, Move, Rest or Ability.", BattleMessages.Text);
+                //BattleMessages.Text = string.Format("{0} \n{1}", "IT IS YOUR TURN!", BattleMessages.Text);
+
+
+                BattleMessages.Text = string.Format("{0} \n{1}", "Now is " + attacker.Name + "'s turn!", BattleMessages.Text);
 
                 Debug.WriteLine(BattleMessages.Text);
             }
@@ -913,8 +916,8 @@ namespace Game.Views
             {
                 NextMonsterAttack();
 
-                // Show Monster turn Message
-                BattleMessages.Text = string.Format("{0} \n{1}", "IT IS MONSTER'S TURN!", BattleMessages.Text);
+                //// Show Monster turn Message
+                //BattleMessages.Text = string.Format("{0}: {1}", attacker.Name + "'s turn", BattleMessages.Text);
 
                 Debug.WriteLine(BattleMessages.Text);
             }
@@ -926,6 +929,7 @@ namespace Game.Views
 
             // Get the turn, set the current player and attacker to match
             SetAttackerAndDefender();
+
 
             // Hold the current state
             var RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
@@ -1144,9 +1148,12 @@ namespace Game.Views
 
             ShowBattleMode();
             await Navigation.PushModalAsync(new NewRoundPage());
-            StartButton.IsEnabled = true;
 
             BattleMessages.Text = string.Format("{0} \n{1}", "Click Start to start the game!", BattleMessages.Text);
+
+            StartButton.IsEnabled = true;
+
+            
             Debug.WriteLine(BattleMessages.Text);
         }
 
@@ -1166,16 +1173,18 @@ namespace Game.Views
                 DrawGameBoardClear();
 
                 // Show intruction for user
-                BattleMessages.Text = string.Format("{0} \n{1}", "Choose to do 1 of these actions: Attack, Move, Rest or Ability.", BattleMessages.Text);
-                BattleMessages.Text = string.Format("{0} \n{1}", "IT IS YOUR TURN!", BattleMessages.Text);
+                //BattleMessages.Text = string.Format("{0} \n{1}", "Choose to do 1 of these actions: Attack, Move, Rest or Ability.", BattleMessages.Text);
+                //BattleMessages.Text = string.Format("{0} \n{1}", "IT IS YOUR TURN!", BattleMessages.Text);
+
+                BattleMessages.Text = string.Format("{0} \n{1}", "Now is " + attacker.Name  + "'s turn!", BattleMessages.Text);
 
                 Debug.WriteLine(BattleMessages.Text);
             } else
             {
                 NextMonsterAttack();
 
-                // Show Monster turn Message
-                BattleMessages.Text = string.Format("{0} \n{1}", "IT IS MONSTER'S TURN!", BattleMessages.Text);
+                //// Show Monster turn Message
+                //BattleMessages.Text = string.Format("{0}: {1}", attacker.Name + "'s turn", BattleMessages.Text);
 
                 Debug.WriteLine(BattleMessages.Text);
             }
