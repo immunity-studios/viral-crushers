@@ -772,8 +772,6 @@ namespace Game.Views
                 BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(null);
                 BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(null);
 
-                PopupMonsterLoadingView.IsVisible = false;
-                PopupUserLoadingView.IsVisible = false;
                 DrawMapGridInitialState();
                 ShowBattleMode();
 
@@ -1112,8 +1110,7 @@ namespace Game.Views
         {
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
             await Navigation.PushModalAsync(new NewRoundPage());
-            
-            PopupUserLoadingView.IsVisible = true;
+
             ShowBattleMode();
             DrawGameAttackerDefenderBoard();
             AttackButton.IsEnabled = false;
@@ -1237,8 +1234,6 @@ namespace Game.Views
             MoveButton.IsVisible = false;
             MessageDisplayBox.IsVisible = false;
             BattlePlayerInfomationBox.IsVisible = false;
-            PopupMonsterLoadingView.IsVisible = false;
-            PopupUserLoadingView.IsVisible = false;
 
             RestButton.IsVisible = false;
         }
