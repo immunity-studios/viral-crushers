@@ -170,7 +170,8 @@
                                      Margin="0,20,0,0"
                                BackgroundColor="FloralWhite"
                                     HorizontalOptions="FillAndExpand"
-                               HeightRequest="100">
+                               HeightRequest="120"
+                               >
 
                             <Label x:Name="BattleMessages" 
                                    Padding="10,5,10,5"

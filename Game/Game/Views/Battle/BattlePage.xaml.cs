@@ -28,6 +28,8 @@ namespace Game.Views
         // Hold the Map Objects, for easy access to update them
         public Dictionary<string, object> MapLocationObject = new Dictionary<string, object>();
 
+        public static string lastGameMessage = string.Empty;
+
 
         // Empty Constructor for UTs
         bool UnitTestSetting;
@@ -1040,10 +1042,17 @@ namespace Game.Views
         /// <param name="message"></param>
         public void GameMessage()
         {
-            // Output The Message that happened.
-            BattleMessages.Text = string.Format("{0} \n{1}", BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.TurnMessage, BattleMessages.Text);
+            string toBeDisplayed = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.TurnMessage;
 
-            Debug.WriteLine(BattleMessages.Text);
+            if (!toBeDisplayed.Equals(lastGameMessage))
+            {
+                // Output The Message that happened.
+                BattleMessages.Text = string.Format("{0} \n{1}", toBeDisplayed, BattleMessages.Text);
+
+                Debug.WriteLine(BattleMessages.Text);
+            }
+
+            lastGameMessage = toBeDisplayed;
 
             // Output the Hit Sound Effect Message
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.HitSoundEffectMessage != string.Empty)
@@ -1088,7 +1097,7 @@ namespace Game.Views
         /// </summary>
         public void ClearMessages()
         {
-            BattleMessages.Text = "";
+            BattleMessages.Text = "Click START to begin!\n\n\n\n\n\n";
             htmlSource.Html = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.GetHTMLBlankMessage();
             //HtmlBox.Source = htmlSource;
         }
@@ -1149,7 +1158,6 @@ namespace Game.Views
             ShowBattleMode();
             await Navigation.PushModalAsync(new NewRoundPage());
 
-            BattleMessages.Text = string.Format("{0} \n{1}", "Click Start to start the game!", BattleMessages.Text);
 
             StartButton.IsEnabled = true;
 
