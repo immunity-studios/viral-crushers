@@ -282,6 +282,33 @@ namespace UnitTests.Helpers
             Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
         }
 
+
+        [Test]
+        public void ItemTypeToMappedString_String_Should_Pass()
+        {
+            //var myConverter = new ItemLocationEnumConverter();
+            var myConverter = new ItemTypeToMappedStringConverter();
+
+            var myObject = "Mask";
+            var Result = myConverter.ConvertBack(myObject, typeof(ItemTypeEnum), null, null);
+            var Expected = ItemTypeEnum.Mask;
+
+            Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
+        }
+
+        [Test]
+        public void ItemTypeToMappedStringConvert_Enum_Should_Pass()
+        {
+            var myConverter = new ItemTypeToMappedStringConverter();
+
+            var myObject = ItemTypeEnum.Mask;
+            var Result = myConverter.Convert(myObject, null, null, null);
+            var Expected = "Mask";
+
+            Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
+        }
+
+
         [Test]
         public void ItemLocationEnumConvert_Enum_Should_Pass()
         {
