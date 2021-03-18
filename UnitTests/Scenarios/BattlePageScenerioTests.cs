@@ -10,6 +10,7 @@ using Game;
 using Game.Models;
 using System.Threading.Tasks;
 using Game.Helpers;
+using System.Linq;
 
 namespace Scenario
 {
@@ -103,7 +104,7 @@ namespace Scenario
             // Make the List
             EngineViewModel.Engine.EngineSettings.PlayerList = EngineViewModel.Engine.Round.MakePlayerList();
 
-            // Set currentAttacker and CurrentDefender
+            // Set currentAttacker
             EngineViewModel.Engine.Round.SetCurrentAttacker(EngineViewModel.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).FirstOrDefault());
             //EngineViewModel.Engine.Round.SetCurrentDefender(EngineViewModel.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Character).FirstOrDefault());
 
@@ -119,7 +120,7 @@ namespace Scenario
             page.NextMonsterAttack();
             result = EngineViewModel.Engine.EngineSettings.RoundStateEnum;
 
-            // Monsters Turn
+            // Character Turn
             page.AttackButton_Clicked(null, null);
             result = EngineViewModel.Engine.EngineSettings.RoundStateEnum;
 
@@ -129,6 +130,81 @@ namespace Scenario
 
             //Assert
             Assert.AreEqual(RoundEnum.GameOver, result);
+        }
+
+        [Test]
+        public void BattlePage_RunBattle_Strong_Character_Should_NewRound()
+        {
+            //Arrange
+
+            // Add Characters
+
+            EngineViewModel.Engine.EngineSettings.MaxNumberPartyCharacters = 1;
+
+            var CharacterPlayerMike = new PlayerInfoModel(
+                            new CharacterModel
+                            {
+                                Speed = 10,
+                                Level = 10,
+                                CurrentHealth = 100,
+                                Attack = 100,
+                                ExperienceTotal = 1,
+                                ExperienceRemaining = 1,
+                                Name = "Mike",
+                                ListOrder = 1,
+                            }) ;
+            EngineViewModel.Engine.EngineSettings.CharacterList.Clear();
+            EngineViewModel.Engine.EngineSettings.CharacterList.Add(CharacterPlayerMike);
+
+
+            // Add Monsters
+            // Need to set the Monster count to 1, so the battle goes to Next Round Faster
+            EngineViewModel.Engine.EngineSettings.MaxNumberPartyMonsters = 1;
+
+            var MonsterPlayer = new PlayerInfoModel(
+                            new MonsterModel
+                            {
+                                Speed = 1,
+                                Level = 1,
+                                CurrentHealth = 1,
+                                ExperienceTotal = 1,
+                                ExperienceRemaining = 1,
+                                Attack = 1,
+                                Name = "Bubble",
+                                ListOrder = 1,
+                            });
+            EngineViewModel.Engine.EngineSettings.MonsterList.Clear();
+            EngineViewModel.Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
+
+            // Make the List
+            EngineViewModel.Engine.EngineSettings.PlayerList = EngineViewModel.Engine.Round.MakePlayerList();
+
+            // Set currentAttacker and currentDefender
+            EngineViewModel.Engine.Round.SetCurrentAttacker(EngineViewModel.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Character).FirstOrDefault());
+            EngineViewModel.Engine.Round.SetCurrentDefender(EngineViewModel.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).FirstOrDefault());
+
+            //Act
+            RoundEnum result;
+
+            // Force a Hit
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(20);
+
+            // First Character Hits
+            page.AttackButton_Clicked(null, null);
+            result = EngineViewModel.Engine.EngineSettings.RoundStateEnum;
+
+
+            // Monsters Turn
+            page.GetNextPlayer();
+            result = EngineViewModel.Engine.EngineSettings.RoundStateEnum;
+
+
+            //Reset
+            DiceHelper.DisableForcedRolls();
+
+            //Assert
+            Assert.AreEqual(RoundEnum.NewRound, result);
         }
     }
 }
