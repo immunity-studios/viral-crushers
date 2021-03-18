@@ -916,7 +916,7 @@ namespace Game.Views
                 //BattleMessages.Text = string.Format("{0} \n{1}", "IT IS YOUR TURN!", BattleMessages.Text);
 
 
-                BattleMessages.Text = string.Format("{0} \n{1}", "Now is " + attacker.Name + "'s turn!", BattleMessages.Text);
+                BattleMessages.Text = string.Format("{0} \n{1}", "It's " + attacker.Name + "'s turn!", BattleMessages.Text);
 
                 Debug.WriteLine(BattleMessages.Text);
             }
