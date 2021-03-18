@@ -7,6 +7,10 @@ using Game.ViewModels;
 using Game.Views;
 using Game;
 
+using Game.Models;
+using System.Threading.Tasks;
+using Game.Helpers;
+
 namespace Scenario
 {
     [TestFixture]
