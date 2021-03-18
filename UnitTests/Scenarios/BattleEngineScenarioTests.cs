@@ -37,6 +37,18 @@ namespace Scenario
         {
         }
 
+        [Test]
+        public void BattleEngine_Constructor_Default_Should_Pass()
+        {
+            // Arrange
 
+            // Act
+            var result = Battle;
+
+            // Reset
+
+            // Assert
+            Assert.IsNotNull(result);
+        }
     }
 }
