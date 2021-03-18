@@ -14,16 +14,6 @@
 
             <!--  Colors  -->
 
-            <!--
-                Light
-                #BF895A
-                #D9C6B0
-                #733612
-                #8C3D20
-                #400D01
-                Dark
-            -->
-
             <Color x:Key="ViralCrusherBlueColor">#273995</Color>
             <Color x:Key="ViralCrusherDarkPurpleColor">#250037</Color>
             <Color x:Key="ViralCrusherPurpleColor">#3B0456</Color>
@@ -32,8 +22,6 @@
             <Color x:Key="ViralCrusherNavyColor">#252875</Color>
             <Color x:Key="ViralCrusherGreenColor">#ABCD36</Color>
             <Color x:Key="ViralCrusherWhiteColor">#FEFFFD</Color>
-
-
 
             <Color x:Key="PageBackgroundColor">#dbe9ee</Color>
             <Color x:Key="ViewBackgroundColor">#9db4c0</Color>
@@ -85,14 +73,7 @@
                 <Setter Property="BackgroundColor" Value="{DynamicResource ViralCrusherDarkPurpleColor}" />
                 <Setter Property="NavigationPage.HasNavigationBar" Value="False" />
             </Style>
-
-            <!--<Style TargetType="ContentPage"
-                x:Key="BlockingPanel">
-                <Setter Property="BackgroundColor" Value="{StaticResource BlockingColor}" />
-                <Setter Property="HeightRequest" Value="400" />
-                <Setter Property="WidthRequest" Value="400" />
-            </Style>-->
-
+            
             <!--  Global Styles for Views  -->
 
             <!--  Scroll View  -->
