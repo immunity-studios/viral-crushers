@@ -495,14 +495,11 @@ namespace Game.Views
 
                 BattlePlayerBoxVersus.Text = string.Empty;
 
-                if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker != null)
-                {
-                    MoveButton.IsEnabled = true;
-                    MoveButton.Source = "icon_battle_move_button.png";
+                MoveButton.IsEnabled = true;
+                MoveButton.Source = "icon_battle_move_button.png";
 
-                    BattleEngineViewModel.Instance.Engine.EngineSettings.SelectedMapLocation = data;
-                    //data.Player = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.EmptySquareSelected;
-                }
+                BattleEngineViewModel.Instance.Engine.EngineSettings.SelectedMapLocation = data;
+                //data.Player = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.EmptySquareSelected;
             }
             
 
@@ -521,6 +518,10 @@ namespace Game.Views
              */
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker != null)
             {
+                // turn off Move button
+                MoveButton.IsEnabled = false;
+                MoveButton.Source = "icon_battle_move_button_gray.png";
+
                 BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = data.Player;
 
                 // Draw defender in the battle infomation box
