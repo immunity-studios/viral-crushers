@@ -46,35 +46,65 @@ namespace Game.AudioSystem
         private const double STARTING_VOLUME = .6;
 
         /// <summary>
-        /// Audio engine constructor which initializes AudioResources
+        /// Audio engine constructor which initializes audio bus volumes
         /// </summary>
         public AudioEngine()
         {
             busVolumes = new Dictionary<AudioBusEnum, double>();
             loopsPlaying = new List<BaseAudioClip>();
-            
-            foreach(AudioBusEnum bus in Enum.GetValues(typeof(AudioBusEnum)))
+            InitBusVolumes();
+        }
+
+        /// <summary>
+        /// Method which initializes all buses to the default starting volume 
+        /// </summary>
+        /// <returns></returns>
+        private bool InitBusVolumes()
+        {
+            foreach (AudioBusEnum bus in Enum.GetValues(typeof(AudioBusEnum)))
             {
                 busVolumes.Add(bus, STARTING_VOLUME);
             }
+            return true;
         }
 
+        /// <summary>
+        /// Method which should be called after the Audio Engine has been instantiated.
+        /// It loads all audio clips, and sets the volume of those clips based on 
+        /// each clip's bus
+        /// </summary>
+        /// <returns></returns>
         public bool Setup()
         {
-            //CrossMediaManager.Current.Init();
             LoadAudio();
+            InitClipVolumes();
             return true;
-
         }
 
-        public bool LoadAudio()
+        /// <summary>
+        /// Method that calls Load on all audio clips in the AudioResources.Instance.AudioClips list
+        /// </summary>
+        /// <returns></returns>
+        private bool LoadAudio()
         {
             foreach (var audioClip in AudioResources.Instance.AudioClips)
             {
                 bool loaded = audioClip.Load();
                 Console.WriteLine(loaded? "Loaded" : "Failed to load" + " audio file with path " + audioClip.Filepath);
             }
-            SetBusVolume(AudioBusEnum.Master, 0);
+            return true;
+        }
+
+        /// <summary>
+        /// Sets the volume of each clip based on its audio bus's current volume
+        /// </summary>
+        /// <returns></returns>
+        private bool InitClipVolumes()
+        {
+            foreach (var audioClip in AudioResources.Instance.AudioClips)
+            {
+                audioClip.SetVolume(busVolumes[audioClip.GetAudioBus()]);
+            }
             return true;
         }
 
@@ -169,7 +199,8 @@ namespace Game.AudioSystem
         }
 
         /// <summary>
-        /// Method that can be called to set a specified bus' volume
+        /// Method that can be called to set a specified bus' volume.
+        /// Sets all clips on the associated bus to the specified volume
         /// </summary>
         /// <param name="bus"> 
         /// The volume bus to set
@@ -186,17 +217,6 @@ namespace Game.AudioSystem
                 if(audioClip.GetAudioBus() == bus)
                     audioClip.SetVolume(volume);
             }
-            //switch (bus)
-            //{
-            //    case AudioBusEnum.Master:
-            //        // loop through each audio clip and scale its volume based on provided value
-            //        foreach(var audioClip in AudioResources.Instance.AudioClips)
-            //        {
-            //            audioClip.SetVolume(volume);
-            //        }
-            //        break;
-            //    case AudioBusEnum.Music
-            //}
             return true;
         }
 
