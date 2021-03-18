@@ -12,6 +12,8 @@ namespace Scenario
     [TestFixture]
     public class BattlePageScenarioTests
     {
+        #region TestSetup
+        readonly BattleEngineViewModel EngineViewModel = BattleEngineViewModel.Instance;
         App app;
         BattlePage page;
 
@@ -35,6 +37,7 @@ namespace Scenario
         public void TearDown()
         {
         }
+        #endregion TestSetup
 
         [Test]
         public void BattlePage_Constructor_Default_Should_Pass()
