@@ -78,6 +78,20 @@ namespace UnitTests.Models
         }
 
         [Test]
+        public void ActionEnumExtensionsTests_ToImage_Rest_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = ActionEnum.Rest.ToImageURI();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("item.png", result);
+        }
+
+        [Test]
         public void ActionEnumExtensionsTests_ToImage_Attack_Default_Should_Pass()
         {
             // Arrange
