@@ -5,11 +5,6 @@
              x:Class="Game.Views.GamePage"
              BackgroundImage="background_image.png">
 
-
-    <!--<ContentPage.ToolbarItems>
-        <ToolbarItem Text="About" Clicked="AboutButton_Clicked" IconImageSource="tab_about.png"/>
-    </ContentPage.ToolbarItems>-->
-
     <ContentPage.Content>
 
         <Grid x:Name="PageGrid">
@@ -46,7 +41,7 @@
 
                 <ImageButton
                         Source="battle_button_140.png"
-                        Clicked="DungeonButton_Clicked"/>
+                        Clicked="BattleButton_Clicked"/>
 
             </StackLayout>
 
