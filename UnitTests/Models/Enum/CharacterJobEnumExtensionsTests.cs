@@ -162,6 +162,97 @@ namespace UnitTests.Models
         }
 
         [Test]
+        public void CharacterJobEnumExtensionsTests_Doctor_ToGifFile_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = CharacterJobEnum.Doctor.ToGifFile();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("docgif.gif", result);
+        }
+
+
+        [Test]
+        public void CharacterJobEnumExtensionsTests_Teacher_ToGifFile_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = CharacterJobEnum.Teacher.ToGifFile();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("teachergif.gif", result);
+        }
+
+
+        [Test]
+        public void CharacterJobEnumExtensionsTests_PoliceOfficer_ToGifFile_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = CharacterJobEnum.PoliceOfficer.ToGifFile();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("police.gif", result);
+        }
+
+
+        [Test]
+        public void CharacterJobEnumExtensionsTests_CollegeStudent_ToGifFile_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = CharacterJobEnum.CollegeStudent.ToGifFile();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("studentgif.gif", result);
+        }
+
+
+        [Test]
+        public void CharacterJobEnumExtensionsTests_Firefighter_ToGifFile_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = CharacterJobEnum.Firefighter.ToGifFile();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("firefightergif.gif", result);
+        }
+
+
+        [Test]
+        public void CharacterJobEnumExtensionsTests_Unknown_ToGifFile_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = CharacterJobEnum.Unknown.ToGifFile();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(null, result);
+        }
+
+
+
+        [Test]
         public void CharacterJobEnumExtensionsTests_Athlete_ToImageFile_Default_Should_Pass()
         {
             // Arrange
