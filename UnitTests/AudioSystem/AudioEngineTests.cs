@@ -34,6 +34,41 @@ namespace UnitTests.AudioSystem
             Assert.IsNotNull(result);
         }
 
+        public void AudioEngine_GetBusVolume_Default_Should_Pass()
+        {
+            // arrange
+            var result = audioEngine;
+            
+            AudioBusEnum bus = AudioBusEnum.Master;
+
+            // act
+            var volume = result.GetBusVolume(bus);
+
+            // assert
+
+            // This is comparing doubles, could add a delta value as 3rd parameter if failures occur due to double precision error
+            Assert.AreEqual(.6, volume);
+        }
+        
+        [Test]
+        public void AudioEngine_SetBusVolume_Should_Return_Same_Volume()
+        {
+            // arrange
+            var result = audioEngine;
+
+            AudioBusEnum bus = AudioBusEnum.Music;
+
+            var volume = .3;
+
+
+            // act
+            result.SetBusVolume(bus, volume);
+
+            // assert
+            Assert.AreEqual(volume, audioEngine.GetBusVolume(bus));
+
+        }
+
         //[Test]
         //public void AudioEngine_ProcessAudioEvent_GameStart_ShouldPass()
         //{
