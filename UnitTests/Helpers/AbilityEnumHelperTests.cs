@@ -51,6 +51,18 @@ namespace UnitTests.Helpers
         }
 
         [Test]
+        public void AbilityEnumHelper_GetListFighter_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = AbilityEnumHelper.GetListFighter;
+
+            // Assert
+            Assert.AreEqual(4, result.Count());
+        }
+
+        [Test]
         public void AbilityEnumHelper_GetListTeacher_Should_Pass()
         {
             // Arrange
