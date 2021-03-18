@@ -64,6 +64,20 @@ namespace UnitTests.Models
         }
 
         [Test]
+        public void ActionEnumExtensionsTests_Rest_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = ActionEnum.Rest.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(" Rests ", result);
+        }
+
+        [Test]
         public void ActionEnumExtensionsTests_ToImage_Attack_Default_Should_Pass()
         {
             // Arrange
