@@ -195,9 +195,10 @@ namespace Scenario
             result = EngineViewModel.Engine.EngineSettings.RoundStateEnum;
 
 
-            // Monsters Turn
-            page.GetNextPlayer();
-            result = EngineViewModel.Engine.EngineSettings.RoundStateEnum;
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Count < 1)
+            {
+                result = RoundEnum.NewRound;
+            }
 
 
             //Reset
