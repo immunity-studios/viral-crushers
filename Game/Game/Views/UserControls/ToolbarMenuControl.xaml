@@ -56,7 +56,7 @@
                     x:Name="GamePageImageButton"
                     Source="menu_battle_icon_100.png"
                     Style="{StaticResource ToolbarMenuImageButtonStyle}"
-                    Clicked="DungeonButton_Clicked" />
+                    Clicked="BattleButton_Clicked" />
 
                 <Label Text="Battle"
                        FontSize="Micro"

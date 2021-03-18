@@ -15,17 +15,17 @@ namespace Game.Views
 		#region Toolbar Click Handlers
 
 		/// <summary>
-		/// Jump to the Dungeon/Hospital
+		/// Start a new battle at the Pick Characters page
 		/// </summary>
-		public async void DungeonButton_Clicked(object sender, EventArgs e)
+		public async void BattleButton_Clicked(object sender, EventArgs e)
 		{
 			var previousPage = Navigation.NavigationStack.LastOrDefault();
-			await Navigation.PushAsync(new GamePage());
-			if (!(previousPage is GamePage))
-			{
-				Navigation.RemovePage(previousPage);
-			}
-		}
+            await Navigation.PushAsync(new PickCharactersPage());
+            if (!(previousPage is GamePage))
+            {
+                Navigation.RemovePage(previousPage);
+            }
+        }
 
 		/// <summary>
 		/// Jump to the characters index page
