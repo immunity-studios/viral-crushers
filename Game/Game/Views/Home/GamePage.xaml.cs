@@ -30,7 +30,11 @@ namespace Game.Views
 			await Navigation.PushAsync(new AutoBattlePage());
 		}
 
-		
+		/// <summary>
+		/// Jump to the About page
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		public async void AboutButton_Clicked(object sender, EventArgs e)
 		{
 			await Navigation.PushAsync(new AboutPage());
@@ -39,7 +43,7 @@ namespace Game.Views
 		/// <summary>
 		/// Jump to the Dungeon/Hospital
 		/// </summary>
-		public async void DungeonButton_Clicked(object sender, EventArgs e)
+		public async void BattleButton_Clicked(object sender, EventArgs e)
 		{
 			await Navigation.PushAsync(new PickCharactersPage());
 		}

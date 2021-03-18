@@ -56,11 +56,11 @@ namespace UnitTests.Views
         }
 
         [Test]
-        public void GamePage_DungeonButton_Clicked_Default_Should_Pass()
+        public void GamePage_BattleButton_Clicked_Default_Should_Pass()
         {
             // Arrange
             // Act
-            page.DungeonButton_Clicked(null, null);
+            page.BattleButton_Clicked(null, null);
 
             // Reset
 
