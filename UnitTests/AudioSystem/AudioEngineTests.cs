@@ -11,7 +11,21 @@ namespace UnitTests.AudioSystem
         [SetUp]
         public void Setup()
         {
-            audioEngine = new AudioEngine();
+            audioEngine = AudioEngine.Instance;
+        }
+
+        [Test]
+        public void AudioEngine_Constructor_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = audioEngine;
+
+            // Reset
+
+            // Assert
+            Assert.IsNotNull(result);
         }
     }
 }
