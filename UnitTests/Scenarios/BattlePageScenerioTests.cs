@@ -50,65 +50,65 @@ namespace Scenario
             Assert.IsNotNull(result);
         }
 
-       //[Test]
-       // public void BattlePage_RunBattle_Monsters_1_Should_Pass()
-       // {
-       //     //Arrange
+        //[Test]
+        //public void BattlePage_RunBattle_Monsters_1_Should_Pass()
+        //{
+        //    //Arrange
 
-       //     // Add Characters
+        //    // Add Characters
 
-       //     page.EngineViewModel.MaxNumberPartyCharacters = 1;
+        //    page.EngineViewModel.MaxNumberPartyCharacters = 1;
 
-       //     var CharacterPlayerMike = new PlayerInfoModel(
-       //                     new CharacterModel
-       //                     {
-       //                         Speed = -1,
-       //                         Level = 10,
-       //                         CurrentHealth = 11,
-       //                         ExperienceTotal = 1,
-       //                         ExperienceRemaining = 1,
-       //                         Name = "Mike",
-       //                         ListOrder = 1,
-       //                     });
+        //    var CharacterPlayerMike = new PlayerInfoModel(
+        //                    new CharacterModel
+        //                    {
+        //                        Speed = -1,
+        //                        Level = 10,
+        //                        CurrentHealth = 11,
+        //                        ExperienceTotal = 1,
+        //                        ExperienceRemaining = 1,
+        //                        Name = "Mike",
+        //                        ListOrder = 1,
+        //                    });
 
-       //     page.EngineViewModel.CharacterList.Add(CharacterPlayerMike);
-
-
-       //     // Add Monsters
-
-       //     // Need to set the Monster count to 1, so the battle goes to Next Round Faster
-       //     page.EngineViewModel.Engine.EngineSettings.MaxNumberPartyMonsters = 1;
+        //    page.EngineViewModel.CharacterList.Add(CharacterPlayerMike);
 
 
-       //     page.EngineViewModel.SetCurrentDefender( page.EngineViewModel.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).FirstOrDefault();
-       //     page.EngineViewModel.Engine.Round.SetCurrentAttacker(page.EngineViewModel.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Character).FirstOrDefault();
+        //    // Add Monsters
 
-       //     //Act
-       //     RoundEnum result;
+        //    // Need to set the Monster count to 1, so the battle goes to Next Round Faster
+        //    page.EngineViewModel.Engine.EngineSettings.MaxNumberPartyMonsters = 1;
 
-       //     // First Character Hits
-       //     page.AttackButton_Clicked(null, null);
-       //     result = page.EngineViewModel.Engine.RoundStateEnum;
-       //     Assert.AreEqual(RoundEnum.NextTurn, result);
 
-       //     // Monsters Turn
-       //     page.AttackButton_Clicked(null, null);
-       //     result = page.EngineViewModel.Engine.RoundStateEnum;
-       //     Assert.AreEqual(RoundEnum.NextTurn, result);
+        //    page.EngineViewModel.SetCurrentDefender(page.EngineViewModel.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).FirstOrDefault();
+        //    page.EngineViewModel.Engine.Round.SetCurrentAttacker(page.EngineViewModel.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Character).FirstOrDefault();
 
-       //     //// loop until game over
-       //     //do
-       //     //{
-       //     //    page.AttackButton_Clicked(null, null);
-       //     //    result = page.EngineViewModel.Engine.RoundStateEnum;
-       //     //    Assert.AreEqual(RoundEnum.NextTurn, result);
-       //     //}
-       //     //while (result != RoundEnum.GameOver);
+        //    //Act
+        //    RoundEnum result;
 
-       //     //Reset
+        //    // First Character Hits
+        //    page.AttackButton_Clicked(null, null);
+        //    result = page.EngineViewModel.Engine.RoundStateEnum;
+        //    Assert.AreEqual(RoundEnum.NextTurn, result);
 
-       //     //Assert
-       //     Assert.AreEqual(true, true);
-       // }
+        //    // Monsters Turn
+        //    page.AttackButton_Clicked(null, null);
+        //    result = page.EngineViewModel.Engine.RoundStateEnum;
+        //    Assert.AreEqual(RoundEnum.NextTurn, result);
+
+        //    //// loop until game over
+        //    //do
+        //    //{
+        //    //    page.AttackButton_Clicked(null, null);
+        //    //    result = page.EngineViewModel.Engine.RoundStateEnum;
+        //    //    Assert.AreEqual(RoundEnum.NextTurn, result);
+        //    //}
+        //    //while (result != RoundEnum.GameOver);
+
+        //    //Reset
+
+        //    //Assert
+        //    Assert.AreEqual(true, true);
+        //}
     }
 }

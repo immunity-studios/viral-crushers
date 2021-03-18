@@ -3,7 +3,7 @@ using System.Linq;
 
 using NUnit.Framework;
 
-using Game.Engine.EngineKoenig;
+using Game.Engine.EngineGame;
 using Game.Models;
 using Game.Helpers;
 using Game.ViewModels;
