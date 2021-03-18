@@ -14,6 +14,12 @@ namespace UnitTests.AudioSystem
             audioEngine = AudioEngine.Instance;
         }
 
+        [TearDown]
+        public void TearDown()
+        {
+            audioEngine = null;
+        }
+
         [Test]
         public void AudioEngine_Constructor_Default_Should_Pass()
         {
@@ -27,5 +33,15 @@ namespace UnitTests.AudioSystem
             // Assert
             Assert.IsNotNull(result);
         }
+
+        //[Test]
+        //public void AudioEngine_ProcessAudioEvent_GameStart_ShouldPass()
+        //{
+        //     Act
+        //    var result = audioEngine; 
+        //     Reset
+        //     Assert
+        //    Assert.IsNotNull(result);
+        //}
     }
 }
