@@ -53,7 +53,7 @@ namespace UnitTests.AudioSystem
         [Test]
         public void AudioEngine_SetBusVolume_Should_Return_Same_Volume()
         {
-            // arrange
+            
             var result = audioEngine;
 
             AudioBusEnum bus = AudioBusEnum.Music;
@@ -69,14 +69,18 @@ namespace UnitTests.AudioSystem
 
         }
 
-        //[Test]
-        //public void AudioEngine_ProcessAudioEvent_GameStart_ShouldPass()
-        //{
-        //     Act
-        //    var result = audioEngine; 
-        //     Reset
-        //     Assert
-        //    Assert.IsNotNull(result);
-        //}
+        [Test]
+        public void AudioEngine_ProcessAudioEvent_GameStart_ShouldPass()
+        {
+            // arrange
+            var result = audioEngine;
+
+            // act
+            var success = audioEngine.ProcessAudioEvent(AudioEventEnum.MenuStart);
+
+            //     Assert
+            Assert.True(success);
+        
+        }
     }
 }
